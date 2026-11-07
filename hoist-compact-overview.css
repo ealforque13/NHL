@@ -1,0 +1,51 @@
+/* Hoist Official — compact Overview layout. Load AFTER existing stylesheets. */
+#overview { font-size: 13px; }
+#overview .panel.section-panel { padding: 15px 17px; margin-bottom: 12px; border-radius: 10px; }
+#overview .section-head { margin-bottom: 10px; gap: 10px; }
+#overview .section-head h3 { font-size: 16px; line-height: 1.25; margin: 3px 0 0; }
+#overview .eyebrow { font-size: 9px; letter-spacing: .12em; }
+#overview .muted, #overview .mi-subtitle, #overview .mi-note { font-size: 12px; line-height: 1.45; }
+#overview .metrics { gap: 10px; margin-bottom: 12px; }
+#overview .metric { padding: 12px 14px; min-height: 0; border-radius: 9px; }
+#overview .metric-label { font-size: 10px; }
+#overview .metric-value { font-size: 24px; line-height: 1.2; margin: 5px 0 2px; }
+#overview .metric-value.small { font-size: 20px; }
+#overview .metric-detail { font-size: 10px; }
+#overview .two-col { gap: 12px; margin-bottom: 12px; }
+#overview .next-game, #overview .game-list { font-size: 12px; }
+#overview .v2-weekdays { gap: 4px; font-size: 10px; }
+#overview .v2-calendar { gap: 4px; }
+#overview .v2-day { min-height: 66px; padding: 5px; border-radius: 6px; }
+#overview .v2-game { margin-top: 3px; padding: 3px 4px; border-radius: 4px; font-size: 10px; line-height: 1.2; }
+#overview .v2-game img, #overview .hoist-calendar-logo { width: 15px !important; height: 15px !important; min-width: 0 !important; max-width: 15px !important; min-height: 0 !important; max-height: 15px !important; flex: 0 0 15px !important; object-fit: contain; }
+#overview .v2-detail { padding: 9px 11px; margin-top: 8px; font-size: 12px; }
+#overview .v2-controls { gap: 6px; }
+#overview .v2-controls button { padding: 4px 8px; min-height: 28px; }
+#overview .v2-controls strong { font-size: 12px; }
+#overview #hoist-h2h .h2h-summary { gap: 8px; margin: 10px 0; }
+#overview #hoist-h2h .h2h-summary > span { padding: 8px 11px; font-size: 11px; }
+#overview #hoist-h2h .h2h-summary strong { font-size: 17px; }
+#overview #hoist-h2h .h2h-game-toggle { padding: 9px 5px; min-height: 0; }
+#overview #hoist-h2h .h2h-game-score img { width: 17px; height: 17px; }
+#overview #hoist-h2h .h2h-score-content { padding: 10px 12px; }
+#overview #hoist-h2h .h2h-score-grid { gap: 16px; }
+#overview .mi-controls { gap: 8px; margin: 8px 0 12px; }
+#overview .mi-controls label { font-size: 11px; }
+#overview .mi-controls select { padding: 5px 8px; font-size: 12px; min-height: 30px; }
+#overview .mi-grid { gap: 14px; }
+#overview .mi-grid h3, #overview .mi-full > h3 { font-size: 14px; margin: 8px 0; }
+#overview .mi-table { font-size: 11px; }
+#overview .mi-table th, #overview .mi-table td { padding: 7px 6px; }
+#overview .mi-table img { max-width: 30px; max-height: 30px; }
+@media (max-width: 750px) {
+  #overview .panel.section-panel { padding: 11px; margin-bottom: 9px; }
+  #overview .section-head h3 { font-size: 14px; }
+  #overview .metrics { gap: 7px; }
+  #overview .metric { padding: 9px; }
+  #overview .metric-value { font-size: 20px; }
+  #overview .v2-day { min-height: 51px; padding: 3px; }
+  #overview .v2-game { padding: 2px; font-size: 9px; }
+  #overview .v2-game img, #overview .hoist-calendar-logo { width: 12px !important; height: 12px !important; max-width: 12px !important; max-height: 12px !important; flex-basis: 12px !important; }
+  #overview .mi-grid { gap: 10px; }
+  #overview .mi-table th, #overview .mi-table td { padding: 5px 4px; }
+}
