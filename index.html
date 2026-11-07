@@ -3,7 +3,37 @@
 <link rel="stylesheet" href="theme.css?v=2">
 
 <!-- Calendar team logo sizing -->
-<link rel="stylesheet" href="calendar-logos.css?v=3">
+<link rel="stylesheet" href="calendar-logos.css?v=4">
+
+<style>
+/* Force smaller NHL calendar logos */
+#v2-calendar .v2-game img,
+#v2-calendar img.hoist-calendar-logo {
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  max-width: 8px !important;
+  min-height: 8px !important;
+  max-height: 8px !important;
+  flex: 0 0 8px !important;
+  object-fit: contain !important;
+}
+
+/* Mobile logo sizing */
+@media (max-width: 700px) {
+  #v2-calendar .v2-game img,
+  #v2-calendar img.hoist-calendar-logo {
+    width: 6px !important;
+    height: 6px !important;
+    min-width: 6px !important;
+    max-width: 6px !important;
+    min-height: 6px !important;
+    max-height: 6px !important;
+    flex: 0 0 6px !important;
+  }
+}
+</style>
 
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=6" defer></script>
