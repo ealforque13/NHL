@@ -1,200 +1,117 @@
 
 /* ==========================================
    HOIST OFFICIAL
-   SIDE-BY-SIDE MATCHUP LAYOUT
+   IMPROVED TEXT READABILITY
    ========================================== */
 
-/* Put Head to Head and Matchup Intelligence
-   beside each other without changing JS */
-@media (min-width: 1100px) {
-
-  #overview {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 12px;
-    align-items: start;
-  }
-
-  /* All other overview sections stay full width */
-  #overview > :not(#hoist-h2h):not(#matchup-intelligence) {
-    grid-column: 1 / -1;
-    min-width: 0;
-  }
-
-  #hoist-h2h {
-    grid-column: 1;
-  }
-
-  #matchup-intelligence {
-    grid-column: 2;
-  }
-}
-
-/* Compact both panels */
-#hoist-h2h,
-#matchup-intelligence {
-  min-width: 0;
-  padding: 14px !important;
-  margin: 0 !important;
-}
-
-#hoist-h2h .section-head,
-#matchup-intelligence .section-head {
-  margin-bottom: 10px !important;
-}
-
+/* Panel headings */
 #hoist-h2h .section-head h3,
 #matchup-intelligence .section-head h3 {
-  font-size: 15px !important;
-  margin: 3px 0 5px !important;
+  font-size: 19px !important;
+  line-height: 1.4 !important;
 }
 
+/* Small section labels */
 #hoist-h2h .eyebrow,
 #matchup-intelligence .eyebrow {
-  font-size: 9px !important;
+  font-size: 11px !important;
 }
 
+/* Descriptions and subtitles */
 #hoist-h2h .muted,
 #matchup-intelligence .mi-subtitle {
-  font-size: 11px !important;
-  line-height: 1.4;
+  font-size: 13px !important;
+  line-height: 1.5 !important;
 }
 
-/* Compact head-to-head summary */
-#hoist-h2h .h2h-summary {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: 8px 0 !important;
-}
-
+/* Head-to-head summary boxes */
 #hoist-h2h .h2h-summary > span {
-  padding: 7px 9px !important;
-  font-size: 10px !important;
+  font-size: 12px !important;
+  padding: 9px 12px !important;
 }
 
 #hoist-h2h .h2h-summary strong {
-  font-size: 15px !important;
+  font-size: 19px !important;
 }
 
-/* Compact game rows */
-#hoist-h2h .h2h-game-toggle {
-  padding: 8px 5px !important;
-  gap: 8px;
-}
-
+/* Head-to-head game rows */
 #hoist-h2h .h2h-game-info strong {
-  font-size: 11px !important;
+  font-size: 14px !important;
 }
 
 #hoist-h2h .h2h-game-info small {
-  font-size: 10px !important;
-}
-
-#hoist-h2h .h2h-game-score img {
-  width: 18px !important;
-  height: 18px !important;
-  object-fit: contain;
+  font-size: 12px !important;
 }
 
 #hoist-h2h .h2h-game-score b {
-  font-size: 12px !important;
+  font-size: 15px !important;
 }
 
-/* Scoresheets fit inside the left column */
-#hoist-h2h .h2h-score-content {
-  padding: 10px 6px !important;
+#hoist-h2h .h2h-game-score img {
+  width: 22px !important;
+  height: 22px !important;
 }
 
-#hoist-h2h .h2h-score-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-}
-
+/* Expanded scoresheet text */
 #hoist-h2h .h2h-score-grid h4 {
-  font-size: 12px !important;
+  font-size: 15px !important;
 }
 
 #hoist-h2h .h2h-goal,
 #hoist-h2h .h2h-goalie,
 #hoist-h2h .h2h-stat {
-  font-size: 11px !important;
+  font-size: 13px !important;
 }
 
-/* Compact matchup intelligence controls */
-#matchup-intelligence .mi-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px !important;
-  margin-bottom: 12px !important;
+#hoist-h2h .h2h-muted,
+#hoist-h2h .h2h-period,
+#hoist-h2h .h2h-time {
+  font-size: 12px !important;
 }
 
+/* Matchup Intelligence controls */
 #matchup-intelligence .mi-controls label {
-  font-size: 10px !important;
+  font-size: 12px !important;
 }
 
 #matchup-intelligence .mi-controls select {
-  font-size: 11px !important;
-  padding: 6px !important;
+  font-size: 13px !important;
+  padding: 8px !important;
 }
 
-/* Stack the two matchup player tables
-   inside the narrower right-hand card */
-#matchup-intelligence .mi-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) !important;
-  gap: 14px !important;
-}
-
-#matchup-intelligence .mi-grid > div {
-  min-width: 0;
-}
-
+/* Player table section headings */
 #matchup-intelligence .mi-grid h3,
 #matchup-intelligence .mi-full h3 {
-  font-size: 13px !important;
-  margin-bottom: 8px !important;
+  font-size: 16px !important;
 }
 
-/* Smaller matchup tables */
-#matchup-intelligence .mi-table {
-  width: 100%;
-  font-size: 11px !important;
-}
-
+/* Player tables */
 #matchup-intelligence .mi-table th {
-  padding: 6px 5px !important;
-  font-size: 9px !important;
+  font-size: 11px !important;
+  padding: 9px 7px !important;
 }
 
 #matchup-intelligence .mi-table td {
-  padding: 6px 5px !important;
-  font-size: 10px !important;
+  font-size: 13px !important;
+  padding: 9px 7px !important;
 }
 
+/* Player headshots */
 #matchup-intelligence .mi-table img {
-  max-width: 25px;
-  max-height: 25px;
-  object-fit: contain;
+  max-width: 32px !important;
+  max-height: 32px !important;
 }
 
+/* Matchup data note */
 #matchup-intelligence .mi-note {
-  font-size: 10px !important;
+  font-size: 12px !important;
 }
 
-/* Mobile and tablet: stack panels vertically */
-@media (max-width: 1099px) {
+/* Keep the side-by-side layout */
+@media (min-width: 1100px) {
   #overview {
-    display: block;
-  }
-
-  #hoist-h2h,
-  #matchup-intelligence {
-    margin-bottom: 12px !important;
-  }
-
-  #matchup-intelligence .mi-grid {
-    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-columns:
+      minmax(0, 1fr) minmax(0, 1fr);
+    gap: 14px;
   }
 }
