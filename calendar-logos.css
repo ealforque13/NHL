@@ -14,8 +14,8 @@
 /* Smaller team logos */
 .hoist-calendar-logo {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   object-fit: contain;
   flex: 0 0 18px;
 }
