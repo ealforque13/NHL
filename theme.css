@@ -1,0 +1,46 @@
+/* Hoist Official — accessible light theme; dark is the default. */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#172640;color:#eaf2ff;border:1px solid #344861;border-radius:9px;padding:10px 13px;font-size:12px;font-weight:700;white-space:nowrap}
+.theme-toggle:hover{filter:brightness(1.12)}
+.theme-toggle:focus-visible{outline:2px solid #4e95ff;outline-offset:3px}
+.theme-light{color-scheme:light;background:#f2f5fa;color:#17243a}
+.theme-light body{background:#f2f5fa;color:#17243a}
+.theme-light .sidebar{background:#fff;border-color:#d8e1ed}
+.theme-light .main,.theme-light .content{background:#f2f5fa}
+.theme-light .topbar{border-color:#d8e1ed}
+.theme-light .panel{background:#fff;border-color:#d9e3ef;box-shadow:0 2px 9px rgba(22,42,78,.035)}
+.theme-light .team-hero{background:linear-gradient(115deg,#e7f0ff,#fff 75%)}
+.theme-light .snapshot-item{background:#edf3fb}
+.theme-light .metric-label,.theme-light .eyebrow,.theme-light .side-label,.theme-light .team-controls label{color:#587295}
+.theme-light .metric-detail,.theme-light .data-status,.theme-light .team-left p,.theme-light .muted,.theme-light .empty,.theme-light footer{color:#627691}
+.theme-light .nav-item{color:#3e5573}
+.theme-light .nav-item.active,.theme-light .nav-item:hover{background:#e7f0ff;color:#164f9c}
+.theme-light .nav-item.active{box-shadow:inset 3px 0 #397de0}
+.theme-light .sidebar-bottom,.theme-light .sidebar-bottom small{color:#627691}
+.theme-light .brand,.theme-light .hoist-brand-name{color:#17243a!important}
+.theme-light .hoist-brand-name small,.theme-light .brand small{color:#587295!important}
+.theme-light .hoist-brand-logo{background:#101827;border-radius:9px;padding:5px}
+.theme-light select,.theme-light .icon-button,.theme-light .theme-toggle,.theme-light .v2-controls select,.theme-light .v2-controls button,.theme-light .mi-controls select{background:#fff;color:#19304e;border-color:#c8d6e8}
+.theme-light .theme-toggle{background:#dceaff;color:#174e93;border-color:#b5cff0}
+.theme-light .pill{background:#e9f3ff;color:#245d9e;border-color:#c4ddf5}
+.theme-light .game-row,.theme-light .schedule-row,.theme-light td,.theme-light th,.theme-light .compare-row,.theme-light .v2-split,.theme-light .v2-leader{border-color:#dce5f0}
+.theme-light th,.theme-light .snapshot-item .label,.theme-light .game-row .sub,.theme-light .schedule-row .date,.theme-light .compare-row .compare-label,.theme-light .v2-split span,.theme-light .v2-leader small{color:#587295}
+.theme-light .game-meta,.theme-light .vs,.theme-light .versus,.theme-light .v2-summary,.theme-light .v2-bar-group small{color:#607a9c}
+.theme-light .v2-chart{border-color:#d6e1ee}
+.theme-light .v2-weekdays{color:#647d9c}
+.theme-light .v2-day{background:#f5f8fd;border-color:#d9e3ef}
+.theme-light .v2-day b{color:#1e385a}
+.theme-light .v2-game{background:#e3edfa;color:#1e426e}
+.theme-light .v2-game:hover{background:#d1e3fb}
+.theme-light .v2-detail{background:#edf3fb;color:#375577}
+.theme-light .v2-leader b{color:#2366b5}
+.theme-light .mi-table th,.theme-light .mi-table td{border-color:#dce5f0}
+.theme-light .mi-table th{color:#587295}
+.theme-light .mi-table td{color:#1b2d47}
+.theme-light .mi-person small,.theme-light .mi-subtitle,.theme-light .mi-note,.theme-light .mi-controls{color:#617b9b}
+.theme-light .mi-person img{background:#e5effb}
+.theme-light .mi-avatar-fallback{background:#d6e5f7;color:#204f86}
+.theme-light tr.highlight{background:#e7f1ff}
+.theme-light .notice{background:#fff3df;border-color:#e7bd7b;color:#805321}
+.theme-light .win{background:#e2f7eb;color:#126743}
+.theme-light .loss{background:#ffe8eb;color:#a22f49}
+@media(max-width:650px){.theme-toggle{padding:9px 10px}.theme-toggle #theme-label{display:none}}
