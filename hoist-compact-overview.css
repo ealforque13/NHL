@@ -598,4 +598,95 @@
   }
 }
 
+/* ============================================
+   HOIST OFFICIAL - CALENDAR IMPROVEMENTS
+   ============================================ */
+
+/* Give calendar dates a little more height */
+#overview .hoist-calendar-panel .v2-calendar .v2-day {
+  min-height: 82px !important;
+  padding: 6px !important;
+  position: relative;
+}
+
+/* Stack game information vertically */
+#v2-calendar .v2-day .v2-game,
+#v2-calendar .v2-day .v2-game-pill {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 4px !important;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  padding: 5px 3px !important;
+}
+
+/* Opponent logo on top */
+#v2-calendar .v2-day .v2-game img,
+#v2-calendar .v2-day .v2-game-pill img,
+#v2-calendar .hoist-calendar-logo {
+  display: block !important;
+  width: 25px !important;
+  height: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  max-height: 25px !important;
+  flex: none !important;
+  object-fit: contain;
+  margin: 0 auto !important;
+}
+
+/* Game text beneath the logo */
+#v2-calendar .v2-day .v2-game,
+#v2-calendar .v2-day .v2-game-pill {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+}
+
+/* Today marker */
+#v2-calendar .hoist-today {
+  border: 2px solid #60a5fa !important;
+  background: rgba(59, 130, 246, 0.10) !important;
+  position: relative;
+}
+
+#v2-calendar .hoist-today::after {
+  content: "TODAY";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #93c5fd;
+}
+
+/* Keep today's date number visible */
+#v2-calendar .hoist-today::before {
+  color: #93c5fd;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #overview .hoist-calendar-panel .v2-calendar .v2-day {
+    min-height: 70px !important;
+    padding: 3px !important;
+  }
+
+  #v2-calendar .hoist-calendar-logo {
+    width: 19px !important;
+    height: 19px !important;
+    min-width: 19px !important;
+    max-width: 19px !important;
+  }
+
+  #v2-calendar .hoist-today::after {
+    font-size: 7px;
+  }
+}
+
 }
