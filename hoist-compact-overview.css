@@ -461,4 +461,108 @@
     font-size: 12px !important;
   }
 
+/* ==========================================
+   HOIST OFFICIAL - SLIGHTLY LARGER FONTS
+   FONT SIZE ONLY - NO LAYOUT CHANGES
+   ========================================== */
+
+/* Main section headings */
+#hoist-h2h .section-head h3,
+#matchup-intelligence .section-head h3 {
+  font-size: 21px !important;
 }
+
+/* Section labels */
+#hoist-h2h .eyebrow,
+#matchup-intelligence .eyebrow {
+  font-size: 12px !important;
+}
+
+/* Descriptions */
+#hoist-h2h .muted,
+#matchup-intelligence .mi-subtitle {
+  font-size: 14px !important;
+}
+
+/* Head-to-head summary */
+#hoist-h2h .h2h-summary > span {
+  font-size: 14px !important;
+}
+
+#hoist-h2h .h2h-summary strong {
+  font-size: 21px !important;
+}
+
+/* Head-to-head game rows */
+#hoist-h2h .h2h-game-info strong {
+  font-size: 15px !important;
+}
+
+#hoist-h2h .h2h-game-info small {
+  font-size: 13px !important;
+}
+
+#hoist-h2h .h2h-game-score b {
+  font-size: 16px !important;
+}
+
+#hoist-h2h .h2h-team-tag {
+  font-size: 13px !important;
+}
+
+/* Expanded scoresheets */
+#hoist-h2h .h2h-score-grid h4 {
+  font-size: 16px !important;
+}
+
+#hoist-h2h .h2h-goal,
+#hoist-h2h .h2h-goalie,
+#hoist-h2h .h2h-stat {
+  font-size: 14px !important;
+}
+
+#hoist-h2h .h2h-muted,
+#hoist-h2h .h2h-period,
+#hoist-h2h .h2h-time {
+  font-size: 13px !important;
+}
+
+#hoist-h2h table,
+#hoist-h2h td {
+  font-size: 13px !important;
+}
+
+#hoist-h2h th {
+  font-size: 12px !important;
+}
+
+/* Matchup Intelligence controls */
+#matchup-intelligence .mi-controls label {
+  font-size: 13px !important;
+}
+
+#matchup-intelligence .mi-controls select {
+  font-size: 14px !important;
+}
+
+/* Player table section headings */
+#matchup-intelligence .mi-grid h3,
+#matchup-intelligence .mi-full h3 {
+  font-size: 18px !important;
+}
+
+/* Player table column headings */
+#matchup-intelligence .mi-table th {
+  font-size: 12px !important;
+}
+
+/* Player names and statistics */
+#matchup-intelligence .mi-table td {
+  font-size: 14px !important;
+}
+
+/* Bottom note */
+#matchup-intelligence .mi-note {
+  font-size: 13px !important;
+}
+
