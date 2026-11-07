@@ -1,40 +1,36 @@
-# NHL Central — GitHub Pages CORS Fix
+# NHL Central — Version 2
 
-This version uses a GitHub Actions job to download NHL data into `data/` JSON files. The browser reads those files from GitHub Pages instead of calling the NHL API directly, avoiding CORS errors.
+This release preserves the existing static GitHub Pages site and GitHub Actions cache, while adding analytics, a month calendar, NHL scoring leaders, and a 32-team fantasy off-night schedule analyzer.
 
-## Install into your existing `ealforque13/NHL` repository
+## Install over the existing repository
 
-1. Extract the ZIP.
-2. Open https://github.com/ealforque13/NHL and choose **Add file → Upload files**.
-3. Upload `index.html`, `styles.css`, `app.js`, `README.md`, **the `scripts` folder**, and **the `.github` folder** into the repository root. GitHub's browser uploader may not reliably preserve hidden `.github` folders on some systems; if it doesn't, use the manual workflow instructions below.
-4. When prompted, overwrite the existing website files by committing the changes. If GitHub's uploader refuses duplicates, edit or delete the old files first, or use GitHub Desktop to replace them.
-5. Check that `.github/workflows/update-nhl-data.yml` and `scripts/update_data.py` exist in the repository.
-6. Go to **Settings → Actions → General → Workflow permissions** and choose **Read and write permissions**; save. This allows the workflow to commit cached JSON files. Repository or organization policies may override this setting.
-7. Go to **Actions → Update NHL data → Run workflow → Run workflow**. Wait for the job to complete (first run can take a few minutes).
-8. Check that `data/standings.json`, `data/schedules/MTL.json`, and `data/rosters/MTL.json` exist. Then visit https://ealforque13.github.io/NHL/ and hard-refresh (Ctrl+Shift+R).
+1. Extract the ZIP locally. Copy **the contents** (including `.github`, `scripts`, `app.js`, `index.html`, `styles.css`, `v2.js`, `v2.css`) into your existing cloned `ealforque13/NHL` repository. Do not place them in a nested folder. Replace existing files when asked. **Keep the existing `data/` directory**: the update doesn't include it and should not delete it.
+2. In GitHub Desktop, commit the changes and click **Push origin**.
+3. In GitHub > Actions > **Update NHL data**, click **Run workflow** on `main`. The workflow will refresh standings, schedules and rosters and fetch new `data/club-stats/*.json` and `data/leaders.json` files.
+4. Wait for the workflow and subsequent GitHub Pages deployment. Hard refresh https://ealforque13.github.io/NHL/ with Ctrl+Shift+R.
+5. Open **Analytics**, **Calendar**, and **Fantasy Planner** in the sidebar.
 
-**Note:** A new GitHub Pages deployment may take a few minutes after the data commit. GitHub Actions schedules are best-effort and can be delayed; the website shows the latest cached data, not true live play-by-play.
+## Data sources and refresh
 
-## If `.github` folder did not upload
+`python scripts/update_data.py` downloads the NHL public JSON endpoints on the GitHub Actions runner. Browser requests use same-origin `/data/*.json` only (no CORS dependency). The existing GitHub Actions workflow runs every 15 minutes, though GitHub may delay scheduled runs. Refreshing the website does not itself download fresh NHL data. All NHL API endpoints are unofficial/undocumented and can change.
 
-On the GitHub repository homepage choose **Add file → Create new file**. Enter this exact filename:
+New endpoints:
+- `club-stats/{TEAM}/20262027/2` for each team's skater stats
+- `skater-stats-leaders/current?categories=points,goals,assists&limit=20` for league leaders
 
-`.github/workflows/update-nhl-data.yml`
+The Python script retains old JSON on partial endpoint failures and reports failures in `data/metadata.json`. A green workflow check means the job ran, **not** necessarily that every endpoint succeeded. Inspect `data/metadata.json` and workflow logs if a section shows unavailable data.
 
-Paste the contents of the included file with that name and commit it. Repeat for `scripts/update_data.py` if necessary.
+## Definitions
 
-## Test the data
+- Team charts use the latest 10 completed games in the selected team's cached schedule.
+- Home/away splits count completed games, and the displayed win rate is wins divided by games (OT losses count as non-wins).
+- Fantasy analyzer counts **regular-season games** (gameType 2) on dates the reference team does **not** play, with an optional remaining-games filter. It compares calendar dates in the NHL schedule, not exact start times. It is not a prediction or optimization for a particular fantasy scoring system.
+- Calendar shows games on their official `gameDate`; puck-drop details are formatted in the visitor's timezone.
+- League scoring leaders are NHL API-provided leader lists, not necessarily the entire league ranking.
 
-- https://ealforque13.github.io/NHL/data/standings.json
-- https://ealforque13.github.io/NHL/data/schedules/MTL.json
+## Troubleshooting
 
-Both should show JSON after the workflow commits data and Pages deploys it.
-
-## How it works
-
-- `scripts/update_data.py` fetches standings plus a season schedule and current roster for all 32 teams (65 requests total).
-- `.github/workflows/update-nhl-data.yml` runs on demand and requests refreshes every 15 minutes.
-- `app.js` loads same-origin `./data/...` files, so the NHL API's missing CORS headers do not affect visitors.
-- A failed API request preserves an existing file rather than replacing it with invalid JSON.
-
-If the workflow is green but there are missing files, check the workflow log for API errors. This project is unofficial and subject to NHL endpoint changes and usage terms.
+- If new features show no data, check the `data/club-stats/` folder and `data/leaders.json` on GitHub after running the workflow.
+- If a new endpoint fails, inspect the Actions `Fetch and cache NHL data` step; old schedules/standings should still work.
+- Open Chrome F12 > Console and Network to inspect 404s or JavaScript errors.
+- This project is not affiliated with the NHL.

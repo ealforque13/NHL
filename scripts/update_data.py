@@ -44,11 +44,12 @@ def write(relative, payload):
 def main():
     failures = []
     success = 0
-    endpoints = [('standings/now', 'standings.json')]
+    endpoints = [('standings/now', 'standings.json'), ('skater-stats-leaders/current?categories=points,goals,assists&limit=20', 'leaders.json')]
     for code in TEAMS:
         endpoints.extend([
             (f'club-schedule-season/{code}/{SEASON}', f'schedules/{code}.json'),
             (f'roster/{code}/current', f'rosters/{code}.json'),
+            (f'club-stats/{code}/{SEASON}/2', f'club-stats/{code}.json'),
         ])
     for path, destination in endpoints:
         try:
