@@ -15,3 +15,5 @@
 .mi-full{margin-top:18px}
 @media(max-width:1100px){.mi-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.mi-table{font-size:11px}.mi-table th,.mi-table td{padding:9px 5px}.mi-person{min-width:120px}.mi-person img{width:28px;height:28px}}
+
+.mi-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:18px;color:#a9c0e2;font-size:12px}.mi-controls select{background:#16253f;color:#f0f5ff;border:1px solid #304562;border-radius:8px;padding:9px 12px}.mi-avatar-fallback{flex:0 0 36px;width:36px;height:36px;align-items:center;justify-content:center;border-radius:50%;background:#2a4671;color:#eaf3ff;font-size:11px;font-weight:700}@media(max-width:600px){.mi-avatar-fallback{width:28px;height:28px;flex-basis:28px}}
