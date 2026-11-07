@@ -8,6 +8,7 @@ permissions:
 jobs:
   update-history:
     runs-on: ubuntu-latest
+    timeout-minutes: 55
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -15,12 +16,16 @@ jobs:
           python-version: '3.12'
       - name: Download regular-season schedules
         run: python scripts/build_h2h.py
-      - name: Commit updated cache
+      - name: Download recent game scoresheets (incremental)
+        env:
+          H2H_MAX_NEW: '800'
+        run: python scripts/build_h2h_scoresheets.py
+      - name: Commit updated caches
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/head-to-head.json
+          git add data/head-to-head.json data/head-to-head-scoresheets.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update NHL head-to-head history"
+            git commit -m "Update NHL head-to-head scoresheets"
             git push
           fi
