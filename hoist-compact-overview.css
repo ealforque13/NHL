@@ -689,4 +689,107 @@
   }
 }
 
+/* ==========================================
+   HOIST OFFICIAL - CALENDAR VERSION 7
+   ========================================== */
+
+#overview .hoist-calendar-panel .v2-day {
+  min-height: 105px !important;
+  padding: 6px !important;
+  position: relative;
+}
+
+/* Stack opponent logo, abbreviation and score/time */
+#v2-calendar .hoist-calendar-game {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  width: 100%;
+  padding: 6px 3px !important;
+  text-align: center;
+  white-space: normal !important;
+}
+
+/* Opponent logo */
+#v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+  width: 27px !important;
+  height: 27px !important;
+  min-width: 27px !important;
+  max-width: 27px !important;
+  max-height: 27px !important;
+  flex: none !important;
+  object-fit: contain;
+  margin: 0 auto !important;
+}
+
+/* Opponent abbreviation */
+#v2-calendar .hoist-calendar-opp {
+  font-size: 11px !important;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Score or game time */
+#v2-calendar .hoist-calendar-score {
+  font-size: 12px !important;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Today outline */
+#v2-calendar .hoist-today {
+  border: 2px solid #60a5fa !important;
+  background: rgba(59, 130, 246, 0.10) !important;
+}
+
+/* Today badge */
+#v2-calendar .hoist-today-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* Today date number */
+#v2-calendar .hoist-today > .v2-day-number {
+  color: #93c5fd;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #overview .hoist-calendar-panel .v2-day {
+    min-height: 80px !important;
+    padding: 3px !important;
+  }
+
+  #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    max-width: 20px !important;
+    max-height: 20px !important;
+  }
+
+  #v2-calendar .hoist-calendar-opp {
+    font-size: 9px !important;
+  }
+
+  #v2-calendar .hoist-calendar-score {
+    font-size: 10px !important;
+  }
+
+  #v2-calendar .hoist-today-badge {
+    font-size: 7px;
+    padding: 1px 3px;
+  }
+}
+
 }
