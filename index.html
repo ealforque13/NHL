@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="theme.css?v=2">
   <link rel="stylesheet" href="hoist-head-to-head.css?v=5">
 
-  <!-- COMPACT OVERVIEW + NEW 60/40 LAYOUT -->
+  <!-- COMPACT OVERVIEW + CALENDAR IMPROVEMENTS -->
   <link rel="stylesheet" href="hoist-compact-overview.css?v=7">
 
   <style>
@@ -99,30 +99,7 @@
     }
 
     /* ========================================
-       CALENDAR LOGO SIZING
-       ======================================== */
-
-    #v2-calendar .hoist-calendar-logo {
-      width: 16px !important;
-      height: 16px !important;
-      min-width: 16px !important;
-      max-width: 16px !important;
-      flex: 0 0 16px !important;
-      object-fit: contain;
-    }
-
-    @media (max-width: 700px) {
-      #v2-calendar .hoist-calendar-logo {
-        width: 12px !important;
-        height: 12px !important;
-        min-width: 12px !important;
-        max-width: 12px !important;
-        flex: 0 0 12px !important;
-      }
-    }
-
-    /* ========================================
-       NEW OVERVIEW TOP LAYOUT
+       OVERVIEW TOP LAYOUT
        CALENDAR 60% | RIGHT COLUMN 40%
        ======================================== */
 
@@ -134,14 +111,12 @@
       min-width: 0;
     }
 
-    /* Full-width row within the main Overview grid */
     @media (min-width: 1100px) {
       #overview > .hoist-overview-top {
         grid-column: 1 / -1;
       }
     }
 
-    /* Right column */
     #overview .hoist-overview-right {
       display: flex;
       flex-direction: column;
@@ -165,16 +140,6 @@
 
     #overview .hoist-calendar-panel .v2-calendar {
       gap: 3px;
-    }
-
-    #overview .hoist-calendar-panel .v2-calendar .v2-day {
-      min-height: 48px;
-      padding: 4px;
-    }
-
-    #overview .hoist-calendar-panel .v2-calendar img {
-      max-width: 18px;
-      max-height: 18px;
     }
 
     #overview .hoist-calendar-panel .v2-weekdays {
@@ -219,7 +184,80 @@
       line-height: 1.35;
     }
 
-    /* Responsive layout */
+    /* ========================================
+       CALENDAR VERSION 7
+       LOGO STACKING + TODAY HIGHLIGHT
+       ======================================== */
+
+    #overview .hoist-calendar-panel .v2-day {
+      min-height: 105px !important;
+      padding: 6px !important;
+      position: relative;
+    }
+
+    #v2-calendar .hoist-calendar-game {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 3px !important;
+      width: 100%;
+      padding: 6px 3px !important;
+      text-align: center;
+      white-space: normal !important;
+    }
+
+    #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+      display: block;
+      width: 27px !important;
+      height: 27px !important;
+      min-width: 27px !important;
+      max-width: 27px !important;
+      max-height: 27px !important;
+      flex: none !important;
+      object-fit: contain;
+      margin: 0 auto !important;
+    }
+
+    #v2-calendar .hoist-calendar-opp {
+      font-size: 11px !important;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    #v2-calendar .hoist-calendar-score {
+      font-size: 12px !important;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    /* Today highlight */
+    #v2-calendar .hoist-today {
+      border: 2px solid #60a5fa !important;
+      background: rgba(59, 130, 246, 0.10) !important;
+    }
+
+    #v2-calendar .hoist-today-badge {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding: 2px 4px;
+      border-radius: 4px;
+      background: #2563eb;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    #v2-calendar .hoist-today > .v2-day-number {
+      color: #93c5fd;
+    }
+
+    /* ========================================
+       RESPONSIVE LAYOUT
+       ======================================== */
+
     @media (max-width: 850px) {
       #overview .hoist-overview-top {
         grid-template-columns: minmax(0, 1fr);
@@ -241,6 +279,32 @@
       #overview .hoist-gameday-panel,
       #overview .hoist-lastfive-panel {
         padding: 12px !important;
+      }
+
+      #overview .hoist-calendar-panel .v2-day {
+        min-height: 80px !important;
+        padding: 3px !important;
+      }
+
+      #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+        width: 20px !important;
+        height: 20px !important;
+        min-width: 20px !important;
+        max-width: 20px !important;
+        max-height: 20px !important;
+      }
+
+      #v2-calendar .hoist-calendar-opp {
+        font-size: 9px !important;
+      }
+
+      #v2-calendar .hoist-calendar-score {
+        font-size: 10px !important;
+      }
+
+      #v2-calendar .hoist-today-badge {
+        font-size: 7px;
+        padding: 1px 3px;
       }
     }
   </style>
@@ -575,16 +639,8 @@
         <!-- ==========================================
              HEAD-TO-HEAD MATCHUPS
 
-             hoist-head-to-head.js inserts this section
-             immediately before Matchup Intelligence.
-
-             It retains:
-             - Last 10 regular-season meetings
-             - Expandable scoresheets
-             - Team-coloured abbreviations
-             - Scoring details
-             - Goaltending
-             - Team statistics
+             hoist-head-to-head.js automatically inserts
+             this section before Matchup Intelligence.
              ========================================== -->
 
         <!-- ==========================================
@@ -1151,7 +1207,8 @@
 
 <script src="app.js?v=6" defer></script>
 
-<script src="v2.js?v=6" defer></script>
+<!-- Updated calendar: stacked logos + Today badge -->
+<script src="v2.js?v=7" defer></script>
 
 <script src="matchup.js?v=6" defer></script>
 
