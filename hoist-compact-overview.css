@@ -1,29 +1,224 @@
 
-/* ==========================================
-   HOIST OFFICIAL - FONT SIZE ONLY
-   Keep existing layout unchanged
-   ========================================== */
+/* ==========================================================
+   HOIST OFFICIAL
+   COMPLETE COMPACT OVERVIEW STYLESHEET
+   Version 3
 
-/* Main section titles */
+   Compact Overview
+   Side-by-side H2H and Matchup Intelligence
+   Improved font readability
+   ========================================================== */
+
+
+/* ==========================================================
+   1. OVERVIEW SPACING
+   ========================================================== */
+
+#overview {
+  gap: 12px;
+}
+
+#overview .section-panel {
+  min-width: 0;
+}
+
+#overview .section-head {
+  margin-bottom: 12px;
+}
+
+#overview .section-head h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+#overview .eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+
+/* ==========================================================
+   2. COMPACT INTERACTIVE CALENDAR
+   ========================================================== */
+
+#overview .v2-calendar {
+  gap: 4px;
+}
+
+#overview .v2-weekdays {
+  font-size: 12px;
+}
+
+#overview .v2-calendar .v2-day {
+  min-height: 62px;
+  padding: 6px;
+}
+
+#overview .v2-calendar .v2-day-number {
+  font-size: 12px;
+}
+
+#overview .v2-calendar img {
+  max-width: 22px;
+  max-height: 22px;
+  object-fit: contain;
+}
+
+#overview .v2-detail {
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+#overview .v2-controls button {
+  font-size: 14px;
+}
+
+#overview #v2-month-label {
+  font-size: 14px;
+}
+
+
+/* ==========================================================
+   3. TEAM METRICS
+   ========================================================== */
+
+#overview .metrics {
+  gap: 10px;
+}
+
+#overview .metric {
+  padding: 14px;
+}
+
+#overview .metric-label {
+  font-size: 11px;
+}
+
+#overview .metric-value {
+  font-size: 27px;
+  line-height: 1.2;
+}
+
+#overview .metric-value.small {
+  font-size: 20px;
+}
+
+#overview .metric-detail {
+  font-size: 12px;
+}
+
+
+/* ==========================================================
+   4. NEXT MATCHUP AND LAST FIVE RESULTS
+   ========================================================== */
+
+#overview .two-col {
+  gap: 12px;
+}
+
+#overview .next-game {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+#overview .game-list {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+#overview .pill {
+  font-size: 11px;
+}
+
+
+/* ==========================================================
+   5. HEAD TO HEAD + MATCHUP INTELLIGENCE
+   DESKTOP SIDE-BY-SIDE LAYOUT
+   ========================================================== */
+
+@media (min-width: 1100px) {
+
+  #overview {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+    gap: 12px;
+    align-items: start;
+  }
+
+  /* All other Overview sections span both columns */
+
+  #overview > :not(#hoist-h2h):not(#matchup-intelligence) {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  /* Head-to-head stays on the left */
+
+  #hoist-h2h {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  /* Matchup Intelligence stays on the right */
+
+  #matchup-intelligence {
+    grid-column: 2;
+    min-width: 0;
+  }
+
+}
+
+
+/* ==========================================================
+   6. SHARED MATCHUP PANEL STYLING
+   ========================================================== */
+
+#hoist-h2h,
+#matchup-intelligence {
+  min-width: 0;
+  padding: 14px !important;
+  margin: 0 !important;
+}
+
+#hoist-h2h .section-head,
+#matchup-intelligence .section-head {
+  margin-bottom: 10px !important;
+}
+
 #hoist-h2h .section-head h3,
 #matchup-intelligence .section-head h3 {
   font-size: 19px !important;
+  line-height: 1.35;
+  margin: 3px 0 5px !important;
 }
 
-/* Section labels */
 #hoist-h2h .eyebrow,
 #matchup-intelligence .eyebrow {
   font-size: 11px !important;
 }
 
-/* Descriptions */
 #hoist-h2h .muted,
 #matchup-intelligence .mi-subtitle {
   font-size: 13px !important;
+  line-height: 1.45;
 }
 
-/* Head-to-head record and summary */
+
+/* ==========================================================
+   7. HEAD-TO-HEAD SUMMARY
+   ========================================================== */
+
+#hoist-h2h .h2h-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 8px 0 !important;
+}
+
 #hoist-h2h .h2h-summary > span {
+  padding: 7px 9px !important;
   font-size: 13px !important;
 }
 
@@ -31,7 +226,16 @@
   font-size: 19px !important;
 }
 
-/* Head-to-head game listings */
+
+/* ==========================================================
+   8. HEAD-TO-HEAD GAME ROWS
+   ========================================================== */
+
+#hoist-h2h .h2h-game-toggle {
+  padding: 8px 5px !important;
+  gap: 8px;
+}
+
 #hoist-h2h .h2h-game-info strong {
   font-size: 14px !important;
 }
@@ -40,11 +244,35 @@
   font-size: 12px !important;
 }
 
+#hoist-h2h .h2h-game-score img {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+}
+
 #hoist-h2h .h2h-game-score b {
   font-size: 15px !important;
 }
 
-/* Expanded scoresheet */
+#hoist-h2h .h2h-team-tag {
+  font-size: 12px !important;
+}
+
+
+/* ==========================================================
+   9. EXPANDABLE HEAD-TO-HEAD SCORESHEETS
+   ========================================================== */
+
+#hoist-h2h .h2h-score-content {
+  padding: 10px 6px !important;
+}
+
+#hoist-h2h .h2h-score-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+}
+
 #hoist-h2h .h2h-score-grid h4 {
   font-size: 15px !important;
 }
@@ -61,32 +289,176 @@
   font-size: 12px !important;
 }
 
-/* Matchup Intelligence controls */
+#hoist-h2h table {
+  width: 100%;
+  font-size: 12px;
+}
+
+#hoist-h2h th {
+  font-size: 11px;
+}
+
+#hoist-h2h td {
+  font-size: 12px;
+}
+
+
+/* ==========================================================
+   10. MATCHUP INTELLIGENCE CONTROLS
+   ========================================================== */
+
+#matchup-intelligence .mi-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px !important;
+  margin-bottom: 12px !important;
+}
+
 #matchup-intelligence .mi-controls label {
   font-size: 12px !important;
 }
 
 #matchup-intelligence .mi-controls select {
   font-size: 13px !important;
+  padding: 6px !important;
 }
 
-/* Player table headings */
+
+/* ==========================================================
+   11. MATCHUP INTELLIGENCE PLAYER TABLES
+
+   Stack the two matchup tables inside the
+   narrower right-hand panel.
+   ========================================================== */
+
+#matchup-intelligence .mi-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 14px !important;
+}
+
+#matchup-intelligence .mi-grid > div {
+  min-width: 0;
+}
+
 #matchup-intelligence .mi-grid h3,
+#matchup-intelligence .mi-full h3 {
+  font-size: 16px !important;
+  margin-bottom: 8px !important;
+}
+
+
+/* ==========================================================
+   12. MATCHUP INTELLIGENCE TABLE TEXT
+   ========================================================== */
+
+#matchup-intelligence .mi-table {
+  width: 100%;
+  font-size: 13px !important;
+}
+
+#matchup-intelligence .mi-table th {
+  padding: 6px 5px !important;
+  font-size: 11px !important;
+}
+
+#matchup-intelligence .mi-table td {
+  padding: 6px 5px !important;
+  font-size: 13px !important;
+}
+
+#matchup-intelligence .mi-table img {
+  max-width: 25px;
+  max-height: 25px;
+  object-fit: contain;
+}
+
+#matchup-intelligence .table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+
+/* ==========================================================
+   13. HOT PLAYERS
+   ========================================================== */
+
+#matchup-intelligence .mi-full {
+  min-width: 0;
+}
+
 #matchup-intelligence .mi-full h3 {
   font-size: 16px !important;
 }
 
-/* Player table column headers */
-#matchup-intelligence .mi-table th {
-  font-size: 11px !important;
-}
-
-/* Player names and statistics */
-#matchup-intelligence .mi-table td {
-  font-size: 13px !important;
-}
-
-/* Bottom note */
 #matchup-intelligence .mi-note {
   font-size: 12px !important;
+  line-height: 1.45;
+}
+
+
+/* ==========================================================
+   14. TABLET AND MOBILE
+   ========================================================== */
+
+@media (max-width: 1099px) {
+
+  #overview {
+    display: block;
+  }
+
+  #hoist-h2h,
+  #matchup-intelligence {
+    margin-bottom: 12px !important;
+  }
+
+  #matchup-intelligence .mi-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+}
+
+
+/* ==========================================================
+   15. SMALL MOBILE SCREENS
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+  #overview .metric {
+    padding: 10px;
+  }
+
+  #overview .metric-value {
+    font-size: 23px;
+  }
+
+  #overview .v2-calendar .v2-day {
+    min-height: 48px;
+    padding: 4px;
+  }
+
+  #overview .v2-calendar img {
+    max-width: 16px;
+    max-height: 16px;
+  }
+
+  #hoist-h2h,
+  #matchup-intelligence {
+    padding: 11px !important;
+  }
+
+  #hoist-h2h .section-head h3,
+  #matchup-intelligence .section-head h3 {
+    font-size: 17px !important;
+  }
+
+  #matchup-intelligence .mi-table th {
+    font-size: 10px !important;
+  }
+
+  #matchup-intelligence .mi-table td {
+    font-size: 12px !important;
+  }
+
 }
