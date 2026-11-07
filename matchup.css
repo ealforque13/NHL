@@ -1,0 +1,17 @@
+/* NHL Central — additive matchup intelligence styles */
+.mi-header{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:18px}
+.mi-table{width:100%;border-collapse:collapse;font-size:13px}
+.mi-table th,.mi-table td{padding:11px 8px;border-bottom:1px solid rgba(150,175,220,.13);text-align:right;white-space:nowrap}
+.mi-table th:first-child,.mi-table td:first-child{text-align:left}
+.mi-table th{font-size:10px;letter-spacing:.09em;color:#89a7d2}
+.mi-table td{color:#e6efff}
+.mi-person{display:flex;align-items:center;gap:9px;min-width:150px}
+.mi-person img{height:36px;width:36px;object-fit:contain;border-radius:50%;background:#203456}
+.mi-person span{display:flex;flex-direction:column;gap:3px}
+.mi-person small{font-size:10px;color:#8ba9cf}
+.mi-subtitle{margin:6px 0 0;color:#93add1;font-size:12px}
+.mi-note{margin-top:14px;color:#92aacb;font-size:12px;line-height:1.6}
+.mi-full{margin-top:18px}
+@media(max-width:1100px){.mi-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.mi-table{font-size:11px}.mi-table th,.mi-table td{padding:9px 5px}.mi-person{min-width:120px}.mi-person img{width:28px;height:28px}}
