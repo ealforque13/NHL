@@ -11,13 +11,13 @@
   text-align: center;
 }
 
-/* Smaller team logos */
+/* Smaller team logos - reduced by 50% */
 .hoist-calendar-logo {
   display: block;
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   object-fit: contain;
-  flex: 0 0 18px;
+  flex: 0 0 9px;
 }
 
 /* Opponent abbreviation */
@@ -36,9 +36,9 @@
 /* Mobile adjustments */
 @media (max-width: 700px) {
   .hoist-calendar-logo {
-    width: 8px;
-    height: 8px;
-    flex-basis: 14px;
+    width: 7px;
+    height: 7px;
+    flex-basis: 7px;
   }
 
   .hoist-calendar-opp,
