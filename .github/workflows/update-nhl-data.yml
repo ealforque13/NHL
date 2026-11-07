@@ -1,3 +1,4 @@
+
 name: Update NHL data
 
 on:
@@ -16,18 +17,26 @@ jobs:
   refresh:
     runs-on: ubuntu-latest
     timeout-minutes: 18
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: Fetch and cache NHL data
         run: python scripts/update_data.py
+
+      - name: Update matchup intelligence data
+        run: python scripts/update_matchups.py
+
       - name: Commit refreshed data
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
