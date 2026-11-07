@@ -1,44 +1,47 @@
-/* Hoist Official calendar team logo enhancement */
+/* Hoist Official Calendar Logos */
 
 .v2-game {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 3px 5px;
+  gap: 2px;
   min-width: 0;
   white-space: normal;
   text-align: center;
 }
 
-/* Extra-small team logos */
-.hoist-calendar-logo {
-  display: block;
-  width: 4.5px;
-  height: 4.5px;
+/* Force smaller calendar logos */
+.v2-calendar .v2-game img.hoist-calendar-logo {
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 0 !important;
+  max-width: 8px !important;
+  min-height: 0 !important;
+  max-height: 8px !important;
+  flex: 0 0 8px !important;
   object-fit: contain;
-  flex: 0 0 4.5px;
 }
 
-/* Opponent abbreviation */
 .hoist-calendar-opp {
   font-size: 11px;
   white-space: nowrap;
 }
 
-/* Game score */
 .hoist-calendar-score {
   font-size: 11px;
   font-weight: 700;
   white-space: nowrap;
 }
 
-/* Mobile adjustments */
 @media (max-width: 700px) {
-  .hoist-calendar-logo {
-    width: 3.5px;
-    height: 3.5px;
-    flex-basis: 3.5px;
+  .v2-calendar .v2-game img.hoist-calendar-logo {
+    width: 6px !important;
+    height: 6px !important;
+    max-width: 6px !important;
+    max-height: 6px !important;
+    flex-basis: 6px !important;
   }
 
   .hoist-calendar-opp,
