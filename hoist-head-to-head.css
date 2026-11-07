@@ -1,2 +1,29 @@
 /* Additive Hoist Official head-to-head widget */
 .h2h-summary{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 14px}.h2h-summary span{border:1px solid #334761;border-radius:8px;padding:10px 14px;font-size:12px;color:#9eb4d3}.h2h-summary strong{font-size:17px;color:#f0f6ff;margin-right:6px}.h2h-game{display:grid;grid-template-columns:100px 34px minmax(0,1fr) 55px;align-items:center;gap:12px;padding:11px 8px;border-bottom:1px solid #28354c;font-size:12px}.h2h-game:last-child{border:0}.h2h-date,.h2h-location{color:#9ab0cd}.h2h-result{font-weight:800;text-align:center;padding:5px;border-radius:5px}.h2h-win{color:#61dfad;background:#163f36}.h2h-loss{color:#ff899d;background:#48232e}.h2h-match{display:flex;align-items:center;justify-content:center;gap:10px;white-space:nowrap}.h2h-match img{width:27px;height:27px;object-fit:contain}.h2h-match strong{font-size:15px}.theme-light .h2h-summary span{border-color:#d6e2ef;color:#536b89}.theme-light .h2h-summary strong{color:#1b3555}.theme-light .h2h-game{border-color:#dce5f0}.theme-light .h2h-date,.theme-light .h2h-location{color:#607895}.theme-light .h2h-win{background:#e2f7eb;color:#126743}.theme-light .h2h-loss{background:#ffe8eb;color:#a22f49}@media(max-width:650px){.h2h-game{grid-template-columns:65px 26px minmax(0,1fr);gap:5px;font-size:10px}.h2h-match{gap:4px}.h2h-match img{width:18px;height:18px}.h2h-match strong{font-size:12px}.h2h-location{display:none}}
+/* Expandable compact scoresheets */
+#hoist-h2h .h2h-game{display:block;padding:0;border-bottom:1px solid #28354c}
+#hoist-h2h .h2h-game-toggle{display:flex;align-items:center;gap:12px;padding:13px 8px;cursor:pointer;list-style:none}
+#hoist-h2h .h2h-game-toggle::-webkit-details-marker{display:none}
+#hoist-h2h .h2h-game-info{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+#hoist-h2h .h2h-game-info small,#hoist-h2h .h2h-goalie small,#hoist-h2h .h2h-goal small{display:block;color:#9ab0cd;font-size:11px;font-weight:400;margin-top:3px}
+#hoist-h2h .h2h-game-score{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:15px}
+#hoist-h2h .h2h-game-score img{width:24px;height:24px;object-fit:contain}
+#hoist-h2h .h2h-chevron{color:#9ab0cd;font-size:19px;transition:transform .15s}
+#hoist-h2h details[open] .h2h-chevron{transform:rotate(180deg)}
+#hoist-h2h .h2h-score-content{padding:8px 14px 18px;border-top:1px solid #28354c}
+#hoist-h2h .h2h-score-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+#hoist-h2h h4{font-size:13px;margin:10px 0 12px}
+#hoist-h2h .h2h-period{font-size:12px;color:#9ab0cd;margin:12px 0 7px}
+#hoist-h2h .h2h-goal{display:grid;grid-template-columns:45px 36px minmax(0,1fr);gap:8px;align-items:start;padding:5px 0;font-size:12px}
+#hoist-h2h .h2h-time,#hoist-h2h .h2h-muted{color:#9ab0cd;font-size:12px}
+#hoist-h2h .h2h-team-tag{font-size:10px;font-weight:700;background:#263b59;border-radius:3px;padding:3px;text-align:center}
+#hoist-h2h .h2h-goalie{display:flex;align-items:start;gap:10px;margin:10px 0;font-size:12px}
+#hoist-h2h .h2h-goalie>b{font-size:10px;background:#263b59;border-radius:3px;padding:3px 5px}
+#hoist-h2h .h2h-stats{margin-top:20px}
+#hoist-h2h .h2h-stat-head,#hoist-h2h .h2h-stat{display:grid;grid-template-columns:1fr 1.7fr 1fr;align-items:center;text-align:center;gap:5px;padding:7px 0;border-bottom:1px solid #334761;font-size:12px}
+#hoist-h2h .h2h-stat-head b:first-child,#hoist-h2h .h2h-stat strong:first-child{text-align:left}
+#hoist-h2h .h2h-stat-head b:last-child,#hoist-h2h .h2h-stat strong:last-child{text-align:right}
+#hoist-h2h .h2h-stat span{color:#9ab0cd}
+.theme-light #hoist-h2h .h2h-game,.theme-light #hoist-h2h .h2h-score-content{border-color:#dce5f0}
+.theme-light #hoist-h2h .h2h-game-info small,.theme-light #hoist-h2h .h2h-goalie small,.theme-light #hoist-h2h .h2h-goal small,.theme-light #hoist-h2h .h2h-stat span{color:#607895}
+@media(max-width:700px){#hoist-h2h .h2h-score-grid{grid-template-columns:1fr;gap:8px}#hoist-h2h .h2h-game-score img{width:18px;height:18px}#hoist-h2h .h2h-game-toggle{gap:7px}}
