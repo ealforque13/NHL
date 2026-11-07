@@ -7,7 +7,12 @@
   let generation = 0;
   const isFinal = game => ['FINAL', 'OFF'].includes(game.gameState);
   const sum = (rows, key) => rows.reduce((n, row) => n + (Number(row[key]) || 0), 0);
-  const picture = id => `https://assets.nhle.com/mugs/nhl/20262027/${encodeURIComponent(id)}.png`;
+  const picture = (player, club) => (typeof player.headshot === 'string' && player.headshot.startsWith('https://')) ? player.headshot : `https://assets.nhle.com/mugs/nhl/20262027/${encodeURIComponent(club)}/${encodeURIComponent(player.id)}.png`;
+  const avatar = (player, club) => {
+    const fallback = `https://assets.nhle.com/mugs/nhl/20252026/${encodeURIComponent(club)}/${encodeURIComponent(player.id)}.png`;
+    const initials = player.name.split(/\s+/).map(x=>x[0]).slice(0,2).join('');
+    return `<img src="${escape(picture(player, club))}" alt="${escape(player.name)}" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='${escape(fallback)}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"><span class="mi-avatar-fallback" style="display:none">${escape(initials)}</span>`;
+  };
 
   async function load(code) {
     if (cache.has(code)) return cache.get(code);
@@ -19,16 +24,20 @@
     return payload;
   }
 
-  function leaderboard(payload, opponent, targetId) {
+  function leaderboard(payload, opponent, targetId, club) {
     const rows = payload.players.map(player => {
       const games = player.games.filter(game => game.opponent === opponent);
       return {player, gp: games.length, g: sum(games, 'goals'), a: sum(games, 'assists'), pts: sum(games, 'points')};
-    }).filter(row => row.gp > 0).sort((a,b) => b.pts/a.gp - a.pts/b.gp || b.pts - a.pts || b.gp - a.gp).slice(0, 12);
-    $m(targetId).innerHTML = rows.length ? rows.map(row => `<tr><td><span class="mi-person"><img src="${picture(row.player.id)}" alt="" loading="lazy" onerror="this.style.display='none'"><span><strong>${escape(row.player.name)}</strong><small>#${escape(row.player.number ?? '—')} · ${escape(row.player.position)}</small></span></span></td><td>${row.gp}</td><td>${row.g}</td><td>${row.a}</td><td><strong>${row.pts}</strong></td><td>${(row.pts/row.gp).toFixed(2)}</td></tr>`).join('') : '<tr><td colspan="6">No completed games against this opponent in the covered seasons.</td></tr>';
+    }).filter(row => row.gp >= Number($m('mi-min-games').value));
+    const sort = $m('mi-sort').value;
+    const metric = row => sort === 'ppg' ? row.pts/row.gp : sort === 'points' ? row.pts : sort === 'goals' ? row.g : row.a;
+    rows.sort((a,b) => metric(b)-metric(a) || b.pts-a.pts || b.gp-a.gp);
+    rows.splice(12);
+    $m(targetId).innerHTML = rows.length ? rows.map(row => `<tr><td><span class="mi-person">${avatar(row.player, club)}<span><strong>${escape(row.player.name)}</strong><small>#${escape(row.player.number ?? '—')} · ${escape(row.player.position)}</small></span></span></td><td>${row.gp}</td><td>${row.g}</td><td>${row.a}</td><td><strong>${row.pts}</strong></td><td>${(row.pts/row.gp).toFixed(2)}</td></tr>`).join('') : '<tr><td colspan="6">No completed games against this opponent in the covered seasons.</td></tr>';
     return rows.length;
   }
 
-  function hotPlayers(payload) {
+  function hotPlayers(payload, club) {
     const rows = payload.players.map(player => {
       const recent = player.games.filter(game => game.season === '20262027').slice(-5);
       const pts = sum(recent, 'points');
@@ -36,7 +45,7 @@
       for (let i = recent.length - 1; i >= 0 && recent[i].points > 0; i--) streak++;
       return {player, gp: recent.length, pts, g: sum(recent, 'goals'), a: sum(recent, 'assists'), streak};
     }).filter(row => row.gp).sort((a,b) => b.pts - a.pts || b.streak - a.streak || b.g - a.g).slice(0, 8);
-    $m('mi-hot').innerHTML = rows.length ? rows.map(row => `<tr><td><span class="mi-person"><img src="${picture(row.player.id)}" alt="" loading="lazy" onerror="this.style.display='none'"><span><strong>${escape(row.player.name)}</strong><small>${row.streak ? `${row.streak}-game point streak` : 'No active point streak'}</small></span></span></td><td>${row.gp}</td><td>${row.g}</td><td>${row.a}</td><td><strong>${row.pts}</strong></td><td>${row.gp ? (row.pts/row.gp).toFixed(2) : '—'}</td></tr>`).join('') : '<tr><td colspan="6">No completed games available this season.</td></tr>';
+    $m('mi-hot').innerHTML = rows.length ? rows.map(row => `<tr><td><span class="mi-person">${avatar(row.player, club)}<span><strong>${escape(row.player.name)}</strong><small>${row.streak ? `${row.streak}-game point streak` : 'No active point streak'}</small></span></span></td><td>${row.gp}</td><td>${row.g}</td><td>${row.a}</td><td><strong>${row.pts}</strong></td><td>${row.gp ? (row.pts/row.gp).toFixed(2) : '—'}</td></tr>`).join('') : '<tr><td colspan="6">No completed games available this season.</td></tr>';
   }
 
   async function update() {
@@ -52,18 +61,18 @@
     try {
       const [ours, theirs] = await Promise.allSettled([load(selected), opp ? load(opp) : Promise.resolve(null)]);
       if (token !== generation) return;
-      if (ours.status === 'fulfilled') hotPlayers(ours.value);
+      if (ours.status === 'fulfilled') hotPlayers(ours.value, selected);
       else $m('mi-hot').innerHTML = '<tr><td colspan="6">Player data unavailable. Run the matchup data workflow.</td></tr>';
       if (!opp) {
         $m('mi-left').innerHTML = $m('mi-right').innerHTML = '<tr><td colspan="6">No upcoming regular-season opponent found.</td></tr>';
       } else {
-        if (ours.status === 'fulfilled') leaderboard(ours.value, opp, 'mi-left');
+        if (ours.status === 'fulfilled') leaderboard(ours.value, opp, 'mi-left', selected);
         else $m('mi-left').innerHTML = '<tr><td colspan="6">Matchup data unavailable.</td></tr>';
-        if (theirs.status === 'fulfilled') leaderboard(theirs.value, selected, 'mi-right');
+        if (theirs.status === 'fulfilled') leaderboard(theirs.value, selected, 'mi-right', opp);
         else $m('mi-right').innerHTML = '<tr><td colspan="6">Opponent data unavailable.</td></tr>';
       }
       const partial = [ours, theirs].some(x => x.status === 'fulfilled' && x.value && !x.value.complete);
-      $m('mi-note').textContent = `Regular-season games, 2024–25 through 2026–27 · Active roster skaters · Ranked by PTS/GP · ${partial ? 'Some player logs unavailable; rankings may be incomplete.' : 'Minimum 1 matchup game.'}`;
+      $m('mi-note').textContent = `Regular-season games, 2024–25 through 2026–27 · Active roster skaters · Sortable matchup rankings · ${partial ? 'Some player logs unavailable; rankings may be incomplete.' : 'Minimum 1 matchup game.'}`;
     } catch (error) {
       if (token === generation) $m('mi-note').textContent = `Unable to load matchup data: ${error.message}`;
     }
@@ -77,6 +86,8 @@
       update();
       return result;
     };
+    $m('mi-sort').addEventListener('change', update);
+    $m('mi-min-games').addEventListener('change', update);
     update();
   });
 })();
