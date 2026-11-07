@@ -14,11 +14,14 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1020">
-
   <title>Hoist Official | NHL Dashboard</title>
 
   <link rel="icon" type="image/png" href="hoist-logo.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="v2.css?v=6">
+  <link rel="stylesheet" href="matchup.css?v=6">
+  <link rel="stylesheet" href="theme.css?v=2">
+  <link rel="stylesheet" href="hoist-head-to-head.css?v=1">
 
   <style>
     .brand {
@@ -64,29 +67,30 @@
         font-size: 12px;
       }
     }
+
+    /* Keep legacy snapshot data available to app.js,
+       but remove the panel from the visible Overview. */
+    #snapshot-legacy-panel {
+      display: none !important;
+    }
+
+    /* Show only the top five ranked matchup players. */
+    #mi-left > tr:nth-child(n+6),
+    #mi-right > tr:nth-child(n+6) {
+      display: none !important;
+    }
   </style>
-
-  <link rel="stylesheet" href="v2.css?v=6">
-  <link rel="stylesheet" href="matchup.css?v=6">
-  <link rel="stylesheet" href="theme.css?v=2">
-
-  <!-- New head-to-head matchup styling -->
-  <link rel="stylesheet" href="hoist-head-to-head.css?v=1">
 </head>
 
 <body>
-
 <div class="app">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-
     <a class="brand" href="#">
-      <img
-        class="hoist-brand-logo"
-        src="hoist-logo.png"
-        alt="Hoist Official logo"
-      >
+      <img class="hoist-brand-logo"
+           src="hoist-logo.png"
+           alt="Hoist Official logo">
 
       <span class="hoist-brand-name">
         HOIST <span class="brand-accent">OFFICIAL</span>
@@ -100,34 +104,28 @@
       <button class="nav-item active" data-tab="overview">
         ◫ <span>Overview</span>
       </button>
-
       <button class="nav-item" data-tab="standings">
         ▤ <span>Standings</span>
       </button>
-
       <button class="nav-item" data-tab="compare">
         ⇄ <span>Compare Teams</span>
       </button>
-
       <button class="nav-item" data-tab="analytics">
         ◈ <span>Analytics</span>
       </button>
-
       <button class="nav-item" data-tab="fantasy">
         ✦ <span>Fantasy Planner</span>
       </button>
     </nav>
 
     <div class="sidebar-bottom">
-
       <div class="sidebar-theme-control">
         <button
           class="theme-toggle"
           id="theme-toggle"
           type="button"
           aria-label="Switch to light mode"
-          aria-pressed="false"
-        >
+          aria-pressed="false">
           <span id="theme-icon" aria-hidden="true">☀</span>
           <span id="theme-label">Light mode</span>
         </button>
@@ -135,25 +133,20 @@
 
       <span class="live-dot"></span>
       NHL public data API
-
       <small>Unofficial fan project</small>
-
     </div>
-
   </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main">
 
     <header class="topbar">
-
       <div>
         <div class="eyebrow">
           2026–27 SEASON
           <span class="eyebrow-line"></span>
           NHL DASHBOARD
         </div>
-
         <h1 id="page-title">Team Overview</h1>
       </div>
 
@@ -161,23 +154,20 @@
         <span class="data-status" id="data-status">
           Connecting to NHL data…
         </span>
-
-        <button
-          class="icon-button"
-          id="refresh"
-          title="Refresh data"
-        >↻</button>
+        <button class="icon-button"
+                id="refresh"
+                title="Refresh data">↻</button>
       </div>
-
     </header>
 
     <div class="content">
 
       <!-- TEAM SELECTION -->
       <section class="team-hero panel">
-
         <div class="team-left">
-          <img id="team-logo" alt="Team logo" class="team-logo">
+          <img id="team-logo"
+               alt="Team logo"
+               class="team-logo">
 
           <div>
             <div class="eyebrow">SELECTED FRANCHISE</div>
@@ -190,19 +180,20 @@
 
         <div class="team-controls">
           <label for="team-select">SWITCH TEAM</label>
-          <select id="team-select" aria-label="Select NHL team"></select>
+          <select id="team-select"
+                  aria-label="Select NHL team"></select>
         </div>
-
       </section>
 
-      <div id="error" class="notice hidden" role="status"></div>
+      <div id="error"
+           class="notice hidden"
+           role="status"></div>
 
       <!-- OVERVIEW -->
       <section id="overview" class="tab-section">
 
-        <!-- CALENDAR -->
+        <!-- INTERACTIVE CALENDAR -->
         <article class="panel section-panel">
-
           <div class="section-head">
             <div>
               <div class="eyebrow">82-GAME CAMPAIGN</div>
@@ -226,12 +217,13 @@
             <span>Sat</span>
           </div>
 
-          <div id="v2-calendar" class="v2-calendar"></div>
+          <div id="v2-calendar"
+               class="v2-calendar"></div>
 
-          <div id="v2-calendar-detail" class="v2-detail">
+          <div id="v2-calendar-detail"
+               class="v2-detail">
             Select a game to view details.
           </div>
-
         </article>
 
         <!-- TEAM METRICS -->
@@ -246,9 +238,8 @@
           <div class="metric panel">
             <div class="metric-label">POINTS</div>
             <div class="metric-value" id="points">—</div>
-            <div class="metric-detail" id="points-detail">
-              Season total
-            </div>
+            <div class="metric-detail"
+                 id="points-detail">Season total</div>
           </div>
 
           <div class="metric panel">
@@ -269,88 +260,79 @@
 
         </div>
 
-        <!-- NEXT GAME AND RECENT RESULTS -->
+        <!-- NEXT GAME AND LAST 5 RESULTS -->
         <div class="two-col">
 
           <article class="panel section-panel">
-
             <div class="section-head">
               <div>
                 <div class="eyebrow">GAME DAY</div>
                 <h3>Next Matchup</h3>
               </div>
-
-              <span class="pill" id="next-date">UPCOMING</span>
+              <span class="pill"
+                    id="next-date">UPCOMING</span>
             </div>
 
             <div id="next-game" class="next-game">
               Loading upcoming games…
             </div>
-
           </article>
 
           <article class="panel section-panel">
-
             <div class="section-head">
               <div>
                 <div class="eyebrow">RECENT ACTION</div>
                 <h3>Last 5 Results</h3>
               </div>
-
               <span class="pill">LAST 5</span>
             </div>
 
             <div id="recent-games" class="game-list">
               Loading results…
             </div>
-
           </article>
 
         </div>
 
-        <!-- SEASON SNAPSHOT -->
-        <article class="panel section-panel">
-
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">PERFORMANCE</div>
-              <h3>Season Snapshot</h3>
+        <!-- HIDDEN LEGACY SNAPSHOT -->
+        <!-- Retained to protect app.js compatibility -->
+        <article id="snapshot-legacy-panel"
+                 class="panel section-panel"
+                 hidden>
+          <div id="snapshot" class="snapshot">
+            <div class="empty">
+              Loading statistics…
             </div>
           </div>
-
-          <div id="snapshot" class="snapshot">
-            <div class="empty">Loading statistics…</div>
-          </div>
-
         </article>
 
-        <!--
-          LAST 10 HEAD-TO-HEAD MATCHUPS
-
-          The hoist-head-to-head.js file automatically
-          inserts this section immediately above
-          Matchup Intelligence.
-
-          No duplicate HTML section is required here.
-        -->
+        <!-- LAST 10 HEAD-TO-HEAD MATCHUPS -->
+        <!-- Automatically inserted by hoist-head-to-head.js
+             above Matchup Intelligence. -->
 
         <!-- MATCHUP INTELLIGENCE -->
         <article
           class="panel section-panel mi-full"
-          id="matchup-intelligence"
-        >
+          id="matchup-intelligence">
 
           <div class="section-head mi-header">
             <div>
-              <div class="eyebrow">MATCHUP INTELLIGENCE</div>
-              <h3 id="mi-title">Players vs. Next Opponent</h3>
+              <div class="eyebrow">
+                MATCHUP INTELLIGENCE
+              </div>
+
+              <h3 id="mi-title">
+                Players vs. Next Opponent
+              </h3>
 
               <p class="mi-subtitle">
-                Recent historical production and current scoring form
+                Top 5 players by selected ranking metric
+                against the next opponent
               </p>
             </div>
           </div>
 
+          <!-- RANKING CONTROLS -->
           <div class="mi-controls">
 
             <label for="mi-sort">Rank by</label>
@@ -375,6 +357,7 @@
 
           </div>
 
+          <!-- TOP 5 PLAYERS PER TEAM -->
           <div class="mi-grid">
 
             <div>
@@ -427,14 +410,11 @@
 
           <!-- HOT PLAYERS -->
           <div class="mi-full">
-
             <div class="eyebrow">CURRENT FORM</div>
-
             <h3>Hot Players — Last 5 Games</h3>
 
             <div class="table-scroll">
               <table class="mi-table">
-
                 <thead>
                   <tr>
                     <th>PLAYER</th>
@@ -447,10 +427,8 @@
                 </thead>
 
                 <tbody id="mi-hot"></tbody>
-
               </table>
             </div>
-
           </div>
 
           <p id="mi-note" class="mi-note">
@@ -461,9 +439,9 @@
 
       </section>
 
-      <!-- LEGACY SCHEDULE - RETAINED FOR COMPATIBILITY -->
+      <!-- LEGACY SCHEDULE -->
+      <!-- Retained for app.js compatibility -->
       <section id="schedule" class="tab-section hidden">
-
         <article class="panel section-panel">
 
           <div class="section-head">
@@ -473,7 +451,8 @@
             </div>
 
             <div class="filters">
-              <select id="schedule-filter" aria-label="Filter schedule">
+              <select id="schedule-filter"
+                      aria-label="Filter schedule">
                 <option value="all">All Games</option>
                 <option value="upcoming">Upcoming</option>
                 <option value="final">Completed</option>
@@ -483,15 +462,15 @@
             </div>
           </div>
 
-          <div id="schedule-list" class="schedule-list"></div>
+          <div id="schedule-list"
+               class="schedule-list"></div>
 
         </article>
-
       </section>
 
-      <!-- LEGACY ROSTER - RETAINED FOR COMPATIBILITY -->
+      <!-- LEGACY ROSTER -->
+      <!-- Retained for app.js compatibility -->
       <section id="roster" class="tab-section hidden">
-
         <article class="panel section-panel">
 
           <div class="section-head">
@@ -499,7 +478,6 @@
               <div class="eyebrow">PLAYER PERSONNEL</div>
               <h3>Active Roster</h3>
             </div>
-
             <span class="pill">NHL ROSTER DATA</span>
           </div>
 
@@ -519,12 +497,10 @@
           </div>
 
         </article>
-
       </section>
 
       <!-- STANDINGS -->
       <section id="standings" class="tab-section hidden">
-
         <article class="panel section-panel">
 
           <div class="section-head">
@@ -542,11 +518,9 @@
               <option value="Central">Central Division</option>
               <option value="Pacific">Pacific Division</option>
             </select>
-
           </div>
 
           <div class="table-scroll">
-
             <table>
               <thead>
                 <tr>
@@ -562,18 +536,14 @@
               </thead>
 
               <tbody id="standings-body"></tbody>
-
             </table>
-
           </div>
 
         </article>
-
       </section>
 
       <!-- COMPARE TEAMS -->
       <section id="compare" class="tab-section hidden">
-
         <article class="panel section-panel">
 
           <div class="section-head">
@@ -584,19 +554,21 @@
           </div>
 
           <div class="compare-selectors">
-            <select id="compare-a" aria-label="First team"></select>
+            <select id="compare-a"
+                    aria-label="First team"></select>
 
             <span class="versus">VS</span>
 
-            <select id="compare-b" aria-label="Second team"></select>
+            <select id="compare-b"
+                    aria-label="Second team"></select>
           </div>
 
-          <div id="compare-results" class="compare-results">
+          <div id="compare-results"
+               class="compare-results">
             Loading standings…
           </div>
 
         </article>
-
       </section>
 
       <!-- ANALYTICS -->
@@ -605,24 +577,23 @@
         <div class="two-col">
 
           <article class="panel section-panel">
-
             <div class="section-head">
               <div>
                 <div class="eyebrow">
                   LAST 10 COMPLETED GAMES
                 </div>
-
                 <h3>Goals & Results</h3>
               </div>
             </div>
 
-            <div id="v2-chart" class="v2-chart"></div>
-            <div id="v2-form" class="v2-summary"></div>
+            <div id="v2-chart"
+                 class="v2-chart"></div>
 
+            <div id="v2-form"
+                 class="v2-summary"></div>
           </article>
 
           <article class="panel section-panel">
-
             <div class="section-head">
               <div>
                 <div class="eyebrow">SEASON SPLITS</div>
@@ -631,13 +602,11 @@
             </div>
 
             <div id="v2-splits"></div>
-
           </article>
 
         </div>
 
         <article class="panel section-panel">
-
           <div class="section-head">
             <div>
               <div class="eyebrow">SCORING</div>
@@ -652,7 +621,6 @@
           </div>
 
           <div class="table-scroll">
-
             <table>
               <thead>
                 <tr>
@@ -667,13 +635,10 @@
 
               <tbody id="v2-players"></tbody>
             </table>
-
           </div>
-
         </article>
 
         <article class="panel section-panel">
-
           <div class="section-head">
             <div>
               <div class="eyebrow">ALL TEAMS</div>
@@ -687,15 +652,14 @@
             </select>
           </div>
 
-          <div id="v2-leaders" class="v2-leaders"></div>
-
+          <div id="v2-leaders"
+               class="v2-leaders"></div>
         </article>
 
       </section>
 
       <!-- FANTASY PLANNER -->
       <section id="fantasy" class="tab-section hidden">
-
         <article class="panel section-panel">
 
           <div class="section-head">
@@ -717,13 +681,11 @@
             <label for="v2-fantasy-team">
               Reference team
             </label>
-
             <select id="v2-fantasy-team"></select>
 
             <label for="v2-fantasy-mode">
               Window
             </label>
-
             <select id="v2-fantasy-mode">
               <option value="season">Full season</option>
               <option value="remaining">Remaining games</option>
@@ -731,10 +693,10 @@
 
           </div>
 
-          <div id="v2-fantasy-status" class="muted"></div>
+          <div id="v2-fantasy-status"
+               class="muted"></div>
 
           <div class="table-scroll">
-
             <table>
               <thead>
                 <tr>
@@ -747,11 +709,9 @@
 
               <tbody id="v2-fantasy-results"></tbody>
             </table>
-
           </div>
 
         </article>
-
       </section>
 
       <!-- FOOTER -->
@@ -762,9 +722,7 @@
       </footer>
 
     </div>
-
   </main>
-
 </div>
 
 <!-- EXISTING DASHBOARD SCRIPTS -->
@@ -773,7 +731,7 @@
 <script src="v2.js?v=6" defer></script>
 <script src="matchup.js?v=6" defer></script>
 
-<!-- NEW LAST 10 HEAD-TO-HEAD MATCHUPS -->
+<!-- LAST 10 HEAD-TO-HEAD MATCHUPS -->
 <script src="hoist-head-to-head.js?v=4" defer></script>
 
 </body>
