@@ -79,7 +79,7 @@ def player_logs(player):
                 games.append(game)
     games.sort(key=lambda game: (game['date'], str(game['gameId'])))
     return {'id': pid, 'name': player['name'], 'number': player['number'],
-            'position': player['position'], 'games': games}
+            'position': player['position'], 'headshot': player.get('headshot'), 'games': games}
 
 
 def main():
@@ -96,7 +96,7 @@ def main():
                     players.append({'id': pid,
                                     'name': (localized(player.get('firstName')) + ' ' + localized(player.get('lastName'))).strip(),
                                     'number': player.get('sweaterNumber'),
-                                    'position': player.get('positionCode', '')})
+                                    'position': player.get('positionCode', ''), 'headshot': player.get('headshot')})
             roster_players[code] = players
         except (OSError, ValueError) as exc:
             print(f'Roster missing for {code}: {exc}', flush=True)
