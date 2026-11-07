@@ -472,4 +472,130 @@
     font-size: 14px !important;
   }
 
+/* ==========================================================
+   HOIST OFFICIAL - OVERVIEW TOP LAYOUT
+   VERSION 6
+   Calendar 60% | Game Day + Last 5 40%
+   ========================================================== */
+
+/* Main top row */
+#overview .hoist-overview-top {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 18px;
+  align-items: start;
+  min-width: 0;
+}
+
+/* Preserve full-width placement within Overview grid */
+@media (min-width: 1100px) {
+  #overview > .hoist-overview-top {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Right-side vertical stack */
+#overview .hoist-overview-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+/* Compact calendar panel */
+#overview .hoist-calendar-panel {
+  padding: 16px !important;
+  min-width: 0;
+}
+
+#overview .hoist-calendar-panel .section-head {
+  margin-bottom: 10px;
+}
+
+#overview .hoist-calendar-panel .section-head h3 {
+  font-size: 19px;
+}
+
+/* Shorter calendar cells */
+#overview .hoist-calendar-panel .v2-calendar .v2-day {
+  min-height: 48px;
+  padding: 4px;
+}
+
+#overview .hoist-calendar-panel .v2-calendar {
+  gap: 3px;
+}
+
+#overview .hoist-calendar-panel .v2-calendar img {
+  max-width: 18px;
+  max-height: 18px;
+}
+
+#overview .hoist-calendar-panel .v2-weekdays {
+  font-size: 11px;
+}
+
+/* Game Day card */
+#overview .hoist-gameday-panel {
+  padding: 14px !important;
+  min-width: 0;
+}
+
+#overview .hoist-gameday-panel .section-head {
+  margin-bottom: 8px;
+}
+
+#overview .hoist-gameday-panel .section-head h3 {
+  font-size: 18px;
+}
+
+#overview .hoist-gameday-panel .next-game {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Last 5 Results card */
+#overview .hoist-lastfive-panel {
+  padding: 14px !important;
+  min-width: 0;
+}
+
+#overview .hoist-lastfive-panel .section-head {
+  margin-bottom: 8px;
+}
+
+#overview .hoist-lastfive-panel .section-head h3 {
+  font-size: 18px;
+}
+
+#overview .hoist-lastfive-panel .game-list {
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* Tablet and mobile */
+@media (max-width: 850px) {
+  #overview .hoist-overview-top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #overview .hoist-overview-right {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  #overview .hoist-overview-right {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #overview .hoist-calendar-panel,
+  #overview .hoist-gameday-panel,
+  #overview .hoist-lastfive-panel {
+    padding: 12px !important;
+  }
+}
+
 }
