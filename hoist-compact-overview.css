@@ -2,11 +2,14 @@
 /* ==========================================================
    HOIST OFFICIAL
    COMPLETE COMPACT OVERVIEW STYLESHEET
-   Version 3
+   VERSION 4
 
-   Compact Overview
-   Side-by-side H2H and Matchup Intelligence
-   Improved font readability
+   - Compact overview
+   - Head-to-Head left
+   - Matchup Intelligence right
+   - Larger, readable fonts
+   - Same panel spacing and layout
+   - Responsive mobile design
    ========================================================== */
 
 
@@ -132,8 +135,7 @@
 
 
 /* ==========================================================
-   5. HEAD TO HEAD + MATCHUP INTELLIGENCE
-   DESKTOP SIDE-BY-SIDE LAYOUT
+   5. DESKTOP SIDE-BY-SIDE LAYOUT
    ========================================================== */
 
 @media (min-width: 1100px) {
@@ -147,21 +149,21 @@
     align-items: start;
   }
 
-  /* All other Overview sections span both columns */
+  /* Other overview sections remain full width */
 
   #overview > :not(#hoist-h2h):not(#matchup-intelligence) {
     grid-column: 1 / -1;
     min-width: 0;
   }
 
-  /* Head-to-head stays on the left */
+  /* Head-to-Head on left */
 
   #hoist-h2h {
     grid-column: 1;
     min-width: 0;
   }
 
-  /* Matchup Intelligence stays on the right */
+  /* Matchup Intelligence on right */
 
   #matchup-intelligence {
     grid-column: 2;
@@ -189,19 +191,19 @@
 
 #hoist-h2h .section-head h3,
 #matchup-intelligence .section-head h3 {
-  font-size: 19px !important;
+  font-size: 21px !important;
   line-height: 1.35;
   margin: 3px 0 5px !important;
 }
 
 #hoist-h2h .eyebrow,
 #matchup-intelligence .eyebrow {
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
 #hoist-h2h .muted,
 #matchup-intelligence .mi-subtitle {
-  font-size: 13px !important;
+  font-size: 14px !important;
   line-height: 1.45;
 }
 
@@ -219,11 +221,11 @@
 
 #hoist-h2h .h2h-summary > span {
   padding: 7px 9px !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 #hoist-h2h .h2h-summary strong {
-  font-size: 19px !important;
+  font-size: 21px !important;
 }
 
 
@@ -237,11 +239,11 @@
 }
 
 #hoist-h2h .h2h-game-info strong {
-  font-size: 14px !important;
+  font-size: 15px !important;
 }
 
 #hoist-h2h .h2h-game-info small {
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 #hoist-h2h .h2h-game-score img {
@@ -251,11 +253,11 @@
 }
 
 #hoist-h2h .h2h-game-score b {
-  font-size: 15px !important;
+  font-size: 16px !important;
 }
 
 #hoist-h2h .h2h-team-tag {
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 
@@ -274,32 +276,32 @@
 }
 
 #hoist-h2h .h2h-score-grid h4 {
-  font-size: 15px !important;
+  font-size: 16px !important;
 }
 
 #hoist-h2h .h2h-goal,
 #hoist-h2h .h2h-goalie,
 #hoist-h2h .h2h-stat {
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 #hoist-h2h .h2h-muted,
 #hoist-h2h .h2h-period,
 #hoist-h2h .h2h-time {
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 #hoist-h2h table {
   width: 100%;
-  font-size: 12px;
+  font-size: 13px !important;
 }
 
 #hoist-h2h th {
-  font-size: 11px;
+  font-size: 12px !important;
 }
 
 #hoist-h2h td {
-  font-size: 12px;
+  font-size: 13px !important;
 }
 
 
@@ -315,20 +317,17 @@
 }
 
 #matchup-intelligence .mi-controls label {
-  font-size: 12px !important;
+  font-size: 13px !important;
 }
 
 #matchup-intelligence .mi-controls select {
-  font-size: 13px !important;
+  font-size: 14px !important;
   padding: 6px !important;
 }
 
 
 /* ==========================================================
    11. MATCHUP INTELLIGENCE PLAYER TABLES
-
-   Stack the two matchup tables inside the
-   narrower right-hand panel.
    ========================================================== */
 
 #matchup-intelligence .mi-grid {
@@ -343,7 +342,7 @@
 
 #matchup-intelligence .mi-grid h3,
 #matchup-intelligence .mi-full h3 {
-  font-size: 16px !important;
+  font-size: 18px !important;
   margin-bottom: 8px !important;
 }
 
@@ -354,17 +353,17 @@
 
 #matchup-intelligence .mi-table {
   width: 100%;
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 #matchup-intelligence .mi-table th {
   padding: 6px 5px !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
 }
 
 #matchup-intelligence .mi-table td {
   padding: 6px 5px !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 #matchup-intelligence .mi-table img {
@@ -388,11 +387,11 @@
 }
 
 #matchup-intelligence .mi-full h3 {
-  font-size: 16px !important;
+  font-size: 18px !important;
 }
 
 #matchup-intelligence .mi-note {
-  font-size: 12px !important;
+  font-size: 13px !important;
   line-height: 1.45;
 }
 
@@ -450,119 +449,15 @@
 
   #hoist-h2h .section-head h3,
   #matchup-intelligence .section-head h3 {
-    font-size: 17px !important;
+    font-size: 19px !important;
   }
 
   #matchup-intelligence .mi-table th {
-    font-size: 10px !important;
+    font-size: 11px !important;
   }
 
   #matchup-intelligence .mi-table td {
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
 
-/* ==========================================
-   HOIST OFFICIAL - SLIGHTLY LARGER FONTS
-   FONT SIZE ONLY - NO LAYOUT CHANGES
-   ========================================== */
-
-/* Main section headings */
-#hoist-h2h .section-head h3,
-#matchup-intelligence .section-head h3 {
-  font-size: 21px !important;
 }
-
-/* Section labels */
-#hoist-h2h .eyebrow,
-#matchup-intelligence .eyebrow {
-  font-size: 12px !important;
-}
-
-/* Descriptions */
-#hoist-h2h .muted,
-#matchup-intelligence .mi-subtitle {
-  font-size: 14px !important;
-}
-
-/* Head-to-head summary */
-#hoist-h2h .h2h-summary > span {
-  font-size: 14px !important;
-}
-
-#hoist-h2h .h2h-summary strong {
-  font-size: 21px !important;
-}
-
-/* Head-to-head game rows */
-#hoist-h2h .h2h-game-info strong {
-  font-size: 15px !important;
-}
-
-#hoist-h2h .h2h-game-info small {
-  font-size: 13px !important;
-}
-
-#hoist-h2h .h2h-game-score b {
-  font-size: 16px !important;
-}
-
-#hoist-h2h .h2h-team-tag {
-  font-size: 13px !important;
-}
-
-/* Expanded scoresheets */
-#hoist-h2h .h2h-score-grid h4 {
-  font-size: 16px !important;
-}
-
-#hoist-h2h .h2h-goal,
-#hoist-h2h .h2h-goalie,
-#hoist-h2h .h2h-stat {
-  font-size: 14px !important;
-}
-
-#hoist-h2h .h2h-muted,
-#hoist-h2h .h2h-period,
-#hoist-h2h .h2h-time {
-  font-size: 13px !important;
-}
-
-#hoist-h2h table,
-#hoist-h2h td {
-  font-size: 13px !important;
-}
-
-#hoist-h2h th {
-  font-size: 12px !important;
-}
-
-/* Matchup Intelligence controls */
-#matchup-intelligence .mi-controls label {
-  font-size: 13px !important;
-}
-
-#matchup-intelligence .mi-controls select {
-  font-size: 14px !important;
-}
-
-/* Player table section headings */
-#matchup-intelligence .mi-grid h3,
-#matchup-intelligence .mi-full h3 {
-  font-size: 18px !important;
-}
-
-/* Player table column headings */
-#matchup-intelligence .mi-table th {
-  font-size: 12px !important;
-}
-
-/* Player names and statistics */
-#matchup-intelligence .mi-table td {
-  font-size: 14px !important;
-}
-
-/* Bottom note */
-#matchup-intelligence .mi-note {
-  font-size: 13px !important;
-}
-
