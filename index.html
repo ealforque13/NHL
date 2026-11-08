@@ -156,44 +156,43 @@
     }
 
     /* ==========================================
-       OVERVIEW GRID
-       Calendar uses natural height
+       OVERVIEW GRID — EQUAL HEIGHT PANELS
        ========================================== */
 
     #overview .hoist-overview-top {
       display: grid !important;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) !important;
       gap: 18px !important;
-      align-items: start !important;
+      align-items: stretch !important;
       min-width: 0;
     }
 
     #overview .hoist-overview-right {
       display: flex !important;
       flex-direction: column !important;
-      align-self: start !important;
-      height: auto !important;
+      align-self: stretch !important;
       min-width: 0;
       min-height: 0;
     }
 
     #overview .hoist-calendar-panel {
-      align-self: start !important;
-      height: auto !important;
+      align-self: stretch !important;
+      height: 100% !important;
       min-height: 0 !important;
       padding: 16px !important;
       min-width: 0;
+      box-sizing: border-box;
     }
 
     /* ==========================================
-       HOT PLAYERS — EXISTING TYPOGRAPHY
+       HOT PLAYERS — MATCH CALENDAR HEIGHT
        ========================================== */
 
     #overview .hoist-hot-players-panel {
       display: flex !important;
       flex-direction: column !important;
       flex: 1 !important;
-      height: auto !important;
+      height: 100% !important;
       min-height: 0;
       min-width: 0;
       box-sizing: border-box;
@@ -212,14 +211,14 @@
 
     #overview .hoist-hot-players-panel .table-scroll {
       display: flex;
-      flex: 1;
+      flex: 1 !important;
       min-height: 0;
       overflow-x: auto;
     }
 
     #overview .hoist-hot-players-panel .mi-table {
-      width: 100%;
-      height: 100%;
+      width: 100% !important;
+      height: 100% !important;
       border-collapse: collapse;
       font-size: 14px !important;
     }
@@ -228,12 +227,8 @@
       height: 46px;
     }
 
-    #overview .hoist-hot-players-panel .mi-table tbody {
-      height: 100%;
-    }
-
     #overview .hoist-hot-players-panel .mi-table tbody tr {
-      height: 12.5%;
+      height: auto !important;
     }
 
     #overview .hoist-hot-players-panel .mi-table th {
@@ -270,8 +265,7 @@
     }
 
     /* ==========================================
-       LAST FIVE GAME INDICATORS
-       Five small horizontal squares
+       LAST FIVE GAME POINT INDICATORS
        ========================================== */
 
     #overview #mi-hot .hoist-last-five-boxes {
@@ -667,17 +661,22 @@
         grid-template-columns: minmax(0, 1fr) !important;
       }
 
+      #overview .hoist-calendar-panel,
+      #overview .hoist-overview-right,
       #overview .hoist-hot-players-panel {
         height: auto !important;
+      }
+
+      #overview .hoist-hot-players-panel {
         padding: 15px !important;
       }
 
       #overview .hoist-hot-players-panel .mi-table {
-        height: auto;
+        height: auto !important;
       }
 
       #overview .hoist-hot-players-panel .mi-table tbody tr {
-        height: auto;
+        height: auto !important;
       }
 
       #overview .hoist-hot-players-panel .mi-table td {
@@ -1058,7 +1057,6 @@
                   <thead>
                     <tr>
                       <th>PLAYER</th>
-                      <th>GP</th>
                       <th>G</th>
                       <th>A</th>
                       <th>PTS</th>
@@ -1461,7 +1459,7 @@
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=8" defer></script>
 <script src="v2.js?v=10" defer></script>
-<script src="matchup.js?v=7" defer></script>
+<script src="matchup.js?v=8" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 </body>
