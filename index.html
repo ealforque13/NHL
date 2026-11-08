@@ -1043,6 +1043,93 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 #standings .hoist-playoff-cutoff td { position:relative; padding:12px 0 !important; border-top:2px solid #d05a69; border-bottom:0; text-align:center !important; }
 #standings .hoist-playoff-cutoff span { color:#e07c88; font-size:10px; font-weight:800; letter-spacing:.12em; }
 #standings .hoist-standings-scroll[hidden], #hoist-conference-tables[hidden], #hoist-flat-standings[hidden], #hoist-standings-subtitle[hidden] { display:none !important; }
+
+/* ACTIVE SORT COLUMN: CLEAN ELECTRIC BLUE WITH ROW SEPARATORS */
+#standings { --hoist-active-blue:#48a9ff; }
+#standings th[data-standings-sort][aria-sort="ascending"],
+#standings th[data-standings-sort][aria-sort="descending"] {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.15) !important;
+  border-top:1px solid rgba(72,169,255,.48) !important;
+  border-bottom:1px solid rgba(72,169,255,.48) !important;
+}
+#standings[data-active-sort="gamesPlayed"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(2),
+#standings[data-active-sort="gamesPlayed"] #hoist-standings-table tbody tr td:nth-child(2) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="wins"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(3),
+#standings[data-active-sort="wins"] #hoist-standings-table tbody tr td:nth-child(3) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="losses"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(4),
+#standings[data-active-sort="losses"] #hoist-standings-table tbody tr td:nth-child(4) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="otLosses"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(5),
+#standings[data-active-sort="otLosses"] #hoist-standings-table tbody tr td:nth-child(5) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="points"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(6),
+#standings[data-active-sort="points"] #hoist-standings-table tbody tr td:nth-child(6) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="pointPctg"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(7),
+#standings[data-active-sort="pointPctg"] #hoist-standings-table tbody tr td:nth-child(7) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="regulationWins"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(8),
+#standings[data-active-sort="regulationWins"] #hoist-standings-table tbody tr td:nth-child(8) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="regulationPlusOtWins"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(9),
+#standings[data-active-sort="regulationPlusOtWins"] #hoist-standings-table tbody tr td:nth-child(9) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="goalFor"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(10),
+#standings[data-active-sort="goalFor"] #hoist-standings-table tbody tr td:nth-child(10) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="goalAgainst"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(11),
+#standings[data-active-sort="goalAgainst"] #hoist-standings-table tbody tr td:nth-child(11) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
+#standings[data-active-sort="goalDifferential"] .hoist-conference-table tr:not(.hoist-division-header):not(.hoist-playoff-cutoff) td:nth-child(12),
+#standings[data-active-sort="goalDifferential"] #hoist-standings-table tbody tr td:nth-child(12) {
+  color:var(--hoist-active-blue) !important;
+  background:rgba(48,145,245,.095) !important;
+  border-top:1px solid rgba(72,169,255,.52) !important;
+  border-bottom:1px solid rgba(72,169,255,.52) !important;
+}
 </style>
 </head>
 
@@ -1925,6 +2012,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const display = $('hoist-conference-tables');
     if (!body || !table || !display) return;
     painting = true;
+    $('standings').dataset.activeSort = customSort || '';
     const selected = $('standings-filter')?.value || 'all';
     const grouped = ['all','Eastern','Western'].includes(selected);
     $('hoist-flat-standings').hidden = grouped;
