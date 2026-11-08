@@ -503,21 +503,31 @@
     }
 
     /* ==========================================
-       SOLID CALENDAR SCORE / GAME TIME BOXES
+       UNIFORM SOLID SCORE / GAME TIME BOXES
        ========================================== */
 
     #overview #v2-calendar .hoist-calendar-score-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: fit-content;
-      min-width: 54px;
-      padding: 5px 8px;
-      margin: 0 !important;
-      border-radius: 7px;
-      box-sizing: border-box;
-      flex-shrink: 0;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+
+      width: 76px !important;
+      min-width: 76px !important;
+      max-width: 76px !important;
+
+      height: 28px !important;
+      min-height: 28px !important;
+      max-height: 28px !important;
+
+      padding: 0 4px !important;
+      margin: 0 auto !important;
+
+      border-radius: 7px !important;
+      box-sizing: border-box !important;
+      flex-shrink: 0 !important;
+
       color: #ffffff !important;
+      white-space: nowrap !important;
     }
 
     /* HOME — SOLID RED */
@@ -550,23 +560,15 @@
       color: #ffffff !important;
     }
 
-    #overview #v2-calendar .hoist-result-letter {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
+    /* ALL W / L / O LETTERS WHITE */
 
-    #overview #v2-calendar .hoist-result-w {
-      color: #4ade80;
-    }
-
-    #overview #v2-calendar .hoist-result-l {
-      color: #fb7185;
-    }
-
-    #overview #v2-calendar .hoist-result-o {
-      color: #fbbf24;
+    #overview #v2-calendar .hoist-result-letter,
+    #overview #v2-calendar .hoist-result-w,
+    #overview #v2-calendar .hoist-result-l,
+    #overview #v2-calendar .hoist-result-o,
+    #overview #v2-calendar .hoist-calendar-score-box span,
+    #overview #v2-calendar .hoist-calendar-score-box strong {
+      color: #ffffff !important;
     }
 
     /* ==========================================
@@ -790,15 +792,24 @@
         max-height: 24px !important;
       }
 
+      /* UNIFORM MOBILE SCORE / TIME BOXES */
+
       #overview #v2-calendar .hoist-calendar-score-box {
-        min-width: 0;
-        padding: 3px 4px;
-        border-radius: 5px;
+        width: 46px !important;
+        min-width: 46px !important;
+        max-width: 46px !important;
+
+        height: 22px !important;
+        min-height: 22px !important;
+        max-height: 22px !important;
+
+        padding: 0 2px !important;
+        border-radius: 5px !important;
       }
 
       #overview #v2-calendar .hoist-calendar-score {
         font-size: 9px !important;
-        gap: 2px;
+        gap: 2px !important;
       }
 
       #overview #v2-calendar .hoist-result-letter {
