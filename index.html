@@ -961,6 +961,58 @@ html body .mi-avatar-fallback,
 }
 
 /* ==========================================
+   MATCHED HEAD TO HEAD TYPOGRAPHY
+   ========================================== */
+
+/* Both HEAD TO HEAD eyebrow labels */
+
+#matchup-intelligence .hoist-h2h-eyebrow,
+#matchup-intelligence .mi-header .eyebrow,
+#overview .hoist-head-to-head .eyebrow,
+#overview [id*="head-to-head"] .eyebrow {
+  font-family: inherit !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .11em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  color: #91afd8 !important;
+  margin-bottom: 7px !important;
+}
+
+/* Both main headings */
+
+#matchup-intelligence #mi-title,
+#overview .hoist-head-to-head h3,
+#overview [id*="head-to-head"] .section-head h3 {
+  font-family: inherit !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+}
+
+/* Both section header alignments */
+
+#matchup-intelligence .mi-header,
+#overview .hoist-head-to-head .section-head,
+#overview [id*="head-to-head"] .section-head {
+  align-items: flex-start !important;
+}
+
+/* Team-specific matchup headings */
+
+#matchup-intelligence #mi-left-title,
+#matchup-intelligence #mi-right-title {
+  font-family: inherit !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+/* ==========================================
    RESPONSIVE
    ========================================== */
 
@@ -1085,6 +1137,11 @@ html body .mi-avatar-fallback,
 
   #matchup-intelligence .hoist-sort-arrow {
     font-size: 8px !important;
+  }
+
+  #overview .hoist-head-to-head h3,
+  #overview [id*="head-to-head"] .section-head h3 {
+    font-size: 21px !important;
   }
 }
 
@@ -1470,16 +1527,12 @@ html body .mi-avatar-fallback,
   </div>
 </article>
 
-<!-- ==========================================
-     HEAD TO HEAD — PLAYER STATISTICS
-     ========================================== -->
+<!-- HEAD TO HEAD — PLAYER STATISTICS -->
 
 <article
   class="panel section-panel mi-full"
   id="matchup-intelligence"
 >
-
-  <!-- SECTION HEADER -->
 
   <div class="section-head mi-header">
 
@@ -1523,8 +1576,6 @@ html body .mi-avatar-fallback,
 
   <div class="mi-grid">
 
-    <!-- SELECTED TEAM -->
-
     <div>
 
       <h3 id="mi-left-title">
@@ -1540,7 +1591,6 @@ html body .mi-avatar-fallback,
             <tr>
 
               <th>PLAYER</th>
-
               <th>GP</th>
 
               <th data-sort="goals">
@@ -1599,8 +1649,6 @@ html body .mi-avatar-fallback,
 
     </div>
 
-    <!-- OPPONENT TEAM -->
-
     <div>
 
       <h3 id="mi-right-title">
@@ -1616,7 +1664,6 @@ html body .mi-avatar-fallback,
             <tr>
 
               <th>PLAYER</th>
-
               <th>GP</th>
 
               <th data-sort="goals">
@@ -1676,8 +1723,6 @@ html body .mi-avatar-fallback,
     </div>
 
   </div>
-
-  <!-- DATA STATUS -->
 
   <p id="mi-note" class="mi-note">
     Loading matchup statistics…
