@@ -982,6 +982,26 @@ html body .nav-item {
   }
 }
 
+
+/* Standings page only: remove selected-franchise hero. */
+body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
+#standings .hoist-playoff-group td {
+  padding: 11px 12px !important;
+  text-align:left !important;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.07em;
+  color:#91b8ec;
+  background:rgba(120,155,205,.11);
+  border-top:1px solid rgba(125,155,195,.25);
+}
+#standings .hoist-standings-status { font-size:10px; font-weight:800; letter-spacing:.05em; }
+#standings .hoist-standings-status.division { color:#4ade80; }
+#standings .hoist-standings-status.wildcard { color:#60a5fa; }
+#standings .hoist-standings-status.out { color:#91a0b5; }
+#standings #hoist-standings-table th:first-child,
+#standings #hoist-standings-table td:first-child { min-width:56px; }
+
 /* EXPANDED NHL STANDINGS */
 #standings .hoist-standings-scroll { overflow-x:auto !important; max-width:100%; }
 #standings #hoist-standings-table { width:100%; min-width:1320px; border-collapse:collapse; white-space:nowrap; }
@@ -1791,70 +1811,117 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-<!-- EXTENDED STANDINGS: CACHED DATA, SORTING, DIVISION FILTERS -->
+<!-- EXTENDED STANDINGS: NHL PLAYOFF PICTURE -->
 <script>
 (() => {
   'use strict';
   const $ = id => document.getElementById(id);
   const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const number = v => Number.isFinite(Number(v)) ? Number(v) : 0;
-  const read = (row, key) => row[key] ?? null;
+  const num = v => Number.isFinite(Number(v)) ? Number(v) : 0;
+  const abbrev = r => r.teamAbbrev?.default || r.teamAbbrev || r.abbrev || '';
+  const name = r => r.teamName?.default || r.teamName || r.teamCommonName?.default || abbrev(r);
+  const div = r => ({A:'Atlantic',M:'Metropolitan',C:'Central',P:'Pacific'}[r.divisionAbbrev] || r.divisionName || '');
+  const conf = r => r.conferenceAbbrev === 'E' ? 'Eastern' : r.conferenceAbbrev === 'W' ? 'Western' : r.conferenceName;
+  const record = (r,pre) => `${num(r[pre+'Wins'])}-${num(r[pre+'Losses'])}-${num(r[pre+'OtLosses'])}`;
+  const pct = r => r.pointPctg == null ? '—' : num(r.pointPctg).toFixed(3).replace(/^0/, '');
+  const streak = r => r.streakCode ? `${r.streakCode}${num(r.streakCount)}` : '—';
+  const divisionNames = {Eastern:['Atlantic','Metropolitan'],Western:['Central','Pacific']};
   let rows = [];
-  let sortKey = 'points';
-  let descending = true;
   let ready = false;
   let painting = false;
-  const conferenceByDivision = {Atlantic:'Eastern',Metropolitan:'Eastern',Central:'Western',Pacific:'Western'};
-  const abbrev = row => row.teamAbbrev?.default || row.teamAbbrev || row.team?.abbrev || row.abbrev || '';
-  const division = row => row.divisionName || row.division || row.divisionAbbrev || '';
-  const conference = row => row.conferenceName || row.conference || conferenceByDivision[division(row)] || '';
-  const teamName = row => row.teamName?.default || row.teamName || row.teamCommonName?.default || row.teamCommonName || row.team?.name || abbrev(row);
-  const split = (row, prefix) => `${number(row[prefix+'Wins'])}-${number(row[prefix+'Losses'])}-${number(row[prefix+'OtLosses'])}`;
-  const pct = row => read(row,'pointPctg') == null ? '—' : Number(row.pointPctg).toFixed(3).replace(/^0/, '');
-  const streak = row => row.streakCode ? `${row.streakCode}${number(row.streakCount)}` : '—';
+  let customSort = null;
+  let descending = true;
+
+  // NHL regular-season ranking tiebreakers: points, points percentage when
+  // games played differ, regulation wins, regulation+OT wins, total wins,
+  // then goal differential and goals scored. Head-to-head ties require game
+  // results not present in standings.json; NHL's own sequence resolves them.
+  function nhlRank(a,b) {
+    if (num(a.points) !== num(b.points)) return num(b.points)-num(a.points);
+    if (num(a.gamesPlayed) !== num(b.gamesPlayed)) return num(b.pointPctg)-num(a.pointPctg);
+    for (const key of ['regulationWins','regulationPlusOtWins','wins']) {
+      if (num(a[key]) !== num(b[key])) return num(b[key])-num(a[key]);
+    }
+    if (Number.isFinite(Number(a.leagueSequence)) && Number.isFinite(Number(b.leagueSequence)) && a.leagueSequence !== b.leagueSequence)
+      return num(a.leagueSequence)-num(b.leagueSequence);
+    for (const key of ['goalDifferential','goalFor']) {
+      if (num(a[key]) !== num(b[key])) return num(b[key])-num(a[key]);
+    }
+    return name(a).localeCompare(name(b));
+  }
+
+  function playoffGroups(conference) {
+    const all = rows.filter(r => conf(r) === conference);
+    const divisions = divisionNames[conference];
+    const qualified = new Set();
+    const groups = [];
+    for (const division of divisions) {
+      const top = all.filter(r => div(r) === division).sort(nhlRank).slice(0,3);
+      top.forEach(r => qualified.add(abbrev(r)));
+      groups.push({label:`${division.toUpperCase()} — TOP 3`,status:'division',teams:top});
+    }
+    const remaining = all.filter(r => !qualified.has(abbrev(r))).sort(nhlRank);
+    groups.push({label:'WILD CARD — TOP 2',status:'wildcard',teams:remaining.slice(0,2)});
+    groups.push({label:'REMAINING TEAMS',status:'out',teams:remaining.slice(2)});
+    return groups;
+  }
+
+  function teamRow(r,rank,status) {
+    const code = abbrev(r);
+    const logo = r.teamLogo || `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
+    const diff = num(r.goalDifferential);
+    const indicator = status === 'division' ? 'D' : status === 'wildcard' ? 'WC' : '—';
+    return `<tr data-hoist-playoff-row="1">
+      <td>${rank} <span class="hoist-standings-status ${status}" title="${status === 'division' ? 'Division playoff position' : status === 'wildcard' ? 'Wild card playoff position' : 'Outside playoff positions'}">${indicator}</span></td>
+      <td><span class="hoist-standing-team"><img src="${escapeHtml(logo)}" alt="" loading="lazy"><span>${escapeHtml(name(r))}</span></span></td>
+      <td>${num(r.gamesPlayed)}</td><td>${num(r.wins)}</td><td>${num(r.losses)}</td><td>${num(r.otLosses)}</td>
+      <td><strong>${num(r.points)}</strong></td><td>${pct(r)}</td><td>${num(r.regulationWins)}</td><td>${num(r.regulationPlusOtWins)}</td>
+      <td>${num(r.goalFor)}</td><td>${num(r.goalAgainst)}</td><td>${diff > 0 ? '+' : ''}${diff}</td>
+      <td>${record(r,'home')}</td><td>${record(r,'road')}</td><td>${num(r.shootoutWins)}-${num(r.shootoutLosses)}</td>
+      <td>${record(r,'l10')}</td><td>${escapeHtml(streak(r))}</td>
+    </tr>`;
+  }
+
   function render() {
     if (!ready || painting) return;
     const body = $('standings-body');
-    const filter = $('standings-filter');
     const table = $('hoist-standings-table');
     if (!body || !table) return;
     painting = true;
-    const selected = filter?.value || 'all';
-    const filtered = rows.filter(r => selected === 'all' || conference(r) === selected || division(r) === selected ||
-      (selected === 'Eastern' && ['A','M'].includes(r.conferenceAbbrev)) ||
-      (selected === 'Western' && ['W'].includes(r.conferenceAbbrev)) ||
-      ({Atlantic:'A',Metropolitan:'M',Central:'C',Pacific:'P'}[selected] === r.divisionAbbrev));
-    filtered.sort((a,b) => {
-      const av = number(a[sortKey]), bv = number(b[sortKey]);
-      return (descending ? bv-av : av-bv) || number(b.points)-number(a.points) || number(b.regulationWins)-number(a.regulationWins) || teamName(a).localeCompare(teamName(b));
-    });
-    body.innerHTML = filtered.map((r,i) => {
-      const code = abbrev(r);
-      const logo = `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
-      const diff = number(r.goalDifferential);
-      return `<tr>
-        <td>${i+1}</td>
-        <td><span class="hoist-standing-team"><img src="${logo}" alt="" loading="lazy"><span>${escapeHtml(teamName(r))}</span></span></td>
-        <td>${number(r.gamesPlayed)}</td><td>${number(r.wins)}</td><td>${number(r.losses)}</td>
-        <td>${number(r.otLosses)}</td><td><strong>${number(r.points)}</strong></td>
-        <td>${pct(r)}</td><td>${number(r.regulationWins)}</td><td>${number(r.regulationPlusOtWins)}</td>
-        <td>${number(r.goalFor)}</td><td>${number(r.goalAgainst)}</td>
-        <td>${diff>0?'+':''}${diff}</td>
-        <td>${split(r,'home')}</td><td>${split(r,'road')}</td>
-        <td>${number(r.shootoutWins)}-${number(r.shootoutLosses)}</td>
-        <td>${split(r,'l10')}</td><td>${escapeHtml(streak(r))}</td>
-      </tr>`;
-    }).join('') || '<tr><td colspan="18">No standings available for this filter.</td></tr>';
+    const selected = $('standings-filter')?.value || 'all';
+    let html = '';
+    if (customSort) {
+      // Manual column sorting temporarily replaces the playoff-picture grouping.
+      const relevant = rows.filter(r => selected === 'all' || conf(r) === selected || div(r) === selected);
+      relevant.sort((a,b) => (descending ? num(b[customSort])-num(a[customSort]) : num(a[customSort])-num(b[customSort])) || nhlRank(a,b));
+      html = relevant.map((r,i) => teamRow(r,i+1,'out')).join('');
+    } else if (selected === 'all' || selected === 'Eastern' || selected === 'Western') {
+      const conferences = selected === 'all' ? ['Eastern','Western'] : [selected];
+      for (const conference of conferences) {
+        html += `<tr class="hoist-playoff-group"><td colspan="18">${conference.toUpperCase()} CONFERENCE</td></tr>`;
+        let rank = 0;
+        for (const group of playoffGroups(conference)) {
+          html += `<tr class="hoist-playoff-group"><td colspan="18">${escapeHtml(group.label)}</td></tr>`;
+          html += group.teams.map(r => teamRow(r,++rank,group.status)).join('');
+        }
+      }
+    } else {
+      const relevant = rows.filter(r => div(r) === selected).sort(nhlRank);
+      const qualifiers = new Set(playoffGroups(['Atlantic','Metropolitan'].includes(selected) ? 'Eastern' : 'Western')
+        .filter(g => g.status !== 'out').flatMap(g => g.teams.map(abbrev)));
+      html = relevant.map((r,i) => teamRow(r,i+1,qualifiers.has(abbrev(r)) ? (i<3?'division':'wildcard') : 'out')).join('');
+    }
+    body.innerHTML = html || '<tr data-hoist-playoff-row="1"><td colspan="18">No standings available.</td></tr>';
     table.querySelectorAll('th[data-standings-sort]').forEach(th => {
-      th.setAttribute('aria-sort', th.dataset.standingsSort === sortKey ? (descending ? 'descending':'ascending') : 'none');
+      th.setAttribute('aria-sort', customSort === th.dataset.standingsSort ? (descending?'descending':'ascending') : 'none');
     });
     painting = false;
   }
+
   async function load() {
-    const urls = ['data/standings.json','standings.json'];
-    for (const url of urls) {
+    for (const url of ['data/standings.json','standings.json']) {
       try {
-        const response = await fetch(url, {cache:'no-cache'});
+        const response = await fetch(url,{cache:'no-cache'});
         if (!response.ok) continue;
         const data = await response.json();
         const candidate = Array.isArray(data) ? data : (data.standings || data.teams || data.data);
@@ -1863,35 +1930,44 @@ document.addEventListener("DOMContentLoaded", function () {
         ready = true;
         render();
         return;
-      } catch (e) { console.warn('Standings cache:',url,e); }
+      } catch(e) { console.warn('Standings:',url,e); }
     }
-    console.warn('Extended standings: could not find standings.json in data/ or site root.');
+    console.warn('Unable to load standings JSON.');
   }
-  document.addEventListener('DOMContentLoaded', () => {
+
+  function updateHeroVisibility() {
+    const active = !$('standings')?.classList.contains('hidden');
+    document.body.classList.toggle('hoist-standings-active',active);
+  }
+
+  document.addEventListener('DOMContentLoaded',() => {
     const body = $('standings-body');
     const filter = $('standings-filter');
     const table = $('hoist-standings-table');
     if (!body || !filter || !table) return;
-    // Handle filter changes before the legacy standings renderer can replace the extended rows.
-    filter.addEventListener('change', event => {
+    updateHeroVisibility();
+    new MutationObserver(updateHeroVisibility).observe($('standings'),{attributes:true,attributeFilter:['class']});
+    filter.addEventListener('change',event => {
       if (!ready) return;
       event.stopImmediatePropagation();
+      customSort = null;
       render();
-    }, true);
+    },true);
     table.querySelectorAll('th[data-standings-sort]').forEach(th => {
       th.tabIndex = 0;
       th.setAttribute('role','button');
       const choose = () => {
         const key = th.dataset.standingsSort;
-        if (sortKey === key) descending = !descending;
-        else { sortKey = key; descending = !['losses','otLosses','goalAgainst'].includes(key); }
+        if (customSort === key) descending = !descending;
+        else {customSort = key; descending = !['losses','otLosses','goalAgainst'].includes(key);}
         render();
       };
-      th.addEventListener('click', choose);
-      th.addEventListener('keydown', e => {if(e.key==='Enter'||e.key===' '){e.preventDefault();choose();}});
+      th.addEventListener('click',choose);
+      th.addEventListener('keydown',event => {if(event.key === 'Enter' || event.key === ' '){event.preventDefault();choose();}});
     });
-    // Preserve the expanded columns when other site scripts refresh standings.
-    new MutationObserver(() => { if (ready && !painting && body.firstElementChild?.children.length !== 18) render(); }).observe(body,{childList:true});
+    new MutationObserver(() => {
+      if (ready && !painting && !body.querySelector('[data-hoist-playoff-row]')) render();
+    }).observe(body,{childList:true});
     load();
   });
 })();
