@@ -5,7 +5,6 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- Apply saved theme before page loads -->
   <script>
     try {
       if (localStorage.getItem("hoist-theme") === "light") {
@@ -21,20 +20,17 @@
 
   <link rel="icon" type="image/png" href="hoist-logo.png">
 
-  <!-- MAIN STYLESHEETS -->
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="v2.css?v=6">
   <link rel="stylesheet" href="matchup.css?v=6">
   <link rel="stylesheet" href="theme.css?v=2">
   <link rel="stylesheet" href="hoist-head-to-head.css?v=5">
-
-  <!-- COMPACT OVERVIEW + CALENDAR IMPROVEMENTS -->
-  <link rel="stylesheet" href="hoist-compact-overview.css?v=7">
+  <link rel="stylesheet" href="hoist-compact-overview.css?v=8">
 
   <style>
-    /* ========================================
-       BRAND
-       ======================================== */
+    /* ==========================================
+       HOIST OFFICIAL - BRAND
+       ========================================== */
 
     .brand {
       display: flex;
@@ -69,39 +65,97 @@
       font-weight: 600;
     }
 
-    @media (max-width: 750px) {
-      .hoist-brand-logo {
-        width: 36px;
-        height: 36px;
-      }
+    /* ==========================================
+       SELECTED FRANCHISE + INTEGRATED STATS
+       ========================================== */
 
-      .hoist-brand-name {
-        font-size: 12px;
-      }
+    .team-hero.hoist-franchise-hero {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 16px !important;
+      padding: 20px 24px !important;
+      min-width: 0;
     }
 
-    /* ========================================
-       HIDE LEGACY SNAPSHOT
-       ======================================== */
-
-    #snapshot-legacy-panel {
-      display: none !important;
+    .hoist-franchise-identity {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-width: 0;
     }
 
-    /* ========================================
-       MATCHUP INTELLIGENCE
-       TOP FIVE PLAYERS ONLY
-       ======================================== */
-
-    #mi-left > tr:nth-child(n+6),
-    #mi-right > tr:nth-child(n+6) {
-      display: none !important;
+    .hoist-franchise-identity .team-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
     }
 
-    /* ========================================
-       OVERVIEW TOP LAYOUT
-       CALENDAR 60% | RIGHT COLUMN 40%
-       ======================================== */
+    .hoist-franchise-identity .team-logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .hoist-franchise-identity #team-name {
+      font-size: 26px;
+      line-height: 1.2;
+      margin: 4px 0;
+    }
+
+    .hoist-franchise-identity #team-meta {
+      font-size: 14px;
+    }
+
+    .hoist-franchise-identity .team-controls {
+      flex-shrink: 0;
+    }
+
+    .hoist-franchise-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .hoist-franchise-stat {
+      min-width: 0;
+      padding: 14px 16px;
+      border: 1px solid rgba(140, 165, 205, 0.15);
+      border-radius: 12px;
+      background: rgba(120, 150, 200, 0.055);
+    }
+
+    .hoist-franchise-stat .metric-label {
+      font-size: 12px !important;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .hoist-franchise-stat .metric-value {
+      font-size: 28px !important;
+      font-weight: 800;
+      line-height: 1.2;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+
+    .hoist-franchise-stat .metric-value.small {
+      font-size: 21px !important;
+    }
+
+    .hoist-franchise-stat .metric-detail {
+      font-size: 12px !important;
+      margin-top: 5px;
+    }
+
+    /* ==========================================
+       OVERVIEW TOP: CALENDAR 60% / RIGHT 40%
+       ========================================== */
 
     #overview .hoist-overview-top {
       display: grid;
@@ -124,7 +178,6 @@
       min-width: 0;
     }
 
-    /* Calendar panel */
     #overview .hoist-calendar-panel {
       padding: 16px !important;
       min-width: 0;
@@ -146,17 +199,19 @@
       font-size: 11px;
     }
 
-    /* Game Day */
-    #overview .hoist-gameday-panel {
+    #overview .hoist-gameday-panel,
+    #overview .hoist-lastfive-panel {
       padding: 14px !important;
       min-width: 0;
     }
 
-    #overview .hoist-gameday-panel .section-head {
+    #overview .hoist-gameday-panel .section-head,
+    #overview .hoist-lastfive-panel .section-head {
       margin-bottom: 8px;
     }
 
-    #overview .hoist-gameday-panel .section-head h3 {
+    #overview .hoist-gameday-panel .section-head h3,
+    #overview .hoist-lastfive-panel .section-head h3 {
       font-size: 18px;
     }
 
@@ -165,29 +220,14 @@
       line-height: 1.4;
     }
 
-    /* Last five results */
-    #overview .hoist-lastfive-panel {
-      padding: 14px !important;
-      min-width: 0;
-    }
-
-    #overview .hoist-lastfive-panel .section-head {
-      margin-bottom: 8px;
-    }
-
-    #overview .hoist-lastfive-panel .section-head h3 {
-      font-size: 18px;
-    }
-
     #overview .hoist-lastfive-panel .game-list {
       font-size: 13px;
       line-height: 1.35;
     }
 
-    /* ========================================
-       CALENDAR VERSION 7
-       LOGO STACKING + TODAY HIGHLIGHT
-       ======================================== */
+    /* ==========================================
+       CALENDAR: LOGO ABOVE SCORE / TIME
+       ========================================== */
 
     #overview .hoist-calendar-panel .v2-day {
       min-height: 105px !important;
@@ -231,7 +271,6 @@
       line-height: 1.2;
     }
 
-    /* Today highlight */
     #v2-calendar .hoist-today {
       border: 2px solid #60a5fa !important;
       background: rgba(59, 130, 246, 0.10) !important;
@@ -254,9 +293,32 @@
       color: #93c5fd;
     }
 
-    /* ========================================
-       RESPONSIVE LAYOUT
-       ======================================== */
+    /* ==========================================
+       MATCHUP INTELLIGENCE
+       ========================================== */
+
+    #mi-left > tr:nth-child(n+6),
+    #mi-right > tr:nth-child(n+6) {
+      display: none !important;
+    }
+
+    #snapshot-legacy-panel {
+      display: none !important;
+    }
+
+    /* ==========================================
+       RESPONSIVE
+       ========================================== */
+
+    @media (max-width: 1050px) {
+      .hoist-franchise-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hoist-franchise-identity #team-name {
+        font-size: 23px;
+      }
+    }
 
     @media (max-width: 850px) {
       #overview .hoist-overview-top {
@@ -267,6 +329,52 @@
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .team-hero.hoist-franchise-hero {
+        padding: 15px !important;
+        gap: 14px !important;
+      }
+
+      .hoist-franchise-identity {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+      }
+
+      .hoist-franchise-identity .team-logo {
+        width: 55px;
+        height: 55px;
+      }
+
+      .hoist-franchise-identity #team-name {
+        font-size: 21px;
+      }
+
+      .hoist-franchise-identity .team-controls {
+        width: 100%;
+      }
+
+      .hoist-franchise-identity .team-controls select {
+        width: 100%;
+      }
+
+      .hoist-franchise-stats {
+        gap: 8px;
+      }
+
+      .hoist-franchise-stat {
+        padding: 11px;
+      }
+
+      .hoist-franchise-stat .metric-value {
+        font-size: 23px !important;
+      }
+
+      .hoist-franchise-stat .metric-value.small {
+        font-size: 17px !important;
       }
     }
 
@@ -427,47 +535,129 @@
     <div class="content">
 
       <!-- ==========================================
-           TEAM SELECTION
+           SELECTED FRANCHISE + INTEGRATED STATS
            ========================================== -->
 
-      <section class="team-hero panel">
+      <section class="team-hero panel hoist-franchise-hero">
 
-        <div class="team-left">
+        <div class="hoist-franchise-identity">
 
-          <img
-            id="team-logo"
-            alt="Team logo"
-            class="team-logo"
-          >
+          <div class="team-left">
 
-          <div>
+            <img
+              id="team-logo"
+              alt="Team logo"
+              class="team-logo"
+            >
 
-            <div class="eyebrow">SELECTED FRANCHISE</div>
+            <div>
 
-            <h2 id="team-name">Montreal Canadiens</h2>
+              <div class="eyebrow">
+                SELECTED FRANCHISE
+              </div>
 
-            <p id="team-meta">
-              Atlantic Division · Eastern Conference
-            </p>
+              <h2 id="team-name">
+                Montreal Canadiens
+              </h2>
+
+              <p id="team-meta">
+                Atlantic Division · Eastern Conference
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="team-controls">
+
+            <label for="team-select">
+              SWITCH TEAM
+            </label>
+
+            <select
+              id="team-select"
+              aria-label="Select NHL team"
+            ></select>
 
           </div>
 
         </div>
 
-        <div class="team-controls">
+        <!-- INTEGRATED TEAM STATISTICS -->
 
-          <label for="team-select">SWITCH TEAM</label>
+        <div class="hoist-franchise-stats">
 
-          <select
-            id="team-select"
-            aria-label="Select NHL team"
-          ></select>
+          <div class="hoist-franchise-stat">
+
+            <div class="metric-label">
+              RECORD
+            </div>
+
+            <div class="metric-value" id="record">—</div>
+
+            <div class="metric-detail">
+              W – L – OTL
+            </div>
+
+          </div>
+
+          <div class="hoist-franchise-stat">
+
+            <div class="metric-label">
+              POINTS
+            </div>
+
+            <div class="metric-value" id="points">—</div>
+
+            <div
+              class="metric-detail"
+              id="points-detail"
+            >
+              Season total
+            </div>
+
+          </div>
+
+          <div class="hoist-franchise-stat">
+
+            <div class="metric-label">
+              GOAL DIFFERENTIAL
+            </div>
+
+            <div class="metric-value" id="goal-diff">—</div>
+
+            <div class="metric-detail">
+              Goals for minus against
+            </div>
+
+          </div>
+
+          <div class="hoist-franchise-stat">
+
+            <div class="metric-label">
+              LAST 5 GAMES
+            </div>
+
+            <div
+              class="metric-value small"
+              id="form"
+            >—</div>
+
+            <div class="metric-detail">
+              Most recent results
+            </div>
+
+          </div>
 
         </div>
 
       </section>
 
-      <div id="error" class="notice hidden" role="status"></div>
+      <div
+        id="error"
+        class="notice hidden"
+        role="status"
+      ></div>
 
       <!-- ==========================================
            OVERVIEW
@@ -475,13 +665,11 @@
 
       <section id="overview" class="tab-section">
 
-        <!-- ==========================================
-             CALENDAR + GAME DAY + LAST 5
-             ========================================== -->
+        <!-- CALENDAR + GAME DAY + LAST FIVE -->
 
         <div class="hoist-overview-top">
 
-          <!-- LEFT: CALENDAR (60%) -->
+          <!-- LEFT: CALENDAR -->
 
           <article class="panel section-panel hoist-calendar-panel">
 
@@ -528,11 +716,9 @@
 
           </article>
 
-          <!-- RIGHT: GAME DAY + LAST FIVE (40%) -->
+          <!-- RIGHT: GAME DAY + LAST FIVE -->
 
           <div class="hoist-overview-right">
-
-            <!-- GAME DAY -->
 
             <article class="panel section-panel hoist-gameday-panel">
 
@@ -554,8 +740,6 @@
               </div>
 
             </article>
-
-            <!-- LAST FIVE RESULTS -->
 
             <article class="panel section-panel hoist-lastfive-panel">
 
@@ -581,44 +765,6 @@
         </div>
 
         <!-- ==========================================
-             TEAM METRICS
-             ========================================== -->
-
-        <div class="metrics">
-
-          <div class="metric panel">
-            <div class="metric-label">RECORD</div>
-            <div class="metric-value" id="record">—</div>
-            <div class="metric-detail">W – L – OTL</div>
-          </div>
-
-          <div class="metric panel">
-            <div class="metric-label">POINTS</div>
-            <div class="metric-value" id="points">—</div>
-            <div class="metric-detail" id="points-detail">
-              Season total
-            </div>
-          </div>
-
-          <div class="metric panel">
-            <div class="metric-label">GOAL DIFFERENTIAL</div>
-            <div class="metric-value" id="goal-diff">—</div>
-            <div class="metric-detail">
-              Goals for minus against
-            </div>
-          </div>
-
-          <div class="metric panel">
-            <div class="metric-label">LAST 5 GAMES</div>
-            <div class="metric-value small" id="form">—</div>
-            <div class="metric-detail">
-              Most recent results
-            </div>
-          </div>
-
-        </div>
-
-        <!-- ==========================================
              HIDDEN LEGACY SNAPSHOT
              ========================================== -->
 
@@ -637,10 +783,10 @@
         </article>
 
         <!-- ==========================================
-             HEAD-TO-HEAD MATCHUPS
+             HEAD-TO-HEAD
 
-             hoist-head-to-head.js automatically inserts
-             this section before Matchup Intelligence.
+             hoist-head-to-head.js inserts its panel
+             before Matchup Intelligence.
              ========================================== -->
 
         <!-- ==========================================
@@ -672,8 +818,6 @@
 
           </div>
 
-          <!-- MATCHUP CONTROLS -->
-
           <div class="mi-controls">
 
             <label for="mi-sort">
@@ -700,8 +844,6 @@
             </select>
 
           </div>
-
-          <!-- TOP FIVE PLAYER TABLES -->
 
           <div class="mi-grid">
 
@@ -736,7 +878,7 @@
 
             </div>
 
-            <!-- OPPOSING TEAM -->
+            <!-- OPPONENT -->
 
             <div>
 
@@ -811,7 +953,7 @@
       </section>
 
       <!-- ==========================================
-           LEGACY SCHEDULE
+           SEASON SCHEDULE
            ========================================== -->
 
       <section id="schedule" class="tab-section hidden">
@@ -852,7 +994,7 @@
       </section>
 
       <!-- ==========================================
-           LEGACY ROSTER
+           ROSTER
            ========================================== -->
 
       <section id="roster" class="tab-section hidden">
@@ -1132,8 +1274,6 @@
           <p class="muted">
             Find teams playing on dates when your selected
             team is off. Regular-season games only.
-            Counts are based on the complete published
-            schedule, not future games only.
           </p>
 
           <div class="v2-controls">
@@ -1200,19 +1340,17 @@
 </div>
 
 <!-- ==========================================
-     DASHBOARD JAVASCRIPT
+     JAVASCRIPT
      ========================================== -->
 
 <script src="theme.js?v=2" defer></script>
 
 <script src="app.js?v=6" defer></script>
 
-<!-- Updated calendar: stacked logos + Today badge -->
 <script src="v2.js?v=7" defer></script>
 
 <script src="matchup.js?v=6" defer></script>
 
-<!-- Head-to-Head and expandable scoresheets -->
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 </body>
