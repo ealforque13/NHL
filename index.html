@@ -245,7 +245,8 @@ html body .section-panel {
 #overview .hoist-hot-players-panel .mi-table {
   width: 100% !important;
   height: 100% !important;
-  border-collapse: collapse;
+  border-collapse: collapse !important;
+  table-layout: fixed !important;
   font-size: 14px !important;
 }
 
@@ -361,7 +362,7 @@ html body .section-panel {
   display: block !important;
   top: auto !important;
   bottom: 7px !important;
-  right: 0 !important;
+  right: 5px !important;
   width: max-content !important;
   max-width: none !important;
   margin: 0 !important;
@@ -384,38 +385,43 @@ html body .section-panel {
 }
 
 /* ==========================================
-   HOT PLAYERS — EVEN STAT COLUMN SPACING
+   HOT PLAYERS — COMPACT STAT COLUMNS
    ========================================== */
 
 /*
-  PLAYER = 55%
-  G      = 15%
-  A      = 15%
-  PTS    = 15%
+  PLAYER = 64%
+  G      = 12%
+  A      = 12%
+  PTS    = 12%
 
-  This section changes only Hot Players.
+  Only changes the Hot Players table.
+  Calendar layout is unchanged.
 */
 
 #overview .hoist-hot-players-panel .mi-table {
   width: 100% !important;
   table-layout: fixed !important;
+  border-collapse: collapse !important;
 }
 
 #overview .hoist-hot-players-panel .mi-table th:first-child,
 #overview .hoist-hot-players-panel .mi-table td:first-child {
-  width: 55% !important;
+  width: 64% !important;
   text-align: left !important;
 }
 
 #overview .hoist-hot-players-panel .mi-table th:nth-child(n+2),
 #overview .hoist-hot-players-panel .mi-table td:nth-child(n+2) {
-  width: 15% !important;
+  width: 12% !important;
   text-align: center !important;
   box-sizing: border-box !important;
+  padding-left: 3px !important;
+  padding-right: 3px !important;
 }
 
 #overview #mi-hot .hoist-hot-performance {
   right: 5px !important;
+  bottom: 7px !important;
   text-align: right !important;
   text-shadow: none !important;
 }
