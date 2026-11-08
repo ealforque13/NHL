@@ -395,7 +395,7 @@ html body .section-panel {
 #overview .hoist-next-teams {
   display: flex !important;
   align-items: center !important;
-  justify-content: center;
+  justify-content: center !important;
   gap: 6px;
   white-space: nowrap;
 }
@@ -440,19 +440,15 @@ html body .section-panel {
 }
 
 /* ==========================================
-   CALENDAR — CONNECTED DATE GRID
+   CONNECTED CALENDAR GRID
    ========================================== */
 
 #overview .hoist-calendar-panel .v2-calendar {
   display: grid !important;
   grid-template-columns: repeat(7,minmax(0,1fr)) !important;
-
-  /* No spacing between date boxes */
   gap: 0 !important;
   column-gap: 0 !important;
   row-gap: 0 !important;
-
-  /* Outer top and left outlines */
   border-top: 1px solid rgba(125,155,195,.30) !important;
   border-left: 1px solid rgba(125,155,195,.30) !important;
   border-radius: 0 !important;
@@ -462,64 +458,49 @@ html body .section-panel {
   font-size: 11px;
 }
 
-/* Each date cell connects to its neighbours */
-
 #overview .hoist-calendar-panel .v2-day {
   aspect-ratio: 1/1 !important;
   min-height: 0 !important;
   height: auto !important;
   width: 100% !important;
-
   margin: 0 !important;
   padding: 6px !important;
-
   position: relative !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
-
-  /* Single shared outlines */
   border: 0 !important;
   border-right: 1px solid rgba(125,155,195,.30) !important;
   border-bottom: 1px solid rgba(125,155,195,.30) !important;
-
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
 /* ==========================================
-   CALENDAR — GAME POSITIONING
+   CALENDAR GAME POSITIONING
    ========================================== */
 
 #overview #v2-calendar .v2-game.hoist-calendar-game,
 #overview #v2-calendar .v2-game.hoist-home-game,
 #overview #v2-calendar .v2-game.hoist-away-game {
   position: absolute !important;
-
   top: auto !important;
-
-  /* Touch bottom edge of date cell */
   bottom: 0 !important;
-
   left: 0 !important;
   right: 0 !important;
-
   display: flex !important;
   flex-direction: column !important;
-  align-items: center !important;
+  align-items: stretch !important;
   justify-content: flex-end !important;
-
   width: 100% !important;
+  max-width: none !important;
   height: auto !important;
   min-height: 0 !important;
-
   gap: 12px !important;
-
   padding: 0 !important;
   margin: 0 !important;
-
+  box-sizing: border-box !important;
   text-align: center;
   white-space: normal !important;
-
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -532,17 +513,15 @@ html body .section-panel {
 #overview #v2-calendar
 .hoist-calendar-game .hoist-calendar-logo {
   display: block;
-
   width: 44px !important;
   height: 44px !important;
   min-width: 44px !important;
   max-width: 44px !important;
   max-height: 44px !important;
-
   flex: none !important;
   object-fit: contain;
+  align-self: center !important;
   margin: 0 auto !important;
-
   transition: transform .15s ease;
 }
 
@@ -552,35 +531,29 @@ html body .section-panel {
 }
 
 /* ==========================================
-   SCORE / TIME BOXES
-   IDENTICAL SIZE — FLUSH TO BOTTOM
+   FULL-WIDTH SCORE AND TIME BARS
    ========================================== */
 
 #overview #v2-calendar .hoist-calendar-score-box {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  align-self: stretch !important;
 
-  width: 76px !important;
-  min-width: 76px !important;
-  max-width: 76px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
 
   height: 28px !important;
   min-height: 28px !important;
   max-height: 28px !important;
-
   flex: 0 0 28px !important;
 
   padding: 0 !important;
-
-  /* No gap underneath */
-  margin: 0 auto !important;
-  margin-bottom: 0 !important;
-
+  margin: 0 !important;
   box-sizing: border-box !important;
   border-radius: 0 !important;
   overflow: hidden !important;
-
   color: #ffffff !important;
   white-space: nowrap !important;
 }
@@ -601,7 +574,7 @@ html body .section-panel {
   border: 1px solid #2563eb !important;
 }
 
-/* Normalize score and time contents */
+/* NORMALIZE SCORE/TIME CONTENTS */
 
 #overview #v2-calendar
 .hoist-calendar-score-box > * {
@@ -617,15 +590,12 @@ html body .section-panel {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-
   gap: 4px !important;
   font-size: 12px !important;
   font-weight: 800 !important;
   line-height: 1 !important;
   white-space: nowrap !important;
 }
-
-/* White score, time and result text */
 
 #overview #v2-calendar .hoist-calendar-score-box,
 #overview #v2-calendar .hoist-calendar-score-box *,
@@ -657,10 +627,8 @@ html body .section-panel {
   top: 5px;
   right: 5px;
   padding: 2px 4px;
-
   background: #2563eb;
   color: #fff;
-
   font-size: 8px;
   font-weight: 800;
   letter-spacing: .04em;
@@ -673,7 +641,6 @@ html body .section-panel {
 
 /* ==========================================
    CALENDAR LEGEND
-   MATCHES GAME BOX COLOURS
    ========================================== */
 
 .hoist-calendar-legend {
@@ -681,7 +648,6 @@ html body .section-panel {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
   gap: 24px;
   padding: 12px 0 4px;
 }
@@ -690,7 +656,6 @@ html body .section-panel {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-
   font-size: 12px;
   font-weight: 650;
 }
@@ -699,7 +664,6 @@ html body .section-panel {
   display: inline-block;
   width: 12px;
   height: 12px;
-
   box-sizing: border-box;
   border-radius: 0 !important;
   flex-shrink: 0;
@@ -733,7 +697,6 @@ html body .section-panel {
   width: 100% !important;
   max-width: 100% !important;
   min-width: 0 !important;
-
   box-sizing: border-box !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -795,7 +758,6 @@ html body .mi-avatar-fallback,
    ========================================== */
 
 @media (max-width: 1050px) {
-
   .hoist-franchise-stats {
     grid-template-columns: repeat(2,minmax(0,1fr));
   }
@@ -803,11 +765,9 @@ html body .mi-avatar-fallback,
   .hoist-franchise-identity #team-name {
     font-size: 23px;
   }
-
 }
 
 @media (max-width: 850px) {
-
   #overview .hoist-overview-top {
     grid-template-columns: minmax(0,1fr) !important;
   }
@@ -836,11 +796,9 @@ html body .mi-avatar-fallback,
     height: 36px !important;
     min-width: 36px !important;
   }
-
 }
 
 @media (max-width: 650px) {
-
   .team-hero.hoist-franchise-hero {
     padding: 15px !important;
     gap: 14px !important;
@@ -904,7 +862,6 @@ html body .mi-avatar-fallback,
     justify-content: flex-start;
     padding-top: 3px;
   }
-
 }
 
 /* ==========================================
@@ -912,7 +869,6 @@ html body .mi-avatar-fallback,
    ========================================== */
 
 @media (max-width: 600px) {
-
   #overview .hoist-calendar-panel,
   #overview .hoist-hot-players-panel {
     padding: 12px !important;
@@ -925,14 +881,16 @@ html body .mi-avatar-fallback,
     padding: 3px !important;
   }
 
-  /* Keep game boxes against bottom */
-
   #overview #v2-calendar .v2-game.hoist-calendar-game,
   #overview #v2-calendar .v2-game.hoist-home-game,
   #overview #v2-calendar .v2-game.hoist-away-game {
     bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
     gap: 5px !important;
-    padding-bottom: 0 !important;
+    padding: 0 !important;
+    align-items: stretch !important;
   }
 
   #overview #v2-calendar
@@ -944,21 +902,18 @@ html body .mi-avatar-fallback,
     max-height: 24px !important;
   }
 
-  /* Identical mobile score/time boxes */
+  /* Full-width mobile bars */
 
   #overview #v2-calendar .hoist-calendar-score-box {
-    width: 46px !important;
-    min-width: 46px !important;
-    max-width: 46px !important;
-
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
     height: 22px !important;
     min-height: 22px !important;
     max-height: 22px !important;
-
     flex: 0 0 22px !important;
-
     padding: 0 !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
     border-radius: 0 !important;
   }
 
@@ -979,7 +934,6 @@ html body .mi-avatar-fallback,
   .hoist-calendar-legend {
     gap: 16px;
   }
-
 }
 
 </style>
@@ -989,9 +943,7 @@ html body .mi-avatar-fallback,
 
 <div class="app">
 
-<!-- ==========================================
-     SIDEBAR
-     ========================================== -->
+<!-- SIDEBAR -->
 
 <aside class="sidebar">
 
@@ -1011,7 +963,6 @@ html body .mi-avatar-fallback,
   <div class="side-label">NAVIGATION</div>
 
   <nav id="nav">
-
     <button class="nav-item active" data-tab="overview">
       ◫ <span>Overview</span>
     </button>
@@ -1031,11 +982,9 @@ html body .mi-avatar-fallback,
     <button class="nav-item" data-tab="fantasy">
       ✦ <span>Fantasy Planner</span>
     </button>
-
   </nav>
 
   <div class="sidebar-bottom">
-
     <div class="sidebar-theme-control">
       <button
         class="theme-toggle"
@@ -1052,19 +1001,15 @@ html body .mi-avatar-fallback,
     <span class="live-dot"></span>
     NHL public data API
     <small>Unofficial fan project</small>
-
   </div>
 
 </aside>
 
-<!-- ==========================================
-     MAIN
-     ========================================== -->
+<!-- MAIN -->
 
 <main class="main">
 
 <header class="topbar">
-
   <div>
     <div class="eyebrow">
       2026–27 SEASON
@@ -1076,7 +1021,6 @@ html body .mi-avatar-fallback,
   </div>
 
   <div class="top-actions">
-
     <span class="data-status" id="data-status">
       Connecting to NHL data…
     </span>
@@ -1087,23 +1031,17 @@ html body .mi-avatar-fallback,
       title="Refresh data"
       type="button"
     >↻</button>
-
   </div>
-
 </header>
 
 <div class="content">
 
-<!-- ==========================================
-     FRANCHISE HERO
-     ========================================== -->
+<!-- FRANCHISE HERO -->
 
 <section class="team-hero panel hoist-franchise-hero">
 
   <div class="hoist-franchise-identity">
-
     <div class="team-left">
-
       <img
         id="team-logo"
         alt="Team logo"
@@ -1117,7 +1055,6 @@ html body .mi-avatar-fallback,
           Atlantic Division · Eastern Conference
         </p>
       </div>
-
     </div>
 
     <div class="team-controls">
@@ -1127,7 +1064,6 @@ html body .mi-avatar-fallback,
         aria-label="Select NHL team"
       ></select>
     </div>
-
   </div>
 
   <div class="hoist-franchise-stats">
@@ -1159,14 +1095,11 @@ html body .mi-avatar-fallback,
     </div>
 
   </div>
-
 </section>
 
 <div id="error" class="notice hidden" role="status"></div>
 
-<!-- ==========================================
-     OVERVIEW
-     ========================================== -->
+<!-- OVERVIEW -->
 
 <section id="overview" class="tab-section">
 
@@ -1181,27 +1114,18 @@ html body .mi-avatar-fallback,
       <h3 class="hoist-calendar-title">Calendar</h3>
 
       <div class="hoist-calendar-next-inline">
-
         <strong>NEXT GAME</strong>
-
-        <span id="next-date" class="pill">
-          UPCOMING
-        </span>
+        <span id="next-date" class="pill">UPCOMING</span>
 
         <div id="next-game" class="next-game">
           Loading upcoming games…
         </div>
-
       </div>
 
       <div class="v2-controls hoist-calendar-month-controls">
-
         <button id="v2-prev" type="button">←</button>
-
         <strong id="v2-month-label"></strong>
-
         <button id="v2-next" type="button">→</button>
-
       </div>
 
     </div>
@@ -1216,14 +1140,9 @@ html body .mi-avatar-fallback,
       <span>Sat</span>
     </div>
 
-    <!-- CONNECTED CALENDAR GRID -->
-
     <div id="v2-calendar" class="v2-calendar"></div>
 
-    <!-- CALENDAR LEGEND -->
-
     <div class="hoist-calendar-legend">
-
       <span class="hoist-legend-item">
         <span class="hoist-legend-dot hoist-legend-home"></span>
         Home Game
@@ -1233,7 +1152,6 @@ html body .mi-avatar-fallback,
         <span class="hoist-legend-dot hoist-legend-away"></span>
         Away Game
       </span>
-
     </div>
 
     <div id="v2-calendar-detail" class="v2-detail">
@@ -1245,23 +1163,18 @@ html body .mi-avatar-fallback,
   <!-- HOT PLAYERS -->
 
   <div class="hoist-overview-right">
-
     <article class="panel section-panel hoist-hot-players-panel">
 
       <div class="section-head">
-
         <div>
           <h3>Hot Players — Last 5 Games</h3>
         </div>
 
         <span class="pill">LAST 5</span>
-
       </div>
 
       <div class="table-scroll">
-
         <table class="mi-table">
-
           <thead>
             <tr>
               <th>PLAYER</th>
@@ -1273,13 +1186,10 @@ html body .mi-avatar-fallback,
           </thead>
 
           <tbody id="mi-hot"></tbody>
-
         </table>
-
       </div>
 
     </article>
-
   </div>
 
 </div>
@@ -1300,9 +1210,7 @@ html body .mi-avatar-fallback,
 
 <!-- HEAD TO HEAD INJECTED BY JAVASCRIPT -->
 
-<!-- ==========================================
-     MATCHUP INTELLIGENCE
-     ========================================== -->
+<!-- MATCHUP INTELLIGENCE -->
 
 <article
   class="panel section-panel mi-full"
@@ -1310,7 +1218,6 @@ html body .mi-avatar-fallback,
 >
 
   <div class="section-head mi-header">
-
     <div>
       <div class="eyebrow">MATCHUP INTELLIGENCE</div>
       <h3 id="mi-title">Players vs. Next Opponent</h3>
@@ -1318,13 +1225,11 @@ html body .mi-avatar-fallback,
         Top 5 players against the next opponent
       </p>
     </div>
-
   </div>
 
   <div class="mi-controls">
 
     <label for="mi-sort">Rank by</label>
-
     <select id="mi-sort">
       <option value="ppg">Points per game</option>
       <option value="points">Total points</option>
@@ -1349,15 +1254,12 @@ html body .mi-avatar-fallback,
   <div class="mi-grid">
 
     <div>
-
       <h3 id="mi-left-title">
         Your team vs. opponent
       </h3>
 
       <div class="table-scroll">
-
         <table class="mi-table">
-
           <thead>
             <tr>
               <th>PLAYER</th>
@@ -1368,25 +1270,18 @@ html body .mi-avatar-fallback,
               <th>PTS/GP</th>
             </tr>
           </thead>
-
           <tbody id="mi-left"></tbody>
-
         </table>
-
       </div>
-
     </div>
 
     <div>
-
       <h3 id="mi-right-title">
         Opponent vs. your team
       </h3>
 
       <div class="table-scroll">
-
         <table class="mi-table">
-
           <thead>
             <tr>
               <th>PLAYER</th>
@@ -1397,13 +1292,9 @@ html body .mi-avatar-fallback,
               <th>PTS/GP</th>
             </tr>
           </thead>
-
           <tbody id="mi-right"></tbody>
-
         </table>
-
       </div>
-
     </div>
 
   </div>
@@ -1416,16 +1307,12 @@ html body .mi-avatar-fallback,
 
 </section>
 
-<!-- ==========================================
-     SCHEDULE
-     ========================================== -->
+<!-- SCHEDULE -->
 
 <section id="schedule" class="tab-section hidden">
-
 <article class="panel section-panel">
 
   <div class="section-head">
-
     <div>
       <div class="eyebrow">82-GAME CAMPAIGN</div>
       <h3>Season Schedule</h3>
@@ -1440,38 +1327,28 @@ html body .mi-avatar-fallback,
         <option value="away">Away</option>
       </select>
     </div>
-
   </div>
 
   <div id="schedule-list" class="schedule-list"></div>
 
 </article>
-
 </section>
 
-<!-- ==========================================
-     ROSTER
-     ========================================== -->
+<!-- ROSTER -->
 
 <section id="roster" class="tab-section hidden">
-
 <article class="panel section-panel">
 
   <div class="section-head">
-
     <div>
       <div class="eyebrow">PLAYER PERSONNEL</div>
       <h3>Active Roster</h3>
     </div>
-
     <span class="pill">NHL ROSTER DATA</span>
-
   </div>
 
   <div class="table-scroll">
-
     <table>
-
       <thead>
         <tr>
           <th>PLAYER</th>
@@ -1480,27 +1357,19 @@ html body .mi-avatar-fallback,
           <th>SHOOTS / CATCHES</th>
         </tr>
       </thead>
-
       <tbody id="roster-body"></tbody>
-
     </table>
-
   </div>
 
 </article>
-
 </section>
 
-<!-- ==========================================
-     STANDINGS
-     ========================================== -->
+<!-- STANDINGS -->
 
 <section id="standings" class="tab-section hidden">
-
 <article class="panel section-panel">
 
   <div class="section-head">
-
     <div>
       <div class="eyebrow">LEAGUE TABLE</div>
       <h3>Current Standings</h3>
@@ -1515,13 +1384,10 @@ html body .mi-avatar-fallback,
       <option value="Central">Central Division</option>
       <option value="Pacific">Pacific Division</option>
     </select>
-
   </div>
 
   <div class="table-scroll">
-
     <table>
-
       <thead>
         <tr>
           <th>#</th>
@@ -1534,23 +1400,16 @@ html body .mi-avatar-fallback,
           <th>DIFF</th>
         </tr>
       </thead>
-
       <tbody id="standings-body"></tbody>
-
     </table>
-
   </div>
 
 </article>
-
 </section>
 
-<!-- ==========================================
-     COMPARE TEAMS
-     ========================================== -->
+<!-- COMPARE TEAMS -->
 
 <section id="compare" class="tab-section hidden">
-
 <article class="panel section-panel">
 
   <div class="section-head">
@@ -1561,13 +1420,9 @@ html body .mi-avatar-fallback,
   </div>
 
   <div class="compare-selectors">
-
     <select id="compare-a" aria-label="First team"></select>
-
     <span class="versus">VS</span>
-
     <select id="compare-b" aria-label="Second team"></select>
-
   </div>
 
   <div id="compare-results" class="compare-results">
@@ -1575,19 +1430,15 @@ html body .mi-avatar-fallback,
   </div>
 
 </article>
-
 </section>
 
-<!-- ==========================================
-     ANALYTICS
-     ========================================== -->
+<!-- ANALYTICS -->
 
 <section id="analytics" class="tab-section hidden">
 
 <div class="two-col">
 
   <article class="panel section-panel">
-
     <div class="section-head">
       <div>
         <div class="eyebrow">LAST 10 COMPLETED GAMES</div>
@@ -1597,11 +1448,9 @@ html body .mi-avatar-fallback,
 
     <div id="v2-chart" class="v2-chart"></div>
     <div id="v2-form" class="v2-summary"></div>
-
   </article>
 
   <article class="panel section-panel">
-
     <div class="section-head">
       <div>
         <div class="eyebrow">SEASON SPLITS</div>
@@ -1610,7 +1459,6 @@ html body .mi-avatar-fallback,
     </div>
 
     <div id="v2-splits"></div>
-
   </article>
 
 </div>
@@ -1618,7 +1466,6 @@ html body .mi-avatar-fallback,
 <article class="panel section-panel">
 
   <div class="section-head">
-
     <div>
       <div class="eyebrow">SCORING</div>
       <h3>Team Player Leaders</h3>
@@ -1629,13 +1476,10 @@ html body .mi-avatar-fallback,
       <option value="goals">Goals</option>
       <option value="assists">Assists</option>
     </select>
-
   </div>
 
   <div class="table-scroll">
-
     <table>
-
       <thead>
         <tr>
           <th>PLAYER</th>
@@ -1646,11 +1490,8 @@ html body .mi-avatar-fallback,
           <th>PTS/GP</th>
         </tr>
       </thead>
-
       <tbody id="v2-players"></tbody>
-
     </table>
-
   </div>
 
 </article>
@@ -1658,7 +1499,6 @@ html body .mi-avatar-fallback,
 <article class="panel section-panel">
 
   <div class="section-head">
-
     <div>
       <div class="eyebrow">ALL TEAMS</div>
       <h3>NHL Scoring Leaders</h3>
@@ -1669,7 +1509,6 @@ html body .mi-avatar-fallback,
       <option value="goals">Goals</option>
       <option value="assists">Assists</option>
     </select>
-
   </div>
 
   <div id="v2-leaders" class="v2-leaders"></div>
@@ -1678,12 +1517,9 @@ html body .mi-avatar-fallback,
 
 </section>
 
-<!-- ==========================================
-     FANTASY PLANNER
-     ========================================== -->
+<!-- FANTASY PLANNER -->
 
 <section id="fantasy" class="tab-section hidden">
-
 <article class="panel section-panel">
 
   <div class="section-head">
@@ -1703,13 +1539,11 @@ html body .mi-avatar-fallback,
     <label for="v2-fantasy-team">
       Reference team
     </label>
-
     <select id="v2-fantasy-team"></select>
 
     <label for="v2-fantasy-mode">
       Window
     </label>
-
     <select id="v2-fantasy-mode">
       <option value="season">Full season</option>
       <option value="remaining">Remaining games</option>
@@ -1720,9 +1554,7 @@ html body .mi-avatar-fallback,
   <div id="v2-fantasy-status" class="muted"></div>
 
   <div class="table-scroll">
-
     <table>
-
       <thead>
         <tr>
           <th>RANK</th>
@@ -1731,20 +1563,14 @@ html body .mi-avatar-fallback,
           <th>TOTAL GAMES IN WINDOW</th>
         </tr>
       </thead>
-
       <tbody id="v2-fantasy-results"></tbody>
-
     </table>
-
   </div>
 
 </article>
-
 </section>
 
-<!-- ==========================================
-     FOOTER
-     ========================================== -->
+<!-- FOOTER -->
 
 <footer>
   Hoist Official · Unofficial NHL dashboard ·
@@ -1756,9 +1582,7 @@ html body .mi-avatar-fallback,
 </main>
 </div>
 
-<!-- ==========================================
-     JAVASCRIPT
-     ========================================== -->
+<!-- JAVASCRIPT -->
 
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=8" defer></script>
