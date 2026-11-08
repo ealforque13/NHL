@@ -127,7 +127,7 @@
       min-width: 0;
       padding: 14px 16px;
       border: 1px solid rgba(140, 165, 205, .15);
-      border-radius: 12px;
+      border-radius: 0 !important;
       background: rgba(120, 150, 200, .055);
     }
 
@@ -261,7 +261,7 @@
       height: 46px !important;
       min-width: 46px !important;
       object-fit: cover;
-      border-radius: 50%;
+      border-radius: 50% !important;
     }
 
     /* ==========================================
@@ -290,7 +290,7 @@
       max-width: 12px !important;
       max-height: 12px !important;
       box-sizing: border-box !important;
-      border-radius: 3px !important;
+      border-radius: 0 !important;
       padding: 0 !important;
       margin: 0 !important;
     }
@@ -436,7 +436,7 @@
       height: auto !important;
       width: 100%;
       box-sizing: border-box;
-      border-radius: 8px;
+      border-radius: 0 !important;
       padding: 6px !important;
       position: relative;
       overflow: hidden;
@@ -522,7 +522,7 @@
       padding: 0 4px !important;
       margin: 0 auto !important;
 
-      border-radius: 7px !important;
+      border-radius: 0 !important;
       box-sizing: border-box !important;
       flex-shrink: 0 !important;
 
@@ -585,7 +585,7 @@
       top: 5px;
       right: 5px;
       padding: 2px 4px;
-      border-radius: 4px;
+      border-radius: 0 !important;
       background: #2563eb;
       color: #fff;
       font-size: 8px;
@@ -623,7 +623,7 @@
       display: inline-block;
       width: 12px;
       height: 12px;
-      border-radius: 4px;
+      border-radius: 0 !important;
       flex-shrink: 0;
     }
 
@@ -776,7 +776,7 @@
         min-height: 0 !important;
         height: auto !important;
         padding: 3px !important;
-        border-radius: 5px;
+        border-radius: 0 !important;
       }
 
       #overview #v2-calendar .v2-game.hoist-calendar-game {
@@ -804,7 +804,7 @@
         max-height: 22px !important;
 
         padding: 0 2px !important;
-        border-radius: 5px !important;
+        border-radius: 0 !important;
       }
 
       #overview #v2-calendar .hoist-calendar-score {
@@ -824,6 +824,133 @@
       .hoist-calendar-legend {
         gap: 16px;
       }
+    }
+
+    /* ================================================
+       HOIST OFFICIAL — SHARP EDGE REDESIGN
+       ================================================ */
+
+    /* GLOBAL — REMOVE ALL ROUNDED CORNERS */
+
+    html body,
+    html body *,
+    html body *::before,
+    html body *::after {
+      border-radius: 0 !important;
+    }
+
+    /* MAIN DASHBOARD PANELS */
+
+    html body .panel,
+    html body .section-panel,
+    html body .team-hero,
+    html body .hoist-calendar-panel,
+    html body .hoist-hot-players-panel,
+    html body .hoist-franchise-stat,
+    html body .mi-full {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    /* SHARPER PANEL BORDERS */
+
+    html body .panel,
+    html body .section-panel {
+      border: 1px solid rgba(125, 155, 195, .22) !important;
+    }
+
+    /* FRANCHISE STAT CARDS */
+
+    html body .hoist-franchise-stat {
+      border-radius: 0 !important;
+      border: 1px solid rgba(125, 155, 195, .22) !important;
+    }
+
+    /* CALENDAR — SQUARE EVERY DATE */
+
+    #overview #v2-calendar .v2-day {
+      border-radius: 0 !important;
+      border: 1px solid rgba(125, 155, 195, .18);
+    }
+
+    /* CALENDAR — SQUARE SCORE AND TIME BOXES */
+
+    #overview #v2-calendar .hoist-calendar-score-box {
+      border-radius: 0 !important;
+    }
+
+    /* HOME GAME — SOLID RED */
+
+    #overview #v2-calendar
+    .hoist-home-game .hoist-calendar-score-box {
+      background: #b91c1c !important;
+      border: 1px solid #dc2626 !important;
+    }
+
+    /* AWAY GAME — SOLID BLUE */
+
+    #overview #v2-calendar
+    .hoist-away-game .hoist-calendar-score-box {
+      background: #1d4ed8 !important;
+      border: 1px solid #2563eb !important;
+    }
+
+    /* ALL CALENDAR SCORE TEXT WHITE */
+
+    #overview #v2-calendar .hoist-calendar-score,
+    #overview #v2-calendar .hoist-result-letter,
+    #overview #v2-calendar .hoist-result-w,
+    #overview #v2-calendar .hoist-result-l,
+    #overview #v2-calendar .hoist-result-o {
+      color: #ffffff !important;
+    }
+
+    /* HOT PLAYER INDICATORS — SQUARE */
+
+    #overview #mi-hot .hoist-last-five-box {
+      border-radius: 0 !important;
+    }
+
+    /* BUTTONS, SELECTS AND FILTERS */
+
+    html body button,
+    html body select,
+    html body input,
+    html body .pill,
+    html body .icon-button,
+    html body .theme-toggle,
+    html body .nav-item {
+      border-radius: 0 !important;
+    }
+
+    /* TABLES AND DATA CONTAINERS */
+
+    html body table,
+    html body th,
+    html body td,
+    html body .table-scroll,
+    html body .mi-person,
+    html body .v2-detail {
+      border-radius: 0 !important;
+    }
+
+    /* SHARP INTERACTIVE HOVER STATES */
+
+    html body button,
+    html body select,
+    html body .nav-item {
+      transition:
+        background-color .15s ease,
+        border-color .15s ease,
+        color .15s ease !important;
+    }
+
+    /* KEEP PLAYER HEADSHOTS CIRCULAR */
+
+    #overview .hoist-hot-players-panel .mi-table td img,
+    html body .mi-person img,
+    html body .mi-avatar-fallback {
+      border-radius: 50% !important;
     }
   </style>
 </head>
@@ -1481,3 +1608,4 @@
 
 </body>
 </html>
+
