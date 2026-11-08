@@ -155,7 +155,6 @@
 
     /* ==========================================
        OVERVIEW TOP LAYOUT
-       Calendar left / Last 5 right
        ========================================== */
 
     #overview .hoist-overview-top {
@@ -185,7 +184,7 @@
     }
 
     #overview .hoist-calendar-panel .section-head {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     #overview .hoist-calendar-panel .section-head h3 {
@@ -220,36 +219,68 @@
     }
 
     /* ==========================================
-       NEXT GAME DAY INSIDE CALENDAR
+       ULTRA-COMPACT NEXT GAME DAY BAR
        ========================================== */
 
     #overview .hoist-calendar-next-game {
-      padding: 11px 14px;
-      margin-bottom: 14px;
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      padding: 5px 10px !important;
+      margin-bottom: 8px !important;
+      min-height: 0 !important;
       border: 1px solid rgba(140, 165, 205, 0.20);
-      border-radius: 10px;
+      border-radius: 7px !important;
       background: rgba(120, 150, 200, 0.06);
       min-width: 0;
     }
 
     #overview .hoist-calendar-next-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 8px;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin: 0 !important;
+      flex-shrink: 0;
     }
 
     #overview .hoist-calendar-next-head strong {
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-size: 10px !important;
       font-weight: 800;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    #overview .hoist-calendar-next-head .pill {
+      font-size: 9px !important;
+      padding: 2px 6px !important;
     }
 
     #overview .hoist-calendar-next-game .next-game {
-      font-size: 13px;
-      line-height: 1.4;
+      display: flex !important;
+      flex: 1;
+      align-items: center !important;
+      justify-content: flex-end;
+      gap: 8px !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      min-height: 0 !important;
       min-width: 0;
+      font-size: 12px !important;
+      line-height: 1.25 !important;
+    }
+
+    #overview .hoist-calendar-next-game .next-game img {
+      width: 26px !important;
+      height: 26px !important;
+      max-width: 26px !important;
+      max-height: 26px !important;
+      object-fit: contain;
+    }
+
+    #overview .hoist-calendar-next-game .next-game p,
+    #overview .hoist-calendar-next-game .next-game h3,
+    #overview .hoist-calendar-next-game .next-game h4 {
+      margin: 0 !important;
     }
 
     /* ==========================================
@@ -461,21 +492,24 @@
       .hoist-franchise-stat .metric-value.small {
         font-size: 17px !important;
       }
+
+      /* Mobile game day bar */
+      #overview .hoist-calendar-next-game {
+        flex-wrap: wrap;
+        gap: 6px !important;
+        padding: 6px 8px !important;
+      }
+
+      #overview .hoist-calendar-next-game .next-game {
+        justify-content: flex-start;
+        flex-basis: 100%;
+      }
     }
 
     @media (max-width: 600px) {
       #overview .hoist-calendar-panel,
       #overview .hoist-lastfive-panel {
         padding: 12px !important;
-      }
-
-      #overview .hoist-calendar-next-game {
-        padding: 10px;
-        margin-bottom: 12px;
-      }
-
-      #overview .hoist-calendar-next-game .next-game {
-        font-size: 12px;
       }
 
       #overview .hoist-calendar-panel .v2-day {
@@ -676,44 +710,38 @@
 
         </div>
 
+        <!-- INTEGRATED TEAM STATISTICS -->
+
         <div class="hoist-franchise-stats">
 
           <div class="hoist-franchise-stat">
-
             <div class="metric-label">RECORD</div>
             <div class="metric-value" id="record">—</div>
             <div class="metric-detail">W – L – OTL</div>
-
           </div>
 
           <div class="hoist-franchise-stat">
-
             <div class="metric-label">POINTS</div>
             <div class="metric-value" id="points">—</div>
             <div class="metric-detail" id="points-detail">
               Season total
             </div>
-
           </div>
 
           <div class="hoist-franchise-stat">
-
             <div class="metric-label">GOAL DIFFERENTIAL</div>
             <div class="metric-value" id="goal-diff">—</div>
             <div class="metric-detail">
               Goals for minus against
             </div>
-
           </div>
 
           <div class="hoist-franchise-stat">
-
             <div class="metric-label">LAST 5 GAMES</div>
             <div class="metric-value small" id="form">—</div>
             <div class="metric-detail">
               Most recent results
             </div>
-
           </div>
 
         </div>
@@ -735,7 +763,7 @@
         <div class="hoist-overview-top">
 
           <!-- ======================================
-               CALENDAR WITH NEXT GAME DAY
+               CALENDAR WITH SLIM GAME DAY BAR
                ====================================== -->
 
           <article class="panel section-panel hoist-calendar-panel">
@@ -747,18 +775,14 @@
               </div>
 
               <div class="v2-controls">
-
                 <button id="v2-prev" type="button">←</button>
-
                 <strong id="v2-month-label"></strong>
-
                 <button id="v2-next" type="button">→</button>
-
               </div>
 
             </div>
 
-            <!-- NEXT GAME DAY -->
+            <!-- COMPACT NEXT GAME DAY -->
 
             <div class="hoist-calendar-next-game">
 
@@ -781,7 +805,6 @@
             <!-- WEEKDAY HEADINGS -->
 
             <div class="v2-weekdays">
-
               <span>Sun</span>
               <span>Mon</span>
               <span>Tue</span>
@@ -789,7 +812,6 @@
               <span>Thu</span>
               <span>Fri</span>
               <span>Sat</span>
-
             </div>
 
             <!-- INTERACTIVE CALENDAR -->
@@ -799,8 +821,7 @@
               class="v2-calendar"
             ></div>
 
-            <!-- HOME / AWAY LEGEND
-                 v2.js will reuse this element. -->
+            <!-- HOME / AWAY LEGEND -->
 
             <div class="hoist-calendar-legend">
 
@@ -865,18 +886,15 @@
           class="panel section-panel"
           hidden
         >
-
           <div id="snapshot" class="snapshot">
             <div class="empty">
               Loading statistics…
             </div>
           </div>
-
         </article>
 
         <!-- ======================================
              HEAD-TO-HEAD
-
              Inserted by hoist-head-to-head.js
              ====================================== -->
 
@@ -892,10 +910,7 @@
           <div class="section-head mi-header">
 
             <div>
-
-              <div class="eyebrow">
-                MATCHUP INTELLIGENCE
-              </div>
+              <div class="eyebrow">MATCHUP INTELLIGENCE</div>
 
               <h3 id="mi-title">
                 Players vs. Next Opponent
@@ -904,7 +919,6 @@
               <p class="mi-subtitle">
                 Top 5 players against the next opponent
               </p>
-
             </div>
 
           </div>
@@ -945,7 +959,6 @@
               <div class="table-scroll">
 
                 <table class="mi-table">
-
                   <thead>
                     <tr>
                       <th>PLAYER</th>
@@ -956,9 +969,7 @@
                       <th>PTS/GP</th>
                     </tr>
                   </thead>
-
                   <tbody id="mi-left"></tbody>
-
                 </table>
 
               </div>
@@ -974,7 +985,6 @@
               <div class="table-scroll">
 
                 <table class="mi-table">
-
                   <thead>
                     <tr>
                       <th>PLAYER</th>
@@ -985,9 +995,7 @@
                       <th>PTS/GP</th>
                     </tr>
                   </thead>
-
                   <tbody id="mi-right"></tbody>
-
                 </table>
 
               </div>
@@ -1007,7 +1015,6 @@
             <div class="table-scroll">
 
               <table class="mi-table">
-
                 <thead>
                   <tr>
                     <th>PLAYER</th>
@@ -1018,9 +1025,7 @@
                     <th>PTS/GP</th>
                   </tr>
                 </thead>
-
                 <tbody id="mi-hot"></tbody>
-
               </table>
 
             </div>
@@ -1098,7 +1103,6 @@
           <div class="table-scroll">
 
             <table>
-
               <thead>
                 <tr>
                   <th>PLAYER</th>
@@ -1107,9 +1111,7 @@
                   <th>SHOOTS / CATCHES</th>
                 </tr>
               </thead>
-
               <tbody id="roster-body"></tbody>
-
             </table>
 
           </div>
@@ -1148,7 +1150,6 @@
           <div class="table-scroll">
 
             <table>
-
               <thead>
                 <tr>
                   <th>#</th>
@@ -1161,9 +1162,7 @@
                   <th>DIFF</th>
                 </tr>
               </thead>
-
               <tbody id="standings-body"></tbody>
-
             </table>
 
           </div>
@@ -1181,12 +1180,10 @@
         <article class="panel section-panel">
 
           <div class="section-head">
-
             <div>
               <div class="eyebrow">HEAD TO HEAD</div>
               <h3>Team Comparison</h3>
             </div>
-
           </div>
 
           <div class="compare-selectors">
@@ -1227,18 +1224,15 @@
           <article class="panel section-panel">
 
             <div class="section-head">
-
               <div>
                 <div class="eyebrow">
                   LAST 10 COMPLETED GAMES
                 </div>
                 <h3>Goals & Results</h3>
               </div>
-
             </div>
 
             <div id="v2-chart" class="v2-chart"></div>
-
             <div id="v2-form" class="v2-summary"></div>
 
           </article>
@@ -1246,12 +1240,10 @@
           <article class="panel section-panel">
 
             <div class="section-head">
-
               <div>
                 <div class="eyebrow">SEASON SPLITS</div>
                 <h3>Team Trends</h3>
               </div>
-
             </div>
 
             <div id="v2-splits"></div>
@@ -1282,7 +1274,6 @@
           <div class="table-scroll">
 
             <table>
-
               <thead>
                 <tr>
                   <th>PLAYER</th>
@@ -1293,9 +1284,7 @@
                   <th>PTS/GP</th>
                 </tr>
               </thead>
-
               <tbody id="v2-players"></tbody>
-
             </table>
 
           </div>
@@ -1379,7 +1368,6 @@
           <div class="table-scroll">
 
             <table>
-
               <thead>
                 <tr>
                   <th>RANK</th>
@@ -1388,9 +1376,7 @@
                   <th>TOTAL GAMES IN WINDOW</th>
                 </tr>
               </thead>
-
               <tbody id="v2-fantasy-results"></tbody>
-
             </table>
 
           </div>
