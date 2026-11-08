@@ -982,6 +982,20 @@ html body .nav-item {
   }
 }
 
+/* EXPANDED NHL STANDINGS */
+#standings .hoist-standings-scroll { overflow-x:auto !important; max-width:100%; }
+#standings #hoist-standings-table { width:100%; min-width:1320px; border-collapse:collapse; white-space:nowrap; }
+#standings #hoist-standings-table th,
+#standings #hoist-standings-table td { padding:12px 10px; text-align:center; font-variant-numeric:tabular-nums; }
+#standings #hoist-standings-table th:nth-child(2),
+#standings #hoist-standings-table td:nth-child(2) { text-align:left; min-width:155px; }
+#standings #hoist-standings-table th[data-standings-sort] { cursor:pointer; user-select:none; }
+#standings #hoist-standings-table th[data-standings-sort]:hover { color:#fff; }
+#standings #hoist-standings-table th[aria-sort="ascending"],
+#standings #hoist-standings-table th[aria-sort="descending"] { color:#91b8ec; }
+#standings .hoist-standing-team { display:inline-flex; align-items:center; gap:9px; font-weight:750; }
+#standings .hoist-standing-team img { width:27px; height:27px; object-fit:contain; }
+
 </style>
 </head>
 
@@ -1464,18 +1478,28 @@ html body .nav-item {
       </select>
     </div>
 
-    <div class="table-scroll">
-      <table>
+    <div class="table-scroll hoist-standings-scroll">
+      <table id="hoist-standings-table" aria-label="NHL standings">
         <thead>
           <tr>
-            <th>#</th>
-            <th>TEAM</th>
-            <th>GP</th>
-            <th>W</th>
-            <th>L</th>
-            <th>OT</th>
-            <th>PTS</th>
-            <th>DIFF</th>
+            <th scope="col">#</th>
+            <th scope="col">TEAM</th>
+            <th scope="col" data-standings-sort="gamesPlayed">GP</th>
+            <th scope="col" data-standings-sort="wins">W</th>
+            <th scope="col" data-standings-sort="losses">L</th>
+            <th scope="col" data-standings-sort="otLosses">OT</th>
+            <th scope="col" data-standings-sort="points">PTS</th>
+            <th scope="col" data-standings-sort="pointPctg">P%</th>
+            <th scope="col" data-standings-sort="regulationWins">RW</th>
+            <th scope="col" data-standings-sort="regulationPlusOtWins">ROW</th>
+            <th scope="col" data-standings-sort="goalFor">GF</th>
+            <th scope="col" data-standings-sort="goalAgainst">GA</th>
+            <th scope="col" data-standings-sort="goalDifferential">DIFF</th>
+            <th scope="col">HOME</th>
+            <th scope="col">AWAY</th>
+            <th scope="col">S/O</th>
+            <th scope="col">L10</th>
+            <th scope="col">STRK</th>
           </tr>
         </thead>
         <tbody id="standings-body"></tbody>
@@ -1764,6 +1788,113 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+</script>
+
+
+<!-- EXTENDED STANDINGS: CACHED DATA, SORTING, DIVISION FILTERS -->
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const number = v => Number.isFinite(Number(v)) ? Number(v) : 0;
+  const read = (row, key) => row[key] ?? null;
+  let rows = [];
+  let sortKey = 'points';
+  let descending = true;
+  let ready = false;
+  let painting = false;
+  const conferenceByDivision = {Atlantic:'Eastern',Metropolitan:'Eastern',Central:'Western',Pacific:'Western'};
+  const abbrev = row => row.teamAbbrev?.default || row.teamAbbrev || row.team?.abbrev || row.abbrev || '';
+  const division = row => row.divisionName || row.division || row.divisionAbbrev || '';
+  const conference = row => row.conferenceName || row.conference || conferenceByDivision[division(row)] || '';
+  const teamName = row => row.teamName?.default || row.teamName || row.teamCommonName?.default || row.teamCommonName || row.team?.name || abbrev(row);
+  const split = (row, prefix) => `${number(row[prefix+'Wins'])}-${number(row[prefix+'Losses'])}-${number(row[prefix+'OtLosses'])}`;
+  const pct = row => read(row,'pointPctg') == null ? '—' : Number(row.pointPctg).toFixed(3).replace(/^0/, '');
+  const streak = row => row.streakCode ? `${row.streakCode}${number(row.streakCount)}` : '—';
+  function render() {
+    if (!ready || painting) return;
+    const body = $('standings-body');
+    const filter = $('standings-filter');
+    const table = $('hoist-standings-table');
+    if (!body || !table) return;
+    painting = true;
+    const selected = filter?.value || 'all';
+    const filtered = rows.filter(r => selected === 'all' || conference(r) === selected || division(r) === selected ||
+      (selected === 'Eastern' && ['A','M'].includes(r.conferenceAbbrev)) ||
+      (selected === 'Western' && ['W'].includes(r.conferenceAbbrev)) ||
+      ({Atlantic:'A',Metropolitan:'M',Central:'C',Pacific:'P'}[selected] === r.divisionAbbrev));
+    filtered.sort((a,b) => {
+      const av = number(a[sortKey]), bv = number(b[sortKey]);
+      return (descending ? bv-av : av-bv) || number(b.points)-number(a.points) || number(b.regulationWins)-number(a.regulationWins) || teamName(a).localeCompare(teamName(b));
+    });
+    body.innerHTML = filtered.map((r,i) => {
+      const code = abbrev(r);
+      const logo = `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
+      const diff = number(r.goalDifferential);
+      return `<tr>
+        <td>${i+1}</td>
+        <td><span class="hoist-standing-team"><img src="${logo}" alt="" loading="lazy"><span>${escapeHtml(teamName(r))}</span></span></td>
+        <td>${number(r.gamesPlayed)}</td><td>${number(r.wins)}</td><td>${number(r.losses)}</td>
+        <td>${number(r.otLosses)}</td><td><strong>${number(r.points)}</strong></td>
+        <td>${pct(r)}</td><td>${number(r.regulationWins)}</td><td>${number(r.regulationPlusOtWins)}</td>
+        <td>${number(r.goalFor)}</td><td>${number(r.goalAgainst)}</td>
+        <td>${diff>0?'+':''}${diff}</td>
+        <td>${split(r,'home')}</td><td>${split(r,'road')}</td>
+        <td>${number(r.shootoutWins)}-${number(r.shootoutLosses)}</td>
+        <td>${split(r,'l10')}</td><td>${escapeHtml(streak(r))}</td>
+      </tr>`;
+    }).join('') || '<tr><td colspan="18">No standings available for this filter.</td></tr>';
+    table.querySelectorAll('th[data-standings-sort]').forEach(th => {
+      th.setAttribute('aria-sort', th.dataset.standingsSort === sortKey ? (descending ? 'descending':'ascending') : 'none');
+    });
+    painting = false;
+  }
+  async function load() {
+    const urls = ['data/standings.json','standings.json'];
+    for (const url of urls) {
+      try {
+        const response = await fetch(url, {cache:'no-cache'});
+        if (!response.ok) continue;
+        const data = await response.json();
+        const candidate = Array.isArray(data) ? data : (data.standings || data.teams || data.data);
+        if (!Array.isArray(candidate) || !candidate.length) continue;
+        rows = candidate;
+        ready = true;
+        render();
+        return;
+      } catch (e) { console.warn('Standings cache:',url,e); }
+    }
+    console.warn('Extended standings: could not find standings.json in data/ or site root.');
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    const body = $('standings-body');
+    const filter = $('standings-filter');
+    const table = $('hoist-standings-table');
+    if (!body || !filter || !table) return;
+    // Handle filter changes before the legacy standings renderer can replace the extended rows.
+    filter.addEventListener('change', event => {
+      if (!ready) return;
+      event.stopImmediatePropagation();
+      render();
+    }, true);
+    table.querySelectorAll('th[data-standings-sort]').forEach(th => {
+      th.tabIndex = 0;
+      th.setAttribute('role','button');
+      const choose = () => {
+        const key = th.dataset.standingsSort;
+        if (sortKey === key) descending = !descending;
+        else { sortKey = key; descending = !['losses','otLosses','goalAgainst'].includes(key); }
+        render();
+      };
+      th.addEventListener('click', choose);
+      th.addEventListener('keydown', e => {if(e.key==='Enter'||e.key===' '){e.preventDefault();choose();}});
+    });
+    // Preserve the expanded columns when other site scripts refresh standings.
+    new MutationObserver(() => { if (ready && !painting && body.firstElementChild?.children.length !== 18) render(); }).observe(body,{childList:true});
+    load();
+  });
+})();
 </script>
 
 </body>
