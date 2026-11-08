@@ -999,16 +999,19 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 #standings .hoist-standings-status.division { color:#4ade80; }
 #standings .hoist-standings-status.wildcard { color:#60a5fa; }
 #standings .hoist-standings-status.out { color:#91a0b5; }
+#standings .hoist-standings-page-title { margin:0 0 18px; font-size:26px; font-weight:800; }
+#standings .hoist-standings-toolbar { justify-content:flex-end; }
 #standings #hoist-standings-table th:first-child,
-#standings #hoist-standings-table td:first-child { min-width:56px; }
+#standings #hoist-standings-table td:first-child { min-width:185px; }
+#standings #hoist-standings-table th:first-child { text-align:left; }
 
 /* EXPANDED NHL STANDINGS */
 #standings .hoist-standings-scroll { overflow-x:auto !important; max-width:100%; }
 #standings #hoist-standings-table { width:100%; min-width:1320px; border-collapse:collapse; white-space:nowrap; }
 #standings #hoist-standings-table th,
 #standings #hoist-standings-table td { padding:12px 10px; text-align:center; font-variant-numeric:tabular-nums; }
-#standings #hoist-standings-table th:nth-child(2),
-#standings #hoist-standings-table td:nth-child(2) { text-align:left; min-width:155px; }
+#standings #hoist-standings-table th:first-child,
+#standings #hoist-standings-table td:first-child { text-align:left; min-width:155px; }
 #standings #hoist-standings-table th[data-standings-sort] { cursor:pointer; user-select:none; }
 #standings #hoist-standings-table th[data-standings-sort]:hover { color:#fff; }
 #standings #hoist-standings-table th[aria-sort="ascending"],
@@ -1480,15 +1483,11 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 <!-- STANDINGS -->
 
 <section id="standings" class="tab-section hidden">
+  <h2 class="hoist-standings-page-title">Standings</h2>
   <article class="panel section-panel">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">LEAGUE TABLE</div>
-        <h3>Current Standings</h3>
-      </div>
-
-      <select id="standings-filter">
-        <option value="all">Entire NHL</option>
+    <div class="section-head hoist-standings-toolbar">
+      <select id="standings-filter" aria-label="Standings view">
+        <option value="all" selected>Wild Card</option>
         <option value="Eastern">Eastern Conference</option>
         <option value="Western">Western Conference</option>
         <option value="Atlantic">Atlantic Division</option>
@@ -1502,8 +1501,7 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
       <table id="hoist-standings-table" aria-label="NHL standings">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">TEAM</th>
+            <th scope="col" aria-label="Team"></th>
             <th scope="col" data-standings-sort="gamesPlayed">GP</th>
             <th scope="col" data-standings-sort="wins">W</th>
             <th scope="col" data-standings-sort="losses">L</th>
@@ -1858,10 +1856,10 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const division of divisions) {
       const top = all.filter(r => div(r) === division).sort(nhlRank).slice(0,3);
       top.forEach(r => qualified.add(abbrev(r)));
-      groups.push({label:`${division.toUpperCase()} — TOP 3`,status:'division',teams:top});
+      groups.push({label:division.toUpperCase(),status:'division',teams:top});
     }
     const remaining = all.filter(r => !qualified.has(abbrev(r))).sort(nhlRank);
-    groups.push({label:'WILD CARD — TOP 2',status:'wildcard',teams:remaining.slice(0,2)});
+    groups.push({label:'WILD CARD',status:'wildcard',teams:remaining.slice(0,2)});
     groups.push({label:'REMAINING TEAMS',status:'out',teams:remaining.slice(2)});
     return groups;
   }
@@ -1870,9 +1868,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const code = abbrev(r);
     const logo = r.teamLogo || `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
     const diff = num(r.goalDifferential);
-    const indicator = status === 'division' ? 'D' : status === 'wildcard' ? 'WC' : '—';
     return `<tr data-hoist-playoff-row="1">
-      <td>${rank} <span class="hoist-standings-status ${status}" title="${status === 'division' ? 'Division playoff position' : status === 'wildcard' ? 'Wild card playoff position' : 'Outside playoff positions'}">${indicator}</span></td>
       <td><span class="hoist-standing-team"><img src="${escapeHtml(logo)}" alt="" loading="lazy"><span>${escapeHtml(name(r))}</span></span></td>
       <td>${num(r.gamesPlayed)}</td><td>${num(r.wins)}</td><td>${num(r.losses)}</td><td>${num(r.otLosses)}</td>
       <td><strong>${num(r.points)}</strong></td><td>${pct(r)}</td><td>${num(r.regulationWins)}</td><td>${num(r.regulationPlusOtWins)}</td>
@@ -1898,10 +1894,10 @@ document.addEventListener("DOMContentLoaded", function () {
     } else if (selected === 'all' || selected === 'Eastern' || selected === 'Western') {
       const conferences = selected === 'all' ? ['Eastern','Western'] : [selected];
       for (const conference of conferences) {
-        html += `<tr class="hoist-playoff-group"><td colspan="18">${conference.toUpperCase()} CONFERENCE</td></tr>`;
+        html += `<tr class="hoist-playoff-group"><td colspan="17">${conference.toUpperCase()} CONFERENCE</td></tr>`;
         let rank = 0;
         for (const group of playoffGroups(conference)) {
-          html += `<tr class="hoist-playoff-group"><td colspan="18">${escapeHtml(group.label)}</td></tr>`;
+          html += `<tr class="hoist-playoff-group"><td colspan="17">${escapeHtml(group.label)}</td></tr>`;
           html += group.teams.map(r => teamRow(r,++rank,group.status)).join('');
         }
       }
@@ -1911,7 +1907,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .filter(g => g.status !== 'out').flatMap(g => g.teams.map(abbrev)));
       html = relevant.map((r,i) => teamRow(r,i+1,qualifiers.has(abbrev(r)) ? (i<3?'division':'wildcard') : 'out')).join('');
     }
-    body.innerHTML = html || '<tr data-hoist-playoff-row="1"><td colspan="18">No standings available.</td></tr>';
+    body.innerHTML = html || '<tr data-hoist-playoff-row="1"><td colspan="17">No standings available.</td></tr>';
     table.querySelectorAll('th[data-standings-sort]').forEach(th => {
       th.setAttribute('aria-sort', customSort === th.dataset.standingsSort ? (descending?'descending':'ascending') : 'none');
     });
