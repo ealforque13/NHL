@@ -525,11 +525,6 @@ html body .section-panel {
   transition: transform .15s ease;
 }
 
-#overview #v2-calendar
-.hoist-calendar-game:hover .hoist-calendar-logo {
-  transform: scale(1.06);
-}
-
 /* ==========================================
    FULL-WIDTH SCORE AND TIME BARS
    ========================================== */
@@ -606,11 +601,6 @@ html body .section-panel {
   color: #ffffff !important;
 }
 
-#overview #v2-calendar
-.hoist-calendar-game:hover .hoist-calendar-score-box {
-  filter: brightness(1.2);
-}
-
 /* ==========================================
    TODAY HIGHLIGHT
    ========================================== */
@@ -677,6 +667,33 @@ html body .section-panel {
 .hoist-legend-away {
   background: #1d4ed8 !important;
   border: 1px solid #2563eb !important;
+}
+
+/* ==========================================
+   NON-INTERACTIVE CALENDAR
+   ========================================== */
+
+/* Disable mouse and touch interaction */
+#overview #v2-calendar,
+#overview #v2-calendar * {
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+/* Remove game hover effects */
+#overview #v2-calendar
+.hoist-calendar-game:hover .hoist-calendar-logo {
+  transform: none !important;
+}
+
+#overview #v2-calendar
+.hoist-calendar-game:hover .hoist-calendar-score-box {
+  filter: none !important;
+}
+
+/* Hide game detail area completely */
+#overview #v2-calendar-detail {
+  display: none !important;
 }
 
 /* ==========================================
@@ -901,8 +918,6 @@ html body .mi-avatar-fallback,
     max-width: 24px !important;
     max-height: 24px !important;
   }
-
-  /* Full-width mobile bars */
 
   #overview #v2-calendar .hoist-calendar-score-box {
     width: 100% !important;
@@ -1140,8 +1155,14 @@ html body .mi-avatar-fallback,
       <span>Sat</span>
     </div>
 
-    <div id="v2-calendar" class="v2-calendar"></div>
+    <!-- NON-INTERACTIVE CALENDAR -->
+    <div
+      id="v2-calendar"
+      class="v2-calendar"
+      aria-label="NHL schedule calendar"
+    ></div>
 
+    <!-- CALENDAR LEGEND -->
     <div class="hoist-calendar-legend">
       <span class="hoist-legend-item">
         <span class="hoist-legend-dot hoist-legend-home"></span>
@@ -1154,9 +1175,12 @@ html body .mi-avatar-fallback,
       </span>
     </div>
 
-    <div id="v2-calendar-detail" class="v2-detail">
-      Select a game to view details.
-    </div>
+    <!-- KEPT FOR JAVASCRIPT COMPATIBILITY -->
+    <div
+      id="v2-calendar-detail"
+      class="v2-detail"
+      hidden
+    ></div>
 
   </article>
 
@@ -1589,6 +1613,44 @@ html body .mi-avatar-fallback,
 <script src="v2.js?v=10" defer></script>
 <script src="matchup.js?v=8" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
+
+<!-- Disable keyboard activation of calendar games.
+     Month navigation buttons remain functional. -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const calendar = document.getElementById("v2-calendar");
+  if (!calendar) return;
+
+  calendar.addEventListener("click", function (event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
+
+  calendar.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
+  }, true);
+
+  function makeCalendarStatic() {
+    calendar.querySelectorAll(
+      'button, a, [tabindex], [role="button"]'
+    ).forEach(function (element) {
+      element.setAttribute("tabindex", "-1");
+      element.removeAttribute("role");
+      element.removeAttribute("aria-pressed");
+    });
+  }
+
+  makeCalendarStatic();
+
+  new MutationObserver(makeCalendarStatic).observe(calendar, {
+    childList: true,
+    subtree: true
+  });
+});
+</script>
 
 </body>
 </html>
