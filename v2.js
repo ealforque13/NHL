@@ -3,7 +3,14 @@
 
 /* HOIST OFFICIAL
    NHL Dashboard V2
-   Calendar logo stacking + Today indicator
+
+   Calendar:
+   - Red home games
+   - Blue away games
+   - Home / away legend
+   - Opponent logos above score / time
+   - Today indicator
+
    All data fetched from local JSON files.
 */
 
@@ -74,14 +81,211 @@
   function gameTime(g) {
     if (!g.startTimeUTC) return 'TBA';
 
-    return new Date(g.startTimeUTC).toLocaleTimeString(
-      'en-CA',
-      {
-        hour: 'numeric',
-        minute: '2-digit'
-      }
-    );
+    const d = new Date(g.startTimeUTC);
+
+    if (Number.isNaN(d.getTime())) return 'TBA';
+
+    return d.toLocaleTimeString('en-CA', {
+      hour: 'numeric',
+      minute: '2-digit'
+    });
   }
+
+  /* ============================================
+     CALENDAR COLOURS AND LEGEND STYLES
+     ============================================ */
+
+  function installCalendarStyles() {
+    if (document.getElementById('hoist-calendar-home-away-styles')) {
+      return;
+    }
+
+    const style = document.createElement('style');
+    style.id = 'hoist-calendar-home-away-styles';
+
+    style.textContent = `
+      /* HOME GAME - RED */
+      #v2-calendar .v2-game.hoist-home-game {
+        background: rgba(220, 38, 38, 0.20) !important;
+        border: 1px solid rgba(239, 68, 68, 0.58) !important;
+        border-radius: 8px !important;
+        color: inherit;
+      }
+
+      /* AWAY GAME - BLUE */
+      #v2-calendar .v2-game.hoist-away-game {
+        background: rgba(37, 99, 235, 0.20) !important;
+        border: 1px solid rgba(59, 130, 246, 0.58) !important;
+        border-radius: 8px !important;
+        color: inherit;
+      }
+
+      #v2-calendar .v2-game.hoist-home-game:hover {
+        background: rgba(220, 38, 38, 0.35) !important;
+      }
+
+      #v2-calendar .v2-game.hoist-away-game:hover {
+        background: rgba(37, 99, 235, 0.35) !important;
+      }
+
+      /* Keep logo above opponent and score */
+      #v2-calendar .hoist-calendar-game {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3px !important;
+        width: 100%;
+        padding: 6px 3px !important;
+        text-align: center;
+        white-space: normal !important;
+      }
+
+      #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+        display: block;
+        width: 27px !important;
+        height: 27px !important;
+        min-width: 27px !important;
+        max-width: 27px !important;
+        max-height: 27px !important;
+        object-fit: contain;
+        flex: none !important;
+        margin: 0 auto !important;
+      }
+
+      #v2-calendar .hoist-calendar-opp {
+        font-size: 11px !important;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+
+      #v2-calendar .hoist-calendar-score {
+        font-size: 12px !important;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+
+      /* Today */
+      #v2-calendar .hoist-today {
+        border: 2px solid #60a5fa !important;
+        background: rgba(59, 130, 246, 0.10) !important;
+        position: relative;
+      }
+
+      #v2-calendar .hoist-today-badge {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 2px 4px;
+        border-radius: 4px;
+        background: #2563eb;
+        color: #fff;
+        font-size: 8px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        pointer-events: none;
+      }
+
+      #v2-calendar .hoist-today > .v2-day-number {
+        color: #93c5fd;
+      }
+
+      /* Legend */
+      .hoist-calendar-legend {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        padding: 12px 0 4px;
+      }
+
+      .hoist-legend-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .hoist-legend-dot {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+
+      .hoist-legend-home {
+        background: rgba(220, 38, 38, 0.65);
+        border: 1px solid #ef4444;
+      }
+
+      .hoist-legend-away {
+        background: rgba(37, 99, 235, 0.65);
+        border: 1px solid #3b82f6;
+      }
+
+      @media (max-width: 600px) {
+        #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+          width: 20px !important;
+          height: 20px !important;
+          min-width: 20px !important;
+          max-width: 20px !important;
+          max-height: 20px !important;
+        }
+
+        #v2-calendar .hoist-calendar-opp {
+          font-size: 9px !important;
+        }
+
+        #v2-calendar .hoist-calendar-score {
+          font-size: 10px !important;
+        }
+
+        .hoist-calendar-legend {
+          gap: 16px;
+        }
+
+        .hoist-legend-item {
+          font-size: 11px;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+  }
+
+  function installCalendarLegend() {
+    const calendarElement = el('v2-calendar');
+
+    if (!calendarElement) return;
+
+    // Reuse a legend if one was already added to index.html.
+    let legend = document.querySelector('.hoist-calendar-legend');
+
+    if (!legend) {
+      legend = document.createElement('div');
+      legend.className = 'hoist-calendar-legend';
+      calendarElement.insertAdjacentElement('afterend', legend);
+    }
+
+    legend.innerHTML = `
+      <span class="hoist-legend-item">
+        <span class="hoist-legend-dot hoist-legend-home"></span>
+        Home Game
+      </span>
+
+      <span class="hoist-legend-item">
+        <span class="hoist-legend-dot hoist-legend-away"></span>
+        Away Game
+      </span>
+    `;
+  }
+
+  /* ============================================
+     ANALYTICS - GOALS AND RESULTS
+     ============================================ */
 
   function renderChart() {
     const played = [...state.schedule]
@@ -95,6 +299,10 @@
         '<div class="empty">No completed regular-season games yet.</div>';
 
       el('v2-form').textContent = '—';
+
+      el('v2-splits').innerHTML =
+        '<div class="empty">No completed games available.</div>';
+
       return;
     }
 
@@ -196,6 +404,10 @@
     `).join('');
   }
 
+  /* ============================================
+     TEAM PLAYER STATISTICS
+     ============================================ */
+
   function players() {
     const raw = v.stats;
     const skaters = raw?.skaters || [];
@@ -232,6 +444,10 @@
     }).join('');
   }
 
+  /* ============================================
+     NHL SCORING LEADERS
+     ============================================ */
+
   function leaders() {
     const key = el('v2-leader-filter').value;
     const data = v.leaders?.[key] || [];
@@ -252,6 +468,10 @@
         `).join('')
       : '<div class="empty">League leader data unavailable. Check the data refresh workflow.</div>';
   }
+
+  /* ============================================
+     LOAD LOCAL STATISTICS
+     ============================================ */
 
   async function loadStats() {
     const token = ++v.request;
@@ -280,7 +500,7 @@
   }
 
   /* ============================================
-     UPDATED INTERACTIVE CALENDAR
+     INTERACTIVE CALENDAR
      ============================================ */
 
   function calendar() {
@@ -322,7 +542,6 @@
         `${y}-${String(m + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 
       const entries = games.get(date) || [];
-
       const isToday = date === today;
 
       out += `
@@ -338,15 +557,19 @@
           }
 
           ${entries.map(g => {
-            const opp = isHome(g, state.team)
+            const home = isHome(g, state.team);
+
+            const opp = home
               ? g.awayTeam
               : g.homeTeam;
 
             const abbreviation = opp?.abbrev || 'MTL';
 
-            const homeAway = isHome(g, state.team)
-              ? 'vs'
-              : '@';
+            const homeAway = home ? 'vs' : '@';
+
+            const locationClass = home
+              ? 'hoist-home-game'
+              : 'hoist-away-game';
 
             const final = gameFinal(g);
 
@@ -363,7 +586,7 @@
             return `
               <button
                 type="button"
-                class="v2-game hoist-calendar-game ${gameClass}"
+                class="v2-game hoist-calendar-game ${locationClass} ${gameClass}"
                 data-date="${date}"
                 data-game="${safe(g.id || '')}"
                 title="${safe(homeAway)} ${safe(abbreviation)} · ${safe(gameInfo)}"
@@ -391,7 +614,13 @@
     }
 
     el('v2-calendar').innerHTML = out;
+
+    installCalendarLegend();
   }
+
+  /* ============================================
+     CALENDAR GAME DETAILS
+     ============================================ */
 
   function selectCalendar(e) {
     const b = e.target.closest('[data-date]');
@@ -516,6 +745,10 @@
       `${outcomes.filter(x => !x.games).length} schedules unavailable`;
   }
 
+  /* ============================================
+     TEAM CHANGE HANDLER
+     ============================================ */
+
   function onTeam() {
     renderChart();
     calendar();
@@ -527,6 +760,9 @@
      ============================================ */
 
   document.addEventListener('DOMContentLoaded', () => {
+    installCalendarStyles();
+    installCalendarLegend();
+
     const options = TEAMS.map(
       t => `<option value="${t.code}">${safe(t.name)}</option>`
     ).join('');
