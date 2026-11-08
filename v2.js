@@ -10,9 +10,11 @@
    - Small score/time box below each logo
    - Red box = home game
    - Blue box = away game
+   - Completed games: darker 20% left result cell
    - W = Win
    - L = Regulation loss
    - O = Overtime / shootout loss
+   - Upcoming games: unchanged time box
    - Today indicator
    - Interactive game details
    ========================================== */
@@ -179,18 +181,19 @@
       }
 
       /* ======================================
-         COMPACT SCORE BOX
+         COMPACT SCORE / TIME BOX
          ====================================== */
 
       #v2-calendar .hoist-calendar-score-box {
         display: inline-flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
         width: fit-content;
         min-width: 54px;
-        padding: 5px 8px;
+        padding: 0;
         border-radius: 7px;
         box-sizing: border-box;
+        overflow: hidden;
       }
 
       /* HOME GAME - RED */
@@ -212,14 +215,56 @@
       }
 
       /* ======================================
-         SCORE TEXT
+         COMPLETED GAME: 20% / 80% SPLIT
+         ====================================== */
+
+      #v2-calendar
+      .hoist-calendar-score-box.hoist-completed {
+        display: inline-grid;
+        grid-template-columns: 20% 80%;
+        width: 76px;
+        min-width: 76px;
+        padding: 0;
+      }
+
+      /* DARKER LEFT RESULT CELL */
+
+      #v2-calendar .hoist-calendar-result-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 0;
+        padding: 5px 0;
+        box-sizing: border-box;
+      }
+
+      /* HOME RESULT - DARK RED */
+
+      #v2-calendar
+      .hoist-home-game
+      .hoist-calendar-result-cell {
+        background: rgba(127, 29, 29, .75);
+      }
+
+      /* AWAY RESULT - DARK BLUE */
+
+      #v2-calendar
+      .hoist-away-game
+      .hoist-calendar-result-cell {
+        background: rgba(30, 58, 138, .75);
+      }
+
+      /* ======================================
+         SCORE AND GAME TIME TEXT
          ====================================== */
 
       #v2-calendar .hoist-calendar-score {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 4px;
+        min-width: 0;
+        padding: 5px 8px;
+        box-sizing: border-box;
         font-size: 12px !important;
         font-weight: 800;
         line-height: 1.2;
@@ -348,13 +393,23 @@
 
         #v2-calendar .hoist-calendar-score-box {
           min-width: 42px;
-          padding: 4px 5px;
+          padding: 0;
           border-radius: 5px;
+        }
+
+        #v2-calendar
+        .hoist-calendar-score-box.hoist-completed {
+          width: 60px;
+          min-width: 60px;
         }
 
         #v2-calendar .hoist-calendar-score {
           font-size: 10px !important;
-          gap: 2px;
+          padding: 4px 3px;
+        }
+
+        #v2-calendar .hoist-calendar-result-cell {
+          padding: 4px 0;
         }
 
         #v2-calendar .hoist-result-letter {
@@ -728,13 +783,28 @@
                   ? 'hoist-result-o'
                   : 'hoist-result-l';
 
+            /* ==================================
+               SCORE BAR CONTENT
+
+               Completed:
+               - Darker left 20% = W / L / O
+               - Right 80% = score
+
+               Upcoming:
+               - No result section
+               - Original time display
+               ================================== */
+
             const scoreHtml = final
               ? `
-                <span class="hoist-calendar-score">
+                <span class="hoist-calendar-result-cell">
                   <span class="hoist-result-letter ${resultClass}">
                     ${resultLetter}
                   </span>
-                  <span>${safe(finalScore)}</span>
+                </span>
+
+                <span class="hoist-calendar-score">
+                  ${safe(finalScore)}
                 </span>
               `
               : `
@@ -742,13 +812,6 @@
                   ${safe(gameTime(g))}
                 </span>
               `;
-
-            /* ==================================
-               NEW CALENDAR GAME DESIGN
-
-               Logo sits outside score box.
-               Only score/time is boxed.
-               ================================== */
 
             return `
               <button
@@ -766,7 +829,7 @@
                   onerror="this.style.display='none'"
                 >
 
-                <span class="hoist-calendar-score-box">
+                <span class="hoist-calendar-score-box ${final ? 'hoist-completed' : ''}">
                   ${scoreHtml}
                 </span>
               </button>
