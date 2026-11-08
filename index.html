@@ -183,15 +183,6 @@
       min-width: 0;
     }
 
-    #overview .hoist-calendar-panel .section-head {
-      margin-bottom: 10px;
-    }
-
-    #overview .hoist-calendar-panel .section-head h3 {
-      font-size: 21px;
-      font-weight: 800;
-    }
-
     #overview .hoist-calendar-panel .v2-calendar {
       gap: 3px;
     }
@@ -219,68 +210,88 @@
     }
 
     /* ==========================================
-       ULTRA-COMPACT NEXT GAME DAY BAR
+       CALENDAR HEADER
+       Title / Next Game / Month Navigation
        ========================================== */
 
-    #overview .hoist-calendar-next-game {
-      display: flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      padding: 5px 10px !important;
-      margin-bottom: 8px !important;
-      min-height: 0 !important;
-      border: 1px solid rgba(140, 165, 205, 0.20);
-      border-radius: 7px !important;
-      background: rgba(120, 150, 200, 0.06);
+    #overview .hoist-calendar-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
       min-width: 0;
     }
 
-    #overview .hoist-calendar-next-head {
-      display: flex !important;
-      align-items: center !important;
-      gap: 8px !important;
+    #overview .hoist-calendar-title {
       margin: 0 !important;
+      font-size: 20px;
+      font-weight: 800;
       flex-shrink: 0;
     }
 
-    #overview .hoist-calendar-next-head strong {
-      font-size: 10px !important;
-      font-weight: 800;
-      letter-spacing: 0.08em;
+    #overview .hoist-calendar-next-inline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      flex: 1;
+      min-width: 0;
       white-space: nowrap;
     }
 
-    #overview .hoist-calendar-next-head .pill {
-      font-size: 9px !important;
-      padding: 2px 6px !important;
+    #overview .hoist-calendar-next-inline > strong {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      white-space: nowrap;
     }
 
-    #overview .hoist-calendar-next-game .next-game {
+    #overview .hoist-calendar-next-inline .pill {
+      font-size: 10px !important;
+      padding: 3px 6px !important;
+      white-space: nowrap;
+    }
+
+    #overview .hoist-calendar-next-inline .next-game {
       display: flex !important;
-      flex: 1;
       align-items: center !important;
-      justify-content: flex-end;
-      gap: 8px !important;
+      justify-content: center;
+      gap: 5px !important;
       padding: 0 !important;
       margin: 0 !important;
       min-height: 0 !important;
       min-width: 0;
       font-size: 12px !important;
-      line-height: 1.25 !important;
+      font-weight: 700;
+      line-height: 1.2 !important;
+      white-space: nowrap;
     }
 
-    #overview .hoist-calendar-next-game .next-game img {
-      width: 26px !important;
-      height: 26px !important;
-      max-width: 26px !important;
-      max-height: 26px !important;
-      object-fit: contain;
+    #overview .hoist-next-teams {
+      white-space: nowrap;
     }
 
-    #overview .hoist-calendar-next-game .next-game p,
-    #overview .hoist-calendar-next-game .next-game h3,
-    #overview .hoist-calendar-next-game .next-game h4 {
-      margin: 0 !important;
+    #overview .hoist-next-teams strong {
+      font-weight: 500;
+      opacity: .65;
+      margin: 0 3px;
+    }
+
+    #overview .hoist-calendar-month-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    #overview .hoist-calendar-month-controls button {
+      padding: 4px 7px;
+    }
+
+    #overview .hoist-calendar-month-controls strong {
+      font-size: 12px;
+      white-space: nowrap;
     }
 
     /* ==========================================
@@ -493,16 +504,26 @@
         font-size: 17px !important;
       }
 
-      /* Mobile game day bar */
-      #overview .hoist-calendar-next-game {
+      /* Mobile calendar toolbar */
+
+      #overview .hoist-calendar-toolbar {
         flex-wrap: wrap;
-        gap: 6px !important;
-        padding: 6px 8px !important;
+        gap: 8px;
       }
 
-      #overview .hoist-calendar-next-game .next-game {
-        justify-content: flex-start;
+      #overview .hoist-calendar-title {
+        font-size: 18px;
+      }
+
+      #overview .hoist-calendar-month-controls {
+        margin-left: auto;
+      }
+
+      #overview .hoist-calendar-next-inline {
+        order: 3;
         flex-basis: 100%;
+        justify-content: flex-start;
+        padding-top: 3px;
       }
     }
 
@@ -763,41 +784,45 @@
         <div class="hoist-overview-top">
 
           <!-- ======================================
-               CALENDAR WITH SLIM GAME DAY BAR
+               CALENDAR
                ====================================== -->
 
           <article class="panel section-panel hoist-calendar-panel">
 
-            <div class="section-head">
+            <!-- SINGLE-LINE CALENDAR HEADER -->
 
-              <div>
-                <h3>Calendar</h3>
-              </div>
+            <div class="hoist-calendar-toolbar">
 
-              <div class="v2-controls">
-                <button id="v2-prev" type="button">←</button>
-                <strong id="v2-month-label"></strong>
-                <button id="v2-next" type="button">→</button>
-              </div>
+              <h3 class="hoist-calendar-title">
+                Calendar
+              </h3>
 
-            </div>
+              <!-- NEXT GAME: DATE + TEAMS ONLY -->
 
-            <!-- COMPACT NEXT GAME DAY -->
+              <div class="hoist-calendar-next-inline">
 
-            <div class="hoist-calendar-next-game">
+                <strong>NEXT GAME</strong>
 
-              <div class="hoist-calendar-next-head">
-
-                <strong>NEXT GAME DAY</strong>
-
-                <span class="pill" id="next-date">
+                <span id="next-date" class="pill">
                   UPCOMING
                 </span>
 
+                <div id="next-game" class="next-game">
+                  Loading upcoming games…
+                </div>
+
               </div>
 
-              <div id="next-game" class="next-game">
-                Loading upcoming games…
+              <!-- MONTH NAVIGATION -->
+
+              <div class="v2-controls hoist-calendar-month-controls">
+
+                <button id="v2-prev" type="button">←</button>
+
+                <strong id="v2-month-label"></strong>
+
+                <button id="v2-next" type="button">→</button>
+
               </div>
 
             </div>
@@ -1406,7 +1431,7 @@
      ========================================== -->
 
 <script src="theme.js?v=2" defer></script>
-<script src="app.js?v=6" defer></script>
+<script src="app.js?v=7" defer></script>
 <script src="v2.js?v=8" defer></script>
 <script src="matchup.js?v=6" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
