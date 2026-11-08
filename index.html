@@ -503,7 +503,7 @@
     }
 
     /* ==========================================
-       SCORE / GAME TIME BOX
+       SOLID CALENDAR SCORE / GAME TIME BOXES
        ========================================== */
 
     #overview #v2-calendar .hoist-calendar-score-box {
@@ -517,16 +517,21 @@
       border-radius: 7px;
       box-sizing: border-box;
       flex-shrink: 0;
+      color: #ffffff !important;
     }
+
+    /* HOME — SOLID RED */
 
     #overview #v2-calendar .hoist-home-game .hoist-calendar-score-box {
-      background: rgba(220, 38, 38, .20);
-      border: 1px solid rgba(239, 68, 68, .65);
+      background: #b91c1c !important;
+      border: 1px solid #dc2626 !important;
     }
 
+    /* AWAY — SOLID BLUE */
+
     #overview #v2-calendar .hoist-away-game .hoist-calendar-score-box {
-      background: rgba(37, 99, 235, .20);
-      border: 1px solid rgba(59, 130, 246, .65);
+      background: #1d4ed8 !important;
+      border: 1px solid #2563eb !important;
     }
 
     #overview #v2-calendar .hoist-calendar-game:hover .hoist-calendar-score-box {
@@ -542,6 +547,7 @@
       font-weight: 800;
       line-height: 1.2;
       white-space: nowrap;
+      color: #ffffff !important;
     }
 
     #overview #v2-calendar .hoist-result-letter {
