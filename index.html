@@ -211,7 +211,7 @@
 
     /* ==========================================
        CALENDAR HEADER
-       Title / Next Game / Month Navigation
+       Calendar / Next Game / Month Navigation
        ========================================== */
 
     #overview .hoist-calendar-toolbar {
@@ -229,6 +229,8 @@
       font-weight: 800;
       flex-shrink: 0;
     }
+
+    /* NEXT GAME INLINE */
 
     #overview .hoist-calendar-next-inline {
       display: flex;
@@ -268,15 +270,40 @@
       white-space: nowrap;
     }
 
+    /* TEAM LOGOS + ABBREVIATIONS */
+
     #overview .hoist-next-teams {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center;
+      gap: 6px;
       white-space: nowrap;
     }
 
-    #overview .hoist-next-teams strong {
-      font-weight: 500;
-      opacity: .65;
-      margin: 0 3px;
+    #overview .hoist-next-teams img {
+      display: block;
+      width: 24px !important;
+      height: 24px !important;
+      min-width: 24px !important;
+      max-width: 24px !important;
+      max-height: 24px !important;
+      object-fit: contain;
+      flex-shrink: 0;
     }
+
+    #overview .hoist-next-teams span {
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    #overview .hoist-next-teams strong {
+      font-size: 10px;
+      font-weight: 600;
+      opacity: .65;
+      margin: 0 2px;
+    }
+
+    /* MONTH NAVIGATION */
 
     #overview .hoist-calendar-month-controls {
       display: flex;
@@ -797,7 +824,7 @@
                 Calendar
               </h3>
 
-              <!-- NEXT GAME: DATE + TEAMS ONLY -->
+              <!-- NEXT GAME: DATE + LOGOS + TEAMS -->
 
               <div class="hoist-calendar-next-inline">
 
@@ -1431,7 +1458,7 @@
      ========================================== -->
 
 <script src="theme.js?v=2" defer></script>
-<script src="app.js?v=7" defer></script>
+<script src="app.js?v=8" defer></script>
 <script src="v2.js?v=8" defer></script>
 <script src="matchup.js?v=6" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
