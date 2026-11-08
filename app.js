@@ -4,38 +4,38 @@
 const SEASON = '20262027';
 
 const TEAMS = [
-  ['ANA', 'Anaheim Ducks', 'Pacific', 'Western'],
-  ['BOS', 'Boston Bruins', 'Atlantic', 'Eastern'],
-  ['BUF', 'Buffalo Sabres', 'Atlantic', 'Eastern'],
-  ['CGY', 'Calgary Flames', 'Pacific', 'Western'],
-  ['CAR', 'Carolina Hurricanes', 'Metropolitan', 'Eastern'],
-  ['CHI', 'Chicago Blackhawks', 'Central', 'Western'],
-  ['COL', 'Colorado Avalanche', 'Central', 'Western'],
-  ['CBJ', 'Columbus Blue Jackets', 'Metropolitan', 'Eastern'],
-  ['DAL', 'Dallas Stars', 'Central', 'Western'],
-  ['DET', 'Detroit Red Wings', 'Atlantic', 'Eastern'],
-  ['EDM', 'Edmonton Oilers', 'Pacific', 'Western'],
-  ['FLA', 'Florida Panthers', 'Atlantic', 'Eastern'],
-  ['LAK', 'Los Angeles Kings', 'Pacific', 'Western'],
-  ['MIN', 'Minnesota Wild', 'Central', 'Western'],
-  ['MTL', 'Montreal Canadiens', 'Atlantic', 'Eastern'],
-  ['NSH', 'Nashville Predators', 'Central', 'Western'],
-  ['NJD', 'New Jersey Devils', 'Metropolitan', 'Eastern'],
-  ['NYI', 'New York Islanders', 'Metropolitan', 'Eastern'],
-  ['NYR', 'New York Rangers', 'Metropolitan', 'Eastern'],
-  ['OTT', 'Ottawa Senators', 'Atlantic', 'Eastern'],
-  ['PHI', 'Philadelphia Flyers', 'Metropolitan', 'Eastern'],
-  ['PIT', 'Pittsburgh Penguins', 'Metropolitan', 'Eastern'],
-  ['SJS', 'San Jose Sharks', 'Pacific', 'Western'],
-  ['SEA', 'Seattle Kraken', 'Pacific', 'Western'],
-  ['STL', 'St. Louis Blues', 'Central', 'Western'],
-  ['TBL', 'Tampa Bay Lightning', 'Atlantic', 'Eastern'],
-  ['TOR', 'Toronto Maple Leafs', 'Atlantic', 'Eastern'],
-  ['UTA', 'Utah Mammoth', 'Central', 'Western'],
-  ['VAN', 'Vancouver Canucks', 'Pacific', 'Western'],
-  ['VGK', 'Vegas Golden Knights', 'Pacific', 'Western'],
-  ['WSH', 'Washington Capitals', 'Metropolitan', 'Eastern'],
-  ['WPG', 'Winnipeg Jets', 'Central', 'Western']
+  ['ANA','Anaheim Ducks','Pacific','Western'],
+  ['BOS','Boston Bruins','Atlantic','Eastern'],
+  ['BUF','Buffalo Sabres','Atlantic','Eastern'],
+  ['CGY','Calgary Flames','Pacific','Western'],
+  ['CAR','Carolina Hurricanes','Metropolitan','Eastern'],
+  ['CHI','Chicago Blackhawks','Central','Western'],
+  ['COL','Colorado Avalanche','Central','Western'],
+  ['CBJ','Columbus Blue Jackets','Metropolitan','Eastern'],
+  ['DAL','Dallas Stars','Central','Western'],
+  ['DET','Detroit Red Wings','Atlantic','Eastern'],
+  ['EDM','Edmonton Oilers','Pacific','Western'],
+  ['FLA','Florida Panthers','Atlantic','Eastern'],
+  ['LAK','Los Angeles Kings','Pacific','Western'],
+  ['MIN','Minnesota Wild','Central','Western'],
+  ['MTL','Montreal Canadiens','Atlantic','Eastern'],
+  ['NSH','Nashville Predators','Central','Western'],
+  ['NJD','New Jersey Devils','Metropolitan','Eastern'],
+  ['NYI','New York Islanders','Metropolitan','Eastern'],
+  ['NYR','New York Rangers','Metropolitan','Eastern'],
+  ['OTT','Ottawa Senators','Atlantic','Eastern'],
+  ['PHI','Philadelphia Flyers','Metropolitan','Eastern'],
+  ['PIT','Pittsburgh Penguins','Metropolitan','Eastern'],
+  ['SJS','San Jose Sharks','Pacific','Western'],
+  ['SEA','Seattle Kraken','Pacific','Western'],
+  ['STL','St. Louis Blues','Central','Western'],
+  ['TBL','Tampa Bay Lightning','Atlantic','Eastern'],
+  ['TOR','Toronto Maple Leafs','Atlantic','Eastern'],
+  ['UTA','Utah Mammoth','Central','Western'],
+  ['VAN','Vancouver Canucks','Pacific','Western'],
+  ['VGK','Vegas Golden Knights','Pacific','Western'],
+  ['WSH','Washington Capitals','Metropolitan','Eastern'],
+  ['WPG','Winnipeg Jets','Central','Western']
 ].map(([code, name, division, conference]) => ({
   code,
   name,
@@ -370,8 +370,8 @@ const outcome = g => {
    GAME RENDERING
 
    NEXT GAME:
-   Date + team abbreviations only.
-   No time, venue or large logos.
+   Date + logos + team abbreviations.
+   No time or venue.
    ========================================== */
 
 function renderGames() {
@@ -392,21 +392,37 @@ function renderGames() {
       })
     : 'SEASON COMPLETE';
 
-  // NEXT GAME TEAMS
+  // NEXT GAME TEAMS WITH LOGOS
 
   if (next) {
-    const away = escapeHtml(
-      next.awayTeam?.abbrev || '—'
-    );
+    const awayCode = next.awayTeam?.abbrev || '—';
+    const homeCode = next.homeTeam?.abbrev || '—';
 
-    const home = escapeHtml(
-      next.homeTeam?.abbrev || '—'
-    );
+    const away = escapeHtml(awayCode);
+    const home = escapeHtml(homeCode);
 
     $('next-game').innerHTML = `
-      <span class="hoist-next-teams">
-        ${away} <strong>vs</strong> ${home}
-      </span>
+      <div class="hoist-next-teams">
+
+        <img
+          src="${logo(awayCode)}"
+          alt="${away} logo"
+          loading="lazy"
+        >
+
+        <span>${away}</span>
+
+        <strong>vs</strong>
+
+        <img
+          src="${logo(homeCode)}"
+          alt="${home} logo"
+          loading="lazy"
+        >
+
+        <span>${home}</span>
+
+      </div>
     `;
   } else {
     $('next-game').innerHTML =
