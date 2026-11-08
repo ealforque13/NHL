@@ -8,13 +8,13 @@
    - Large opponent logos
    - Full-width red/blue score and time bars
    - Red = home, blue = away
-   - Completed: 25% dark result / 75% score
-   - Result section flush with bar edges
-   - Desktop: final score centered across entire bar
-   - Mobile: original score positioning retained
+   - Completed games: darker 25% result cell
    - W = Win
    - L = Regulation loss
    - O = Overtime / shootout loss
+   - Desktop: score centered in entire bar
+   - Desktop: W/L/O stays on far left
+   - Mobile: original 25% / 75% layout
    - Upcoming: full-width time, no result cell
    - Today indicator
    - Interactive game details
@@ -79,6 +79,10 @@
 
     return 'L';
   }
+
+  /* ==========================================
+     DASHBOARD STATE
+     ========================================== */
 
   const v = {
     month: new Date(
@@ -228,7 +232,7 @@
       }
 
       /* ======================================
-         COMPLETED GAME: 25% / 75% SPLIT
+         COMPLETED GAME BASE LAYOUT
          ====================================== */
 
       #v2-calendar
@@ -253,7 +257,7 @@
       }
 
       /* ======================================
-         DARKER LEFT RESULT CELL — EXACTLY 25%
+         DARKER LEFT RESULT CELL — 25%
          ====================================== */
 
       #v2-calendar
@@ -318,7 +322,7 @@
       }
 
       /* ======================================
-         COMPLETED GAME SCORE — REMAINING 75%
+         COMPLETED SCORE BASE — RIGHT 75%
          ====================================== */
 
       #v2-calendar
@@ -443,42 +447,84 @@
 
       /* ======================================
          DESKTOP ONLY — CENTER FINAL SCORE
+
+         Three columns:
+         25% = result
+         50% = centered score
+         25% = balancing space
+
+         This keeps the W/L/O section fixed
+         on the far left without overlapping
+         the score.
          ====================================== */
 
       @media (min-width: 601px) {
 
         #v2-calendar
         .hoist-calendar-score-box.hoist-completed {
+          display: grid !important;
+          grid-template-columns: 25% 50% 25% !important;
+          align-items: stretch !important;
+          justify-content: stretch !important;
           position: relative !important;
         }
 
+        /* RESULT STAYS ON FAR LEFT */
+
         #v2-calendar
         .hoist-calendar-score-box.hoist-completed
-        .hoist-calendar-score {
-          position: absolute !important;
-          top: 0 !important;
-          left: 0 !important;
+        .hoist-calendar-result-cell {
+          grid-column: 1 !important;
+          grid-row: 1 !important;
+
+          position: relative !important;
+          top: auto !important;
+          left: auto !important;
 
           width: 100% !important;
+          max-width: 100% !important;
+          min-width: 0 !important;
+
           height: 100% !important;
+          min-height: 26px !important;
+
+          margin: 0 !important;
+          padding: 0 !important;
 
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
 
-          padding: 0 !important;
-          margin: 0 !important;
-
-          pointer-events: none !important;
+          align-self: stretch !important;
+          box-sizing: border-box !important;
         }
+
+        /* SCORE CENTERED ACROSS ENTIRE BAR */
 
         #v2-calendar
         .hoist-calendar-score-box.hoist-completed
-        .hoist-calendar-result-cell {
-          flex: 0 0 25% !important;
-          width: 25% !important;
-          max-width: 25% !important;
-          min-height: 26px !important;
+        .hoist-calendar-score {
+          grid-column: 2 !important;
+          grid-row: 1 !important;
+
+          position: relative !important;
+          top: auto !important;
+          left: auto !important;
+          right: auto !important;
+
+          width: 100% !important;
+          height: 100% !important;
+          min-width: 0 !important;
+
+          margin: 0 !important;
+          padding: 5px 0 !important;
+
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+
+          box-sizing: border-box !important;
+          pointer-events: none !important;
         }
       }
 
@@ -507,6 +553,7 @@
         #v2-calendar
         .hoist-calendar-score-box.hoist-completed {
           display: flex !important;
+          flex-direction: row !important;
           width: 100% !important;
           min-width: 0 !important;
           gap: 0 !important;
@@ -918,8 +965,8 @@
 
                Completed:
                - Darker left 25% = W / L / O
-               - Score in remaining 75% on mobile
-               - Score centered across full bar on desktop
+               - Desktop score centered in full bar
+               - Mobile score stays in right 75%
 
                Upcoming:
                - No result section
