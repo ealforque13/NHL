@@ -1184,6 +1184,46 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-conference-table .hoist-standing-name-short { display:inline; }
   #standings .hoist-conference-table .hoist-standing-name-full { display:none; }
 }
+/* COMPACT MOBILE STANDINGS: narrow frozen identity columns */
+@media (max-width:650px) {
+  #standings .hoist-conference-panel { padding:10px 7px !important; }
+  #standings .hoist-standings-group .hoist-standings-scroll { overflow-x:auto !important; overflow-y:auto !important; }
+  #standings .hoist-conference-table {
+    min-width:860px !important;
+    width:860px !important;
+    table-layout:fixed !important;
+  }
+  #standings .hoist-conference-table :is(th,td) {
+    font-size:11px !important;
+    padding:9px 3px !important;
+    line-height:1.2 !important;
+  }
+  #standings .hoist-conference-table thead th { font-size:9px !important; padding:10px 2px !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(1) {
+    left:0 !important;
+    width:29px !important;
+    min-width:29px !important;
+    max-width:29px !important;
+    padding-left:1px !important;
+    padding-right:1px !important;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(2) {
+    left:29px !important;
+    width:77px !important;
+    min-width:77px !important;
+    max-width:77px !important;
+    padding-left:3px !important;
+    padding-right:2px !important;
+  }
+  #standings .hoist-conference-table .hoist-standing-team { gap:3px !important; font-size:11px !important; }
+  #standings .hoist-conference-table .hoist-standing-team img { width:18px !important; height:18px !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) { width:39px !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(14),
+  #standings .hoist-conference-table :is(th,td):nth-child(15),
+  #standings .hoist-conference-table :is(th,td):nth-child(17) { width:57px !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(16),
+  #standings .hoist-conference-table :is(th,td):nth-child(18) { width:46px !important; }
+}
 </style>
 </head>
 
@@ -2206,4 +2246,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
