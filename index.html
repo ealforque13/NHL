@@ -1254,6 +1254,91 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
 }
 
+
+/* MOBILE V2 — clearly visible division identity, one frozen team column */
+@media (max-width:650px) {
+  #standings .hoist-standings-group .hoist-group-title {
+    display:block !important;
+    font-size:18px !important;
+    font-weight:900 !important;
+    text-transform:uppercase !important;
+    letter-spacing:.07em !important;
+    padding:10px 9px !important;
+    margin:0 !important;
+    color:#fff !important;
+    background:#243754 !important;
+    border-left:3px solid #48a9ff !important;
+  }
+  #standings .hoist-standings-group .hoist-standings-scroll { overflow-x:auto !important; overflow-y:auto !important; }
+  #standings .hoist-conference-table { border-collapse:separate !important; border-spacing:0 !important; }
+  #standings .hoist-conference-table :is(th,td):first-child { display:none !important; width:0 !important; min-width:0 !important; max-width:0 !important; padding:0 !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(2) {
+    display:table-cell !important; position:sticky !important; left:0 !important;
+    width:91px !important; min-width:91px !important; max-width:91px !important;
+    padding:8px 4px !important; z-index:5 !important;
+    background:#101a2d !important;
+    box-shadow:2px 0 0 #49678d !important;
+    text-align:left !important;
+  }
+  #standings .hoist-conference-table thead th:nth-child(2) {
+    z-index:7 !important; background:#243754 !important;
+    font-size:10px !important; font-weight:900 !important;
+    color:#fff !important; text-align:center !important;
+    letter-spacing:0 !important;
+  }
+  #standings .hoist-conference-table tr.hoist-alt-row td:nth-child(2) { background:#1e2b42 !important; }
+  #standings .hoist-conference-table .hoist-desktop-team-label { display:none !important; }
+  #standings .hoist-conference-table .hoist-mobile-division-label { display:inline !important; }
+  #standings .hoist-conference-table .hoist-standing-team { gap:4px !important; font-size:11px !important; }
+  #standings .hoist-conference-table .hoist-standing-team img { width:19px !important; height:19px !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(n+3) { position:static; }
+  #standings .hoist-conference-table .hoist-playoff-cutoff td:first-child { display:table-cell !important; width:auto !important; padding:10px 0 !important; }
+}
+
+
+/* REFINEMENT: streamlined mobile group headers and denser, larger stats */
+@media (min-width:1100px) {
+  #standings .hoist-conference-table :is(th,td):nth-child(2) { width:34% !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) { width:3.2% !important; }
+}
+@media (max-width:650px) {
+  /* Division is already labeled in the frozen team-column header. */
+  #standings .hoist-standings-group > .hoist-group-title { display:none !important; }
+  #standings .hoist-standings-group + .hoist-standings-group { margin-top:19px !important; }
+  #standings .hoist-conference-table {
+    width:790px !important;
+    min-width:790px !important;
+    table-layout:fixed !important;
+  }
+  #standings .hoist-conference-table :is(th,td) {
+    font-size:12px !important;
+    padding:10px 1px !important;
+    line-height:1.25 !important;
+  }
+  #standings .hoist-conference-table thead th {
+    font-size:10.5px !important;
+    padding:10px 1px !important;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(2) {
+    width:85px !important;
+    min-width:85px !important;
+    max-width:85px !important;
+    padding-left:3px !important;
+    padding-right:2px !important;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+12) {
+    width:36px !important;
+    min-width:36px !important;
+    max-width:36px !important;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(13) {
+    width:43px !important;
+    min-width:43px !important;
+    max-width:43px !important;
+  }
+  #standings .hoist-conference-table .hoist-standing-team { font-size:12px !important; }
+}
+
 </style>
 </head>
 
