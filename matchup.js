@@ -257,27 +257,19 @@
      HOT PLAYERS — LAST 5 GAMES
 
      Columns:
-     PLAYER | G | A | PTS | PTS/GP
+     PLAYER | G | A | PTS
 
-     Performance sentence appears underneath
-     the four statistical columns.
+     PTS/GP has been removed from this table.
 
-     Player name, headshot, and five-game boxes
-     remain unchanged.
+     Active point streaks of 3+ games are
+     displayed in green.
+
+     Other production summaries are displayed
+     in red.
+
+     The performance sentence is positioned
+     inside the PTS cell using CSS.
      ========================================== */
-
-  function performanceText(row) {
-
-    if (row.streak >= 3) {
-      return `${row.streak}-game point streak`;
-    }
-
-    return `${row.pts} ${
-      row.pts === 1 ? 'point' : 'points'
-    } in last ${row.gp} ${
-      row.gp === 1 ? 'game' : 'games'
-    }`;
-  }
 
   function hotPlayers(payload, club) {
 
@@ -324,101 +316,70 @@
     .slice(0, 8);
 
     $m('mi-hot').innerHTML = rows.length
-      ? rows.map(row => `
+      ? rows.map(row => {
 
-          <tr class="hoist-hot-player-row">
+          const isStreak = row.streak >= 3;
 
-            <td class="hoist-hot-player-name">
+          const performance = isStreak
+            ? `${row.streak}-game point streak`
+            : `${row.pts} ${
+                row.pts === 1 ? 'point' : 'points'
+              } in last ${row.gp} ${
+                row.gp === 1 ? 'game' : 'games'
+              }`;
 
-              <span class="mi-person">
+          return `
+            <tr class="hoist-hot-player-row">
 
-                ${avatar(row.player, club)}
+              <td class="hoist-hot-player-name">
+                <span class="mi-person">
 
-                <span>
-                  <strong>
-                    ${escape(row.player.name)}
-                  </strong>
+                  ${avatar(row.player, club)}
 
-                  <small>
-                    ${lastFiveBoxes(row.recent)}
-                  </small>
+                  <span>
+                    <strong>
+                      ${escape(row.player.name)}
+                    </strong>
+
+                    <small>
+                      ${lastFiveBoxes(row.recent)}
+                    </small>
+                  </span>
+
                 </span>
+              </td>
 
-              </span>
+              <td class="hoist-hot-stat">
+                ${row.g}
+              </td>
 
-            </td>
+              <td class="hoist-hot-stat">
+                ${row.a}
+              </td>
 
-            <td class="hoist-hot-stat">
-              ${row.g}
-            </td>
+              <td class="hoist-hot-stat">
+                <strong>${row.pts}</strong>
 
-            <td class="hoist-hot-stat">
-              ${row.a}
-            </td>
+                <span
+                  class="hoist-hot-performance ${
+                    isStreak ? 'is-streak' : ''
+                  }"
+                >
+                  ${escape(performance)}
+                </span>
+              </td>
 
-            <td class="hoist-hot-stat">
-              <strong>${row.pts}</strong>
-            </td>
+            </tr>
+          `;
 
-            <td class="hoist-hot-stat">
-              ${
-                row.gp
-                  ? (row.pts / row.gp).toFixed(2)
-                  : '—'
-              }
-            </td>
-
-          </tr>
-
-        `).join('')
+        }).join('')
       : `
         <tr>
-          <td colspan="5">
+          <td colspan="4">
             No completed games available this season.
           </td>
         </tr>
       `;
-
-    /*
-      Add a performance sentence to each row
-      without adding extra table columns.
-
-      The sentence is absolutely positioned
-      within the existing player row.
-    */
-
-    const tableRows = $m('mi-hot')
-      .querySelectorAll('.hoist-hot-player-row');
-
-    tableRows.forEach((tr, index) => {
-
-      const row = rows[index];
-
-      if (!row) {
-        return;
-      }
-
-      const summary = document.createElement('span');
-
-      summary.className =
-        'hoist-hot-performance' +
-        (row.streak >= 3 ? ' is-streak' : '');
-
-      summary.textContent = performanceText(row);
-
-      /*
-        Attach to the last statistics cell.
-        CSS positions it beneath the entire
-        statistics area.
-      */
-
-      const statCell = tr.lastElementChild;
-
-      if (statCell) {
-        statCell.appendChild(summary);
-      }
-
-    });
   }
 
   /* ==========================================
@@ -471,7 +432,7 @@
       $m(id).innerHTML = `
         <tr>
           <td colspan="${
-            id === 'mi-hot' ? 5 : 6
+            id === 'mi-hot' ? 4 : 6
           }">
             Loading cached player statistics…
           </td>
@@ -509,7 +470,7 @@
 
         $m('mi-hot').innerHTML = `
           <tr>
-            <td colspan="5">
+            <td colspan="4">
               Player data unavailable.
               Run the matchup data workflow.
             </td>
