@@ -1,18 +1,21 @@
 
 'use strict';
 
-/* HOIST OFFICIAL
-   NHL Dashboard V2
+/* ==========================================
+   HOIST OFFICIAL — NHL DASHBOARD V2
 
-   Calendar:
-   - Red home games
-   - Blue away games
-   - Home / away legend
-   - Opponent logos above score / time
-   - Today indicator
+   Calendar updates:
+   - Opponent logos only (no abbreviations)
+   - W = Win
+   - L = Regulation loss
+   - O = Overtime / shootout loss
+   - Result letter appears before final score
+   - Home games remain red
+   - Away games remain blue
+   - Today indicator and legend retained
 
-   All data fetched from local JSON files.
-*/
+   Data comes from local JSON files.
+   ========================================== */
 
 (() => {
   const el = id => document.getElementById(id);
@@ -29,22 +32,52 @@
   );
 
   const code = o =>
-    typeof o === 'string' ? o : (o?.default || o?.en || '');
+    typeof o === 'string'
+      ? o
+      : (o?.default || o?.en || '');
+
+  const num = n => Number(n) || 0;
 
   const gameFinal = g =>
     ['FINAL', 'OFF'].includes(g.gameState) &&
     g.homeTeam?.score != null &&
     g.awayTeam?.score != null;
 
-  const isHome = (g, t) => g.homeTeam?.abbrev === t;
+  const isHome = (g, t) =>
+    g.homeTeam?.abbrev === t;
 
-  const result = (g, t) => {
-    const own = isHome(g, t) ? g.homeTeam : g.awayTeam;
-    const other = isHome(g, t) ? g.awayTeam : g.homeTeam;
-    return own.score > other.score ? 'W' : 'L';
-  };
+  /* ==========================================
+     GAME RESULT CLASSIFICATION
+     ========================================== */
 
-  const num = n => Number(n) || 0;
+  function result(g, t) {
+    if (!gameFinal(g)) return '';
+
+    const home = isHome(g, t);
+    const own = home ? g.homeTeam : g.awayTeam;
+    const other = home ? g.awayTeam : g.homeTeam;
+
+    // All wins, including OT/SO wins, count as W.
+    if (num(own.score) > num(other.score)) {
+      return 'W';
+    }
+
+    // NHL schedule data may expose the ending
+    // period in either of these fields.
+    const periodType = String(
+      g.gameOutcome?.lastPeriodType ||
+      g.periodDescriptor?.periodType ||
+      ''
+    ).toUpperCase();
+
+    if (periodType === 'OT' || periodType === 'SO') {
+      return 'O';
+    }
+
+    // A final loss without an OT/SO indicator
+    // is treated as a regulation loss.
+    return 'L';
+  }
 
   const v = {
     month: new Date(
@@ -91,12 +124,14 @@
     });
   }
 
-  /* ============================================
-     CALENDAR COLOURS AND LEGEND STYLES
-     ============================================ */
+  /* ==========================================
+     CALENDAR STYLES
+     ========================================== */
 
   function installCalendarStyles() {
-    if (document.getElementById('hoist-calendar-home-away-styles')) {
+    if (document.getElementById(
+      'hoist-calendar-home-away-styles'
+    )) {
       return;
     }
 
@@ -105,70 +140,97 @@
 
     style.textContent = `
       /* HOME GAME - RED */
-      #v2-calendar .v2-game.hoist-home-game {
-        background: rgba(220, 38, 38, 0.20) !important;
-        border: 1px solid rgba(239, 68, 68, 0.58) !important;
-        border-radius: 8px !important;
-        color: inherit;
-      }
 
-      /* AWAY GAME - BLUE */
-      #v2-calendar .v2-game.hoist-away-game {
-        background: rgba(37, 99, 235, 0.20) !important;
-        border: 1px solid rgba(59, 130, 246, 0.58) !important;
+      #v2-calendar .v2-game.hoist-home-game {
+        background: rgba(220, 38, 38, .20) !important;
+        border: 1px solid rgba(239, 68, 68, .58) !important;
         border-radius: 8px !important;
         color: inherit;
       }
 
       #v2-calendar .v2-game.hoist-home-game:hover {
-        background: rgba(220, 38, 38, 0.35) !important;
+        background: rgba(220, 38, 38, .35) !important;
+      }
+
+      /* AWAY GAME - BLUE */
+
+      #v2-calendar .v2-game.hoist-away-game {
+        background: rgba(37, 99, 235, .20) !important;
+        border: 1px solid rgba(59, 130, 246, .58) !important;
+        border-radius: 8px !important;
+        color: inherit;
       }
 
       #v2-calendar .v2-game.hoist-away-game:hover {
-        background: rgba(37, 99, 235, 0.35) !important;
+        background: rgba(37, 99, 235, .35) !important;
       }
 
-      /* Keep logo above opponent and score */
+      /* COMPACT GAME TILE */
+
       #v2-calendar .hoist-calendar-game {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 3px !important;
+        gap: 5px !important;
         width: 100%;
-        padding: 6px 3px !important;
+        padding: 7px 3px !important;
         text-align: center;
         white-space: normal !important;
       }
 
-      #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
+      /* OPPONENT LOGO */
+
+      #v2-calendar .hoist-calendar-game
+      .hoist-calendar-logo {
         display: block;
-        width: 27px !important;
-        height: 27px !important;
-        min-width: 27px !important;
-        max-width: 27px !important;
-        max-height: 27px !important;
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
         object-fit: contain;
         flex: none !important;
         margin: 0 auto !important;
       }
 
-      #v2-calendar .hoist-calendar-opp {
-        font-size: 11px !important;
-        font-weight: 700;
-        line-height: 1.2;
-      }
+      /* SCORE AND RESULT */
 
       #v2-calendar .hoist-calendar-score {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         font-size: 12px !important;
         font-weight: 800;
         line-height: 1.2;
+        white-space: nowrap;
       }
 
-      /* Today */
+      #v2-calendar .hoist-result-letter {
+        display: inline-block;
+        font-weight: 900;
+        font-size: 11px;
+        line-height: 1.2;
+      }
+
+      #v2-calendar .hoist-result-w {
+        color: #4ade80;
+      }
+
+      #v2-calendar .hoist-result-l {
+        color: #fb7185;
+      }
+
+      #v2-calendar .hoist-result-o {
+        color: #fbbf24;
+      }
+
+      /* TODAY */
+
       #v2-calendar .hoist-today {
         border: 2px solid #60a5fa !important;
-        background: rgba(59, 130, 246, 0.10) !important;
+        background: rgba(59, 130, 246, .10) !important;
         position: relative;
       }
 
@@ -182,7 +244,7 @@
         color: #fff;
         font-size: 8px;
         font-weight: 800;
-        letter-spacing: 0.04em;
+        letter-spacing: .04em;
         pointer-events: none;
       }
 
@@ -190,7 +252,8 @@
         color: #93c5fd;
       }
 
-      /* Legend */
+      /* HOME / AWAY LEGEND */
+
       .hoist-calendar-legend {
         display: flex;
         justify-content: center;
@@ -217,30 +280,32 @@
       }
 
       .hoist-legend-home {
-        background: rgba(220, 38, 38, 0.65);
+        background: rgba(220, 38, 38, .65);
         border: 1px solid #ef4444;
       }
 
       .hoist-legend-away {
-        background: rgba(37, 99, 235, 0.65);
+        background: rgba(37, 99, 235, .65);
         border: 1px solid #3b82f6;
       }
 
       @media (max-width: 600px) {
-        #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
-          width: 20px !important;
-          height: 20px !important;
-          min-width: 20px !important;
-          max-width: 20px !important;
-          max-height: 20px !important;
-        }
-
-        #v2-calendar .hoist-calendar-opp {
-          font-size: 9px !important;
+        #v2-calendar .hoist-calendar-game
+        .hoist-calendar-logo {
+          width: 22px !important;
+          height: 22px !important;
+          min-width: 22px !important;
+          max-width: 22px !important;
+          max-height: 22px !important;
         }
 
         #v2-calendar .hoist-calendar-score {
           font-size: 10px !important;
+          gap: 2px;
+        }
+
+        #v2-calendar .hoist-result-letter {
+          font-size: 10px;
         }
 
         .hoist-calendar-legend {
@@ -261,13 +326,18 @@
 
     if (!calendarElement) return;
 
-    // Reuse a legend if one was already added to index.html.
-    let legend = document.querySelector('.hoist-calendar-legend');
+    let legend = document.querySelector(
+      '.hoist-calendar-legend'
+    );
 
     if (!legend) {
       legend = document.createElement('div');
       legend.className = 'hoist-calendar-legend';
-      calendarElement.insertAdjacentElement('afterend', legend);
+
+      calendarElement.insertAdjacentElement(
+        'afterend',
+        legend
+      );
     }
 
     legend.innerHTML = `
@@ -283,14 +353,16 @@
     `;
   }
 
-  /* ============================================
-     ANALYTICS - GOALS AND RESULTS
-     ============================================ */
+  /* ==========================================
+     ANALYTICS — GOALS AND RESULTS
+     ========================================== */
 
   function renderChart() {
     const played = [...state.schedule]
       .filter(gameFinal)
-      .sort((a, b) => a.gameDate.localeCompare(b.gameDate));
+      .sort((a, b) =>
+        a.gameDate.localeCompare(b.gameDate)
+      );
 
     const recent = played.slice(-10);
 
@@ -316,11 +388,15 @@
 
     el('v2-chart').innerHTML = recent.map(g => {
       const gf = num(
-        (isHome(g, state.team) ? g.homeTeam : g.awayTeam).score
+        (isHome(g, state.team)
+          ? g.homeTeam
+          : g.awayTeam).score
       );
 
       const ga = num(
-        (isHome(g, state.team) ? g.awayTeam : g.homeTeam).score
+        (isHome(g, state.team)
+          ? g.awayTeam
+          : g.homeTeam).score
       );
 
       return `
@@ -404,9 +480,9 @@
     `).join('');
   }
 
-  /* ============================================
+  /* ==========================================
      TEAM PLAYER STATISTICS
-     ============================================ */
+     ========================================== */
 
   function players() {
     const raw = v.stats;
@@ -433,7 +509,10 @@
 
       return `
         <tr>
-          <td>${safe(code(p.firstName))} ${safe(code(p.lastName))}</td>
+          <td>
+            ${safe(code(p.firstName))}
+            ${safe(code(p.lastName))}
+          </td>
           <td>${gp}</td>
           <td>${num(p.goals)}</td>
           <td>${num(p.assists)}</td>
@@ -444,9 +523,9 @@
     }).join('');
   }
 
-  /* ============================================
+  /* ==========================================
      NHL SCORING LEADERS
-     ============================================ */
+     ========================================== */
 
   function leaders() {
     const key = el('v2-leader-filter').value;
@@ -469,9 +548,9 @@
       : '<div class="empty">League leader data unavailable. Check the data refresh workflow.</div>';
   }
 
-  /* ============================================
+  /* ==========================================
      LOAD LOCAL STATISTICS
-     ============================================ */
+     ========================================== */
 
   async function loadStats() {
     const token = ++v.request;
@@ -479,17 +558,20 @@
     v.stats = null;
     players();
 
-    const [stats, leadersData] = await Promise.allSettled([
-      getLocal(`club-stats/${state.team}.json`),
-      v.leaders
-        ? Promise.resolve(v.leaders)
-        : getLocal('leaders.json')
-    ]);
+    const [stats, leadersData] =
+      await Promise.allSettled([
+        getLocal(`club-stats/${state.team}.json`),
+        v.leaders
+          ? Promise.resolve(v.leaders)
+          : getLocal('leaders.json')
+      ]);
 
     if (token !== v.request) return;
 
     v.stats =
-      stats.status === 'fulfilled' ? stats.value : null;
+      stats.status === 'fulfilled'
+        ? stats.value
+        : null;
 
     if (leadersData.status === 'fulfilled') {
       v.leaders = leadersData.value;
@@ -499,24 +581,20 @@
     leaders();
   }
 
-  /* ============================================
+  /* ==========================================
      INTERACTIVE CALENDAR
-     ============================================ */
+     ========================================== */
 
   function calendar() {
     const y = v.month.getFullYear();
     const m = v.month.getMonth();
-
     const today = dateKey(new Date());
 
     el('v2-month-label').textContent =
-      v.month.toLocaleDateString(
-        'en-CA',
-        {
-          month: 'long',
-          year: 'numeric'
-        }
-      );
+      v.month.toLocaleDateString('en-CA', {
+        month: 'long',
+        year: 'numeric'
+      });
 
     const games = new Map();
 
@@ -564,7 +642,6 @@
               : g.homeTeam;
 
             const abbreviation = opp?.abbrev || 'MTL';
-
             const homeAway = home ? 'vs' : '@';
 
             const locationClass = home
@@ -572,16 +649,47 @@
               : 'hoist-away-game';
 
             const final = gameFinal(g);
+            const resultLetter = final
+              ? result(g, state.team)
+              : '';
 
             const gameClass = final
-              ? result(g, state.team) === 'W'
+              ? resultLetter === 'W'
                 ? 'v2-win'
                 : 'v2-loss'
               : '';
 
-            const gameInfo = final
+            const finalScore = final
               ? `${num(g.awayTeam.score)}-${num(g.homeTeam.score)}`
+              : '';
+
+            // Final games: result letter + score.
+            // Upcoming games: time only.
+            const gameInfo = final
+              ? `${resultLetter} ${finalScore}`
               : gameTime(g);
+
+            const resultClass =
+              resultLetter === 'W'
+                ? 'hoist-result-w'
+                : resultLetter === 'O'
+                  ? 'hoist-result-o'
+                  : 'hoist-result-l';
+
+            const scoreHtml = final
+              ? `
+                <span class="hoist-calendar-score">
+                  <span class="hoist-result-letter ${resultClass}">
+                    ${resultLetter}
+                  </span>
+                  <span>${safe(finalScore)}</span>
+                </span>
+              `
+              : `
+                <span class="hoist-calendar-score">
+                  ${safe(gameTime(g))}
+                </span>
+              `;
 
             return `
               <button
@@ -599,13 +707,7 @@
                   onerror="this.style.display='none'"
                 >
 
-                <span class="hoist-calendar-opp">
-                  ${homeAway} ${safe(abbreviation)}
-                </span>
-
-                <span class="hoist-calendar-score">
-                  ${safe(gameInfo)}
-                </span>
+                ${scoreHtml}
               </button>
             `;
           }).join('')}
@@ -618,9 +720,9 @@
     installCalendarLegend();
   }
 
-  /* ============================================
+  /* ==========================================
      CALENDAR GAME DETAILS
-     ============================================ */
+     ========================================== */
 
   function selectCalendar(e) {
     const b = e.target.closest('[data-date]');
@@ -645,19 +747,20 @@
       `${opponent?.abbrev || 'opponent'} · ` +
       (
         gameFinal(g)
-          ? `Final: ${g.awayTeam.score}–${g.homeTeam.score}`
+          ? `${result(g, state.team)} · Final: ${g.awayTeam.score}–${g.homeTeam.score}`
           : g.startTimeUTC
             ? new Date(g.startTimeUTC).toLocaleString()
             : 'Time TBA'
       );
   }
 
-  /* ============================================
+  /* ==========================================
      FANTASY PLANNER
-     ============================================ */
+     ========================================== */
 
   async function fantasy() {
     const ref = el('v2-fantasy-team').value;
+
     const remaining =
       el('v2-fantasy-mode').value === 'remaining';
 
@@ -670,7 +773,10 @@
       codes.map(async c => {
         try {
           if (!v.schedules.has(c)) {
-            const d = await getLocal(`schedules/${c}.json`);
+            const d = await getLocal(
+              `schedules/${c}.json`
+            );
+
             v.schedules.set(c, d.games || []);
           }
 
@@ -728,26 +834,27 @@
           a.code.localeCompare(b.code)
       );
 
-    el('v2-fantasy-results').innerHTML = rows.map(
-      (r, i) => `
+    el('v2-fantasy-results').innerHTML =
+      rows.map((r, i) => `
         <tr>
           <td>${i + 1}</td>
           <td>${safe(team(r.code).name)}</td>
           <td><strong>${r.off}</strong></td>
           <td>${r.total}</td>
         </tr>
-      `
-    ).join('');
+      `).join('');
 
     el('v2-fantasy-status').textContent =
       `Compared ${rows.length + 1} teams · ` +
-      `${remaining ? 'Remaining games (from today)' : 'Full regular season'} · ` +
+      `${remaining
+        ? 'Remaining games (from today)'
+        : 'Full regular season'} · ` +
       `${outcomes.filter(x => !x.games).length} schedules unavailable`;
   }
 
-  /* ============================================
+  /* ==========================================
      TEAM CHANGE HANDLER
-     ============================================ */
+     ========================================== */
 
   function onTeam() {
     renderChart();
@@ -755,9 +862,9 @@
     loadStats();
   }
 
-  /* ============================================
+  /* ==========================================
      INITIALIZATION
-     ============================================ */
+     ========================================== */
 
   document.addEventListener('DOMContentLoaded', () => {
     installCalendarStyles();
@@ -815,6 +922,8 @@
       fantasy
     );
 
+    // Preserve the original app.js game rendering,
+    // then refresh V2 analytics and calendar.
     const originalGames = renderGames;
 
     renderGames = function (...args) {
