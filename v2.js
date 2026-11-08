@@ -4,17 +4,15 @@
 /* ==========================================
    HOIST OFFICIAL — NHL DASHBOARD V2
 
-   Calendar design:
+   Calendar:
    - Large opponent logos
-   - No team abbreviations below logos
-   - Small score/time box below each logo
-   - Red box = home game
-   - Blue box = away game
-   - Completed games: darker 20% left result cell
+   - Full-width red/blue score and time bars
+   - Red = home, blue = away
+   - Completed: 25% dark result / 75% score
    - W = Win
    - L = Regulation loss
    - O = Overtime / shootout loss
-   - Upcoming games: unchanged time box
+   - Upcoming: full-width time, no result cell
    - Today indicator
    - Interactive game details
    ========================================== */
@@ -39,6 +37,9 @@
       : (o?.default || o?.en || '');
 
   const num = n => Number(n) || 0;
+
+  const logo = c =>
+    `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(c)}_light.svg`;
 
   const gameFinal = g =>
     ['FINAL', 'OFF'].includes(g.gameState) &&
@@ -126,9 +127,7 @@
      ========================================== */
 
   function installCalendarStyles() {
-    if (document.getElementById(
-      'hoist-calendar-home-away-styles'
-    )) {
+    if (el('hoist-calendar-home-away-styles')) {
       return;
     }
 
@@ -137,7 +136,7 @@
 
     style.textContent = `
       /* ======================================
-         REMOVE LARGE GAME BOX
+         GAME BUTTON
          ====================================== */
 
       #v2-calendar .v2-game.hoist-calendar-game,
@@ -146,14 +145,19 @@
         background: transparent !important;
         border: none !important;
         box-shadow: none !important;
-        padding: 6px 2px !important;
+        padding: 6px 0 0 !important;
 
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
+        justify-content: space-between !important;
         gap: 8px !important;
-        width: 100%;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+
         text-align: center;
         white-space: normal !important;
       }
@@ -164,7 +168,7 @@
       }
 
       /* ======================================
-         LARGE TEAM LOGO
+         OPPONENT LOGO
          ====================================== */
 
       #v2-calendar .hoist-calendar-game
@@ -181,119 +185,132 @@
       }
 
       /* ======================================
-         COMPACT SCORE / TIME BOX
+         FULL-WIDTH SCORE / TIME BAR
          ====================================== */
 
       #v2-calendar .hoist-calendar-score-box {
-        display: inline-flex;
-        align-items: stretch;
-        justify-content: center;
-        width: fit-content;
-        min-width: 54px;
-        padding: 0;
-        border-radius: 7px;
-        box-sizing: border-box;
-        overflow: hidden;
+        display: flex !important;
+        align-items: stretch !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+
+        flex-shrink: 0 !important;
       }
 
-      /* HOME GAME - RED */
+      /* HOME - RED */
 
       #v2-calendar
       .hoist-home-game
       .hoist-calendar-score-box {
-        background: rgba(220, 38, 38, .20);
-        border: 1px solid rgba(239, 68, 68, .65);
+        background: #b91c1c !important;
+        border: 1px solid #dc2626 !important;
       }
 
-      /* AWAY GAME - BLUE */
+      /* AWAY - BLUE */
 
       #v2-calendar
       .hoist-away-game
       .hoist-calendar-score-box {
-        background: rgba(37, 99, 235, .20);
-        border: 1px solid rgba(59, 130, 246, .65);
+        background: #1d4ed8 !important;
+        border: 1px solid #2563eb !important;
       }
 
       /* ======================================
-         COMPLETED GAME: 20% / 80% SPLIT
+         COMPLETED GAME: 25% / 75% SPLIT
          ====================================== */
 
       #v2-calendar
       .hoist-calendar-score-box.hoist-completed {
-        display: inline-grid;
-        grid-template-columns: 20% 80%;
-        width: 76px;
-        min-width: 76px;
-        padding: 0;
+        display: grid !important;
+        grid-template-columns: 25% 75% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 0 !important;
       }
 
       /* DARKER LEFT RESULT CELL */
 
       #v2-calendar .hoist-calendar-result-cell {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 0;
-        padding: 5px 0;
-        box-sizing: border-box;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 5px 0 !important;
+        box-sizing: border-box !important;
       }
 
-      /* HOME RESULT - DARK RED */
+      /* HOME - DARK RED */
 
       #v2-calendar
       .hoist-home-game
       .hoist-calendar-result-cell {
-        background: rgba(127, 29, 29, .75);
+        background: #7f1d1d !important;
       }
 
-      /* AWAY RESULT - DARK BLUE */
+      /* AWAY - DARK BLUE */
 
       #v2-calendar
       .hoist-away-game
       .hoist-calendar-result-cell {
-        background: rgba(30, 58, 138, .75);
+        background: #1e3a8a !important;
       }
 
       /* ======================================
-         SCORE AND GAME TIME TEXT
+         SCORE / TIME TEXT
          ====================================== */
 
       #v2-calendar .hoist-calendar-score {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 0;
-        padding: 5px 8px;
-        box-sizing: border-box;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        padding: 5px 8px !important;
+        box-sizing: border-box !important;
+
         font-size: 12px !important;
-        font-weight: 800;
-        line-height: 1.2;
-        white-space: nowrap;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        white-space: nowrap !important;
+        color: #ffffff !important;
       }
 
       /* RESULT LETTERS */
 
       #v2-calendar .hoist-result-letter {
         display: inline-block;
-        font-weight: 900;
-        font-size: 11px;
-        line-height: 1.2;
+        font-weight: 900 !important;
+        font-size: 12px !important;
+        line-height: 1.2 !important;
       }
 
       #v2-calendar .hoist-result-w {
-        color: #4ade80;
+        color: #4ade80 !important;
       }
 
       #v2-calendar .hoist-result-l {
-        color: #fb7185;
+        color: #fb7185 !important;
       }
 
       #v2-calendar .hoist-result-o {
-        color: #fbbf24;
+        color: #fbbf24 !important;
       }
 
       /* ======================================
-         HOVER EFFECT
+         HOVER
          ====================================== */
 
       #v2-calendar
@@ -392,28 +409,30 @@
         }
 
         #v2-calendar .hoist-calendar-score-box {
-          min-width: 42px;
-          padding: 0;
-          border-radius: 5px;
+          width: 100% !important;
+          min-width: 0 !important;
+          padding: 0 !important;
+          border-radius: 0 !important;
         }
 
         #v2-calendar
         .hoist-calendar-score-box.hoist-completed {
-          width: 60px;
-          min-width: 60px;
+          width: 100% !important;
+          min-width: 0 !important;
+          grid-template-columns: 25% 75% !important;
         }
 
         #v2-calendar .hoist-calendar-score {
           font-size: 10px !important;
-          padding: 4px 3px;
+          padding: 4px 2px !important;
         }
 
         #v2-calendar .hoist-calendar-result-cell {
-          padding: 4px 0;
+          padding: 4px 0 !important;
         }
 
         #v2-calendar .hoist-result-letter {
-          font-size: 10px;
+          font-size: 10px !important;
         }
 
         .hoist-calendar-legend {
@@ -428,6 +447,10 @@
 
     document.head.appendChild(style);
   }
+
+  /* ==========================================
+     CALENDAR LEGEND
+     ========================================== */
 
   function installCalendarLegend() {
     const calendarElement = el('v2-calendar');
@@ -787,12 +810,12 @@
                SCORE BAR CONTENT
 
                Completed:
-               - Darker left 20% = W / L / O
-               - Right 80% = score
+               - Darker left 25% = W / L / O
+               - Right 75% = score
 
                Upcoming:
                - No result section
-               - Original time display
+               - Full-width time bar
                ================================== */
 
             const scoreHtml = final
