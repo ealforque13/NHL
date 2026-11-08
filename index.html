@@ -14,6 +14,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a1020">
+
   <title>Hoist Official | NHL Dashboard</title>
 
   <link rel="icon" type="image/png" href="hoist-logo.png">
@@ -23,7 +24,7 @@
   <link rel="stylesheet" href="matchup.css?v=6">
   <link rel="stylesheet" href="theme.css?v=2">
   <link rel="stylesheet" href="hoist-head-to-head.css?v=5">
-  <link rel="stylesheet" href="hoist-compact-overview.css?v=9">
+  <link rel="stylesheet" href="hoist-compact-overview.css?v=10">
 
   <style>
     /* ==========================================
@@ -156,21 +157,19 @@
     }
 
     /* ==========================================
-       OVERVIEW LAYOUT
+       OVERVIEW GRID
        ========================================== */
 
     #overview .hoist-overview-top {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 18px;
+      display: grid !important;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr) !important;
+      gap: 18px !important;
       align-items: start;
       min-width: 0;
     }
 
     #overview .hoist-overview-right {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+      display: block;
       min-width: 0;
     }
 
@@ -179,22 +178,32 @@
       min-width: 0;
     }
 
-    #overview .hoist-lastfive-panel {
-      padding: 14px !important;
+    /* ==========================================
+       HOT PLAYERS PANEL
+       ========================================== */
+
+    #overview .hoist-hot-players-panel {
+      padding: 16px !important;
       min-width: 0;
     }
 
-    #overview .hoist-lastfive-panel .section-head {
-      margin-bottom: 8px;
+    #overview .hoist-hot-players-panel .section-head {
+      margin-bottom: 16px;
     }
 
-    #overview .hoist-lastfive-panel .section-head h3 {
+    #overview .hoist-hot-players-panel h3 {
       font-size: 18px;
     }
 
-    #overview .hoist-lastfive-panel .game-list {
-      font-size: 13px;
-      line-height: 1.35;
+    #overview .hoist-hot-players-panel .mi-table {
+      width: 100%;
+      font-size: 12px;
+    }
+
+    #overview .hoist-hot-players-panel .mi-table th,
+    #overview .hoist-hot-players-panel .mi-table td {
+      padding: 10px 6px;
+      white-space: nowrap;
     }
 
     /* ==========================================
@@ -329,18 +338,8 @@
     }
 
     /* ==========================================
-       GAME CONTENT POSITIONING
+       CALENDAR GAME POSITIONING
        ========================================== */
-
-    /*
-      The entire game group is anchored to the
-      bottom of its square.
-
-      The logo sits above the score box.
-
-      Increasing the gap moves the logo upward
-      without moving the score box.
-    */
 
     #v2-calendar .v2-game.hoist-calendar-game,
     #v2-calendar .v2-game.hoist-home-game,
@@ -378,7 +377,7 @@
     }
 
     /* ==========================================
-       OPPONENT LOGO
+       OPPONENT LOGOS
        ========================================== */
 
     #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
@@ -399,7 +398,7 @@
     }
 
     /* ==========================================
-       BOTTOM-ALIGNED SCORE / GAME TIME
+       SCORE / GAME TIME BOX
        ========================================== */
 
     #v2-calendar .hoist-calendar-score-box {
@@ -415,14 +414,10 @@
       flex-shrink: 0;
     }
 
-    /* HOME - RED */
-
     #v2-calendar .hoist-home-game .hoist-calendar-score-box {
       background: rgba(220, 38, 38, .20);
       border: 1px solid rgba(239, 68, 68, .65);
     }
-
-    /* AWAY - BLUE */
 
     #v2-calendar .hoist-away-game .hoist-calendar-score-box {
       background: rgba(37, 99, 235, .20);
@@ -432,10 +427,6 @@
     #v2-calendar .hoist-calendar-game:hover .hoist-calendar-score-box {
       filter: brightness(1.2);
     }
-
-    /* ==========================================
-       SCORE TEXT
-       ========================================== */
 
     #v2-calendar .hoist-calendar-score {
       display: flex;
@@ -468,7 +459,7 @@
     }
 
     /* ==========================================
-       TODAY HIGHLIGHT
+       TODAY
        ========================================== */
 
     #v2-calendar .hoist-today {
@@ -495,7 +486,7 @@
     }
 
     /* ==========================================
-       HOME / AWAY LEGEND
+       CALENDAR LEGEND
        ========================================== */
 
     .hoist-calendar-legend {
@@ -534,8 +525,15 @@
     }
 
     /* ==========================================
-       MATCHUP INTELLIGENCE
+       HEAD TO HEAD + MATCHUP INTELLIGENCE
        ========================================== */
+
+    /*
+      Keep the existing Head to Head injection and
+      its associated CSS layout.
+
+      Do not force Matchup Intelligence full width.
+    */
 
     #mi-left > tr:nth-child(n+6),
     #mi-right > tr:nth-child(n+6) {
@@ -562,7 +560,7 @@
 
     @media (max-width: 850px) {
       #overview .hoist-overview-top {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr) !important;
       }
     }
 
@@ -634,7 +632,7 @@
 
     @media (max-width: 600px) {
       #overview .hoist-calendar-panel,
-      #overview .hoist-lastfive-panel {
+      #overview .hoist-hot-players-panel {
         padding: 12px !important;
       }
 
@@ -645,8 +643,6 @@
         padding: 3px !important;
         border-radius: 5px;
       }
-
-      /* SCORE BOX REMAINS AT BOTTOM */
 
       #v2-calendar .v2-game.hoist-calendar-game {
         bottom: 3px !important;
@@ -689,7 +685,6 @@
 </head>
 
 <body>
-
 <div class="app">
 
   <!-- SIDEBAR -->
@@ -734,7 +729,6 @@
     </nav>
 
     <div class="sidebar-bottom">
-
       <div class="sidebar-theme-control">
         <button
           class="theme-toggle"
@@ -750,7 +744,6 @@
 
       <span class="live-dot"></span>
       NHL public data API
-
       <small>Unofficial fan project</small>
     </div>
 
@@ -858,6 +851,8 @@
 
       <section id="overview" class="tab-section">
 
+        <!-- TOP ROW: CALENDAR + HOT PLAYERS -->
+
         <div class="hoist-overview-top">
 
           <!-- CALENDAR -->
@@ -915,31 +910,47 @@
 
           </article>
 
-          <!-- LAST FIVE -->
+          <!-- HOT PLAYERS -->
 
           <div class="hoist-overview-right">
-            <article class="panel section-panel hoist-lastfive-panel">
+
+            <article class="panel section-panel hoist-hot-players-panel">
 
               <div class="section-head">
                 <div>
-                  <div class="eyebrow">RECENT ACTION</div>
-                  <h3>Last 5 Results</h3>
+                  <div class="eyebrow">CURRENT FORM</div>
+                  <h3>Hot Players — Last 5 Games</h3>
                 </div>
 
                 <span class="pill">LAST 5</span>
               </div>
 
-              <div id="recent-games" class="game-list">
-                Loading results…
+              <div class="table-scroll">
+                <table class="mi-table">
+                  <thead>
+                    <tr>
+                      <th>PLAYER</th>
+                      <th>GP</th>
+                      <th>G</th>
+                      <th>A</th>
+                      <th>PTS</th>
+                      <th>PTS/GP</th>
+                    </tr>
+                  </thead>
+                  <tbody id="mi-hot"></tbody>
+                </table>
               </div>
 
             </article>
+
           </div>
 
         </div>
 
-        <!-- LEGACY SNAPSHOT -->
+        <!-- Hidden compatibility element for app.js -->
+        <div id="recent-games" hidden></div>
 
+        <!-- Hidden legacy snapshot for app.js -->
         <article
           id="snapshot-legacy-panel"
           class="panel section-panel"
@@ -950,7 +961,13 @@
           </div>
         </article>
 
-        <!-- HEAD TO HEAD INJECTED BY JS -->
+        <!--
+          HEAD TO HEAD
+          Injected by hoist-head-to-head.js.
+
+          Existing Head to Head positioning and
+          styling are retained.
+        -->
 
         <!-- MATCHUP INTELLIGENCE -->
 
@@ -970,6 +987,7 @@
           </div>
 
           <div class="mi-controls">
+
             <label for="mi-sort">Rank by</label>
 
             <select id="mi-sort">
@@ -990,6 +1008,7 @@
               <option value="5">5+</option>
               <option value="10">10+</option>
             </select>
+
           </div>
 
           <div class="mi-grid">
@@ -1036,28 +1055,7 @@
                   <tbody id="mi-right"></tbody>
                 </table>
               </div>
-            </div>
 
-          </div>
-
-          <div class="mi-full">
-            <div class="eyebrow">CURRENT FORM</div>
-            <h3>Hot Players — Last 5 Games</h3>
-
-            <div class="table-scroll">
-              <table class="mi-table">
-                <thead>
-                  <tr>
-                    <th>PLAYER</th>
-                    <th>GP</th>
-                    <th>G</th>
-                    <th>A</th>
-                    <th>PTS</th>
-                    <th>PTS/GP</th>
-                  </tr>
-                </thead>
-                <tbody id="mi-hot"></tbody>
-              </table>
             </div>
           </div>
 
@@ -1066,6 +1064,7 @@
           </p>
 
         </article>
+
       </section>
 
       <!-- SCHEDULE -->
