@@ -25,7 +25,7 @@
   <link rel="stylesheet" href="matchup.css?v=6">
   <link rel="stylesheet" href="theme.css?v=2">
   <link rel="stylesheet" href="hoist-head-to-head.css?v=5">
-  <link rel="stylesheet" href="hoist-compact-overview.css?v=8">
+  <link rel="stylesheet" href="hoist-compact-overview.css?v=9">
 
   <style>
     /* ==========================================
@@ -225,8 +225,6 @@
       flex-shrink: 0;
     }
 
-    /* NEXT GAME HEADER */
-
     #overview .hoist-calendar-next-inline {
       display: flex;
       align-items: center;
@@ -265,8 +263,6 @@
       white-space: nowrap;
     }
 
-    /* NEXT GAME TEAM LOGOS */
-
     #overview .hoist-next-teams {
       display: flex !important;
       align-items: center !important;
@@ -298,8 +294,6 @@
       margin: 0 2px;
     }
 
-    /* MONTH NAVIGATION */
-
     #overview .hoist-calendar-month-controls {
       display: flex;
       align-items: center;
@@ -317,11 +311,13 @@
     }
 
     /* ==========================================
-       CALENDAR GRID
+       SQUARE CALENDAR DATE CELLS
        ========================================== */
 
     #overview .hoist-calendar-panel .v2-calendar {
-      gap: 3px;
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 4px;
     }
 
     #overview .hoist-calendar-panel .v2-weekdays {
@@ -329,40 +325,93 @@
     }
 
     #overview .hoist-calendar-panel .v2-day {
-      min-height: 105px !important;
+      aspect-ratio: 1 / 1 !important;
+      min-height: 0 !important;
+      height: auto !important;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 8px;
       padding: 6px !important;
       position: relative;
     }
 
-    /* CALENDAR GAME TILE */
+    /* ==========================================
+       LARGE LOGO + SMALL SCORE BOX
+       ========================================== */
 
-    #v2-calendar .hoist-calendar-game {
+    #v2-calendar .v2-game.hoist-calendar-game,
+    #v2-calendar .v2-game.hoist-home-game,
+    #v2-calendar .v2-game.hoist-away-game {
       display: flex !important;
       flex-direction: column !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 5px !important;
+      gap: 6px !important;
       width: 100%;
-      padding: 7px 3px !important;
+      padding: 5px 2px !important;
       text-align: center;
       white-space: normal !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
     }
 
-    /* LOGO ONLY - NO TEAM ABBREVIATION */
+    #v2-calendar .v2-game.hoist-home-game:hover,
+    #v2-calendar .v2-game.hoist-away-game:hover {
+      background: transparent !important;
+    }
+
+    /* OPPONENT LOGO */
 
     #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
       display: block;
-      width: 30px !important;
-      height: 30px !important;
-      min-width: 30px !important;
-      max-width: 30px !important;
-      max-height: 30px !important;
+      width: 44px !important;
+      height: 44px !important;
+      min-width: 44px !important;
+      max-width: 44px !important;
+      max-height: 44px !important;
       flex: none !important;
       object-fit: contain;
       margin: 0 auto !important;
+      transition: transform .15s ease;
     }
 
-    /* RESULT + SCORE */
+    #v2-calendar .hoist-calendar-game:hover .hoist-calendar-logo {
+      transform: scale(1.06);
+    }
+
+    /* SCORE BOX */
+
+    #v2-calendar .hoist-calendar-score-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: 54px;
+      padding: 5px 8px;
+      border-radius: 7px;
+      box-sizing: border-box;
+    }
+
+    /* HOME - RED */
+
+    #v2-calendar .hoist-home-game .hoist-calendar-score-box {
+      background: rgba(220, 38, 38, .20);
+      border: 1px solid rgba(239, 68, 68, .65);
+    }
+
+    /* AWAY - BLUE */
+
+    #v2-calendar .hoist-away-game .hoist-calendar-score-box {
+      background: rgba(37, 99, 235, .20);
+      border: 1px solid rgba(59, 130, 246, .65);
+    }
+
+    #v2-calendar .hoist-calendar-game:hover .hoist-calendar-score-box {
+      filter: brightness(1.2);
+    }
+
+    /* SCORE TEXT */
 
     #v2-calendar .hoist-calendar-score {
       display: flex;
@@ -394,31 +443,9 @@
       color: #fbbf24;
     }
 
-    /* HOME GAMES - RED */
-
-    #v2-calendar .v2-game.hoist-home-game {
-      background: rgba(220, 38, 38, .20) !important;
-      border: 1px solid rgba(239, 68, 68, .58) !important;
-      border-radius: 8px !important;
-    }
-
-    #v2-calendar .v2-game.hoist-home-game:hover {
-      background: rgba(220, 38, 38, .35) !important;
-    }
-
-    /* AWAY GAMES - BLUE */
-
-    #v2-calendar .v2-game.hoist-away-game {
-      background: rgba(37, 99, 235, .20) !important;
-      border: 1px solid rgba(59, 130, 246, .58) !important;
-      border-radius: 8px !important;
-    }
-
-    #v2-calendar .v2-game.hoist-away-game:hover {
-      background: rgba(37, 99, 235, .35) !important;
-    }
-
-    /* TODAY HIGHLIGHT */
+    /* ==========================================
+       TODAY HIGHLIGHT
+       ========================================== */
 
     #v2-calendar .hoist-today {
       border: 2px solid #60a5fa !important;
@@ -443,7 +470,9 @@
       color: #93c5fd;
     }
 
-    /* HOME / AWAY LEGEND */
+    /* ==========================================
+       HOME / AWAY LEGEND
+       ========================================== */
 
     .hoist-calendar-legend {
       display: flex;
@@ -558,8 +587,6 @@
         font-size: 17px !important;
       }
 
-      /* MOBILE CALENDAR TOOLBAR */
-
       #overview .hoist-calendar-toolbar {
         flex-wrap: wrap;
         gap: 8px;
@@ -587,17 +614,33 @@
         padding: 12px !important;
       }
 
+      /* SQUARE MOBILE DATE CELLS */
+
       #overview .hoist-calendar-panel .v2-day {
-        min-height: 80px !important;
+        aspect-ratio: 1 / 1 !important;
+        min-height: 0 !important;
+        height: auto !important;
         padding: 3px !important;
+        border-radius: 5px;
+      }
+
+      #v2-calendar .hoist-calendar-game {
+        gap: 3px !important;
+        padding: 3px 1px !important;
       }
 
       #v2-calendar .hoist-calendar-game .hoist-calendar-logo {
-        width: 22px !important;
-        height: 22px !important;
-        min-width: 22px !important;
-        max-width: 22px !important;
-        max-height: 22px !important;
+        width: 30px !important;
+        height: 30px !important;
+        min-width: 30px !important;
+        max-width: 30px !important;
+        max-height: 30px !important;
+      }
+
+      #v2-calendar .hoist-calendar-score-box {
+        min-width: 42px;
+        padding: 4px 5px;
+        border-radius: 5px;
       }
 
       #v2-calendar .hoist-calendar-score {
@@ -786,8 +829,6 @@
 
         </div>
 
-        <!-- INTEGRATED STATISTICS -->
-
         <div class="hoist-franchise-stats">
 
           <div class="hoist-franchise-stat">
@@ -838,21 +879,15 @@
 
         <div class="hoist-overview-top">
 
-          <!-- ======================================
-               CALENDAR
-               ====================================== -->
+          <!-- CALENDAR -->
 
           <article class="panel section-panel hoist-calendar-panel">
-
-            <!-- CALENDAR HEADER -->
 
             <div class="hoist-calendar-toolbar">
 
               <h3 class="hoist-calendar-title">
                 Calendar
               </h3>
-
-              <!-- NEXT GAME WITH BOTH LOGOS -->
 
               <div class="hoist-calendar-next-inline">
 
@@ -868,8 +903,6 @@
 
               </div>
 
-              <!-- MONTH NAVIGATION -->
-
               <div class="v2-controls hoist-calendar-month-controls">
 
                 <button id="v2-prev" type="button">←</button>
@@ -882,8 +915,6 @@
 
             </div>
 
-            <!-- WEEKDAYS -->
-
             <div class="v2-weekdays">
               <span>Sun</span>
               <span>Mon</span>
@@ -894,15 +925,13 @@
               <span>Sat</span>
             </div>
 
-            <!-- CALENDAR GAMES -->
-            <!-- v2.js generates logo + W/L/O + score -->
+            <!-- SQUARE DATE CELLS -->
+            <!-- Large logo above compact score box -->
 
             <div
               id="v2-calendar"
               class="v2-calendar"
             ></div>
-
-            <!-- HOME / AWAY LEGEND -->
 
             <div class="hoist-calendar-legend">
 
@@ -918,8 +947,6 @@
 
             </div>
 
-            <!-- SELECTED GAME DETAILS -->
-
             <div
               id="v2-calendar-detail"
               class="v2-detail"
@@ -929,9 +956,7 @@
 
           </article>
 
-          <!-- ======================================
-               LAST 5 RESULTS
-               ====================================== -->
+          <!-- LAST 5 RESULTS -->
 
           <div class="hoist-overview-right">
 
@@ -958,9 +983,7 @@
 
         </div>
 
-        <!-- ======================================
-             LEGACY SNAPSHOT
-             ====================================== -->
+        <!-- LEGACY SNAPSHOT -->
 
         <article
           id="snapshot-legacy-panel"
@@ -974,14 +997,9 @@
           </div>
         </article>
 
-        <!-- ======================================
-             HEAD-TO-HEAD
-             Injected by hoist-head-to-head.js
-             ====================================== -->
+        <!-- HEAD TO HEAD IS INJECTED BY JS -->
 
-        <!-- ======================================
-             MATCHUP INTELLIGENCE
-             ====================================== -->
+        <!-- MATCHUP INTELLIGENCE -->
 
         <article
           class="panel section-panel mi-full"
@@ -1084,8 +1102,6 @@
             </div>
 
           </div>
-
-          <!-- HOT PLAYERS -->
 
           <div class="mi-full">
 
