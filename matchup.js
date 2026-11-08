@@ -3,7 +3,18 @@
 
 /*
   HOIST OFFICIAL — MATCHUP INTELLIGENCE
-  Cached JSON only. No direct NHL API calls.
+
+  Cached JSON only.
+  No direct NHL API calls.
+
+  Features:
+  - Dynamic matchup abbreviations
+  - Matchup leaderboards
+  - Sort by points per game, points, goals or assists
+  - Minimum games played filter
+  - Hot Players — Last 5 Games
+  - Point streak indicators
+  - Performance descriptions
 */
 
 (() => {
@@ -49,8 +60,9 @@
     const fallback =
       `https://assets.nhle.com/mugs/nhl/20252026/${encodeURIComponent(club)}/${encodeURIComponent(player.id)}.png`;
 
-    const initials = player.name
+    const initials = String(player.name ?? '')
       .split(/\s+/)
+      .filter(Boolean)
       .map(x => x[0])
       .slice(0, 2)
       .join('');
@@ -62,6 +74,7 @@
         loading="lazy"
         onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='${escape(fallback)}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"
       >
+
       <span
         class="mi-avatar-fallback"
         style="display:none"
@@ -78,7 +91,8 @@
      Empty = Player recorded 0 points
      Dashed = No game data available
 
-     Oldest game on left, newest on right.
+     Oldest game on left.
+     Newest game on right.
      ========================================== */
 
   function lastFiveBoxes(games) {
@@ -158,6 +172,11 @@
 
   /* ==========================================
      MATCHUP LEADERBOARD
+
+     Columns:
+     PLAYER | GP | G | A | PTS | PTS/GP
+
+     Rankings use cached historical games.
      ========================================== */
 
   function leaderboard(
@@ -211,8 +230,10 @@
     $m(targetId).innerHTML = rows.length
       ? rows.map(row => `
           <tr>
+
             <td>
               <span class="mi-person">
+
                 ${avatar(row.player, club)}
 
                 <span>
@@ -225,11 +246,14 @@
                     · ${escape(row.player.position)}
                   </small>
                 </span>
+
               </span>
             </td>
 
             <td>${row.gp}</td>
+
             <td>${row.g}</td>
+
             <td>${row.a}</td>
 
             <td>
@@ -237,8 +261,13 @@
             </td>
 
             <td>
-              ${(row.pts / row.gp).toFixed(2)}
+              ${
+                row.gp
+                  ? (row.pts / row.gp).toFixed(2)
+                  : '—'
+              }
             </td>
+
           </tr>
         `).join('')
       : `
@@ -259,16 +288,17 @@
      Columns:
      PLAYER | G | A | PTS
 
-     PTS/GP has been removed from this table.
+     Features:
+     - Headshot
+     - Player name
+     - Five game point indicators
+     - Active point streak
+     - Last five games production sentence
 
-     Active point streaks of 3+ games are
-     displayed in green.
+     Green = Active point streak (3+ games)
+     Red = Other recent production
 
-     Other production summaries are displayed
-     in red.
-
-     The performance sentence is positioned
-     inside the PTS cell using CSS.
+     GP is calculated but not displayed.
      ========================================== */
 
   function hotPlayers(payload, club) {
@@ -322,21 +352,19 @@
 
           const performance = isStreak
             ? `${row.streak}-game point streak`
-            : `${row.pts} ${
-                row.pts === 1 ? 'point' : 'points'
-              } in last ${row.gp} ${
-                row.gp === 1 ? 'game' : 'games'
-              }`;
+            : `${row.pts} ${row.pts === 1 ? 'point' : 'points'} in last ${row.gp} ${row.gp === 1 ? 'game' : 'games'}`;
 
           return `
             <tr class="hoist-hot-player-row">
 
               <td class="hoist-hot-player-name">
+
                 <span class="mi-person">
 
                   ${avatar(row.player, club)}
 
                   <span>
+
                     <strong>
                       ${escape(row.player.name)}
                     </strong>
@@ -344,9 +372,11 @@
                     <small>
                       ${lastFiveBoxes(row.recent)}
                     </small>
+
                   </span>
 
                 </span>
+
               </td>
 
               <td class="hoist-hot-stat">
@@ -358,15 +388,17 @@
               </td>
 
               <td class="hoist-hot-stat">
-                <strong>${row.pts}</strong>
+
+                <strong>
+                  ${row.pts}
+                </strong>
 
                 <span
-                  class="hoist-hot-performance ${
-                    isStreak ? 'is-streak' : ''
-                  }"
+                  class="hoist-hot-performance${isStreak ? ' is-streak' : ''}"
                 >
                   ${escape(performance)}
                 </span>
+
               </td>
 
             </tr>
@@ -384,6 +416,14 @@
 
   /* ==========================================
      UPDATE MATCHUP INTELLIGENCE
+
+     Uses NHL team abbreviations.
+
+     Example:
+     MTL vs MIN
+
+     MTL players vs MIN
+     MIN players vs MTL
      ========================================== */
 
   async function update() {
@@ -411,16 +451,25 @@
         : next.homeTeam?.abbrev
     );
 
-    $m('mi-title').textContent = opp
-      ? `${team(selected).name} vs. ${team(opp).name}`
-      : 'No upcoming regular-season matchup';
+    /* ==========================================
+       DYNAMIC ABBREVIATED TITLES
+       ========================================== */
 
-    $m('mi-left-title').textContent =
-      `${team(selected).name} vs. opponent`;
+    $m('mi-title').textContent = opp
+      ? `${selected} vs ${opp}`
+      : 'No upcoming matchup';
+
+    $m('mi-left-title').textContent = opp
+      ? `${selected} players vs ${opp}`
+      : `${selected} players`;
 
     $m('mi-right-title').textContent = opp
-      ? `${team(opp).name} vs. ${team(selected).name}`
-      : 'Opponent production';
+      ? `${opp} players vs ${selected}`
+      : 'Opponent players';
+
+    /* ==========================================
+       LOADING STATES
+       ========================================== */
 
     for (
       const id of [
@@ -429,6 +478,7 @@
         'mi-hot'
       ]
     ) {
+
       $m(id).innerHTML = `
         <tr>
           <td colspan="${
@@ -457,7 +507,9 @@
         return;
       }
 
-      /* Hot Players */
+      /* ==========================================
+         HOT PLAYERS
+         ========================================== */
 
       if (ours.status === 'fulfilled') {
 
@@ -478,7 +530,9 @@
         `;
       }
 
-      /* Matchup tables */
+      /* ==========================================
+         MATCHUP TABLES
+         ========================================== */
 
       if (!opp) {
 
@@ -535,7 +589,9 @@
         }
       }
 
-      /* Data status */
+      /* ==========================================
+         DATA STATUS
+         ========================================== */
 
       const partial = [
         ours,
@@ -592,15 +648,21 @@
         return result;
       };
 
+      /* Rank by filter */
+
       $m('mi-sort').addEventListener(
         'change',
         update
       );
 
+      /* Minimum matchup GP filter */
+
       $m('mi-min-games').addEventListener(
         'change',
         update
       );
+
+      /* Initial load */
 
       update();
     }
