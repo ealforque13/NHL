@@ -1224,6 +1224,36 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-conference-table :is(th,td):nth-child(16),
   #standings .hoist-conference-table :is(th,td):nth-child(18) { width:46px !important; }
 }
+
+/* MOBILE STANDINGS: division replaces Rank/Team column headings.
+   Team logo + abbreviation remains frozen for easy identification. */
+#standings .hoist-mobile-division-label { display:none; }
+@media (max-width:650px) {
+  #standings .hoist-conference-table :is(th,td):nth-child(1) {
+    display:none !important;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(2) {
+    position:sticky !important;
+    left:0 !important;
+    width:79px !important;
+    min-width:79px !important;
+    max-width:79px !important;
+    z-index:3;
+    text-align:left !important;
+    box-shadow:2px 0 0 rgba(125,155,195,.30);
+  }
+  #standings .hoist-conference-table thead th:nth-child(2) {
+    z-index:4;
+    font-size:9px !important;
+    letter-spacing:0 !important;
+  }
+  #standings .hoist-desktop-team-label { display:none; }
+  #standings .hoist-mobile-division-label { display:inline; }
+  #standings .hoist-conference-table .hoist-standing-team {
+    gap:3px !important;
+  }
+}
+
 </style>
 </head>
 
@@ -2097,8 +2127,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const headings = ['RANK','TEAM','GP','W','L','OT','PTS','P%','RW','ROW','GF','GA','DIFF','HOME','AWAY','S/O','L10','STRK'];
   const keys = ['', '', 'gamesPlayed','wins','losses','otLosses','points','pointPctg','regulationWins','regulationPlusOtWins','goalFor','goalAgainst','goalDifferential','','','','',''];
-  function tableHead() {
-    return `<thead><tr>${headings.map((label,i) => `<th scope="col"${keys[i] ? ` data-standings-sort="${keys[i]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr></thead>`;
+  function tableHead(groupLabel = '') {
+    return `<thead><tr>${headings.map((label,i) => `<th scope="col"${keys[i] ? ` data-standings-sort="${keys[i]}" tabindex="0" role="button"` : ''}>${i === 1 && groupLabel ? `<span class="hoist-desktop-team-label">TEAM</span><span class="hoist-mobile-division-label">${escapeHtml(groupLabel)}</span>` : label}</th>`).join('')}</tr></thead>`;
   }
   function groupTable(label,teams,status,includeRemaining=false) {
     const sorted = sortedWithinGroup(teams);
@@ -2111,7 +2141,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return `<section class="hoist-standings-group" aria-label="${escapeHtml(label)} standings">
       <h3 class="hoist-group-title">${escapeHtml(label)}</h3>
       <div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(label)} standings">
-        ${tableHead()}<tbody>${body}</tbody>
+        ${tableHead(label)}<tbody>${body}</tbody>
       </table></div>
     </section>`;
   }
