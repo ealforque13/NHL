@@ -17,7 +17,6 @@ try {
 <title>Hoist Official | NHL Dashboard</title>
 
 <link rel="icon" type="image/png" href="hoist-logo.png">
-
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="v2.css?v=6">
 <link rel="stylesheet" href="matchup.css?v=6">
@@ -645,7 +644,7 @@ html body .section-panel {
 }
 
 /* ==========================================
-   CALENDAR LEGEND
+   CALENDAR LEGEND — UPDATED COLOURS
    ========================================== */
 
 .hoist-calendar-legend {
@@ -669,17 +668,23 @@ html body .section-panel {
   display: inline-block;
   width: 12px;
   height: 12px;
+  box-sizing: border-box;
+  border-radius: 0 !important;
   flex-shrink: 0;
 }
 
+/* HOME — EXACT SAME RED AS GAME BOXES */
+
 .hoist-legend-home {
-  background: rgba(220,38,38,.65);
-  border: 1px solid #ef4444;
+  background: #b91c1c !important;
+  border: 1px solid #dc2626 !important;
 }
 
+/* AWAY — EXACT SAME BLUE AS GAME BOXES */
+
 .hoist-legend-away {
-  background: rgba(37,99,235,.65);
-  border: 1px solid #3b82f6;
+  background: #1d4ed8 !important;
+  border: 1px solid #2563eb !important;
 }
 
 /* ==========================================
@@ -1166,6 +1171,8 @@ html body .mi-avatar-fallback,
     </div>
 
     <div id="v2-calendar" class="v2-calendar"></div>
+
+    <!-- UPDATED CALENDAR LEGEND -->
 
     <div class="hoist-calendar-legend">
 
