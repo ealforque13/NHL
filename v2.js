@@ -4,17 +4,17 @@
 /* ==========================================
    HOIST OFFICIAL — NHL DASHBOARD V2
 
-   Calendar updates:
-   - Opponent logos only (no abbreviations)
+   Calendar design:
+   - Large opponent logos
+   - No team abbreviations below logos
+   - Small score/time box below each logo
+   - Red box = home game
+   - Blue box = away game
    - W = Win
    - L = Regulation loss
    - O = Overtime / shootout loss
-   - Result letter appears before final score
-   - Home games remain red
-   - Away games remain blue
-   - Today indicator and legend retained
-
-   Data comes from local JSON files.
+   - Today indicator
+   - Interactive game details
    ========================================== */
 
 (() => {
@@ -57,13 +57,10 @@
     const own = home ? g.homeTeam : g.awayTeam;
     const other = home ? g.awayTeam : g.homeTeam;
 
-    // All wins, including OT/SO wins, count as W.
     if (num(own.score) > num(other.score)) {
       return 'W';
     }
 
-    // NHL schedule data may expose the ending
-    // period in either of these fields.
     const periodType = String(
       g.gameOutcome?.lastPeriodType ||
       g.periodDescriptor?.periodType ||
@@ -74,8 +71,6 @@
       return 'O';
     }
 
-    // A final loss without an OT/SO indicator
-    // is treated as a regulation loss.
     return 'L';
   }
 
@@ -139,62 +134,86 @@
     style.id = 'hoist-calendar-home-away-styles';
 
     style.textContent = `
-      /* HOME GAME - RED */
+      /* ======================================
+         REMOVE LARGE GAME BOX
+         ====================================== */
 
-      #v2-calendar .v2-game.hoist-home-game {
-        background: rgba(220, 38, 38, .20) !important;
-        border: 1px solid rgba(239, 68, 68, .58) !important;
-        border-radius: 8px !important;
-        color: inherit;
-      }
-
-      #v2-calendar .v2-game.hoist-home-game:hover {
-        background: rgba(220, 38, 38, .35) !important;
-      }
-
-      /* AWAY GAME - BLUE */
-
+      #v2-calendar .v2-game.hoist-calendar-game,
+      #v2-calendar .v2-game.hoist-home-game,
       #v2-calendar .v2-game.hoist-away-game {
-        background: rgba(37, 99, 235, .20) !important;
-        border: 1px solid rgba(59, 130, 246, .58) !important;
-        border-radius: 8px !important;
-        color: inherit;
-      }
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 6px 2px !important;
 
-      #v2-calendar .v2-game.hoist-away-game:hover {
-        background: rgba(37, 99, 235, .35) !important;
-      }
-
-      /* COMPACT GAME TILE */
-
-      #v2-calendar .hoist-calendar-game {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
         justify-content: center !important;
-        gap: 5px !important;
+        gap: 8px !important;
         width: 100%;
-        padding: 7px 3px !important;
         text-align: center;
         white-space: normal !important;
       }
 
-      /* OPPONENT LOGO */
+      #v2-calendar .v2-game.hoist-home-game:hover,
+      #v2-calendar .v2-game.hoist-away-game:hover {
+        background: transparent !important;
+      }
+
+      /* ======================================
+         LARGE TEAM LOGO
+         ====================================== */
 
       #v2-calendar .hoist-calendar-game
       .hoist-calendar-logo {
         display: block;
-        width: 30px !important;
-        height: 30px !important;
-        min-width: 30px !important;
-        max-width: 30px !important;
-        max-height: 30px !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        max-width: 44px !important;
+        max-height: 44px !important;
         object-fit: contain;
         flex: none !important;
         margin: 0 auto !important;
       }
 
-      /* SCORE AND RESULT */
+      /* ======================================
+         COMPACT SCORE BOX
+         ====================================== */
+
+      #v2-calendar .hoist-calendar-score-box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        min-width: 54px;
+        padding: 5px 8px;
+        border-radius: 7px;
+        box-sizing: border-box;
+      }
+
+      /* HOME GAME - RED */
+
+      #v2-calendar
+      .hoist-home-game
+      .hoist-calendar-score-box {
+        background: rgba(220, 38, 38, .20);
+        border: 1px solid rgba(239, 68, 68, .65);
+      }
+
+      /* AWAY GAME - BLUE */
+
+      #v2-calendar
+      .hoist-away-game
+      .hoist-calendar-score-box {
+        background: rgba(37, 99, 235, .20);
+        border: 1px solid rgba(59, 130, 246, .65);
+      }
+
+      /* ======================================
+         SCORE TEXT
+         ====================================== */
 
       #v2-calendar .hoist-calendar-score {
         display: flex;
@@ -206,6 +225,8 @@
         line-height: 1.2;
         white-space: nowrap;
       }
+
+      /* RESULT LETTERS */
 
       #v2-calendar .hoist-result-letter {
         display: inline-block;
@@ -226,7 +247,26 @@
         color: #fbbf24;
       }
 
-      /* TODAY */
+      /* ======================================
+         HOVER EFFECT
+         ====================================== */
+
+      #v2-calendar
+      .hoist-calendar-game:hover
+      .hoist-calendar-score-box {
+        filter: brightness(1.2);
+      }
+
+      #v2-calendar
+      .hoist-calendar-game:hover
+      .hoist-calendar-logo {
+        transform: scale(1.06);
+        transition: transform .15s ease;
+      }
+
+      /* ======================================
+         TODAY
+         ====================================== */
 
       #v2-calendar .hoist-today {
         border: 2px solid #60a5fa !important;
@@ -252,7 +292,9 @@
         color: #93c5fd;
       }
 
-      /* HOME / AWAY LEGEND */
+      /* ======================================
+         HOME / AWAY LEGEND
+         ====================================== */
 
       .hoist-calendar-legend {
         display: flex;
@@ -289,14 +331,25 @@
         border: 1px solid #3b82f6;
       }
 
+      /* ======================================
+         MOBILE
+         ====================================== */
+
       @media (max-width: 600px) {
+
         #v2-calendar .hoist-calendar-game
         .hoist-calendar-logo {
-          width: 22px !important;
-          height: 22px !important;
-          min-width: 22px !important;
-          max-width: 22px !important;
-          max-height: 22px !important;
+          width: 30px !important;
+          height: 30px !important;
+          min-width: 30px !important;
+          max-width: 30px !important;
+          max-height: 30px !important;
+        }
+
+        #v2-calendar .hoist-calendar-score-box {
+          min-width: 42px;
+          padding: 4px 5px;
+          border-radius: 5px;
         }
 
         #v2-calendar .hoist-calendar-score {
@@ -354,7 +407,7 @@
   }
 
   /* ==========================================
-     ANALYTICS — GOALS AND RESULTS
+     ANALYTICS - GOALS AND RESULTS
      ========================================== */
 
   function renderChart() {
@@ -649,6 +702,7 @@
               : 'hoist-away-game';
 
             const final = gameFinal(g);
+
             const resultLetter = final
               ? result(g, state.team)
               : '';
@@ -663,8 +717,6 @@
               ? `${num(g.awayTeam.score)}-${num(g.homeTeam.score)}`
               : '';
 
-            // Final games: result letter + score.
-            // Upcoming games: time only.
             const gameInfo = final
               ? `${resultLetter} ${finalScore}`
               : gameTime(g);
@@ -691,6 +743,13 @@
                 </span>
               `;
 
+            /* ==================================
+               NEW CALENDAR GAME DESIGN
+
+               Logo sits outside score box.
+               Only score/time is boxed.
+               ================================== */
+
             return `
               <button
                 type="button"
@@ -707,7 +766,9 @@
                   onerror="this.style.display='none'"
                 >
 
-                ${scoreHtml}
+                <span class="hoist-calendar-score-box">
+                  ${scoreHtml}
+                </span>
               </button>
             `;
           }).join('')}
@@ -922,8 +983,6 @@
       fantasy
     );
 
-    // Preserve the original app.js game rendering,
-    // then refresh V2 analytics and calendar.
     const originalGames = renderGames;
 
     renderGames = function (...args) {
@@ -932,9 +991,13 @@
       return output;
     };
 
-    document
-      .querySelector('[data-tab="fantasy"]')
-      .addEventListener('click', fantasy);
+    const fantasyTab = document.querySelector(
+      '[data-tab="fantasy"]'
+    );
+
+    if (fantasyTab) {
+      fantasyTab.addEventListener('click', fantasy);
+    }
 
     loadStats();
     calendar();
