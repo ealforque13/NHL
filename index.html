@@ -337,13 +337,18 @@ html body .section-panel {
 }
 
 /* ==========================================
-   HOT PLAYERS — NEON PERFORMANCE SENTENCES
+   HOT PLAYERS — PERFORMANCE SENTENCES
    ========================================== */
 
 /*
-  Keep the player column untouched.
-  The four stat cells reserve space beneath
-  their numbers for the performance sentence.
+  Four columns:
+  PLAYER | G | A | PTS
+
+  Keep player names, headshots and boxes
+  in their existing positions.
+
+  Keep the production summary inside the
+  PTS cell, beneath the points total.
 */
 
 #overview #mi-hot .hoist-hot-player-row {
@@ -364,14 +369,7 @@ html body .section-panel {
   transform: none !important;
 }
 
-/* Anchor the summary inside the last stat cell */
-
-#overview #mi-hot .hoist-hot-player-row
-.hoist-hot-stat:last-child {
-  position: relative !important;
-}
-
-/* Regular production — NEON RED */
+/* Bottom-right performance sentence */
 
 #overview #mi-hot .hoist-hot-performance {
   position: absolute !important;
@@ -396,23 +394,18 @@ html body .section-panel {
   letter-spacing: .015em !important;
   white-space: nowrap !important;
 
+  /* Regular production — red, no glow */
   color: #ff5268 !important;
-
-  text-shadow:
-    0 0 4px rgba(255,82,104,.55),
-    0 0 10px rgba(255,82,104,.30) !important;
+  text-shadow: none !important;
 
   pointer-events: none !important;
 }
 
-/* Active point streak — NEON GREEN */
+/* Active point streak — green, no glow */
 
 #overview #mi-hot .hoist-hot-performance.is-streak {
   color: #39ff9c !important;
-
-  text-shadow:
-    0 0 4px rgba(57,255,156,.65),
-    0 0 10px rgba(57,255,156,.35) !important;
+  text-shadow: none !important;
 }
 
 /* ==========================================
@@ -1027,7 +1020,7 @@ html body .mi-avatar-fallback,
     gap: 16px;
   }
 
-  /* Mobile neon performance summaries */
+  /* Hot Players mobile performance summaries */
 
   #overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {
     padding-top: 8px !important;
@@ -1041,6 +1034,7 @@ html body .mi-avatar-fallback,
     font-size: 9px !important;
     width: max-content !important;
     transform: none !important;
+    text-shadow: none !important;
   }
 }
 
@@ -1301,7 +1295,6 @@ html body .mi-avatar-fallback,
               <th>G</th>
               <th>A</th>
               <th>PTS</th>
-              <th>PTS/GP</th>
             </tr>
           </thead>
 
@@ -1707,7 +1700,7 @@ html body .mi-avatar-fallback,
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=8" defer></script>
 <script src="v2.js?v=10" defer></script>
-<script src="matchup.js?v=9" defer></script>
+<script src="matchup.js?v=10" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 <!-- Disable keyboard activation of calendar games.
