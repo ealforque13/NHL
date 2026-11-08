@@ -340,17 +340,6 @@ html body .section-panel {
    HOT PLAYERS — PERFORMANCE SENTENCES
    ========================================== */
 
-/*
-  Four columns:
-  PLAYER | G | A | PTS
-
-  Keep player names, headshots and boxes
-  in their existing positions.
-
-  Keep the production summary inside the
-  PTS cell, beneath the points total.
-*/
-
 #overview #mi-hot .hoist-hot-player-row {
   position: relative !important;
 }
@@ -362,49 +351,72 @@ html body .section-panel {
 #overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {
   position: relative !important;
   vertical-align: middle !important;
-
   padding-top: 8px !important;
   padding-bottom: 27px !important;
-
   transform: none !important;
 }
-
-/* Bottom-right performance sentence */
 
 #overview #mi-hot .hoist-hot-performance {
   position: absolute !important;
   display: block !important;
-
   top: auto !important;
   bottom: 7px !important;
   right: 0 !important;
-
   width: max-content !important;
   max-width: none !important;
-
   margin: 0 !important;
   padding: 0 !important;
-
   transform: none !important;
   text-align: right !important;
-
   font-size: 11px !important;
   font-weight: 800 !important;
   line-height: 1.2 !important;
   letter-spacing: .015em !important;
   white-space: nowrap !important;
-
-  /* Regular production — red, no glow */
   color: #ff5268 !important;
   text-shadow: none !important;
-
   pointer-events: none !important;
 }
 
-/* Active point streak — green, no glow */
-
 #overview #mi-hot .hoist-hot-performance.is-streak {
   color: #39ff9c !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================
+   HOT PLAYERS — EVEN STAT COLUMN SPACING
+   ========================================== */
+
+/*
+  PLAYER = 55%
+  G      = 15%
+  A      = 15%
+  PTS    = 15%
+
+  This section changes only Hot Players.
+*/
+
+#overview .hoist-hot-players-panel .mi-table {
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+#overview .hoist-hot-players-panel .mi-table th:first-child,
+#overview .hoist-hot-players-panel .mi-table td:first-child {
+  width: 55% !important;
+  text-align: left !important;
+}
+
+#overview .hoist-hot-players-panel .mi-table th:nth-child(n+2),
+#overview .hoist-hot-players-panel .mi-table td:nth-child(n+2) {
+  width: 15% !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
+}
+
+#overview #mi-hot .hoist-hot-performance {
+  right: 5px !important;
+  text-align: right !important;
   text-shadow: none !important;
 }
 
@@ -607,16 +619,13 @@ html body .section-panel {
   align-items: center !important;
   justify-content: center !important;
   align-self: stretch !important;
-
   width: 100% !important;
   min-width: 0 !important;
   max-width: none !important;
-
   height: 28px !important;
   min-height: 28px !important;
   max-height: 28px !important;
   flex: 0 0 28px !important;
-
   padding: 0 !important;
   margin: 0 !important;
   box-sizing: border-box !important;
@@ -626,23 +635,17 @@ html body .section-panel {
   white-space: nowrap !important;
 }
 
-/* HOME GAME — RED */
-
 #overview #v2-calendar
 .hoist-home-game .hoist-calendar-score-box {
   background: #b91c1c !important;
   border: 1px solid #dc2626 !important;
 }
 
-/* AWAY GAME — BLUE */
-
 #overview #v2-calendar
 .hoist-away-game .hoist-calendar-score-box {
   background: #1d4ed8 !important;
   border: 1px solid #2563eb !important;
 }
-
-/* NORMALIZE SCORE/TIME CONTENTS */
 
 #overview #v2-calendar
 .hoist-calendar-score-box > * {
@@ -832,8 +835,6 @@ html body .nav-item {
     color .15s ease !important;
 }
 
-/* Player headshots remain circular */
-
 html body .mi-person img,
 html body .mi-avatar-fallback,
 #overview .hoist-hot-players-panel .mi-table td img {
@@ -1020,8 +1021,6 @@ html body .mi-avatar-fallback,
     gap: 16px;
   }
 
-  /* Hot Players mobile performance summaries */
-
   #overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {
     padding-top: 8px !important;
     padding-bottom: 26px !important;
@@ -1030,7 +1029,7 @@ html body .mi-avatar-fallback,
 
   #overview #mi-hot .hoist-hot-performance {
     bottom: 6px !important;
-    right: 0 !important;
+    right: 5px !important;
     font-size: 9px !important;
     width: max-content !important;
     transform: none !important;
@@ -1242,15 +1241,11 @@ html body .mi-avatar-fallback,
       <span>Sat</span>
     </div>
 
-    <!-- NON-INTERACTIVE CALENDAR -->
-
     <div
       id="v2-calendar"
       class="v2-calendar"
       aria-label="NHL schedule calendar"
     ></div>
-
-    <!-- CALENDAR LEGEND -->
 
     <div class="hoist-calendar-legend">
       <span class="hoist-legend-item">
@@ -1263,8 +1258,6 @@ html body .mi-avatar-fallback,
         Away Game
       </span>
     </div>
-
-    <!-- KEPT FOR JAVASCRIPT COMPATIBILITY -->
 
     <div
       id="v2-calendar-detail"
@@ -1307,8 +1300,6 @@ html body .mi-avatar-fallback,
 
 </div>
 
-<!-- COMPATIBILITY ELEMENTS -->
-
 <div id="recent-games" hidden></div>
 
 <article
@@ -1320,8 +1311,6 @@ html body .mi-avatar-fallback,
     <div class="empty">Loading statistics…</div>
   </div>
 </article>
-
-<!-- HEAD TO HEAD INJECTED BY JAVASCRIPT -->
 
 <!-- MATCHUP INTELLIGENCE -->
 
@@ -1703,8 +1692,8 @@ html body .mi-avatar-fallback,
 <script src="matchup.js?v=10" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
-<!-- Disable keyboard activation of calendar games.
-     Month navigation buttons remain functional. -->
+<!-- Keep calendar games non-interactive.
+     Month navigation buttons still work. -->
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
