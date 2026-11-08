@@ -4,9 +4,10 @@
    with NHL team-coloured abbreviation badges.
 
    Updated:
-   - Record card displays W–L–OTL
-   - Goals For / Against summary removed
-   - Renders into the dedicated right-hand column
+   - Compact Record card beside Last 10 Matchups title
+   - W–L–OTL record
+   - Goals For / Against removed
+   - Dedicated right-hand overview column
 */
 
 (() => {
@@ -176,10 +177,131 @@ function details() {
 
 
 /* ==========================================
+   COMPACT HEADER STYLES
+========================================== */
+
+function installHeaderStyles() {
+  if ($('hoist-h2h-header-styles')) return;
+
+  const style = document.createElement('style');
+  style.id = 'hoist-h2h-header-styles';
+
+  style.textContent = `
+    #hoist-h2h .hoist-h2h-top-row {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 18px !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      margin-bottom: 20px !important;
+    }
+
+    #hoist-h2h .hoist-h2h-heading {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+    }
+
+    #hoist-h2h .hoist-h2h-heading h3 {
+      margin: 0 !important;
+    }
+
+    #hoist-h2h .hoist-h2h-heading .muted {
+      margin-top: 9px !important;
+      line-height: 1.5 !important;
+    }
+
+    #hoist-h2h #hoist-h2h-summary {
+      display: block !important;
+      flex: 0 0 140px !important;
+      width: 140px !important;
+      min-width: 0 !important;
+      max-width: 140px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      align-self: flex-start !important;
+      box-sizing: border-box !important;
+    }
+
+    #hoist-h2h .hoist-h2h-record-card {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+      padding: 11px 12px !important;
+      margin: 0 !important;
+      background: rgba(120,150,200,.055) !important;
+      border: 1px solid rgba(125,155,195,.22) !important;
+      border-radius: 0 !important;
+      gap: 0 !important;
+    }
+
+    #hoist-h2h .hoist-h2h-record-label {
+      font-size: 11px !important;
+      font-weight: 750 !important;
+      letter-spacing: .06em !important;
+      line-height: 1.3 !important;
+      color: #91afd8 !important;
+      margin-bottom: 7px !important;
+    }
+
+    #hoist-h2h .hoist-h2h-record-value {
+      font-size: 25px !important;
+      font-weight: 800 !important;
+      line-height: 1.2 !important;
+      color: #ffffff !important;
+      white-space: nowrap !important;
+    }
+
+    #hoist-h2h .hoist-h2h-record-detail {
+      margin-top: 5px !important;
+      font-size: 10px !important;
+      font-weight: 400 !important;
+      letter-spacing: .02em !important;
+      line-height: 1.3 !important;
+      color: #8ea9d2 !important;
+      white-space: nowrap !important;
+    }
+
+    @media (max-width: 480px) {
+      #hoist-h2h .hoist-h2h-top-row {
+        gap: 10px !important;
+      }
+
+      #hoist-h2h #hoist-h2h-summary {
+        flex: 0 0 116px !important;
+        width: 116px !important;
+        max-width: 116px !important;
+      }
+
+      #hoist-h2h .hoist-h2h-record-card {
+        padding: 9px !important;
+      }
+
+      #hoist-h2h .hoist-h2h-record-value {
+        font-size: 21px !important;
+      }
+
+      #hoist-h2h .hoist-h2h-record-label,
+      #hoist-h2h .hoist-h2h-record-detail {
+        font-size: 9px !important;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+}
+
+
+/* ==========================================
    HEAD-TO-HEAD WIDGET
 ========================================== */
 
 function widget() {
+  installHeaderStyles();
+
   if ($('hoist-h2h')) return;
 
   const overview = $('overview');
@@ -191,21 +313,24 @@ function widget() {
   card.className = 'panel section-panel';
 
   card.innerHTML = `
-    <div class="section-head">
-      <div>
+    <div class="hoist-h2h-top-row">
+
+      <div class="hoist-h2h-heading">
         <div class="eyebrow">HEAD TO HEAD</div>
+
         <h3>Last 10 Matchups</h3>
 
         <p id="hoist-h2h-sub" class="muted">
           Finding the next opponent…
         </p>
       </div>
-    </div>
 
-    <div
-      id="hoist-h2h-summary"
-      class="h2h-summary"
-    ></div>
+      <div
+        id="hoist-h2h-summary"
+        class="h2h-summary"
+      ></div>
+
+    </div>
 
     <div
       id="hoist-h2h-games"
@@ -220,9 +345,6 @@ function widget() {
   /*
     Render directly inside the dedicated
     right-hand column.
-
-    This prevents the history panel from
-    disappearing when the page updates.
   */
 
   const historyColumn =
@@ -273,16 +395,6 @@ function periodLabel(p) {
     n === 3 ? 'rd' : 'th'
   }`;
 }
-
-/*
-  Determine whether a completed game
-  ended in overtime or a shootout.
-
-  NHL schedule data generally provides:
-  gameOutcome.lastPeriodType = REG / OT / SO
-
-  Other fields are checked as fallbacks.
-*/
 
 function overtimeLoss(g) {
   const periodType = String(
@@ -657,7 +769,7 @@ function paint(games, t, opp, cache) {
   }
 
   /* ========================================
-     NEW RECORD CARD: W–L–OTL
+     RECORD: W–L–OTL
   ======================================== */
 
   let wins = 0;
@@ -686,70 +798,22 @@ function paint(games, t, opp, cache) {
   }
 
   /*
-    Replaces both old summary boxes with
-    one Record card.
-
-    Styles are inline so this works without
-    requiring additional CSS changes.
+    Compact Record card in the top-right.
+    No Goals For / Against card.
   */
 
-  summary.style.display = 'block';
-  summary.style.padding = '0';
-  summary.style.margin = '22px 0 16px';
-
   summary.innerHTML = `
-    <div
-      class="hoist-h2h-record-card"
-      style="
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-        gap:0;
-        width:100%;
-        box-sizing:border-box;
-        padding:14px 16px;
-        background:rgba(120,150,200,.055);
-        border:1px solid rgba(125,155,195,.22);
-        border-radius:0;
-      "
-    >
+    <div class="hoist-h2h-record-card">
 
-      <div
-        class="hoist-h2h-record-label"
-        style="
-          font-size:12px;
-          font-weight:750;
-          letter-spacing:.06em;
-          line-height:1.3;
-          color:#91afd8;
-          margin-bottom:7px;
-        "
-      >
+      <div class="hoist-h2h-record-label">
         RECORD
       </div>
 
-      <div
-        class="hoist-h2h-record-value"
-        style="
-          font-size:28px;
-          font-weight:800;
-          line-height:1.2;
-          color:#ffffff;
-        "
-      >
+      <div class="hoist-h2h-record-value">
         ${wins}–${losses}–${otLosses}
       </div>
 
-      <div
-        class="hoist-h2h-record-detail"
-        style="
-          margin-top:5px;
-          font-size:11px;
-          font-weight:400;
-          letter-spacing:.02em;
-          color:#8ea9d2;
-        "
-      >
+      <div class="hoist-h2h-record-detail">
         W – L – OTL
       </div>
 
