@@ -1132,6 +1132,58 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-conference-table .hoist-standing-team { font-size:13px !important; }
   #standings .hoist-conference-table :is(th,td):nth-child(2) { min-width:100px !important; }
 }
+
+/* TIGHTER GP–DIFF SPACING + MOBILE FROZEN RANK / TEAM */
+@media (min-width:1100px) {
+  #standings .hoist-conference-table :is(th,td):nth-child(2) { width:31% !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+12) { width:3.4% !important; }
+}
+@media (max-width:650px) {
+  #standings .hoist-standings-group .hoist-standings-scroll {
+    overflow-x:auto !important;
+    overflow-y:visible;
+    -webkit-overflow-scrolling:touch;
+  }
+  #standings .hoist-conference-table {
+    min-width:1130px !important;
+    border-collapse:separate;
+    border-spacing:0;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(1) {
+    position:sticky !important;
+    left:0;
+    z-index:3;
+    width:45px !important;
+    min-width:45px !important;
+    max-width:45px !important;
+    background:#101a2d;
+    text-align:center !important;
+  }
+  #standings .hoist-conference-table :is(th,td):nth-child(2) {
+    position:sticky !important;
+    left:45px;
+    z-index:3;
+    width:125px !important;
+    min-width:125px !important;
+    max-width:125px !important;
+    background:#101a2d;
+    box-shadow:2px 0 0 rgba(125,155,195,.30);
+    text-align:left !important;
+  }
+  #standings .hoist-conference-table thead :is(th:nth-child(1),th:nth-child(2)) {
+    z-index:4;
+    background:#1e2b42;
+  }
+  #standings .hoist-conference-table tr.hoist-alt-row :is(td:nth-child(1),td:nth-child(2)) {
+    background:#1e2b42;
+  }
+  #standings .hoist-conference-table .hoist-standing-team {
+    max-width:100%;
+    gap:5px;
+  }
+  #standings .hoist-conference-table .hoist-standing-name-short { display:inline; }
+  #standings .hoist-conference-table .hoist-standing-name-full { display:none; }
+}
 </style>
 </head>
 
@@ -2154,3 +2206,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
