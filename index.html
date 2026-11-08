@@ -14,7 +14,6 @@ try {
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a1020">
-
 <title>Hoist Official | NHL Dashboard</title>
 
 <link rel="icon" type="image/png" href="hoist-logo.png">
@@ -240,6 +239,7 @@ html body .section-panel {
 #overview .hoist-hot-players-panel h3 {
   font-size: 21px !important;
   font-weight: 800;
+  margin: 0 !important;
 }
 
 #overview .hoist-hot-players-panel .table-scroll {
@@ -532,7 +532,7 @@ html body .section-panel {
 
 /* ==========================================
    CALENDAR SCORE / TIME BOXES
-   EXACT SAME SIZE FOR EVERY GAME
+   IDENTICAL DIMENSIONS FOR EVERY GAME
    ========================================== */
 
 #overview #v2-calendar .hoist-calendar-score-box {
@@ -693,6 +693,38 @@ html body .section-panel {
 
 #snapshot-legacy-panel {
   display: none !important;
+}
+
+/* ==========================================
+   MATCHUP INTELLIGENCE — HEAD-TO-HEAD ALIGNMENT
+   ========================================== */
+
+#overview #matchup-intelligence {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border-radius: 0 !important;
+}
+
+#overview #matchup-intelligence .mi-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#overview #matchup-intelligence .mi-grid > div {
+  min-width: 0 !important;
+}
+
+#overview #matchup-intelligence .table-scroll {
+  max-width: 100% !important;
+  overflow-x: auto;
+  border-radius: 0 !important;
 }
 
 /* ==========================================
@@ -1164,7 +1196,6 @@ html body .mi-avatar-fallback,
       <div class="section-head">
 
         <div>
-          <div class="eyebrow">CURRENT FORM</div>
           <h3>Hot Players — Last 5 Games</h3>
         </div>
 
