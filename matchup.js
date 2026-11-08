@@ -7,14 +7,15 @@
   Cached JSON only.
   No direct NHL API calls.
 
-  Features:
-  - Dynamic matchup abbreviations
-  - Matchup leaderboards
-  - Sort by points per game, points, goals or assists
-  - Minimum games played filter
-  - Hot Players — Last 5 Games
-  - Point streak indicators
-  - Performance descriptions
+  Head to Head:
+  - Independent column sorting
+  - GP minimum filter
+  - Dynamic team abbreviations
+
+  Hot Players:
+  - Last five games
+  - Point indicators
+  - Active streak descriptions
 */
 
 (() => {
@@ -33,6 +34,29 @@
   const cache = new Map();
 
   let generation = 0;
+
+  /*
+    Each matchup table has its own
+    sorting configuration.
+  */
+
+  const tableSort = {
+    'mi-left': {
+      key: 'ppg',
+      direction: 'desc'
+    },
+    'mi-right': {
+      key: 'ppg',
+      direction: 'desc'
+    }
+  };
+
+  const sortColumns = {
+    goals: 'g',
+    assists: 'a',
+    points: 'pts',
+    ppg: 'ppg'
+  };
 
   const isFinal = game =>
     ['FINAL', 'OFF'].includes(game.gameState);
@@ -85,14 +109,7 @@
   };
 
   /* ==========================================
-     LAST 5 GAME POINT INDICATORS
-
-     Red = Player recorded 1+ points
-     Empty = Player recorded 0 points
-     Dashed = No game data available
-
-     Oldest game on left.
-     Newest game on right.
+     LAST FIVE GAME POINT INDICATORS
      ========================================== */
 
   function lastFiveBoxes(games) {
@@ -171,12 +188,114 @@
   }
 
   /* ==========================================
+     MATCHUP TABLE SORTING
+     ========================================== */
+
+  function sortRows(rows, targetId) {
+
+    const config = tableSort[targetId];
+
+    const key = sortColumns[config.key];
+
+    const direction =
+      config.direction === 'desc' ? -1 : 1;
+
+    rows.sort((a, b) => {
+
+      const valueA = Number(a[key]) || 0;
+      const valueB = Number(b[key]) || 0;
+
+      const difference =
+        (valueA - valueB) * direction;
+
+      if (difference !== 0) {
+        return difference;
+      }
+
+      return (
+        b.pts - a.pts ||
+        b.gp - a.gp ||
+        String(a.player.name).localeCompare(
+          String(b.player.name)
+        )
+      );
+    });
+
+    return rows;
+  }
+
+  /* ==========================================
+     UPDATE SORT HEADER INDICATORS
+     ========================================== */
+
+  function updateSortHeaders(targetId) {
+
+    const tbody = $m(targetId);
+
+    if (!tbody) return;
+
+    const table = tbody.closest('table');
+
+    if (!table) return;
+
+    const config = tableSort[targetId];
+
+    table.querySelectorAll(
+      'th[data-sort]'
+    ).forEach(th => {
+
+      const key = th.dataset.sort;
+
+      const active = key === config.key;
+
+      const button = th.querySelector(
+        '.hoist-sort-button'
+      );
+
+      const arrow = th.querySelector(
+        '.hoist-sort-arrow'
+      );
+
+      th.classList.toggle(
+        'hoist-sort-active',
+        active
+      );
+
+      th.setAttribute(
+        'aria-sort',
+        active
+          ? config.direction === 'desc'
+            ? 'descending'
+            : 'ascending'
+          : 'none'
+      );
+
+      if (button) {
+        button.setAttribute(
+          'aria-label',
+          `Sort by ${button.dataset.label || key}, ${
+            active && config.direction === 'desc'
+              ? 'ascending'
+              : 'descending'
+          }`
+        );
+      }
+
+      if (arrow) {
+
+        arrow.textContent = active
+          ? config.direction === 'desc'
+            ? '▼'
+            : '▲'
+          : '';
+
+      }
+
+    });
+  }
+
+  /* ==========================================
      MATCHUP LEADERBOARD
-
-     Columns:
-     PLAYER | GP | G | A | PTS | PTS/GP
-
-     Rankings use cached historical games.
      ========================================== */
 
   function leaderboard(
@@ -186,44 +305,34 @@
     club
   ) {
 
+    const minGames = Number(
+      $m('mi-min-games')?.value ?? 1
+    );
+
     const rows = payload.players.map(player => {
 
-      const games = player.games.filter(
+      const games = (player.games || []).filter(
         game => game.opponent === opponent
       );
 
+      const gp = games.length;
+
+      const pts = sum(games, 'points');
+
       return {
         player,
-        gp: games.length,
+        gp,
         g: sum(games, 'goals'),
         a: sum(games, 'assists'),
-        pts: sum(games, 'points')
+        pts,
+        ppg: gp ? pts / gp : 0
       };
 
     }).filter(
-      row =>
-        row.gp >= Number(
-          $m('mi-min-games').value
-        )
+      row => row.gp >= minGames
     );
 
-    const sort = $m('mi-sort').value;
-
-    const metric = row =>
-      sort === 'ppg'
-        ? row.pts / row.gp
-        : sort === 'points'
-          ? row.pts
-          : sort === 'goals'
-            ? row.g
-            : row.a;
-
-    rows.sort(
-      (a, b) =>
-        metric(b) - metric(a) ||
-        b.pts - a.pts ||
-        b.gp - a.gp
-    );
+    sortRows(rows, targetId);
 
     rows.splice(12);
 
@@ -237,6 +346,7 @@
                 ${avatar(row.player, club)}
 
                 <span>
+
                   <strong>
                     ${escape(row.player.name)}
                   </strong>
@@ -245,6 +355,7 @@
                     #${escape(row.player.number ?? '—')}
                     · ${escape(row.player.position)}
                   </small>
+
                 </span>
 
               </span>
@@ -261,11 +372,7 @@
             </td>
 
             <td>
-              ${
-                row.gp
-                  ? (row.pts / row.gp).toFixed(2)
-                  : '—'
-              }
+              ${row.ppg.toFixed(2)}
             </td>
 
           </tr>
@@ -274,38 +381,25 @@
         <tr>
           <td colspan="6">
             No completed games against this opponent
-            in the covered seasons.
+            with the selected minimum GP.
           </td>
         </tr>
       `;
+
+    updateSortHeaders(targetId);
 
     return rows.length;
   }
 
   /* ==========================================
      HOT PLAYERS — LAST 5 GAMES
-
-     Columns:
-     PLAYER | G | A | PTS
-
-     Features:
-     - Headshot
-     - Player name
-     - Five game point indicators
-     - Active point streak
-     - Last five games production sentence
-
-     Green = Active point streak (3+ games)
-     Red = Other recent production
-
-     GP is calculated but not displayed.
      ========================================== */
 
   function hotPlayers(payload, club) {
 
     const rows = payload.players.map(player => {
 
-      const recent = player.games
+      const recent = (player.games || [])
         .filter(
           game =>
             String(game.season) === '20262027'
@@ -416,14 +510,6 @@
 
   /* ==========================================
      UPDATE MATCHUP INTELLIGENCE
-
-     Uses NHL team abbreviations.
-
-     Example:
-     MTL vs MIN
-
-     MTL players vs MIN
-     MIN players vs MTL
      ========================================== */
 
   async function update() {
@@ -451,13 +537,10 @@
         : next.homeTeam?.abbrev
     );
 
-    /* ==========================================
-       DYNAMIC ABBREVIATED TITLES
-       ========================================== */
+    /* Titles */
 
-    $m('mi-title').textContent = opp
-      ? `${selected} vs ${opp}`
-      : 'No upcoming matchup';
+    $m('mi-title').textContent =
+      'Player Statistics';
 
     $m('mi-left-title').textContent = opp
       ? `${selected} players vs ${opp}`
@@ -467,9 +550,7 @@
       ? `${opp} players vs ${selected}`
       : 'Opponent players';
 
-    /* ==========================================
-       LOADING STATES
-       ========================================== */
+    /* Loading */
 
     for (
       const id of [
@@ -507,9 +588,7 @@
         return;
       }
 
-      /* ==========================================
-         HOT PLAYERS
-         ========================================== */
+      /* Hot Players */
 
       if (ours.status === 'fulfilled') {
 
@@ -530,9 +609,7 @@
         `;
       }
 
-      /* ==========================================
-         MATCHUP TABLES
-         ========================================== */
+      /* Matchup tables */
 
       if (!opp) {
 
@@ -589,9 +666,10 @@
         }
       }
 
-      /* ==========================================
-         DATA STATUS
-         ========================================== */
+      updateSortHeaders('mi-left');
+      updateSortHeaders('mi-right');
+
+      /* Data status */
 
       const partial = [
         ours,
@@ -604,10 +682,10 @@
       );
 
       $m('mi-note').textContent =
-        `Regular-season games, 2024–25 through 2026–27 · Active roster skaters · Sortable matchup rankings · ${
+        `Regular-season games, 2024–25 through 2026–27 · Active roster skaters · Click column headers to sort · ${
           partial
             ? 'Some player logs unavailable; rankings may be incomplete.'
-            : 'Minimum 1 matchup game.'
+            : 'Minimum GP filter available.'
         }`;
 
     } catch (error) {
@@ -630,8 +708,8 @@
     () => {
 
       /*
-        Observe the original team's successful
-        schedule render without modifying app.js.
+        Observe successful schedule rendering
+        without modifying app.js.
       */
 
       const original = renderGames;
@@ -648,21 +726,59 @@
         return result;
       };
 
-      /* Rank by filter */
-
-      $m('mi-sort').addEventListener(
-        'change',
-        update
-      );
-
-      /* Minimum matchup GP filter */
+      /* GP filter */
 
       $m('mi-min-games').addEventListener(
         'change',
         update
       );
 
-      /* Initial load */
+      /* Clickable sorting headers */
+
+      ['mi-left', 'mi-right'].forEach(targetId => {
+
+        const tbody = $m(targetId);
+
+        const table = tbody?.closest('table');
+
+        if (!table) return;
+
+        table.querySelectorAll(
+          'th[data-sort] .hoist-sort-button'
+        ).forEach(button => {
+
+          button.addEventListener('click', () => {
+
+            const key = button.closest('th').dataset.sort;
+
+            if (!sortColumns[key]) return;
+
+            const config = tableSort[targetId];
+
+            if (config.key === key) {
+
+              config.direction =
+                config.direction === 'desc'
+                  ? 'asc'
+                  : 'desc';
+
+            } else {
+
+              config.key = key;
+              config.direction = 'desc';
+
+            }
+
+            update();
+
+          });
+
+        });
+
+      });
+
+      updateSortHeaders('mi-left');
+      updateSortHeaders('mi-right');
 
       update();
     }
