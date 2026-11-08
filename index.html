@@ -180,7 +180,7 @@
     }
 
     /* ==========================================
-       HOT PLAYERS — MATCH CALENDAR HEIGHT
+       HOT PLAYERS — EXISTING LAYOUT
        ========================================== */
 
     #overview .hoist-hot-players-panel {
@@ -261,6 +261,50 @@
       min-width: 46px !important;
       object-fit: cover;
       border-radius: 50%;
+    }
+
+    /* ==========================================
+       NEW: LAST 5 GAME POINT INDICATORS
+       Only affects boxes beneath player names
+       ========================================== */
+
+    #overview #mi-hot .hoist-last-five-boxes {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 4px;
+      vertical-align: middle;
+    }
+
+    #overview #mi-hot .hoist-last-five-box {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      min-width: 12px;
+      min-height: 12px;
+      padding: 0;
+      margin: 0;
+      border-radius: 3px;
+      box-sizing: border-box;
+      background: rgba(120, 145, 180, .08);
+      border: 1px solid rgba(120, 145, 180, .24);
+      flex-shrink: 0;
+    }
+
+    #overview #mi-hot .hoist-last-five-box.has-point {
+      background: #b73545;
+      border-color: #c84b59;
+    }
+
+    #overview #mi-hot .hoist-last-five-box.no-point {
+      background: rgba(120, 145, 180, .08);
+      border-color: rgba(120, 145, 180, .24);
+    }
+
+    #overview #mi-hot .hoist-last-five-box.did-not-play {
+      background: transparent;
+      border-style: dashed;
+      opacity: .45;
     }
 
     /* ==========================================
@@ -1407,7 +1451,7 @@
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=8" defer></script>
 <script src="v2.js?v=10" defer></script>
-<script src="matchup.js?v=6" defer></script>
+<script src="matchup.js?v=7" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 </body>
