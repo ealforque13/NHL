@@ -792,4 +792,154 @@
   }
 }
 
+/* =====================================================
+   HOIST OFFICIAL
+   SELECTED FRANCHISE + INTEGRATED TEAM STATS
+   VERSION 8
+   ===================================================== */
+
+.team-hero.hoist-franchise-hero {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  padding: 20px 24px !important;
+  min-width: 0;
+}
+
+/* Team identity and dropdown */
+.hoist-franchise-identity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
+}
+
+.hoist-franchise-identity .team-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.hoist-franchise-identity .team-logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.hoist-franchise-identity #team-name {
+  font-size: 26px;
+  line-height: 1.2;
+  margin: 4px 0;
+}
+
+.hoist-franchise-identity #team-meta {
+  font-size: 14px;
+}
+
+.hoist-franchise-identity .team-controls {
+  flex-shrink: 0;
+}
+
+/* Four statistics across the franchise panel */
+.hoist-franchise-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  min-width: 0;
+}
+
+.hoist-franchise-stat {
+  min-width: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(140, 165, 205, 0.15);
+  border-radius: 12px;
+  background: rgba(120, 150, 200, 0.055);
+}
+
+.hoist-franchise-stat .metric-label {
+  font-size: 12px !important;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.hoist-franchise-stat .metric-value {
+  font-size: 28px !important;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.hoist-franchise-stat .metric-value.small {
+  font-size: 21px !important;
+}
+
+.hoist-franchise-stat .metric-detail {
+  font-size: 12px !important;
+  margin-top: 5px;
+}
+
+/* Tablet */
+@media (max-width: 1050px) {
+  .hoist-franchise-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hoist-franchise-identity #team-name {
+    font-size: 23px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .team-hero.hoist-franchise-hero {
+    padding: 15px !important;
+    gap: 14px !important;
+  }
+
+  .hoist-franchise-identity {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .hoist-franchise-identity .team-logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .hoist-franchise-identity #team-name {
+    font-size: 21px;
+  }
+
+  .hoist-franchise-identity .team-controls {
+    width: 100%;
+  }
+
+  .hoist-franchise-identity .team-controls select {
+    width: 100%;
+  }
+
+  .hoist-franchise-stats {
+    gap: 8px;
+  }
+
+  .hoist-franchise-stat {
+    padding: 11px;
+  }
+
+  .hoist-franchise-stat .metric-value {
+    font-size: 23px !important;
+  }
+
+  .hoist-franchise-stat .metric-value.small {
+    font-size: 17px !important;
+  }
+}
+
 }
