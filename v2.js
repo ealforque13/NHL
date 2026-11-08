@@ -10,6 +10,8 @@
    - Red = home, blue = away
    - Completed: 25% dark result / 75% score
    - Result section flush with bar edges
+   - Desktop: final score centered across entire bar
+   - Mobile: original score positioning retained
    - W = Win
    - L = Regulation loss
    - O = Overtime / shootout loss
@@ -227,9 +229,6 @@
 
       /* ======================================
          COMPLETED GAME: 25% / 75% SPLIT
-
-         Flexbox prevents the result cell
-         from expanding beyond 25%.
          ====================================== */
 
       #v2-calendar
@@ -443,7 +442,48 @@
       }
 
       /* ======================================
-         MOBILE
+         DESKTOP ONLY — CENTER FINAL SCORE
+         ====================================== */
+
+      @media (min-width: 601px) {
+
+        #v2-calendar
+        .hoist-calendar-score-box.hoist-completed {
+          position: relative !important;
+        }
+
+        #v2-calendar
+        .hoist-calendar-score-box.hoist-completed
+        .hoist-calendar-score {
+          position: absolute !important;
+          top: 0 !important;
+          left: 0 !important;
+
+          width: 100% !important;
+          height: 100% !important;
+
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+
+          padding: 0 !important;
+          margin: 0 !important;
+
+          pointer-events: none !important;
+        }
+
+        #v2-calendar
+        .hoist-calendar-score-box.hoist-completed
+        .hoist-calendar-result-cell {
+          flex: 0 0 25% !important;
+          width: 25% !important;
+          max-width: 25% !important;
+          min-height: 26px !important;
+        }
+      }
+
+      /* ======================================
+         MOBILE — UNCHANGED
          ====================================== */
 
       @media (max-width: 600px) {
@@ -878,8 +918,8 @@
 
                Completed:
                - Darker left 25% = W / L / O
-               - Right 75% = score
-               - Result section flush with edges
+               - Score in remaining 75% on mobile
+               - Score centered across full bar on desktop
 
                Upcoming:
                - No result section
