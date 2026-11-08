@@ -1095,48 +1095,42 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-conference-table td:nth-child(2) { min-width:100px !important; }
 }
 
-/* READABLE, WIDTH-FITTED STANDINGS — DESKTOP */
+/* COMPACT STAT SPACING WITH LARGER, READABLE TYPE */
 #standings .hoist-conference-panel { padding:22px 20px !important; }
 #standings .hoist-standings-group + .hoist-standings-group { margin-top:32px; }
-#standings .hoist-group-title { font-size:20px !important; margin-bottom:12px; letter-spacing:.01em; }
-#standings .hoist-conference-table { width:100% !important; min-width:0 !important; table-layout:fixed; }
+#standings .hoist-group-title { font-size:21px !important; margin-bottom:12px; letter-spacing:.01em; }
+#standings .hoist-conference-table { width:100% !important; min-width:0 !important; table-layout:fixed !important; }
 #standings .hoist-conference-table th,
-#standings .hoist-conference-table td { min-width:0 !important; box-sizing:border-box; padding:16px 3px !important; font-size:13px !important; line-height:1.35; white-space:nowrap; overflow:hidden; text-overflow:clip; }
-#standings .hoist-conference-table thead th { padding:14px 3px !important; font-size:12px !important; }
-#standings .hoist-conference-table th:nth-child(1),
-#standings .hoist-conference-table td:nth-child(1) { width:4% !important; min-width:0 !important; }
-#standings .hoist-conference-table th:nth-child(2),
-#standings .hoist-conference-table td:nth-child(2) { width:20% !important; min-width:0 !important; padding-left:6px !important; }
-#standings .hoist-conference-table th:nth-child(14),
-#standings .hoist-conference-table td:nth-child(14),
-#standings .hoist-conference-table th:nth-child(15),
-#standings .hoist-conference-table td:nth-child(15),
-#standings .hoist-conference-table th:nth-child(17),
-#standings .hoist-conference-table td:nth-child(17) { width:5.8% !important; }
-#standings .hoist-conference-table th:nth-child(10),
-#standings .hoist-conference-table td:nth-child(10),
-#standings .hoist-conference-table th:nth-child(13),
-#standings .hoist-conference-table td:nth-child(13) { width:5% !important; }
-#standings .hoist-conference-table .hoist-standing-team { gap:8px; max-width:100%; font-size:13px; }
-#standings .hoist-conference-table .hoist-standing-team img { width:29px; height:29px; flex-shrink:0; }
+#standings .hoist-conference-table td { min-width:0 !important; box-sizing:border-box; padding:17px 2px !important; font-size:14px !important; line-height:1.35; white-space:nowrap; overflow:hidden; text-overflow:clip; }
+#standings .hoist-conference-table thead th { padding:14px 2px !important; font-size:13px !important; }
+/* Rank and team get a generous fixed share; GP–GA are compact and uniform. */
+#standings .hoist-conference-table :is(th,td):nth-child(1) { width:4% !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(2) { width:25% !important; padding-left:7px !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+12) { width:4% !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(13) { width:4.5% !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(14),
+#standings .hoist-conference-table :is(th,td):nth-child(15) { width:6% !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(16) { width:4.5% !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(17) { width:6% !important; }
+#standings .hoist-conference-table :is(th,td):nth-child(18) { width:4% !important; }
+#standings .hoist-conference-table .hoist-standing-team { gap:8px; max-width:100%; font-size:15px !important; }
+#standings .hoist-conference-table .hoist-standing-team img { width:30px; height:30px; flex-shrink:0; }
 #standings .hoist-conference-table .hoist-standing-name-full { overflow:hidden; text-overflow:ellipsis; }
 @media (min-width:1100px) {
   #standings .hoist-standings-group .hoist-standings-scroll { overflow-x:hidden !important; }
 }
 @media (min-width:651px) and (max-width:1099px) {
-  #standings .hoist-conference-table th,
-  #standings .hoist-conference-table td { font-size:11px !important; padding:13px 2px !important; }
+  #standings .hoist-conference-table :is(th,td) { font-size:11px !important; padding:13px 1px !important; }
   #standings .hoist-conference-table thead th { font-size:10px !important; }
+  #standings .hoist-conference-table .hoist-standing-team { gap:4px; font-size:11px !important; }
   #standings .hoist-conference-table .hoist-standing-team img { width:23px; height:23px; }
-  #standings .hoist-conference-table .hoist-standing-team { gap:5px; }
   #standings .hoist-standings-group .hoist-standings-scroll { overflow-x:hidden !important; }
 }
 @media (max-width:650px) {
-  #standings .hoist-conference-table { min-width:1130px !important; table-layout:auto; }
-  #standings .hoist-conference-table th,
-  #standings .hoist-conference-table td { font-size:13px !important; padding:13px 7px !important; }
-  #standings .hoist-conference-table th:nth-child(2),
-  #standings .hoist-conference-table td:nth-child(2) { min-width:100px !important; }
+  #standings .hoist-conference-table { min-width:1130px !important; table-layout:auto !important; }
+  #standings .hoist-conference-table :is(th,td) { width:auto !important; font-size:13px !important; padding:13px 7px !important; }
+  #standings .hoist-conference-table .hoist-standing-team { font-size:13px !important; }
+  #standings .hoist-conference-table :is(th,td):nth-child(2) { min-width:100px !important; }
 }
 </style>
 </head>
