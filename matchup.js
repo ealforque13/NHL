@@ -259,8 +259,25 @@
      Columns:
      PLAYER | G | A | PTS | PTS/GP
 
-     GP is calculated but not displayed.
+     Performance sentence appears underneath
+     the four statistical columns.
+
+     Player name, headshot, and five-game boxes
+     remain unchanged.
      ========================================== */
+
+  function performanceText(row) {
+
+    if (row.streak >= 3) {
+      return `${row.streak}-game point streak`;
+    }
+
+    return `${row.pts} ${
+      row.pts === 1 ? 'point' : 'points'
+    } in last ${row.gp} ${
+      row.gp === 1 ? 'game' : 'games'
+    }`;
+  }
 
   function hotPlayers(payload, club) {
 
@@ -308,9 +325,11 @@
 
     $m('mi-hot').innerHTML = rows.length
       ? rows.map(row => `
-          <tr>
 
-            <td>
+          <tr class="hoist-hot-player-row">
+
+            <td class="hoist-hot-player-name">
+
               <span class="mi-person">
 
                 ${avatar(row.player, club)}
@@ -326,17 +345,22 @@
                 </span>
 
               </span>
+
             </td>
 
-            <td>${row.g}</td>
+            <td class="hoist-hot-stat">
+              ${row.g}
+            </td>
 
-            <td>${row.a}</td>
+            <td class="hoist-hot-stat">
+              ${row.a}
+            </td>
 
-            <td>
+            <td class="hoist-hot-stat">
               <strong>${row.pts}</strong>
             </td>
 
-            <td>
+            <td class="hoist-hot-stat">
               ${
                 row.gp
                   ? (row.pts / row.gp).toFixed(2)
@@ -345,6 +369,7 @@
             </td>
 
           </tr>
+
         `).join('')
       : `
         <tr>
@@ -353,6 +378,47 @@
           </td>
         </tr>
       `;
+
+    /*
+      Add a performance sentence to each row
+      without adding extra table columns.
+
+      The sentence is absolutely positioned
+      within the existing player row.
+    */
+
+    const tableRows = $m('mi-hot')
+      .querySelectorAll('.hoist-hot-player-row');
+
+    tableRows.forEach((tr, index) => {
+
+      const row = rows[index];
+
+      if (!row) {
+        return;
+      }
+
+      const summary = document.createElement('span');
+
+      summary.className =
+        'hoist-hot-performance' +
+        (row.streak >= 3 ? ' is-streak' : '');
+
+      summary.textContent = performanceText(row);
+
+      /*
+        Attach to the last statistics cell.
+        CSS positions it beneath the entire
+        statistics area.
+      */
+
+      const statCell = tr.lastElementChild;
+
+      if (statCell) {
+        statCell.appendChild(summary);
+      }
+
+    });
   }
 
   /* ==========================================
