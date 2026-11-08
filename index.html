@@ -336,6 +336,71 @@ html body .section-panel {
 }
 
 /* ==========================================
+   NEW — HOT PLAYER PERFORMANCE SENTENCES
+   ========================================== */
+
+/*
+  The first column remains unchanged.
+
+  The four statistics are moved slightly upward.
+
+  The performance sentence is attached to the
+  final statistics cell by matchup.js, then
+  positioned underneath the statistics area.
+*/
+
+#overview #mi-hot .hoist-hot-player-row {
+  position: relative !important;
+}
+
+#overview #mi-hot .hoist-hot-player-name {
+  vertical-align: middle !important;
+}
+
+#overview #mi-hot .hoist-hot-stat {
+  position: relative !important;
+  vertical-align: middle !important;
+  transform: translateY(-8px);
+}
+
+#overview #mi-hot .hoist-hot-stat:last-child {
+  position: relative !important;
+}
+
+#overview #mi-hot .hoist-hot-performance {
+  position: absolute !important;
+  display: block !important;
+
+  top: calc(50% + 10px) !important;
+  right: 0 !important;
+
+  width: 250px !important;
+  max-width: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: translateY(8px);
+
+  text-align: center !important;
+
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+
+  white-space: nowrap !important;
+  color: #8ea9c8 !important;
+
+  pointer-events: none !important;
+}
+
+/* Active point streaks appear green */
+
+#overview #mi-hot .hoist-hot-performance.is-streak {
+  color: #69c99a !important;
+}
+
+/* ==========================================
    CALENDAR HEADER
    ========================================== */
 
@@ -380,7 +445,7 @@ html body .section-panel {
 #overview .hoist-calendar-next-inline .next-game {
   display: flex !important;
   align-items: center !important;
-  justify-content: center;
+  justify-content: center !important;
   gap: 5px !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -673,14 +738,12 @@ html body .section-panel {
    NON-INTERACTIVE CALENDAR
    ========================================== */
 
-/* Disable mouse and touch interaction */
 #overview #v2-calendar,
 #overview #v2-calendar * {
   pointer-events: none !important;
   cursor: default !important;
 }
 
-/* Remove game hover effects */
 #overview #v2-calendar
 .hoist-calendar-game:hover .hoist-calendar-logo {
   transform: none !important;
@@ -691,7 +754,6 @@ html body .section-panel {
   filter: none !important;
 }
 
-/* Hide game detail area completely */
 #overview #v2-calendar-detail {
   display: none !important;
 }
@@ -949,6 +1011,18 @@ html body .mi-avatar-fallback,
   .hoist-calendar-legend {
     gap: 16px;
   }
+
+  /* Hot Players mobile performance summaries */
+
+  #overview #mi-hot .hoist-hot-stat {
+    transform: translateY(-6px);
+  }
+
+  #overview #mi-hot .hoist-hot-performance {
+    width: 170px !important;
+    font-size: 9px !important;
+    transform: translateY(6px);
+  }
 }
 
 </style>
@@ -1156,6 +1230,7 @@ html body .mi-avatar-fallback,
     </div>
 
     <!-- NON-INTERACTIVE CALENDAR -->
+
     <div
       id="v2-calendar"
       class="v2-calendar"
@@ -1163,6 +1238,7 @@ html body .mi-avatar-fallback,
     ></div>
 
     <!-- CALENDAR LEGEND -->
+
     <div class="hoist-calendar-legend">
       <span class="hoist-legend-item">
         <span class="hoist-legend-dot hoist-legend-home"></span>
@@ -1176,6 +1252,7 @@ html body .mi-avatar-fallback,
     </div>
 
     <!-- KEPT FOR JAVASCRIPT COMPATIBILITY -->
+
     <div
       id="v2-calendar-detail"
       class="v2-detail"
@@ -1208,6 +1285,12 @@ html body .mi-avatar-fallback,
               <th>PTS/GP</th>
             </tr>
           </thead>
+
+          <!--
+            matchup.js dynamically populates
+            the player rows and performance
+            summaries inside this tbody.
+          -->
 
           <tbody id="mi-hot"></tbody>
         </table>
@@ -1611,11 +1694,15 @@ html body .mi-avatar-fallback,
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=8" defer></script>
 <script src="v2.js?v=10" defer></script>
-<script src="matchup.js?v=8" defer></script>
+
+<!-- UPDATED MATCHUP JAVASCRIPT -->
+<script src="matchup.js?v=9" defer></script>
+
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 <!-- Disable keyboard activation of calendar games.
      Month navigation buttons remain functional. -->
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const calendar = document.getElementById("v2-calendar");
