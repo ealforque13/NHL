@@ -3,10 +3,12 @@
    Cached NHL schedules and expandable scoresheets
    with NHL team-coloured abbreviation badges.
 
-   Updated:
-   - Compact Record card beside Last 10 Matchups title
-   - W–L–OTL record
-   - Goals For / Against removed
+   Features:
+   - Compact W-L-OTL record card beside the heading
+   - 140px record card on desktop
+   - 95px record card on phones
+   - Goals For / Against summary removed
+   - Expandable scoresheets
    - Dedicated right-hand overview column
 */
 
@@ -177,7 +179,7 @@ function details() {
 
 
 /* ==========================================
-   COMPACT HEADER STYLES
+   RESPONSIVE HEADER STYLES
 ========================================== */
 
 function installHeaderStyles() {
@@ -265,28 +267,54 @@ function installHeaderStyles() {
       white-space: nowrap !important;
     }
 
+    /* MOBILE: NARROWER RECORD CARD */
+
     @media (max-width: 480px) {
+
       #hoist-h2h .hoist-h2h-top-row {
-        gap: 10px !important;
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+      }
+
+      #hoist-h2h .hoist-h2h-heading {
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
       }
 
       #hoist-h2h #hoist-h2h-summary {
-        flex: 0 0 116px !important;
-        width: 116px !important;
-        max-width: 116px !important;
+        display: block !important;
+        flex: 0 0 95px !important;
+        width: 95px !important;
+        min-width: 95px !important;
+        max-width: 95px !important;
+        margin: 0 !important;
+        padding: 0 !important;
       }
 
       #hoist-h2h .hoist-h2h-record-card {
-        padding: 9px !important;
+        width: 95px !important;
+        min-width: 0 !important;
+        max-width: 95px !important;
+        padding: 8px !important;
+        box-sizing: border-box !important;
+      }
+
+      #hoist-h2h .hoist-h2h-record-label {
+        font-size: 9px !important;
+        margin-bottom: 5px !important;
       }
 
       #hoist-h2h .hoist-h2h-record-value {
-        font-size: 21px !important;
+        font-size: 19px !important;
+        white-space: nowrap !important;
       }
 
-      #hoist-h2h .hoist-h2h-record-label,
       #hoist-h2h .hoist-h2h-record-detail {
-        font-size: 9px !important;
+        font-size: 8px !important;
+        margin-top: 4px !important;
+        white-space: nowrap !important;
       }
     }
   `;
@@ -796,11 +824,6 @@ function paint(games, t, opp, cache) {
       losses++;
     }
   }
-
-  /*
-    Compact Record card in the top-right.
-    No Goals For / Against card.
-  */
 
   summary.innerHTML = `
     <div class="hoist-h2h-record-card">
