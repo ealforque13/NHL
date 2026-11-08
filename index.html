@@ -238,7 +238,8 @@ html body .section-panel {
   display: flex;
   flex: 1 !important;
   min-height: 0;
-  overflow-x: auto;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
 }
 
 #overview .hoist-hot-players-panel .mi-table {
@@ -336,10 +337,14 @@ html body .section-panel {
 }
 
 /* ==========================================
-   HOT PLAYERS — PERFORMANCE SENTENCES
+   HOT PLAYERS — NEON PERFORMANCE SENTENCES
    ========================================== */
 
-/* Keep player name, headshot and boxes unchanged */
+/*
+  Keep the player column untouched.
+  The four stat cells reserve space beneath
+  their numbers for the performance sentence.
+*/
 
 #overview #mi-hot .hoist-hot-player-row {
   position: relative !important;
@@ -349,28 +354,31 @@ html body .section-panel {
   vertical-align: middle !important;
 }
 
-/* Keep the four statistics slightly elevated */
-
 #overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {
   position: relative !important;
   vertical-align: middle !important;
-  transform: translateY(-8px);
+
+  padding-top: 8px !important;
+  padding-bottom: 27px !important;
+
+  transform: none !important;
 }
 
-/* Bottom-right performance sentence */
+/* Anchor the summary inside the last stat cell */
 
 #overview #mi-hot .hoist-hot-player-row
 .hoist-hot-stat:last-child {
   position: relative !important;
 }
 
-#overview #mi-hot .hoist-hot-player-row
-.hoist-hot-performance {
+/* Regular production — NEON RED */
+
+#overview #mi-hot .hoist-hot-performance {
   position: absolute !important;
   display: block !important;
 
   top: auto !important;
-  bottom: -18px !important;
+  bottom: 7px !important;
   right: 0 !important;
 
   width: max-content !important;
@@ -383,21 +391,28 @@ html body .section-panel {
   text-align: right !important;
 
   font-size: 11px !important;
-  font-weight: 600 !important;
+  font-weight: 800 !important;
   line-height: 1.2 !important;
+  letter-spacing: .015em !important;
   white-space: nowrap !important;
 
-  /* Regular point production — RED */
-  color: #e36b75 !important;
+  color: #ff5268 !important;
+
+  text-shadow:
+    0 0 4px rgba(255,82,104,.55),
+    0 0 10px rgba(255,82,104,.30) !important;
 
   pointer-events: none !important;
 }
 
-/* Active point streak — GREEN */
+/* Active point streak — NEON GREEN */
 
-#overview #mi-hot .hoist-hot-player-row
-.hoist-hot-performance.is-streak {
-  color: #69c99a !important;
+#overview #mi-hot .hoist-hot-performance.is-streak {
+  color: #39ff9c !important;
+
+  text-shadow:
+    0 0 4px rgba(57,255,156,.65),
+    0 0 10px rgba(57,255,156,.35) !important;
 }
 
 /* ==========================================
@@ -1012,15 +1027,20 @@ html body .mi-avatar-fallback,
     gap: 16px;
   }
 
-  /* Hot Players mobile performance positioning */
+  /* Mobile neon performance summaries */
 
   #overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {
-    transform: translateY(-6px);
+    padding-top: 8px !important;
+    padding-bottom: 26px !important;
+    transform: none !important;
   }
 
-  #overview #mi-hot .hoist-hot-player-row .hoist-hot-performance {
-    bottom: -15px !important;
+  #overview #mi-hot .hoist-hot-performance {
+    bottom: 6px !important;
+    right: 0 !important;
     font-size: 9px !important;
+    width: max-content !important;
+    transform: none !important;
   }
 }
 
