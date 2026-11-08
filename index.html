@@ -765,7 +765,7 @@ html body .section-panel {
 }
 
 /* ==========================================
-   MATCHUP INTELLIGENCE
+   PLAYER STATISTICS
    ========================================== */
 
 #mi-left > tr:nth-child(n+6),
@@ -780,18 +780,18 @@ html body .section-panel {
 #overview #matchup-intelligence {
   display: block !important;
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: none !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  margin: 0 !important;
 }
 
 #overview #matchup-intelligence .mi-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) !important;
+  gap: 20px !important;
   width: 100% !important;
-  max-width: 100% !important;
   min-width: 0 !important;
-  box-sizing: border-box !important;
 }
 
 #overview #matchup-intelligence .mi-grid > div {
@@ -802,10 +802,6 @@ html body .section-panel {
   max-width: 100% !important;
   overflow-x: auto;
 }
-
-/* ==========================================
-   HEAD TO HEAD — PLAYER STATISTICS
-   ========================================== */
 
 #matchup-intelligence .mi-header {
   margin-bottom: 18px !important;
@@ -827,13 +823,14 @@ html body .section-panel {
   line-height: 1.25 !important;
 }
 
-/* GP FILTER */
+/* ==========================================
+   GP FILTER
+   ========================================== */
 
 #matchup-intelligence .hoist-matchup-controls {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
-  justify-content: flex-start !important;
   gap: 10px !important;
   margin-bottom: 24px !important;
 }
@@ -845,9 +842,7 @@ html body .section-panel {
 }
 
 #matchup-intelligence .hoist-matchup-filter label {
-  width: auto !important;
   min-width: 24px !important;
-  flex-shrink: 0 !important;
   margin: 0 !important;
   font-size: 13px !important;
   font-weight: 700 !important;
@@ -930,6 +925,87 @@ html body .section-panel {
 }
 
 /* ==========================================
+   MATCHED HEAD TO HEAD TYPOGRAPHY
+   ========================================== */
+
+#matchup-intelligence .hoist-h2h-eyebrow,
+#matchup-intelligence .mi-header .eyebrow,
+#overview .hoist-head-to-head .eyebrow,
+#overview [id*="head-to-head"] .eyebrow {
+  font-family: inherit !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .11em !important;
+  line-height: 1.3 !important;
+  text-transform: uppercase !important;
+  color: #91afd8 !important;
+  margin-bottom: 7px !important;
+}
+
+#matchup-intelligence #mi-title,
+#overview .hoist-head-to-head h3,
+#overview [id*="head-to-head"] .section-head h3 {
+  font-family: inherit !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0 !important;
+  margin: 0 !important;
+}
+
+#matchup-intelligence #mi-left-title,
+#matchup-intelligence #mi-right-title {
+  font-family: inherit !important;
+  font-size: 19px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+/* ==========================================
+   FIXED HEAD TO HEAD SIDE-BY-SIDE LAYOUT
+   ========================================== */
+
+/*
+   LEFT: Player Statistics
+   RIGHT: Last 10 Matchups
+
+   Both panels are placed inside one shared
+   grid by the script at the bottom.
+*/
+
+#overview .hoist-h2h-layout {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  align-items: start !important;
+  gap: 18px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 18px 0 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#overview .hoist-h2h-layout > .panel {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+#overview .hoist-h2h-layout > #matchup-intelligence {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+
+#overview .hoist-h2h-layout > .panel:not(#matchup-intelligence) {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+/* ==========================================
    SHARP CONTROLS
    ========================================== */
 
@@ -961,70 +1037,6 @@ html body .mi-avatar-fallback,
 }
 
 /* ==========================================
-   MATCHED HEAD TO HEAD TYPOGRAPHY
-   ========================================== */
-
-#matchup-intelligence .hoist-h2h-eyebrow,
-#matchup-intelligence .mi-header .eyebrow,
-#overview .hoist-head-to-head .eyebrow,
-#overview [id*="head-to-head"] .eyebrow {
-  font-family: inherit !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: .11em !important;
-  line-height: 1.3 !important;
-  text-transform: uppercase !important;
-  color: #91afd8 !important;
-  margin-bottom: 7px !important;
-}
-
-#matchup-intelligence #mi-title,
-#overview .hoist-head-to-head h3,
-#overview [id*="head-to-head"] .section-head h3 {
-  font-family: inherit !important;
-  font-size: 24px !important;
-  font-weight: 800 !important;
-  line-height: 1.25 !important;
-  letter-spacing: 0 !important;
-  margin: 0 !important;
-}
-
-#matchup-intelligence .mi-header,
-#overview .hoist-head-to-head .section-head,
-#overview [id*="head-to-head"] .section-head {
-  align-items: flex-start !important;
-}
-
-#matchup-intelligence #mi-left-title,
-#matchup-intelligence #mi-right-title {
-  font-family: inherit !important;
-  font-size: 19px !important;
-  font-weight: 800 !important;
-  line-height: 1.3 !important;
-  letter-spacing: 0 !important;
-}
-
-/* ==========================================
-   SWAPPED HEAD TO HEAD PANEL ORDER
-   ========================================== */
-
-/*
-   Player Statistics: left
-   Last 10 Matchups: right
-
-   The script at the bottom of this file swaps
-   the actual panel positions after both load.
-*/
-
-#overview #matchup-intelligence {
-  min-width: 0 !important;
-}
-
-#overview .hoist-h2h-swapped {
-  min-width: 0 !important;
-}
-
-/* ==========================================
    RESPONSIVE
    ========================================== */
 
@@ -1036,6 +1048,19 @@ html body .mi-avatar-fallback,
 
   .hoist-franchise-identity #team-name {
     font-size: 23px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  #overview .hoist-h2h-layout {
+    grid-template-columns: minmax(0,1fr) !important;
+  }
+
+  #overview .hoist-h2h-layout > #matchup-intelligence,
+  #overview .hoist-h2h-layout > .panel:not(#matchup-intelligence) {
+    grid-column: 1 !important;
+    grid-row: auto !important;
   }
 }
 
@@ -1540,211 +1565,218 @@ html body .mi-avatar-fallback,
 </article>
 
 <!-- ======================================
-     HEAD TO HEAD — PLAYER STATISTICS
-     This panel is moved to the LEFT
-     by the swap script below.
+     SHARED HEAD TO HEAD LAYOUT
+
+     LEFT:  Player Statistics
+     RIGHT: Last 10 Matchups
+
+     The Last 10 Matchups panel is generated
+     by hoist-head-to-head.js and inserted
+     into this grid by the script below.
      ====================================== -->
 
-<article
-  class="panel section-panel mi-full"
-  id="matchup-intelligence"
->
+<div class="hoist-h2h-layout" id="hoist-h2h-layout">
 
-  <div class="section-head mi-header">
+  <!-- PLAYER STATISTICS — LEFT -->
 
-    <div>
+  <article
+    class="panel section-panel mi-full"
+    id="matchup-intelligence"
+  >
 
-      <div class="eyebrow hoist-h2h-eyebrow">
-        HEAD TO HEAD
-      </div>
+    <div class="section-head mi-header">
 
-      <h3 id="mi-title">
-        Player Statistics
-      </h3>
+      <div>
 
-    </div>
+        <div class="eyebrow hoist-h2h-eyebrow">
+          HEAD TO HEAD
+        </div>
 
-  </div>
-
-  <!-- GP FILTER -->
-
-  <div class="mi-controls hoist-matchup-controls">
-
-    <div class="hoist-matchup-filter">
-
-      <label for="mi-min-games">
-        GP
-      </label>
-
-      <select id="mi-min-games">
-        <option value="1">1+</option>
-        <option value="2">2+</option>
-        <option value="3">3+</option>
-        <option value="5">5+</option>
-        <option value="10">10+</option>
-      </select>
-
-    </div>
-
-  </div>
-
-  <!-- PLAYER STATISTICS TABLES -->
-
-  <div class="mi-grid">
-
-    <div>
-
-      <h3 id="mi-left-title">
-        MTL players vs MIN
-      </h3>
-
-      <div class="table-scroll">
-
-        <table class="mi-table hoist-sortable-table">
-
-          <thead>
-
-            <tr>
-
-              <th>PLAYER</th>
-              <th>GP</th>
-
-              <th data-sort="goals">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Goals"
-                >
-                  G
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-              <th data-sort="assists">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Assists"
-                >
-                  A
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-              <th data-sort="points">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Points"
-                >
-                  PTS
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-              <th data-sort="ppg">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Points per game"
-                >
-                  PTS/GP
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-            </tr>
-
-          </thead>
-
-          <tbody id="mi-left"></tbody>
-
-        </table>
+        <h3 id="mi-title">
+          Player Statistics
+        </h3>
 
       </div>
 
     </div>
 
-    <div>
+    <!-- GP FILTER -->
 
-      <h3 id="mi-right-title">
-        MIN players vs MTL
-      </h3>
+    <div class="mi-controls hoist-matchup-controls">
 
-      <div class="table-scroll">
+      <div class="hoist-matchup-filter">
 
-        <table class="mi-table hoist-sortable-table">
+        <label for="mi-min-games">GP</label>
 
-          <thead>
-
-            <tr>
-
-              <th>PLAYER</th>
-              <th>GP</th>
-
-              <th data-sort="goals">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Goals"
-                >
-                  G
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-              <th data-sort="assists">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Assists"
-                >
-                  A
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-              <th data-sort="points">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Points"
-                >
-                  PTS
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-              <th data-sort="ppg">
-                <button
-                  type="button"
-                  class="hoist-sort-button"
-                  data-label="Points per game"
-                >
-                  PTS/GP
-                  <span class="hoist-sort-arrow"></span>
-                </button>
-              </th>
-
-            </tr>
-
-          </thead>
-
-          <tbody id="mi-right"></tbody>
-
-        </table>
+        <select id="mi-min-games">
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="5">5+</option>
+          <option value="10">10+</option>
+        </select>
 
       </div>
 
     </div>
 
-  </div>
+    <!-- PLAYER STATISTICS TABLES -->
 
-  <p id="mi-note" class="mi-note">
-    Loading matchup statistics…
-  </p>
+    <div class="mi-grid">
 
-</article>
+      <div>
+
+        <h3 id="mi-left-title">
+          MTL players vs MIN
+        </h3>
+
+        <div class="table-scroll">
+
+          <table class="mi-table hoist-sortable-table">
+
+            <thead>
+              <tr>
+
+                <th>PLAYER</th>
+                <th>GP</th>
+
+                <th data-sort="goals">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Goals"
+                  >
+                    G
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+                <th data-sort="assists">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Assists"
+                  >
+                    A
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+                <th data-sort="points">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Points"
+                  >
+                    PTS
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+                <th data-sort="ppg">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Points per game"
+                  >
+                    PTS/GP
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+              </tr>
+            </thead>
+
+            <tbody id="mi-left"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <div>
+
+        <h3 id="mi-right-title">
+          MIN players vs MTL
+        </h3>
+
+        <div class="table-scroll">
+
+          <table class="mi-table hoist-sortable-table">
+
+            <thead>
+              <tr>
+
+                <th>PLAYER</th>
+                <th>GP</th>
+
+                <th data-sort="goals">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Goals"
+                  >
+                    G
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+                <th data-sort="assists">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Assists"
+                  >
+                    A
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+                <th data-sort="points">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Points"
+                  >
+                    PTS
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+                <th data-sort="ppg">
+                  <button
+                    type="button"
+                    class="hoist-sort-button"
+                    data-label="Points per game"
+                  >
+                    PTS/GP
+                    <span class="hoist-sort-arrow"></span>
+                  </button>
+                </th>
+
+              </tr>
+            </thead>
+
+            <tbody id="mi-right"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <p id="mi-note" class="mi-note">
+      Loading matchup statistics…
+    </p>
+
+  </article>
+
+  <!-- LAST 10 MATCHUPS WILL BE MOVED HERE -->
+
+</div>
 
 </section>
 
@@ -2081,139 +2113,99 @@ html body .mi-avatar-fallback,
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 <!-- ==========================================
-     SWAP HEAD TO HEAD PANEL POSITIONS
+     HEAD TO HEAD GRID PLACEMENT
 
-     LEFT:  Player Statistics
-     RIGHT: Last 10 Matchups
+     Player Statistics is already in the
+     left column.
 
-     Keeps existing panel elements and their
-     event handlers intact.
+     Find the dynamically generated Last 10
+     Matchups panel and move it to the right.
      ========================================== -->
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
   const overview = document.getElementById("overview");
+  const layout = document.getElementById("hoist-h2h-layout");
   const playerPanel = document.getElementById("matchup-intelligence");
 
-  if (!overview || !playerPanel) return;
+  if (!overview || !layout || !playerPanel) return;
 
-  let swapping = false;
+  let arranging = false;
 
-  function findLast10Panel() {
+  function findHistoryPanel() {
 
-    const headings = overview.querySelectorAll(
-      "h2, h3, h4"
-    );
+    const headings = overview.querySelectorAll("h2, h3, h4");
 
     for (const heading of headings) {
 
-      if (
-        heading.textContent.trim()
-          .replace(/\s+/g, " ")
-          .toLowerCase() === "last 10 matchups"
-      ) {
+      const text = heading.textContent
+        .trim()
+        .replace(/\s+/g, " ")
+        .toLowerCase();
 
-        return heading.closest(
-          "article, .panel, .section-panel"
-        );
+      if (text !== "last 10 matchups") continue;
 
+      const panel = heading.closest(
+        "article, .panel, .section-panel"
+      );
+
+      if (panel && panel !== playerPanel) {
+        return panel;
       }
     }
 
     return null;
   }
 
-  function swapHeadToHeadPanels() {
+  function arrangePanels() {
 
-    if (swapping) return;
+    if (arranging) return;
 
-    const historyPanel = findLast10Panel();
+    const historyPanel = findHistoryPanel();
 
     if (!historyPanel) return;
-    if (historyPanel === playerPanel) return;
 
-    /*
-      Only swap after both panels have been
-      inserted into the page.
-
-      If both panels share a parent, move
-      Player Statistics ahead of Last 10.
-
-      If they have different parents, exchange
-      their positions using temporary markers.
-    */
-
-    const historyParent = historyPanel.parentNode;
-    const playerParent = playerPanel.parentNode;
-
-    if (!historyParent || !playerParent) return;
-
-    const historyBeforePlayer = Boolean(
-      historyPanel.compareDocumentPosition(playerPanel) &
-      Node.DOCUMENT_POSITION_FOLLOWING
-    );
-
-    if (!historyBeforePlayer) return;
-
-    swapping = true;
-
-    if (historyParent === playerParent) {
-
-      historyParent.insertBefore(
-        playerPanel,
-        historyPanel
-      );
-
-    } else {
-
-      const historyMarker = document.createComment(
-        "Last 10 Matchups original position"
-      );
-
-      const playerMarker = document.createComment(
-        "Player Statistics original position"
-      );
-
-      historyParent.insertBefore(
-        historyMarker,
-        historyPanel
-      );
-
-      playerParent.insertBefore(
-        playerMarker,
-        playerPanel
-      );
-
-      historyParent.replaceChild(
-        playerPanel,
-        historyMarker
-      );
-
-      playerParent.replaceChild(
-        historyPanel,
-        playerMarker
-      );
+    if (
+      historyPanel.parentElement === layout &&
+      layout.children[0] === playerPanel &&
+      layout.children[1] === historyPanel
+    ) {
+      return;
     }
 
-    playerPanel.classList.add("hoist-h2h-swapped");
-    historyPanel.classList.add("hoist-h2h-swapped");
+    arranging = true;
 
-    swapping = false;
+    if (playerPanel.parentElement !== layout) {
+      layout.prepend(playerPanel);
+    }
+
+    if (historyPanel.parentElement !== layout) {
+      layout.appendChild(historyPanel);
+    }
+
+    if (layout.firstElementChild !== playerPanel) {
+      layout.prepend(playerPanel);
+    }
+
+    if (layout.children[1] !== historyPanel) {
+      layout.appendChild(historyPanel);
+    }
+
+    arranging = false;
   }
 
-  swapHeadToHeadPanels();
+  arrangePanels();
 
   /*
-    Last 10 Matchups is generated by
-    hoist-head-to-head.js, so watch for
-    its initial insertion or re-render.
+    The history panel is generated by
+    hoist-head-to-head.js. This observer
+    handles its initial appearance and
+    later re-renders.
   */
 
   const observer = new MutationObserver(function () {
-    if (!swapping) {
-      swapHeadToHeadPanels();
-    }
+    arrangePanels();
   });
 
   observer.observe(overview, {
