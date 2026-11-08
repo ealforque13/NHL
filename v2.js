@@ -9,6 +9,7 @@
    - Full-width red/blue score and time bars
    - Red = home, blue = away
    - Completed: 25% dark result / 75% score
+   - Result section flush with bar edges
    - W = Win
    - L = Regulation loss
    - O = Overtime / shootout loss
@@ -226,27 +227,56 @@
 
       /* ======================================
          COMPLETED GAME: 25% / 75% SPLIT
+
+         Flexbox prevents the result cell
+         from expanding beyond 25%.
          ====================================== */
 
       #v2-calendar
       .hoist-calendar-score-box.hoist-completed {
-        display: grid !important;
-        grid-template-columns: 25% 75% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+
         width: 100% !important;
         min-width: 0 !important;
+        max-width: 100% !important;
+
         padding: 0 !important;
+        margin: 0 !important;
+        gap: 0 !important;
+
+        border: none !important;
+        border-radius: 0 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
       }
 
-      /* DARKER LEFT RESULT CELL */
+      /* ======================================
+         DARKER LEFT RESULT CELL — EXACTLY 25%
+         ====================================== */
 
-      #v2-calendar .hoist-calendar-result-cell {
+      #v2-calendar
+      .hoist-calendar-score-box.hoist-completed
+      .hoist-calendar-result-cell {
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
 
-        width: 100% !important;
+        flex: 0 0 25% !important;
+        width: 25% !important;
         min-width: 0 !important;
-        padding: 5px 0 !important;
+        max-width: 25% !important;
+
+        height: auto !important;
+        align-self: stretch !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        border: none !important;
+        border-radius: 0 !important;
         box-sizing: border-box !important;
       }
 
@@ -288,7 +318,26 @@
         color: #ffffff !important;
       }
 
-      /* RESULT LETTERS */
+      /* ======================================
+         COMPLETED GAME SCORE — REMAINING 75%
+         ====================================== */
+
+      #v2-calendar
+      .hoist-calendar-score-box.hoist-completed
+      .hoist-calendar-score {
+        flex: 1 1 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+
+        margin: 0 !important;
+        padding: 5px 2px !important;
+
+        box-sizing: border-box !important;
+      }
+
+      /* ======================================
+         RESULT LETTERS
+         ====================================== */
 
       #v2-calendar .hoist-result-letter {
         display: inline-block;
@@ -417,9 +466,22 @@
 
         #v2-calendar
         .hoist-calendar-score-box.hoist-completed {
+          display: flex !important;
           width: 100% !important;
           min-width: 0 !important;
-          grid-template-columns: 25% 75% !important;
+          gap: 0 !important;
+          border: none !important;
+        }
+
+        #v2-calendar
+        .hoist-calendar-score-box.hoist-completed
+        .hoist-calendar-result-cell {
+          flex: 0 0 25% !important;
+          width: 25% !important;
+          min-width: 0 !important;
+          max-width: 25% !important;
+          padding: 0 !important;
+          margin: 0 !important;
         }
 
         #v2-calendar .hoist-calendar-score {
@@ -427,8 +489,13 @@
           padding: 4px 2px !important;
         }
 
-        #v2-calendar .hoist-calendar-result-cell {
-          padding: 4px 0 !important;
+        #v2-calendar
+        .hoist-calendar-score-box.hoist-completed
+        .hoist-calendar-score {
+          flex: 1 1 0 !important;
+          width: auto !important;
+          min-width: 0 !important;
+          padding: 4px 2px !important;
         }
 
         #v2-calendar .hoist-result-letter {
@@ -812,6 +879,7 @@
                Completed:
                - Darker left 25% = W / L / O
                - Right 75% = score
+               - Result section flush with edges
 
                Upcoming:
                - No result section
