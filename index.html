@@ -1019,6 +1019,23 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 #standings .hoist-standing-team { display:inline-flex; align-items:center; gap:9px; font-weight:750; }
 #standings .hoist-standing-team img { width:27px; height:27px; object-fit:contain; }
 
+
+/* CONFERENCE HEADINGS AND REPEATED DIVISION COLUMN LABELS */
+#standings .hoist-conference-block { margin-bottom:34px; }
+#standings .hoist-conference-title { margin:6px 0 14px; font-size:20px; font-weight:800; letter-spacing:0; text-transform:none; }
+#standings .hoist-conference-table { width:100%; min-width:1320px; border-collapse:collapse; white-space:nowrap; }
+#standings .hoist-conference-table th,
+#standings .hoist-conference-table td { padding:12px 10px; text-align:center; font-variant-numeric:tabular-nums; }
+#standings .hoist-conference-table th:first-child,
+#standings .hoist-conference-table td:first-child { text-align:left; min-width:185px; }
+#standings .hoist-division-header { background:rgba(110,145,195,.13); }
+#standings .hoist-division-header th { color:#91b8ec; font-size:11px; font-weight:800; letter-spacing:.05em; border-bottom:1px solid rgba(125,155,195,.18); }
+#standings .hoist-division-header th:first-child { font-size:12px; }
+#standings .hoist-division-header th[data-standings-sort] { cursor:pointer; }
+#standings .hoist-conference-table td { border-bottom:1px solid rgba(125,155,195,.20); }
+#standings .hoist-playoff-cutoff td { position:relative; padding:12px 0 !important; border-top:2px solid #d05a69; border-bottom:0; text-align:center !important; }
+#standings .hoist-playoff-cutoff span { color:#e07c88; font-size:10px; font-weight:800; letter-spacing:.12em; }
+#standings .hoist-standings-scroll[hidden], #hoist-conference-tables[hidden] { display:none !important; }
 </style>
 </head>
 
@@ -1497,6 +1514,7 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
       </select>
     </div>
 
+    <div id="hoist-conference-tables"></div>
     <div class="table-scroll hoist-standings-scroll">
       <table id="hoist-standings-table" aria-label="NHL standings">
         <thead>
@@ -1878,37 +1896,47 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>`;
   }
 
+  const headings = ['','GP','W','L','OT','PTS','P%','RW','ROW','GF','GA','DIFF','HOME','AWAY','S/O','L10','STRK'];
+  const keys = ['', 'gamesPlayed','wins','losses','otLosses','points','pointPctg','regulationWins','regulationPlusOtWins','goalFor','goalAgainst','goalDifferential','','','','',''];
+  function sectionHeader(label) {
+    return `<tr class="hoist-division-header"><th scope="row">${escapeHtml(label)}</th>${headings.slice(1).map((h,i)=>`<th${keys[i+1] ? ` data-standings-sort="${keys[i+1]}"` : ''}>${h}</th>`).join('')}</tr>`;
+  }
   function render() {
     if (!ready || painting) return;
     const body = $('standings-body');
     const table = $('hoist-standings-table');
-    if (!body || !table) return;
+    const display = $('hoist-conference-tables');
+    if (!body || !table || !display) return;
     painting = true;
     const selected = $('standings-filter')?.value || 'all';
-    let html = '';
-    if (customSort) {
-      // Manual column sorting temporarily replaces the playoff-picture grouping.
-      const relevant = rows.filter(r => selected === 'all' || conf(r) === selected || div(r) === selected);
-      relevant.sort((a,b) => (descending ? num(b[customSort])-num(a[customSort]) : num(a[customSort])-num(b[customSort])) || nhlRank(a,b));
-      html = relevant.map((r,i) => teamRow(r,i+1,'out')).join('');
-    } else if (selected === 'all' || selected === 'Eastern' || selected === 'Western') {
+    const grouped = !customSort && ['all','Eastern','Western'].includes(selected);
+    table.closest('.hoist-standings-scroll').hidden = grouped;
+    display.hidden = !grouped;
+    if (grouped) {
       const conferences = selected === 'all' ? ['Eastern','Western'] : [selected];
-      for (const conference of conferences) {
-        html += `<tr class="hoist-playoff-group"><td colspan="17">${conference.toUpperCase()} CONFERENCE</td></tr>`;
-        let rank = 0;
-        for (const group of playoffGroups(conference)) {
-          html += `<tr class="hoist-playoff-group"><td colspan="17">${escapeHtml(group.label)}</td></tr>`;
-          html += group.teams.map(r => teamRow(r,++rank,group.status)).join('');
+      display.innerHTML = conferences.map(conference => {
+        const groups = playoffGroups(conference);
+        let contents = '';
+        for (const group of groups) {
+          if (group.status === 'out') {
+            if (group.teams.length) contents += `<tr class="hoist-playoff-cutoff"><td colspan="17"><span>PLAYOFF CUTOFF</span></td></tr>`;
+          } else {
+            contents += sectionHeader(group.label);
+          }
+          contents += group.teams.map((r,i) => teamRow(r,i+1,group.status)).join('');
         }
-      }
+        return `<section class="hoist-conference-block" aria-label="${conference} Conference standings">
+          <h3 class="hoist-conference-title">${conference} Conference</h3>
+          <div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${conference} Conference standings"><tbody>${contents}</tbody></table></div>
+        </section>`;
+      }).join('');
     } else {
-      const relevant = rows.filter(r => div(r) === selected).sort(nhlRank);
-      const qualifiers = new Set(playoffGroups(['Atlantic','Metropolitan'].includes(selected) ? 'Eastern' : 'Western')
-        .filter(g => g.status !== 'out').flatMap(g => g.teams.map(abbrev)));
-      html = relevant.map((r,i) => teamRow(r,i+1,qualifiers.has(abbrev(r)) ? (i<3?'division':'wildcard') : 'out')).join('');
+      let relevant = rows.filter(r => selected === 'all' || conf(r) === selected || div(r) === selected);
+      if (customSort) relevant.sort((a,b) => (descending ? num(b[customSort])-num(a[customSort]) : num(a[customSort])-num(b[customSort])) || nhlRank(a,b));
+      else relevant.sort(nhlRank);
+      body.innerHTML = relevant.map((r,i) => teamRow(r,i+1,'out')).join('') || '<tr data-hoist-playoff-row="1"><td colspan="17">No standings available.</td></tr>';
     }
-    body.innerHTML = html || '<tr data-hoist-playoff-row="1"><td colspan="17">No standings available.</td></tr>';
-    table.querySelectorAll('th[data-standings-sort]').forEach(th => {
+    document.querySelectorAll('#standings th[data-standings-sort]').forEach(th => {
       th.setAttribute('aria-sort', customSort === th.dataset.standingsSort ? (descending?'descending':'ascending') : 'none');
     });
     painting = false;
@@ -1949,6 +1977,14 @@ document.addEventListener("DOMContentLoaded", function () {
       customSort = null;
       render();
     },true);
+    document.getElementById('standings').addEventListener('click',event => {
+      const th = event.target.closest('th[data-standings-sort]');
+      if (!th) return;
+      const key = th.dataset.standingsSort;
+      if (customSort === key) descending = !descending;
+      else {customSort = key; descending = !['losses','otLosses','goalAgainst'].includes(key);}
+      render();
+    });
     table.querySelectorAll('th[data-standings-sort]').forEach(th => {
       th.tabIndex = 0;
       th.setAttribute('role','button');
@@ -1958,7 +1994,7 @@ document.addEventListener("DOMContentLoaded", function () {
         else {customSort = key; descending = !['losses','otLosses','goalAgainst'].includes(key);}
         render();
       };
-      th.addEventListener('click',choose);
+      // Clicks are handled by the delegated standings listener.
       th.addEventListener('keydown',event => {if(event.key === 'Enter' || event.key === ' '){event.preventDefault();choose();}});
     });
     new MutationObserver(() => {
