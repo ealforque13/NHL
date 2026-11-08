@@ -1069,6 +1069,31 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings #hoist-standings-table td:first-child { min-width:105px !important; }
   #standings .hoist-conference-table, #standings #hoist-standings-table { min-width:1120px; }
 }
+
+/* NHL-INSPIRED SEPARATE STANDINGS TABLES — HOIST COLOURS */
+#standings .hoist-standings-group + .hoist-standings-group { margin-top:24px; }
+#standings .hoist-group-title { margin:0 0 10px; font-size:17px; font-weight:800; color:inherit; letter-spacing:0; text-transform:capitalize; }
+#standings .hoist-conference-panel { padding:20px 22px !important; }
+#standings .hoist-conference-table { min-width:1390px; }
+#standings .hoist-conference-table thead { background:rgba(110,145,195,.13); }
+#standings .hoist-conference-table thead th { font-size:11px; font-weight:800; color:#91b8ec; letter-spacing:.04em; border-top:1px solid rgba(125,155,195,.23); border-bottom:1px solid rgba(125,155,195,.23); }
+#standings .hoist-conference-table th:nth-child(1),
+#standings .hoist-conference-table td:nth-child(1) { min-width:48px !important; width:48px; text-align:center !important; }
+#standings .hoist-conference-table th:nth-child(2),
+#standings .hoist-conference-table td:nth-child(2) { min-width:215px !important; text-align:left !important; }
+#standings .hoist-conference-table td { padding:13px 9px; }
+#standings .hoist-conference-table tr.hoist-team-row td:nth-child(6) { color:inherit !important; }
+#standings .hoist-conference-table tr.hoist-team-row td:nth-child(7),
+#standings .hoist-conference-table th[data-standings-sort="points"] { color:#48a9ff !important; }
+#standings .hoist-conference-table th[data-standings-sort] { cursor:pointer; user-select:none; }
+#standings .hoist-conference-table th[data-standings-sort]:hover { color:#fff; }
+#standings .hoist-conference-table .hoist-playoff-cutoff td { text-align:center !important; }
+@media(max-width:650px) {
+  #standings .hoist-conference-panel { padding:12px !important; }
+  #standings .hoist-conference-table { min-width:1130px; }
+  #standings .hoist-conference-table th:nth-child(2),
+  #standings .hoist-conference-table td:nth-child(2) { min-width:100px !important; }
+}
 </style>
 </head>
 
@@ -1930,6 +1955,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const logo = r.teamLogo || `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
     const diff = num(r.goalDifferential);
     return `<tr class="hoist-team-row${alternate ? ' hoist-alt-row' : ''}" data-hoist-playoff-row="1">
+      <td class="hoist-rank">${rank}</td>
       <td><span class="hoist-standing-team"><img src="${escapeHtml(logo)}" alt="" loading="lazy"><span class="hoist-standing-name-full">${escapeHtml(name(r))}</span><span class="hoist-standing-name-short">${escapeHtml(code)}</span></span></td>
       <td>${num(r.gamesPlayed)}</td><td>${num(r.wins)}</td><td>${num(r.losses)}</td><td>${num(r.otLosses)}</td>
       <td><strong>${num(r.points)}</strong></td><td>${pct(r)}</td><td>${num(r.regulationWins)}</td><td>${num(r.regulationPlusOtWins)}</td>
@@ -1939,10 +1965,25 @@ document.addEventListener("DOMContentLoaded", function () {
     </tr>`;
   }
 
-  const headings = ['','GP','W','L','OT','PTS','P%','RW','ROW','GF','GA','DIFF','HOME','AWAY','S/O','L10','STRK'];
-  const keys = ['', 'gamesPlayed','wins','losses','otLosses','points','pointPctg','regulationWins','regulationPlusOtWins','goalFor','goalAgainst','goalDifferential','','','','',''];
-  function sectionHeader(label) {
-    return `<tr class="hoist-division-header"><th scope="row">${escapeHtml(label)}</th>${headings.slice(1).map((h,i)=>`<th${keys[i+1] ? ` data-standings-sort="${keys[i+1]}"` : ''}>${h}</th>`).join('')}</tr>`;
+  const headings = ['RANK','TEAM','GP','W','L','OT','PTS','P%','RW','ROW','GF','GA','DIFF','HOME','AWAY','S/O','L10','STRK'];
+  const keys = ['', '', 'gamesPlayed','wins','losses','otLosses','points','pointPctg','regulationWins','regulationPlusOtWins','goalFor','goalAgainst','goalDifferential','','','','',''];
+  function tableHead() {
+    return `<thead><tr>${headings.map((label,i) => `<th scope="col"${keys[i] ? ` data-standings-sort="${keys[i]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr></thead>`;
+  }
+  function groupTable(label,teams,status,includeRemaining=false) {
+    const sorted = sortedWithinGroup(teams);
+    let body = sorted.map((r,i) => teamRow(r,i+1,status,i%2===1)).join('');
+    if (includeRemaining) {
+      const remaining = sortedWithinGroup(includeRemaining);
+      body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span>PLAYOFF CUTOFF</span></td></tr>`;
+      body += remaining.map((r,i) => teamRow(r,i+3,'out',i%2===1)).join('');
+    }
+    return `<section class="hoist-standings-group" aria-label="${escapeHtml(label)} standings">
+      <h3 class="hoist-group-title">${escapeHtml(label)}</h3>
+      <div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(label)} standings">
+        ${tableHead()}<tbody>${body}</tbody>
+      </table></div>
+    </section>`;
   }
   function render() {
     if (!ready || painting) return;
@@ -1964,26 +2005,21 @@ document.addEventListener("DOMContentLoaded", function () {
       const conferences = selected === 'all' ? ['Eastern','Western'] : [selected];
       display.innerHTML = conferences.map(conference => {
         const groups = playoffGroups(conference);
-        let contents = '';
-        let rowIndex = 0;
-        for (const group of groups) {
-          if (group.status === 'out') {
-            if (group.teams.length) contents += `<tr class="hoist-playoff-cutoff"><td colspan="17"><span>PLAYOFF CUTOFF</span></td></tr>`;
-          } else {
-            contents += sectionHeader(group.label);
-          }
-          contents += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,(rowIndex++ % 2) === 1)).join('');
-        }
+        const [first,second,wild,remaining] = groups;
         return `<section class="hoist-conference-block" aria-label="${conference} Conference standings">
           ${conference === 'Eastern' ? '' : '<h3 class="hoist-conference-title">Western Conference</h3>'}
-          <article class="panel section-panel hoist-conference-panel"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${conference} Conference standings"><tbody>${contents}</tbody></table></div></article>
+          <article class="panel section-panel hoist-conference-panel">
+            ${groupTable(first.label,first.teams,first.status)}
+            ${groupTable(second.label,second.teams,second.status)}
+            ${groupTable(wild.label,wild.teams,wild.status,remaining.teams)}
+          </article>
         </section>`;
       }).join('');
     } else {
       let relevant = rows.filter(r => selected === 'all' || conf(r) === selected || div(r) === selected);
       if (customSort) relevant.sort((a,b) => (descending ? num(b[customSort])-num(a[customSort]) : num(a[customSort])-num(b[customSort])) || nhlRank(a,b));
       else relevant.sort(nhlRank);
-      body.innerHTML = relevant.map((r,i) => teamRow(r,i+1,'out',i % 2 === 1)).join('') || '<tr data-hoist-playoff-row="1"><td colspan="17">No standings available.</td></tr>';
+      body.innerHTML = relevant.map((r,i) => teamRow(r,i+1,'out',i%2===1)).join('') || '<tr data-hoist-playoff-row="1"><td colspan="18">No standings available.</td></tr>';
     }
     document.querySelectorAll('#standings th[data-standings-sort]').forEach(th => {
       th.setAttribute('aria-sort', customSort === th.dataset.standingsSort ? (descending?'descending':'ascending') : 'none');
