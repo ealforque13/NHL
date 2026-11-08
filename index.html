@@ -85,7 +85,6 @@ html body .section-panel {
   font-size: 9px;
   letter-spacing: .15em;
   color: #8ea9d2;
-  font-weight: 600;
 }
 
 /* ==========================================
@@ -387,13 +386,6 @@ html body .section-panel {
 /* ==========================================
    HOT PLAYERS — COMPACT STAT COLUMNS
    ========================================== */
-
-/*
-  PLAYER = 64%
-  G      = 12%
-  A      = 12%
-  PTS    = 12%
-*/
 
 #overview .hoist-hot-players-panel .mi-table {
   width: 100% !important;
@@ -811,6 +803,55 @@ html body .section-panel {
   max-width: 100% !important;
   overflow-x: auto;
   border-radius: 0 !important;
+}
+
+/* ==========================================
+   MATCHUP — COMPACT HEADER & STACKED FILTERS
+   ========================================== */
+
+#matchup-intelligence .mi-header .eyebrow,
+#matchup-intelligence .mi-subtitle {
+  display: none !important;
+}
+
+#matchup-intelligence .mi-header {
+  margin-bottom: 16px !important;
+}
+
+#matchup-intelligence #mi-title {
+  margin: 0 !important;
+}
+
+#matchup-intelligence .hoist-matchup-controls {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  margin-bottom: 24px !important;
+}
+
+#matchup-intelligence .hoist-matchup-filter {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+#matchup-intelligence .hoist-matchup-filter label {
+  width: 65px !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+#matchup-intelligence .hoist-matchup-filter select {
+  margin: 0 !important;
+}
+
+#matchup-intelligence #mi-sort {
+  min-width: 155px !important;
+}
+
+#matchup-intelligence #mi-min-games {
+  min-width: 70px !important;
 }
 
 /* ==========================================
@@ -1270,7 +1311,7 @@ html body .mi-avatar-fallback,
 
   </article>
 
-  <!-- HOT PLAYERS — LAST 5 BADGE REMOVED -->
+  <!-- HOT PLAYERS -->
 
   <div class="hoist-overview-right">
     <article class="panel section-panel hoist-hot-players-panel">
@@ -1322,43 +1363,46 @@ html body .mi-avatar-fallback,
 
   <div class="section-head mi-header">
     <div>
-      <div class="eyebrow">MATCHUP INTELLIGENCE</div>
-      <h3 id="mi-title">Players vs. Next Opponent</h3>
-      <p class="mi-subtitle">
-        Top 5 players against the next opponent
-      </p>
+      <h3 id="mi-title">MTL vs MIN</h3>
     </div>
   </div>
 
-  <div class="mi-controls">
+  <!-- STACKED FILTERS -->
 
-    <label for="mi-sort">Rank by</label>
-    <select id="mi-sort">
-      <option value="ppg">Points per game</option>
-      <option value="points">Total points</option>
-      <option value="goals">Goals</option>
-      <option value="assists">Assists</option>
-    </select>
+  <div class="mi-controls hoist-matchup-controls">
 
-    <label for="mi-min-games">
-      Minimum matchup games
-    </label>
+    <div class="hoist-matchup-filter">
+      <label for="mi-sort">Rank by</label>
 
-    <select id="mi-min-games">
-      <option value="1">1+</option>
-      <option value="2">2+</option>
-      <option value="3">3+</option>
-      <option value="5">5+</option>
-      <option value="10">10+</option>
-    </select>
+      <select id="mi-sort">
+        <option value="ppg">Points per game</option>
+        <option value="points">Total points</option>
+        <option value="goals">Goals</option>
+        <option value="assists">Assists</option>
+      </select>
+    </div>
+
+    <div class="hoist-matchup-filter">
+      <label for="mi-min-games">GP</label>
+
+      <select id="mi-min-games">
+        <option value="1">1+</option>
+        <option value="2">2+</option>
+        <option value="3">3+</option>
+        <option value="5">5+</option>
+        <option value="10">10+</option>
+      </select>
+    </div>
 
   </div>
+
+  <!-- MATCHUP TABLES -->
 
   <div class="mi-grid">
 
     <div>
       <h3 id="mi-left-title">
-        Your team vs. opponent
+        MTL players vs MIN
       </h3>
 
       <div class="table-scroll">
@@ -1373,6 +1417,7 @@ html body .mi-avatar-fallback,
               <th>PTS/GP</th>
             </tr>
           </thead>
+
           <tbody id="mi-left"></tbody>
         </table>
       </div>
@@ -1380,7 +1425,7 @@ html body .mi-avatar-fallback,
 
     <div>
       <h3 id="mi-right-title">
-        Opponent vs. your team
+        MIN players vs MTL
       </h3>
 
       <div class="table-scroll">
@@ -1395,6 +1440,7 @@ html body .mi-avatar-fallback,
               <th>PTS/GP</th>
             </tr>
           </thead>
+
           <tbody id="mi-right"></tbody>
         </table>
       </div>
@@ -1690,7 +1736,7 @@ html body .mi-avatar-fallback,
 <script src="theme.js?v=2" defer></script>
 <script src="app.js?v=8" defer></script>
 <script src="v2.js?v=10" defer></script>
-<script src="matchup.js?v=10" defer></script>
+<script src="matchup.js?v=11" defer></script>
 <script src="hoist-head-to-head.js?v=5" defer></script>
 
 <!-- Keep calendar games non-interactive.
