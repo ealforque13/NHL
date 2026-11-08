@@ -999,7 +999,14 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 #standings .hoist-standings-status.division { color:#4ade80; }
 #standings .hoist-standings-status.wildcard { color:#60a5fa; }
 #standings .hoist-standings-status.out { color:#91a0b5; }
-#standings .hoist-standings-page-title { margin:0 0 18px; font-size:26px; font-weight:800; }
+#standings .hoist-standings-page-title { margin:0; font-size:26px; font-weight:800; }
+#standings .hoist-standings-subtitle { margin:7px 0 0; font-size:17px; font-weight:750; }
+#standings .hoist-standings-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:20px; }
+#standings .hoist-standings-toolbar { display:flex; align-items:center; }
+#standings .hoist-conference-panel { margin-top:0; }
+#standings .hoist-conference-block + .hoist-conference-block { margin-top:30px; }
+#standings .hoist-standings-heading select { min-width:190px; }
+@media(max-width:600px){ #standings .hoist-standings-page-title{font-size:23px;} #standings .hoist-standings-subtitle{font-size:15px;} #standings .hoist-standings-heading select{min-width:135px;max-width:150px;} }
 #standings .hoist-standings-toolbar { justify-content:flex-end; }
 #standings #hoist-standings-table th:first-child,
 #standings #hoist-standings-table td:first-child { min-width:185px; }
@@ -1035,7 +1042,7 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 #standings .hoist-conference-table td { border-bottom:1px solid rgba(125,155,195,.20); }
 #standings .hoist-playoff-cutoff td { position:relative; padding:12px 0 !important; border-top:2px solid #d05a69; border-bottom:0; text-align:center !important; }
 #standings .hoist-playoff-cutoff span { color:#e07c88; font-size:10px; font-weight:800; letter-spacing:.12em; }
-#standings .hoist-standings-scroll[hidden], #hoist-conference-tables[hidden] { display:none !important; }
+#standings .hoist-standings-scroll[hidden], #hoist-conference-tables[hidden], #hoist-flat-standings[hidden], #hoist-standings-subtitle[hidden] { display:none !important; }
 </style>
 </head>
 
@@ -1500,9 +1507,12 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 <!-- STANDINGS -->
 
 <section id="standings" class="tab-section hidden">
-  <h2 class="hoist-standings-page-title">Standings</h2>
-  <article class="panel section-panel">
-    <div class="section-head hoist-standings-toolbar">
+  <div class="hoist-standings-heading">
+    <div>
+      <h2 class="hoist-standings-page-title">Standings</h2>
+      <p id="hoist-standings-subtitle" class="hoist-standings-subtitle">Eastern Conference</p>
+    </div>
+    <div class="hoist-standings-toolbar">
       <select id="standings-filter" aria-label="Standings view">
         <option value="all" selected>Wild Card</option>
         <option value="Eastern">Eastern Conference</option>
@@ -1513,8 +1523,10 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
         <option value="Pacific">Pacific Division</option>
       </select>
     </div>
+  </div>
 
-    <div id="hoist-conference-tables"></div>
+  <div id="hoist-conference-tables"></div>
+  <article class="panel section-panel" id="hoist-flat-standings">
     <div class="table-scroll hoist-standings-scroll">
       <table id="hoist-standings-table" aria-label="NHL standings">
         <thead>
@@ -1882,6 +1894,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return groups;
   }
 
+  function sortedWithinGroup(teams) {
+    if (!customSort) return teams;
+    return [...teams].sort((a,b) => (descending ? num(b[customSort])-num(a[customSort]) : num(a[customSort])-num(b[customSort])) || nhlRank(a,b));
+  }
+
   function teamRow(r,rank,status) {
     const code = abbrev(r);
     const logo = r.teamLogo || `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
@@ -1909,8 +1926,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!body || !table || !display) return;
     painting = true;
     const selected = $('standings-filter')?.value || 'all';
-    const grouped = !customSort && ['all','Eastern','Western'].includes(selected);
-    table.closest('.hoist-standings-scroll').hidden = grouped;
+    const grouped = ['all','Eastern','Western'].includes(selected);
+    $('hoist-flat-standings').hidden = grouped;
+    const subtitle = $('hoist-standings-subtitle');
+    if (subtitle) {
+      subtitle.hidden = !grouped;
+      subtitle.textContent = selected === 'Western' ? 'Western Conference' : 'Eastern Conference';
+    }
     display.hidden = !grouped;
     if (grouped) {
       const conferences = selected === 'all' ? ['Eastern','Western'] : [selected];
@@ -1923,11 +1945,11 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             contents += sectionHeader(group.label);
           }
-          contents += group.teams.map((r,i) => teamRow(r,i+1,group.status)).join('');
+          contents += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status)).join('');
         }
         return `<section class="hoist-conference-block" aria-label="${conference} Conference standings">
-          <h3 class="hoist-conference-title">${conference} Conference</h3>
-          <div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${conference} Conference standings"><tbody>${contents}</tbody></table></div>
+          ${conference === 'Eastern' ? '' : '<h3 class="hoist-conference-title">Western Conference</h3>'}
+          <article class="panel section-panel hoist-conference-panel"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${conference} Conference standings"><tbody>${contents}</tbody></table></div></article>
         </section>`;
       }).join('');
     } else {
