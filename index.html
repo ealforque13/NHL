@@ -1800,6 +1800,34 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     height:4px; background:#f05260; z-index:3;
   }
 }
+
+/* MOBILE: expose the entire GP column and make the cutoff a single aligned rule. */
+@media (max-width:650px) {
+  /* The statistics table starts behind the separately overlaid identity rail.
+     Move the actual table 20px right, without moving the fixed team rail. */
+  #standings .hoist-mobile-unified .hoist-conference-table {
+    margin-left:20px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-playoff-cutoff,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff {
+    height:4px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-playoff-cutoff td,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff td {
+    height:4px !important; min-height:4px !important; max-height:4px !important;
+    border-top:4px solid #f05260 !important;
+    border-bottom:0 !important; padding:0 !important;
+    box-sizing:border-box !important;
+  }
+  /* Use a single measured cutoff overlay for the fixed rail. */
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-after-cutoff::after {
+    content:none !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-cutoff-rail-line {
+    position:absolute; left:0; width:100px; height:4px;
+    background:#f05260; z-index:40; pointer-events:none;
+  }
+}
 </style>
 </head>
 
@@ -2762,6 +2790,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if (!reuse) rail.appendChild(item);
       });
+      // Align the fixed-side cutoff to the same physical pixel as the
+      // scrolling table's cutoff, rather than approximating from the next row.
+      let cutoffLine = wrapper.querySelector('.hoist-mobile-cutoff-rail-line');
+      const cutoffRow = table.querySelector('tr.hoist-playoff-cutoff');
+      if (cutoffRow) {
+        if (!cutoffLine) {
+          cutoffLine = document.createElement('div');
+          cutoffLine.className = 'hoist-mobile-cutoff-rail-line';
+          wrapper.appendChild(cutoffLine);
+        }
+        cutoffLine.style.top = (cutoffRow.getBoundingClientRect().top - wrapperRect.top) + 'px';
+      } else if (cutoffLine) {
+        cutoffLine.remove();
+      }
       rail.dataset.signature = signature;
       rail.classList.add('hoist-rail-ready');
     });
