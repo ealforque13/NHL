@@ -1653,6 +1653,73 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     backface-visibility:visible !important;
   }
 }
+
+/* MOBILE STANDINGS — larger, closer to the supplied reference screenshot.
+   Enlarge the table's real cells (not transform:scale), keeping the fixed rail
+   and the scrolling statistics exactly aligned. Desktop is unaffected. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-conference-table {
+    width:1090px !important;
+    min-width:1090px !important;
+    table-layout:fixed !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(1) {
+    width:0 !important; min-width:0 !important; max-width:0 !important;
+    padding:0 !important; border:0 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(2) {
+    width:112px !important; min-width:112px !important; max-width:112px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) {
+    width:51px !important; min-width:51px !important; max-width:51px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(14),
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(15),
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(17) {
+    width:73px !important; min-width:73px !important; max-width:73px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(16),
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(18) {
+    width:59px !important; min-width:59px !important; max-width:59px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row > td {
+    font-size:15px !important;
+    padding-top:15px !important;
+    padding-bottom:15px !important;
+    line-height:1.3 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider :is(td,th) {
+    height:46px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider :is(td,th) {
+    font-size:15px !important;
+    font-weight:850 !important;
+    padding-top:11px !important;
+    padding-bottom:11px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail,
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item {
+    width:112px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-standing-team {
+    font-size:15px !important;
+    gap:6px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-standing-team img {
+    width:25px !important; height:25px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-rail-rank {
+    font-size:15px !important;
+    flex-basis:13px !important;
+    min-width:13px !important;
+    margin-right:3px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    font-size:13px !important;
+    padding-left:6px !important;
+  }
+}
 </style>
 </head>
 
