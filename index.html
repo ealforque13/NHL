@@ -2033,6 +2033,22 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     margin-top:18px !important;
   }
 }
+
+/* Standings view selection: light blue indicator on desktop and mobile. */
+#standings .hoist-view-tab.is-active {
+  border-bottom-color:#8fc6ff !important;
+}
+/* Division mobile: more breathing room between tables; top rule on
+   Metropolitan (second Eastern table) and Pacific (second Western table).
+   No column sizing, table offsets or team-rail geometry is changed. */
+@media (max-width:650px) {
+  #standings .hoist-conference-panel > .hoist-mobile-unified + .hoist-mobile-unified {
+    margin-top:30px !important;
+  }
+  #standings .hoist-conference-panel > .hoist-mobile-unified:nth-of-type(2) {
+    border-top:1px solid #49678d !important;
+  }
+}
 </style>
 </head>
 
