@@ -1393,6 +1393,43 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
   #standings .hoist-mobile-unified .hoist-playoff-cutoff td { display:table-cell !important; position:relative !important; height:2px !important; padding:0 !important; border-top:2px solid #d05a69 !important; }
 }
+
+/* MOBILE REFINEMENT: no TEAM header, repeating stat headers, continuous rows */
+@media (max-width:650px) {
+  /* Team identities stay frozen; the first row now starts with GP beside the division label. */
+  #standings .hoist-mobile-unified .hoist-conference-table thead { display:none !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider { height:34px !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider :is(td,th) {
+    height:34px !important; padding:7px 2px !important; box-sizing:border-box !important;
+    background:#243754 !important; border-bottom:1px solid rgba(125,155,195,.3) !important;
+    font-size:12px !important; font-weight:900 !important; line-height:1.1 !important;
+    color:#c1d5f5 !important; text-align:center !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider td:nth-child(2) {
+    left:0 !important; width:85px !important; min-width:85px !important; max-width:85px !important;
+    padding-left:5px !important; text-align:left !important; font-size:10px !important;
+    color:#fff !important; z-index:7 !important; overflow:hidden !important;
+    text-overflow:clip !important; white-space:nowrap !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider th[data-standings-sort] { cursor:pointer !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff { height:4px !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff td {
+    height:4px !important; min-height:4px !important; max-height:4px !important;
+    padding:0 !important; border-top:4px solid #f4f7ff !important;
+    border-bottom:0 !important; background:transparent !important;
+  }
+  /* PTS defaults to normal; the selected sort highlights the ENTIRE column in red. */
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td:nth-child(7):not(.hoist-active-stat),
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider th[data-standings-sort="points"]:not(.hoist-active-stat) {
+    color:inherit !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td).hoist-active-stat,
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td.hoist-active-stat,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider th.hoist-active-stat {
+    color:#ff5366 !important; font-weight:900 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td.hoist-active-stat strong { color:#ff5366 !important; }
+}
 </style>
 </head>
 
@@ -2291,7 +2328,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const sections = [first, second, wild];
     let body = '';
     for (const group of sections) {
-      body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label)}</td>${'<td></td>'.repeat(16)}</tr>`;
+      // Repeat the full statistics header at each division boundary; all are sortable.
+      body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label)}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
       body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,i%2===1)).join('');
       if (group === wild) {
         body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
