@@ -1339,6 +1339,38 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-conference-table .hoist-standing-team { font-size:12px !important; }
 }
 
+
+/* Unified mobile standings scroll, tight groups, single active stat */
+#standings .hoist-conference-table .hoist-active-stat,
+#standings #hoist-standings-table .hoist-active-stat {
+  color:#48a9ff !important;
+  font-weight:800 !important;
+}
+/* PTS is blue only while it is the active stat. */
+#standings .hoist-conference-table tr.hoist-team-row td:nth-child(7):not(.hoist-active-stat),
+#standings .hoist-conference-table th[data-standings-sort="points"]:not(.hoist-active-stat),
+#standings #hoist-standings-table tr.hoist-team-row td:nth-child(7):not(.hoist-active-stat),
+#standings #hoist-standings-table th[data-standings-sort="points"]:not(.hoist-active-stat) {
+  color:inherit !important;
+}
+#standings .hoist-playoff-cutoff td { border-top:2px solid #d05a69 !important; padding:0 !important; height:2px !important; line-height:0 !important; }
+#standings .hoist-playoff-cutoff span { position:absolute !important; width:1px !important; height:1px !important; overflow:hidden !important; clip-path:inset(50%) !important; white-space:nowrap !important; }
+@media(max-width:650px) {
+  #standings .hoist-standings-group + .hoist-standings-group { margin-top:0 !important; }
+  #standings .hoist-standings-group { margin:0 !important; padding:0 !important; }
+  #standings .hoist-standings-group .hoist-standings-scroll { margin:0 !important; border:0 !important; }
+  #standings .hoist-conference-panel { padding-top:0 !important; padding-bottom:0 !important; }
+  #standings .hoist-conference-table thead th:nth-child(3),
+  #standings .hoist-conference-table thead th:nth-child(4),
+  #standings .hoist-conference-table thead th:nth-child(5) {
+    font-size:14px !important;
+    font-weight:900 !important;
+    letter-spacing:0 !important;
+  }
+  #standings .hoist-conference-table tr.hoist-team-row td:nth-child(3),
+  #standings .hoist-conference-table tr.hoist-team-row td:nth-child(4),
+  #standings .hoist-conference-table tr.hoist-team-row td:nth-child(5) { font-weight:800 !important; }
+}
 </style>
 </head>
 
@@ -2154,6 +2186,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let ready = false;
   let painting = false;
   let customSort = null;
+  let activeStat = 'points';
+  let syncedScrollLeft = 0;
   let descending = true;
 
   // NHL regular-season ranking tiebreakers: points, points percentage when
@@ -2220,7 +2254,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let body = sorted.map((r,i) => teamRow(r,i+1,status,i%2===1)).join('');
     if (includeRemaining) {
       const remaining = sortedWithinGroup(includeRemaining);
-      body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span>PLAYOFF CUTOFF</span></td></tr>`;
+      body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
       body += remaining.map((r,i) => teamRow(r,i+3,'out',i%2===1)).join('');
     }
     return `<section class="hoist-standings-group" aria-label="${escapeHtml(label)} standings">
@@ -2266,6 +2300,30 @@ document.addEventListener("DOMContentLoaded", function () {
       else relevant.sort(nhlRank);
       body.innerHTML = relevant.map((r,i) => teamRow(r,i+1,'out',i%2===1)).join('') || '<tr data-hoist-playoff-row="1"><td colspan="18">No standings available.</td></tr>';
     }
+    // Highlight only the currently selected statistic, across every table.
+    document.querySelectorAll('#standings .hoist-conference-table, #standings #hoist-standings-table').forEach(t => {
+      const activeIndex = keys.indexOf(activeStat) + 1;
+      t.querySelectorAll('tr').forEach(tr => {
+        Array.from(tr.children).forEach((cell, i) => {
+          cell.classList.toggle('hoist-active-stat', activeIndex > 0 && i === activeIndex - 1 && !cell.hasAttribute('colspan'));
+        });
+      });
+    });
+    // Keep all division tables horizontally aligned while swiping any one of them.
+    const scrolls = Array.from(display.querySelectorAll('.hoist-standings-scroll'));
+    scrolls.forEach(scroller => {
+      scroller.scrollLeft = syncedScrollLeft;
+      scroller.addEventListener('scroll', () => {
+        if (scroller.dataset.hoistSyncing === '1') return;
+        syncedScrollLeft = scroller.scrollLeft;
+        scrolls.forEach(other => {
+          if (other === scroller || Math.abs(other.scrollLeft - syncedScrollLeft) < 1) return;
+          other.dataset.hoistSyncing = '1';
+          other.scrollLeft = syncedScrollLeft;
+          requestAnimationFrame(() => { other.dataset.hoistSyncing = '0'; });
+        });
+      }, {passive:true});
+    });
     document.querySelectorAll('#standings th[data-standings-sort]').forEach(th => {
       th.setAttribute('aria-sort', customSort === th.dataset.standingsSort ? (descending?'descending':'ascending') : 'none');
     });
@@ -2305,12 +2363,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!ready) return;
       event.stopImmediatePropagation();
       customSort = null;
+      syncedScrollLeft = 0;
       render();
     },true);
     document.getElementById('standings').addEventListener('click',event => {
       const th = event.target.closest('th[data-standings-sort]');
       if (!th) return;
       const key = th.dataset.standingsSort;
+      activeStat = key;
       if (customSort === key) descending = !descending;
       else {customSort = key; descending = !['losses','otLosses','goalAgainst'].includes(key);}
       render();
@@ -2320,6 +2380,7 @@ document.addEventListener("DOMContentLoaded", function () {
       th.setAttribute('role','button');
       const choose = () => {
         const key = th.dataset.standingsSort;
+        activeStat = key;
         if (customSort === key) descending = !descending;
         else {customSort = key; descending = !['losses','otLosses','goalAgainst'].includes(key);}
         render();
