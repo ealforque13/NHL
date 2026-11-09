@@ -1720,6 +1720,40 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     padding-left:6px !important;
   }
 }
+
+/* Mobile alignment correction: full-bleed identity rail and compact stats. */
+@media (max-width:650px) {
+  /* Remove the leftover panel gutter instead of painting over it with a pseudo-element. */
+  #standings .hoist-conference-panel { padding-left:0 !important; padding-right:0 !important; }
+  #standings .hoist-mobile-unified { margin-left:0 !important; margin-right:0 !important; width:100% !important; }
+  #standings .hoist-mobile-unified .hoist-standings-scroll { margin:0 !important; padding:0 !important; width:100% !important; }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail { left:0 !important; overflow:hidden !important; }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item { left:0 !important; }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item::before { content:none !important; display:none !important; }
+  /* Keep the first statistics cell fully exposed immediately after the fixed rail. */
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(2) {
+    width:112px !important; min-width:112px !important; max-width:112px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail,
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item { width:112px !important; }
+  /* Narrower columns without shrinking the enlarged type or row height. */
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) {
+    width:45px !important; min-width:45px !important; max-width:45px !important;
+    padding-left:2px !important; padding-right:2px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(14),
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(15),
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(17) {
+    width:67px !important; min-width:67px !important; max-width:67px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(16),
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(18) {
+    width:54px !important; min-width:54px !important; max-width:54px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table {
+    width:975px !important; min-width:975px !important;
+  }
+}
 </style>
 </head>
 
