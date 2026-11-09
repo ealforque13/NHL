@@ -177,7 +177,9 @@ function setup() {
     renderSchedule
   );
 
-  $('standings-filter').addEventListener(
+  // FIX: The legacy Standings dropdown may no longer exist.
+  // The new Standings buttons are managed separately.
+  $('standings-filter')?.addEventListener(
     'change',
     renderStandings
   );
@@ -631,7 +633,15 @@ function renderRoster() {
    ========================================== */
 
 function renderStandings() {
-  const filter = $('standings-filter').value;
+  // FIX: The new Standings UI no longer uses the legacy
+  // dropdown and table. Do not run the old renderer
+  // when either element is missing.
+  const filterEl = $('standings-filter');
+  const bodyEl = $('standings-body');
+
+  if (!filterEl || !bodyEl) return;
+
+  const filter = filterEl.value;
 
   const data = state.standings.filter(s =>
     filter === 'all' ||
@@ -649,7 +659,7 @@ function renderStandings() {
       (b.pointPctg ?? 0) - (a.pointPctg ?? 0)
   );
 
-  $('standings-body').innerHTML = sorted.length
+  bodyEl.innerHTML = sorted.length
     ? sorted.map((s, i) => {
         const code = localName(s.teamAbbrev);
 
