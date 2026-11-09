@@ -1493,6 +1493,17 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
   #standings .hoist-mobile-identity-item .hoist-standing-team { gap:3px !important; }
   #standings .hoist-mobile-identity-item .hoist-standing-team img { width:18px !important; height:18px !important; }
+  /* Fill the narrow left gutter with the exact row background. */
+  #standings .hoist-mobile-identity-item { box-shadow:-15px 0 0 #101a2d; }
+  #standings .hoist-mobile-identity-item.hoist-alt-row { box-shadow:-15px 0 0 #1e2b42; }
+  #standings .hoist-mobile-identity-item.hoist-identity-division { box-shadow:-15px 0 0 #243754; }
+  #standings .hoist-mobile-identity-item .hoist-rail-rank {
+    display:inline-block; flex:0 0 11px; min-width:11px; margin-right:2px;
+    font-size:10px; font-weight:800; text-align:center; color:#dce7f7;
+  }
+  #standings .hoist-mobile-identity-item .hoist-standing-team { gap:2px !important; font-size:10.5px !important; }
+  #standings .hoist-mobile-identity-item .hoist-standing-team img { width:17px !important; height:17px !important; }
+
 }
 @media (min-width:651px) { #standings .hoist-mobile-identity-rail { display:none !important; } }
 </style>
@@ -2424,7 +2435,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const offset = tableRect.top - wrapperRect.top;
       rail.style.height = Math.ceil(offset + tableRect.height) + 'px';
       rail.replaceChildren();
+      let divisionRank = 0;
       table.querySelectorAll('tbody tr').forEach(tr => {
+        if (tr.classList.contains('hoist-division-divider')) divisionRank = 0;
         const identity = tr.children[1];
         if (!identity || tr.classList.contains('hoist-playoff-cutoff')) return;
         const item = document.createElement('div');
@@ -2434,7 +2447,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const r = tr.getBoundingClientRect();
         item.style.top = (r.top - tableRect.top + offset) + 'px';
         item.style.height = r.height + 'px';
-        item.innerHTML = identity.innerHTML;
+        if (tr.classList.contains('hoist-team-row')) {
+          divisionRank += 1;
+          item.innerHTML = `<span class="hoist-rail-rank">${divisionRank}</span>` + identity.innerHTML;
+        } else {
+          item.innerHTML = identity.innerHTML;
+        }
         rail.appendChild(item);
       });
     });
