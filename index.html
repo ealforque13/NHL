@@ -1991,6 +1991,41 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     margin-left:0 !important;
   }
 }
+/* MOBILE STANDINGS ALIGNMENT: use Wild Card geometry in every view.
+   The 20px inset keeps GP clear of the 100px fixed identity rail. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified.hoist-other-view .hoist-conference-table,
+  #standings .hoist-mobile-unified.hoist-wildcard-view .hoist-conference-table {
+    margin-left:20px !important;
+  }
+  /* Header rows and team rows must share the same physical column grid. */
+  #standings .hoist-mobile-unified .hoist-conference-table {
+    table-layout:fixed !important;
+    border-collapse:collapse !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > :is(td,th):nth-child(n+3):nth-child(-n+13),
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row > td:nth-child(n+3):nth-child(-n+13) {
+    width:43px !important;
+    min-width:43px !important;
+    max-width:43px !important;
+    box-sizing:border-box !important;
+    text-align:center !important;
+    padding-left:2px !important;
+    padding-right:2px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > :is(td,th):nth-child(2) {
+    width:100px !important;
+    min-width:100px !important;
+    max-width:100px !important;
+    box-sizing:border-box !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    width:100px !important;
+    box-sizing:border-box !important;
+    padding-left:4px !important;
+    padding-right:3px !important;
+  }
+}
 </style>
 </head>
 
