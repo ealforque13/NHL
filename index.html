@@ -1430,6 +1430,41 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
   #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td.hoist-active-stat strong { color:#ff5366 !important; }
 }
+
+/* MOBILE: permanently anchored team identity, including division rows. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-standings-scroll {
+    position:relative !important;
+    overflow-x:auto !important;
+    overflow-y:hidden !important;
+    isolation:isolate;
+    -webkit-overflow-scrolling:touch;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table {
+    border-collapse:separate !important;
+    border-spacing:0 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row > td:nth-child(2),
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > td:nth-child(2) {
+    position:sticky !important;
+    left:0 !important;
+    z-index:12 !important;
+    width:85px !important;
+    min-width:85px !important;
+    max-width:85px !important;
+    box-sizing:border-box !important;
+    box-shadow:2px 0 0 #49678d !important;
+    background:#101a2d !important;
+    background-clip:padding-box !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row.hoist-alt-row > td:nth-child(2) {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > td:nth-child(2) {
+    background:#243754 !important;
+    z-index:14 !important;
+  }
+}
 </style>
 </head>
 
@@ -2345,6 +2380,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const table = $('hoist-standings-table');
     const display = $('hoist-conference-tables');
     if (!body || !table || !display) return;
+    // Capture the horizontal position before replacing the standings DOM.
+    // Sorting a far-right statistic must not jump the user back to GP.
+    const oldMobileScrollers = Array.from(display.querySelectorAll('.hoist-mobile-unified .hoist-standings-scroll'));
+    const mobileScrollPositions = oldMobileScrollers.map(el => el.scrollLeft);
     painting = true;
     const selected = $('standings-filter')?.value || 'all';
     const grouped = ['all','Eastern','Western'].includes(selected);
@@ -2386,6 +2425,11 @@ document.addEventListener("DOMContentLoaded", function () {
           cell.classList.toggle('hoist-active-stat', activeIndex > 0 && i === activeIndex - 1 && !cell.hasAttribute('colspan'));
         });
       });
+    });
+    // Restore each unified mobile table to its exact pre-sort scroll position.
+    // Do this synchronously after rebuilding, before the browser paints.
+    Array.from(display.querySelectorAll('.hoist-mobile-unified .hoist-standings-scroll')).forEach((el,i) => {
+      el.scrollLeft = mobileScrollPositions[i] ?? 0;
     });
     // Keep all division tables horizontally aligned while swiping any one of them.
     const scrolls = Array.from(display.querySelectorAll('.hoist-desktop-groups .hoist-standings-scroll'));
