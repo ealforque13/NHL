@@ -1617,6 +1617,42 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     visibility:hidden !important;
   }
 }
+
+/* MOBILE FINAL: every visible row alternates, including division headings. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-division-divider > :is(td,th),
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td {
+    background:#101a2d !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-division-divider.hoist-alt-row > :is(td,th),
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row.hoist-alt-row > td {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item,
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    background:#101a2d !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-alt-row,
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division.hoist-alt-row {
+    background:#1e2b42 !important;
+  }
+  /* Fill the blank left-hand cell and outer gutter for every divider. */
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail { overflow:visible !important; }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item::before {
+    content:"" !important; position:absolute !important;
+    left:-40px !important; right:auto !important; width:40px !important;
+    top:0 !important; bottom:0 !important; background:inherit !important;
+    border:0 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    padding-left:4px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item img {
+    visibility:visible !important; opacity:1 !important;
+    transform:none !important; animation:none !important;
+    backface-visibility:visible !important;
+  }
+}
 </style>
 </head>
 
@@ -2516,8 +2552,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let body = '';
     let mobileStripeIndex = 0;
     for (const group of sections) {
+      const dividerStripe = (mobileStripeIndex++) % 2 === 1;
       // Repeat the full statistics header at each division boundary; all are sortable.
-      body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()))}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
+      body += `<tr class="hoist-division-divider${dividerStripe ? ' hoist-alt-row' : ''}"><td></td><td>${escapeHtml(group.label.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()))}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
       body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,(mobileStripeIndex++)%2===1)).join('');
       if (group === wild) {
         body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
@@ -2549,13 +2586,18 @@ document.addEventListener("DOMContentLoaded", function () {
       const wrapperRect = wrapper.getBoundingClientRect();
       const offset = tableRect.top - wrapperRect.top;
       rail.style.height = Math.ceil(offset + tableRect.height) + 'px';
-      rail.replaceChildren();
+      // Keep existing logo nodes when the table has not changed, preventing
+      // image flashes during Safari viewport changes and vertical scrolling.
+      const rowsToRender = Array.from(table.querySelectorAll('tbody tr')).filter(tr => !tr.classList.contains('hoist-playoff-cutoff'));
+      const signature = rowsToRender.map(tr => tr.className + ':' + (tr.children[1]?.textContent || '')).join('|');
+      const reuse = rail.dataset.signature === signature && rail.children.length === rowsToRender.length;
+      if (!reuse) rail.replaceChildren();
       let divisionRank = 0;
       table.querySelectorAll('tbody tr').forEach(tr => {
         if (tr.classList.contains('hoist-division-divider')) divisionRank = 0;
         const identity = tr.children[1];
         if (!identity || tr.classList.contains('hoist-playoff-cutoff')) return;
-        const item = document.createElement('div');
+        const item = reuse ? rail.children[rowsToRender.indexOf(tr)] : document.createElement('div');
         item.className = 'hoist-mobile-identity-item' +
           (tr.classList.contains('hoist-alt-row') ? ' hoist-alt-row' : '') +
           (tr.classList.contains('hoist-division-divider') ? ' hoist-identity-division' : '');
@@ -2564,12 +2606,14 @@ document.addEventListener("DOMContentLoaded", function () {
         item.style.height = r.height + 'px';
         if (tr.classList.contains('hoist-team-row')) {
           divisionRank += 1;
-          item.innerHTML = `<span class="hoist-rail-rank">${divisionRank}</span>` + identity.innerHTML;
+          if (!reuse) item.innerHTML = `<span class="hoist-rail-rank">${divisionRank}</span>` + identity.innerHTML;
+          item.querySelectorAll('img').forEach(img => { img.loading = 'eager'; img.decoding = 'sync'; img.draggable = false; });
         } else {
-          item.innerHTML = identity.innerHTML;
+          if (!reuse) item.innerHTML = identity.innerHTML;
         }
-        rail.appendChild(item);
+        if (!reuse) rail.appendChild(item);
       });
+      rail.dataset.signature = signature;
       rail.classList.add('hoist-rail-ready');
     });
   }
