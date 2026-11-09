@@ -1541,6 +1541,48 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     background:#243754 !important;
   }
 }
+
+/* FINAL MOBILE STANDINGS: continuous zebra striping, title case, larger identities */
+@media (max-width:650px) {
+  /* Explicitly override older nth-of-type rules so division breaks never reset striping. */
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td {
+    background:#101a2d !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row.hoist-alt-row > td {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item:not(.hoist-identity-division) {
+    background:#101a2d !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-alt-row:not(.hoist-identity-division) {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    justify-content:flex-start !important;
+    text-align:left !important;
+    padding-left:3px !important;
+    font-size:12px !important;
+    font-weight:800 !important;
+    text-transform:capitalize !important;
+    letter-spacing:0 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-standing-team {
+    gap:4px !important;
+    font-size:12px !important;
+    font-weight:800 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-standing-team img {
+    width:21px !important;
+    height:21px !important;
+    flex-shrink:0 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-rail-rank {
+    flex-basis:10px !important;
+    min-width:10px !important;
+    margin-right:2px !important;
+    font-size:12px !important;
+  }
+}
 </style>
 </head>
 
@@ -2438,13 +2480,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const [first, second, wild, remaining] = groups;
     const sections = [first, second, wild];
     let body = '';
+    let mobileStripeIndex = 0;
     for (const group of sections) {
       // Repeat the full statistics header at each division boundary; all are sortable.
       body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label)}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
-      body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,i%2===1)).join('');
+      body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,(mobileStripeIndex++)%2===1)).join('');
       if (group === wild) {
         body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
-        body += sortedWithinGroup(remaining.teams).map((r,i) => teamRow(r,i+3,'out',i%2===1)).join('');
+        body += sortedWithinGroup(remaining.teams).map((r,i) => teamRow(r,i+3,'out',(mobileStripeIndex++)%2===1)).join('');
       }
     }
     return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(conference)} Conference standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
