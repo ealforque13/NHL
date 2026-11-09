@@ -1973,24 +1973,16 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
 }
 
-/* MOBILE: all four standings views share Wild Card column spacing. */
+/* MOBILE: restore original Wild Card spacing across all standings views.
+   GP through DIFF use one consistent column width. */
 @media (max-width:650px) {
-  #standings .hoist-mobile-unified .hoist-conference-table {
-    table-layout:fixed !important;
-    width:945px !important;
-    min-width:945px !important;
-    max-width:945px !important;
-  }
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td) {
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) {
+    width:43px !important;
+    min-width:43px !important;
+    max-width:43px !important;
     box-sizing:border-box !important;
   }
-  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > td:nth-child(2) {
-    overflow:hidden !important;
-    white-space:nowrap !important;
-    text-overflow:ellipsis !important;
-  }
 }
-
 </style>
 </head>
 
@@ -2874,14 +2866,6 @@ document.addEventListener("DOMContentLoaded", function () {
       </table></div>
     </section>`;
   }
-  // Shared column geometry for every mobile standings mode. Keeping the
-  // widths in a colgroup prevents long group names / values in Division,
-  // Conference or League from changing the Wild Card column spacing.
-  const mobileStandingsColumns = [0,100,47,43,43,43,43,43,43,43,43,43,43,67,67,54,67,54];
-  const mobileStandingsColgroup = '<colgroup>' + mobileStandingsColumns.map(w =>
-    `<col style="width:${w}px">`
-  ).join('') + '</colgroup>';
-
   function mobileUnifiedTable(groups, title, showCutoff=false) {
     let body = '';
     let mobileStripeIndex = 0;
@@ -2894,7 +2878,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body += sortedWithinGroup(group.cutoffRemaining).map((r,i) => teamRow(r,i+group.teams.length+1,'out',(mobileStripeIndex++)%2===1)).join('');
       }
     }
-    return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings">${mobileStandingsColgroup}${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
+    return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
   }
 
   function groupsForView(mode, conference) {
