@@ -1906,6 +1906,23 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   color:#f05260 !important;
   font-weight:900 !important;
 }
+
+/* DESKTOP STANDINGS: one red active statistic; all other values white. */
+@media (min-width:651px) {
+  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort],
+  #standings .hoist-desktop-groups .hoist-conference-table tr.hoist-team-row > td:nth-child(n+3),
+  #standings .hoist-desktop-groups .hoist-conference-table tr.hoist-team-row > td:nth-child(n+3) strong {
+    color:#fff !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table th.hoist-active-stat,
+  #standings .hoist-desktop-groups .hoist-conference-table tr.hoist-team-row > td.hoist-active-stat,
+  #standings .hoist-desktop-groups .hoist-conference-table tr.hoist-team-row > td.hoist-active-stat strong {
+    color:#f05260 !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table .hoist-standing-team img[data-hoist-team="TBL"] {
+    filter:brightness(0) invert(1) !important;
+  }
+}
 </style>
 </head>
 
@@ -2760,7 +2777,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const diff = num(r.goalDifferential);
     return `<tr class="hoist-team-row${alternate ? ' hoist-alt-row' : ''}" data-hoist-playoff-row="1">
       <td class="hoist-rank">${rank}</td>
-      <td><span class="hoist-standing-team"><img src="${escapeHtml(logo)}" alt="" loading="lazy"><span class="hoist-standing-name-full">${escapeHtml(name(r))}</span><span class="hoist-standing-name-short">${escapeHtml(code)}</span></span></td>
+      <td><span class="hoist-standing-team"><img src="${escapeHtml(logo)}" alt="" loading="lazy"${code === 'TBL' ? ' data-hoist-team="TBL"' : ''}><span class="hoist-standing-name-full">${escapeHtml(name(r))}</span><span class="hoist-standing-name-short">${escapeHtml(code)}</span></span></td>
       <td>${num(r.gamesPlayed)}</td><td>${num(r.wins)}</td><td>${num(r.losses)}</td><td>${num(r.otLosses)}</td>
       <td><strong>${num(r.points)}</strong></td><td>${pct(r)}</td><td>${num(r.regulationWins)}</td><td>${num(r.regulationPlusOtWins)}</td>
       <td>${num(r.goalFor)}</td><td>${num(r.goalAgainst)}</td><td>${diff > 0 ? '+' : ''}${diff}</td>
