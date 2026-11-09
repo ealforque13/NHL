@@ -1583,6 +1583,40 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     font-size:12px !important;
   }
 }
+
+/* MOBILE POLISH: flush edges, consistent division bands, stable identity rail */
+@media (max-width:650px) {
+  #standings .hoist-conference-panel {
+    padding-left:0 !important;
+    padding-right:0 !important;
+  }
+  #standings .hoist-mobile-unified { margin:0 !important; width:100% !important; }
+  #standings .hoist-mobile-unified .hoist-standings-scroll { margin:0 !important; width:100% !important; }
+  /* Division bands use the same lighter navy as Montreal and every other light row. */
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > :is(td,th) {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    background:#1e2b42 !important;
+    font-size:9px !important;
+    font-weight:800 !important;
+    letter-spacing:-.025em !important;
+    text-transform:none !important;
+    justify-content:flex-start !important;
+    text-align:left !important;
+    padding-left:4px !important;
+    overflow:hidden !important;
+    white-space:nowrap !important;
+  }
+  /* Fill any left border/gutter with the correct row colour. */
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item::before {
+    width:32px !important;
+  }
+  /* Rail appears only once it is measured and populated, avoiding the initial jump. */
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail:not(.hoist-rail-ready) {
+    visibility:hidden !important;
+  }
+}
 </style>
 </head>
 
@@ -2483,7 +2517,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let mobileStripeIndex = 0;
     for (const group of sections) {
       // Repeat the full statistics header at each division boundary; all are sortable.
-      body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label)}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
+      body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()))}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
       body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,(mobileStripeIndex++)%2===1)).join('');
       if (group === wild) {
         body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
@@ -2508,6 +2542,9 @@ document.addEventListener("DOMContentLoaded", function () {
         rail.setAttribute('aria-hidden','true');
         wrapper.appendChild(rail);
       }
+      // Skip hidden tabs and unlaid-out tables; measure only visible geometry.
+      if (!wrapper.getClientRects().length || !table.getClientRects().length) return;
+      rail.classList.remove('hoist-rail-ready');
       const tableRect = table.getBoundingClientRect();
       const wrapperRect = wrapper.getBoundingClientRect();
       const offset = tableRect.top - wrapperRect.top;
@@ -2533,6 +2570,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         rail.appendChild(item);
       });
+      rail.classList.add('hoist-rail-ready');
     });
   }
 
@@ -2593,7 +2631,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Array.from(display.querySelectorAll('.hoist-mobile-unified .hoist-standings-scroll')).forEach((el,i) => {
       el.scrollLeft = mobileScrollPositions[i] ?? 0;
     });
-    anchorMobileTeamRails();
+    // Build the overlay on the next paint, after the table has a stable layout.
     requestAnimationFrame(anchorMobileTeamRails);
     // Keep all division tables horizontally aligned while swiping any one of them.
     const scrolls = Array.from(display.querySelectorAll('.hoist-desktop-groups .hoist-standings-scroll'));
@@ -2617,6 +2655,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   window.addEventListener('resize', () => requestAnimationFrame(anchorMobileTeamRails), {passive:true});
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) requestAnimationFrame(anchorMobileTeamRails); });
 
   async function load() {
     for (const url of ['data/standings.json','standings.json']) {
@@ -2646,7 +2685,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const table = $('hoist-standings-table');
     if (!body || !filter || !table) return;
     updateHeroVisibility();
-    new MutationObserver(updateHeroVisibility).observe($('standings'),{attributes:true,attributeFilter:['class']});
+    new MutationObserver(() => { updateHeroVisibility(); requestAnimationFrame(anchorMobileTeamRails); }).observe($('standings'),{attributes:true,attributeFilter:['class']});
     filter.addEventListener('change',event => {
       if (!ready) return;
       event.stopImmediatePropagation();
