@@ -2027,6 +2027,12 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     margin-left:-7px !important;
   }
 }
+
+@media (max-width:650px) {
+  #standings .hoist-conference-panel > .hoist-mobile-unified + .hoist-mobile-unified {
+    margin-top:18px !important;
+  }
+}
 </style>
 </head>
 
@@ -2936,9 +2942,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }));
     }
     if (mode === 'conference') {
-      return [{label:conference+' Conference',status:'division',teams:rows.filter(r => conf(r) === conference).sort(nhlRank)}];
+      return [{label:conference,status:'division',teams:rows.filter(r => conf(r) === conference).sort(nhlRank)}];
     }
-    return [{label:'NHL League',status:'division',teams:[...rows].sort(nhlRank)}];
+    return [{label:'Teams',status:'division',teams:[...rows].sort(nhlRank)}];
   }
 
 
@@ -3057,7 +3063,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="hoist-desktop-groups">
             ${groups.map(g => groupTable(g.label,g.teams,g.status,g.cutoffRemaining || false)).join('')}
           </div>
-          ${mobileUnifiedTable(groups,conference,selected === 'wildcard')}
+          ${selected === 'division' ? groups.map(g => mobileUnifiedTable([g], g.label, false)).join('') : mobileUnifiedTable(groups,conference,selected === 'wildcard')}
         </article>
       </section>`;
     }).join('');
