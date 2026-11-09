@@ -1849,6 +1849,21 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     font-weight:inherit !important;
   }
 }
+
+/* Mobile cutoff: one continuous red rule across the full stats width. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff td {
+    border-top-color:transparent !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-cutoff-stats-line {
+    position:absolute; height:4px; background:#f05260;
+    z-index:8; pointer-events:none; box-sizing:border-box;
+  }
+  /* The Tampa Bay Lightning mark appears white in the mobile team rail. */
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item img[data-hoist-team="TBL"] {
+    filter:brightness(0) invert(1) !important;
+  }
+}
 </style>
 </head>
 
@@ -2825,6 +2840,27 @@ document.addEventListener("DOMContentLoaded", function () {
       } else if (cutoffLine) {
         cutoffLine.remove();
       }
+      // Draw the stats-side separator over the entire table width, through STRK.
+      // Unlike the colspan cell border, this cannot stop short of the final column.
+      let statsLine = scroller.querySelector('.hoist-mobile-cutoff-stats-line');
+      if (cutoffRow) {
+        if (!statsLine) {
+          statsLine = document.createElement('div');
+          statsLine.className = 'hoist-mobile-cutoff-stats-line';
+          scroller.appendChild(statsLine);
+        }
+        const scrollRect = scroller.getBoundingClientRect();
+        statsLine.style.left = (table.getBoundingClientRect().left - scrollRect.left + scroller.scrollLeft) + 'px';
+        statsLine.style.top = (cutoffRow.getBoundingClientRect().top - scrollRect.top + scroller.scrollTop) + 'px';
+        statsLine.style.width = table.offsetWidth + 'px';
+      } else if (statsLine) {
+        statsLine.remove();
+      }
+      rail.querySelectorAll('.hoist-mobile-identity-item').forEach(item => {
+        const code = item.querySelector('.hoist-standing-name-short')?.textContent?.trim();
+        const logo = item.querySelector('img');
+        if (logo && code === 'TBL') logo.setAttribute('data-hoist-team', 'TBL');
+      });
       rail.dataset.signature = signature;
       rail.classList.add('hoist-rail-ready');
     });
