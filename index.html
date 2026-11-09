@@ -1890,6 +1890,22 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-view-tab {flex:1 1 25%; padding:12px 6px !important; font-size:12px !important;}
 }
 
+
+/* ALL STANDINGS VIEWS: consistent red selection for every sortable statistic. */
+#standings .hoist-conference-table th[data-standings-sort="points"]:not(.hoist-active-stat),
+#standings #hoist-standings-table th[data-standings-sort="points"]:not(.hoist-active-stat),
+#standings .hoist-conference-table tr.hoist-team-row td:nth-child(7):not(.hoist-active-stat),
+#standings #hoist-standings-table tr.hoist-team-row td:nth-child(7):not(.hoist-active-stat) {
+  color:inherit !important;
+}
+#standings .hoist-conference-table .hoist-active-stat,
+#standings #hoist-standings-table .hoist-active-stat,
+#standings .hoist-division-divider .hoist-active-stat,
+#standings .hoist-conference-table .hoist-active-stat strong,
+#standings #hoist-standings-table .hoist-active-stat strong {
+  color:#f05260 !important;
+  font-weight:900 !important;
+}
 </style>
 </head>
 
