@@ -1948,6 +1948,30 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   bottom:auto;
   top:2px;
 }
+
+/* DESKTOP REFINEMENT: consistent numeric typography and tighter team-to-stat spacing. */
+@media (min-width:651px) {
+  #standings .hoist-desktop-groups .hoist-conference-table tbody tr.hoist-team-row > td:nth-child(n+3),
+  #standings .hoist-desktop-groups .hoist-conference-table tbody tr.hoist-team-row > td:nth-child(n+3) strong {
+    font-size:13px !important;
+    font-weight:500 !important;
+    font-family:inherit !important;
+    line-height:1.35 !important;
+    letter-spacing:normal !important;
+    color:#fff !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat,
+  #standings .hoist-desktop-groups .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat strong {
+    color:#f05260 !important;
+    font-weight:900 !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table :is(th,td):nth-child(2) {
+    width:24% !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) {
+    width:4.1% !important;
+  }
+}
 </style>
 </head>
 
