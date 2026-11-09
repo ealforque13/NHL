@@ -1864,6 +1864,32 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     filter:brightness(0) invert(1) !important;
   }
 }
+
+/* STANDINGS VIEW NAVIGATION — desktop and mobile */
+#standings .hoist-view-tabs {
+  display:flex !important; align-items:stretch; justify-content:flex-start !important;
+  gap:0 !important; margin:0 0 16px !important; padding:0 !important;
+  border-bottom:1px solid rgba(125,155,195,.32);
+  width:100%; overflow-x:auto; scrollbar-width:none;
+}
+#standings .hoist-view-tabs::-webkit-scrollbar {display:none;}
+#standings .hoist-view-tab {
+  appearance:none; flex:0 0 auto; padding:12px 22px !important;
+  border:0 !important; border-bottom:3px solid transparent !important;
+  background:transparent !important; color:#91afd8 !important;
+  font:800 14px/1.2 inherit; font-size:14px !important; font-weight:800 !important;
+  cursor:pointer; white-space:nowrap;
+}
+#standings .hoist-view-tab.is-active {
+  color:#fff !important; border-bottom-color:#e54b61 !important;
+  background:rgba(110,145,195,.10) !important;
+}
+#standings .hoist-view-tab:focus-visible {outline:2px solid #91b8ec !important;outline-offset:-3px;}
+@media(max-width:650px) {
+  #standings .hoist-view-tabs {margin:0 0 8px !important;}
+  #standings .hoist-view-tab {flex:1 1 25%; padding:12px 6px !important; font-size:12px !important;}
+}
+
 </style>
 </head>
 
@@ -2328,22 +2354,11 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 <!-- STANDINGS -->
 
 <section id="standings" class="tab-section hidden">
-  <div class="hoist-standings-heading">
-    <div>
-      <h2 class="hoist-standings-page-title">Standings</h2>
-      <p id="hoist-standings-subtitle" class="hoist-standings-subtitle">Eastern Conference</p>
-    </div>
-    <div class="hoist-standings-toolbar">
-      <select id="standings-filter" aria-label="Standings view">
-        <option value="all" selected>Wild Card</option>
-        <option value="Eastern">Eastern Conference</option>
-        <option value="Western">Western Conference</option>
-        <option value="Atlantic">Atlantic Division</option>
-        <option value="Metropolitan">Metropolitan Division</option>
-        <option value="Central">Central Division</option>
-        <option value="Pacific">Pacific Division</option>
-      </select>
-    </div>
+  <div class="hoist-standings-toolbar hoist-view-tabs" role="group" aria-label="Standings view">
+    <button type="button" class="hoist-view-tab is-active" data-standings-view="wildcard" aria-pressed="true">Wild Card</button>
+    <button type="button" class="hoist-view-tab" data-standings-view="division" aria-pressed="false">Division</button>
+    <button type="button" class="hoist-view-tab" data-standings-view="conference" aria-pressed="false">Conference</button>
+    <button type="button" class="hoist-view-tab" data-standings-view="league" aria-pressed="false">League</button>
   </div>
 
   <div id="hoist-conference-tables"></div>
@@ -2680,6 +2695,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let painting = false;
   let customSort = null;
   let activeStat = 'points';
+  let currentView = 'wildcard';
   let syncedScrollLeft = 0;
   let descending = true;
 
@@ -2757,22 +2773,35 @@ document.addEventListener("DOMContentLoaded", function () {
       </table></div>
     </section>`;
   }
-  function mobileUnifiedTable(groups, conference) {
-    const [first, second, wild, remaining] = groups;
-    const sections = [first, second, wild];
+  function mobileUnifiedTable(groups, title, showCutoff=false) {
     let body = '';
     let mobileStripeIndex = 0;
-    for (const group of sections) {
+    for (const group of groups) {
       const dividerStripe = (mobileStripeIndex++) % 2 === 1;
-      // Repeat the full statistics header at each division boundary; all are sortable.
       body += `<tr class="hoist-division-divider${dividerStripe ? ' hoist-alt-row' : ''}"><td></td><td>${escapeHtml(group.label.toLowerCase().replace(/\b\w/g, c => c.toUpperCase()))}</td>${headings.slice(2).map((label,i) => `<th scope="col"${keys[i+2] ? ` data-standings-sort="${keys[i+2]}" tabindex="0" role="button"` : ''}>${label}</th>`).join('')}</tr>`;
       body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,(mobileStripeIndex++)%2===1)).join('');
-      if (group === wild) {
+      if (showCutoff && group.cutoffRemaining) {
         body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
-        body += sortedWithinGroup(remaining.teams).map((r,i) => teamRow(r,i+3,'out',(mobileStripeIndex++)%2===1)).join('');
+        body += sortedWithinGroup(group.cutoffRemaining).map((r,i) => teamRow(r,i+group.teams.length+1,'out',(mobileStripeIndex++)%2===1)).join('');
       }
     }
-    return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(conference)} Conference standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
+    return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
+  }
+
+  function groupsForView(mode, conference) {
+    if (mode === 'wildcard') {
+      const [first,second,wild,remaining] = playoffGroups(conference);
+      return [first,second,{...wild,cutoffRemaining:remaining.teams}];
+    }
+    if (mode === 'division') {
+      return divisionNames[conference].map(division => ({
+        label:division,status:'division',teams:rows.filter(r => div(r) === division).sort(nhlRank)
+      }));
+    }
+    if (mode === 'conference') {
+      return [{label:conference+' Conference',status:'division',teams:rows.filter(r => conf(r) === conference).sort(nhlRank)}];
+    }
+    return [{label:'NHL League',status:'division',teams:[...rows].sort(nhlRank)}];
   }
 
 
@@ -2877,38 +2906,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const oldMobileScrollers = Array.from(display.querySelectorAll('.hoist-mobile-unified .hoist-standings-scroll'));
     const mobileScrollPositions = oldMobileScrollers.map(el => el.scrollLeft);
     painting = true;
-    const selected = $('standings-filter')?.value || 'all';
-    const grouped = ['all','Eastern','Western'].includes(selected);
-    $('hoist-flat-standings').hidden = grouped;
+    const selected = currentView;
+    $('hoist-flat-standings').hidden = true;
     const subtitle = $('hoist-standings-subtitle');
-    if (subtitle) {
-      subtitle.hidden = !grouped;
-      subtitle.textContent = selected === 'Western' ? 'Western Conference' : 'Eastern Conference';
-    }
-    display.hidden = !grouped;
-    if (grouped) {
-      const conferences = selected === 'all' ? ['Eastern','Western'] : [selected];
-      display.innerHTML = conferences.map(conference => {
-        const groups = playoffGroups(conference);
-        const [first,second,wild,remaining] = groups;
-        return `<section class="hoist-conference-block" aria-label="${conference} Conference standings">
-          ${conference === 'Eastern' ? '' : '<h3 class="hoist-conference-title">Western Conference</h3>'}
-          <article class="panel section-panel hoist-conference-panel">
-            <div class="hoist-desktop-groups">
-              ${groupTable(first.label,first.teams,first.status)}
-              ${groupTable(second.label,second.teams,second.status)}
-              ${groupTable(wild.label,wild.teams,wild.status,remaining.teams)}
-            </div>
-            ${mobileUnifiedTable(groups,conference)}
-          </article>
-        </section>`;
-      }).join('');
-    } else {
-      let relevant = rows.filter(r => selected === 'all' || conf(r) === selected || div(r) === selected);
-      if (customSort) relevant.sort((a,b) => (descending ? num(b[customSort])-num(a[customSort]) : num(a[customSort])-num(b[customSort])) || nhlRank(a,b));
-      else relevant.sort(nhlRank);
-      body.innerHTML = relevant.map((r,i) => teamRow(r,i+1,'out',i%2===1)).join('') || '<tr data-hoist-playoff-row="1"><td colspan="18">No standings available.</td></tr>';
-    }
+    if (subtitle) subtitle.hidden = true;
+    display.hidden = false;
+    const conferences = selected === 'league' ? ['League'] : ['Eastern','Western'];
+    display.innerHTML = conferences.map(conference => {
+      const groups = groupsForView(selected,conference);
+      return `<section class="hoist-conference-block" aria-label="${escapeHtml(conference)} standings">
+        ${conference === 'Eastern' || conference === 'League' ? '' : '<h3 class="hoist-conference-title">Western Conference</h3>'}
+        <article class="panel section-panel hoist-conference-panel">
+          <div class="hoist-desktop-groups">
+            ${groups.map(g => groupTable(g.label,g.teams,g.status,g.cutoffRemaining || false)).join('')}
+          </div>
+          ${mobileUnifiedTable(groups,conference,selected === 'wildcard')}
+        </article>
+      </section>`;
+    }).join('');
     // Highlight only the currently selected statistic, across every table.
     document.querySelectorAll('#standings .hoist-conference-table, #standings #hoist-standings-table').forEach(t => {
       const activeIndex = keys.indexOf(activeStat) + 1;
@@ -2973,18 +2988,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener('DOMContentLoaded',() => {
     const body = $('standings-body');
-    const filter = $('standings-filter');
     const table = $('hoist-standings-table');
-    if (!body || !filter || !table) return;
+    if (!body || !table) return;
     updateHeroVisibility();
     new MutationObserver(() => { updateHeroVisibility(); requestAnimationFrame(anchorMobileTeamRails); }).observe($('standings'),{attributes:true,attributeFilter:['class']});
-    filter.addEventListener('change',event => {
-      if (!ready) return;
-      event.stopImmediatePropagation();
-      customSort = null;
-      syncedScrollLeft = 0;
-      render();
-    },true);
+    document.querySelectorAll('#standings [data-standings-view]').forEach(button => {
+      button.addEventListener('click', () => {
+        if (currentView === button.dataset.standingsView) return;
+        currentView = button.dataset.standingsView;
+        customSort = null;
+        syncedScrollLeft = 0;
+        document.querySelectorAll('#standings [data-standings-view]').forEach(tab => {
+          const selected = tab.dataset.standingsView === currentView;
+          tab.classList.toggle('is-active',selected);
+          tab.setAttribute('aria-pressed',String(selected));
+        });
+        render();
+      });
+    });
     document.getElementById('standings').addEventListener('click',event => {
       const th = event.target.closest('th[data-standings-sort]');
       if (!th) return;
