@@ -1923,6 +1923,29 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     filter:brightness(0) invert(1) !important;
   }
 }
+
+/* DESKTOP: a small direction arrow beneath the selected GP–DIFF heading. */
+@media (min-width:651px) {
+  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort] {
+    position:relative !important;
+    padding-bottom:15px !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort].hoist-active-stat::after {
+    content:"↓";
+    position:absolute;
+    left:50%;
+    bottom:1px;
+    transform:translateX(-50%);
+    font-size:12px;
+    font-weight:900;
+    line-height:12px;
+    color:#f05260;
+    pointer-events:none;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort].hoist-active-stat[aria-sort="ascending"]::after {
+    content:"↑";
+  }
+}
 </style>
 </head>
 
