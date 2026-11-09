@@ -1506,6 +1506,41 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 
 }
 @media (min-width:651px) { #standings .hoist-mobile-identity-rail { display:none !important; } }
+
+/* MOBILE FINISH: make the identity rail flush with the table's left edge.
+   Extend each actual row's colour across the gutter (not a single flat strip). */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail {
+    overflow:visible !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item {
+    box-shadow:none !important;
+    background:#101a2d !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-alt-row {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {
+    background:#243754 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item::before {
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:-1px;
+    right:100%;
+    width:18px;
+    background:inherit;
+    border-bottom:inherit;
+  }
+  /* Keep the light alternating cells identical across the fixed and scrolling halves. */
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row.hoist-alt-row > td {
+    background:#1e2b42 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-division-divider > :is(td,th) {
+    background:#243754 !important;
+  }
+}
 </style>
 </head>
 
