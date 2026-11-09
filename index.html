@@ -1371,6 +1371,28 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-conference-table tr.hoist-team-row td:nth-child(4),
   #standings .hoist-conference-table tr.hoist-team-row td:nth-child(5) { font-weight:800 !important; }
 }
+
+/* MOBILE: one continuous, independently scrolling standings table per conference. */
+#standings .hoist-mobile-unified { display:none; }
+#standings .hoist-active-stat, #standings .hoist-conference-table .hoist-active-stat,
+#standings #hoist-standings-table .hoist-active-stat { color:#f05260 !important; font-weight:900 !important; }
+@media(max-width:650px) {
+  #standings .hoist-desktop-groups { display:none !important; }
+  #standings .hoist-mobile-unified { display:block !important; }
+  #standings .hoist-mobile-unified .hoist-standings-scroll { overflow-x:auto !important; overflow-y:hidden !important; -webkit-overflow-scrolling:touch; margin:0 !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table { border-collapse:separate !important; border-spacing:0 !important; width:790px !important; min-width:790px !important; table-layout:fixed !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table thead th:nth-child(n+3) {
+    font-size:12px !important; font-weight:900 !important; letter-spacing:0 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table thead th:nth-child(2) { background:#243754 !important; }
+  #standings .hoist-mobile-unified .hoist-division-divider td { padding:4px 1px !important; height:22px !important; border-bottom:1px solid rgba(125,155,195,.25) !important; background:#243754 !important; }
+  #standings .hoist-mobile-unified .hoist-division-divider td:nth-child(2) {
+    position:sticky !important; left:0 !important; z-index:5 !important; width:85px !important; min-width:85px !important; max-width:85px !important;
+    background:#243754 !important; color:#e4efff !important; font-size:10px !important; font-weight:900 !important;
+    text-align:left !important; padding-left:5px !important; box-shadow:2px 0 0 #49678d !important;
+  }
+  #standings .hoist-mobile-unified .hoist-playoff-cutoff td { display:table-cell !important; position:relative !important; height:2px !important; padding:0 !important; border-top:2px solid #d05a69 !important; }
+}
 </style>
 </head>
 
@@ -2264,6 +2286,21 @@ document.addEventListener("DOMContentLoaded", function () {
       </table></div>
     </section>`;
   }
+  function mobileUnifiedTable(groups, conference) {
+    const [first, second, wild, remaining] = groups;
+    const sections = [first, second, wild];
+    let body = '';
+    for (const group of sections) {
+      body += `<tr class="hoist-division-divider"><td></td><td>${escapeHtml(group.label)}</td>${'<td></td>'.repeat(16)}</tr>`;
+      body += sortedWithinGroup(group.teams).map((r,i) => teamRow(r,i+1,group.status,i%2===1)).join('');
+      if (group === wild) {
+        body += `<tr class="hoist-playoff-cutoff"><td colspan="18"><span class="sr-only">Playoff cutoff</span></td></tr>`;
+        body += sortedWithinGroup(remaining.teams).map((r,i) => teamRow(r,i+3,'out',i%2===1)).join('');
+      }
+    }
+    return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(conference)} Conference standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
+  }
+
   function render() {
     if (!ready || painting) return;
     const body = $('standings-body');
@@ -2288,9 +2325,12 @@ document.addEventListener("DOMContentLoaded", function () {
         return `<section class="hoist-conference-block" aria-label="${conference} Conference standings">
           ${conference === 'Eastern' ? '' : '<h3 class="hoist-conference-title">Western Conference</h3>'}
           <article class="panel section-panel hoist-conference-panel">
-            ${groupTable(first.label,first.teams,first.status)}
-            ${groupTable(second.label,second.teams,second.status)}
-            ${groupTable(wild.label,wild.teams,wild.status,remaining.teams)}
+            <div class="hoist-desktop-groups">
+              ${groupTable(first.label,first.teams,first.status)}
+              ${groupTable(second.label,second.teams,second.status)}
+              ${groupTable(wild.label,wild.teams,wild.status,remaining.teams)}
+            </div>
+            ${mobileUnifiedTable(groups,conference)}
           </article>
         </section>`;
       }).join('');
@@ -2310,7 +2350,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
     // Keep all division tables horizontally aligned while swiping any one of them.
-    const scrolls = Array.from(display.querySelectorAll('.hoist-standings-scroll'));
+    const scrolls = Array.from(display.querySelectorAll('.hoist-desktop-groups .hoist-standings-scroll'));
     scrolls.forEach(scroller => {
       scroller.scrollLeft = syncedScrollLeft;
       scroller.addEventListener('scroll', () => {
