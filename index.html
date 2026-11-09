@@ -1924,27 +1924,29 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
 }
 
-/* DESKTOP: a small direction arrow beneath the selected GP–DIFF heading. */
-@media (min-width:651px) {
-  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort] {
-    position:relative !important;
-    padding-bottom:15px !important;
-  }
-  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort].hoist-active-stat::after {
-    content:"↓";
-    position:absolute;
-    left:50%;
-    bottom:1px;
-    transform:translateX(-50%);
-    font-size:12px;
-    font-weight:900;
-    line-height:12px;
-    color:#f05260;
-    pointer-events:none;
-  }
-  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort].hoist-active-stat[aria-sort="ascending"]::after {
-    content:"↑";
-  }
+/* DESKTOP + MOBILE: sort-direction triangle on the active GP–DIFF column.
+   Descending appears BELOW the category; ascending appears ABOVE it. */
+#standings .hoist-conference-table th[data-standings-sort] {
+  position:relative !important;
+  padding-top:15px !important;
+  padding-bottom:15px !important;
+}
+#standings .hoist-conference-table th[data-standings-sort].hoist-active-stat::after {
+  content:"▼";
+  position:absolute;
+  left:50%;
+  bottom:1px;
+  transform:translateX(-50%);
+  font-size:11px;
+  font-weight:900;
+  line-height:12px;
+  color:#f05260;
+  pointer-events:none;
+}
+#standings .hoist-conference-table th[data-standings-sort].hoist-active-stat[aria-sort="ascending"]::after {
+  content:"▲";
+  bottom:auto;
+  top:1px;
 }
 </style>
 </head>
