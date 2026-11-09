@@ -1754,6 +1754,52 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     width:975px !important; min-width:975px !important;
   }
 }
+
+/* MOBILE FINAL TUNING — compact fixed rail, visible GP, and red playoff cutoff */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(2) {
+    width:100px !important; min-width:100px !important; max-width:100px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-rail,
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item {
+    width:100px !important;
+  }
+  /* First stat begins precisely at the fixed-rail boundary. */
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(3) {
+    width:47px !important; min-width:47px !important; max-width:47px !important;
+    padding-left:5px !important; padding-right:2px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(n+4):nth-child(-n+13) {
+    width:43px !important; min-width:43px !important; max-width:43px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table {
+    width:945px !important; min-width:945px !important;
+  }
+  /* Slightly smaller vertical footprint: show more teams per screen. */
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row > td {
+    padding-top:11px !important; padding-bottom:11px !important;
+    font-size:14px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider :is(td,th) {
+    height:39px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider :is(td,th) {
+    font-size:14px !important; padding-top:8px !important; padding-bottom:8px !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-standing-team {font-size:14px !important; gap:4px !important;}
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-standing-team img {width:23px !important; height:23px !important;}
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item .hoist-rail-rank {font-size:14px !important; margin-right:1px !important;}
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {font-size:12px !important;}
+  #standings .hoist-mobile-unified .hoist-playoff-cutoff td,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff td {
+    border-top:4px solid #f05260 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-after-cutoff::after {
+    content:""; position:absolute; left:0; right:0; top:0;
+    height:4px; background:#f05260; z-index:3;
+  }
+}
 </style>
 </head>
 
@@ -2699,9 +2745,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const identity = tr.children[1];
         if (!identity || tr.classList.contains('hoist-playoff-cutoff')) return;
         const item = reuse ? rail.children[rowsToRender.indexOf(tr)] : document.createElement('div');
+        const isFirstBelowCutoff = tr.previousElementSibling?.classList.contains('hoist-playoff-cutoff');
         item.className = 'hoist-mobile-identity-item' +
           (tr.classList.contains('hoist-alt-row') ? ' hoist-alt-row' : '') +
-          (tr.classList.contains('hoist-division-divider') ? ' hoist-identity-division' : '');
+          (tr.classList.contains('hoist-division-divider') ? ' hoist-identity-division' : '') +
+          (isFirstBelowCutoff ? ' hoist-after-cutoff' : '');
         const r = tr.getBoundingClientRect();
         item.style.top = (r.top - tableRect.top + offset) + 'px';
         item.style.height = r.height + 'px';
