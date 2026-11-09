@@ -2017,35 +2017,14 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
 }
 
-/* Align mobile GP directly with the fixed identity divider in all views. */
+/* Mobile: close only the space between the frozen team rail and GP.
+   Keep the existing GP–DIFF cell widths, table layout and all other styles. */
 @media (max-width:650px) {
-  #standings .hoist-mobile-unified .hoist-conference-table {
-    margin-left:0 !important; width:882px !important; min-width:882px !important;
-    max-width:882px !important; table-layout:fixed !important; border-spacing:0 !important;
+  #standings .hoist-mobile-unified.hoist-wildcard-view .hoist-conference-table {
+    margin-left:0 !important;
   }
-  #standings .hoist-mobile-unified .hoist-conference-table col.hoist-col-rank {width:0 !important;}
-  #standings .hoist-mobile-unified .hoist-conference-table col.hoist-col-team {width:100px !important;}
-  #standings .hoist-mobile-unified .hoist-conference-table col.hoist-col-stat {width:43px !important;}
-  #standings .hoist-mobile-unified .hoist-conference-table col.hoist-col-wide {width:67px !important;}
-  #standings .hoist-mobile-unified .hoist-conference-table col.hoist-col-mid {width:54px !important;}
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(1) {
-    width:0 !important; min-width:0 !important; max-width:0 !important;
-    padding:0 !important; border-left:0 !important; border-right:0 !important;
-  }
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(2) {
-    width:100px !important; min-width:100px !important; max-width:100px !important; box-sizing:border-box !important;
-  }
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(n+3):nth-child(-n+13) {
-    width:43px !important; min-width:43px !important; max-width:43px !important; box-sizing:border-box !important;
-  }
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(14),
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(15),
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(17) {
-    width:67px !important; min-width:67px !important; max-width:67px !important; box-sizing:border-box !important;
-  }
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(16),
-  #standings .hoist-mobile-unified .hoist-conference-table :is(th,td):nth-child(18) {
-    width:54px !important; min-width:54px !important; max-width:54px !important; box-sizing:border-box !important;
+  #standings .hoist-mobile-unified.hoist-other-view .hoist-conference-table {
+    margin-left:-7px !important;
   }
 }
 </style>
@@ -2943,7 +2922,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body += sortedWithinGroup(group.cutoffRemaining).map((r,i) => teamRow(r,i+group.teams.length+1,'out',(mobileStripeIndex++)%2===1)).join('');
       }
     }
-    return `<div class="hoist-mobile-unified${showCutoff ? " hoist-wildcard-view" : " hoist-other-view"}"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings"><colgroup><col class="hoist-col-rank"><col class="hoist-col-team"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-stat"><col class="hoist-col-wide"><col class="hoist-col-wide"><col class="hoist-col-mid"><col class="hoist-col-wide"><col class="hoist-col-mid"></colgroup>${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
+    return `<div class="hoist-mobile-unified${showCutoff ? " hoist-wildcard-view" : " hoist-other-view"}"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
   }
 
   function groupsForView(mode, conference) {
