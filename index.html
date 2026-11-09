@@ -1983,6 +1983,14 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     box-sizing:border-box !important;
   }
 }
+
+/* Match the Wild Card stat starting position in the other mobile views.
+   Wild Card retains its established 20px table offset. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified.hoist-other-view .hoist-conference-table {
+    margin-left:0 !important;
+  }
+}
 </style>
 </head>
 
@@ -2878,7 +2886,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body += sortedWithinGroup(group.cutoffRemaining).map((r,i) => teamRow(r,i+group.teams.length+1,'out',(mobileStripeIndex++)%2===1)).join('');
       }
     }
-    return `<div class="hoist-mobile-unified"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
+    return `<div class="hoist-mobile-unified${showCutoff ? " hoist-wildcard-view" : " hoist-other-view"}"><div class="table-scroll hoist-standings-scroll"><table class="hoist-conference-table" aria-label="${escapeHtml(title)} standings">${tableHead('')}<tbody>${body}</tbody></table></div></div>`;
   }
 
   function groupsForView(mode, conference) {
