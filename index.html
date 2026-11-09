@@ -1828,6 +1828,27 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     background:#f05260; z-index:40; pointer-events:none;
   }
 }
+
+/* MOBILE: UNIFORM STAT VALUE TYPOGRAPHY; RED SELECTION REMAINS EMPHASIZED */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td:nth-child(n+3) {
+    font-size:14px !important;
+    font-weight:600 !important;
+    font-variant-numeric:tabular-nums;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td:nth-child(n+3) strong {
+    font-size:inherit !important;
+    font-weight:inherit !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat {
+    color:#ff5366 !important;
+    font-weight:900 !important;
+  }
+  #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat strong {
+    color:inherit !important;
+    font-weight:inherit !important;
+  }
+}
 </style>
 </head>
 
