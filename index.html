@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-35">
+<meta name="hoist-build" content="20261110-47">
 
 <script>
 try {
@@ -14,7 +14,7 @@ try {
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0a1020">
+<meta name="theme-color" content="#08090b">
 <title>Hoist Official | NHL Dashboard</title>
 
 <link rel="icon" type="image/png" href="hoist-logo.png">
@@ -2926,6 +2926,102 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
 .hoist-game-live{color:#ed5261;font-weight:800}
 .hoist-games-footnote{font-size:12px;margin-top:15px}
 @media(max-width:650px){.hoist-games-date-controls{width:100%;justify-content:space-between}.hoist-games-date-controls input{flex:1;min-width:0}.hoist-game-card{padding:13px}}
+
+
+/* HOIST OFFICIAL — BLACK / CHARCOAL THEME, BUILD 20261110-47
+   Dark mode only: light mode remains unchanged. All page sections inherit
+   neutral surfaces; team branding and performance indicators are retained. */
+html:not(.theme-light) {
+  color-scheme: dark;
+  --bg: #08090b;
+  --background: #08090b;
+  --surface: #15171a;
+  --panel: #181a1e;
+  --card: #181a1e;
+  --sidebar: #101114;
+  --border: #303338;
+  --text: #f8fafc;
+  --muted: #9ca3af;
+  --text-muted: #9ca3af;
+}
+html:not(.theme-light) body,
+html:not(.theme-light) .app,
+html:not(.theme-light) .main,
+html:not(.theme-light) .content,
+html:not(.theme-light) .main-content {
+  background: #08090b !important;
+  color: #f8fafc;
+}
+html:not(.theme-light) .sidebar,
+html:not(.theme-light) .sidebar-bottom,
+html:not(.theme-light) .sidebar-theme-control {
+  background: #101114 !important;
+  border-color: #303338 !important;
+}
+html:not(.theme-light) .panel,
+html:not(.theme-light) .section-panel,
+html:not(.theme-light) .team-hero,
+html:not(.theme-light) .hoist-franchise-hero,
+html:not(.theme-light) .hoist-game-card,
+html:not(.theme-light) .hoist-lineup-team-bar,
+html:not(.theme-light) .card,
+html:not(.theme-light) .stat-card,
+html:not(.theme-light) .metric-card {
+  background: #181a1e !important;
+  border-color: #303338 !important;
+  box-shadow: none !important;
+}
+html:not(.theme-light) .nav-item:not(.active),
+html:not(.theme-light) .sidebar .nav-item:not(.active) {
+  background: transparent !important;
+  color: #aeb4bf !important;
+}
+html:not(.theme-light) .nav-item.active,
+html:not(.theme-light) .sidebar .nav-item.active {
+  background: #24272b !important;
+  color: #fff !important;
+  border-color: #41454b !important;
+}
+html:not(.theme-light) .nav-item:hover,
+html:not(.theme-light) .sidebar .nav-item:hover {
+  background: #24272b !important;
+}
+html:not(.theme-light) table,
+html:not(.theme-light) thead,
+html:not(.theme-light) th,
+html:not(.theme-light) .mi-table,
+html:not(.theme-light) .hoist-conference-table {
+  background-color: #181a1e !important;
+  border-color: #303338 !important;
+}
+html:not(.theme-light) tbody tr,
+html:not(.theme-light) tbody td,
+html:not(.theme-light) .hoist-mobile-identity-item {
+  background-color: #181a1e !important;
+  border-color: #303338 !important;
+}
+html:not(.theme-light) tbody tr:nth-child(even) td,
+html:not(.theme-light) .hoist-alt-row td,
+html:not(.theme-light) .hoist-mobile-identity-item.hoist-alt-row {
+  background-color: #202226 !important;
+}
+html:not(.theme-light) tbody tr:hover td { background-color: #282b30 !important; }
+html:not(.theme-light) input,
+html:not(.theme-light) select,
+html:not(.theme-light) textarea,
+html:not(.theme-light) .hoist-games-date-controls button,
+html:not(.theme-light) .hoist-games-date-controls input,
+html:not(.theme-light) .hoist-lineup-team-meta select {
+  background-color: #202226 !important;
+  border-color: #41454b !important;
+  color: #f8fafc !important;
+}
+html:not(.theme-light) .hoist-games-date-controls button:hover { background-color: #303338 !important; }
+html:not(.theme-light) .hoist-game-card-foot,
+html:not(.theme-light) .hoist-game-card-head { border-color: #303338 !important; color: #aeb4bf; }
+html:not(.theme-light) .hoist-hot-player-row .hoist-hot-performance:not(.is-streak) { color: #ff5268 !important; }
+html:not(.theme-light) .hoist-hot-player-row .hoist-hot-performance.is-streak { color: #39ff9c !important; }
+/* Preserve logos, team-colour badges, scoring/form indicators and chart series. */
 
 </style>
 </head>
