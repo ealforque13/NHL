@@ -132,18 +132,29 @@
     }).filter(row => row.gp).sort((a, b) => b.pts - a.pts || b.streak - a.streak || b.g - a.g).slice(0, 8);
 
     tbody.innerHTML = rows.length ? rows.map(row => {
-      // Goal production takes priority over points and point streaks.
-      const isGoalRun = row.g >= 3;
-      const isStreak = !isGoalRun && row.streak >= 3;
-      const performance = isGoalRun
-        ? `${row.g}G in last ${row.gp} ${row.gp === 1 ? 'game' : 'games'}`
-        : isStreak
-          ? `${row.streak}-game point streak`
+      const isStreak = row.streak >= 3;
+      const performance = isStreak
+        ? `${row.streak}-game point streak`
+        : row.g >= 3
+          ? `${row.g}G in last ${row.gp} ${row.gp === 1 ? 'game' : 'games'}`
           : `${row.pts} PTS in last ${row.gp} ${row.gp === 1 ? 'game' : 'games'}`;
+
+      const positionNames = {
+        C: 'Centre',
+        L: 'Left Wing',
+        LW: 'Left Wing',
+        R: 'Right Wing',
+        RW: 'Right Wing',
+        D: 'Defence',
+        G: 'Goaltender'
+      };
+      const positionCode = String(row.player.position ?? '').toUpperCase();
+      const fullPosition = positionNames[positionCode] || row.player.position || '—';
+
       return `<tr class="hoist-hot-player-row">
         <td class="hoist-hot-player-name"><span class="mi-person">${avatar(row.player, club)}<span>
           <strong>${escape(row.player.name)}</strong>
-          <small class="hoist-hot-player-meta">#${escape(row.player.number ?? '—')} · ${escape(row.player.position ?? '—')}</small>
+          <small class="hoist-hot-player-meta">#${escape(row.player.number ?? '—')} · ${escape(fullPosition)}</small>
         </span></span>
         ${lastFiveBoxes(row.recent)}</td>
         <td class="hoist-hot-stat">${row.g}</td>
