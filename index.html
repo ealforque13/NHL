@@ -2875,6 +2875,13 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   }
 }
 
+/* Build 20261110-44: green only for active 3+ point streaks. */
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance {
+  color: #ff5268 !important;
+}
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance.is-streak {
+  color: #39ff9c !important;
+}
 </style>
 </head>
 
@@ -3584,7 +3591,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 <script src="theme.js?v=20261110-1" defer></script>
 <script src="app.js?v=20261110-1" defer></script>
 <script src="v2.js?v=20261110-1" defer></script>
-<script src="matchup.js?v=20261110-43" defer></script>
+<script src="matchup.js?v=20261110-44" defer></script>
 <script src="hoist-head-to-head.js?v=20261110-1" defer></script>
 
 
