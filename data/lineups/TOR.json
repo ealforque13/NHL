@@ -3,7 +3,7 @@
   "type": "roster",
   "status": "roster",
   "source": "NHL Web API",
-  "updatedAt": "2026-11-10T14:06:10.932772+00:00",
+  "updatedAt": "2026-11-10T19:14:28.955054+00:00",
   "forwards": [
     {
       "id": 8476927,
@@ -102,6 +102,13 @@
       "position": "C",
       "number": 91,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8475166.png"
+    },
+    {
+      "id": 8482525,
+      "name": "Ryan Tverberg",
+      "position": "C",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TOR/8482525.png"
     },
     {
       "id": 8477425,

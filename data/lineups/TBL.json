@@ -3,7 +3,7 @@
   "type": "roster",
   "status": "roster",
   "source": "NHL Web API",
-  "updatedAt": "2026-11-10T14:06:10.584202+00:00",
+  "updatedAt": "2026-11-10T19:14:28.430716+00:00",
   "forwards": [
     {
       "id": 8478519,
@@ -62,13 +62,6 @@
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8480995.png"
     },
     {
-      "id": 8483752,
-      "name": "Dominic James",
-      "position": "C",
-      "number": 17,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483752.png"
-    },
-    {
       "id": 8476453,
       "name": "Nikita Kucherov",
       "position": "R",
@@ -81,6 +74,13 @@
       "position": "R",
       "number": 95,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8481624.png"
+    },
+    {
+      "id": 8484770,
+      "name": "Sam O'Reilly",
+      "position": "R",
+      "number": 23,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8484770.png"
     },
     {
       "id": 8478010,
