@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-21">
+<meta name="hoist-build" content="20261110-22">
 
 <script>
 try {
@@ -2467,6 +2467,26 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #matchup-intelligence .hoist-h2h-game-table th{font-weight:700;color:#a9c9ed}
 #matchup-intelligence .hoist-h2h-detail-empty{font-size:12px;color:#a9bbd2}
 
+
+/* Overview: align each player-history toggle with the far right of the player cell. */
+#matchup-intelligence #mi-left td:first-child,
+#matchup-intelligence #mi-right td:first-child {position:relative!important;padding-right:32px!important}
+#matchup-intelligence .hoist-h2h-expand {
+  position:absolute!important;right:7px!important;top:50%!important;
+  transform:translateY(-50%)!important;margin:0!important;
+  width:22px!important;height:24px!important;padding:0!important;
+  background:transparent!important;border:0!important;border-radius:0!important;
+  display:flex!important;align-items:center!important;justify-content:center!important;
+  color:#b7c9df!important;
+}
+#matchup-intelligence .hoist-h2h-chevron {
+  display:block;width:8px;height:8px;border-right:2px solid currentColor;
+  border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);
+  transition:transform .15s ease;
+}
+#matchup-intelligence .hoist-h2h-expand[aria-expanded="true"] {color:#ff5366!important}
+#matchup-intelligence .hoist-h2h-expand[aria-expanded="true"] .hoist-h2h-chevron {transform:translateY(2px) rotate(225deg)}
+
 </style>
 </head>
 
@@ -3279,8 +3299,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderGames(player,opponent){
     const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,5);
     if(!games.length)return '<div class="hoist-h2h-detail-empty">No previous regular-season games against '+escapeHtml(opponent)+' in the available player history.</div>';
-    return '<div class="hoist-h2h-detail-title">Last '+games.length+' games vs '+escapeHtml(opponent)+'</div><table class="hoist-h2h-game-table"><thead><tr><th>DATE</th><th>G</th><th>A</th><th>PTS</th><th>SOG</th></tr></thead><tbody>'+
-      games.map(g=>'<tr><td>'+escapeHtml(g.date||'—')+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td><td>'+escapeHtml(g.shotsOnGoal??g.shots??g.sog??'—')+'</td></tr>').join('')+'</tbody></table';
+    return '<div class="hoist-h2h-detail-title">Last '+games.length+' games vs '+escapeHtml(opponent)+'</div><table class="hoist-h2h-game-table"><thead><tr><th>DATE</th><th>G</th><th>A</th><th>PTS</th></tr></thead><tbody>'+
+      games.map(g=>'<tr><td>'+escapeHtml(g.date||'—')+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>').join('')+'</tbody></table';
   }
   let running=false;
   async function decorate(){
@@ -3307,19 +3327,19 @@ document.addEventListener('DOMContentLoaded', function () {
           if(row.dataset.hoistH2hKey===key)return;
           row.dataset.hoistH2hKey=key;
           const btn=document.createElement('button');
-          btn.type='button';btn.className='hoist-h2h-expand';btn.textContent='▾';
+          btn.type='button';btn.className='hoist-h2h-expand';btn.innerHTML='<span class="hoist-h2h-chevron" aria-hidden="true"></span>';
           btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Show '+name+' previous five games against '+target);
-          strong.insertAdjacentElement('afterend',btn);
+          first.appendChild(btn);
           btn.addEventListener('click',()=>{
             const open=btn.getAttribute('aria-expanded')==='true';
             const existing=row.nextElementSibling;
-            if(open){if(existing?.classList.contains('hoist-h2h-detail-row'))existing.remove();btn.setAttribute('aria-expanded','false');btn.textContent='▾';return}
+            if(open){if(existing?.classList.contains('hoist-h2h-detail-row'))existing.remove();btn.setAttribute('aria-expanded','false');return}
             if(existing?.classList.contains('hoist-h2h-detail-row'))existing.remove();
             const detail=document.createElement('tr');detail.className='hoist-h2h-detail-row';
             const cell=document.createElement('td');cell.colSpan=row.cells.length;
             cell.innerHTML='<div class="hoist-h2h-detail">'+renderGames(player,target)+'</div>';
             detail.appendChild(cell);row.insertAdjacentElement('afterend',detail);
-            btn.setAttribute('aria-expanded','true');btn.textContent='▴';
+            btn.setAttribute('aria-expanded','true');
           });
         });
       });
