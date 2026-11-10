@@ -3428,6 +3428,37 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
 
+<!-- STATS NAVIGATION: handle this new page independently of legacy app.js tab whitelist. -->
+<script>
+(() => {
+  function openStats() {
+    document.querySelectorAll('.tab-section').forEach(section => {
+      section.classList.toggle('hidden', section.id !== 'stats');
+    });
+    document.querySelectorAll('.nav-item[data-tab]').forEach(button => {
+      button.classList.toggle('active', button.dataset.tab === 'stats');
+    });
+    const heading = document.getElementById('page-title');
+    if (heading) heading.textContent = 'NHL Stats';
+    try { sessionStorage.setItem('hoist-active-page', 'stats'); } catch (_) {}
+  }
+  // The existing app.js only knows the original page names. Prevent it from
+  // immediately switching back when the new Stats navigation item is clicked.
+  document.addEventListener('click', event => {
+    const target = event.target.closest('[data-tab="stats"]');
+    if (!target) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    openStats();
+  }, true);
+  document.addEventListener('DOMContentLoaded', () => {
+    try {
+      if (sessionStorage.getItem('hoist-active-page') === 'stats') openStats();
+    } catch (_) {}
+  });
+})();
+</script>
+
 <!-- KEEP CURRENT PAGE ON RELOAD -->
 <script>
 (() => {
