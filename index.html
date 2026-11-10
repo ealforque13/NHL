@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="hoist-build" content="20261110-35">
- 
+
 <script>
 try {
   if (localStorage.getItem("hoist-theme") === "light") {
@@ -2673,9 +2673,8 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 }
 
 
-/* Build 20261110-37: align expanded history stats against the RIGHT edge.
-   Explicit nested-table selectors prevent the parent leaderboard's
-   column sizing from affecting these four history columns. */
+/* Build 20261110-38: history DATE and PTS have matching edge insets;
+   G, A, PTS values are centered beneath their headers. */
 #overview #matchup-intelligence .hoist-h2h-detail-row > td[colspan="6"] {
   padding: 0 !important;
   text-align: left !important;
@@ -2683,7 +2682,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #overview #matchup-intelligence .hoist-h2h-detail-row .hoist-h2h-detail {
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 12px 0 12px 10px !important;
+  padding: 12px !important;
   overflow-x: auto;
 }
 #overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table {
@@ -2698,27 +2697,19 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td {
   box-sizing: border-box !important;
   padding: 8px 0 !important;
-  text-align: right !important;
   white-space: nowrap !important;
 }
 #overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:first-child,
 #overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:first-child {
   width: 58% !important;
   text-align: left !important;
-  padding-left: 0 !important;
 }
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:nth-child(2),
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:nth-child(2),
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:nth-child(3),
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:nth-child(3),
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:nth-child(4),
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:nth-child(4) {
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:not(:first-child),
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:not(:first-child) {
   width: 14% !important;
-}
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:last-child,
-#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:last-child {
+  text-align: center !important;
+  padding-left: 0 !important;
   padding-right: 0 !important;
-  text-align: right !important;
 }
 
 </style>
