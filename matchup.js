@@ -143,11 +143,9 @@
       return `<tr class="hoist-hot-player-row">
         <td class="hoist-hot-player-name"><span class="mi-person">${avatar(row.player, club)}<span>
           <strong>${escape(row.player.name)}</strong>
-          <span class="hoist-hot-player-meta-line">
-            <small class="hoist-hot-player-meta">#${escape(row.player.number ?? '—')} · ${escape(row.player.position ?? '—')}</small>
-            ${lastFiveBoxes(row.recent)}
-          </span>
-        </span></span></td>
+          <small class="hoist-hot-player-meta">#${escape(row.player.number ?? '—')} · ${escape(row.player.position ?? '—')}</small>
+        </span></span>
+        ${lastFiveBoxes(row.recent)}</td>
         <td class="hoist-hot-stat">${row.g}</td>
         <td class="hoist-hot-stat">${row.a}</td>
         <td class="hoist-hot-stat"><strong>${row.pts}</strong>
