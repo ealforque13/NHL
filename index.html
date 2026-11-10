@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-25">
+<meta name="hoist-build" content="20261110-26">
 
 <script>
 try {
@@ -2513,6 +2513,22 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #overview #matchup-intelligence .hoist-h2h-game-table th,
 #overview #matchup-intelligence .hoist-h2h-game-table td {width:25%!important}
 
+
+/* H2H: entire player row toggles history; arrow sits after PTS/GP. */
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable{cursor:pointer!important}
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable:hover{background:rgba(122,164,220,.07)!important}
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:first-child{padding-right:8px!important}
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:last-child{position:relative!important;padding-right:25px!important}
+#overview #matchup-intelligence .hoist-h2h-expand{position:absolute!important;left:auto!important;right:5px!important;top:50%!important;transform:translateY(-50%)!important;pointer-events:none!important}
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:nth-child(n+2){font-weight:400!important;color:#f0f5ff!important}
+#overview #matchup-intelligence .hoist-sortable-table th.hoist-sort-active .hoist-sort-button,
+#overview #matchup-intelligence .hoist-sortable-table th.hoist-sort-active .hoist-sort-arrow{color:#ff5366!important;font-weight:800!important}
+#overview #matchup-intelligence .hoist-sortable-table th.hoist-sort-active ~ th{color:inherit}
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(3).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(3),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(4).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(4),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(5).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(5),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(6).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(6){color:#ff5366!important;font-weight:800!important}
+
 </style>
 </head>
 
@@ -3371,16 +3387,16 @@ document.addEventListener('DOMContentLoaded', function () {
           const btn=document.createElement('button');
           btn.type='button';btn.className='hoist-h2h-expand';btn.innerHTML='<span class="hoist-h2h-chevron" aria-hidden="true"></span>';
           btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Show '+name+' previous five games against '+target);
-          first.appendChild(btn);
-          first.classList.add('hoist-h2h-clickable');
-          first.setAttribute('tabindex','0');
-          first.setAttribute('role','button');
-          first.setAttribute('aria-label','Toggle '+name+' previous five games against '+target);
-          first.addEventListener('click',event=>{
-            if(event.target.closest('a'))return;
+          row.cells[row.cells.length-1].appendChild(btn);
+          row.classList.add('hoist-h2h-row-clickable');
+          row.setAttribute('tabindex','0');
+          row.setAttribute('role','button');
+          row.setAttribute('aria-label','Toggle '+name+' previous five games against '+target);
+          row.addEventListener('click',event=>{
+            if(event.target.closest('a,button'))return;
             btn.click();
           });
-          first.addEventListener('keydown',event=>{
+          row.addEventListener('keydown',event=>{
             if(event.key==='Enter'||event.key===' '){event.preventDefault();btn.click()}
           });
           btn.addEventListener('click',event=>{
