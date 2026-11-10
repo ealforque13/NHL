@@ -2953,6 +2953,38 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
   }
 }
 
+
+/* Build 20261110-54 — Mobile H2H player statistics: larger, tighter, no horizontal scrolling. */
+@media (max-width:650px) {
+  #overview #matchup-intelligence .mi-grid,
+  #overview #matchup-intelligence .mi-grid > div,
+  #overview #matchup-intelligence .table-scroll { width:100%!important; min-width:0!important; max-width:100%!important; }
+  #overview #matchup-intelligence .table-scroll { overflow-x:hidden!important; }
+  #overview #matchup-intelligence .hoist-sortable-table { width:100%!important; min-width:0!important; table-layout:fixed!important; border-spacing:0!important; }
+  #overview #matchup-intelligence .hoist-sortable-table th:first-child,
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr:not(.hoist-h2h-detail-row)>td:first-child { width:35%!important; }
+  #overview #matchup-intelligence .hoist-sortable-table th:nth-child(n+2),
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr:not(.hoist-h2h-detail-row)>td:nth-child(n+2) { width:13%!important; }
+  #overview #matchup-intelligence .hoist-sortable-table thead th { font-size:12px!important; padding:4px 0!important; }
+  #overview #matchup-intelligence .hoist-sortable-table thead th:first-child { padding-left:3px!important; }
+  #overview #matchup-intelligence .hoist-sort-button { font-size:12px!important; padding:4px 0!important; min-height:40px!important; }
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable>td { font-size:15px!important; padding:10px 0!important; line-height:1.2!important; }
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable>td:first-child { padding-left:2px!important; padding-right:0!important; }
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable>td:last-child { padding-right:13px!important; }
+  #overview #matchup-intelligence .mi-person { gap:3px!important; }
+  #overview #matchup-intelligence .mi-person img { width:29px!important; height:29px!important; flex:0 0 29px!important; }
+  #overview #matchup-intelligence .mi-person strong { font-size:13px!important; }
+  #overview #matchup-intelligence .mi-person small { font-size:11px!important; }
+  #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-head { font-size:12px!important; }
+}
+@media (max-width:375px) {
+  #overview #matchup-intelligence .hoist-sortable-table th:first-child,
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr:not(.hoist-h2h-detail-row)>td:first-child { width:37%!important; }
+  #overview #matchup-intelligence .hoist-sortable-table th:nth-child(n+2),
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr:not(.hoist-h2h-detail-row)>td:nth-child(n+2) { width:12.6%!important; }
+  #overview #matchup-intelligence .mi-person strong { font-size:12px!important; }
+  #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable>td { font-size:14px!important; }
+}
 </style>
 </head>
 
