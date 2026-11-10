@@ -2049,6 +2049,31 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     border-top:1px solid #49678d !important;
   }
 }
+
+/* Team lineups — isolated from existing standings and page sizing */
+.hoist-lineups-panel{max-width:1100px}
+.hoist-lineup-team-bar{display:flex;align-items:center;gap:16px;padding:16px;background:#192842;border:1px solid rgba(151,181,224,.15);border-radius:12px;margin:18px 0}
+.hoist-lineup-team-bar>img{width:54px;height:54px;object-fit:contain;flex:none}
+.hoist-lineup-team-meta{display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+.hoist-lineup-team-meta label{font-size:10px;letter-spacing:.12em;color:#9bb8e6}
+.hoist-lineup-team-meta select{max-width:340px;width:100%;background:#101a2d;color:#edf4ff;border:1px solid #41577a;border-radius:7px;padding:10px;font:inherit}
+.hoist-lineup-team-meta .muted{font-size:12px}
+.hoist-lineup-badge{font-size:10px;letter-spacing:.05em;color:#b9c9e3;background:#293c57;border-radius:6px;padding:7px 9px}
+.hoist-lineup-tabs{display:flex;gap:8px;margin-bottom:16px}
+.hoist-lineup-tabs button{flex:1;border:0;border-radius:8px;padding:12px 8px;background:#172239;color:#aabbd5;cursor:pointer;font:inherit;font-weight:650}
+.hoist-lineup-tabs button.active{background:#1d304c;color:#c8dcff;box-shadow:inset 0 -2px #8bc8ff}
+.hoist-lineup-content{display:grid;gap:12px}
+.hoist-lineup-card{background:#17243b;border:1px solid rgba(146,175,217,.13);border-radius:10px;padding:14px}
+.hoist-lineup-card-title{color:#9bb8e6;font-size:11px;letter-spacing:.08em;font-weight:700;margin-bottom:12px}
+.hoist-lineup-players{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.hoist-lineup-players.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hoist-lineup-player{text-align:center;min-width:0}
+.hoist-lineup-avatar{width:48px;height:48px;border-radius:50%;background:#293e5d;margin:0 auto 7px;display:flex;align-items:center;justify-content:center;color:#b5c7e3;font-size:23px;overflow:hidden}
+.hoist-lineup-avatar img{width:100%;height:100%;object-fit:cover}
+.hoist-lineup-player-name{font-size:12px;color:#e2ecfc;overflow-wrap:anywhere}
+.hoist-lineup-player-position{font-size:10px;color:#9cb2d1;margin-top:3px}
+.hoist-lineup-disclaimer{margin-top:16px;font-size:12px}
+@media(max-width:650px){.hoist-lineup-team-bar{gap:10px;padding:12px}.hoist-lineup-team-bar>img{width:44px;height:44px}.hoist-lineup-badge{font-size:9px;padding:6px}.hoist-lineup-card{padding:12px}.hoist-lineup-player-name{font-size:11px}}
 </style>
 </head>
 
@@ -2091,6 +2116,8 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     <button class="nav-item" data-tab="analytics">
       ◈ <span>Analytics</span>
     </button>
+
+    <button class="nav-item" data-tab="lineups">♟ <span>Lineups</span></button>
 
     <button class="nav-item" data-tab="fantasy">
       ✦ <span>Fantasy Planner</span>
@@ -2653,6 +2680,32 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 
 </section>
 
+<!-- TEAM LINEUPS -->
+<section id="lineups" class="tab-section hidden">
+  <article class="panel section-panel hoist-lineups-panel">
+    <div class="section-head">
+      <div><div class="eyebrow">HOIST OFFICIAL · HOCKEY INTELLIGENCE</div><h3>NHL Lineups</h3></div>
+    </div>
+    <div class="hoist-lineup-team-bar">
+      <img id="hoist-lineup-logo" alt="" />
+      <div class="hoist-lineup-team-meta">
+        <label for="hoist-lineup-team">SELECT TEAM</label>
+        <select id="hoist-lineup-team" aria-label="Select lineup team"></select>
+        <span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span>
+      </div>
+      <span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span>
+    </div>
+    <div class="hoist-lineup-tabs" role="tablist" aria-label="Lineup positions">
+      <button type="button" class="active" data-lineup-position="forwards">Forwards</button>
+      <button type="button" data-lineup-position="defense">Defense</button>
+      <button type="button" data-lineup-position="goalies">Goalies</button>
+    </div>
+    <p id="hoist-lineup-status" class="muted" role="status">Choose a team to view its lineup.</p>
+    <div id="hoist-lineup-content" class="hoist-lineup-content"></div>
+    <p class="hoist-lineup-disclaimer muted">Line combinations are projections unless explicitly marked confirmed. Lineup information is not yet connected to a verified provider.</p>
+  </article>
+</section>
+
 <!-- FANTASY PLANNER -->
 
 <section id="fantasy" class="tab-section hidden">
@@ -3196,6 +3249,97 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
+
+<script>
+/* Lineups are read from optional first-party cached JSON, never scraped
+   in a visitor's browser. Example: data/lineups/MTL.json.
+   No invented lineup is displayed when data is missing. */
+(() => {
+  const $l = id => document.getElementById(id);
+  const clean = value => String(value ?? '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+  const names = [
+    ['ANA','Anaheim Ducks'],['BOS','Boston Bruins'],['BUF','Buffalo Sabres'],
+    ['CGY','Calgary Flames'],['CAR','Carolina Hurricanes'],['CHI','Chicago Blackhawks'],
+    ['COL','Colorado Avalanche'],['CBJ','Columbus Blue Jackets'],['DAL','Dallas Stars'],
+    ['DET','Detroit Red Wings'],['EDM','Edmonton Oilers'],['FLA','Florida Panthers'],
+    ['LAK','Los Angeles Kings'],['MIN','Minnesota Wild'],['MTL','Montreal Canadiens'],
+    ['NSH','Nashville Predators'],['NJD','New Jersey Devils'],['NYI','New York Islanders'],
+    ['NYR','New York Rangers'],['OTT','Ottawa Senators'],['PHI','Philadelphia Flyers'],
+    ['PIT','Pittsburgh Penguins'],['SJS','San Jose Sharks'],['SEA','Seattle Kraken'],
+    ['STL','St. Louis Blues'],['TBL','Tampa Bay Lightning'],['TOR','Toronto Maple Leafs'],
+    ['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],
+    ['WSH','Washington Capitals'],['WPG','Winnipeg Jets']
+  ];
+  let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
+  const labels = {forwards:['LW','C','RW'],defense:['LD','RD'],goalies:['G']};
+  const counts = {forwards:4,defense:3,goalies:2};
+  const title = {forwards:'LINE',defense:'PAIR',goalies:'GOALIE'};
+  function playerMarkup(player, role) {
+    const p = player && typeof player === 'object' ? player : {};
+    const name = typeof player === 'string' ? player : p.name || 'Not available';
+    const headshot = typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '';
+    return `<div class="hoist-lineup-player">
+      <div class="hoist-lineup-avatar">${headshot ? `<img src="${clean(headshot)}" alt="" loading="lazy">` : '♟'}</div>
+      <div class="hoist-lineup-player-name">${clean(name)}</div>
+      <div class="hoist-lineup-player-position">${clean(role)}</div>
+    </div>`;
+  }
+  function render() {
+    const groups = Array.isArray(lineup?.[position]) ? lineup[position] : [];
+    $l('hoist-lineup-content').innerHTML = Array.from({length:counts[position]},(_,i)=>{
+      const players = Array.isArray(groups[i]) ? groups[i] : [];
+      const roles = labels[position];
+      return `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${title[position]} ${i+1}</div>
+        <div class="hoist-lineup-players ${roles.length===2?'two':''}">
+        ${roles.map((role,j)=>playerMarkup(players[j],role)).join('')}</div></div>`;
+    }).join('');
+  }
+  async function load() {
+    const token = ++requestId;
+    lineup = null;
+    $l('hoist-lineup-logo').src = `https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg`;
+    $l('hoist-lineup-status').textContent = 'Checking for available lineup data…';
+    $l('hoist-lineup-updated').textContent = 'Awaiting lineup data';
+    $l('hoist-lineup-badge').textContent = 'UNAVAILABLE';
+    render();
+    try {
+      const res = await fetch(`./data/lineups/${selected}.json`,{cache:'no-cache'});
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (token !== requestId) return;
+      if (!data || !['forwards','defense','goalies'].some(k=>Array.isArray(data[k]))) throw new Error('Invalid lineup data');
+      lineup = data;
+      $l('hoist-lineup-badge').textContent = data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED';
+      $l('hoist-lineup-updated').textContent = data.updatedAt ? `Updated ${new Date(data.updatedAt).toLocaleString()}` : 'Update time unavailable';
+      $l('hoist-lineup-status').textContent = data.source ? `Source: ${data.source}` : 'Lineup data available';
+    } catch (_) {
+      if (token !== requestId) return;
+      $l('hoist-lineup-status').textContent = 'Lineup data is not connected yet. This page is ready for a verified lineup feed.';
+    }
+    render();
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    const picker=$l('hoist-lineup-team');
+    if (!picker) return;
+    picker.innerHTML=names.map(([code,name])=>`<option value="${code}">${clean(name)}</option>`).join('');
+    const main=$l('team-select');
+    selected=main?.value && names.some(([code])=>code===main.value) ? main.value : 'MTL';
+    picker.value=selected;
+    picker.addEventListener('change',()=>{selected=picker.value;load()});
+    document.querySelectorAll('[data-lineup-position]').forEach(button=>{
+      button.addEventListener('click',()=>{
+        position=button.dataset.lineupPosition;
+        document.querySelectorAll('[data-lineup-position]').forEach(b=>b.classList.toggle('active',b===button));
+        render();
+      });
+    });
+    load();
+  });
+})();
+</script>
+
 <!-- KEEP CURRENT PAGE ON RELOAD -->
 <script>
 (() => {
@@ -3205,6 +3349,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!nav) return;
     const page = nav.dataset.tab || nav.dataset.go;
     if (page) {
+      if (page === 'lineups') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Lineups'; });
       try { sessionStorage.setItem(storageKey, page); } catch (_) {}
     }
   }, true);
