@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-19">
+<meta name="hoist-build" content="20261110-21">
 
 <script>
 try {
@@ -2454,6 +2454,19 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 /* Overview: hide the historical matchup footnote beneath the player tables. */
 #overview #matchup-intelligence #mi-note {display:none!important;}
 
+
+/* Head-to-head: per-player five most recent meetings expandable beneath row. */
+#matchup-intelligence .hoist-h2h-expand{display:inline-flex;align-items:center;justify-content:center;margin-left:6px;width:22px;height:22px;border:1px solid #526a88;border-radius:3px;background:#1c304b;color:#e4edfa;cursor:pointer;font-size:12px;vertical-align:middle;flex-shrink:0}
+#matchup-intelligence .hoist-h2h-expand[aria-expanded="true"]{color:#ff5366;border-color:#ff5366}
+#matchup-intelligence .hoist-h2h-detail-row td{padding:0!important;background:#101d30!important;text-align:left!important}
+#matchup-intelligence .hoist-h2h-detail{padding:12px 10px;overflow-x:auto}
+#matchup-intelligence .hoist-h2h-detail-title{font-size:12px;font-weight:700;color:#a9c9ed;margin-bottom:8px}
+#matchup-intelligence .hoist-h2h-game-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:12px}
+#matchup-intelligence .hoist-h2h-game-table th,#matchup-intelligence .hoist-h2h-game-table td{padding:7px 5px!important;text-align:center!important;white-space:nowrap;border-bottom:1px solid #273b57}
+#matchup-intelligence .hoist-h2h-game-table th:first-child,#matchup-intelligence .hoist-h2h-game-table td:first-child{text-align:center!important}
+#matchup-intelligence .hoist-h2h-game-table th{font-weight:700;color:#a9c9ed}
+#matchup-intelligence .hoist-h2h-detail-empty{font-size:12px;color:#a9bbd2}
+
 </style>
 </head>
 
@@ -3230,6 +3243,94 @@ document.addEventListener('DOMContentLoaded', function () {
   bodies.forEach(body => new MutationObserver(update).observe(body, {childList:true, subtree:true, characterData:true}));
   window.addEventListener('resize', update);
   update();
+});
+</script>
+
+
+<!-- Head-to-head player row dropdowns: last five completed regular-season
+     games against the opponent, from the existing cached matchup dataset. -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const ids=['mi-left','mi-right'];
+  const bodies=ids.map(id=>document.getElementById(id)).filter(Boolean);
+  if(!bodies.length)return;
+  const cache=new Map();
+  const escapeHtml=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const normalize=v=>String(v||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z ]/g,'').replace(/\s+/g,' ').trim();
+  function selectedMatchup(){
+    try{
+      const club=(typeof state!=='undefined'&&state.team)||document.getElementById('team-select')?.value;
+      const schedule=(typeof state!=='undefined'&&Array.isArray(state.schedule))?state.schedule:[];
+      const next=schedule.filter(g=>Number(g.gameType)===2&&!['FINAL','OFF'].includes(g.gameState)).sort((a,b)=>String(a.gameDate).localeCompare(String(b.gameDate)))[0];
+      const opp=next&&(next.homeTeam?.abbrev===club?next.awayTeam?.abbrev:next.homeTeam?.abbrev);
+      return {club,opp};
+    }catch(e){return {club:null,opp:null}}
+  }
+  async function dataFor(code){
+    if(!code)return null;
+    if(!cache.has(code)){
+      const promise=fetch('./data/matchups/'+encodeURIComponent(code)+'.json',{cache:'no-cache'})
+        .then(r=>{if(!r.ok)throw Error('Matchup data unavailable');return r.json()})
+        .catch(()=>null);
+      cache.set(code,promise);
+    }
+    return cache.get(code);
+  }
+  function renderGames(player,opponent){
+    const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,5);
+    if(!games.length)return '<div class="hoist-h2h-detail-empty">No previous regular-season games against '+escapeHtml(opponent)+' in the available player history.</div>';
+    return '<div class="hoist-h2h-detail-title">Last '+games.length+' games vs '+escapeHtml(opponent)+'</div><table class="hoist-h2h-game-table"><thead><tr><th>DATE</th><th>G</th><th>A</th><th>PTS</th><th>SOG</th></tr></thead><tbody>'+
+      games.map(g=>'<tr><td>'+escapeHtml(g.date||'—')+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td><td>'+escapeHtml(g.shotsOnGoal??g.shots??g.sog??'—')+'</td></tr>').join('')+'</tbody></table';
+  }
+  let running=false;
+  async function decorate(){
+    if(running)return;
+    running=true;
+    try{
+      const {club,opp}=selectedMatchup();
+      if(!club||!opp)return;
+      const datasets=await Promise.all([dataFor(club),dataFor(opp)]);
+      bodies.forEach((body,index)=>{
+        const data=datasets[index];
+        if(!data||!Array.isArray(data.players))return;
+        const target=index===0?opp:club;
+        const lookup=new Map(data.players.map(p=>[normalize(p.name),p]));
+        [...body.querySelectorAll('tr')].forEach(row=>{
+          if(row.classList.contains('hoist-h2h-detail-row'))return;
+          const first=row.cells?.[0];
+          const strong=first?.querySelector('.mi-person strong');
+          if(!strong)return;
+          const name=strong.textContent.trim();
+          const player=lookup.get(normalize(name));
+          if(!player)return;
+          const key=club+'|'+opp+'|'+(player.id||name);
+          if(row.dataset.hoistH2hKey===key)return;
+          row.dataset.hoistH2hKey=key;
+          const btn=document.createElement('button');
+          btn.type='button';btn.className='hoist-h2h-expand';btn.textContent='▾';
+          btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Show '+name+' previous five games against '+target);
+          strong.insertAdjacentElement('afterend',btn);
+          btn.addEventListener('click',()=>{
+            const open=btn.getAttribute('aria-expanded')==='true';
+            const existing=row.nextElementSibling;
+            if(open){if(existing?.classList.contains('hoist-h2h-detail-row'))existing.remove();btn.setAttribute('aria-expanded','false');btn.textContent='▾';return}
+            if(existing?.classList.contains('hoist-h2h-detail-row'))existing.remove();
+            const detail=document.createElement('tr');detail.className='hoist-h2h-detail-row';
+            const cell=document.createElement('td');cell.colSpan=row.cells.length;
+            cell.innerHTML='<div class="hoist-h2h-detail">'+renderGames(player,target)+'</div>';
+            detail.appendChild(cell);row.insertAdjacentElement('afterend',detail);
+            btn.setAttribute('aria-expanded','true');btn.textContent='▴';
+          });
+        });
+      });
+    }finally{running=false}
+  }
+  let queued=false;
+  function schedule(){if(queued)return;queued=true;setTimeout(()=>{queued=false;decorate()},80)}
+  bodies.forEach(body=>new MutationObserver(schedule).observe(body,{childList:true,subtree:true}));
+  document.getElementById('team-select')?.addEventListener('change',()=>setTimeout(schedule,250));
+  document.getElementById('mi-min-games')?.addEventListener('change',schedule);
+  schedule();
 });
 </script>
 
