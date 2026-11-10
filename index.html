@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-14">
+<meta name="hoist-build" content="20261110-15">
 
 <script>
 try {
@@ -2381,6 +2381,27 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     border-color:#41577a !important;
     border-radius:8px !important;
     line-height:normal !important;
+  }
+}
+
+/* Stats: match the brighter Standings selected-column red. */
+#stats .hoist-stats-table th.hoist-stat-selected,
+#stats .hoist-stats-table th.hoist-stat-selected button,
+#stats .hoist-stats-table td.hoist-stat-selected,
+#stats .hoist-stats-rail-row.hoist-stat-selected,
+#stats .hoist-stats-rail-row.hoist-stat-selected button,
+#stats .hoist-stats-table .hoist-stat-selected,
+#stats .hoist-stat-arrow {
+  color:#ff5366 !important;
+}
+/* Mobile: keep equal columns, but show slightly more statistics. */
+@media (max-width:650px) {
+  #stats .hoist-stats-table th:not(:first-child),
+  #stats .hoist-stats-table td:not(:first-child) {
+    width:50px !important;
+    min-width:50px !important;
+    max-width:50px !important;
+    box-sizing:border-box !important;
   }
 }
 </style>
