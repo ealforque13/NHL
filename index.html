@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-31">
+<meta name="hoist-build" content="20261110-32">
 
 <script>
 try {
@@ -2624,6 +2624,19 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
  #overview #matchup-intelligence .hoist-h2h-game-table td:first-child{width:49%!important;padding-left:5px!important}
  #overview #matchup-intelligence .hoist-h2h-game-table th:nth-child(n+2),
  #overview #matchup-intelligence .hoist-h2h-game-table td:nth-child(n+2){width:17%!important;padding-right:5px!important}
+}
+
+/* History dropdown: use the available right edge for G, A and PTS. */
+#overview #matchup-intelligence .hoist-h2h-detail{padding-right:0!important}
+#overview #matchup-intelligence .hoist-h2h-game-table th:first-child,
+#overview #matchup-intelligence .hoist-h2h-game-table td:first-child{width:43%!important}
+#overview #matchup-intelligence .hoist-h2h-game-table th:nth-child(n+2),
+#overview #matchup-intelligence .hoist-h2h-game-table td:nth-child(n+2){width:19%!important;padding-right:3px!important}
+@media(max-width:650px){
+ #overview #matchup-intelligence .hoist-h2h-game-table th:first-child,
+ #overview #matchup-intelligence .hoist-h2h-game-table td:first-child{width:43%!important}
+ #overview #matchup-intelligence .hoist-h2h-game-table th:nth-child(n+2),
+ #overview #matchup-intelligence .hoist-h2h-game-table td:nth-child(n+2){width:19%!important;padding-right:2px!important}
 }
 </style>
 </head>
