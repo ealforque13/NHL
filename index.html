@@ -2927,6 +2927,32 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
 .hoist-games-footnote{font-size:12px;margin-top:15px}
 @media(max-width:650px){.hoist-games-date-controls{width:100%;justify-content:space-between}.hoist-games-date-controls input{flex:1;min-width:0}.hoist-game-card{padding:13px}}
 
+
+/* Build 20261110-53: Overview result colours, compact mobile form,
+   calendar today indicator, and aligned mobile H2H headers. */
+#overview .hoist-today-badge,
+#overview #v2-calendar .hoist-today-badge { display:none!important; }
+.hoist-franchise-stat #form { white-space:nowrap!important; overflow-wrap:normal!important; }
+.hoist-franchise-stat #form .hoist-form-win { color:#38d982!important; }
+.hoist-franchise-stat #form .hoist-form-loss { color:#ff5b6c!important; }
+@media(max-width:650px) {
+  .hoist-franchise-stat #form {font-size:15px!important;letter-spacing:-.045em!important;line-height:1.15!important;}
+  #overview #matchup-intelligence .hoist-sortable-table thead th:nth-child(n+2) {vertical-align:top!important;}
+  #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-head,
+  #overview #matchup-intelligence .hoist-sortable-table thead .hoist-sort-button {
+    display:flex!important;flex-direction:column!important;align-items:center!important;
+    justify-content:flex-start!important;box-sizing:border-box!important;
+    height:46px!important;min-height:46px!important;padding:8px 0 0!important;
+    margin:0!important;line-height:14px!important;font-size:11px!important;
+    gap:2px!important;vertical-align:top!important;
+  }
+  #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-arrow-spacer,
+  #overview #matchup-intelligence .hoist-sortable-table thead .hoist-sort-arrow {
+    display:block!important;height:10px!important;min-height:10px!important;
+    line-height:10px!important;margin:0!important;padding:0!important;
+  }
+}
+
 </style>
 </head>
 
@@ -3862,83 +3888,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- OPPONENT TEAM LOGOS -->
-
+<!-- Full franchise names for Head-to-Head matchup headings -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const panel = document.getElementById("matchup-intelligence");
+document.addEventListener('DOMContentLoaded', function () {
+  const names = {
+    ANA:'Anaheim',BOS:'Boston',BUF:'Buffalo',CGY:'Calgary',CAR:'Carolina',CHI:'Chicago',
+    COL:'Colorado',CBJ:'Columbus',DAL:'Dallas',DET:'Detroit',EDM:'Edmonton',FLA:'Florida',
+    LAK:'Los Angeles',MIN:'Minnesota',MTL:'Montreal',NSH:'Nashville',NJD:'New Jersey',
+    NYI:'New York Islanders',NYR:'New York Rangers',OTT:'Ottawa',PHI:'Philadelphia',
+    PIT:'Pittsburgh',SJS:'San Jose',SEA:'Seattle',STL:'St. Louis',TBL:'Tampa Bay',
+    TOR:'Toronto',UTA:'Utah',VAN:'Vancouver',VGK:'Vegas',WSH:'Washington',WPG:'Winnipeg'
+  };
+  const panel = document.getElementById('matchup-intelligence');
   if (!panel) return;
-
-  const headingIds = ["mi-left-title", "mi-right-title"];
   let updating = false;
-
-  function updateOpponentLogos() {
+  function updateNames() {
     if (updating) return;
     updating = true;
-
-    headingIds.forEach(function (id) {
-      const heading = document.getElementById(id);
-      if (!heading) return;
-
-      // Read only the heading's text nodes, excluding the logo.
-      const text = Array.from(heading.childNodes)
-        .filter(node => node.nodeType === Node.TEXT_NODE)
-        .map(node => node.textContent)
-        .join(" ")
-        .trim();
-
-      const match = text.match(/\bvs\s+([A-Z]{2,3})\b/i);
-      if (!match) return;
-
-      const opponent = match[1].toUpperCase();
-      const url =
-        "https://assets.nhle.com/logos/nhl/svg/" +
-        encodeURIComponent(opponent) +
-        "_light.svg";
-
-      heading.classList.add("hoist-opponent-heading");
-
-      let image = heading.querySelector(".hoist-opponent-logo");
-
-      if (!image) {
-        image = document.createElement("img");
-        image.className = "hoist-opponent-logo";
-        heading.appendChild(image);
-      }
-
-      if (image.getAttribute("src") !== url) {
-        image.src = url;
-        image.alt = opponent + " logo";
-        image.loading = "lazy";
-        image.decoding = "async";
-      }
-    });
-
-    updating = false;
+    try {
+      ['mi-left-title','mi-right-title'].forEach(id => {
+        const heading = document.getElementById(id);
+        if (!heading) return;
+        const text = heading.textContent.trim();
+        const match = text.match(/^(.+?)\s+players\s+vs\s+(.+?)$/i);
+        if (!match) return;
+        const full = code => names[code.trim().toUpperCase()] || code.trim();
+        const desired = `${full(match[1])} players vs ${full(match[2])}`;
+        if (heading.textContent.trim() !== desired || heading.querySelector('img')) {
+          heading.textContent = desired;
+        }
+      });
+    } finally { updating = false; }
   }
-
-  updateOpponentLogos();
-
-  const observer = new MutationObserver(function () {
-    observer.disconnect();
-    updateOpponentLogos();
-    observer.observe(panel, {
-      childList: true,
-      characterData: true,
-      subtree: true
-    });
-  });
-
-  observer.observe(panel, {
-    childList: true,
-    characterData: true,
-    subtree: true
-  });
-
+  updateNames();
+  new MutationObserver(updateNames).observe(panel, {childList:true,subtree:true,characterData:true});
 });
 </script>
-
 
 <!-- EXTENDED STANDINGS: NHL PLAYOFF PICTURE -->
 <script>
@@ -4610,5 +4595,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 </script>
+
+<!-- Colour-code recent results without changing the existing game-data renderer. -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('form');
+  if (!form) return;
+  let busy = false;
+  function colourResults() {
+    if (busy) return;
+    busy = true;
+    try {
+      const raw = form.textContent;
+      const parts = raw.match(/W|L|OT|SO|[^WL]+/gi) || [];
+      // Preserve all original text; only standalone W and L results get colours.
+      const fragment = document.createDocumentFragment();
+      for (const part of parts) {
+        if (/^[WL]$/i.test(part)) {
+          const span = document.createElement('span');
+          span.className = part.toUpperCase()==='W' ? 'hoist-form-win' : 'hoist-form-loss';
+          span.textContent = part;
+          fragment.appendChild(span);
+        } else fragment.appendChild(document.createTextNode(part));
+      }
+      if (form.querySelectorAll('.hoist-form-win,.hoist-form-loss').length ===
+          parts.filter(p=>/^[WL]$/i.test(p)).length &&
+          form.querySelectorAll('span').length === parts.filter(p=>/^[WL]$/i.test(p)).length) return;
+      form.replaceChildren(fragment);
+    } finally {busy = false;}
+  }
+  colourResults();
+  new MutationObserver(colourResults).observe(form,{childList:true,subtree:true,characterData:true});
+});
+</script>
+
 </body>
 </html>
