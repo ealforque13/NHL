@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-23">
+<meta name="hoist-build" content="20261110-24">
 
 <script>
 try {
@@ -3260,6 +3260,9 @@ document.addEventListener('DOMContentLoaded', function () {
         nodes.forEach(node => {
           if (!original.has(node)) original.set(node, node.nodeValue);
           const full = original.get(node);
+          // Keep the unshortened player name available for the game-history lookup.
+          const playerName = node.parentElement?.closest('.mi-person strong');
+          if (playerName && full.trim()) playerName.dataset.hoistFullName = full.trim();
           // Only abbreviate name-like text, not numbers, team codes or badges.
           const value = mobile ? abbreviate(full) : full;
           if (node.nodeValue !== value) node.nodeValue = value;
@@ -3331,7 +3334,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const first=row.cells?.[0];
           const strong=first?.querySelector('.mi-person strong');
           if(!strong)return;
-          const name=strong.textContent.trim();
+          const name=strong.dataset.hoistFullName||strong.textContent.trim();
           const player=lookup.get(normalize(name));
           if(!player)return;
           const key=club+'|'+opp+'|'+(player.id||name);
