@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-29">
+<meta name="hoist-build" content="20261110-30">
 
 <script>
 try {
@@ -2583,6 +2583,33 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
  .mi-grid .hoist-h2h-label-desktop{display:none}
  .mi-grid .hoist-h2h-label-mobile{display:inline}
 }
+
+/* H2H mobile: keep GP/G/A/P/P-GP on the same baseline, with sort arrows
+   in a dedicated second line; selected numeric cells always turn bold. */
+@media(max-width:650px){
+ #overview #matchup-intelligence .hoist-sortable-table thead th:nth-child(n+2){height:46px!important;padding:0!important;vertical-align:top!important}
+ #overview #matchup-intelligence .hoist-sortable-table thead .hoist-sort-button,
+ #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-head{
+   box-sizing:border-box!important;display:flex!important;flex-direction:column!important;
+   justify-content:flex-start!important;align-items:center!important;gap:2px!important;
+   width:100%!important;height:46px!important;min-height:46px!important;
+   padding:8px 0 0!important;margin:0!important;line-height:14px!important;
+   font-size:11px!important;text-align:center!important;white-space:nowrap!important
+ }
+ #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-head{color:#91b8ec;font-weight:800}
+ #overview #matchup-intelligence .hoist-sortable-table thead .hoist-sort-arrow,
+ #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-arrow-spacer{
+   box-sizing:border-box!important;display:block!important;flex:0 0 10px!important;
+   height:10px!important;min-height:10px!important;line-height:10px!important;
+   margin:0!important;padding:0!important
+ }
+}
+/* Override strong/b tags inside a selected PTS column as well as plain text. */
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(3).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(3) :is(strong,b),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(4).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(4) :is(strong,b),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(5).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(5) :is(strong,b),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(6).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(6) :is(strong,b){font-weight:800!important;color:#ff5366!important}
+
 </style>
 </head>
 
@@ -2893,7 +2920,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
             <thead>
               <tr>
                 <th>PLAYER</th>
-                <th>GP</th>
+                <th><span class="hoist-h2h-gp-head">GP<span class="hoist-h2h-gp-arrow-spacer" aria-hidden="true"></span></span></th>
 
                 <th data-sort="goals">
                   <button type="button" class="hoist-sort-button" data-label="Goals">
@@ -2938,7 +2965,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
             <thead>
               <tr>
                 <th>PLAYER</th>
-                <th>GP</th>
+                <th><span class="hoist-h2h-gp-head">GP<span class="hoist-h2h-gp-arrow-spacer" aria-hidden="true"></span></span></th>
 
                 <th data-sort="goals">
                   <button type="button" class="hoist-sort-button" data-label="Goals">
