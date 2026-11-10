@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-6">
+<meta name="hoist-build" content="20261110-7">
 
 <script>
 try {
@@ -2162,6 +2162,24 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
  #stats .hoist-stats-picker{min-width:0;width:120px;max-width:120px}
  #stats .hoist-stats-picker select{width:100%;font-weight:700}
 }
+
+/* Stats mobile layout: vertical scope filters, top-right team picker, fixed player rail */
+@media(max-width:650px){
+ #stats .hoist-stats-panel{min-width:0;overflow:visible}
+ #stats .hoist-stats-filters{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important;width:112px!important;margin-bottom:12px!important}
+ #stats .hoist-stats-filters button{width:112px!important;flex:none!important;padding:10px 12px!important;text-align:center}
+ #stats .hoist-stats-toolbar{position:absolute!important;top:0;right:0;margin:0!important;z-index:4}
+ #stats .hoist-stats-panel{position:relative}
+ #stats .hoist-stats-picker{width:120px!important;max-width:120px!important}
+ #stats .hoist-stats-picker label{display:block;font-size:9px}
+ #stats .hoist-stats-picker select{padding:10px 7px!important}
+ #stats .hoist-stats-table-wrap{overflow-x:auto!important;overflow-y:hidden!important;position:relative!important;max-width:100%!important;isolation:isolate}
+ #stats .hoist-stats-table{width:max-content!important;min-width:100%!important}
+ #stats .hoist-stats-table th:first-child,#stats .hoist-stats-table td:first-child{position:sticky!important;left:0!important;z-index:8!important;transform:translateZ(0);width:116px!important;min-width:116px!important;max-width:116px!important;box-shadow:2px 0 0 #628db9!important}
+ #stats .hoist-stats-table th:first-child{z-index:10!important}
+ #stats .hoist-stats-subtitle{margin-top:12px}
+ #stats #hoist-stats-status:empty{display:none}
+}
 </style>
 </head>
 
@@ -3503,8 +3521,8 @@ document.addEventListener("DOMContentLoaded", function () {
  cache.set(code,players);return players;}
  async function render(){const seq=++sequence;const league=mode==='league';el('hoist-stats-team').closest('.hoist-stats-picker').hidden=league;el('hoist-stats-status').textContent=league?'Loading league-wide player statistics…':'Loading team player statistics…';el('hoist-stats-content').innerHTML='';try{
  let players,heading;
- if(league){const settled=await Promise.allSettled(teams.map(([code])=>getTeam(code)));if(seq!==sequence)return;players=settled.flatMap(r=>r.status==='fulfilled'?r.value:[]);heading='NHL Skater Leaders';const missing=settled.filter(r=>r.status==='rejected').length;el('hoist-stats-status').textContent=missing?`Showing available player data; ${missing} team file(s) unavailable.`:`${players.length} skaters across 32 NHL teams`;}
- else{const code=el('hoist-stats-team').value;players=await getTeam(code);if(seq!==sequence)return;heading=`${teamName[code]} — Player Stats`;el('hoist-stats-status').textContent=`${players.length} skaters · 2026–27 regular season`;}
+ if(league){const settled=await Promise.allSettled(teams.map(([code])=>getTeam(code)));if(seq!==sequence)return;players=settled.flatMap(r=>r.status==='fulfilled'?r.value:[]);heading='2026–27 NHL Skater Leaders';const missing=settled.filter(r=>r.status==='rejected').length;el('hoist-stats-status').textContent=missing?`${missing} team file(s) unavailable.`:'';}
+ else{const code=el('hoist-stats-team').value;players=await getTeam(code);if(seq!==sequence)return;heading=`2026–27 ${teamName[code]} — Player Stats`;el('hoist-stats-status').textContent='';}
  players.sort((a,b)=>{const cmp=sortKey==='name'?name(a).localeCompare(name(b)):numeric(a,sortKey)-numeric(b,sortKey);return sortDirection*cmp||numeric(b,'points')-numeric(a,'points')||name(a).localeCompare(name(b));});
  el('hoist-stats-content').innerHTML=`<h4 class="hoist-stats-subtitle">${esc(heading)}</h4>${players.length?table(players):'<p class="muted">No player statistics available yet.</p>'}`;
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
