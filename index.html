@@ -2078,6 +2078,9 @@ body:has(#lineups:not(.hidden)) .hoist-franchise-hero{display:none !important}
 .hoist-lineup-player-position{font-size:10px;color:#9cb2d1;margin-top:3px}
 .hoist-lineup-disclaimer{margin-top:16px;font-size:12px}
 @media(max-width:650px){.hoist-lineup-team-bar{gap:10px;padding:12px}.hoist-lineup-team-bar>img{width:44px;height:44px}.hoist-lineup-badge{font-size:9px;padding:6px}.hoist-lineup-card{padding:12px}.hoist-lineup-player-name{font-size:11px}}
+
+.hoist-lineup-roster-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 12px}
+@media(max-width:650px){.hoist-lineup-roster-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 8px}}
 </style>
 </head>
 
@@ -2706,7 +2709,7 @@ body:has(#lineups:not(.hidden)) .hoist-franchise-hero{display:none !important}
     </div>
     <p id="hoist-lineup-status" class="muted" role="status">Choose a team to view its lineup.</p>
     <div id="hoist-lineup-content" class="hoist-lineup-content"></div>
-    <p class="hoist-lineup-disclaimer muted">Line combinations are projections unless explicitly marked confirmed. Lineup information is not yet connected to a verified provider.</p>
+    <p class="hoist-lineup-disclaimer muted">Player lists are current NHL rosters, not projected or confirmed game-day line combinations. NHL roster information may include extra players.</p>
   </article>
 </section>
 
@@ -3291,8 +3294,16 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>`;
   }
   function render() {
+    const root = $l('hoist-lineup-content');
+    if (!root) return;
+    if (lineup?.type === 'roster') {
+      const players = Array.isArray(lineup[position]) ? lineup[position] : [];
+      root.innerHTML = `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${position.toUpperCase()} · ${players.length} PLAYERS ON ROSTER</div>
+        <div class="hoist-lineup-roster-grid">${players.map(p=>playerMarkup(p,p.position || '')) .join('')}</div></div>`;
+      return;
+    }
     const groups = Array.isArray(lineup?.[position]) ? lineup[position] : [];
-    $l('hoist-lineup-content').innerHTML = Array.from({length:counts[position]},(_,i)=>{
+    root.innerHTML = Array.from({length:counts[position]},(_,i)=>{
       const players = Array.isArray(groups[i]) ? groups[i] : [];
       const roles = labels[position];
       return `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${title[position]} ${i+1}</div>
@@ -3315,12 +3326,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (token !== requestId) return;
       if (!data || !['forwards','defense','goalies'].some(k=>Array.isArray(data[k]))) throw new Error('Invalid lineup data');
       lineup = data;
-      $l('hoist-lineup-badge').textContent = data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED';
+      $l('hoist-lineup-badge').textContent = data.type === 'roster' ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
       $l('hoist-lineup-updated').textContent = data.updatedAt ? `Updated ${new Date(data.updatedAt).toLocaleString()}` : 'Update time unavailable';
-      $l('hoist-lineup-status').textContent = data.source ? `Source: ${data.source}` : 'Lineup data available';
+      $l('hoist-lineup-status').textContent = data.type === 'roster' ? 'Current NHL roster · players are not arranged into game-day lines' : (data.source ? `Source: ${data.source}` : 'Lineup data available');
     } catch (_) {
       if (token !== requestId) return;
-      $l('hoist-lineup-status').textContent = 'Lineup data is not connected yet. This page is ready for a verified lineup feed.';
+      $l('hoist-lineup-status').textContent = 'No roster file found yet. Run the included GitHub Actions roster updater to populate this page.';
     }
     render();
   }
