@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-5">
+<meta name="hoist-build" content="20261110-6">
 
 <script>
 try {
@@ -3465,22 +3465,52 @@ document.addEventListener("DOMContentLoaded", function () {
  const numeric=(p,k)=>Number(p[k]??0);
  const display=(p,k)=>p[k] == null?'—':k==='shootingPctg'?Number(p[k]).toFixed(1):String(p[k]);
  const teamColors={ANA:'#F47A38',BOS:'#FFB81C',BUF:'#FFB81C',CGY:'#F1BE48',CAR:'#E31837',CHI:'#CF0A2C',COL:'#6F263D',CBJ:'#CE1126',DAL:'#8FAD15',DET:'#CE1126',EDM:'#FF4C00',FLA:'#C8102E',LAK:'#A2AAAD',MIN:'#A6192E',MTL:'#AF1E2D',NSH:'#FFB81C',NJD:'#CE1126',NYI:'#F47D30',NYR:'#CE1126',OTT:'#DA1A32',PHI:'#F74902',PIT:'#FCB514',SJS:'#00A8E0',SEA:'#99D9D9',STL:'#FCB514',TBL:'#0065B1',TOR:'#5B9BD5',UTA:'#71AFE5',VAN:'#00843D',VGK:'#B4975A',WSH:'#C8102E',WPG:'#7BADD3'};
- const jersey=p=>{const n=p.sweaterNumber??p.jerseyNumber??p.number;return n==null||n===''?'—':String(n)};
+ // Club skater stats omit sweater numbers. Join them to the NHL roster cache
+ // written by scripts/update_lineups.py (data/lineups/TEAM.json).
+ const rosterCache=new Map();
+ const normalize=n=>String(n||'').normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+ async function rosterNumbers(code){
+   if(rosterCache.has(code))return rosterCache.get(code);
+   const pending=(async()=>{
+     try{
+       const response=await fetch(`./data/lineups/${code}.json`,{cache:'no-cache'});
+       if(!response.ok)throw Error('No roster JSON');
+       const data=await response.json();
+       const byId=new Map(),byName=new Map();
+       for(const p of [...(data.forwards||[]),...(data.defense||[]),...(data.goalies||[])]){
+         const num=p.number??p.sweaterNumber??p.jerseyNumber;
+         if(num==null||num==='')continue;
+         if(p.id!=null)byId.set(String(p.id),String(num));
+         if(p.name)byName.set(normalize(p.name),String(num));
+       }
+       return {byId,byName};
+     }catch{return {byId:new Map(),byName:new Map()};}
+   })();
+   rosterCache.set(code,pending);
+   return pending;
+ }
+ const jersey=p=>p._hoistJersey??'—';
  const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
- function table(players){return `<div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${header('positionCode','POS')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td><td class="${sortKey==='positionCode'?'hoist-stat-selected':''}">${esc(p.positionCode||'—')}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
- async function getTeam(code){if(cache.has(code))return cache.get(code);const response=await fetch(`./data/club-stats/${code}.json`,{cache:'no-cache'});if(!response.ok)throw Error('Missing cached club stats');const data=await response.json();if(!Array.isArray(data.skaters))throw Error('Invalid skater statistics');const players=data.skaters.map(p=>({...p,team:code}));cache.set(code,players);return players;}
+ function table(players){return `<div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+ async function getTeam(code){if(cache.has(code))return cache.get(code);const response=await fetch(`./data/club-stats/${code}.json`,{cache:'no-cache'});if(!response.ok)throw Error('Missing cached club stats');const data=await response.json();if(!Array.isArray(data.skaters))throw Error('Invalid skater statistics');const players=data.skaters.map(p=>({...p,team:code}));
+ const numbers=await rosterNumbers(code);
+ for(const p of players){
+   const id=p.playerId??p.id??p.playerID;
+   p._hoistJersey=(id!=null?numbers.byId.get(String(id)):null)??numbers.byName.get(normalize(name(p)))??null;
+ }
+ cache.set(code,players);return players;}
  async function render(){const seq=++sequence;const league=mode==='league';el('hoist-stats-team').closest('.hoist-stats-picker').hidden=league;el('hoist-stats-status').textContent=league?'Loading league-wide player statistics…':'Loading team player statistics…';el('hoist-stats-content').innerHTML='';try{
  let players,heading;
  if(league){const settled=await Promise.allSettled(teams.map(([code])=>getTeam(code)));if(seq!==sequence)return;players=settled.flatMap(r=>r.status==='fulfilled'?r.value:[]);heading='NHL Skater Leaders';const missing=settled.filter(r=>r.status==='rejected').length;el('hoist-stats-status').textContent=missing?`Showing available player data; ${missing} team file(s) unavailable.`:`${players.length} skaters across 32 NHL teams`;}
  else{const code=el('hoist-stats-team').value;players=await getTeam(code);if(seq!==sequence)return;heading=`${teamName[code]} — Player Stats`;el('hoist-stats-status').textContent=`${players.length} skaters · 2026–27 regular season`;}
- players.sort((a,b)=>{const cmp=sortKey==='name'?name(a).localeCompare(name(b)):sortKey==='positionCode'?String(a.positionCode||'').localeCompare(String(b.positionCode||'')):numeric(a,sortKey)-numeric(b,sortKey);return sortDirection*cmp||numeric(b,'points')-numeric(a,'points')||name(a).localeCompare(name(b));});
+ players.sort((a,b)=>{const cmp=sortKey==='name'?name(a).localeCompare(name(b)):numeric(a,sortKey)-numeric(b,sortKey);return sortDirection*cmp||numeric(b,'points')-numeric(a,'points')||name(a).localeCompare(name(b));});
  el('hoist-stats-content').innerHTML=`<h4 class="hoist-stats-subtitle">${esc(heading)}</h4>${players.length?table(players):'<p class="muted">No player statistics available yet.</p>'}`;
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
  document.addEventListener('DOMContentLoaded',()=>{if(!el('stats'))return;const picker=el('hoist-stats-team');const sortedTeams=teams.slice().sort((a,b)=>a[1].localeCompare(b[1]));
  const syncTeamLabels=()=>{const mobile=window.matchMedia('(max-width:650px)').matches;const current=picker.value;picker.innerHTML=sortedTeams.map(([code,n])=>`<option value="${code}">${esc(mobile?code:n)}</option>`).join('');if(current)picker.value=current;};
- syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',render);el('hoist-stats-content').addEventListener('click',event=>{const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=(key==='name'||key==='positionCode')?1:-1;}render()});render()});
+ syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',render);el('hoist-stats-content').addEventListener('click',event=>{const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=key==='name'?1:-1;}render()});render()});
 })();
 </script>
 
