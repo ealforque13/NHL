@@ -2712,6 +2712,30 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   padding-right: 0 !important;
 }
 
+
+/* Mobile selected-franchise team picker: compact three-letter code */
+@media (max-width: 650px) {
+  .team-hero.hoist-franchise-hero { position: relative !important; }
+  .hoist-franchise-identity { padding-right: 82px !important; }
+  .hoist-franchise-identity .team-controls {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    width: 72px !important;
+    margin: 0 !important;
+    z-index: 2;
+  }
+  .hoist-franchise-identity .team-controls label { display: none !important; }
+  .hoist-franchise-identity #team-select {
+    box-sizing: border-box !important;
+    width: 72px !important;
+    min-width: 72px !important;
+    max-width: 72px !important;
+    padding: 8px 21px 8px 9px !important;
+    font-size: 12px !important;
+    text-align: left !important;
+  }
+}
 </style>
 </head>
 
@@ -4350,6 +4374,28 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
     const observer=new MutationObserver(sync);
     navButtons.forEach(b=>observer.observe(b,{attributes:true,attributeFilter:['class']}));sync();
+  });
+})();
+</script>
+<script>
+/* Show team abbreviations only in the mobile Selected Franchise picker. */
+(() => {
+  const mobile = window.matchMedia('(max-width: 650px)');
+  function syncFranchisePicker() {
+    const select = document.getElementById('team-select');
+    if (!select) return;
+    for (const option of select.options) {
+      if (!option.dataset.hoistFullTeamName) {
+        option.dataset.hoistFullTeamName = option.textContent;
+      }
+      option.textContent = mobile.matches
+        ? option.value.toUpperCase()
+        : option.dataset.hoistFullTeamName;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(syncFranchisePicker, 0);
+    mobile.addEventListener('change', syncFranchisePicker);
   });
 })();
 </script>
