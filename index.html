@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-27">
+<meta name="hoist-build" content="20261110-29">
 
 <script>
 try {
@@ -2559,6 +2559,30 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   #overview #matchup-intelligence .hoist-h2h-game-table td,
   #overview #matchup-intelligence .hoist-h2h-game-table th{font-size:11px!important;padding:7px 2px!important}
 }
+
+/* H2H: consistent centered headings and numbers; only selected sort is bold. */
+#overview #matchup-intelligence .hoist-sortable-table thead th:nth-child(n+2),
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:nth-child(n+2){text-align:center!important;vertical-align:middle!important}
+#overview #matchup-intelligence .hoist-sortable-table thead th:nth-child(n+2) .hoist-sort-button{width:100%!important;justify-content:center!important;text-align:center!important}
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:nth-child(n+2),
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:nth-child(n+2) strong,
+#overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:nth-child(n+2) b{font-weight:400!important}
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(3).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(3),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(4).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(4),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(5).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(5),
+#overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(6).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(6){font-weight:800!important;color:#ff5366!important}
+@media(max-width:650px){
+ #overview #matchup-intelligence .hoist-sortable-table thead th:nth-child(n+2){padding-left:0!important;padding-right:0!important;text-align:center!important}
+ #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:nth-child(n+2){padding-left:0!important;padding-right:0!important;text-align:center!important}
+ #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable > td:last-child{padding-right:14px!important;padding-left:0!important;text-align:center!important}
+}
+
+/* Head-to-head compact category labels only on mobile. */
+.mi-grid .hoist-h2h-label-mobile{display:none}
+@media(max-width:650px){
+ .mi-grid .hoist-h2h-label-desktop{display:none}
+ .mi-grid .hoist-h2h-label-mobile{display:inline}
+}
 </style>
 </head>
 
@@ -2885,13 +2909,13 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 
                 <th data-sort="points">
                   <button type="button" class="hoist-sort-button" data-label="Points">
-                    PTS <span class="hoist-sort-arrow"></span>
+                    <span class="hoist-h2h-label-desktop">PTS</span><span class="hoist-h2h-label-mobile">P</span> <span class="hoist-sort-arrow"></span>
                   </button>
                 </th>
 
                 <th data-sort="ppg">
                   <button type="button" class="hoist-sort-button" data-label="Points per game">
-                    PTS/GP <span class="hoist-sort-arrow"></span>
+                    <span class="hoist-h2h-label-desktop">PTS/GP</span><span class="hoist-h2h-label-mobile">P/GP</span> <span class="hoist-sort-arrow"></span>
                   </button>
                 </th>
               </tr>
@@ -2930,13 +2954,13 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 
                 <th data-sort="points">
                   <button type="button" class="hoist-sort-button" data-label="Points">
-                    PTS <span class="hoist-sort-arrow"></span>
+                    <span class="hoist-h2h-label-desktop">PTS</span><span class="hoist-h2h-label-mobile">P</span> <span class="hoist-sort-arrow"></span>
                   </button>
                 </th>
 
                 <th data-sort="ppg">
                   <button type="button" class="hoist-sort-button" data-label="Points per game">
-                    PTS/GP <span class="hoist-sort-arrow"></span>
+                    <span class="hoist-h2h-label-desktop">PTS/GP</span><span class="hoist-h2h-label-mobile">P/GP</span> <span class="hoist-sort-arrow"></span>
                   </button>
                 </th>
               </tr>
