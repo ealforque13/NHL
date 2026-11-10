@@ -10,6 +10,7 @@
   Head to Head:
   - Independent column sorting
   - GP minimum filter
+  - Maximum 5 qualifying players per table
   - Dynamic team abbreviations
 
   Hot Players:
@@ -332,9 +333,20 @@
       row => row.gp >= minGames
     );
 
+    /*
+      Preserve the original GP filter and
+      independent column sorting.
+
+      Only after filtering and sorting do
+      we limit the leaderboard to 5 players.
+
+      The expanded five-game history is
+      handled separately by index.html.
+    */
+
     sortRows(rows, targetId);
 
-    rows.splice(12);
+    rows.splice(5);
 
     $m(targetId).innerHTML = rows.length
       ? rows.map(row => `
