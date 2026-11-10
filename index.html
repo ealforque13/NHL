@@ -2776,6 +2776,47 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   line-height:1.2!important;
 }
 
+
+/* Build 20261110-41: player metadata and form boxes together;
+   performance pinned to bottom-right of each Hot Players row. */
+#overview #mi-hot .hoist-hot-player-meta-line {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 5px !important;
+}
+#overview #mi-hot .hoist-hot-player-meta-line .hoist-hot-player-meta {
+  display: inline !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+#overview #mi-hot .hoist-hot-player-meta-line .hoist-last-five-boxes {
+  display: inline-flex !important;
+  margin: 0 !important;
+  vertical-align: middle !important;
+  flex: 0 0 auto !important;
+}
+#overview #mi-hot .hoist-hot-player-row > td {
+  padding-bottom: 31px !important;
+}
+#overview #mi-hot .hoist-hot-player-row > td:last-child {
+  position: static !important;
+}
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance {
+  position: absolute !important;
+  right: 9px !important;
+  bottom: 7px !important;
+  left: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: max-content !important;
+  max-width: calc(100% - 18px) !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+
 </style>
 </head>
 
@@ -3485,7 +3526,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 <script src="theme.js?v=20261110-1" defer></script>
 <script src="app.js?v=20261110-1" defer></script>
 <script src="v2.js?v=20261110-1" defer></script>
-<script src="matchup.js?v=20261110-40" defer></script>
+<script src="matchup.js?v=20261110-41" defer></script>
 <script src="hoist-head-to-head.js?v=20261110-1" defer></script>
 
 
