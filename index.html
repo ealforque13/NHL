@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-34">
+<meta name="hoist-build" content="20261110-35">
 
 <script>
 try {
@@ -2638,6 +2638,40 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
  #overview #matchup-intelligence .hoist-h2h-game-table th:nth-child(n+2),
  #overview #matchup-intelligence .hoist-h2h-game-table td:nth-child(n+2){width:19%!important;padding-right:2px!important}
 }
+
+/* Build 20261110-36: expanded player history fills the full row width. */
+#overview #matchup-intelligence .hoist-h2h-detail-row > td {
+  width: 100% !important;
+  padding: 0 !important;
+}
+#overview #matchup-intelligence .hoist-h2h-detail {
+  box-sizing: border-box;
+  width: 100% !important;
+  padding: 12px 10px !important;
+}
+#overview #matchup-intelligence .hoist-h2h-game-table {
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  border-collapse: collapse;
+}
+#overview #matchup-intelligence .hoist-h2h-game-table th:first-child,
+#overview #matchup-intelligence .hoist-h2h-game-table td:first-child {
+  width: 46% !important;
+  box-sizing: border-box !important;
+  text-align: left !important;
+  padding-left: 8px !important;
+  padding-right: 4px !important;
+}
+#overview #matchup-intelligence .hoist-h2h-game-table th:not(:first-child),
+#overview #matchup-intelligence .hoist-h2h-game-table td:not(:first-child) {
+  width: 18% !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+}
+
 </style>
 </head>
 
@@ -3471,7 +3505,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const matchup=place?place+opponent:'';
         const subline=(matchup||teamNote)?'<span class="hoist-h2h-game-opponent">'+escapeHtml(matchup+teamNote)+'</span>':'';
         return '<tr><td><span class="hoist-h2h-game-date">'+escapeHtml(formatGameDate(g.date))+'</span>'+subline+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>';
-      }).join('')+'</tbody></table';
+      }).join('')+'</tbody></table>';
   }
   let running=false;
   async function decorate(){
@@ -3482,26 +3516,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if(!club||!opp)return;
       const datasets=await Promise.all([dataFor(club),dataFor(opp)]);
       bodies.forEach((body,index)=>{
-        // Count actual player rows, not inserted detail rows. Otherwise the
-        // fifth player's expanded history becomes the hidden sixth row.
-        // Preserve the five-player display cap AFTER the GP threshold.
-        // Expanded game-history rows never count toward the five players.
-        const minGP=Number(document.getElementById('mi-min-games')?.value||1);
-        let shown=0;
-        [...body.children].filter(row=>!row.classList.contains('hoist-h2h-detail-row'))
-          .forEach(row=>{
-            const gp=Number(row.cells?.[1]?.textContent?.trim());
-            const qualifies=Number.isFinite(gp)&&gp>=minGP;
-            const visible=qualifies&&shown<5;
-            row.classList.toggle('hoist-h2h-player-hidden',!visible);
-            if(visible)shown++;
-            // Never leave a previously expanded history visible for a hidden player.
-            if(!visible&&row.nextElementSibling?.classList.contains('hoist-h2h-detail-row')){
-              row.nextElementSibling.remove();
-              const toggle=row.querySelector('.hoist-h2h-expand');
-              if(toggle)toggle.setAttribute('aria-expanded','false');
-            }
-          });
+        // The matchup leaderboard owns GP filtering, sorting and its five-player cap.
+        // This decorator only adds expandable game-history rows.
         const data=datasets[index];
         if(!data||!Array.isArray(data.players))return;
         const target=index===0?opp:club;
