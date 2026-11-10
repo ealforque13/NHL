@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-32">
+<meta name="hoist-build" content="20261110-34">
 
 <script>
 try {
@@ -3484,8 +3484,24 @@ document.addEventListener('DOMContentLoaded', function () {
       bodies.forEach((body,index)=>{
         // Count actual player rows, not inserted detail rows. Otherwise the
         // fifth player's expanded history becomes the hidden sixth row.
+        // Preserve the five-player display cap AFTER the GP threshold.
+        // Expanded game-history rows never count toward the five players.
+        const minGP=Number(document.getElementById('mi-min-games')?.value||1);
+        let shown=0;
         [...body.children].filter(row=>!row.classList.contains('hoist-h2h-detail-row'))
-          .forEach((row,i)=>row.classList.toggle('hoist-h2h-player-hidden',i>=5));
+          .forEach(row=>{
+            const gp=Number(row.cells?.[1]?.textContent?.trim());
+            const qualifies=Number.isFinite(gp)&&gp>=minGP;
+            const visible=qualifies&&shown<5;
+            row.classList.toggle('hoist-h2h-player-hidden',!visible);
+            if(visible)shown++;
+            // Never leave a previously expanded history visible for a hidden player.
+            if(!visible&&row.nextElementSibling?.classList.contains('hoist-h2h-detail-row')){
+              row.nextElementSibling.remove();
+              const toggle=row.querySelector('.hoist-h2h-expand');
+              if(toggle)toggle.setAttribute('aria-expanded','false');
+            }
+          });
         const data=datasets[index];
         if(!data||!Array.isArray(data.players))return;
         const target=index===0?opp:club;
