@@ -3121,6 +3121,82 @@ html:not(.theme-light) :is(.hoist-last-five-box.no-point,.hoist-last-five-box.di
 /* Preserve intentional form colours, not the legacy blue accents. */
 html:not(.theme-light) #mi-hot .hoist-hot-performance:not(.is-streak) { color: #ff5268 !important; }
 html:not(.theme-light) #mi-hot .hoist-hot-performance.is-streak { color: #39ff9c !important; }
+
+/* HOIST OFFICIAL — OVERVIEW BLUE REMOVAL / BUILD 20261110-49 */
+html:not(.theme-light) .hoist-franchise-identity label[for="team-select"],
+html:not(.theme-light) #team-select {color:#fff !important;}
+html:not(.theme-light) #form .hoist-form-win {color:#39ff9c !important;}
+html:not(.theme-light) #form .hoist-form-loss {color:#ff5268 !important;}
+html:not(.theme-light) #form .hoist-form-separator {color:#85878b !important;}
+/* Calendar next-game badge, month arrows, dates, and game tiles */
+html:not(.theme-light) #overview #next-date,
+html:not(.theme-light) #overview .hoist-calendar-next-inline .pill {
+ background:#292b2f !important;background-color:#292b2f !important;
+ color:#f7f7f8 !important;border:1px solid #55575c !important;
+ box-shadow:none !important;
+}
+html:not(.theme-light) #overview :is(#v2-prev,#v2-next),
+html:not(.theme-light) #overview .hoist-calendar-month-controls button {
+ background:#222428 !important;color:#fff !important;
+ border:1px solid #4b4d52 !important;box-shadow:none !important;
+}
+html:not(.theme-light) #overview :is(#v2-prev,#v2-next):hover {
+ background:#383a3f !important;color:#fff !important;
+}
+html:not(.theme-light) #overview #v2-month-label,
+html:not(.theme-light) #overview .v2-weekdays {color:#f3f3f4 !important;}
+html:not(.theme-light) #overview #v2-calendar :is(.v2-day,.v2-cell,.v2-date,.v2-game,.hoist-calendar-game,.hoist-calendar-cell,.hoist-calendar-day),
+html:not(.theme-light) #overview #v2-calendar > div {
+ background-color:#1d1f22 !important;border-color:#3e4045 !important;
+ box-shadow:none !important;
+}
+html:not(.theme-light) #overview #v2-calendar :is(.v2-game,.hoist-calendar-game,.hoist-home-game,.hoist-away-game),
+html:not(.theme-light) #overview #v2-calendar :is(.v2-game,.hoist-calendar-game,.hoist-home-game,.hoist-away-game) * {
+ background-color:#292b2f !important;border-color:#4a4c51 !important;
+ color:#f5f5f6 !important;box-shadow:none !important;
+}
+html:not(.theme-light) #overview #v2-calendar :is(.today,.selected,.is-today,.is-selected,.next-game,.hoist-next-game) {
+ background-color:#36383d !important;border-color:#8a8c91 !important;
+}
+html:not(.theme-light) #overview #v2-calendar :is(.v2-date,.v2-day-number,.hoist-calendar-date,.hoist-calendar-day-number) {
+ color:#f5f5f6 !important;
+}
+/* Hot Players and Player Statistics: uniform white column headers */
+html:not(.theme-light) #overview #mi-hot th,
+html:not(.theme-light) #overview #mi-hot th *,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-sortable-table thead th,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-sortable-table thead th *,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-h2h-gp-head,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-sort-button {
+ color:#fff !important;
+}
+html:not(.theme-light) #overview #mi-hot th,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-sortable-table thead th,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-sortable-table thead .hoist-sort-button,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-sortable-table thead .hoist-h2h-gp-head {
+ font-size:11px !important;font-weight:800 !important;
+ letter-spacing:.04em !important;
+}
+html:not(.theme-light) #overview #mi-hot .hoist-hot-player-meta,
+html:not(.theme-light) #overview #matchup-intelligence .mi-person small,
+html:not(.theme-light) #overview #matchup-intelligence .hoist-hot-player-meta {
+ color:#f5f5f6 !important;
+}
+/* Last 10 Head-to-Head Matchups: neutral record badge, dates, separators */
+html:not(.theme-light) #overview #hoist-h2h-history-column :is(.h2h-record,.h2h-record-badge,.h2h-record-pill,.record-pill,.record-badge,.h2h-summary,.h2h-summary-record) {
+ background:#292b2f !important;color:#f5f5f6 !important;
+ border-color:#55575c !important;box-shadow:none !important;
+}
+html:not(.theme-light) #overview #hoist-h2h-history-column :is(.h2h-date,.h2h-game-date,.h2h-game-time,.date,.game-date,.h2h-score-date) {
+ color:#f5f5f6 !important;
+}
+html:not(.theme-light) #overview #hoist-h2h-history-column :is(.h2h-game,.h2h-score-row,.h2h-score-grid,.h2h-score-content,.h2h-separator,.h2h-divider,hr) {
+ border-color:#414348 !important;
+}
+html:not(.theme-light) #overview #hoist-h2h-history-column :is(.h2h-game,.h2h-score-row) + :is(.h2h-game,.h2h-score-row) {
+ border-top-color:#414348 !important;
+}
+
 </style>
 </head>
 
@@ -4804,5 +4880,37 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 })();
 </script>
+
+<!-- Colour individual W/L results without changing app.js or its render logic. -->
+<script>
+(function(){
+  function initFormColours(){
+    const node=document.getElementById('form');
+    if(!node)return;
+    let updating=false;
+    function paint(){
+      if(updating)return;
+      const raw=node.textContent.trim();
+      if(!/^[WLOT\s·–-]+$/.test(raw)||raw==='—')return;
+      const parts=raw.split(/\s*·\s*/);
+      const desired=parts.map((part,i)=>{
+        const result=part.trim().toUpperCase();
+        const cls=result==='W'?'hoist-form-win':result==='L'?'hoist-form-loss':'';
+        return (i?'<span class="hoist-form-separator"> · </span>':'')+
+          (cls?'<span class="'+cls+'">'+result+'</span>':result);
+      }).join('');
+      if(node.innerHTML===desired)return;
+      updating=true;
+      node.innerHTML=desired;
+      updating=false;
+    }
+    paint();
+    new MutationObserver(paint).observe(node,{childList:true,subtree:true,characterData:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initFormColours);
+  else initFormColours();
+})();
+</script>
+
 </body>
 </html>
