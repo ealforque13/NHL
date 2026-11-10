@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-8">
+<meta name="hoist-build" content="20261110-10">
 
 <script>
 try {
@@ -2201,6 +2201,69 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
  #stats .hoist-stats-fixed-shell{width:calc(100% + 16px)!important;margin-left:-16px!important}
 }
 @media(min-width:651px){#stats .hoist-stats-player-rail{display:none}}
+
+/* Mobile Stats controls: compact horizontal filter row and 3-letter team selector.
+   The independently anchored Player rail and its scroll geometry are untouched. */
+@media (max-width:650px) {
+  #stats .hoist-stats-controls {
+    display:flex!important;
+    align-items:center!important;
+    justify-content:flex-start!important;
+    gap:8px!important;
+    width:100%!important;
+    min-width:0!important;
+    margin-bottom:12px!important;
+  }
+  #stats .hoist-stats-filters {
+    display:flex!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    gap:6px!important;
+    width:auto!important;
+    flex:0 1 auto!important;
+    min-width:0!important;
+    margin:0!important;
+  }
+  #stats .hoist-stats-filters button {
+    flex:0 0 auto!important;
+    width:auto!important;
+    min-width:65px!important;
+    padding:10px 12px!important;
+    white-space:nowrap!important;
+  }
+  #stats .hoist-stats-toolbar {
+    margin-left:auto!important;
+    position:static!important;
+    display:flex!important;
+    align-items:center!important;
+    flex:0 0 auto!important;
+    width:auto!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  #stats .hoist-stats-picker {
+    width:70px!important;
+    min-width:70px!important;
+    max-width:70px!important;
+    margin:0!important;
+  }
+  #stats .hoist-stats-picker label {display:none!important}
+  #stats .hoist-stats-picker select {
+    box-sizing:border-box!important;
+    width:70px!important;
+    max-width:70px!important;
+    padding:9px 5px!important;
+    font-size:12px!important;
+    font-weight:700!important;
+  }
+  #stats .hoist-stats-subtitle {
+    font-size:clamp(10px,2.85vw,13px)!important;
+    line-height:1.3!important;
+    letter-spacing:-.025em!important;
+    white-space:nowrap!important;
+    overflow:visible!important;
+  }
+}
 </style>
 </head>
 
@@ -2811,12 +2874,14 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 <section id="stats" class="tab-section hidden">
   <article class="panel section-panel hoist-stats-panel">
     
+    <div class="hoist-stats-controls">
     <div class="hoist-stats-filters" role="group" aria-label="Stats scope">
       <button type="button" class="is-active" data-stats-mode="team" aria-pressed="true">Team</button>
       <button type="button" data-stats-mode="league" aria-pressed="false">League</button>
     </div>
     <div class="hoist-stats-toolbar">
       <div class="hoist-stats-picker"><label for="hoist-stats-team">SELECT TEAM</label><select id="hoist-stats-team" aria-label="Select team for statistics"></select></div>
+    </div>
     </div>
     <p id="hoist-stats-status" class="muted" role="status">Loading NHL player statistics…</p>
     <div id="hoist-stats-content"></div>
