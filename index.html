@@ -3197,6 +3197,34 @@ html:not(.theme-light) #overview #hoist-h2h-history-column :is(.h2h-game,.h2h-sc
  border-top-color:#414348 !important;
 }
 
+
+/* Build 20261110-51: restore the ORIGINAL dark-blue-theme calendar bars.
+   Colour only the bar, not its children or the surrounding calendar day. */
+html:not(.theme-light) #overview #v2-calendar .hoist-home-game .hoist-calendar-score-box {
+  background: #b91c1c !important;
+  border: 1px solid #dc2626 !important;
+  color: #fff !important;
+}
+html:not(.theme-light) #overview #v2-calendar .hoist-away-game .hoist-calendar-score-box {
+  background: #1d4ed8 !important;
+  border: 1px solid #2563eb !important;
+  color: #fff !important;
+}
+html:not(.theme-light) #overview #v2-calendar .hoist-calendar-score-box *,
+html:not(.theme-light) #overview #v2-calendar .hoist-calendar-score {
+  color: #fff !important;
+  background: transparent !important;
+}
+/* No hover, active, focus or expanded-row colour changes in H2H player statistics. */
+#overview #matchup-intelligence :is(#mi-left,#mi-right) tr:not(.hoist-h2h-detail-row):is(:hover,:focus-within),
+#overview #matchup-intelligence :is(#mi-left,#mi-right) tr:not(.hoist-h2h-detail-row):is(:hover,:focus-within) > td,
+#overview #matchup-intelligence :is(#mi-left,#mi-right) td.hoist-h2h-clickable:is(:hover,:active,:focus,:focus-within),
+#overview #matchup-intelligence :is(#mi-left,#mi-right) tr.hoist-h2h-row-clickable:is(:hover,:active,:focus-within) > td {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
 </style>
 </head>
 
