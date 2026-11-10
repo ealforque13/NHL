@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-18">
+<meta name="hoist-build" content="20261110-19">
 
 <script>
 try {
@@ -3193,46 +3193,43 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 
-<!-- On mobile only, shorten Head-to-Head player first names without altering desktop names. -->
+<!-- Abbreviate actual Head-to-Head player-name text nodes on mobile,
+     including names inserted asynchronously by hoist-head-to-head.js. -->
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  const bodies=['mi-left','mi-right'].map(id=>document.getElementById(id)).filter(Boolean);
-  if(!bodies.length)return;
-  let updating=false;
-  function shorten(full){
-    const parts=full.trim().split(/\s+/);
-    if(parts.length<2||/^[A-Za-z]\.$/.test(parts[0]))return full;
-    return parts[0].charAt(0)+'. '+parts.slice(1).join(' ');
+document.addEventListener('DOMContentLoaded', function () {
+  const bodies = ['mi-left', 'mi-right'].map(id => document.getElementById(id)).filter(Boolean);
+  if (!bodies.length) return;
+  const original = new WeakMap();
+  let busy = false;
+  function abbreviate(value) {
+    const match = value.match(/^(\s*)([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’-]*)(\s+)([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]*(?:\s+[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ'’.-]*)*)(\s*)$/);
+    if (!match || match[2].length === 1) return value;
+    return match[1] + match[2][0] + '. ' + match[4] + match[5];
   }
-  function refresh(){
-    if(updating)return;
-    updating=true;
-    try{
-      const mobile=window.matchMedia('(max-width:650px)').matches;
-      bodies.forEach(body=>body.querySelectorAll('tr').forEach(row=>{
-        const cell=row.cells&&row.cells[0];if(!cell)return;
-        // Locate the visible player-name text, leaving headshots and team badges untouched.
-        const candidates=[...cell.querySelectorAll('a, .player-name, .mi-player-name, .hoist-player-name, span')]
-          .filter(el=>el.children.length===0&&el.textContent.trim().split(/\s+/).length>=2);
-        const node=candidates[0]||cell;
-        if(node===cell){
-          const textNodes=[...cell.childNodes].filter(n=>n.nodeType===3&&n.textContent.trim().split(/\s+/).length>=2);
-          if(!textNodes.length)return;
-          const n=textNodes[0];
-          if(!n.__hoistFullName)n.__hoistFullName=n.textContent;
-          const value=mobile?shorten(n.__hoistFullName):n.__hoistFullName;
-          if(n.textContent!==value)n.textContent=value;
-        }else{
-          if(!node.dataset.hoistFullName)node.dataset.hoistFullName=node.textContent;
-          const value=mobile?shorten(node.dataset.hoistFullName):node.dataset.hoistFullName;
-          if(node.textContent!==value)node.textContent=value;
-        }
+  function update() {
+    if (busy) return;
+    busy = true;
+    try {
+      const mobile = window.matchMedia('(max-width:650px)').matches;
+      bodies.forEach(body => body.querySelectorAll('tr').forEach(row => {
+        const cell = row.cells && row.cells[0];
+        if (!cell) return;
+        const walker = document.createTreeWalker(cell, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(node => {
+          if (!original.has(node)) original.set(node, node.nodeValue);
+          const full = original.get(node);
+          // Only abbreviate name-like text, not numbers, team codes or badges.
+          const value = mobile ? abbreviate(full) : full;
+          if (node.nodeValue !== value) node.nodeValue = value;
+        });
       }));
-    }finally{updating=false;}
+    } finally { busy = false; }
   }
-  bodies.forEach(body=>new MutationObserver(refresh).observe(body,{childList:true,subtree:true,characterData:true}));
-  window.addEventListener('resize',refresh);
-  refresh();
+  bodies.forEach(body => new MutationObserver(update).observe(body, {childList:true, subtree:true, characterData:true}));
+  window.addEventListener('resize', update);
+  update();
 });
 </script>
 
