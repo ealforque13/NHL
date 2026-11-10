@@ -2882,6 +2882,29 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #overview #mi-hot .hoist-hot-player-row .hoist-hot-performance.is-streak {
   color: #39ff9c !important;
 }
+
+/* Build 20261110-45: Last 10 Matchups arrows match Player Statistics.
+   Collapsed: right; expanded: down. Native details state controls rotation. */
+#overview #hoist-h2h-history-column #hoist-h2h .h2h-chevron,
+#overview #hoist-h2h .h2h-chevron {
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  min-width: 8px !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  color: transparent !important;
+  border-right: 2px solid #b7c9df !important;
+  border-bottom: 2px solid #b7c9df !important;
+  transform: rotate(-45deg) !important;
+  transition: transform .15s ease !important;
+  flex-shrink: 0 !important;
+}
+#overview #hoist-h2h-history-column #hoist-h2h details[open] .h2h-chevron,
+#overview #hoist-h2h details[open] .h2h-chevron {
+  transform: rotate(45deg) !important;
+}
+
 </style>
 </head>
 
