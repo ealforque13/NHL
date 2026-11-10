@@ -2905,6 +2905,28 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   transform: rotate(45deg) !important;
 }
 
+
+/* Hoist Games page — build 20261110-46 */
+body:has(#games:not(.hidden)) .hoist-franchise-hero{display:none!important}
+.hoist-games-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.hoist-games-date-controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.hoist-games-date-controls button,.hoist-games-date-controls input{border:1px solid var(--border,rgba(140,153,177,.28));background:var(--panel,#172132);color:inherit;border-radius:9px;padding:9px 12px;font:inherit;cursor:pointer}
+.hoist-games-date-controls button:hover{border-color:#e44758}
+.hoist-games-date-controls input{min-width:140px;max-width:160px;color-scheme:dark}
+body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist-games-date-controls input{color-scheme:light}
+.hoist-games-day{font-weight:700;font-size:16px;margin:15px 0 12px}
+.hoist-games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:12px;margin-top:14px}
+.hoist-game-card{border:1px solid var(--border,rgba(140,153,177,.22));border-radius:13px;padding:17px;background:var(--panel,rgba(128,128,128,.045));min-width:0}
+.hoist-game-card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#9ca8b9);margin-bottom:15px}
+.hoist-game-team{display:flex;align-items:center;gap:11px;min-width:0;margin:9px 0}
+.hoist-game-team img{width:37px;height:37px;object-fit:contain;flex-shrink:0}
+.hoist-game-team-name{font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hoist-game-team-score{font-size:24px;font-weight:800;margin-left:auto;font-variant-numeric:tabular-nums}
+.hoist-game-card-foot{display:flex;justify-content:space-between;gap:8px;margin-top:13px;padding-top:11px;border-top:1px solid var(--border,rgba(140,153,177,.18));font-size:12px;color:var(--muted,#9ca8b9)}
+.hoist-game-live{color:#ed5261;font-weight:800}
+.hoist-games-footnote{font-size:12px;margin-top:15px}
+@media(max-width:650px){.hoist-games-date-controls{width:100%;justify-content:space-between}.hoist-games-date-controls input{flex:1;min-width:0}.hoist-game-card{padding:13px}}
+
 </style>
 </head>
 
@@ -2940,6 +2962,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
       ▤ <span>Standings</span>
     </button>
 <button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
+    <button class="nav-item" data-tab="games">▦ <span>Games</span></button>
 
     <button class="nav-item" data-tab="lineups">♟ <span>Lineups</span></button>
 </nav>
@@ -2999,6 +3022,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     <button type="button" data-mobile-tab="overview">Overview</button>
     <button type="button" data-mobile-tab="standings">Standings</button>
     <button type="button" data-mobile-tab="stats">Stats</button>
+    <button type="button" data-mobile-tab="games">Games</button>
     <button type="button" data-mobile-tab="lineups">Lineups</button>
   </div>
 </div>
@@ -3506,6 +3530,25 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     <div id="v2-leaders" class="v2-leaders"></div>
   </article>
 
+</section>
+
+<!-- LEAGUE GAMES -->
+<section id="games" class="tab-section hidden">
+  <article class="panel section-panel hoist-games-panel">
+    <div class="section-head hoist-games-head">
+      <div><div class="eyebrow">HOIST OFFICIAL · NHL SCOREBOARD</div><h3>Games</h3></div>
+      <div class="hoist-games-date-controls">
+        <button type="button" id="hoist-games-prev" aria-label="Previous day">‹</button>
+        <input type="date" id="hoist-games-date" aria-label="Choose game date" />
+        <button type="button" id="hoist-games-next" aria-label="Next day">›</button>
+        <button type="button" id="hoist-games-today">Today</button>
+      </div>
+    </div>
+    <div id="hoist-games-day" class="hoist-games-day"></div>
+    <p id="hoist-games-status" class="muted" role="status">Loading NHL games…</p>
+    <div id="hoist-games-grid" class="hoist-games-grid"></div>
+    <p class="hoist-games-footnote muted">Times shown in Eastern Time · Scores reflect the latest cached schedule refresh.</p>
+  </article>
 </section>
 
 <!-- STATS -->
@@ -4469,6 +4512,30 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
 
+
+<!-- Games page navigation: intercept before legacy app.js whitelist. -->
+<script>
+(() => {
+  function openGames(){
+    document.querySelectorAll('.tab-section').forEach(section=>section.classList.toggle('hidden',section.id!=='games'));
+    document.querySelectorAll('.sidebar .nav-item[data-tab]').forEach(button=>button.classList.toggle('active',button.dataset.tab==='games'));
+    const title=document.getElementById('page-title');if(title)title.textContent='NHL Games';
+    document.body.classList.remove('hoist-standings-active');
+    try{sessionStorage.setItem('hoist-active-page','games')}catch(_){}
+    document.dispatchEvent(new CustomEvent('hoist:games-open'));
+  }
+  document.addEventListener('click',event=>{
+    const button=event.target.closest('.sidebar [data-tab="games"]');
+    if(!button)return;
+    event.preventDefault();event.stopImmediatePropagation();openGames();
+  },true);
+  document.addEventListener('DOMContentLoaded',()=>{
+    try{if(sessionStorage.getItem('hoist-active-page')==='games')openGames()}catch(_){}
+  });
+})();
+</script>
+<script src="games.js?v=20261110-46" defer></script>
+
 <!-- KEEP CURRENT PAGE ON RELOAD -->
 <script>
 (() => {
@@ -4478,6 +4545,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!nav) return;
     const page = nav.dataset.tab || nav.dataset.go;
     if (page) {
+      if (page === 'games') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Games'; });
       if (page === 'stats') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Stats'; });
       if (page === 'lineups') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Lineups'; });
       try { sessionStorage.setItem(storageKey, page); } catch (_) {}
