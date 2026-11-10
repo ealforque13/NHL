@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-10">
+<meta name="hoist-build" content="20261110-11">
 
 <script>
 try {
@@ -2264,6 +2264,19 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     overflow:visible!important;
   }
 }
+
+/* Mobile Stats rail: wider for player surnames, clipped to the table's vertical
+   bounds, and independent of the horizontal statistics scroller. */
+@media(max-width:650px){
+ #stats .hoist-stats-fixed-shell{overflow:hidden!important;isolation:isolate!important}
+ #stats .hoist-stats-player-rail{width:146px!important;max-height:100%!important;overflow:hidden!important}
+ #stats .hoist-stats-fixed-shell .hoist-stats-table th:first-child,
+ #stats .hoist-stats-fixed-shell .hoist-stats-table td:first-child{width:146px!important;min-width:146px!important;max-width:146px!important}
+ #stats .hoist-stats-rail-row{padding-left:5px!important;padding-right:5px!important}
+ #stats .hoist-stats-rail-row .hoist-stats-team-cell{gap:5px!important}
+ #stats .hoist-stats-rail-row .hoist-stats-name{flex:1;min-width:0}
+ #stats .hoist-stats-rail-row .hoist-stats-jersey{flex:0 0 32px!important;min-width:32px!important;font-size:11px!important}
+}
 </style>
 </head>
 
@@ -3594,7 +3607,7 @@ document.addEventListener("DOMContentLoaded", function () {
    return pending;
  }
  const jersey=p=>p._hoistJersey??'—';
- const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span></span></span>`;
+ const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(mode==='league'?p.team:jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
  function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
