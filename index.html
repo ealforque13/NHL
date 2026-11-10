@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-1">
+<meta name="hoist-build" content="20261110-3">
 
 <script>
 try {
@@ -2119,6 +2119,17 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #stats .hoist-stat-arrow{font-size:11px;color:#f06470}
 #stats .hoist-stat-name-short{display:none}
 @media(max-width:650px){#stats .hoist-stat-name-full{display:none}#stats .hoist-stat-name-short{display:inline}#stats .hoist-stats-team-cell{gap:5px}#stats .hoist-stats-table td{padding:10px 8px}#stats .hoist-stats-table th.hoist-stat-sortable button{padding:10px 8px}}
+
+/* Mobile navigation: replace compact icon shortcuts with a single page dropdown. */
+.hoist-mobile-nav{display:none}
+@media(max-width:650px){
+  .hoist-mobile-nav{display:flex!important;align-items:center;gap:8px;width:100%;margin:0 0 14px}
+  .hoist-mobile-nav label{font-size:11px;font-weight:700;letter-spacing:.12em;color:#9bb8e6;white-space:nowrap}
+  .hoist-mobile-nav select{flex:1;min-width:0;width:100%;padding:11px 35px 11px 12px;border:1px solid rgba(151,181,224,.35)!important;background:#192842;color:#edf4ff;font:inherit;font-weight:650;cursor:pointer}
+  /* Keep desktop navigation untouched. Suppress mobile nav icon strip. */
+  .sidebar #nav,.sidebar .side-label{display:none!important}
+  .topbar .top-actions{display:none!important}
+}
 </style>
 </head>
 
@@ -2153,23 +2164,10 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     <button class="nav-item" data-tab="standings">
       ▤ <span>Standings</span>
     </button>
-
-    <button class="nav-item" data-tab="compare">
-      ⇄ <span>Compare Teams</span>
-    </button>
-
-    <button class="nav-item" data-tab="analytics">
-      ◈ <span>Analytics</span>
-    </button>
-
-    <button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
+<button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
 
     <button class="nav-item" data-tab="lineups">♟ <span>Lineups</span></button>
-
-    <button class="nav-item" data-tab="fantasy">
-      ✦ <span>Fantasy Planner</span>
-    </button>
-  </nav>
+</nav>
 
   <div class="sidebar-bottom">
     <div class="sidebar-theme-control">
@@ -2219,6 +2217,16 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     >↻</button>
   </div>
 </header>
+
+<div class="hoist-mobile-nav">
+  <label for="hoist-mobile-page-select">PAGE</label>
+  <select id="hoist-mobile-page-select" aria-label="Navigate to page">
+    <option value="overview">Overview</option>
+    <option value="standings">Standings</option>
+    <option value="stats">Stats</option>
+    <option value="lineups">Lineups</option>
+  </select>
+</div>
 
 <div class="content">
 
@@ -3496,5 +3504,28 @@ document.addEventListener("DOMContentLoaded", function () {
 })();
 </script>
 
+
+<script>
+/* Mirror the existing navigation buttons, preserving their page handlers. */
+(() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const select = document.getElementById('hoist-mobile-page-select');
+    if (!select) return;
+    const buttons = [...document.querySelectorAll('.sidebar #nav .nav-item[data-tab]')];
+    const sync = () => {
+      const active = buttons.find(button => button.classList.contains('active'));
+      if (active && select.value !== active.dataset.tab) select.value = active.dataset.tab;
+    };
+    select.addEventListener('change', () => {
+      const button = buttons.find(item => item.dataset.tab === select.value);
+      if (button) button.click();
+      requestAnimationFrame(sync);
+    });
+    const observer = new MutationObserver(sync);
+    buttons.forEach(button => observer.observe(button, {attributes:true,attributeFilter:['class']}));
+    sync();
+  });
+})();
+</script>
 </body>
 </html>
