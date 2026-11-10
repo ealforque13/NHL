@@ -2672,6 +2672,55 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   padding-right: 2px !important;
 }
 
+
+/* Build 20261110-37: align expanded history stats against the RIGHT edge.
+   Explicit nested-table selectors prevent the parent leaderboard's
+   column sizing from affecting these four history columns. */
+#overview #matchup-intelligence .hoist-h2h-detail-row > td[colspan="6"] {
+  padding: 0 !important;
+  text-align: left !important;
+}
+#overview #matchup-intelligence .hoist-h2h-detail-row .hoist-h2h-detail {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 0 12px 10px !important;
+  overflow-x: auto;
+}
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table {
+  display: table !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+  margin: 0 !important;
+}
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th,
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td {
+  box-sizing: border-box !important;
+  padding: 8px 0 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:first-child,
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:first-child {
+  width: 58% !important;
+  text-align: left !important;
+  padding-left: 0 !important;
+}
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:nth-child(2),
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:nth-child(2),
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:nth-child(3),
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:nth-child(3),
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:nth-child(4),
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:nth-child(4) {
+  width: 14% !important;
+}
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > thead > tr > th:last-child,
+#overview #matchup-intelligence .hoist-h2h-detail-row table.hoist-h2h-game-table > tbody > tr > td:last-child {
+  padding-right: 0 !important;
+  text-align: right !important;
+}
+
 </style>
 </head>
 
