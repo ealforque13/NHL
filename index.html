@@ -2985,6 +2985,50 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
   #overview #matchup-intelligence .mi-person strong { font-size:12px!important; }
   #overview #matchup-intelligence .hoist-sortable-table tbody tr.hoist-h2h-row-clickable>td { font-size:14px!important; }
 }
+
+/* Build 20261110-55: truncate long player names before statistics columns. */
+#overview #mi-hot td.hoist-hot-player-name,
+#overview #mi-left td:first-child,
+#overview #mi-right td:first-child {
+  min-width:0!important;
+  overflow:hidden!important;
+}
+#overview #mi-hot .mi-person,
+#overview #mi-left .mi-person,
+#overview #mi-right .mi-person {
+  display:flex!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+#overview #mi-hot .mi-person > span:last-child,
+#overview #mi-left .mi-person > span:last-child,
+#overview #mi-right .mi-person > span:last-child {
+  display:block!important;
+  flex:1 1 0!important;
+  min-width:0!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+}
+#overview #mi-hot .mi-person strong,
+#overview #mi-left .mi-person strong,
+#overview #mi-right .mi-person strong {
+  display:block!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  white-space:nowrap!important;
+}
+/* Retain all stats on narrow screens: never let the player column grow. */
+@media(max-width:600px) {
+  #overview #mi-hot table,
+  #overview #mi-left table,
+  #overview #mi-right table {table-layout:fixed!important;width:100%!important;}
+  #overview #mi-hot .mi-person,
+  #overview #mi-left .mi-person,
+  #overview #mi-right .mi-person {overflow:hidden!important;}
+}
 </style>
 </head>
 
