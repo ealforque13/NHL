@@ -2817,6 +2817,64 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   white-space: nowrap !important;
 }
 
+/* Build 20261110-42: all Hot Players performance labels use the same green. */
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance,
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance.is-streak {
+  color: #39ff9c !important;
+}
+
+
+/* Build 20261110-43: compact Hot Players rows, form at bottom-left,
+   performance at bottom-right. All performance labels are green. */
+#overview #mi-hot .hoist-hot-player-row {
+  position: relative !important;
+}
+#overview #mi-hot .hoist-hot-player-row > td,
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {
+  padding-top: 8px !important;
+  padding-bottom: 24px !important;
+  vertical-align: middle !important;
+}
+#overview #mi-hot .hoist-hot-player-meta {
+  display: block !important;
+  margin-top: 3px !important;
+}
+#overview #mi-hot .hoist-hot-player-row > td:first-child > .hoist-last-five-boxes {
+  position: absolute !important;
+  left: 10px !important;
+  bottom: 7px !important;
+  display: inline-flex !important;
+  margin: 0 !important;
+  align-items: center !important;
+  z-index: 2;
+}
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance,
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-performance.is-streak {
+  position: absolute !important;
+  right: 9px !important;
+  bottom: 7px !important;
+  left: auto !important;
+  display: block !important;
+  width: max-content !important;
+  max-width: calc(100% - 100px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #39ff9c !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
+@media (max-width: 600px) {
+  #overview #mi-hot .hoist-hot-player-row .hoist-hot-performance,
+  #overview #mi-hot .hoist-hot-player-row .hoist-hot-performance.is-streak {
+    font-size: 9px !important;
+  }
+  #overview #mi-hot .hoist-hot-player-row > td:first-child > .hoist-last-five-boxes {
+    left: 8px !important;
+  }
+}
+
 </style>
 </head>
 
@@ -3526,34 +3584,8 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 <script src="theme.js?v=20261110-1" defer></script>
 <script src="app.js?v=20261110-1" defer></script>
 <script src="v2.js?v=20261110-1" defer></script>
-<script src="matchup.js?v=20261110-41" defer></script>
+<script src="matchup.js?v=20261110-43" defer></script>
 <script src="hoist-head-to-head.js?v=20261110-1" defer></script>
-
-
-<!-- Keep each Hot Players performance label directly below its five game boxes,
-     including after the live matchup data refreshes. -->
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const body=document.getElementById('mi-hot');
-  if(!body)return;
-  let working=false;
-  function arrange(){
-    if(working)return;
-    working=true;
-    try{
-      body.querySelectorAll('tr').forEach(function(row){
-        const boxes=row.querySelector('.hoist-last-five-boxes');
-        const label=row.querySelector('.hoist-hot-performance');
-        if(boxes&&label&&boxes.nextElementSibling!==label){
-          boxes.insertAdjacentElement('afterend',label);
-        }
-      });
-    }finally{working=false}
-  }
-  arrange();
-  new MutationObserver(arrange).observe(body,{childList:true,subtree:true});
-});
-</script>
 
 
 <!-- Abbreviate actual Head-to-Head player-name text nodes on mobile,
