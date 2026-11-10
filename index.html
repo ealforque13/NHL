@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-3">
+<meta name="hoist-build" content="20261110-4">
 
 <script>
 try {
@@ -2120,13 +2120,27 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #stats .hoist-stat-name-short{display:none}
 @media(max-width:650px){#stats .hoist-stat-name-full{display:none}#stats .hoist-stat-name-short{display:inline}#stats .hoist-stats-team-cell{gap:5px}#stats .hoist-stats-table td{padding:10px 8px}#stats .hoist-stats-table th.hoist-stat-sortable button{padding:10px 8px}}
 
-/* Mobile navigation: replace compact icon shortcuts with a single page dropdown. */
+/* Player Stats typography follows Standings without changing column widths. */
+#stats .hoist-stats-table {font-family:inherit;font-size:13px;font-variant-numeric:tabular-nums}
+#stats .hoist-stats-table thead th {font-size:11px!important;font-weight:800!important;letter-spacing:.04em;color:#91b8ec;border-top:1px solid rgba(125,155,195,.23);border-bottom:1px solid rgba(125,155,195,.23)}
+#stats .hoist-stats-table thead th button {font-weight:800!important}
+#stats .hoist-stats-table td {font-size:13px;font-weight:500}
+#stats .hoist-stats-table .hoist-stat-selected,#stats .hoist-stats-table th.hoist-stat-selected button{color:#f06470!important}
+
+/* Mobile navigation: compact top-right menu; desktop remains unchanged. */
 .hoist-mobile-nav{display:none}
 @media(max-width:650px){
-  .hoist-mobile-nav{display:flex!important;align-items:center;gap:8px;width:100%;margin:0 0 14px}
-  .hoist-mobile-nav label{font-size:11px;font-weight:700;letter-spacing:.12em;color:#9bb8e6;white-space:nowrap}
-  .hoist-mobile-nav select{flex:1;min-width:0;width:100%;padding:11px 35px 11px 12px;border:1px solid rgba(151,181,224,.35)!important;background:#192842;color:#edf4ff;font:inherit;font-weight:650;cursor:pointer}
-  /* Keep desktop navigation untouched. Suppress mobile nav icon strip. */
+  .hoist-mobile-nav{display:block!important;position:relative;flex:none;margin:0 0 0 10px;z-index:100}
+  .hoist-mobile-menu-button{display:flex;align-items:center;justify-content:center;gap:7px;background:#192842;color:#d9eaff;border:1px solid rgba(151,181,224,.38);border-radius:8px;padding:9px 11px;font:700 12px/1.2 inherit;cursor:pointer;min-height:38px}
+  .hoist-mobile-menu-button svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+  .hoist-mobile-menu-button[aria-expanded="true"]{border-color:#8bc8ff;color:#8bc8ff}
+  .hoist-mobile-menu-options{position:absolute;right:0;top:calc(100% + 8px);width:180px;padding:6px;background:#15243c;border:1px solid #41577a;border-radius:10px;box-shadow:0 14px 28px rgba(0,0,0,.35)}
+  .hoist-mobile-menu-options[hidden]{display:none!important}
+  .hoist-mobile-menu-options button{display:block;width:100%;text-align:left;background:transparent;border:0;border-radius:6px;color:#dce9fb;font:650 13px/1.3 inherit;padding:11px 12px;cursor:pointer}
+  .hoist-mobile-menu-options button.is-active{color:#8bc8ff;background:#213854}
+  .topbar{display:flex!important;align-items:center;justify-content:space-between;gap:8px}
+  .topbar>div:first-child{min-width:0;flex:1}
+  .topbar #page-title{overflow-wrap:anywhere}
   .sidebar #nav,.sidebar .side-label{display:none!important}
   .topbar .top-actions{display:none!important}
 }
@@ -2216,17 +2230,18 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
       title="Refresh data"
     >↻</button>
   </div>
-</header>
-
-<div class="hoist-mobile-nav">
-  <label for="hoist-mobile-page-select">PAGE</label>
-  <select id="hoist-mobile-page-select" aria-label="Navigate to page">
-    <option value="overview">Overview</option>
-    <option value="standings">Standings</option>
-    <option value="stats">Stats</option>
-    <option value="lineups">Lineups</option>
-  </select>
+<div class="hoist-mobile-nav" id="hoist-mobile-nav">
+  <button type="button" id="hoist-mobile-menu-toggle" class="hoist-mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="hoist-mobile-menu-options">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Menu
+  </button>
+  <div id="hoist-mobile-menu-options" class="hoist-mobile-menu-options" hidden>
+    <button type="button" data-mobile-tab="overview">Overview</button>
+    <button type="button" data-mobile-tab="standings">Standings</button>
+    <button type="button" data-mobile-tab="stats">Stats</button>
+    <button type="button" data-mobile-tab="lineups">Lineups</button>
+  </div>
 </div>
+</header>
 
 <div class="content">
 
@@ -2738,7 +2753,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 <!-- STATS -->
 <section id="stats" class="tab-section hidden">
   <article class="panel section-panel hoist-stats-panel">
-    <div class="section-head"><div><div class="eyebrow">2026–27 NHL STATISTICS</div><h3>Stats</h3></div></div>
+    
     <div class="hoist-stats-filters" role="group" aria-label="Stats scope">
       <button type="button" class="is-active" data-stats-mode="team" aria-pressed="true">Team</button>
       <button type="button" data-stats-mode="league" aria-pressed="false">League</button>
@@ -3506,24 +3521,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <script>
-/* Mirror the existing navigation buttons, preserving their page handlers. */
+/* Compact mobile navigation forwards clicks to the existing page handlers. */
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
-    const select = document.getElementById('hoist-mobile-page-select');
-    if (!select) return;
-    const buttons = [...document.querySelectorAll('.sidebar #nav .nav-item[data-tab]')];
-    const sync = () => {
-      const active = buttons.find(button => button.classList.contains('active'));
-      if (active && select.value !== active.dataset.tab) select.value = active.dataset.tab;
-    };
-    select.addEventListener('change', () => {
-      const button = buttons.find(item => item.dataset.tab === select.value);
-      if (button) button.click();
-      requestAnimationFrame(sync);
-    });
-    const observer = new MutationObserver(sync);
-    buttons.forEach(button => observer.observe(button, {attributes:true,attributeFilter:['class']}));
-    sync();
+    const root=document.getElementById('hoist-mobile-nav');
+    const toggle=document.getElementById('hoist-mobile-menu-toggle');
+    const menu=document.getElementById('hoist-mobile-menu-options');
+    if(!root||!toggle||!menu)return;
+    const navButtons=[...document.querySelectorAll('.sidebar #nav .nav-item[data-tab]')];
+    const options=[...menu.querySelectorAll('[data-mobile-tab]')];
+    const close=()=>{menu.hidden=true;toggle.setAttribute('aria-expanded','false')};
+    const sync=()=>{const active=navButtons.find(b=>b.classList.contains('active'));
+      options.forEach(b=>b.classList.toggle('is-active',!!active&&b.dataset.mobileTab===active.dataset.tab));};
+    toggle.addEventListener('click',()=>{const opening=menu.hidden;menu.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));sync()});
+    options.forEach(option=>option.addEventListener('click',()=>{
+      const target=navButtons.find(b=>b.dataset.tab===option.dataset.mobileTab);
+      if(target)target.click();close();requestAnimationFrame(sync);
+    }));
+    document.addEventListener('click',e=>{if(!root.contains(e.target))close()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+    const observer=new MutationObserver(sync);
+    navButtons.forEach(b=>observer.observe(b,{attributes:true,attributeFilter:['class']}));sync();
   });
 })();
 </script>
