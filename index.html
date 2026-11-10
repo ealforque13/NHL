@@ -2050,6 +2050,10 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   }
 }
 
+/* Hide the franchise summary only while Lineups is selected.
+   Keep its DOM nodes for existing app.js references and other pages. */
+body:has(#lineups:not(.hidden)) .hoist-franchise-hero{display:none !important}
+
 /* Team lineups — isolated from existing standings and page sizing */
 .hoist-lineups-panel{max-width:1100px}
 .hoist-lineup-team-bar{display:flex;align-items:center;gap:16px;padding:16px;background:#192842;border:1px solid rgba(151,181,224,.15);border-radius:12px;margin:18px 0}
