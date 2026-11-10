@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-15">
+<meta name="hoist-build" content="20261110-16">
 
 <script>
 try {
@@ -2402,6 +2402,13 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     min-width:50px !important;
     max-width:50px !important;
     box-sizing:border-box !important;
+  }
+}
+
+/* Mobile Stats team selector: square corners only; preserve dimensions and colours. */
+@media (max-width:650px) {
+  #stats .hoist-stats-picker select {
+    border-radius:0 !important;
   }
 }
 </style>
