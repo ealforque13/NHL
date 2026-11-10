@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-16">
+<meta name="hoist-build" content="20261110-17">
 
 <script>
 try {
@@ -2411,6 +2411,40 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     border-radius:0 !important;
   }
 }
+
+/* Overview: align the head-to-head GP filter with the title at top right. */
+#overview #matchup-intelligence .mi-header {
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:12px!important;
+  flex-wrap:nowrap!important;
+}
+#overview #matchup-intelligence .mi-header > div:first-child {min-width:0!important}
+#overview #matchup-intelligence .mi-header .hoist-matchup-controls {
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  flex:0 0 auto!important;
+  margin:0!important;
+  padding:0!important;
+  gap:0!important;
+}
+#overview #matchup-intelligence .mi-header .hoist-matchup-filter {gap:7px!important}
+/* Hot player performance summary belongs directly below the five game boxes. */
+#overview #mi-hot .hoist-hot-player-row .hoist-hot-stat {padding-bottom:8px!important}
+#overview #mi-hot .hoist-last-five-boxes + .hoist-hot-performance {
+  position:static!important;
+  display:block!important;
+  width:max-content!important;
+  margin-top:5px!important;
+  margin-left:0!important;
+  margin-right:0!important;
+  text-align:left!important;
+  white-space:nowrap!important;
+}
+
 </style>
 </head>
 
@@ -2690,23 +2724,20 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 
     <div class="section-head mi-header">
       <div>
-        <div class="eyebrow hoist-h2h-eyebrow">
-          HEAD TO HEAD
-        </div>
+        <div class="eyebrow hoist-h2h-eyebrow">HEAD TO HEAD</div>
         <h3 id="mi-title">Player Statistics</h3>
       </div>
-    </div>
-
-    <div class="mi-controls hoist-matchup-controls">
-      <div class="hoist-matchup-filter">
-        <label for="mi-min-games">GP</label>
-        <select id="mi-min-games">
-          <option value="1">1+</option>
-          <option value="2">2+</option>
-          <option value="3">3+</option>
-          <option value="5">5+</option>
-          <option value="10">10+</option>
-        </select>
+      <div class="mi-controls hoist-matchup-controls">
+        <div class="hoist-matchup-filter">
+          <label for="mi-min-games">GP</label>
+          <select id="mi-min-games">
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="5">5+</option>
+            <option value="10">10+</option>
+          </select>
+        </div>
       </div>
     </div>
 
@@ -3125,6 +3156,32 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 <script src="v2.js?v=20261110-1" defer></script>
 <script src="matchup.js?v=20261110-1" defer></script>
 <script src="hoist-head-to-head.js?v=20261110-1" defer></script>
+
+
+<!-- Keep each Hot Players performance label directly below its five game boxes,
+     including after the live matchup data refreshes. -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const body=document.getElementById('mi-hot');
+  if(!body)return;
+  let working=false;
+  function arrange(){
+    if(working)return;
+    working=true;
+    try{
+      body.querySelectorAll('tr').forEach(function(row){
+        const boxes=row.querySelector('.hoist-last-five-boxes');
+        const label=row.querySelector('.hoist-hot-performance');
+        if(boxes&&label&&boxes.nextElementSibling!==label){
+          boxes.insertAdjacentElement('afterend',label);
+        }
+      });
+    }finally{working=false}
+  }
+  arrange();
+  new MutationObserver(arrange).observe(body,{childList:true,subtree:true});
+});
+</script>
 
 <!-- STATIC CALENDAR -->
 
