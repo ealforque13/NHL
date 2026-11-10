@@ -1,0 +1,181 @@
+{
+  "team": "LAK",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:05.705029+00:00",
+  "forwards": [
+    {
+      "id": 8476469,
+      "name": "Joel Armia",
+      "position": "R",
+      "number": 40,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8476469.png"
+    },
+    {
+      "id": 8482124,
+      "name": "Quinton Byfield",
+      "position": "R",
+      "number": 55,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8482124.png"
+    },
+    {
+      "id": 8483675,
+      "name": "Kenny Connors",
+      "position": "C",
+      "number": 34,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8483675.png"
+    },
+    {
+      "id": 8477942,
+      "name": "Kevin Fiala",
+      "position": "L",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8477942.png"
+    },
+    {
+      "id": 8475287,
+      "name": "Erik Haula",
+      "position": "L",
+      "number": 56,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8475287.png"
+    },
+    {
+      "id": 8482726,
+      "name": "Samuel Helenius",
+      "position": "C",
+      "number": 79,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8482726.png"
+    },
+    {
+      "id": 8477960,
+      "name": "Adrian Kempe",
+      "position": "R",
+      "number": 9,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8477960.png"
+    },
+    {
+      "id": 8482155,
+      "name": "Alex Laferriere",
+      "position": "R",
+      "number": 14,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8482155.png"
+    },
+    {
+      "id": 8476872,
+      "name": "Scott Laughton",
+      "position": "C",
+      "number": 21,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8476872.png"
+    },
+    {
+      "id": 8481732,
+      "name": "Andre Lee",
+      "position": "L",
+      "number": 47,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8481732.png"
+    },
+    {
+      "id": 8479675,
+      "name": "Trevor Moore",
+      "position": "L",
+      "number": 12,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8479675.png"
+    },
+    {
+      "id": 8478550,
+      "name": "Artemi Panarin",
+      "position": "L",
+      "number": 10,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8478550.png"
+    },
+    {
+      "id": 8470621,
+      "name": "Corey Perry",
+      "position": "R",
+      "number": 90,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8470621.png"
+    },
+    {
+      "id": 8481532,
+      "name": "Alex Turcotte",
+      "position": "C",
+      "number": 15,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8481532.png"
+    },
+    {
+      "id": 8475692,
+      "name": "Mats Zuccarello",
+      "position": "R",
+      "number": 36,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8475692.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8479998,
+      "name": "Mikey Anderson",
+      "position": "D",
+      "number": 44,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8479998.png"
+    },
+    {
+      "id": 8476879,
+      "name": "Cody Ceci",
+      "position": "D",
+      "number": 5,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8476879.png"
+    },
+    {
+      "id": 8482730,
+      "name": "Brandt Clarke",
+      "position": "D",
+      "number": 92,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8482730.png"
+    },
+    {
+      "id": 8474563,
+      "name": "Drew Doughty",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8474563.png"
+    },
+    {
+      "id": 8475208,
+      "name": "Brian Dumoulin",
+      "position": "D",
+      "number": 2,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8475208.png"
+    },
+    {
+      "id": 8476441,
+      "name": "Joel Edmundson",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8476441.png"
+    },
+    {
+      "id": 8476979,
+      "name": "Erik Gustafsson",
+      "position": "D",
+      "number": 64,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8476979.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8476341,
+      "name": "Anton Forsberg",
+      "position": "G",
+      "number": 31,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8476341.png"
+    },
+    {
+      "id": 8475311,
+      "name": "Darcy Kuemper",
+      "position": "G",
+      "number": 35,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/LAK/8475311.png"
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "team": "CBJ",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:03.106062+00:00",
+  "forwards": [
+    {
+      "id": 8475745,
+      "name": "Charlie Coyle",
+      "position": "C",
+      "number": 3,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8475745.png"
+    },
+    {
+      "id": 8483432,
+      "name": "Luca Del Bel Belluz",
+      "position": "C",
+      "number": 93,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8483432.png"
+    },
+    {
+      "id": 8484166,
+      "name": "Adam Fantilli",
+      "position": "C",
+      "number": 19,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8484166.png"
+    },
+    {
+      "id": 8478856,
+      "name": "Conor Garland",
+      "position": "R",
+      "number": 83,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8478856.png"
+    },
+    {
+      "id": 8482660,
+      "name": "Kent Johnson",
+      "position": "C",
+      "number": 91,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8482660.png"
+    },
+    {
+      "id": 8482720,
+      "name": "Matthew Knies",
+      "position": "L",
+      "number": 89,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8482720.png"
+    },
+    {
+      "id": 8479066,
+      "name": "Ryan Lomberg",
+      "position": "L",
+      "number": 94,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8479066.png"
+    },
+    {
+      "id": 8478904,
+      "name": "Steven Lorentz",
+      "position": "C",
+      "number": 18,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8478904.png"
+    },
+    {
+      "id": 8477497,
+      "name": "Sean Monahan",
+      "position": "C",
+      "number": 23,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8477497.png"
+    },
+    {
+      "id": 8477501,
+      "name": "Valeri Nichushkin",
+      "position": "R",
+      "number": 43,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8477501.png"
+    },
+    {
+      "id": 8479671,
+      "name": "Mathieu Olivier",
+      "position": "R",
+      "number": 24,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8479671.png"
+    },
+    {
+      "id": 8482705,
+      "name": "Cole Sillinger",
+      "position": "C",
+      "number": 4,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8482705.png"
+    },
+    {
+      "id": 8481716,
+      "name": "Dmitri Voronkov",
+      "position": "L",
+      "number": 10,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8481716.png"
+    },
+    {
+      "id": 8485469,
+      "name": "Jack Williams",
+      "position": "C",
+      "number": 92,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8485469.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8481161,
+      "name": "Jake Christiansen",
+      "position": "D",
+      "number": 2,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8481161.png"
+    },
+    {
+      "id": 8479371,
+      "name": "Dante Fabbro",
+      "position": "D",
+      "number": 15,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8479371.png"
+    },
+    {
+      "id": 8475790,
+      "name": "Erik Gudbranson",
+      "position": "D",
+      "number": 44,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8475790.png"
+    },
+    {
+      "id": 8483485,
+      "name": "Denton Mateychuk",
+      "position": "D",
+      "number": 5,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8483485.png"
+    },
+    {
+      "id": 8478500,
+      "name": "Ivan Provorov",
+      "position": "D",
+      "number": 9,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8478500.png"
+    },
+    {
+      "id": 8476923,
+      "name": "Damon Severson",
+      "position": "D",
+      "number": 78,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8476923.png"
+    },
+    {
+      "id": 8478460,
+      "name": "Zach Werenski",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8478460.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8482982,
+      "name": "Jet Greaves",
+      "position": "G",
+      "number": 73,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8482982.png"
+    },
+    {
+      "id": 8475660,
+      "name": "Cam Talbot",
+      "position": "G",
+      "number": 33,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CBJ/8475660.png"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "team": "UTA",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:11.301579+00:00",
+  "forwards": [
+    {
+      "id": 8479619,
+      "name": "Michael Carcone",
+      "position": "L",
+      "number": 53,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479619.png"
+    },
+    {
+      "id": 8483431,
+      "name": "Logan Cooley",
+      "position": "C",
+      "number": 92,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8483431.png"
+    },
+    {
+      "id": 8478474,
+      "name": "Lawson Crouse",
+      "position": "L",
+      "number": 67,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478474.png"
+    },
+    {
+      "id": 8482699,
+      "name": "Dylan Guenther",
+      "position": "R",
+      "number": 11,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8482699.png"
+    },
+    {
+      "id": 8480849,
+      "name": "Barrett Hayton",
+      "position": "C",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480849.png"
+    },
+    {
+      "id": 8479343,
+      "name": "Clayton Keller",
+      "position": "R",
+      "number": 9,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479343.png"
+    },
+    {
+      "id": 8475314,
+      "name": "Anders Lee",
+      "position": "L",
+      "number": 72,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8475314.png"
+    },
+    {
+      "id": 8480855,
+      "name": "Jack McBain",
+      "position": "C",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480855.png"
+    },
+    {
+      "id": 8477070,
+      "name": "Liam O'Brien",
+      "position": "C",
+      "number": 38,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477070.png"
+    },
+    {
+      "id": 8477951,
+      "name": "Nick Schmaltz",
+      "position": "C",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477951.png"
+    },
+    {
+      "id": 8478831,
+      "name": "Kevin Stenlund",
+      "position": "C",
+      "number": 82,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478831.png"
+    },
+    {
+      "id": 8476389,
+      "name": "Vincent Trocheck",
+      "position": "C",
+      "number": 16,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8476389.png"
+    },
+    {
+      "id": 8479977,
+      "name": "Kailer Yamamoto",
+      "position": "R",
+      "number": 56,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479977.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8485010,
+      "name": "Gregor Biber",
+      "position": "D",
+      "number": 94,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8485010.png"
+    },
+    {
+      "id": 8480084,
+      "name": "Nick DeSimone",
+      "position": "D",
+      "number": 57,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480084.png"
+    },
+    {
+      "id": 8483472,
+      "name": "Maveric Lamoureux",
+      "position": "D",
+      "number": 10,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8483472.png"
+    },
+    {
+      "id": 8478507,
+      "name": "John Marino",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478507.png"
+    },
+    {
+      "id": 8479369,
+      "name": "Andrew Peeke",
+      "position": "D",
+      "number": 20,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479369.png"
+    },
+    {
+      "id": 8477220,
+      "name": "Nate Schmidt",
+      "position": "D",
+      "number": 88,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477220.png"
+    },
+    {
+      "id": 8479410,
+      "name": "Mikhail Sergachev",
+      "position": "D",
+      "number": 98,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479410.png"
+    },
+    {
+      "id": 8484386,
+      "name": "Dmitri Simashev",
+      "position": "D",
+      "number": 26,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8484386.png"
+    },
+    {
+      "id": 8477346,
+      "name": "MacKenzie Weegar",
+      "position": "D",
+      "number": 52,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477346.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8482657,
+      "name": "Sebastian Cossa",
+      "position": "G",
+      "number": 33,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8482657.png"
+    },
+    {
+      "id": 8478872,
+      "name": "Karel Vejmelka",
+      "position": "G",
+      "number": 70,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478872.png"
+    }
+  ]
+}

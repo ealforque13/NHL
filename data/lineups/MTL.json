@@ -1,0 +1,188 @@
+{
+  "team": "MTL",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:06.429865+00:00",
+  "forwards": [
+    {
+      "id": 8476981,
+      "name": "Josh Anderson",
+      "position": "R",
+      "number": 17,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8476981.png"
+    },
+    {
+      "id": 8483424,
+      "name": "Owen Beck",
+      "position": "C",
+      "number": 62,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8483424.png"
+    },
+    {
+      "id": 8482737,
+      "name": "Zachary Bolduc",
+      "position": "R",
+      "number": 76,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8482737.png"
+    },
+    {
+      "id": 8481540,
+      "name": "Cole Caufield",
+      "position": "R",
+      "number": 13,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8481540.png"
+    },
+    {
+      "id": 8481523,
+      "name": "Kirby Dach",
+      "position": "C",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8481523.png"
+    },
+    {
+      "id": 8476479,
+      "name": "Phillip Danault",
+      "position": "C",
+      "number": 24,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8476479.png"
+    },
+    {
+      "id": 8484984,
+      "name": "Ivan Demidov",
+      "position": "R",
+      "number": 93,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8484984.png"
+    },
+    {
+      "id": 8478133,
+      "name": "Jake Evans",
+      "position": "C",
+      "number": 71,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8478133.png"
+    },
+    {
+      "id": 8482775,
+      "name": "Oliver Kapanen",
+      "position": "C",
+      "number": 91,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8482775.png"
+    },
+    {
+      "id": 8475184,
+      "name": "Chris Kreider",
+      "position": "L",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8475184.png"
+    },
+    {
+      "id": 8481618,
+      "name": "Alex Newhook",
+      "position": "C",
+      "number": 15,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8481618.png"
+    },
+    {
+      "id": 8483515,
+      "name": "Juraj Slafkovský",
+      "position": "L",
+      "number": 20,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8483515.png"
+    },
+    {
+      "id": 8480018,
+      "name": "Nick Suzuki",
+      "position": "C",
+      "number": 14,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8480018.png"
+    },
+    {
+      "id": 8480074,
+      "name": "Alexandre Texier",
+      "position": "L",
+      "number": 85,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8480074.png"
+    },
+    {
+      "id": 8484403,
+      "name": "Florian Xhekaj",
+      "position": "L",
+      "number": 63,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8484403.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8478851,
+      "name": "Alexandre Carrier",
+      "position": "D",
+      "number": 45,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8478851.png"
+    },
+    {
+      "id": 8480865,
+      "name": "Noah Dobson",
+      "position": "D",
+      "number": 53,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8480865.png"
+    },
+    {
+      "id": 8483686,
+      "name": "Adam Engstrom",
+      "position": "D",
+      "number": 42,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8483686.png"
+    },
+    {
+      "id": 8482087,
+      "name": "Kaiden Guhle",
+      "position": "D",
+      "number": 21,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8482087.png"
+    },
+    {
+      "id": 8483457,
+      "name": "Lane Hutson",
+      "position": "D",
+      "number": 48,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8483457.png"
+    },
+    {
+      "id": 8476875,
+      "name": "Mike Matheson",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8476875.png"
+    },
+    {
+      "id": 8482964,
+      "name": "Arber Xhekaj",
+      "position": "D",
+      "number": 72,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8482964.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8482487,
+      "name": "Jakub Dobes",
+      "position": "G",
+      "number": 75,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8482487.png"
+    },
+    {
+      "id": 8484170,
+      "name": "Jacob Fowler",
+      "position": "G",
+      "number": 32,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8484170.png"
+    },
+    {
+      "id": 8478470,
+      "name": "Samuel Montembeault",
+      "position": "G",
+      "number": 35,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8478470.png"
+    }
+  ]
+}

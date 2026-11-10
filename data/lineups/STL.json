@@ -1,0 +1,181 @@
+{
+  "team": "STL",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:10.232121+00:00",
+  "forwards": [
+    {
+      "id": 8481013,
+      "name": "Jonatan Berggren",
+      "position": "R",
+      "number": 29,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8481013.png"
+    },
+    {
+      "id": 8477402,
+      "name": "Pavel Buchnevich",
+      "position": "L",
+      "number": 89,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8477402.png"
+    },
+    {
+      "id": 8479346,
+      "name": "Dillon Dube",
+      "position": "C",
+      "number": 65,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8479346.png"
+    },
+    {
+      "id": 8484164,
+      "name": "Dalibor Dvorsky",
+      "position": "R",
+      "number": 15,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484164.png"
+    },
+    {
+      "id": 8482077,
+      "name": "Dylan Holloway",
+      "position": "L",
+      "number": 81,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482077.png"
+    },
+    {
+      "id": 8477527,
+      "name": "Ross Johnston",
+      "position": "L",
+      "number": 49,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8477527.png"
+    },
+    {
+      "id": 8483463,
+      "name": "Aleksanteri Kaskimaki",
+      "position": "C",
+      "number": 41,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8483463.png"
+    },
+    {
+      "id": 8481580,
+      "name": "Connor McMichael",
+      "position": "L",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8481580.png"
+    },
+    {
+      "id": 8482745,
+      "name": "Mason McTavish",
+      "position": "C",
+      "number": 83,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482745.png"
+    },
+    {
+      "id": 8482089,
+      "name": "Jake Neighbours",
+      "position": "L",
+      "number": 63,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482089.png"
+    },
+    {
+      "id": 8483516,
+      "name": "Jimmy Snuggerud",
+      "position": "R",
+      "number": 21,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8483516.png"
+    },
+    {
+      "id": 8480459,
+      "name": "Pius Suter",
+      "position": "C",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480459.png"
+    },
+    {
+      "id": 8480023,
+      "name": "Robert Thomas",
+      "position": "C",
+      "number": 18,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480023.png"
+    },
+    {
+      "id": 8480281,
+      "name": "Alexey Toropchenko",
+      "position": "R",
+      "number": 13,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480281.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8482111,
+      "name": "Justin Barron",
+      "position": "D",
+      "number": 72,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482111.png"
+    },
+    {
+      "id": 8481598,
+      "name": "Philip Broberg",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8481598.png"
+    },
+    {
+      "id": 8478443,
+      "name": "Brandon Carlo",
+      "position": "D",
+      "number": 25,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8478443.png"
+    },
+    {
+      "id": 8475764,
+      "name": "Cam Fowler",
+      "position": "D",
+      "number": 17,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8475764.png"
+    },
+    {
+      "id": 8482733,
+      "name": "Logan Mailloux",
+      "position": "D",
+      "number": 23,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8482733.png"
+    },
+    {
+      "id": 8476892,
+      "name": "Colton Parayko",
+      "position": "D",
+      "number": 55,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8476892.png"
+    },
+    {
+      "id": 8480157,
+      "name": "Calle Rosen",
+      "position": "D",
+      "number": 43,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480157.png"
+    },
+    {
+      "id": 8481006,
+      "name": "Tyler Tucker",
+      "position": "D",
+      "number": 75,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8481006.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8476412,
+      "name": "Jordan Binnington",
+      "position": "G",
+      "number": 50,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8476412.png"
+    },
+    {
+      "id": 8480981,
+      "name": "Joel Hofer",
+      "position": "G",
+      "number": 30,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8480981.png"
+    }
+  ]
+}

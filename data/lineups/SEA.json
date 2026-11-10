@@ -1,0 +1,209 @@
+{
+  "team": "SEA",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:09.851582+00:00",
+  "forwards": [
+    {
+      "id": 8482665,
+      "name": "Matty Beniers",
+      "position": "C",
+      "number": 10,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482665.png"
+    },
+    {
+      "id": 8484800,
+      "name": "Berkly Catton",
+      "position": "C",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8484800.png"
+    },
+    {
+      "id": 8480876,
+      "name": "Curtis Douglas",
+      "position": "C",
+      "number": 42,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8480876.png"
+    },
+    {
+      "id": 8474586,
+      "name": "Jordan Eberle",
+      "position": "R",
+      "number": 7,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8474586.png"
+    },
+    {
+      "id": 8483442,
+      "name": "Jagger Firkus",
+      "position": "R",
+      "number": 57,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8483442.png"
+    },
+    {
+      "id": 8477919,
+      "name": "Frederick Gaudreau",
+      "position": "C",
+      "number": 89,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8477919.png"
+    },
+    {
+      "id": 8481554,
+      "name": "Kaapo Kakko",
+      "position": "R",
+      "number": 84,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8481554.png"
+    },
+    {
+      "id": 8477955,
+      "name": "Jared McCann",
+      "position": "L",
+      "number": 19,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8477955.png"
+    },
+    {
+      "id": 8482259,
+      "name": "Bobby McMann",
+      "position": "C",
+      "number": 74,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482259.png"
+    },
+    {
+      "id": 8482874,
+      "name": "Jacob Melanson",
+      "position": "R",
+      "number": 63,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482874.png"
+    },
+    {
+      "id": 8483570,
+      "name": "Ben Meyers",
+      "position": "C",
+      "number": 59,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8483570.png"
+    },
+    {
+      "id": 8483012,
+      "name": "Logan Morrison",
+      "position": "C",
+      "number": 96,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8483012.png"
+    },
+    {
+      "id": 8483497,
+      "name": "Jani Nyman",
+      "position": "R",
+      "number": 38,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8483497.png"
+    },
+    {
+      "id": 8485383,
+      "name": "Jake O'Brien",
+      "position": "C",
+      "number": 44,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8485383.png"
+    },
+    {
+      "id": 8482713,
+      "name": "Mackie Samoskevich",
+      "position": "R",
+      "number": 11,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482713.png"
+    },
+    {
+      "id": 8476905,
+      "name": "Chandler Stephenson",
+      "position": "C",
+      "number": 9,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8476905.png"
+    },
+    {
+      "id": 8482751,
+      "name": "Ryan Winterton",
+      "position": "C",
+      "number": 26,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482751.png"
+    },
+    {
+      "id": 8484241,
+      "name": "Matthew Wood",
+      "position": "R",
+      "number": 71,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8484241.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8478407,
+      "name": "Vince Dunn",
+      "position": "D",
+      "number": 29,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8478407.png"
+    },
+    {
+      "id": 8482858,
+      "name": "Ryker Evans",
+      "position": "D",
+      "number": 41,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482858.png"
+    },
+    {
+      "id": 8479985,
+      "name": "Cale Fleury",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8479985.png"
+    },
+    {
+      "id": 8476457,
+      "name": "Adam Larsson",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8476457.png"
+    },
+    {
+      "id": 8479324,
+      "name": "Ryan Lindgren",
+      "position": "D",
+      "number": 55,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8479324.png"
+    },
+    {
+      "id": 8479372,
+      "name": "Josh Mahura",
+      "position": "D",
+      "number": 28,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8479372.png"
+    },
+    {
+      "id": 8477986,
+      "name": "Brandon Montour",
+      "position": "D",
+      "number": 62,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8477986.png"
+    },
+    {
+      "id": 8482866,
+      "name": "Ville Ottavainen",
+      "position": "D",
+      "number": 46,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8482866.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8478916,
+      "name": "Joey Daccord",
+      "position": "G",
+      "number": 35,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8478916.png"
+    },
+    {
+      "id": 8475831,
+      "name": "Philipp Grubauer",
+      "position": "G",
+      "number": 31,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SEA/8475831.png"
+    }
+  ]
+}

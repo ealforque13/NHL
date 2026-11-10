@@ -1,0 +1,181 @@
+{
+  "team": "CAR",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:01.924427+00:00",
+  "forwards": [
+    {
+      "id": 8478427,
+      "name": "Sebastian Aho",
+      "position": "C",
+      "number": 20,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8478427.png"
+    },
+    {
+      "id": 8482809,
+      "name": "Jackson Blake",
+      "position": "R",
+      "number": 53,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482809.png"
+    },
+    {
+      "id": 8477478,
+      "name": "William Carrier",
+      "position": "L",
+      "number": 28,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8477478.png"
+    },
+    {
+      "id": 8475235,
+      "name": "Nicolas Deslauriers",
+      "position": "L",
+      "number": 44,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8475235.png"
+    },
+    {
+      "id": 8477940,
+      "name": "Nikolaj Ehlers",
+      "position": "L",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8477940.png"
+    },
+    {
+      "id": 8475791,
+      "name": "Taylor Hall",
+      "position": "L",
+      "number": 71,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8475791.png"
+    },
+    {
+      "id": 8476873,
+      "name": "Mark Jankowski",
+      "position": "L",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476873.png"
+    },
+    {
+      "id": 8482093,
+      "name": "Seth Jarvis",
+      "position": "R",
+      "number": 24,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482093.png"
+    },
+    {
+      "id": 8480829,
+      "name": "Jesperi Kotkaniemi",
+      "position": "C",
+      "number": 82,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480829.png"
+    },
+    {
+      "id": 8476921,
+      "name": "Jordan Martinook",
+      "position": "L",
+      "number": 48,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476921.png"
+    },
+    {
+      "id": 8480762,
+      "name": "Eric Robinson",
+      "position": "L",
+      "number": 50,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480762.png"
+    },
+    {
+      "id": 8473533,
+      "name": "Jordan Staal",
+      "position": "C",
+      "number": 11,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8473533.png"
+    },
+    {
+      "id": 8482702,
+      "name": "Logan Stankoven",
+      "position": "C",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482702.png"
+    },
+    {
+      "id": 8480830,
+      "name": "Andrei Svechnikov",
+      "position": "R",
+      "number": 37,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480830.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8478970,
+      "name": "Jalen Chatfield",
+      "position": "D",
+      "number": 5,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8478970.png"
+    },
+    {
+      "id": 8476906,
+      "name": "Shayne Gostisbehere",
+      "position": "D",
+      "number": 4,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476906.png"
+    },
+    {
+      "id": 8480817,
+      "name": "K'Andre Miller",
+      "position": "D",
+      "number": 19,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480817.png"
+    },
+    {
+      "id": 8482100,
+      "name": "Alexander Nikishin",
+      "position": "D",
+      "number": 21,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482100.png"
+    },
+    {
+      "id": 8476422,
+      "name": "Mike Reilly",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476422.png"
+    },
+    {
+      "id": 8476958,
+      "name": "Jaccob Slavin",
+      "position": "D",
+      "number": 74,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476958.png"
+    },
+    {
+      "id": 8479976,
+      "name": "Juuso Välimäki",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8479976.png"
+    },
+    {
+      "id": 8480336,
+      "name": "Sean Walker",
+      "position": "D",
+      "number": 26,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480336.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8483548,
+      "name": "Brandon Bussi",
+      "position": "G",
+      "number": 32,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8483548.png"
+    },
+    {
+      "id": 8481611,
+      "name": "Pyotr Kochetkov",
+      "position": "G",
+      "number": 52,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8481611.png"
+    }
+  ]
+}

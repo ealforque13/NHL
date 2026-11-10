@@ -1,0 +1,167 @@
+{
+  "team": "NJD",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:07.178186+00:00",
+  "forwards": [
+    {
+      "id": 8480003,
+      "name": "Jesper Boqvist",
+      "position": "C",
+      "number": 70,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8480003.png"
+    },
+    {
+      "id": 8479407,
+      "name": "Jesper Bratt",
+      "position": "L",
+      "number": 63,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8479407.png"
+    },
+    {
+      "id": 8477015,
+      "name": "Connor Brown",
+      "position": "R",
+      "number": 16,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8477015.png"
+    },
+    {
+      "id": 8482146,
+      "name": "Luke Evangelista",
+      "position": "R",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8482146.png"
+    },
+    {
+      "id": 8479996,
+      "name": "Cody Glass",
+      "position": "C",
+      "number": 12,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8479996.png"
+    },
+    {
+      "id": 8481721,
+      "name": "Arseny Gritsyuk",
+      "position": "R",
+      "number": 81,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8481721.png"
+    },
+    {
+      "id": 8480002,
+      "name": "Nico Hischier",
+      "position": "C",
+      "number": 13,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8480002.png"
+    },
+    {
+      "id": 8481559,
+      "name": "Jack Hughes",
+      "position": "C",
+      "number": 86,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8481559.png"
+    },
+    {
+      "id": 8483695,
+      "name": "Amadeus Lombardi",
+      "position": "C",
+      "number": 93,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8483695.png"
+    },
+    {
+      "id": 8477511,
+      "name": "Anthony Mantha",
+      "position": "R",
+      "number": 39,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8477511.png"
+    },
+    {
+      "id": 8478414,
+      "name": "Timo Meier",
+      "position": "R",
+      "number": 28,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8478414.png"
+    },
+    {
+      "id": 8476474,
+      "name": "Stefan Noesen",
+      "position": "R",
+      "number": 11,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8476474.png"
+    },
+    {
+      "id": 8478542,
+      "name": "Evan Rodrigues",
+      "position": "C",
+      "number": 17,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8478542.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8480990,
+      "name": "Declan Chisholm",
+      "position": "D",
+      "number": 47,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8480990.png"
+    },
+    {
+      "id": 8475455,
+      "name": "Brenden Dillon",
+      "position": "D",
+      "number": 5,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8475455.png"
+    },
+    {
+      "id": 8476462,
+      "name": "Dougie Hamilton",
+      "position": "D",
+      "number": 7,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8476462.png"
+    },
+    {
+      "id": 8482684,
+      "name": "Luke Hughes",
+      "position": "D",
+      "number": 43,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8482684.png"
+    },
+    {
+      "id": 8480192,
+      "name": "Johnathan Kovacevic",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8480192.png"
+    },
+    {
+      "id": 8477488,
+      "name": "Brett Pesce",
+      "position": "D",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8477488.png"
+    },
+    {
+      "id": 8478399,
+      "name": "Jonas Siegenthaler",
+      "position": "D",
+      "number": 71,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8478399.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8474596,
+      "name": "Jake Allen",
+      "position": "G",
+      "number": 34,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8474596.png"
+    },
+    {
+      "id": 8476945,
+      "name": "Connor Hellebuyck",
+      "position": "G",
+      "number": 37,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8476945.png"
+    }
+  ]
+}

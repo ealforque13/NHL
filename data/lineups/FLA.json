@@ -1,0 +1,195 @@
+{
+  "team": "FLA",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:04.600187+00:00",
+  "forwards": [
+    {
+      "id": 8477493,
+      "name": "Aleksander Barkov",
+      "position": "C",
+      "number": 16,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477493.png"
+    },
+    {
+      "id": 8477935,
+      "name": "Sam Bennett",
+      "position": "C",
+      "number": 9,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477935.png"
+    },
+    {
+      "id": 8483433,
+      "name": "Jack Devine",
+      "position": "R",
+      "number": 38,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8483433.png"
+    },
+    {
+      "id": 8474189,
+      "name": "Lars Eller",
+      "position": "C",
+      "number": 20,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8474189.png"
+    },
+    {
+      "id": 8479981,
+      "name": "Jonah Gadjovich",
+      "position": "L",
+      "number": 12,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8479981.png"
+    },
+    {
+      "id": 8477903,
+      "name": "Garnet Hathaway",
+      "position": "R",
+      "number": 21,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477903.png"
+    },
+    {
+      "id": 8478147,
+      "name": "Bokondji Imama",
+      "position": "L",
+      "number": 14,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8478147.png"
+    },
+    {
+      "id": 8482113,
+      "name": "Anton Lundell",
+      "position": "C",
+      "number": 15,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8482113.png"
+    },
+    {
+      "id": 8480185,
+      "name": "Eetu Luostarinen",
+      "position": "C",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8480185.png"
+    },
+    {
+      "id": 8473419,
+      "name": "Brad Marchand",
+      "position": "L",
+      "number": 63,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8473419.png"
+    },
+    {
+      "id": 8481133,
+      "name": "Cole Reinhardt",
+      "position": "L",
+      "number": 29,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8481133.png"
+    },
+    {
+      "id": 8477933,
+      "name": "Sam Reinhart",
+      "position": "C",
+      "number": 13,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477933.png"
+    },
+    {
+      "id": 8481655,
+      "name": "Cole Schwindt",
+      "position": "R",
+      "number": 79,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8481655.png"
+    },
+    {
+      "id": 8480801,
+      "name": "Brady Tkachuk",
+      "position": "L",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8480801.png"
+    },
+    {
+      "id": 8479314,
+      "name": "Matthew Tkachuk",
+      "position": "L",
+      "number": 19,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8479314.png"
+    },
+    {
+      "id": 8477409,
+      "name": "Carter Verhaeghe",
+      "position": "C",
+      "number": 23,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477409.png"
+    },
+    {
+      "id": 8483771,
+      "name": "Sandis Vilmanis",
+      "position": "L",
+      "number": 95,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8483771.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8484304,
+      "name": "Uvis Balinskis",
+      "position": "D",
+      "number": 26,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8484304.png"
+    },
+    {
+      "id": 8477932,
+      "name": "Aaron Ekblad",
+      "position": "D",
+      "number": 5,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477932.png"
+    },
+    {
+      "id": 8478055,
+      "name": "Gustav Forsling",
+      "position": "D",
+      "number": 42,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8478055.png"
+    },
+    {
+      "id": 8475462,
+      "name": "Radko Gudas",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8475462.png"
+    },
+    {
+      "id": 8477495,
+      "name": "Seth Jones",
+      "position": "D",
+      "number": 3,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8477495.png"
+    },
+    {
+      "id": 8475179,
+      "name": "Dmitry Kulikov",
+      "position": "D",
+      "number": 7,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8475179.png"
+    },
+    {
+      "id": 8478859,
+      "name": "Niko Mikkola",
+      "position": "D",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8478859.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8474593,
+      "name": "Jacob Markstrom",
+      "position": "G",
+      "number": 25,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8474593.png"
+    },
+    {
+      "id": 8481033,
+      "name": "Akira Schmid",
+      "position": "G",
+      "number": 40,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/FLA/8481033.png"
+    }
+  ]
+}

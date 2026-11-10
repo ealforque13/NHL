@@ -1,0 +1,181 @@
+{
+  "team": "BOS",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:00.542724+00:00",
+  "forwards": [
+    {
+      "id": 8479591,
+      "name": "Michael Eyssimont",
+      "position": "C",
+      "number": 81,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479591.png"
+    },
+    {
+      "id": 8479987,
+      "name": "Morgan Geekie",
+      "position": "C",
+      "number": 39,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479987.png"
+    },
+    {
+      "id": 8485395,
+      "name": "James Hagens",
+      "position": "C",
+      "number": 44,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8485395.png"
+    },
+    {
+      "id": 8479661,
+      "name": "Tanner Jeannot",
+      "position": "L",
+      "number": 84,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479661.png"
+    },
+    {
+      "id": 8480355,
+      "name": "Mark Kastelic",
+      "position": "C",
+      "number": 47,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8480355.png"
+    },
+    {
+      "id": 8482177,
+      "name": "Marat Khusnutdinov",
+      "position": "C",
+      "number": 92,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8482177.png"
+    },
+    {
+      "id": 8476374,
+      "name": "Sean Kuraly",
+      "position": "C",
+      "number": 52,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8476374.png"
+    },
+    {
+      "id": 8477496,
+      "name": "Elias Lindholm",
+      "position": "C",
+      "number": 28,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8477496.png"
+    },
+    {
+      "id": 8483489,
+      "name": "Fraser Minten",
+      "position": "C",
+      "number": 93,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8483489.png"
+    },
+    {
+      "id": 8479999,
+      "name": "Casey Mittelstadt",
+      "position": "C",
+      "number": 11,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479999.png"
+    },
+    {
+      "id": 8477956,
+      "name": "David Pastrnak",
+      "position": "R",
+      "number": 88,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8477956.png"
+    },
+    {
+      "id": 8482175,
+      "name": "JJ Peterka",
+      "position": "R",
+      "number": 10,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8482175.png"
+    },
+    {
+      "id": 8483505,
+      "name": "Matthew Poitras",
+      "position": "C",
+      "number": 51,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8483505.png"
+    },
+    {
+      "id": 8478401,
+      "name": "Pavel Zacha",
+      "position": "C",
+      "number": 18,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8478401.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8481219,
+      "name": "Jonathan Aspirot",
+      "position": "D",
+      "number": 45,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8481219.png"
+    },
+    {
+      "id": 8478840,
+      "name": "Will Borgen",
+      "position": "D",
+      "number": 17,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8478840.png"
+    },
+    {
+      "id": 8483017,
+      "name": "Frederic Brunet",
+      "position": "D",
+      "number": 42,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8483017.png"
+    },
+    {
+      "id": 8477365,
+      "name": "Connor Clifton",
+      "position": "D",
+      "number": 75,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8477365.png"
+    },
+    {
+      "id": 8476854,
+      "name": "Hampus Lindholm",
+      "position": "D",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8476854.png"
+    },
+    {
+      "id": 8482511,
+      "name": "Mason Lohrei",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8482511.png"
+    },
+    {
+      "id": 8479325,
+      "name": "Charlie McAvoy",
+      "position": "D",
+      "number": 73,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8479325.png"
+    },
+    {
+      "id": 8477507,
+      "name": "Nikita Zadorov",
+      "position": "D",
+      "number": 91,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8477507.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8480022,
+      "name": "Michael DiPietro",
+      "position": "G",
+      "number": 30,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8480022.png"
+    },
+    {
+      "id": 8480280,
+      "name": "Jeremy Swayman",
+      "position": "G",
+      "number": 1,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BOS/8480280.png"
+    }
+  ]
+}

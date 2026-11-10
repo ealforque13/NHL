@@ -1,0 +1,174 @@
+{
+  "team": "SJS",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:09.466052+00:00",
+  "forwards": [
+    {
+      "id": 8484801,
+      "name": "Macklin Celebrini",
+      "position": "C",
+      "number": 71,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484801.png"
+    },
+    {
+      "id": 8484994,
+      "name": "Igor Chernyshov",
+      "position": "L",
+      "number": 92,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484994.png"
+    },
+    {
+      "id": 8480848,
+      "name": "Ty Dellandrea",
+      "position": "C",
+      "number": 10,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8480848.png"
+    },
+    {
+      "id": 8478874,
+      "name": "Adam Gaudette",
+      "position": "R",
+      "number": 81,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8478874.png"
+    },
+    {
+      "id": 8476624,
+      "name": "Barclay Goodrow",
+      "position": "C",
+      "number": 23,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8476624.png"
+    },
+    {
+      "id": 8484911,
+      "name": "Collin Graf",
+      "position": "R",
+      "number": 51,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484911.png"
+    },
+    {
+      "id": 8478975,
+      "name": "Mason Marchment",
+      "position": "L",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8478975.png"
+    },
+    {
+      "id": 8485402,
+      "name": "Michael Misa",
+      "position": "C",
+      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8485402.png"
+    },
+    {
+      "id": 8482859,
+      "name": "Zack Ostapchuk",
+      "position": "C",
+      "number": 63,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8482859.png"
+    },
+    {
+      "id": 8480748,
+      "name": "Kiefer Sherwood",
+      "position": "L",
+      "number": 44,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8480748.png"
+    },
+    {
+      "id": 8484227,
+      "name": "Will Smith",
+      "position": "C",
+      "number": 2,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484227.png"
+    },
+    {
+      "id": 8486103,
+      "name": "Ivar Stenberg",
+      "position": "L",
+      "number": 41,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8486103.png"
+    },
+    {
+      "id": 8475726,
+      "name": "Tyler Toffoli",
+      "position": "C",
+      "number": 73,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8475726.png"
+    },
+    {
+      "id": 8477505,
+      "name": "Alexander Wennberg",
+      "position": "C",
+      "number": 21,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8477505.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8482700,
+      "name": "Nolan Allan",
+      "position": "D",
+      "number": 5,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8482700.png"
+    },
+    {
+      "id": 8484806,
+      "name": "Sam Dickinson",
+      "position": "D",
+      "number": 6,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484806.png"
+    },
+    {
+      "id": 8480891,
+      "name": "Michael Kesselring",
+      "position": "D",
+      "number": 7,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8480891.png"
+    },
+    {
+      "id": 8477498,
+      "name": "Darnell Nurse",
+      "position": "D",
+      "number": 25,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8477498.png"
+    },
+    {
+      "id": 8475200,
+      "name": "Dmitry Orlov",
+      "position": "D",
+      "number": 9,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8475200.png"
+    },
+    {
+      "id": 8484421,
+      "name": "Eric Pohlkamp",
+      "position": "D",
+      "number": 48,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484421.png"
+    },
+    {
+      "id": 8476885,
+      "name": "Jacob Trouba",
+      "position": "D",
+      "number": 65,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8476885.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8482137,
+      "name": "Yaroslav Askarov",
+      "position": "G",
+      "number": 30,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8482137.png"
+    },
+    {
+      "id": 8477968,
+      "name": "Alex Nedeljkovic",
+      "position": "G",
+      "number": 33,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8477968.png"
+    }
+  ]
+}

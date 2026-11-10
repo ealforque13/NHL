@@ -1,0 +1,174 @@
+{
+  "team": "DET",
+  "type": "roster",
+  "status": "roster",
+  "source": "NHL Web API",
+  "updatedAt": "2026-11-10T14:06:03.848260+00:00",
+  "forwards": [
+    {
+      "id": 8478891,
+      "name": "Mason Appleton",
+      "position": "C",
+      "number": 22,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478891.png"
+    },
+    {
+      "id": 8478042,
+      "name": "Viktor Arvidsson",
+      "position": "L",
+      "number": 33,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478042.png"
+    },
+    {
+      "id": 8484794,
+      "name": "Michael Brandsegg-Nygård",
+      "position": "R",
+      "number": 28,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8484794.png"
+    },
+    {
+      "id": 8477456,
+      "name": "J.T. Compher",
+      "position": "L",
+      "number": 37,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8477456.png"
+    },
+    {
+      "id": 8477429,
+      "name": "Andrew Copp",
+      "position": "C",
+      "number": 18,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8477429.png"
+    },
+    {
+      "id": 8479337,
+      "name": "Alex DeBrincat",
+      "position": "R",
+      "number": 93,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8479337.png"
+    },
+    {
+      "id": 8480326,
+      "name": "Sheldon Dries",
+      "position": "C",
+      "number": 15,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8480326.png"
+    },
+    {
+      "id": 8484471,
+      "name": "Emmitt Finnie",
+      "position": "C",
+      "number": 58,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8484471.png"
+    },
+    {
+      "id": 8483464,
+      "name": "Marco Kasper",
+      "position": "C",
+      "number": 92,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8483464.png"
+    },
+    {
+      "id": 8478434,
+      "name": "Keegan Kolesar",
+      "position": "R",
+      "number": 55,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478434.png"
+    },
+    {
+      "id": 8482802,
+      "name": "Carter Mazur",
+      "position": "L",
+      "number": 34,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8482802.png"
+    },
+    {
+      "id": 8479992,
+      "name": "Michael Rasmussen",
+      "position": "C",
+      "number": 27,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8479992.png"
+    },
+    {
+      "id": 8482078,
+      "name": "Lucas Raymond",
+      "position": "L",
+      "number": 23,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8482078.png"
+    }
+  ],
+  "defense": [
+    {
+      "id": 8480879,
+      "name": "Jacob Bernard-Docker",
+      "position": "D",
+      "number": 25,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8480879.png"
+    },
+    {
+      "id": 8475279,
+      "name": "Ben Chiarot",
+      "position": "D",
+      "number": 8,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8475279.png"
+    },
+    {
+      "id": 8477971,
+      "name": "Andreas Englund",
+      "position": "D",
+      "number": 24,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8477971.png"
+    },
+    {
+      "id": 8475753,
+      "name": "Justin Faulk",
+      "position": "D",
+      "number": 72,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8475753.png"
+    },
+    {
+      "id": 8481607,
+      "name": "Albert Johansson",
+      "position": "D",
+      "number": 20,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8481607.png"
+    },
+    {
+      "id": 8483679,
+      "name": "Anton Johansson",
+      "position": "D",
+      "number": 42,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8483679.png"
+    },
+    {
+      "id": 8481542,
+      "name": "Moritz Seider",
+      "position": "D",
+      "number": 53,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8481542.png"
+    },
+    {
+      "id": 8482171,
+      "name": "William Wallinder",
+      "position": "D",
+      "number": 54,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8482171.png"
+    }
+  ],
+  "goalies": [
+    {
+      "id": 8476434,
+      "name": "John Gibson",
+      "position": "G",
+      "number": 36,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8476434.png"
+    },
+    {
+      "id": 8480193,
+      "name": "Daniil Tarasov",
+      "position": "G",
+      "number": 80,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8480193.png"
+    }
+  ]
+}
