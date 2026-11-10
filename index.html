@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-30">
+<meta name="hoist-build" content="20261110-31">
 
 <script>
 try {
@@ -2610,6 +2610,21 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(5).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(5) :is(strong,b),
 #overview #matchup-intelligence .hoist-sortable-table:has(th:nth-child(6).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(6) :is(strong,b){font-weight:800!important;color:#ff5366!important}
 
+
+/* Overview: historical H2H game details — date and venue left, stats right. */
+#overview #matchup-intelligence .hoist-h2h-game-table{table-layout:fixed!important;width:100%!important}
+#overview #matchup-intelligence .hoist-h2h-game-table th:first-child,
+#overview #matchup-intelligence .hoist-h2h-game-table td:first-child{width:49%!important;text-align:left!important;padding-left:8px!important;white-space:normal!important}
+#overview #matchup-intelligence .hoist-h2h-game-table th:nth-child(n+2),
+#overview #matchup-intelligence .hoist-h2h-game-table td:nth-child(n+2){width:17%!important;text-align:right!important;padding-right:9px!important}
+#overview #matchup-intelligence .hoist-h2h-game-date{display:block;white-space:nowrap}
+#overview #matchup-intelligence .hoist-h2h-game-opponent{display:block;margin-top:3px;font-size:10px;font-weight:400;color:#9db2ce;line-height:1.25;white-space:nowrap}
+@media(max-width:650px){
+ #overview #matchup-intelligence .hoist-h2h-game-table th:first-child,
+ #overview #matchup-intelligence .hoist-h2h-game-table td:first-child{width:49%!important;padding-left:5px!important}
+ #overview #matchup-intelligence .hoist-h2h-game-table th:nth-child(n+2),
+ #overview #matchup-intelligence .hoist-h2h-game-table td:nth-child(n+2){width:17%!important;padding-right:5px!important}
+}
 </style>
 </head>
 
@@ -3435,7 +3450,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,5);
     if(!games.length)return '<div class="hoist-h2h-detail-empty">No previous regular-season games against '+escapeHtml(opponent)+' in the available player history.</div>';
     return '<div class="hoist-h2h-detail-title">Last '+games.length+' games vs '+escapeHtml(opponent)+'</div><table class="hoist-h2h-game-table"><thead><tr><th>DATE</th><th>G</th><th>A</th><th>PTS</th></tr></thead><tbody>'+
-      games.map(g=>'<tr><td>'+escapeHtml(formatGameDate(g.date))+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>').join('')+'</tbody></table';
+      games.map(g=>{
+        const venue=String(g.homeRoadFlag||g.homeAway||g.homeOrAway||'').toUpperCase();
+        const place=venue==='H'||venue==='HOME'?'vs ':venue==='R'||venue==='A'||venue==='AWAY'?'at ':'';
+        const playedFor=String(g.team||g.teamAbbrev||g.playerTeam||'').toUpperCase();
+        const teamNote=playedFor&&playedFor!==String(player.currentTeam||'').toUpperCase()&&playedFor!==String(player.rosterTeam||'').toUpperCase()&&playedFor!==String(player._selectedTeam||'').toUpperCase()?' · With '+playedFor:'';
+        const matchup=place?place+opponent:'';
+        const subline=(matchup||teamNote)?'<span class="hoist-h2h-game-opponent">'+escapeHtml(matchup+teamNote)+'</span>':'';
+        return '<tr><td><span class="hoist-h2h-game-date">'+escapeHtml(formatGameDate(g.date))+'</span>'+subline+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>';
+      }).join('')+'</tbody></table';
   }
   let running=false;
   async function decorate(){
@@ -3462,6 +3485,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const name=strong.dataset.hoistFullName||strong.textContent.trim();
           const player=lookup.get(normalize(name));
           if(!player)return;
+          player._selectedTeam=datasets[index]?.team|| (index===0?club:opp);
           const key=club+'|'+opp+'|'+(player.id||name);
           if(row.dataset.hoistH2hKey===key)return;
           row.dataset.hoistH2hKey=key;
