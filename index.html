@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-17">
+<meta name="hoist-build" content="20261110-18">
 
 <script>
 try {
@@ -2445,6 +2445,15 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   white-space:nowrap!important;
 }
 
+
+/* Overview: regular-weight Hot Players names on all screens. */
+#overview .hoist-hot-players-panel #mi-hot td:first-child,
+#overview .hoist-hot-players-panel #mi-hot td:first-child * {
+  font-weight:400!important;
+}
+/* Overview: hide the historical matchup footnote beneath the player tables. */
+#overview #matchup-intelligence #mi-note {display:none!important;}
+
 </style>
 </head>
 
@@ -3180,6 +3189,50 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   arrange();
   new MutationObserver(arrange).observe(body,{childList:true,subtree:true});
+});
+</script>
+
+
+<!-- On mobile only, shorten Head-to-Head player first names without altering desktop names. -->
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const bodies=['mi-left','mi-right'].map(id=>document.getElementById(id)).filter(Boolean);
+  if(!bodies.length)return;
+  let updating=false;
+  function shorten(full){
+    const parts=full.trim().split(/\s+/);
+    if(parts.length<2||/^[A-Za-z]\.$/.test(parts[0]))return full;
+    return parts[0].charAt(0)+'. '+parts.slice(1).join(' ');
+  }
+  function refresh(){
+    if(updating)return;
+    updating=true;
+    try{
+      const mobile=window.matchMedia('(max-width:650px)').matches;
+      bodies.forEach(body=>body.querySelectorAll('tr').forEach(row=>{
+        const cell=row.cells&&row.cells[0];if(!cell)return;
+        // Locate the visible player-name text, leaving headshots and team badges untouched.
+        const candidates=[...cell.querySelectorAll('a, .player-name, .mi-player-name, .hoist-player-name, span')]
+          .filter(el=>el.children.length===0&&el.textContent.trim().split(/\s+/).length>=2);
+        const node=candidates[0]||cell;
+        if(node===cell){
+          const textNodes=[...cell.childNodes].filter(n=>n.nodeType===3&&n.textContent.trim().split(/\s+/).length>=2);
+          if(!textNodes.length)return;
+          const n=textNodes[0];
+          if(!n.__hoistFullName)n.__hoistFullName=n.textContent;
+          const value=mobile?shorten(n.__hoistFullName):n.__hoistFullName;
+          if(n.textContent!==value)n.textContent=value;
+        }else{
+          if(!node.dataset.hoistFullName)node.dataset.hoistFullName=node.textContent;
+          const value=mobile?shorten(node.dataset.hoistFullName):node.dataset.hoistFullName;
+          if(node.textContent!==value)node.textContent=value;
+        }
+      }));
+    }finally{updating=false;}
+  }
+  bodies.forEach(body=>new MutationObserver(refresh).observe(body,{childList:true,subtree:true,characterData:true}));
+  window.addEventListener('resize',refresh);
+  refresh();
 });
 </script>
 
