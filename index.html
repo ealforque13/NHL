@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-13">
+<meta name="hoist-build" content="20261110-14">
 
 <script>
 try {
@@ -2349,6 +2349,38 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
     width:58px !important;
     min-width:58px !important;
     max-width:58px !important;
+  }
+}
+
+/* Stats polish: selected category is bold like the Standings selection. */
+#stats .hoist-stats-table th.hoist-stat-selected,
+#stats .hoist-stats-table th.hoist-stat-selected button,
+#stats .hoist-stats-table td.hoist-stat-selected,
+#stats .hoist-stats-rail-row.hoist-stat-selected,
+#stats .hoist-stats-rail-row.hoist-stat-selected button {
+  color:#f06470 !important;
+  font-weight:800 !important;
+}
+@media (max-width:650px) {
+  /* Keep every stat column uniform, just slightly more compact. */
+  #stats .hoist-stats-table th:not(:first-child),
+  #stats .hoist-stats-table td:not(:first-child) {
+    width:54px !important;
+    min-width:54px !important;
+    max-width:54px !important;
+  }
+  /* Match the Team/League control's height and background exactly. */
+  #stats .hoist-stats-filters button,
+  #stats .hoist-stats-picker select {
+    height:40px !important;
+    min-height:40px !important;
+    box-sizing:border-box !important;
+  }
+  #stats .hoist-stats-picker select {
+    background-color:#172239 !important;
+    border-color:#41577a !important;
+    border-radius:8px !important;
+    line-height:normal !important;
   }
 }
 </style>
