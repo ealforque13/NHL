@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-24">
+<meta name="hoist-build" content="20261110-25">
 
 <script>
 try {
@@ -2494,6 +2494,25 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #matchup-intelligence #mi-right td.hoist-h2h-clickable:hover {background:rgba(122,164,220,.08)!important}
 #matchup-intelligence .hoist-h2h-expand {pointer-events:none!important}
 
+
+/* Overview head-to-head: equally sized statistic columns on all screen sizes. */
+#overview #matchup-intelligence .hoist-sortable-table {table-layout:fixed!important;width:100%!important}
+#overview #matchup-intelligence .hoist-sortable-table th:first-child,
+#overview #matchup-intelligence .hoist-sortable-table tbody tr:not(.hoist-h2h-detail-row) > td:first-child {width:40%!important;box-sizing:border-box!important}
+#overview #matchup-intelligence .hoist-sortable-table th:nth-child(n+2),
+#overview #matchup-intelligence .hoist-sortable-table tbody tr:not(.hoist-h2h-detail-row) > td:nth-child(n+2) {width:12%!important;box-sizing:border-box!important;text-align:center!important}
+/* Chevron at the right edge of the player cell, directly beside the GP column. */
+#overview #matchup-intelligence .hoist-h2h-expand {right:3px!important;top:50%!important}
+#overview #matchup-intelligence .hoist-h2h-chevron {
+  transform:rotate(-45deg)!important;transition:transform .15s ease!important;
+}
+#overview #matchup-intelligence .hoist-h2h-expand[aria-expanded="true"] .hoist-h2h-chevron {
+  transform:rotate(45deg)!important;
+}
+/* Preserve four equal columns inside the expanded five-game history. */
+#overview #matchup-intelligence .hoist-h2h-game-table th,
+#overview #matchup-intelligence .hoist-h2h-game-table td {width:25%!important}
+
 </style>
 </head>
 
@@ -3306,11 +3325,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     return cache.get(code);
   }
+  function formatGameDate(raw){
+    const value=String(raw||'');
+    const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(value);
+    if(!m)return value||'—';
+    const date=new Date(Date.UTC(Number(m[1]),Number(m[2])-1,Number(m[3])));
+    if(Number.isNaN(date.getTime()))return value;
+    const month=['Jan.','Feb.','Mar.','Apr.','May','Jun.','Jul.','Aug.','Sep.','Oct.','Nov.','Dec.'][date.getUTCMonth()];
+    return month+' '+date.getUTCDate()+', '+date.getUTCFullYear();
+  }
   function renderGames(player,opponent){
     const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,5);
     if(!games.length)return '<div class="hoist-h2h-detail-empty">No previous regular-season games against '+escapeHtml(opponent)+' in the available player history.</div>';
     return '<div class="hoist-h2h-detail-title">Last '+games.length+' games vs '+escapeHtml(opponent)+'</div><table class="hoist-h2h-game-table"><thead><tr><th>DATE</th><th>G</th><th>A</th><th>PTS</th></tr></thead><tbody>'+
-      games.map(g=>'<tr><td>'+escapeHtml(g.date||'—')+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>').join('')+'</tbody></table';
+      games.map(g=>'<tr><td>'+escapeHtml(formatGameDate(g.date))+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>').join('')+'</tbody></table';
   }
   let running=false;
   async function decorate(){
