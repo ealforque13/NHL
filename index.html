@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-12">
+<meta name="hoist-build" content="20261110-13">
 
 <script>
 try {
@@ -2326,6 +2326,30 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
   #stats .hoist-stats-rail-row.hoist-stats-rail-head,
   #stats .hoist-stats-rail-head button {font-size:12px!important;}
   #stats .hoist-stats-rail-row .hoist-stats-jersey {font-size:12px!important;}
+}
+
+/* Player Stats: equal-width statistical categories, on desktop and mobile.
+   Player identity keeps its independent width and fixed mobile rail. */
+#stats .hoist-stats-table th:not(:first-child),
+#stats .hoist-stats-table td:not(:first-child) {
+  width:64px !important;
+  min-width:64px !important;
+  max-width:64px !important;
+  box-sizing:border-box !important;
+  text-align:center !important;
+}
+#stats .hoist-stats-table th:not(:first-child) button {
+  justify-content:center !important;
+  padding-left:3px !important;
+  padding-right:3px !important;
+}
+@media (max-width:650px) {
+  #stats .hoist-stats-table th:not(:first-child),
+  #stats .hoist-stats-table td:not(:first-child) {
+    width:58px !important;
+    min-width:58px !important;
+    max-width:58px !important;
+  }
 }
 </style>
 </head>
