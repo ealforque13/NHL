@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-22">
+<meta name="hoist-build" content="20261110-23">
 
 <script>
 try {
@@ -612,8 +612,9 @@ html body .nav-item {
 
 /* PLAYER STATISTICS */
 
-#mi-left > tr:nth-child(n+6),
-#mi-right > tr:nth-child(n+6) {
+/* Hide extra PLAYER rows only; never hide an expanded game-history row. */
+#mi-left > tr.hoist-h2h-player-hidden,
+#mi-right > tr.hoist-h2h-player-hidden {
   display: none !important;
 }
 
@@ -2486,6 +2487,12 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 }
 #matchup-intelligence .hoist-h2h-expand[aria-expanded="true"] {color:#ff5366!important}
 #matchup-intelligence .hoist-h2h-expand[aria-expanded="true"] .hoist-h2h-chevron {transform:translateY(2px) rotate(225deg)}
+/* The entire player cell toggles game history, like Last 10 Matchups. */
+#matchup-intelligence #mi-left td.hoist-h2h-clickable,
+#matchup-intelligence #mi-right td.hoist-h2h-clickable {cursor:pointer!important}
+#matchup-intelligence #mi-left td.hoist-h2h-clickable:hover,
+#matchup-intelligence #mi-right td.hoist-h2h-clickable:hover {background:rgba(122,164,220,.08)!important}
+#matchup-intelligence .hoist-h2h-expand {pointer-events:none!important}
 
 </style>
 </head>
@@ -3311,6 +3318,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if(!club||!opp)return;
       const datasets=await Promise.all([dataFor(club),dataFor(opp)]);
       bodies.forEach((body,index)=>{
+        // Count actual player rows, not inserted detail rows. Otherwise the
+        // fifth player's expanded history becomes the hidden sixth row.
+        [...body.children].filter(row=>!row.classList.contains('hoist-h2h-detail-row'))
+          .forEach((row,i)=>row.classList.toggle('hoist-h2h-player-hidden',i>=5));
         const data=datasets[index];
         if(!data||!Array.isArray(data.players))return;
         const target=index===0?opp:club;
@@ -3330,7 +3341,19 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.type='button';btn.className='hoist-h2h-expand';btn.innerHTML='<span class="hoist-h2h-chevron" aria-hidden="true"></span>';
           btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Show '+name+' previous five games against '+target);
           first.appendChild(btn);
-          btn.addEventListener('click',()=>{
+          first.classList.add('hoist-h2h-clickable');
+          first.setAttribute('tabindex','0');
+          first.setAttribute('role','button');
+          first.setAttribute('aria-label','Toggle '+name+' previous five games against '+target);
+          first.addEventListener('click',event=>{
+            if(event.target.closest('a'))return;
+            btn.click();
+          });
+          first.addEventListener('keydown',event=>{
+            if(event.key==='Enter'||event.key===' '){event.preventDefault();btn.click()}
+          });
+          btn.addEventListener('click',event=>{
+            event.stopPropagation();
             const open=btn.getAttribute('aria-expanded')==='true';
             const existing=row.nextElementSibling;
             if(open){if(existing?.classList.contains('hoist-h2h-detail-row'))existing.remove();btn.setAttribute('aria-expanded','false');return}
