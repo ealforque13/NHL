@@ -15,8 +15,10 @@
 
   Hot Players:
   - Last five games
-  - Point indicators
-  - Active streak descriptions
+  - Point indicators under statistics
+  - Player number and position under name
+  - Goal production prioritized at 3+ goals
+  - Point streak descriptions
 */
 
 (() => {
@@ -36,10 +38,9 @@
 
   let generation = 0;
 
-  /*
-    Each matchup table has its own
-    sorting configuration.
-  */
+  /* ==========================================
+     TABLE SORT CONFIGURATION
+     ========================================== */
 
   const tableSort = {
     'mi-left': {
@@ -313,7 +314,9 @@
     const rows = payload.players.map(player => {
 
       const games = (player.games || []).filter(
-        game => game.opponent === opponent
+        game =>
+          String(game.opponent).toUpperCase() ===
+          String(opponent).toUpperCase()
       );
 
       const gp = games.length;
@@ -334,14 +337,8 @@
     );
 
     /*
-      Preserve the original GP filter and
-      independent column sorting.
-
-      Only after filtering and sorting do
-      we limit the leaderboard to 5 players.
-
-      The expanded five-game history is
-      handled separately by index.html.
+      Filter first, sort second, then
+      display the top five qualifying players.
     */
 
     sortRows(rows, targetId);
@@ -404,6 +401,41 @@
   }
 
   /* ==========================================
+     HOT PLAYERS — PERFORMANCE DESCRIPTION
+     ========================================== */
+
+  function hotPerformance(row) {
+
+    /*
+      Priority:
+      1. Three or more goals in last five games
+      2. Active point streak of three or more games
+      3. Total points in last five games
+    */
+
+    if (row.g >= 3) {
+      return {
+        text: `${row.g}G in last 5 games`,
+        highlight: true
+      };
+    }
+
+    if (row.streak >= 3) {
+      return {
+        text: `${row.streak}-game point streak`,
+        highlight: true
+      };
+    }
+
+    return {
+      text: `${row.pts} PTS in last ${row.gp} ${
+        row.gp === 1 ? 'game' : 'games'
+      }`,
+      highlight: false
+    };
+  }
+
+  /* ==========================================
      HOT PLAYERS — LAST 5 GAMES
      ========================================== */
 
@@ -415,6 +447,12 @@
         .filter(
           game =>
             String(game.season) === '20262027'
+        )
+        .sort(
+          (a, b) =>
+            String(a.date || '').localeCompare(
+              String(b.date || '')
+            )
         )
         .slice(-5);
 
@@ -454,11 +492,7 @@
     $m('mi-hot').innerHTML = rows.length
       ? rows.map(row => {
 
-          const isStreak = row.streak >= 3;
-
-          const performance = isStreak
-            ? `${row.streak}-game point streak`
-            : `${row.pts} ${row.pts === 1 ? 'point' : 'points'} in last ${row.gp} ${row.gp === 1 ? 'game' : 'games'}`;
+          const performance = hotPerformance(row);
 
           return `
             <tr class="hoist-hot-player-row">
@@ -476,7 +510,8 @@
                     </strong>
 
                     <small>
-                      ${lastFiveBoxes(row.recent)}
+                      #${escape(row.player.number ?? '—')}
+                      · ${escape(row.player.position ?? '—')}
                     </small>
 
                   </span>
@@ -493,16 +528,22 @@
                 ${row.a}
               </td>
 
-              <td class="hoist-hot-stat">
+              <td class="hoist-hot-stat hoist-hot-summary-cell">
 
                 <strong>
                   ${row.pts}
                 </strong>
 
-                <span
-                  class="hoist-hot-performance${isStreak ? ' is-streak' : ''}"
-                >
-                  ${escape(performance)}
+                <span class="hoist-hot-summary">
+
+                  ${lastFiveBoxes(row.recent)}
+
+                  <span
+                    class="hoist-hot-performance${performance.highlight ? ' is-streak' : ''}"
+                  >
+                    ${escape(performance.text)}
+                  </span>
+
                 </span>
 
               </td>
@@ -533,13 +574,13 @@
     const next = [...state.schedule]
       .filter(
         game =>
-          game.gameType === 2 &&
+          Number(game.gameType) === 2 &&
           !isFinal(game)
       )
       .sort(
         (a, b) =>
-          a.gameDate.localeCompare(
-            b.gameDate
+          String(a.gameDate).localeCompare(
+            String(b.gameDate)
           )
       )[0];
 
@@ -694,7 +735,7 @@
       );
 
       $m('mi-note').textContent =
-        `Regular-season games, 2024–25 through 2026–27 · Active roster skaters · Click column headers to sort · ${
+        `Regular-season games, 2010–11 through 2026–27 · Active roster skaters · Click column headers to sort · ${
           partial
             ? 'Some player logs unavailable; rankings may be incomplete.'
             : 'Minimum GP filter available.'
@@ -724,23 +765,26 @@
         without modifying app.js.
       */
 
-      const original = renderGames;
+      if (typeof renderGames === 'function') {
 
-      renderGames = function (...args) {
+        const original = renderGames;
 
-        const result = original.apply(
-          this,
-          args
-        );
+        renderGames = function (...args) {
 
-        update();
+          const result = original.apply(
+            this,
+            args
+          );
 
-        return result;
-      };
+          update();
+
+          return result;
+        };
+      }
 
       /* GP filter */
 
-      $m('mi-min-games').addEventListener(
+      $m('mi-min-games')?.addEventListener(
         'change',
         update
       );
