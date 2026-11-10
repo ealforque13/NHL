@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-7">
+<meta name="hoist-build" content="20261110-8">
 
 <script>
 try {
@@ -2180,6 +2180,27 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
  #stats .hoist-stats-subtitle{margin-top:12px}
  #stats #hoist-stats-status:empty{display:none}
 }
+
+/* Mobile Stats: separate, non-scrolling Player rail (same structural approach as Standings).
+   The scrolling table remains a sibling; its first column is masked by the rail. */
+@media(max-width:650px){
+ #stats .hoist-stats-fixed-shell{position:relative;width:100%;min-width:0;margin:0!important;padding:0!important}
+ #stats .hoist-stats-fixed-shell .hoist-stats-table-wrap{overflow-x:auto!important;overflow-y:hidden!important;width:100%!important;max-width:100%!important;margin:0!important;border-left:0!important;-webkit-overflow-scrolling:touch;isolation:auto!important}
+ #stats .hoist-stats-fixed-shell .hoist-stats-table th:first-child,
+ #stats .hoist-stats-fixed-shell .hoist-stats-table td:first-child{position:static!important;transform:none!important;box-shadow:none!important;z-index:auto!important;visibility:hidden!important}
+ #stats .hoist-stats-player-rail{display:block;position:absolute;left:0;top:0;width:116px;z-index:25;pointer-events:none;border-right:2px solid #628db9;box-sizing:border-box;overflow:hidden}
+ #stats .hoist-stats-rail-row{box-sizing:border-box;width:100%;padding:10px 8px;display:flex;align-items:center;overflow:hidden;color:#e4edfa;font-size:13px;font-weight:500;border-top:1px solid rgba(146,175,217,.09)}
+ #stats .hoist-stats-rail-row:nth-child(even){background:#17243b}
+ #stats .hoist-stats-rail-row:nth-child(odd){background:#111e32}
+ #stats .hoist-stats-rail-row.hoist-stats-rail-head{background:#1d304c!important;color:#91b8ec;font-size:11px;font-weight:800;letter-spacing:.04em;padding:0}
+ #stats .hoist-stats-rail-head button{display:flex;align-items:center;justify-content:flex-start;width:100%;height:100%;padding:10px 8px;border:0;background:transparent;color:inherit;font:inherit;font-weight:800;pointer-events:auto;cursor:pointer}
+ #stats .hoist-stats-rail-row.hoist-stat-selected{color:#f06470}
+ #stats .hoist-stats-rail-row .hoist-stats-team-cell{width:100%;min-width:0}
+ #stats .hoist-stats-rail-row .hoist-stats-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+ /* Remove the inherited left inset around this table only. */
+ #stats .hoist-stats-fixed-shell{width:calc(100% + 16px)!important;margin-left:-16px!important}
+}
+@media(min-width:651px){#stats .hoist-stats-player-rail{display:none}}
 </style>
 </head>
 
@@ -3511,7 +3532,24 @@ document.addEventListener("DOMContentLoaded", function () {
  const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
- function table(players){return `<div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+ function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ function syncStatsPlayerRail(){
+   const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
+   if(!shell)return;
+   const rail=shell.querySelector('.hoist-stats-player-rail');
+   const table=shell.querySelector('.hoist-stats-table');
+   if(!rail||!table)return;
+   const cells=[...table.querySelectorAll('thead tr,tbody tr')].map(row=>row.cells[0]);
+   if(rail.children.length!==cells.length){
+     rail.innerHTML=cells.map((cell,i)=>`<div class="hoist-stats-rail-row ${i===0?'hoist-stats-rail-head':''}">${cell.innerHTML}</div>`).join('');
+   }
+   cells.forEach((cell,i)=>{
+     const row=rail.children[i];if(!row)return;
+     row.style.height=`${cell.parentElement.getBoundingClientRect().height}px`;
+     row.classList.toggle('hoist-stat-selected',cell.classList.contains('hoist-stat-selected'));
+   });
+ }
+ window.addEventListener('resize',()=>requestAnimationFrame(syncStatsPlayerRail));
  async function getTeam(code){if(cache.has(code))return cache.get(code);const response=await fetch(`./data/club-stats/${code}.json`,{cache:'no-cache'});if(!response.ok)throw Error('Missing cached club stats');const data=await response.json();if(!Array.isArray(data.skaters))throw Error('Invalid skater statistics');const players=data.skaters.map(p=>({...p,team:code}));
  const numbers=await rosterNumbers(code);
  for(const p of players){
@@ -3525,6 +3563,7 @@ document.addEventListener("DOMContentLoaded", function () {
  else{const code=el('hoist-stats-team').value;players=await getTeam(code);if(seq!==sequence)return;heading=`2026–27 ${teamName[code]} — Player Stats`;el('hoist-stats-status').textContent='';}
  players.sort((a,b)=>{const cmp=sortKey==='name'?name(a).localeCompare(name(b)):numeric(a,sortKey)-numeric(b,sortKey);return sortDirection*cmp||numeric(b,'points')-numeric(a,'points')||name(a).localeCompare(name(b));});
  el('hoist-stats-content').innerHTML=`<h4 class="hoist-stats-subtitle">${esc(heading)}</h4>${players.length?table(players):'<p class="muted">No player statistics available yet.</p>'}`;
+ requestAnimationFrame(syncStatsPlayerRail);
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
  document.addEventListener('DOMContentLoaded',()=>{if(!el('stats'))return;const picker=el('hoist-stats-team');const sortedTeams=teams.slice().sort((a,b)=>a[1].localeCompare(b[1]));
  const syncTeamLabels=()=>{const mobile=window.matchMedia('(max-width:650px)').matches;const current=picker.value;picker.innerHTML=sortedTeams.map(([code,n])=>`<option value="${code}">${esc(mobile?code:n)}</option>`).join('');if(current)picker.value=current;};
