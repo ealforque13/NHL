@@ -3665,6 +3665,14 @@ body[data-theme="light"] #games .hoist-game-card {
   #games .hoist-game-overview-table .hoist-game-heading-mobile{display:inline!important;white-space:nowrap!important}
 }
 </style>
+<style>
+/* V33: responsive column labels and compact player-history label. */
+#games .hoist-game-history-pts-mobile { display:none; }
+@media (max-width:650px) {
+  #games .hoist-game-history-pts-desktop { display:none; }
+  #games .hoist-game-history-pts-mobile { display:inline; }
+}
+</style>
 </head>
 
 <body>
@@ -5590,7 +5598,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function history(games) {
     const latest=[...games].sort(byRecent).slice(0,5);
     if(!latest.length)return '<p class="hoist-game-leaders-note">No previous games recorded against this opponent.</p>';
-    return `<div class="hoist-game-history-head"><span>DATE</span><span>G</span><span>A</span><span>PTS</span></div>${latest.map(g=>{
+    return `<div class="hoist-game-history-head"><span>DATE</span><span>G</span><span>A</span><span><span class="hoist-game-history-pts-desktop">PTS</span><span class="hoist-game-history-pts-mobile">P</span></span></div>${latest.map(g=>{
       const venue=String(g.homeRoadFlag||g.homeAway||g.homeOrAway||'').toUpperCase();
       const prefix=venue==='H'||venue==='HOME'?'vs ':venue==='R'||venue==='A'||venue==='AWAY'?'at ':'';
       const opponent=opponentOf(g);
@@ -5663,7 +5671,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name)));
     const items=rows.length?rows.map((r,i)=>`<tr ${i>=5?'hidden':''} class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong><span class="hoist-game-name-full">${esc(r.p.name)}</span><span class="hoist-game-name-short">${esc(shortPlayerName(r.p.name))}</span>${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
-    const heading=(key,label)=>`<th data-sort="${key}"${key==='ppg'?' class="hoist-sort-active" data-direction="desc" aria-sort="descending"':''}><button type="button" class="hoist-sort-button" aria-label="Sort by ${label}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
+    const heading=(key,label)=>`<th data-sort="${key}"${key==='ppg'?' class="hoist-sort-active" data-direction="desc" aria-sort="descending"':''}><button type="button" class="hoist-sort-button" aria-label="Sort by ${key==='ppg'?'points per game':key==='points'?'points':key}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
     return `<section class="hoist-game-leaders-team hoist-game-overview-format"><div class="hoist-game-table-top"><h4>${esc(team)} players vs ${esc(opponent)}</h4></div><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th>${heading('goals','G')}${heading('assists','A')}${heading('points','<span class="hoist-game-heading-desktop">PTS</span><span class="hoist-game-heading-mobile">P</span>')}${heading('ppg','<span class="hoist-game-heading-desktop">PTS/GP</span><span class="hoist-game-heading-mobile">P/GP</span>')}</tr></thead><tbody>${items}</tbody></table></div></section>`;
   }
   function hotHtml(data,team) {
