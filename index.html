@@ -3307,6 +3307,7 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
   <div class="side-label">NAVIGATION</div>
 
   <nav id="nav">
+    <button class="nav-item" data-tab="teams">◈ <span>Teams</span></button>
     <button class="nav-item active" data-tab="overview">
       ◫ <span>Overview</span>
     </button>
@@ -3314,7 +3315,6 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     <button class="nav-item" data-tab="standings">
       ▤ <span>Standings</span>
     </button>
-<button class="nav-item" data-tab="teams">◈ <span>Teams</span></button>
 <button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
     <button class="nav-item" data-tab="games">▦ <span>Games</span></button>
 
@@ -3373,9 +3373,9 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Menu
   </button>
   <div id="hoist-mobile-menu-options" class="hoist-mobile-menu-options" hidden>
+    <button type="button" data-mobile-tab="teams">Teams</button>
     <button type="button" data-mobile-tab="overview">Overview</button>
     <button type="button" data-mobile-tab="standings">Standings</button>
-    <button type="button" data-mobile-tab="teams">Teams</button>
     <button type="button" data-mobile-tab="stats">Stats</button>
     <button type="button" data-mobile-tab="games">Games</button>
     <button type="button" data-mobile-tab="lineups">Lineups</button>
@@ -3788,7 +3788,6 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 <!-- NHL TEAMS DIRECTORY -->
 <section id="teams" class="tab-section hidden" aria-label="NHL Teams">
   <article class="panel section-panel hoist-teams-directory">
-    <div class="section-head"><div><div class="eyebrow">ALL 32 NHL CLUBS</div><h3>Explore Teams</h3><p class="muted">Choose a team to open its Overview.</p></div></div>
     <div id="hoist-teams-grid" class="hoist-teams-grid"></div>
   </article>
 </section>
@@ -4878,6 +4877,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <script src="games.js?v=20261110-46" defer></script>
 
 
+<style>
+/* Teams directory: no selected-franchise hero above the division grid. */
+body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
+</style>
 <!-- Teams navigation and division directory; uses existing app.js team selector. -->
 <script>
 (() => {
