@@ -11,10 +11,6 @@
   - Responsive desktop and mobile layout
   - Season-by-season scoresheet JSON loading
   - Temporary legacy cache fallback
-
-  Required data:
-  data/head-to-head.json
-  data/head-to-head-scoresheets/YYYY.json
 */
 
 (() => {
@@ -152,7 +148,7 @@
   const seasonPromises = new Map();
 
   function getCache(file) {
-    return fetch(`data/${file}?v=7`, {
+    return fetch(`data/${file}?v=8`, {
       cache: 'no-cache'
     }).then(response => {
       if (!response.ok) {
@@ -183,9 +179,6 @@
 
     Example:
     2024020001 -> 2024.json
-
-    New directory:
-    data/head-to-head-scoresheets/
   */
 
   function seasonOf(game) {
@@ -224,11 +217,11 @@
   }
 
   /*
-    Load only the seasons required for the
-    selected ten games.
+    Load only seasons required for the selected
+    ten games.
 
-    During migration, the original combined JSON
-    remains available as a fallback.
+    If any individual game is missing, attempt
+    to retrieve it from the legacy combined cache.
   */
 
   async function details(games) {
@@ -245,12 +238,10 @@
     );
 
     const combined = {};
-    let successful = 0;
 
     results.forEach((result, index) => {
       if (result.status === 'fulfilled') {
         Object.assign(combined, result.value);
-        successful++;
       } else {
         console.warn(
           `Hoist: ${years[index]} scoresheets unavailable`,
@@ -259,32 +250,48 @@
       }
     });
 
-    /*
-      Temporary fallback to original combined JSON.
+    const missing = games.filter(
+      game => !combined[String(game.id)]
+    );
 
-      Remove this fallback after the new season
-      files have been deployed and verified.
-    */
-
-    if (successful === 0) {
-      if (!legacyDetailsPromise) {
-        legacyDetailsPromise = getCache(
-          'head-to-head-scoresheets.json'
-        ).then(data => data.games || {})
-          .catch(error => {
-            legacyDetailsPromise = null;
-            throw error;
-          });
-      }
-
+    if (missing.length) {
       try {
-        return await legacyDetailsPromise;
+        if (!legacyDetailsPromise) {
+          legacyDetailsPromise = getCache(
+            'head-to-head-scoresheets.json'
+          ).then(data => data.games || {})
+            .catch(error => {
+              legacyDetailsPromise = null;
+              throw error;
+            });
+        }
+
+        const legacy = await legacyDetailsPromise;
+
+        for (const game of missing) {
+          const id = String(game.id);
+
+          if (legacy[id]) {
+            combined[id] = legacy[id];
+          }
+        }
       } catch (error) {
         console.warn(
-          'Legacy scoresheet cache unavailable:',
+          'Legacy scoresheet fallback unavailable:',
           error
         );
       }
+    }
+
+    const stillMissing = games
+      .map(game => String(game.id))
+      .filter(id => !combined[id]);
+
+    if (stillMissing.length) {
+      console.warn(
+        'Hoist: scoresheets still missing for game IDs:',
+        stillMissing
+      );
     }
 
     return combined;
@@ -484,18 +491,39 @@
 
   /*
     HELPERS
+
+    FIXED: NHL API team abbreviations may be
+    strings or localized objects.
+
+    Examples:
+      "ANA"
+      { default: "ANA" }
+      { abbrev: "ANA" }
+      { abbrev: { default: "ANA" } }
   */
 
   function teamCode(value) {
-    if (typeof value === 'string') return value;
+    if (!value) return '';
 
-    return (
-      value?.abbrev ||
-      value?.triCode ||
-      value?.teamAbbrev?.default ||
-      value?.teamAbbrev ||
-      ''
-    );
+    if (typeof value === 'string') {
+      return value.toUpperCase();
+    }
+
+    const code =
+      value.abbrev?.default ||
+      value.abbrev ||
+      value.triCode?.default ||
+      value.triCode ||
+      value.teamAbbrev?.default ||
+      value.teamAbbrev ||
+      value.default ||
+      value.team?.abbrev?.default ||
+      value.team?.abbrev ||
+      '';
+
+    return typeof code === 'string'
+      ? code.toUpperCase()
+      : '';
   }
 
   function periodLabel(period) {
@@ -541,6 +569,9 @@
 
   /*
     SCORING SUMMARY
+
+    FIXED: team abbreviations are now read
+    correctly from NHL API goal objects.
   */
 
   function scoring(payload) {
