@@ -3328,7 +3328,9 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 
 /* Games: oldest of five on left, newest on right; active 3+ scoring streaks. */
 #games .hoist-game-player-toggle {position:relative;}
-#games .hoist-game-player-toggle:has(.hoist-game-streak-label) {padding-bottom:30px!important;}
+/* Keep every player row the same height, whether a streak is shown or not. */
+#games .hoist-game-player-toggle {min-height:92px!important;box-sizing:border-box;}
+#games .hoist-game-hot-player.hoist-game-player-toggle {min-height:92px!important;}
 #games .hoist-game-streak-label {
   position:absolute;right:26px;bottom:7px;
   color:#39df91!important;font-size:10px;font-weight:850;
@@ -5406,15 +5408,26 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('')}</span>`;
   }
   function pointStreak(games, opponent = null) {
-    // Count consecutive scoring games starting with the most recent recorded game.
+    // Goal streaks take priority over point streaks. Both require 3+ consecutive
+    // scoring games, counting backwards from the most recent recorded game.
     const latest=[...(games||[])].sort(byRecent);
-    let count=0;
-    for(const game of latest){
-      const value=pts(game);
-      if(value===null || value<=0)break;
-      count++;
-    }
-    return count>=3 ? `<span class="hoist-game-streak-label" aria-label="${count} game point streak${opponent ? ` versus ${esc(opponent)}` : ''}">${count}-GAME POINT STREAK${opponent ? ` VS ${esc(opponent)}` : ''}</span>` : '';
+    const consecutive = getter => {
+      let count=0;
+      for (const game of latest) {
+        const value=getter(game);
+        if(value===null || value<=0)break;
+        count++;
+      }
+      return count;
+    };
+    const goalCount=consecutive(goals);
+    const pointCount=consecutive(pts);
+    const isGoal=goalCount>=3;
+    const count=isGoal?goalCount:pointCount;
+    if(count<3)return '';
+    const type=isGoal?'GOAL':'POINT';
+    const opponentText=opponent?` VS ${esc(opponent)}`:'';
+    return `<span class="hoist-game-streak-label" aria-label="${count} game ${type.toLowerCase()} streak${opponent ? ` versus ${esc(opponent)}` : ''}">${count}-GAME ${type} STREAK${opponentText}</span>`;
   }
   function teamHtml(data,team,opponent) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
