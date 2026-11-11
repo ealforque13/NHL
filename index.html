@@ -3073,6 +3073,17 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
 #stats .hoist-stats-player-meta{display:block!important;max-width:100%;margin-top:3px;font-size:10px!important;font-weight:500!important;line-height:1.2!important;color:#9db4d5!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 #stats .hoist-stats-rail-row .hoist-stats-name{display:flex!important;flex-direction:column!important;white-space:normal!important}
 @media(max-width:650px){#stats .hoist-stats-player-meta{font-size:10px!important;margin-top:2px}}
+
+/* Build 20261110-62: NHL club logos instead of abbreviations in League stats. */
+#stats .hoist-stats-club-logo{display:block;width:29px;height:29px;max-width:100%;object-fit:contain;flex-shrink:0}
+#stats .hoist-stats-jersey:has(.hoist-stats-club-logo){width:32px;min-width:32px;flex:0 0 32px;align-items:center;justify-content:center}
+@media(max-width:650px){#stats .hoist-stats-club-logo{width:25px;height:25px}#stats .hoist-stats-jersey:has(.hoist-stats-club-logo){width:28px;min-width:28px;flex:0 0 28px}}
+
+/* Build 20261110-63 — League stats: player headshots and team / number / position metadata. */
+#stats .hoist-stats-headshot{display:block;width:30px;height:30px;object-fit:cover;object-position:center top;border-radius:50%;background:#263e5e;flex-shrink:0}
+#stats .hoist-stats-headshot-fallback{width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:#263e5e;color:#b8d8f6;font-size:13px}
+#stats .hoist-stats-jersey:has(.hoist-stats-headshot){flex:0 0 32px;min-width:32px;width:32px}
+@media(max-width:650px){#stats .hoist-stats-headshot,#stats .hoist-stats-headshot-fallback{width:25px;height:25px}#stats .hoist-stats-jersey:has(.hoist-stats-headshot){flex:0 0 27px;min-width:27px;width:27px}}
 </style>
 </head>
 
@@ -4552,7 +4563,16 @@ document.addEventListener('DOMContentLoaded', function () {
    const key=String(value||'').toUpperCase();
    return ({C:'Centre',L:'Left Wing',LW:'Left Wing',R:'Right Wing',RW:'Right Wing',D:'Defence',LD:'Defence',RD:'Defence',G:'Goaltender'})[key]||String(value||'—');
  };
- const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(mode==='league'?p.team:jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
+ const statsHeadshot=p=>{
+   const id=p.playerId??p.id??p.playerID;
+   if(id==null)return `<span class="hoist-stats-headshot-fallback" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
+   const club=encodeURIComponent(p.team);
+   const playerId=encodeURIComponent(String(id));
+   const current=`https://assets.nhle.com/mugs/nhl/20262027/${club}/${playerId}.png`;
+   const previous=`https://assets.nhle.com/mugs/nhl/20252026/${club}/${playerId}.png`;
+   return `<img class="hoist-stats-headshot" src="${current}" alt="" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${previous}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"><span class="hoist-stats-headshot-fallback" style="display:none" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
+ };
+ const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${mode==='league'?statsHeadshot(p):esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
  function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
