@@ -5396,7 +5396,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   function teamHtml(data,team,opponent) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
-      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,3);
+      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,5);
     const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
     return `<section class="hoist-game-leaders-team"><h4>${esc(team)} players vs ${esc(opponent)}</h4>${items}</section>`;
   }
@@ -5404,7 +5404,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rows=(data.players||[]).map(p=>{
       const games=[...(p.games||[])].sort(byRecent).slice(0,5);
       return {p,games,gp:games.length,points:games.reduce((n,g)=>n+(pts(g)??0),0),gs:games.every(g=>goals(g)!==null)?games.reduce((n,g)=>n+goals(g),0):null,as:games.every(g=>assists(g)!==null)?games.reduce((n,g)=>n+assists(g),0):null};
-    }).filter(r=>r.gp>0).sort((a,b)=>b.points-a.points||(b.points/b.gp)-(a.points/a.gp)).slice(0,3);
+    }).filter(r=>r.gp>0).sort((a,b)=>b.points-a.points||(b.points/b.gp)-(a.points/a.gp)).slice(0,5);
     const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry hoist-game-hot-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle hoist-game-hot-player" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.points}<small>PTS</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 recorded games — ${esc(r.p.name)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">Recent player game data unavailable.</p>';
     return `<section class="hoist-game-leaders-team"><h4>${esc(team)}</h4>${items}</section>`;
   }
