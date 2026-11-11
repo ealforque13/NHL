@@ -3338,6 +3338,15 @@ img[data-hoist-team="TBL"],
 </style>
 
 <style>
+/* Games player portraits use the same club-colour circles as Overview and Stats. */
+html body #games img.hoist-game-player-headshot {
+  background-color:var(--hoist-headshot-team-color,#293e5d)!important;
+  background-image:none!important;
+  background-clip:padding-box!important;
+  border-radius:50%!important;
+  object-fit:contain!important;
+  filter:none!important;
+}
 /* Games: expandable opponent-specific scoring leaders. */
 #games .hoist-game-card{cursor:pointer}
 #games .hoist-game-card:focus-visible{outline:2px solid #49b5ff;outline-offset:3px}
@@ -5288,8 +5297,18 @@ document.addEventListener('DOMContentLoaded', function () {
   function headshot(p,team) {
     return typeof p.headshot==='string' && /^https:\/\//.test(p.headshot) ? p.headshot : `https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(p.id || '')}.png`;
   }
+  const portraitColours = {
+    ANA:'#F47A38',BOS:'#FFB81C',BUF:'#003087',CGY:'#C8102E',CAR:'#E31837',
+    CHI:'#CF0A2C',COL:'#6F263D',CBJ:'#002654',DAL:'#006847',DET:'#CE1126',
+    EDM:'#FF4C00',FLA:'#C8102E',LAK:'#555F67',MIN:'#154734',MTL:'#AF1E2D',
+    NSH:'#FFB81C',NJD:'#CE1126',NYI:'#00539B',NYR:'#0038A8',OTT:'#C52032',
+    PHI:'#F74902',PIT:'#FCB514',SJS:'#006D75',SEA:'#005A9C',STL:'#002F87',
+    TBL:'#0065B1',TOR:'#003E7E',UTA:'#6CACE4',VAN:'#00843D',VGK:'#B4975A',
+    WSH:'#C8102E',WPG:'#041E42'
+  };
   function portrait(p,team) {
-    return `<img class="hoist-game-player-headshot" src="${esc(headshot(p,team))}" alt="" loading="lazy" onerror="this.style.display='none'">`;
+    const colour=portraitColours[String(team||'').toUpperCase()]||'#293e5d';
+    return `<img class="hoist-game-player-headshot hoist-team-headshot" style="--hoist-headshot-team-color:${colour}" src="${esc(headshot(p,team))}" alt="" loading="lazy" onerror="this.style.display='none'">`;
   }
   function formatGameDate(value) {
     const raw=String(value||"").slice(0,10);
