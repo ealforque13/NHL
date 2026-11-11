@@ -3137,8 +3137,17 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
   object-fit:contain!important;
 }
 
-/* HOIST OFFICIAL — LARGER STANDINGS TEAM LOGOS (DESKTOP ONLY) */
+/* HOIST OFFICIAL — LARGE DESKTOP LOGOS, ORIGINAL COMPACT ROW HEIGHT */
 @media (min-width: 1100px) {
+  #standings .hoist-conference-table .hoist-standing-team,
+  #standings #hoist-standings-table .hoist-standing-team {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    height: 30px !important;
+    vertical-align: middle !important;
+  }
+
   #standings .hoist-conference-table .hoist-standing-team img,
   #standings #hoist-standings-table .hoist-standing-team img {
     width: 44px !important;
@@ -3148,14 +3157,11 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     flex-shrink: 0 !important;
   }
 
-  #standings .hoist-conference-table .hoist-standing-team,
-  #standings #hoist-standings-table .hoist-standing-team {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 14px !important;
+  #standings .hoist-conference-table tbody tr.hoist-team-row td {
+    padding-top: 17px !important;
+    padding-bottom: 17px !important;
   }
 }
-
 </style>
 </head>
 
