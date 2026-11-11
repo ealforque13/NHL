@@ -5753,6 +5753,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const as=games.every(g=>assists(g)!==null)?games.reduce((n,g)=>n+assists(g),0):null;
     return {p,games,gp,points,gs,as,ppg:gp?points/gp:0};
   }
+  // Share Overview's verified injury feed (data/injuries.json) for Games.
+  // Matchup.js uses data.players keyed by NHL player ID, not lineup status.
+  let verifiedGameInjuries = {};
+  let verifiedGameInjuriesPromise;
+  function loadVerifiedGameInjuries(){
+    if(!verifiedGameInjuriesPromise)verifiedGameInjuriesPromise=fetch('./data/injuries.json',{cache:'no-cache'})
+      .then(r=>r.ok?r.json():null)
+      .then(data=>{verifiedGameInjuries=data&&data.players&&typeof data.players==='object'&&!Array.isArray(data.players)?data.players:{};})
+      .catch(()=>{verifiedGameInjuries={};});
+    return verifiedGameInjuriesPromise;
+  }
   // Match Overview's red + marker, with lineup status as a fallback for
   // teams that are not currently selected on the Overview page.
   function injuryMark(p,roster) {
@@ -5762,6 +5773,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const full=normalize(name);
     const abbreviated=parts.length>1?normalize(`${parts[0][0]} ${parts.slice(1).join(' ')}`):full;
     const id=String(p.id??p.playerId??p.playerID??'');
+    const verifiedInjury=verifiedGameInjuries[id];
+    if(verifiedInjury?.injured===true){
+      const label=esc(verifiedInjury.description||'Injured');
+      return `<span class="hoist-injury-plus" title="${label}" aria-label="${label}">+</span>`;
+    }
     const rosterPlayer=(id?roster?.byId.get(id):null)??roster?.byName.get(full);
     const statuses=[p,rosterPlayer].filter(Boolean);
     const hasFlag=statuses.some(x=>x.injured===true||x.isInjured===true||x.is_injured===true||x.isOut===true||x.out===true||x.unavailable===true||x.isUnavailable===true||x.scratched===true);
@@ -5863,7 +5879,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if(lastFive)lastFive.before(detail);
     else {const foot=card.querySelector('.hoist-game-card-foot');if(foot)foot.before(detail);else card.append(detail);}
     card.setAttribute('aria-expanded','true');card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','true');
-    const [results,rosters]=await Promise.all([Promise.allSettled([getTeam(away),getTeam(home)]),Promise.all([featureRoster(away),featureRoster(home)])]);
+    const [results,rosters]=await Promise.all([Promise.allSettled([getTeam(away),getTeam(home)]),Promise.all([featureRoster(away),featureRoster(home)]),loadVerifiedGameInjuries()]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
     detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i],rosters[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div></section>`).join('')}</div>`;
