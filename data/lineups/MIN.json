@@ -3,7 +3,7 @@
   "type": "roster",
   "status": "roster",
   "source": "NHL Web API",
-  "updatedAt": "2026-11-10T19:14:23.566728+00:00",
+  "updatedAt": "2026-11-11T01:23:45.957115+00:00",
   "forwards": [
     {
       "id": 8481557,
@@ -67,13 +67,6 @@
       "position": "C",
       "number": 47,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8477446.png"
-    },
-    {
-      "id": 8475752,
-      "name": "Tyler Pitlick",
-      "position": "C",
-      "number": 19,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8475752.png"
     },
     {
       "id": 8485702,
