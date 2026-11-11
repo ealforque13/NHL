@@ -3654,6 +3654,17 @@ body[data-theme="light"] #games .hoist-game-card {
   #games .hoist-game-row-chevron{right:2px!important;width:6px!important;height:6px!important}
 }
 </style>
+<style>
+/* V32: prevent duplicated responsive PTS / PTS-GP header labels. */
+#games .hoist-game-overview-table .hoist-game-heading-desktop{display:inline!important;white-space:nowrap!important}
+#games .hoist-game-overview-table .hoist-game-heading-mobile{display:none!important}
+#games .hoist-game-overview-table thead th[data-sort] .hoist-sort-button{white-space:nowrap!important;overflow:visible!important;line-height:1.15!important}
+#games .hoist-game-overview-table thead th[data-sort] .hoist-sort-button .hoist-sort-arrow{flex-shrink:0!important}
+@media(max-width:650px){
+  #games .hoist-game-overview-table .hoist-game-heading-desktop{display:none!important}
+  #games .hoist-game-overview-table .hoist-game-heading-mobile{display:inline!important;white-space:nowrap!important}
+}
+</style>
 </head>
 
 <body>
