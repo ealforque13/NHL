@@ -3544,6 +3544,34 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-h2h-teams .hoist-game-overview-format .hoist-game-player-entry{border:0!important}
 @media(max-width:650px){#games .hoist-game-overview-table{font-size:11px}#games .hoist-game-overview-table th{font-size:10px;padding:9px 2px}#games .hoist-game-overview-table td{padding:9px 2px}#games .hoist-game-overview-player img.hoist-game-player-headshot{width:30px!important;height:30px!important}#games .hoist-game-overview-player-name strong{font-size:11px}#games .hoist-game-overview-player{gap:4px}}
 </style>
+
+<style>
+/* V24: Games head-to-head adopts Overview's blue sortable table and dimensions. */
+#games .hoist-game-overview-format .hoist-game-table-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+#games .hoist-game-overview-format .hoist-game-table-top h4{margin:0!important}
+#games .hoist-game-gp-filter label{display:flex;align-items:center;gap:8px;color:#91b8ec;font-size:12px;font-weight:800}
+#games .hoist-game-gp-filter select{min-width:68px;padding:6px 8px;border:1px solid #44648d;background:#193657;color:#d7e9ff;border-radius:4px;font:inherit}
+#games .hoist-game-overview-table{table-layout:fixed!important;width:100%!important}
+#games .hoist-game-overview-table th:first-child,#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:first-child{width:40%!important;box-sizing:border-box!important}
+#games .hoist-game-overview-table th:nth-child(n+2),#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(n+2){width:12%!important;box-sizing:border-box!important;text-align:center!important}
+#games .hoist-game-overview-table th{background:#183758!important;color:#91b8ec!important;padding:0 3px!important;height:42px!important}
+#games .hoist-game-overview-table th:first-child{text-align:left!important;padding-left:10px!important}
+#games .hoist-game-overview-table .hoist-sort-button{display:inline-flex!important;align-items:center;justify-content:center;gap:4px;width:100%;min-height:42px;padding:8px 2px;background:transparent;border:0;color:#91b8ec;font-size:11px;font-weight:800;cursor:pointer}
+#games .hoist-game-overview-table .hoist-sort-button:hover,#games .hoist-game-overview-table th.hoist-sort-active .hoist-sort-button{color:#fff;background:rgba(120,155,205,.12)}
+#games .hoist-game-overview-table .hoist-sort-arrow::after{content:'↕';font-size:11px;opacity:.65}
+#games .hoist-game-overview-table th[data-direction='asc'] .hoist-sort-arrow::after{content:'↑';opacity:1}
+#games .hoist-game-overview-table th[data-direction='desc'] .hoist-sort-arrow::after{content:'↓';opacity:1}
+#games .hoist-game-overview-table tr.hoist-game-overview-player-row{cursor:pointer;height:62px}
+#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td{height:62px!important;padding:8px 5px!important;position:relative}
+#games .hoist-game-overview-table tr.hoist-game-overview-player-row:hover>td{background:rgba(122,164,220,.08)!important}
+#games .hoist-game-overview-table tr.hoist-game-overview-player-row:focus-visible{outline:2px solid #91b8ec;outline-offset:-2px}
+#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td:last-child{padding-right:18px!important}
+#games .hoist-game-row-chevron{position:absolute;right:4px;top:50%;width:8px;height:8px;border-right:2px solid #b7c9df;border-bottom:2px solid #b7c9df;transform:translateY(-50%) rotate(-45deg);transition:transform .15s}
+#games .hoist-game-overview-player-row[aria-expanded='true'] .hoist-game-row-chevron{transform:translateY(-50%) rotate(45deg)}
+#games .hoist-game-overview-table tr[hidden]{display:none!important}
+#games .hoist-game-overview-player-name strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+@media(max-width:650px){#games .hoist-game-overview-table tr.hoist-game-overview-player-row,#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td{height:56px!important}#games .hoist-game-overview-table th{font-size:10px!important}#games .hoist-game-overview-table .hoist-sort-button{font-size:10px!important}#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td{padding:6px 2px!important}}
+</style>
 </head>
 
 <body>
@@ -5528,10 +5556,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return `<span class="hoist-game-streak-label" aria-label="${count} game ${type.toLowerCase()} streak${opponent ? ` versus ${esc(opponent)}` : ''}">${count}-GAME ${type} STREAK${opponentText}</span>`;
   }
   function teamHtml(data,team,opponent) {
-    const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
-      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,5);
-    const items=rows.length?rows.map(r=>`<tr class="hoist-game-overview-player-row"><td><button type="button" class="hoist-game-overview-player hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}</td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
-    return `<section class="hoist-game-leaders-team hoist-game-overview-format"><h4>${esc(team)} players vs ${esc(opponent)}</h4><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th><th>G</th><th>A</th><th>PTS</th><th>PTS/GP</th></tr></thead><tbody>${items}</tbody></table></div></section>`;
+    const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=1)
+      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,50);
+    const items=rows.length?rows.map(r=>`<tr class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
+    const heading=(key,label)=>`<th data-sort="${key}"><button type="button" class="hoist-sort-button" aria-label="Sort by ${label}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
+    return `<section class="hoist-game-leaders-team hoist-game-overview-format"><div class="hoist-game-table-top"><h4>${esc(team)} players vs ${esc(opponent)}</h4><div class="hoist-game-gp-filter"><label>GP <select aria-label="Minimum games played against ${esc(opponent)}"><option value="1">1+</option><option value="2" selected>2+</option><option value="3">3+</option><option value="5">5+</option><option value="10">10+</option></select></label></div></div><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th>${heading('goals','G')}${heading('assists','A')}${heading('points','PTS')}${heading('ppg','PTS/GP')}</tr></thead><tbody>${items}</tbody></table></div></section>`;
   }
   function hotHtml(data,team) {
     const rows=(data.players||[]).map(p=>{
@@ -5559,7 +5588,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><h3 class="hoist-game-team-group-title"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span> ${esc(names[i])}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p></section>`).join('')}</div>`;
+    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><h3 class="hoist-game-team-group-title"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span> ${esc(names[i])}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP · Use GP filter to adjust</p></section>`).join('')}</div>`;
+    detail.querySelectorAll('.hoist-game-gp-filter select').forEach(select=>select.dispatchEvent(new Event('change',{bubbles:true})));
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
@@ -5569,9 +5599,23 @@ document.addEventListener('DOMContentLoaded', function () {
       button.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';head.append(button);
     }
   }
+  document.addEventListener('change',e=>{
+    if(!e.target.matches('#games .hoist-game-gp-filter select'))return;
+    const section=e.target.closest('.hoist-game-overview-format'),minimum=Number(e.target.value);
+    const rows=[...section.querySelectorAll('tr.hoist-game-overview-player-row')];
+    let visible=0;rows.forEach(row=>{const show=Number(row.dataset.gp)>=minimum&&visible<5;if(show)visible++;row.hidden=!show;const detail=row.nextElementSibling;if(detail?.classList.contains('hoist-game-overview-history'))detail.hidden=!show||row.getAttribute('aria-expanded')!=='true';});
+  });
+  document.addEventListener('keydown',e=>{const row=e.target.closest('#games tr.hoist-game-overview-player-row');if(row&&(e.key==='Enter'||e.key===' ')){e.preventDefault();row.click();}});
   document.addEventListener('click',e=>{
-    const player=e.target.closest('#games .hoist-game-player-toggle');
-    if(player){e.preventDefault();e.stopPropagation();const open=player.getAttribute('aria-expanded')==='true';player.setAttribute('aria-expanded',String(!open));const panel=player.closest('tr')?.nextElementSibling || player.nextElementSibling;if(panel)panel.hidden=open;return;}
+    const sort=e.target.closest('#games .hoist-game-overview-table th[data-sort] .hoist-sort-button');
+    if(sort){e.preventDefault();e.stopPropagation();const table=sort.closest('table'),th=sort.closest('th'),key=th.dataset.sort,body=table.tBodies[0],ascending=th.dataset.direction!=='asc';
+      table.querySelectorAll('th[data-sort]').forEach(h=>{h.classList.remove('hoist-sort-active');h.removeAttribute('aria-sort');if(h!==th)delete h.dataset.direction;});
+      th.dataset.direction=ascending?'asc':'desc';th.classList.add('hoist-sort-active');th.setAttribute('aria-sort',ascending?'ascending':'descending');
+      const pairs=[...body.querySelectorAll('tr.hoist-game-overview-player-row')].map(row=>({row,history:row.nextElementSibling}));
+      pairs.sort((a,b)=>{const x=Number(a.row.dataset[key]),y=Number(b.row.dataset[key]);return ascending?x-y:y-x;});
+      pairs.forEach(({row,history})=>{body.append(row);if(history?.classList.contains('hoist-game-overview-history'))body.append(history);});return;}
+    const player=e.target.closest('#games tr.hoist-game-overview-player-row');
+    if(player){e.preventDefault();e.stopPropagation();const open=player.getAttribute('aria-expanded')==='true';player.setAttribute('aria-expanded',String(!open));const panel=player.nextElementSibling;if(panel?.classList.contains('hoist-game-overview-history'))panel.hidden=open;return;}
     if(e.target.closest('#games .hoist-game-leaders'))return;
     const card=e.target.closest('#games .hoist-game-card');if(card)toggle(card);
   });
