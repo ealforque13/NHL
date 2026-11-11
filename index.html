@@ -3631,6 +3631,12 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V30: chronological matchup history with venue below date; restore injury badge visibility. */
+#games .hoist-game-history-date{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+#games .hoist-game-history-opponent{display:block;color:#9db2ce;font-size:10px;font-weight:500;line-height:1.25;white-space:nowrap}
+#games .hoist-game-overview-player-name strong .hoist-injury-plus{display:inline!important;color:#ff354d!important;font-weight:900!important;font-size:1.15em!important;line-height:1!important;margin-left:4px!important;vertical-align:baseline!important}
+</style>
 </head>
 
 <body>
@@ -5556,7 +5562,13 @@ document.addEventListener('DOMContentLoaded', function () {
   function history(games) {
     const latest=[...games].sort(byRecent).slice(0,5);
     if(!latest.length)return '<p class="hoist-game-leaders-note">No previous games recorded against this opponent.</p>';
-    return `<div class="hoist-game-history-head"><span>DATE</span><span>PTS</span><span>G</span><span>A</span></div>${latest.map(g=>`<div class="hoist-game-history-row"><span>${esc(formatGameDate(dateOf(g)))}</span><span>${pts(g)??'—'}</span><span>${goals(g)??'—'}</span><span>${assists(g)??'—'}</span></div>`).join('')}`;
+    return `<div class="hoist-game-history-head"><span>DATE</span><span>G</span><span>A</span><span>PTS</span></div>${latest.map(g=>{
+      const venue=String(g.homeRoadFlag||g.homeAway||g.homeOrAway||'').toUpperCase();
+      const prefix=venue==='H'||venue==='HOME'?'vs ':venue==='R'||venue==='A'||venue==='AWAY'?'at ':'';
+      const opponent=opponentOf(g);
+      const matchup=prefix&&opponent?`<small class="hoist-game-history-opponent">${prefix}${esc(opponent)}</small>`:'';
+      return `<div class="hoist-game-history-row"><span class="hoist-game-history-date">${esc(formatGameDate(dateOf(g)))}${matchup}</span><span>${goals(g)??'—'}</span><span>${assists(g)??'—'}</span><span>${pts(g)??'—'}</span></div>`;
+    }).join('')}`;
   }
   function score(p,opponent) {
     const games=(p.games||[]).filter(g=>opponentOf(g)===opponent);
@@ -5567,16 +5579,17 @@ document.addEventListener('DOMContentLoaded', function () {
     return {p,games,gp,points,gs,as,ppg:gp?points/gp:0};
   }
   function injuryMark(p) {
-    // Reuse verified injury markers already rendered by the Overview matchup tables.
     const normalized = v => String(v||'').toLowerCase().replace(/[^a-z0-9]/g,'');
-    const target = normalized(p.name);
-    const overviewInjured = [...document.querySelectorAll('#mi-left tr, #mi-right tr, #mi-hot tr')].some(row => {
-      const mark=row.querySelector('.hoist-injury-plus');
-      if(!mark)return false;
-      const cell=row.querySelector('td:first-child');
-      return cell && normalized(cell.textContent.replace(/\+/g,'')).includes(target);
+    const name=String(p.name||'').trim();
+    const parts=name.split(/\s+/);
+    const full=normalized(name);
+    const abbreviated=parts.length>1?normalized(`${parts[0][0]} ${parts.slice(1).join(' ')}`):full;
+    const overviewInjured=[...document.querySelectorAll('#overview .hoist-injury-plus, #overview [aria-label="Injured"], #overview [title="Injured"]')].some(mark=>{
+      const cell=mark.closest('td, .mi-person, .hoist-h2h-row-clickable');
+      if(!cell)return false;
+      const text=normalized(cell.textContent.replace(/\+/g,''));
+      return text.includes(full)||text.includes(abbreviated);
     });
-    // Only show an injury marker when the data explicitly identifies an injury.
     const status=String(p.injuryStatus ?? p.injury_status ?? p.status ?? '').toLowerCase().trim();
     const confirmed=p.injured===true || p.isInjured===true || p.is_injured===true ||
       ['injured','injury','out','day-to-day','day to day','ir','ltir','injured reserve'].includes(status);
