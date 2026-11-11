@@ -3310,11 +3310,28 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
    Matches logos in Overview, Games, Standings, Stats, Lineups and Teams. */
 img[src*="TBL_" i],
 img[src*="/TBL." i],
-img[src*="/TBL/" i],
 img[data-hoist-team="TBL"],
 #team-logo[data-hoist-team="TBL"] {
   filter:brightness(0) invert(1) !important;
 }
+</style>
+
+<style>
+/* Games: expandable opponent-specific scoring leaders. */
+#games .hoist-game-card{cursor:pointer}
+#games .hoist-game-card:focus-visible{outline:2px solid #49b5ff;outline-offset:3px}
+#games .hoist-game-card[aria-expanded="true"]{border-color:rgba(73,181,255,.55)}
+#games .hoist-game-leaders{margin-top:16px;padding-top:15px;border-top:1px solid var(--border,rgba(140,153,177,.25));cursor:default}
+#games .hoist-game-leaders-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#games .hoist-game-leaders h4{font-size:13px;margin:0 0 10px;font-weight:800}
+#games .hoist-game-leader{display:flex;align-items:center;gap:8px;padding:8px 0;border-top:1px solid rgba(140,153,177,.13);min-width:0}
+#games .hoist-game-leader img{width:37px;height:37px;object-fit:contain;flex-shrink:0;border-radius:50%}
+#games .hoist-game-leader-name{min-width:0;flex:1}
+#games .hoist-game-leader-name strong{display:block;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#games .hoist-game-leader-name small{display:block;color:var(--muted,#9ca8b9);font-size:10px}
+#games .hoist-game-leader-ppg{font-weight:800;color:#fff;font-size:14px;white-space:nowrap}
+#games .hoist-game-leaders-note{font-size:11px;color:var(--muted,#9ca8b9);margin:10px 0 0}
+@media(max-width:650px){#games .hoist-game-leaders-grid{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 
@@ -5194,6 +5211,69 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('team-select')?.addEventListener('change',syncTampaLogo);
     setTimeout(syncTampaLogo,1000);
   });
+})();
+</script>
+
+<script>
+/* Game-card matchup leaders, reusing Overview's cached player-versus-opponent data. */
+(() => {
+  const escape = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const cache = new Map();
+  const codes = new Set('ANA BOS BUF CGY CAR CHI COL CBJ DAL DET EDM FLA LAK MIN MTL NSH NJD NYI NYR OTT PHI PIT SJS SEA STL TBL TOR UTA VAN VGK WSH WPG'.split(' '));
+  async function getTeam(code) {
+    if(!cache.has(code)) cache.set(code,fetch(`./data/matchups/${encodeURIComponent(code)}.json`,{cache:'no-cache'}).then(r=>{
+      if(!r.ok)throw Error('Player matchup data unavailable');return r.json();
+    }).catch(e=>{cache.delete(code);throw e}));
+    return cache.get(code);
+  }
+  const score = (player,opponent) => {
+    const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent);
+    const gp=games.length,points=games.reduce((sum,g)=>sum+(Number(g.points)||0),0);
+    return {player,gp,points,ppg:gp?points/gp:0};
+  };
+  function teamHtml(data,team,opponent){
+    const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>0)
+      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.player.name).localeCompare(String(b.player.name))).slice(0,3);
+    const items=rows.length?rows.map(r=>{
+      const p=r.player;
+      const headshot=typeof p.headshot==='string'&&p.headshot.startsWith('https://')?p.headshot:`https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(p.id)}.png`;
+      return `<div class="hoist-game-leader"><img src="${escape(headshot)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="hoist-game-leader-name"><strong>${escape(p.name)}</strong><small>${r.points} PTS · ${r.gp} GP</small></div><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} P/GP</span></div>`;
+    }).join(''):'<p class="hoist-game-leaders-note">No recorded games against this opponent.</p>';
+    return `<section><h4>${escape(team)} players vs ${escape(opponent)}</h4>${items}</section>`;
+  }
+  async function toggle(card){
+    const existing=card.querySelector('.hoist-game-leaders');
+    if(existing){existing.remove();card.setAttribute('aria-expanded','false');return}
+    document.querySelectorAll('#games .hoist-game-leaders').forEach(e=>{e.closest('.hoist-game-card')?.setAttribute('aria-expanded','false');e.remove()});
+    const label=card.querySelector('.hoist-game-card-foot span')?.textContent||'';
+    const match=label.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);
+    if(!match||!codes.has(match[1])||!codes.has(match[2]))return;
+    const [away,home]=[match[1],match[2]];
+    const detail=document.createElement('div');detail.className='hoist-game-leaders';
+    detail.innerHTML='<p class="hoist-game-leaders-note">Loading top performers…</p>';
+    card.append(detail);card.setAttribute('aria-expanded','true');
+    const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
+    if(!detail.isConnected)return;
+    detail.innerHTML=`<div class="hoist-game-leaders-grid">${results.map((r,i)=>r.status==='fulfilled'?teamHtml(r.value,i?home:away,i?away:home):`<section><h4>${i?home:away} players vs ${i?away:home}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Regular-season head-to-head player history · Active roster skaters · Ranked by points per game (minimum 1 GP)</p>`;
+  }
+  document.addEventListener('click',e=>{
+    if(e.target.closest('#games .hoist-game-leaders'))return;
+    const card=e.target.closest('#games .hoist-game-card');
+    if(card)toggle(card);
+  });
+  document.addEventListener('keydown',e=>{
+    const card=e.target.closest('#games .hoist-game-card');
+    if(card&&e.target===card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();toggle(card)}
+  });
+  const observer=new MutationObserver(records=>{
+    records.forEach(r=>r.addedNodes.forEach(node=>{
+      if(node.nodeType!==1)return;
+      const cards=node.matches?.('#games .hoist-game-card')?[node]:node.querySelectorAll?.('#games .hoist-game-card')||[];
+      cards.forEach(c=>{c.tabIndex=0;c.setAttribute('role','button');c.setAttribute('aria-expanded','false');c.setAttribute('aria-label','Show top head-to-head performers for this game')});
+    }));
+  });
+  function init(){const grid=document.getElementById('hoist-games-grid');if(grid)observer.observe(grid,{childList:true,subtree:true})}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
 </body>
