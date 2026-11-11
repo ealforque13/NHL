@@ -3266,6 +3266,20 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
+
+/* Teams directory: responsive division cards */
+#teams .hoist-teams-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+#teams .hoist-division-card{background:rgba(125,164,205,.045);border:1px solid rgba(151,178,207,.17);border-radius:13px;padding:18px;min-width:0}
+#teams .hoist-division-heading{margin:0 0 14px;color:#fff;font-size:16px;font-weight:800;letter-spacing:.025em}
+#teams .hoist-division-conference{display:block;color:#9fb3c9;font-size:11px;font-weight:650;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+#teams .hoist-division-list{display:grid;gap:7px}
+#teams .hoist-team-link{display:flex;align-items:center;gap:12px;width:100%;min-height:51px;text-align:left;padding:7px 11px;border:1px solid transparent;border-radius:9px;background:rgba(134,169,204,.045);color:#fff;cursor:pointer;font:inherit;font-weight:650;transition:background .15s,border-color .15s}
+#teams .hoist-team-link:hover,#teams .hoist-team-link:focus-visible{background:rgba(73,181,255,.13);border-color:rgba(73,181,255,.45);outline:none}
+#teams .hoist-team-link img{width:36px;height:36px;object-fit:contain;flex:none}
+#teams .hoist-team-link span{flex:1}
+#teams .hoist-team-link .hoist-team-chevron{flex:none;color:#49b5ff;font-size:19px}
+@media(max-width:750px){#teams .hoist-teams-grid{grid-template-columns:1fr;gap:13px}#teams .hoist-division-card{padding:14px}#teams .hoist-team-link{min-height:49px}}
+
 </style>
 </head>
 
@@ -3300,6 +3314,7 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     <button class="nav-item" data-tab="standings">
       ▤ <span>Standings</span>
     </button>
+<button class="nav-item" data-tab="teams">◈ <span>Teams</span></button>
 <button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
     <button class="nav-item" data-tab="games">▦ <span>Games</span></button>
 
@@ -3360,6 +3375,7 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
   <div id="hoist-mobile-menu-options" class="hoist-mobile-menu-options" hidden>
     <button type="button" data-mobile-tab="overview">Overview</button>
     <button type="button" data-mobile-tab="standings">Standings</button>
+    <button type="button" data-mobile-tab="teams">Teams</button>
     <button type="button" data-mobile-tab="stats">Stats</button>
     <button type="button" data-mobile-tab="games">Games</button>
     <button type="button" data-mobile-tab="lineups">Lineups</button>
@@ -3766,6 +3782,14 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
         <tbody id="standings-body"></tbody>
       </table>
     </div>
+  </article>
+</section>
+
+<!-- NHL TEAMS DIRECTORY -->
+<section id="teams" class="tab-section hidden" aria-label="NHL Teams">
+  <article class="panel section-panel hoist-teams-directory">
+    <div class="section-head"><div><div class="eyebrow">ALL 32 NHL CLUBS</div><h3>Explore Teams</h3><p class="muted">Choose a team to open its Overview.</p></div></div>
+    <div id="hoist-teams-grid" class="hoist-teams-grid"></div>
   </article>
 </section>
 
@@ -4853,11 +4877,69 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="games.js?v=20261110-46" defer></script>
 
+
+<!-- Teams navigation and division directory; uses existing app.js team selector. -->
+<script>
+(() => {
+  const divisions = [
+    ['Atlantic','Eastern'],['Metropolitan','Eastern'],
+    ['Central','Western'],['Pacific','Western']
+  ];
+  function openTeams(){
+    document.querySelectorAll('.tab-section').forEach(el=>el.classList.toggle('hidden',el.id!=='teams'));
+    document.querySelectorAll('.sidebar .nav-item[data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab==='teams'));
+    const heading=document.getElementById('page-title');if(heading)heading.textContent='NHL Teams';
+    document.body.classList.remove('hoist-standings-active');
+    try{sessionStorage.setItem('hoist-active-page','teams')}catch(_){}
+  }
+  function buildDirectory(){
+    const root=document.getElementById('hoist-teams-grid');if(!root)return;
+    // Reuse the canonical 32-team directory already defined in app.js.
+    if(typeof TEAMS==='undefined'||!Array.isArray(TEAMS))return;
+    root.replaceChildren();
+    divisions.forEach(([division,conference])=>{
+      const card=document.createElement('div');card.className='hoist-division-card';
+      const title=document.createElement('h4');title.className='hoist-division-heading';
+      const subtitle=document.createElement('span');subtitle.className='hoist-division-conference';subtitle.textContent=conference+' Conference';
+      title.append(subtitle,document.createTextNode(division+' Division'));card.append(title);
+      const list=document.createElement('div');list.className='hoist-division-list';
+      TEAMS.filter(t=>t.division===division).sort((a,b)=>a.name.localeCompare(b.name)).forEach(t=>{
+        const button=document.createElement('button');button.type='button';button.className='hoist-team-link';button.dataset.teamCode=t.code;
+        const img=document.createElement('img');img.src='https://assets.nhle.com/logos/nhl/svg/'+encodeURIComponent(t.code)+'_light.svg';img.alt='';img.loading='lazy';
+        const name=document.createElement('span');name.textContent=t.name;
+        const arrow=document.createElement('span');arrow.className='hoist-team-chevron';arrow.setAttribute('aria-hidden','true');arrow.textContent='›';
+        button.append(img,name,arrow);list.append(button);
+      });card.append(list);root.append(card);
+    });
+  }
+  document.addEventListener('click',event=>{
+    const nav=event.target.closest('.sidebar [data-tab="teams"]');
+    if(nav){event.preventDefault();event.stopImmediatePropagation();openTeams();return;}
+    const teamButton=event.target.closest('#hoist-teams-grid [data-team-code]');
+    if(!teamButton)return;
+    const selector=document.getElementById('team-select');if(!selector)return;
+    selector.value=teamButton.dataset.teamCode;
+    selector.dispatchEvent(new Event('change',{bubbles:true}));
+    try{sessionStorage.setItem('hoist-active-page','overview')}catch(_){}
+    const overview=document.querySelector('.sidebar [data-tab="overview"]');
+    if(overview)overview.click();
+    else{
+      document.querySelectorAll('.tab-section').forEach(el=>el.classList.toggle('hidden',el.id!=='overview'));
+    }
+    window.scrollTo({top:0,behavior:'instant'});
+  },true);
+  window.addEventListener('load',()=>{
+    buildDirectory();
+    try{if(sessionStorage.getItem('hoist-active-page')==='teams')openTeams()}catch(_){}
+  });
+})();
+</script>
+
 <!-- KEEP STANDINGS / LINEUPS / OTHER PAGES ACTIVE AFTER REFRESH -->
 <script>
 (() => {
   const storageKey = 'hoist-active-page';
-  const supported = new Set(['overview','standings','stats','games','lineups']);
+  const supported = new Set(['overview','standings','stats','games','lineups','teams']);
 
   function savePage(page) {
     if (!supported.has(page)) return;
@@ -4897,6 +4979,9 @@ document.addEventListener('DOMContentLoaded', function () {
     try { page = sessionStorage.getItem(storageKey) || ''; } catch (_) {}
     if (!supported.has(page) || page === 'overview') return;
 
+    if (page === 'teams') {
+      return; // Teams restores through its own navigation handler on load.
+    }
     if (page === 'lineups') {
       openLineups();
       return;
