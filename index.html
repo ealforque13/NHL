@@ -3044,6 +3044,15 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
   border: 0 !important;
   vertical-align: baseline !important;
 }
+
+/* Build 59: expanded player-history chevron remains neutral, never red. */
+#overview #matchup-intelligence .hoist-h2h-expand,
+#overview #matchup-intelligence .hoist-h2h-expand[aria-expanded="true"],
+#overview #matchup-intelligence .hoist-h2h-expand:hover,
+#overview #matchup-intelligence .hoist-h2h-expand:focus-visible {
+  color:#b7c9df!important; border-color:transparent!important;
+}
+#overview #matchup-intelligence .hoist-h2h-chevron { border-color:currentColor!important; }
 </style>
 </head>
 
@@ -3774,7 +3783,7 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
 <script src="theme.js?v=20261110-1" defer></script>
 <script src="app.js?v=20261110-1" defer></script>
 <script src="v2.js?v=20261110-1" defer></script>
-<script src="matchup.js?v=20261110-57" defer></script>
+<script src="matchup.js?v=20261110-59" defer></script>
 <script src="hoist-head-to-head.js?v=20261110-1" defer></script>
 
 
