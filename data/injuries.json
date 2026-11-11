@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T02:10:10.572757+00:00",
+  "updatedAt": "2026-11-11T07:06:17.911124+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -38,6 +38,12 @@
       "status": "Injured Reserve",
       "team": "COL"
     },
+    "8476393": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "OTT"
+    },
     "8476456": {
       "injured": true,
       "description": "Huberdeau (hip) took the ice in a regular jersey Friday, Pat Steinberg of QR Calgary 770 AM reports.",
@@ -52,8 +58,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NSH"
     },
     "8476853": {
@@ -259,6 +265,12 @@
       "description": "Chytil (shoulder) will not be in action versus the Flyers on Monday, Canucks play-by-play announcer Brendan Batchelor reports.",
       "status": "Injured Reserve",
       "team": "VAN"
+    },
+    "8480192": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "NJD"
     },
     "8480434": {
       "injured": true,
