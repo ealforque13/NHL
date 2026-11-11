@@ -3421,6 +3421,18 @@ html body #games img.hoist-game-player-headshot {
 #games .hoist-game-team-group .hoist-game-hot-section{margin-top:20px;padding-top:18px}
 #games .hoist-game-team-group .hoist-game-leaders-team{width:100%}
 </style>
+
+<style>
+/* Games V12: side-by-side stat sections per team on desktop, stacked on mobile. */
+@media (min-width: 901px) {
+  #games .hoist-game-stats-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
+  #games .hoist-game-stats-columns > * { min-width:0; }
+  #games .hoist-game-stats-columns .hoist-game-hot-section { margin-top:0; padding-top:0; border-top:0; }
+}
+@media (max-width: 900px) {
+  #games .hoist-game-stats-columns { display:block; }
+}
+</style>
 </head>
 
 <body>
@@ -5386,7 +5398,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,3);
     const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
-    return `<section class="hoist-game-leaders-team"><h4>${esc(team)} vs ${esc(opponent)}</h4>${items}</section>`;
+    return `<section class="hoist-game-leaders-team"><h4>${esc(team)} players vs ${esc(opponent)}</h4>${items}</section>`;
   }
   function hotHtml(data,team) {
     const rows=(data.players||[]).map(p=>{
@@ -5414,7 +5426,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=results.map((r,i)=>`<div class="hoist-game-team-group"><h3 class="hoist-game-team-group-title">${i===0?'AWAY':'HOME'} — ${names[i]}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]} vs ${opponents[i]}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p><div class="hoist-game-hot-section"><div class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div></div>`).join('');
+    detail.innerHTML=results.map((r,i)=>`<div class="hoist-game-team-group"><h3 class="hoist-game-team-group-title">${i===0?'AWAY':'HOME'} — ${names[i]}</h3><div class="hoist-game-stats-columns"><div class="hoist-game-h2h-column"><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]} players vs ${opponents[i]}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p></div><div class="hoist-game-hot-section"><div class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div></div></div>`).join('');
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
