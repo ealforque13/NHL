@@ -3521,6 +3521,29 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-h2h-teams .hoist-game-player-history {border-top:1px solid rgba(140,153,177,.25)}
 @media(max-width:900px){#games .hoist-game-h2h-teams {grid-template-columns:minmax(0,1fr);gap:26px}}
 </style>
+<style>
+/* V23: match the Overview head-to-head comparison table in Games. */
+#games .hoist-game-h2h-teams .hoist-game-overview-format h4{font-size:19px!important;font-weight:800!important;margin:0 0 14px!important}
+#games .hoist-game-overview-format .table-scroll{width:100%;overflow-x:auto}
+#games .hoist-game-overview-table{width:100%;border-collapse:collapse;table-layout:fixed;font-size:13px}
+#games .hoist-game-overview-table th{font-size:11px;color:#91b8ec;font-weight:800;text-align:center;padding:13px 5px;border-bottom:1px solid rgba(140,153,177,.28);white-space:nowrap}
+#games .hoist-game-overview-table th:first-child{text-align:left;width:39%}
+#games .hoist-game-overview-table th:last-child{width:16%}
+#games .hoist-game-overview-table td{padding:10px 5px;text-align:center;border-bottom:1px solid rgba(140,153,177,.18);font-weight:650}
+#games .hoist-game-overview-table td:first-child{text-align:left}
+#games .hoist-game-overview-table .hoist-game-overview-ppg{font-weight:850}
+#games .hoist-game-overview-player{width:100%;display:flex;align-items:center;gap:8px;background:transparent;border:0;color:inherit;text-align:left;padding:0;font:inherit;cursor:pointer;min-width:0}
+#games .hoist-game-overview-player img.hoist-game-player-headshot{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:contain;flex:none}
+#games .hoist-game-overview-player-name{min-width:0;flex:1;display:flex;flex-direction:column;gap:3px}
+#games .hoist-game-overview-player-name strong{font-size:12px;line-height:1.25;overflow-wrap:anywhere}
+#games .hoist-game-overview-player .hoist-game-player-chevron{font-size:18px;flex:none}
+#games .hoist-game-overview-player .hoist-game-streak-label{position:static!important;display:block!important;text-align:left!important;font-size:9px!important;line-height:1.25!important;white-space:normal!important}
+#games .hoist-game-overview-history td{padding:12px!important;text-align:left!important;background:rgba(115,145,185,.06)}
+#games .hoist-game-overview-history[hidden]{display:none!important}
+#games .hoist-game-overview-history .hoist-game-history-title{margin-bottom:8px}
+#games .hoist-game-h2h-teams .hoist-game-overview-format .hoist-game-player-entry{border:0!important}
+@media(max-width:650px){#games .hoist-game-overview-table{font-size:11px}#games .hoist-game-overview-table th{font-size:10px;padding:9px 2px}#games .hoist-game-overview-table td{padding:9px 2px}#games .hoist-game-overview-player img.hoist-game-player-headshot{width:30px!important;height:30px!important}#games .hoist-game-overview-player-name strong{font-size:11px}#games .hoist-game-overview-player{gap:4px}}
+</style>
 </head>
 
 <body>
@@ -5507,8 +5530,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function teamHtml(data,team,opponent) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,5);
-    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span>${pointStreak(r.games,opponent)}</button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
-    return `<section class="hoist-game-leaders-team"><h4>${esc(team)} players vs ${esc(opponent)}</h4>${items}</section>`;
+    const items=rows.length?rows.map(r=>`<tr class="hoist-game-overview-player-row"><td><button type="button" class="hoist-game-overview-player hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}</td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
+    return `<section class="hoist-game-leaders-team hoist-game-overview-format"><h4>${esc(team)} players vs ${esc(opponent)}</h4><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th><th>G</th><th>A</th><th>PTS</th><th>PTS/GP</th></tr></thead><tbody>${items}</tbody></table></div></section>`;
   }
   function hotHtml(data,team) {
     const rows=(data.players||[]).map(p=>{
@@ -5548,7 +5571,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('click',e=>{
     const player=e.target.closest('#games .hoist-game-player-toggle');
-    if(player){e.preventDefault();e.stopPropagation();const open=player.getAttribute('aria-expanded')==='true';player.setAttribute('aria-expanded',String(!open));const panel=player.nextElementSibling;if(panel)panel.hidden=open;return;}
+    if(player){e.preventDefault();e.stopPropagation();const open=player.getAttribute('aria-expanded')==='true';player.setAttribute('aria-expanded',String(!open));const panel=player.closest('tr')?.nextElementSibling || player.nextElementSibling;if(panel)panel.hidden=open;return;}
     if(e.target.closest('#games .hoist-game-leaders'))return;
     const card=e.target.closest('#games .hoist-game-card');if(card)toggle(card);
   });
