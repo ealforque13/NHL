@@ -3357,6 +3357,13 @@ img[data-hoist-team="TBL"],
 #games .hoist-game-leader-ppg small{display:block;font-size:10px;color:var(--muted,#9ca8b9)}
 @media(max-width:800px){#games .hoist-game-leaders-grid{grid-template-columns:minmax(0,1fr);gap:18px}}
 @media(max-width:650px){#games .hoist-game-card{padding:14px!important}#games .hoist-game-leader{gap:8px}#games .hoist-game-leader img.hoist-game-player-headshot{width:42px;height:42px}#games .hoist-game-leader-name small{font-size:11px}#games .hoist-game-leader-ppg{font-size:16px}}
+/* Games: borderless right-aligned chevron, right when closed and down when open. */
+#games .hoist-game-card-head{position:relative;padding-right:42px!important}
+#games .hoist-game-expand{position:absolute!important;right:0!important;top:50%!important;transform:translateY(-50%)!important;width:30px!important;height:36px!important;border:0!important;outline:0;background:transparent!important;box-shadow:none!important;border-radius:0!important;padding:0!important;color:inherit!important}
+#games .hoist-game-expand:hover{color:#49b5ff!important}
+#games .hoist-game-expand:focus-visible{outline:2px solid #49b5ff!important;outline-offset:2px!important}
+#games .hoist-game-expand svg{transform:rotate(0deg)!important;transition:transform .18s ease!important}
+#games .hoist-game-card[aria-expanded="true"] .hoist-game-expand svg{transform:rotate(90deg)!important}
 </style>
 </head>
 
@@ -5265,14 +5272,14 @@ document.addEventListener('DOMContentLoaded', function () {
     return {player,gp,points,goals,assists,ppg:gp ? points/gp : 0};
   }
   function teamHtml(data, team, opponent) {
-    const rows = (data.players || []).map(p => score(p,opponent)).filter(r => r.gp > 0)
+    const rows = (data.players || []).map(p => score(p,opponent)).filter(r => r.gp >= 2)
       .sort((a,b) => b.ppg-a.ppg || b.points-a.points || b.gp-a.gp || String(a.player.name).localeCompare(String(b.player.name))).slice(0,3);
     const items = rows.length ? rows.map((r,i) => {
       const p=r.player;
       const headshot = typeof p.headshot==='string' && /^https:\/\//.test(p.headshot) ? p.headshot :
         `https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(p.id)}.png`;
-      return `<div class="hoist-game-leader"><span class="hoist-game-leader-rank">${i+1}</span><img class="hoist-game-player-headshot" src="${esc(headshot)}" alt="" loading="lazy" onerror="this.style.display='none'"><div class="hoist-game-leader-name"><strong>${esc(p.name)}</strong><small>G ${r.goals ?? '—'} &nbsp;·&nbsp; A ${r.assists ?? '—'} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; GP ${r.gp}</small></div><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span></div>`;
-    }).join('') : '<p class="hoist-game-leaders-note">No recorded games against this opponent.</p>';
+      return `<div class="hoist-game-leader"><span class="hoist-game-leader-rank">${i+1}</span><img class="hoist-game-player-headshot" src="${esc(headshot)}" alt="" loading="lazy" onerror="this.style.display='none'"><div class="hoist-game-leader-name"><strong>${esc(p.name)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.goals ?? '—'} &nbsp;·&nbsp; A ${r.assists ?? '—'}</small></div><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span></div>`;
+    }).join('') : '<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
     return `<section class="hoist-game-leaders-team"><h4>${esc(team)} vs ${esc(opponent)}</h4>${items}</section>`;
   }
   function gameCodes(card) {
@@ -5299,7 +5306,7 @@ document.addEventListener('DOMContentLoaded', function () {
     card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','true');
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if (!detail.isConnected || card.getAttribute('aria-expanded') !== 'true') return;
-    detail.innerHTML=`<div class="hoist-game-leaders-grid">${results.map((r,i) => r.status==='fulfilled' ? teamHtml(r.value,i?home:away,i?away:home) : `<section class="hoist-game-leaders-team"><h4>${i?home:away} vs ${i?away:home}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 1 GP)</p>`;
+    detail.innerHTML=`<div class="hoist-game-leaders-grid">${results.map((r,i) => r.status==='fulfilled' ? teamHtml(r.value,i?home:away,i?away:home) : `<section class="hoist-game-leaders-team"><h4>${i?home:away} vs ${i?away:home}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p>`;
   }
   function prepare(card) {
     if (card.dataset.hoistPrepared) return;
@@ -5311,7 +5318,7 @@ document.addEventListener('DOMContentLoaded', function () {
       button.type='button';button.className='hoist-game-expand';
       button.setAttribute('aria-label','Show head-to-head top performers');
       button.setAttribute('aria-expanded','false');
-      button.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      button.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       head.append(button);
     }
   }
