@@ -5405,7 +5405,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return `<span class="hoist-game-form-box ${cls}" title="${esc(title)}"></span>`;
     }).join('')}</span>`;
   }
-  function pointStreak(games) {
+  function pointStreak(games, opponent = null) {
     // Count consecutive scoring games starting with the most recent recorded game.
     const latest=[...(games||[])].sort(byRecent);
     let count=0;
@@ -5414,12 +5414,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if(value===null || value<=0)break;
       count++;
     }
-    return count>=3 ? `<span class="hoist-game-streak-label" aria-label="${count} game point streak">${count}-GAME POINT STREAK</span>` : '';
+    return count>=3 ? `<span class="hoist-game-streak-label" aria-label="${count} game point streak${opponent ? ` versus ${esc(opponent)}` : ''}">${count}-GAME POINT STREAK${opponent ? ` VS ${esc(opponent)}` : ''}</span>` : '';
   }
   function teamHtml(data,team,opponent) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,5);
-    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span>${pointStreak(r.games)}</button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
+    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span>${pointStreak(r.games,opponent)}</button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
     return `<section class="hoist-game-leaders-team"><h4>${esc(team)} players vs ${esc(opponent)}</h4>${items}</section>`;
   }
   function hotHtml(data,team) {
