@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T13:00:49.061066+00:00",
+  "updatedAt": "2026-11-11T18:53:26.705689+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -40,8 +40,8 @@
     },
     "8476393": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "OTT"
     },
     "8476456": {
@@ -58,20 +58,20 @@
     },
     "8476539": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NSH"
     },
     "8476853": {
       "injured": true,
-      "description": "Rielly (lower body) has been deemed day-to-day and will not play in Tuesday's home clash against the Avalanche, per David Alter of The Hockey News.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TOR"
     },
     "8476875": {
       "injured": true,
-      "description": "Matheson (lower body) is expected to miss two weeks, Renaud Lavoie of TVA Sports reports Saturday.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "MTL"
     },
     "8476891": {
@@ -88,8 +88,8 @@
     },
     "8476979": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8477220": {
@@ -130,7 +130,7 @@
     },
     "8477499": {
       "injured": true,
-      "description": "Ristolainen (hand) was placed on injured reserve, retroactive to Oct. 24, on Tuesday.",
+      "description": "Ristolainen (hand) is expected to play Wednesday in Edmonton, per Jackie Spiegel of The Philadelphia Inquirer.",
       "status": "Injured Reserve",
       "team": "PHI"
     },
@@ -230,6 +230,12 @@
       "status": "Injured Reserve",
       "team": "WSH"
     },
+    "8479772": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "TOR"
+    },
     "8479941": {
       "injured": true,
       "description": "Danforth (upper body) was placed on injured reserve Thursday, per the NHL media site.",
@@ -250,8 +256,8 @@
     },
     "8480036": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Heiskanen (upper body) has been ruled out for Thursday's game against the Jets, Stars TV host Brien Rea reports.",
+      "status": "Out",
       "team": "DAL"
     },
     "8480068": {
@@ -350,9 +356,15 @@
       "status": "Injured Reserve",
       "team": "PIT"
     },
+    "8481806": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "BUF"
+    },
     "8482122": {
       "injured": true,
-      "description": "Faber (skull) skated with his teammates for the first time Thursday, Joe Smith of The Athletic reports.",
+      "description": "Faber (skull) has told the Wild that he's ready to play and expects to return for Saturday's game against the Bruins, Michael Russo of The Athletic reports Wednesday.",
       "status": "Injured Reserve",
       "team": "MIN"
     },
