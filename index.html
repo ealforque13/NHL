@@ -3816,6 +3816,11 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-card > .hoist-game-hot-feature {order:3!important;position:relative!important;inset:auto!important;float:none!important;width:100%!important;}
 #games .hoist-game-card > .hoist-game-card-foot {order:4;}
 </style>
+<style>
+/* H2H player details: subdued jersey/position, replaced by active streak text. */
+#games .hoist-game-h2h-player-meta{display:block;color:#91a0b5;font-size:10px;font-weight:500;line-height:1.25;white-space:nowrap;margin-top:1px}
+@media(max-width:650px){#games .hoist-game-h2h-player-meta{font-size:9px}}
+</style>
 </head>
 
 <body>
@@ -5801,10 +5806,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const parts=String(name||'').trim().split(/\s+/);
     return parts.length>1?`${parts[0].charAt(0)}. ${parts.slice(1).join(' ')}`:String(name||'');
   }
-  function teamHtml(data,team,opponent) {
+  function h2hPlayerMeta(p,roster) {
+    const norm=String(p.name||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+    const match=roster?.byId.get(String(p.id??p.playerId??''))??roster?.byName.get(norm);
+    const number=match?.number??p.sweaterNumber??p.jerseyNumber??p.number;
+    const raw=match?.position??p.positionCode??p.positionAbbrev??p.position??p.pos;
+    const value=typeof raw==='object'?(raw.abbrev??raw.code??raw.name??''):raw;
+    const key=String(value||'').toUpperCase();
+    const position=({L:'LW',R:'RW',LD:'D',RD:'D',CENTER:'C',CENTRE:'C',LEFTWING:'LW',RIGHTWING:'RW',DEFENSE:'D',DEFENCE:'D'})[key]||key;
+    const parts=[];
+    if(number!==undefined&&number!==null&&String(number).trim()!=='')parts.push(`#${esc(String(number))}`);
+    if(['C','LW','RW','D'].includes(position))parts.push(position);
+    return parts.length?`<small class="hoist-game-h2h-player-meta">${parts.join(' · ')}</small>`:'';
+  }
+  function teamHtml(data,team,opponent,roster) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name)));
-    const items=rows.length?rows.map((r,i)=>`<tr ${i>=5?'hidden':''} class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong><span class="hoist-game-name-full">${esc(r.p.name)}</span><span class="hoist-game-name-short">${esc(shortPlayerName(r.p.name))}</span>${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
+    const items=rows.length?rows.map((r,i)=>`<tr ${i>=5?'hidden':''} class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong><span class="hoist-game-name-full">${esc(r.p.name)}</span><span class="hoist-game-name-short">${esc(shortPlayerName(r.p.name))}</span>${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)||h2hPlayerMeta(r.p,roster)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
     const heading=(key,label)=>`<th data-sort="${key}"${key==='ppg'?' class="hoist-sort-active" data-direction="desc" aria-sort="descending"':''}><button type="button" class="hoist-sort-button" aria-label="Sort by ${key==='ppg'?'points per game':key==='points'?'points':key}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
     return `<section class="hoist-game-leaders-team hoist-game-overview-format"><div class="hoist-game-table-top"><h4>${esc(team)} players vs ${esc(opponent)}</h4></div><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th>${heading('goals','G')}${heading('assists','A')}${heading('points','<span class="hoist-game-heading-desktop">PTS</span><span class="hoist-game-heading-mobile">P</span>')}${heading('ppg','<span class="hoist-game-heading-desktop">PTS/GP</span><span class="hoist-game-heading-mobile">P/GP</span>')}</tr></thead><tbody>${items}</tbody></table></div></section>`;
   }
@@ -5836,10 +5854,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if(lastFive)lastFive.before(detail);
     else {const foot=card.querySelector('.hoist-game-card-foot');if(foot)foot.before(detail);else card.append(detail);}
     card.setAttribute('aria-expanded','true');card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','true');
-    const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
+    const [results,rosters]=await Promise.all([Promise.allSettled([getTeam(away),getTeam(home)]),Promise.all([featureRoster(away),featureRoster(home)])]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div></section>`).join('')}</div>`;
+    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i],rosters[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div></section>`).join('')}</div>`;
   }
   // Compact game-card feature: team records and rotating last-five leaders.
   const fullTeamNames={ANA:'Anaheim Ducks',BOS:'Boston Bruins',BUF:'Buffalo Sabres',CGY:'Calgary Flames',CAR:'Carolina Hurricanes',CHI:'Chicago Blackhawks',COL:'Colorado Avalanche',CBJ:'Columbus Blue Jackets',DAL:'Dallas Stars',DET:'Detroit Red Wings',EDM:'Edmonton Oilers',FLA:'Florida Panthers',LAK:'Los Angeles Kings',MIN:'Minnesota Wild',MTL:'Montreal Canadiens',NSH:'Nashville Predators',NJD:'New Jersey Devils',NYI:'New York Islanders',NYR:'New York Rangers',OTT:'Ottawa Senators',PHI:'Philadelphia Flyers',PIT:'Pittsburgh Penguins',SJS:'San Jose Sharks',SEA:'Seattle Kraken',STL:'St. Louis Blues',TBL:'Tampa Bay Lightning',TOR:'Toronto Maple Leafs',UTA:'Utah Mammoth',VAN:'Vancouver Canucks',VGK:'Vegas Golden Knights',WSH:'Washington Capitals',WPG:'Winnipeg Jets'};
