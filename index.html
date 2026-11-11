@@ -3280,6 +3280,30 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 #teams .hoist-team-link .hoist-team-chevron{flex:none;color:#49b5ff;font-size:19px}
 @media(max-width:750px){#teams .hoist-teams-grid{grid-template-columns:1fr;gap:13px}#teams .hoist-division-card{padding:14px}#teams .hoist-team-link{min-height:49px}}
 
+
+/* Teams page redesign: conference and division headings outside cards */
+#teams .hoist-teams-grid{display:block;max-width:1240px;margin:0 auto;padding:12px 8px 44px}
+#teams .hoist-conference-section{margin:0 0 54px}
+#teams .hoist-conference-title{margin:8px 0 32px;color:#fff;font-size:clamp(29px,3vw,42px);font-weight:850;letter-spacing:-.035em;line-height:1.15}
+#teams .hoist-division-group{margin:0 0 34px}
+#teams .hoist-division-heading{margin:0 0 16px;color:#fff;font-size:clamp(20px,2vw,25px);font-weight:780;letter-spacing:-.015em}
+#teams .hoist-division-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#teams .hoist-team-link{min-height:88px;padding:16px 20px;gap:18px;border:1px solid rgba(151,178,207,.22);border-radius:13px;background:rgba(125,164,205,.055);font-size:17px;font-weight:720}
+#teams .hoist-team-link img{width:53px;height:53px}
+#teams .hoist-team-link .hoist-team-chevron{font-size:25px}
+#teams .hoist-team-link img.hoist-tampa-white-logo{filter:brightness(0) invert(1) !important}
+@media(max-width:750px){#teams .hoist-teams-grid{padding:4px 0 32px}#teams .hoist-conference-section{margin-bottom:40px}#teams .hoist-conference-title{margin-bottom:24px}#teams .hoist-division-list{grid-template-columns:1fr;gap:10px}#teams .hoist-team-link{min-height:76px;padding:12px 15px;font-size:16px}#teams .hoist-team-link img{width:46px;height:46px}}
+/* Division columns: eight stacked teams per division, two divisions side by side. */
+@media (min-width:751px){
+  #teams .hoist-conference-section{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px;align-items:start}
+  #teams .hoist-conference-title{grid-column:1/-1}
+  #teams .hoist-division-group{min-width:0}
+  #teams .hoist-division-list{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:750px){
+  #teams .hoist-conference-section{display:block}
+  #teams .hoist-division-list{grid-template-columns:minmax(0,1fr)}
+}
 </style>
 </head>
 
@@ -3787,9 +3811,7 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 
 <!-- NHL TEAMS DIRECTORY -->
 <section id="teams" class="tab-section hidden" aria-label="NHL Teams">
-  <article class="panel section-panel hoist-teams-directory">
-    <div id="hoist-teams-grid" class="hoist-teams-grid"></div>
-  </article>
+  <div id="hoist-teams-grid" class="hoist-teams-grid"></div>
 </section>
 
 <!-- COMPARE TEAMS -->
@@ -4900,19 +4922,24 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     // Reuse the canonical 32-team directory already defined in app.js.
     if(typeof TEAMS==='undefined'||!Array.isArray(TEAMS))return;
     root.replaceChildren();
-    divisions.forEach(([division,conference])=>{
-      const card=document.createElement('div');card.className='hoist-division-card';
-      const title=document.createElement('h4');title.className='hoist-division-heading';
-      const subtitle=document.createElement('span');subtitle.className='hoist-division-conference';subtitle.textContent=conference+' Conference';
-      title.append(subtitle,document.createTextNode(division+' Division'));card.append(title);
-      const list=document.createElement('div');list.className='hoist-division-list';
-      TEAMS.filter(t=>t.division===division).sort((a,b)=>a.name.localeCompare(b.name)).forEach(t=>{
-        const button=document.createElement('button');button.type='button';button.className='hoist-team-link';button.dataset.teamCode=t.code;
-        const img=document.createElement('img');img.src='https://assets.nhle.com/logos/nhl/svg/'+encodeURIComponent(t.code)+'_light.svg';img.alt='';img.loading='lazy';
-        const name=document.createElement('span');name.textContent=t.name;
-        const arrow=document.createElement('span');arrow.className='hoist-team-chevron';arrow.setAttribute('aria-hidden','true');arrow.textContent='›';
-        button.append(img,name,arrow);list.append(button);
-      });card.append(list);root.append(card);
+    ['Eastern','Western'].forEach(conference=>{
+      const section=document.createElement('section');section.className='hoist-conference-section';
+      const conferenceTitle=document.createElement('h2');conferenceTitle.className='hoist-conference-title';conferenceTitle.textContent=conference+' Conference';
+      section.append(conferenceTitle);
+      divisions.filter(d=>d[1]===conference).forEach(([division])=>{
+        const group=document.createElement('div');group.className='hoist-division-group';
+        const title=document.createElement('h3');title.className='hoist-division-heading';title.textContent=division;
+        group.append(title);
+        const list=document.createElement('div');list.className='hoist-division-list';
+        TEAMS.filter(t=>t.division===division).sort((a,b)=>a.name.localeCompare(b.name)).forEach(t=>{
+          const button=document.createElement('button');button.type='button';button.className='hoist-team-link';button.dataset.teamCode=t.code;
+          const img=document.createElement('img');img.src='https://assets.nhle.com/logos/nhl/svg/'+encodeURIComponent(t.code)+'_light.svg';img.alt='';img.loading='lazy';
+          if(t.code==='TBL')img.classList.add('hoist-tampa-white-logo');
+          const name=document.createElement('span');name.textContent=t.name;
+          const arrow=document.createElement('span');arrow.className='hoist-team-chevron';arrow.setAttribute('aria-hidden','true');arrow.textContent='›';
+          button.append(img,name,arrow);list.append(button);
+        });group.append(list);section.append(group);
+      });root.append(section);
     });
   }
   document.addEventListener('click',event=>{
