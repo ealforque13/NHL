@@ -3508,6 +3508,19 @@ body[data-theme="light"] #games .hoist-game-card {
 }
 @media(max-width:600px){#games .hoist-game-card {padding:16px!important;border-radius:12px!important}}
 </style>
+<style>
+/* V22: square game cards, visible H2H stats, bordered player rows. */
+#games .hoist-game-card {border-radius:0!important}
+#games .hoist-game-h2h-teams {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+#games .hoist-game-h2h-teams > .hoist-game-team-group {min-width:0;margin:0!important;padding:0!important;border:0!important}
+#games .hoist-game-h2h-teams .hoist-game-team-group-title {display:flex;align-items:baseline;gap:12px;margin:0 0 12px!important;font-size:19px;font-weight:850}
+#games .hoist-game-h2h-teams .hoist-game-section-title {font-size:12px;font-weight:800;letter-spacing:.05em;margin-bottom:14px}
+#games .hoist-game-h2h-teams .hoist-game-leaders-grid {display:block!important}
+#games .hoist-game-h2h-teams .hoist-game-player-entry {border:1px solid rgba(140,153,177,.3)!important;border-radius:0!important;margin-bottom:8px;overflow:hidden}
+#games .hoist-game-h2h-teams .hoist-game-leader {border:0!important;padding:12px!important;width:100%;box-sizing:border-box}
+#games .hoist-game-h2h-teams .hoist-game-player-history {border-top:1px solid rgba(140,153,177,.25)}
+@media(max-width:900px){#games .hoist-game-h2h-teams {grid-template-columns:minmax(0,1fr);gap:26px}}
+</style>
 </head>
 
 <body>
@@ -5523,7 +5536,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=results.map((r,i)=>`<details class="hoist-game-team-group hoist-game-team-dropdown"><summary class="hoist-game-team-group-title"><span class="hoist-game-team-summary-name"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span><strong>${esc(names[i])}</strong></span><span class="hoist-game-dropdown-chevron" aria-hidden="true">›</span></summary><div class="hoist-game-team-content"><div class="hoist-game-stats-columns"><section class="hoist-game-stat-dropdown hoist-game-h2h-column"><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-stat-content"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p></div></section><section class="hoist-game-stat-dropdown hoist-game-hot-section"><div class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES</div><div class="hoist-game-stat-content"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div></section></div></div></details>`).join('');
+    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><h3 class="hoist-game-team-group-title"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span> ${esc(names[i])}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p></section>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
