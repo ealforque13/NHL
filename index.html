@@ -3413,6 +3413,13 @@ html body #games img.hoist-game-player-headshot {
 #games .hoist-game-leader-ppg {color:#48a9ff!important}
 #games .hoist-game-leader-ppg small {color:#48a9ff!important}
 #games .hoist-game-leader-name strong .hoist-injury-plus {display:inline!important;color:#ff354d!important}
+/* Games V11: one team at a time, away before home; white featured values. */
+#games .hoist-game-leaders-grid{grid-template-columns:minmax(0,1fr)!important;gap:18px!important}
+#games .hoist-game-leader-ppg,#games .hoist-game-leader-ppg small{color:#fff!important}
+#games .hoist-game-team-group+.hoist-game-team-group{margin-top:30px;padding-top:24px;border-top:1px solid rgba(125,155,195,.28)}
+#games .hoist-game-team-group-title{font-size:18px;font-weight:850;margin:0 0 18px}
+#games .hoist-game-team-group .hoist-game-hot-section{margin-top:20px;padding-top:18px}
+#games .hoist-game-team-group .hoist-game-leaders-team{width:100%}
 </style>
 </head>
 
@@ -5407,7 +5414,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=`<div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${results.map((r,i)=>r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]} vs ${opponents[i]}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p><div class="hoist-game-hot-section"><div class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES</div><div class="hoist-game-leaders-grid">${results.map((r,i)=>r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div>`;
+    detail.innerHTML=results.map((r,i)=>`<div class="hoist-game-team-group"><h3 class="hoist-game-team-group-title">${i===0?'AWAY':'HOME'} — ${names[i]}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]} vs ${opponents[i]}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p><div class="hoist-game-hot-section"><div class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div></div>`).join('');
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
