@@ -1,1115 +1,1189 @@
 
-/* Hoist Official head-to-head:
-   Cached NHL schedules and expandable scoresheets
-   with NHL team-coloured abbreviation badges.
+/*
+  HOIST OFFICIAL — HEAD-TO-HEAD HISTORY
 
-   Features:
-   - Compact W-L-OTL record card beside the heading
-   - 140px record card on desktop
-   - 95px record card on phones
-   - Goals For / Against summary removed
-   - Expandable scoresheets
-   - Dedicated right-hand overview column
+  Features:
+  - Last 10 completed regular-season matchups
+  - W-L-OTL record
+  - Expandable scoresheets
+  - Scoring, goaltending and team statistics
+  - NHL team-coloured abbreviation badges
+  - Responsive desktop and mobile layout
+  - Season-by-season scoresheet JSON loading
+  - Temporary legacy cache fallback
+
+  Required data:
+  data/head-to-head.json
+  data/head-to-head-scoresheets/YYYY.json
 */
 
 (() => {
-'use strict';
+  'use strict';
 
-const $ = id => document.getElementById(id);
+  const $ = id => document.getElementById(id);
 
-const esc = s => String(s ?? '').replace(
-  /[&<>"']/g,
-  c => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;'
-  }[c])
-);
-
-const logo = c =>
-  `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(c)}_light.svg`;
-
-const final = g =>
-  ['FINAL', 'OFF'].includes(g?.gameState) &&
-  g?.homeTeam?.score != null &&
-  g?.awayTeam?.score != null;
-
-const other = (g, t) =>
-  g?.homeTeam?.abbrev === t
-    ? g.awayTeam?.abbrev
-    : g?.awayTeam?.abbrev === t
-      ? g.homeTeam?.abbrev
-      : null;
-
-const name = p =>
-  p?.name?.default ||
-  p?.name ||
-  [
-    p?.firstName?.default || p?.firstName,
-    p?.lastName?.default || p?.lastName
-  ].filter(Boolean).join(' ') ||
-  '—';
-
-const num = v =>
-  Number.isFinite(Number(v)) ? Number(v) : 0;
-
-
-/* ==========================================
-   NHL TEAM COLOURS
-========================================== */
-
-const TEAM_COLORS = {
-  ANA: '#F47A38',
-  BOS: '#FFB81C',
-  BUF: '#003087',
-  CAR: '#CC0000',
-  CBJ: '#002654',
-  CGY: '#C8102E',
-  CHI: '#CF0A2C',
-  COL: '#6F263D',
-  DAL: '#006847',
-  DET: '#CE1126',
-  EDM: '#FF4C00',
-  FLA: '#C8102E',
-  LAK: '#111111',
-  MIN: '#154734',
-  MTL: '#AF1E2D',
-  NJD: '#CE1126',
-  NSH: '#FFB81C',
-  NYI: '#00539B',
-  NYR: '#0038A8',
-  OTT: '#C52032',
-  PHI: '#F74902',
-  PIT: '#FCB514',
-  SEA: '#001628',
-  SJS: '#006D75',
-  STL: '#002F87',
-  TBL: '#002868',
-  TOR: '#00205B',
-  UTA: '#69B3E7',
-  VAN: '#00205B',
-  VGK: '#B4975A',
-  WPG: '#041E42',
-  WSH: '#C8102E'
-};
-
-const DARK_TEXT_TEAMS = new Set([
-  'ANA',
-  'BOS',
-  'NSH',
-  'PIT',
-  'UTA',
-  'VGK'
-]);
-
-function teamTag(code) {
-  const team = String(code || '').toUpperCase();
-  const color = TEAM_COLORS[team] || '#344563';
-
-  const textColor = DARK_TEXT_TEAMS.has(team)
-    ? '#111827'
-    : '#FFFFFF';
-
-  return `
-    <span
-      class="h2h-team-tag"
-      style="
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        min-width:34px;
-        padding:4px 7px;
-        border-radius:4px;
-        background-color:${color} !important;
-        color:${textColor} !important;
-        font-size:11px;
-        font-weight:800;
-        line-height:1.2;
-        white-space:nowrap;
-        flex-shrink:0;
-        box-sizing:border-box;
-      "
-    >${esc(team)}</span>
-  `;
-}
-
-
-/* ==========================================
-   DATA CACHE
-========================================== */
-
-let historyPromise = null;
-let detailsPromise = null;
-let run = 0;
-
-function getCache(file) {
-  return fetch(`data/${file}?v=6`, {
-    cache: 'no-cache'
-  }).then(r => {
-    if (!r.ok) {
-      throw Error(`HTTP ${r.status}`);
-    }
-    return r.json();
-  });
-}
-
-function history() {
-  return historyPromise || (
-    historyPromise = getCache('head-to-head.json')
-      .then(d => Object.values(d.games || {}))
-      .catch(e => {
-        historyPromise = null;
-        throw e;
-      })
+  const esc = value => String(value ?? '').replace(
+    /[&<>"']/g,
+    char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[char])
   );
-}
 
-function details() {
-  return detailsPromise || (
-    detailsPromise = getCache('head-to-head-scoresheets.json')
-      .then(d => d.games || {})
-      .catch(e => {
-        detailsPromise = null;
-        throw e;
-      })
-  );
-}
+  const num = value =>
+    Number.isFinite(Number(value)) ? Number(value) : 0;
 
+  const logo = code =>
+    `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(code)}_light.svg`;
 
-/* ==========================================
-   RESPONSIVE HEADER STYLES
-========================================== */
+  const final = game =>
+    ['FINAL', 'OFF'].includes(game?.gameState) &&
+    game?.homeTeam?.score != null &&
+    game?.awayTeam?.score != null;
 
-function installHeaderStyles() {
-  if ($('hoist-h2h-header-styles')) return;
+  const other = (game, team) =>
+    game?.homeTeam?.abbrev === team
+      ? game.awayTeam?.abbrev
+      : game?.awayTeam?.abbrev === team
+        ? game.homeTeam?.abbrev
+        : null;
 
-  const style = document.createElement('style');
-  style.id = 'hoist-h2h-header-styles';
+  function playerName(player) {
+    if (!player) return '—';
 
-  style.textContent = `
-    #hoist-h2h .hoist-h2h-top-row {
-      display: flex !important;
-      align-items: flex-start !important;
-      justify-content: space-between !important;
-      gap: 18px !important;
-      width: 100% !important;
-      min-width: 0 !important;
-      margin-bottom: 20px !important;
+    if (typeof player.name === 'string') {
+      return player.name;
     }
 
-    #hoist-h2h .hoist-h2h-heading {
-      flex: 1 1 auto !important;
-      min-width: 0 !important;
+    if (player.name?.default) {
+      return player.name.default;
     }
 
-    #hoist-h2h .hoist-h2h-heading h3 {
-      margin: 0 !important;
+    return [
+      player.firstName?.default || player.firstName,
+      player.lastName?.default || player.lastName
+    ].filter(Boolean).join(' ') || '—';
+  }
+
+  /*
+    NHL TEAM COLOURS
+  */
+
+  const TEAM_COLORS = {
+    ANA: '#F47A38',
+    BOS: '#FFB81C',
+    BUF: '#003087',
+    CAR: '#CC0000',
+    CBJ: '#002654',
+    CGY: '#C8102E',
+    CHI: '#CF0A2C',
+    COL: '#6F263D',
+    DAL: '#006847',
+    DET: '#CE1126',
+    EDM: '#FF4C00',
+    FLA: '#C8102E',
+    LAK: '#111111',
+    MIN: '#154734',
+    MTL: '#AF1E2D',
+    NJD: '#CE1126',
+    NSH: '#FFB81C',
+    NYI: '#00539B',
+    NYR: '#0038A8',
+    OTT: '#C52032',
+    PHI: '#F74902',
+    PIT: '#FCB514',
+    SEA: '#001628',
+    SJS: '#006D75',
+    STL: '#002F87',
+    TBL: '#002868',
+    TOR: '#00205B',
+    UTA: '#69B3E7',
+    VAN: '#00205B',
+    VGK: '#B4975A',
+    WPG: '#041E42',
+    WSH: '#C8102E'
+  };
+
+  const DARK_TEXT_TEAMS = new Set([
+    'ANA', 'BOS', 'NSH', 'PIT', 'UTA', 'VGK'
+  ]);
+
+  function teamTag(code) {
+    const team = String(code || '').toUpperCase();
+    const color = TEAM_COLORS[team] || '#344563';
+
+    const textColor = DARK_TEXT_TEAMS.has(team)
+      ? '#111827'
+      : '#FFFFFF';
+
+    return `
+      <span class="h2h-team-tag"
+        style="
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          min-width:34px;
+          padding:4px 7px;
+          border-radius:4px;
+          background-color:${color} !important;
+          color:${textColor} !important;
+          font-size:11px;
+          font-weight:800;
+          line-height:1.2;
+          white-space:nowrap;
+          flex-shrink:0;
+          box-sizing:border-box;
+        "
+      >${esc(team)}</span>
+    `;
+  }
+
+  /*
+    DATA LOADING
+  */
+
+  let historyPromise = null;
+  let legacyDetailsPromise = null;
+  let run = 0;
+
+  const seasonPromises = new Map();
+
+  function getCache(file) {
+    return fetch(`data/${file}?v=7`, {
+      cache: 'no-cache'
+    }).then(response => {
+      if (!response.ok) {
+        throw new Error(
+          `${file}: HTTP ${response.status}`
+        );
+      }
+
+      return response.json();
+    });
+  }
+
+  function history() {
+    if (!historyPromise) {
+      historyPromise = getCache('head-to-head.json')
+        .then(data => Object.values(data.games || {}))
+        .catch(error => {
+          historyPromise = null;
+          throw error;
+        });
     }
 
-    #hoist-h2h .hoist-h2h-heading .muted {
-      margin-top: 9px !important;
-      line-height: 1.5 !important;
+    return historyPromise;
+  }
+
+  /*
+    Each NHL game ID starts with its season year.
+
+    Example:
+    2024020001 -> 2024.json
+
+    New directory:
+    data/head-to-head-scoresheets/
+  */
+
+  function seasonOf(game) {
+    const id = String(game?.id || '');
+    const year = id.slice(0, 4);
+
+    return /^\d{4}$/.test(year) ? year : null;
+  }
+
+  function loadSeason(year) {
+    if (!seasonPromises.has(year)) {
+      const request = getCache(
+        `head-to-head-scoresheets/${year}.json`
+      ).then(data => {
+        if (
+          !data ||
+          !data.games ||
+          typeof data.games !== 'object' ||
+          Array.isArray(data.games)
+        ) {
+          throw new Error(
+            `Invalid scoresheet data for ${year}`
+          );
+        }
+
+        return data.games;
+      }).catch(error => {
+        seasonPromises.delete(year);
+        throw error;
+      });
+
+      seasonPromises.set(year, request);
     }
 
-    #hoist-h2h #hoist-h2h-summary {
-      display: block !important;
-      flex: 0 0 140px !important;
-      width: 140px !important;
-      min-width: 0 !important;
-      max-width: 140px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      align-self: flex-start !important;
-      box-sizing: border-box !important;
+    return seasonPromises.get(year);
+  }
+
+  /*
+    Load only the seasons required for the
+    selected ten games.
+
+    During migration, the original combined JSON
+    remains available as a fallback.
+  */
+
+  async function details(games) {
+    if (!games.length) return {};
+
+    const years = [
+      ...new Set(
+        games.map(seasonOf).filter(Boolean)
+      )
+    ];
+
+    const results = await Promise.allSettled(
+      years.map(loadSeason)
+    );
+
+    const combined = {};
+    let successful = 0;
+
+    results.forEach((result, index) => {
+      if (result.status === 'fulfilled') {
+        Object.assign(combined, result.value);
+        successful++;
+      } else {
+        console.warn(
+          `Hoist: ${years[index]} scoresheets unavailable`,
+          result.reason
+        );
+      }
+    });
+
+    /*
+      Temporary fallback to original combined JSON.
+
+      Remove this fallback after the new season
+      files have been deployed and verified.
+    */
+
+    if (successful === 0) {
+      if (!legacyDetailsPromise) {
+        legacyDetailsPromise = getCache(
+          'head-to-head-scoresheets.json'
+        ).then(data => data.games || {})
+          .catch(error => {
+            legacyDetailsPromise = null;
+            throw error;
+          });
+      }
+
+      try {
+        return await legacyDetailsPromise;
+      } catch (error) {
+        console.warn(
+          'Legacy scoresheet cache unavailable:',
+          error
+        );
+      }
     }
 
-    #hoist-h2h .hoist-h2h-record-card {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      width: 100% !important;
-      min-width: 0 !important;
-      box-sizing: border-box !important;
-      padding: 11px 12px !important;
-      margin: 0 !important;
-      background: rgba(120,150,200,.055) !important;
-      border: 1px solid rgba(125,155,195,.22) !important;
-      border-radius: 0 !important;
-      gap: 0 !important;
-    }
+    return combined;
+  }
 
-    #hoist-h2h .hoist-h2h-record-label {
-      font-size: 11px !important;
-      font-weight: 750 !important;
-      letter-spacing: .06em !important;
-      line-height: 1.3 !important;
-      color: #91afd8 !important;
-      margin-bottom: 7px !important;
-    }
+  /*
+    RESPONSIVE HEADER STYLING
+  */
 
-    #hoist-h2h .hoist-h2h-record-value {
-      font-size: 25px !important;
-      font-weight: 800 !important;
-      line-height: 1.2 !important;
-      color: #ffffff !important;
-      white-space: nowrap !important;
-    }
+  function installHeaderStyles() {
+    if ($('hoist-h2h-header-styles')) return;
 
-    #hoist-h2h .hoist-h2h-record-detail {
-      margin-top: 5px !important;
-      font-size: 10px !important;
-      font-weight: 400 !important;
-      letter-spacing: .02em !important;
-      line-height: 1.3 !important;
-      color: #8ea9d2 !important;
-      white-space: nowrap !important;
-    }
+    const style = document.createElement('style');
+    style.id = 'hoist-h2h-header-styles';
 
-    /* MOBILE: NARROWER RECORD CARD */
-
-    @media (max-width: 480px) {
-
+    style.textContent = `
       #hoist-h2h .hoist-h2h-top-row {
-        display: flex !important;
-        align-items: flex-start !important;
-        justify-content: space-between !important;
-        gap: 8px !important;
+        display:flex!important;
+        align-items:flex-start!important;
+        justify-content:space-between!important;
+        gap:18px!important;
+        width:100%!important;
+        min-width:0!important;
+        margin-bottom:20px!important;
       }
 
       #hoist-h2h .hoist-h2h-heading {
-        flex: 1 1 0 !important;
-        min-width: 0 !important;
+        flex:1 1 auto!important;
+        min-width:0!important;
+      }
+
+      #hoist-h2h .hoist-h2h-heading h3 {
+        margin:0!important;
+      }
+
+      #hoist-h2h .hoist-h2h-heading .muted {
+        margin-top:9px!important;
+        line-height:1.5!important;
       }
 
       #hoist-h2h #hoist-h2h-summary {
-        display: block !important;
-        flex: 0 0 95px !important;
-        width: 95px !important;
-        min-width: 95px !important;
-        max-width: 95px !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        display:block!important;
+        flex:0 0 140px!important;
+        width:140px!important;
+        min-width:0!important;
+        max-width:140px!important;
+        margin:0!important;
+        padding:0!important;
+        align-self:flex-start!important;
+        box-sizing:border-box!important;
       }
 
       #hoist-h2h .hoist-h2h-record-card {
-        width: 95px !important;
-        min-width: 0 !important;
-        max-width: 95px !important;
-        padding: 8px !important;
-        box-sizing: border-box !important;
+        display:flex!important;
+        flex-direction:column!important;
+        align-items:flex-start!important;
+        width:100%!important;
+        min-width:0!important;
+        box-sizing:border-box!important;
+        padding:11px 12px!important;
+        margin:0!important;
+        background:rgba(120,150,200,.055)!important;
+        border:1px solid rgba(125,155,195,.22)!important;
+        border-radius:0!important;
+        gap:0!important;
       }
 
       #hoist-h2h .hoist-h2h-record-label {
-        font-size: 9px !important;
-        margin-bottom: 5px !important;
+        font-size:11px!important;
+        font-weight:750!important;
+        letter-spacing:.06em!important;
+        line-height:1.3!important;
+        color:#91afd8!important;
+        margin-bottom:7px!important;
       }
 
       #hoist-h2h .hoist-h2h-record-value {
-        font-size: 19px !important;
-        white-space: nowrap !important;
+        font-size:25px!important;
+        font-weight:800!important;
+        line-height:1.2!important;
+        color:#ffffff!important;
+        white-space:nowrap!important;
       }
 
       #hoist-h2h .hoist-h2h-record-detail {
-        font-size: 8px !important;
-        margin-top: 4px !important;
-        white-space: nowrap !important;
+        margin-top:5px!important;
+        font-size:10px!important;
+        font-weight:400!important;
+        letter-spacing:.02em!important;
+        line-height:1.3!important;
+        color:#8ea9d2!important;
+        white-space:nowrap!important;
       }
-    }
-  `;
 
-  document.head.appendChild(style);
-}
+      @media(max-width:480px) {
+        #hoist-h2h .hoist-h2h-top-row {
+          gap:8px!important;
+        }
 
+        #hoist-h2h .hoist-h2h-heading {
+          flex:1 1 0!important;
+          min-width:0!important;
+        }
 
-/* ==========================================
-   HEAD-TO-HEAD WIDGET
-========================================== */
+        #hoist-h2h #hoist-h2h-summary {
+          flex:0 0 95px!important;
+          width:95px!important;
+          min-width:95px!important;
+          max-width:95px!important;
+        }
 
-function widget() {
-  installHeaderStyles();
+        #hoist-h2h .hoist-h2h-record-card {
+          width:95px!important;
+          max-width:95px!important;
+          padding:8px!important;
+        }
 
-  if ($('hoist-h2h')) return;
+        #hoist-h2h .hoist-h2h-record-label {
+          font-size:9px!important;
+          margin-bottom:5px!important;
+        }
 
-  const overview = $('overview');
-  if (!overview) return;
+        #hoist-h2h .hoist-h2h-record-value {
+          font-size:19px!important;
+        }
 
-  const card = document.createElement('article');
+        #hoist-h2h .hoist-h2h-record-detail {
+          font-size:8px!important;
+          margin-top:4px!important;
+        }
+      }
+    `;
 
-  card.id = 'hoist-h2h';
-  card.className = 'panel section-panel';
+    document.head.appendChild(style);
+  }
 
-  card.innerHTML = `
-    <div class="hoist-h2h-top-row">
+  /*
+    CREATE HEAD-TO-HEAD WIDGET
+  */
 
-      <div class="hoist-h2h-heading">
-        <div class="eyebrow">HEAD TO HEAD</div>
+  function widget() {
+    installHeaderStyles();
 
-        <h3>Last 10 Matchups</h3>
+    if ($('hoist-h2h')) return;
 
-        <p id="hoist-h2h-sub" class="muted">
-          Finding the next opponent…
-        </p>
+    const overview = $('overview');
+    if (!overview) return;
+
+    const card = document.createElement('article');
+
+    card.id = 'hoist-h2h';
+    card.className = 'panel section-panel';
+
+    card.innerHTML = `
+      <div class="hoist-h2h-top-row">
+        <div class="hoist-h2h-heading">
+          <div class="eyebrow">HEAD TO HEAD</div>
+
+          <h3>Last 10 Matchups</h3>
+
+          <p id="hoist-h2h-sub" class="muted">
+            Finding the next opponent…
+          </p>
+        </div>
+
+        <div
+          id="hoist-h2h-summary"
+          class="h2h-summary"
+        ></div>
       </div>
 
       <div
-        id="hoist-h2h-summary"
-        class="h2h-summary"
-      ></div>
-
-    </div>
-
-    <div
-      id="hoist-h2h-games"
-      class="h2h-games"
-    >
-      <div class="empty">
-        Loading historical results…
-      </div>
-    </div>
-  `;
-
-  /*
-    Render directly inside the dedicated
-    right-hand column.
-  */
-
-  const historyColumn =
-    $('hoist-h2h-history-column');
-
-  if (historyColumn) {
-    historyColumn.appendChild(card);
-    return;
-  }
-
-  /*
-    Fallback for older HTML versions.
-  */
-
-  const mi = $('matchup-intelligence');
-
-  if (mi) {
-    overview.insertBefore(card, mi);
-  } else {
-    overview.appendChild(card);
-  }
-}
-
-
-/* ==========================================
-   HELPERS
-========================================== */
-
-function teamCode(v) {
-  return (
-    v?.abbrev ||
-    v?.triCode ||
-    v?.teamAbbrev?.default ||
-    v?.teamAbbrev ||
-    ''
-  );
-}
-
-function periodLabel(p) {
-  const n = p?.periodNumber || p?.number || p;
-
-  if (n === 4) return 'OT';
-  if (n === 5) return 'SO';
-
-  return `${n}${
-    n === 1 ? 'st' :
-    n === 2 ? 'nd' :
-    n === 3 ? 'rd' : 'th'
-  }`;
-}
-
-function overtimeLoss(g) {
-  const periodType = String(
-    g?.gameOutcome?.lastPeriodType ||
-    g?.periodDescriptor?.periodType ||
-    g?.lastPeriodType ||
-    ''
-  ).toUpperCase();
-
-  if (periodType === 'OT' || periodType === 'SO') {
-    return true;
-  }
-
-  const periodNumber = Number(
-    g?.periodDescriptor?.number ||
-    g?.periodDescriptor?.periodNumber ||
-    0
-  );
-
-  return periodNumber >= 4;
-}
-
-
-/* ==========================================
-   SCORING SUMMARY
-========================================== */
-
-function scoring(payload) {
-  const periods =
-    payload?.landing?.summary?.scoring || [];
-
-  if (!Array.isArray(periods) || !periods.length) {
-    return `
-      <p class="h2h-muted">
-        Scoring details unavailable.
-      </p>
-    `;
-  }
-
-  return periods.map(p => {
-    const goals =
-      p.goals ||
-      p.scoringPlays ||
-      [];
-
-    if (!goals.length) return '';
-
-    const header = `
-      <div class="h2h-period">
-        ${esc(periodLabel(
-          p.periodDescriptor ||
-          p.periodNumber ||
-          p.period
-        ))}
+        id="hoist-h2h-games"
+        class="h2h-games"
+      >
+        <div class="empty">
+          Loading historical results…
+        </div>
       </div>
     `;
 
-    const goalRows = goals.map(g => {
-      const assists =
-        (g.assists || [])
-          .map(name)
-          .join(', ') ||
-        'Unassisted';
+    const column = $('hoist-h2h-history-column');
 
-      const code =
-        teamCode(
-          g.teamAbbrev
-            ? {
-                abbrev:
-                  typeof g.teamAbbrev === 'string'
-                    ? g.teamAbbrev
-                    : g.teamAbbrev.default
-              }
-            : g.team
-        ) ||
-        g.teamAbbrev?.default ||
-        g.teamAbbrev ||
-        '';
+    if (column) {
+      column.appendChild(card);
+      return;
+    }
 
-      const scorer =
-        name(g) ||
-        name(g.scorer) ||
-        g.name?.default ||
-        '—';
+    const matchup = $('matchup-intelligence');
 
-      const tally =
-        g.goalsToDate != null
-          ? ` (${num(g.goalsToDate)})`
+    if (matchup) {
+      overview.insertBefore(card, matchup);
+    } else {
+      overview.appendChild(card);
+    }
+  }
+
+  /*
+    HELPERS
+  */
+
+  function teamCode(value) {
+    if (typeof value === 'string') return value;
+
+    return (
+      value?.abbrev ||
+      value?.triCode ||
+      value?.teamAbbrev?.default ||
+      value?.teamAbbrev ||
+      ''
+    );
+  }
+
+  function periodLabel(period) {
+    const raw =
+      period?.periodNumber ||
+      period?.number ||
+      period;
+
+    const n = Number(raw);
+
+    if (n === 4) return 'OT';
+    if (n === 5) return 'SO';
+
+    if (!n) return 'Period';
+
+    return `${n}${
+      n === 1 ? 'st' :
+      n === 2 ? 'nd' :
+      n === 3 ? 'rd' : 'th'
+    }`;
+  }
+
+  function overtimeLoss(game) {
+    const type = String(
+      game?.gameOutcome?.lastPeriodType ||
+      game?.periodDescriptor?.periodType ||
+      game?.lastPeriodType ||
+      ''
+    ).toUpperCase();
+
+    if (type === 'OT' || type === 'SO') {
+      return true;
+    }
+
+    const number = Number(
+      game?.periodDescriptor?.number ||
+      game?.periodDescriptor?.periodNumber ||
+      0
+    );
+
+    return number >= 4;
+  }
+
+  /*
+    SCORING SUMMARY
+  */
+
+  function scoring(payload) {
+    const periods =
+      payload?.landing?.summary?.scoring || [];
+
+    if (!Array.isArray(periods) || !periods.length) {
+      return `
+        <p class="h2h-muted">
+          Scoring details unavailable.
+        </p>
+      `;
+    }
+
+    const output = periods.map(period => {
+      const goals =
+        period.goals ||
+        period.scoringPlays ||
+        [];
+
+      if (!Array.isArray(goals) || !goals.length) {
+        return '';
+      }
+
+      const header = `
+        <div class="h2h-period">
+          ${esc(periodLabel(
+            period.periodDescriptor ||
+            period.periodNumber ||
+            period.period
+          ))}
+        </div>
+      `;
+
+      const rows = goals.map(goal => {
+        const assists = (goal.assists || [])
+          .map(playerName)
+          .join(', ') || 'Unassisted';
+
+        const code =
+          teamCode(goal.teamAbbrev) ||
+          teamCode(goal.team);
+
+        const scorer =
+          playerName(goal.scorer) !== '—'
+            ? playerName(goal.scorer)
+            : playerName(goal);
+
+        const tally = goal.goalsToDate != null
+          ? ` (${num(goal.goalsToDate)})`
           : '';
 
-      const strength =
-        g.strength === 'pp'
-          ? ' · PP'
-          : g.strength === 'sh'
-            ? ' · SH'
-            : '';
+        const strength =
+          goal.strength === 'pp'
+            ? ' · PP'
+            : goal.strength === 'sh'
+              ? ' · SH'
+              : '';
 
-      return `
-        <div class="h2h-goal">
+        return `
+          <div class="h2h-goal">
+            <span class="h2h-time">
+              ${esc(
+                goal.timeInPeriod ||
+                goal.time ||
+                ''
+              )}
+            </span>
 
-          <span class="h2h-time">
-            ${esc(g.timeInPeriod || g.time || '')}
-          </span>
+            ${teamTag(code)}
 
-          ${teamTag(code)}
+            <div>
+              <strong>
+                ${esc(scorer)}${tally}${strength}
+              </strong>
 
-          <div>
-            <strong>
-              ${esc(scorer)}${tally}${strength}
-            </strong>
-
-            <small>
-              ${esc(assists)}
-            </small>
+              <small>
+                ${esc(assists)}
+              </small>
+            </div>
           </div>
+        `;
+      }).join('');
 
-        </div>
-      `;
+      return header + rows;
     }).join('');
 
-    return header + goalRows;
-  }).join('') || `
-    <p class="h2h-muted">
-      No scoring plays available.
-    </p>
-  `;
-}
-
-
-/* ==========================================
-   GOALTENDING SUMMARY
-========================================== */
-
-function goalies(payload) {
-  const by =
-    payload?.boxscore?.playerByGameStats || {};
-
-  const teams = [
-    [
-      'awayTeam',
-      teamCode(payload?.boxscore?.awayTeam)
-    ],
-    [
-      'homeTeam',
-      teamCode(payload?.boxscore?.homeTeam)
-    ]
-  ];
-
-  return teams.map(([side, code]) => {
-    const players =
-      by[side]?.goalies || [];
-
-    return players.map(p => {
-      const shots =
-        p.shotsAgainst ??
-        p.shotsAgainstTotal;
-
-      const saves =
-        p.saves ??
-        (
-          shots != null &&
-          p.goalsAgainst != null
-            ? num(shots) - num(p.goalsAgainst)
-            : null
-        );
-
-      const pct =
-        p.savePctg ??
-        (
-          shots > 0 &&
-          saves != null
-            ? saves / shots
-            : null
-        );
-
-      const outcome = p.decision || '';
-
-      return `
-        <div class="h2h-goalie">
-
-          ${teamTag(code)}
-
-          <div>
-            <strong>
-              ${esc(name(p))} ${esc(outcome)}
-            </strong>
-
-            <small>
-              ${
-                saves != null && shots != null
-                  ? `${num(saves)} saves on ${num(shots)}`
-                  : 'Goalie statistics unavailable'
-              }
-
-              ${
-                pct != null
-                  ? ` · ${Number(pct)
-                      .toFixed(3)
-                      .replace(/^0/, '')}`
-                  : ''
-              }
-            </small>
-          </div>
-
-        </div>
-      `;
-    }).join('');
-  }).join('') || `
-    <p class="h2h-muted">
-      Goaltending details unavailable.
-    </p>
-  `;
-}
-
-
-/* ==========================================
-   TEAM STATISTICS
-========================================== */
-
-const statLabels = {
-  sog: 'Shots',
-  shots: 'Shots',
-  faceoffWinningPctg: 'Faceoff %',
-  faceoffPct: 'Faceoff %',
-  powerPlayPct: 'Power play %',
-  powerPlay: 'Power play',
-  pim: 'Penalty minutes',
-  penaltyMinutes: 'Penalty minutes',
-  hits: 'Hits',
-  blockedShotAttempts: 'Blocked shots',
-  blockedShots: 'Blocked shots',
-  giveaways: 'Giveaways',
-  takeaways: 'Takeaways'
-};
-
-function stats(payload, g) {
-  const entries =
-    payload?.landing?.summary?.teamGameStats || [];
-
-  const away = g.awayTeam.abbrev;
-  const home = g.homeTeam.abbrev;
-
-  if (!Array.isArray(entries) || !entries.length) {
-    return `
+    return output || `
       <p class="h2h-muted">
-        Team statistics unavailable.
+        No scoring plays available.
       </p>
     `;
   }
 
-  const rows = entries
-    .filter(x =>
-      statLabels[x.category] ||
-      statLabels[x.name]
-    )
-    .map(x => {
-      const label =
-        statLabels[x.category] ||
-        statLabels[x.name];
+  /*
+    GOALTENDING SUMMARY
+  */
 
-      const a =
-        x.awayValue ??
-        x.away ??
-        '—';
+  function goalies(payload) {
+    const by =
+      payload?.boxscore?.playerByGameStats || {};
 
-      const h =
-        x.homeValue ??
-        x.home ??
-        '—';
+    const teams = [
+      [
+        'awayTeam',
+        teamCode(payload?.boxscore?.awayTeam)
+      ],
+      [
+        'homeTeam',
+        teamCode(payload?.boxscore?.homeTeam)
+      ]
+    ];
 
-      return `
-        <div class="h2h-stat">
-          <strong>${esc(a)}</strong>
-          <span>${esc(label)}</span>
-          <strong>${esc(h)}</strong>
-        </div>
-      `;
-    })
-    .join('');
+    const output = teams.map(([side, code]) => {
+      const players = by[side]?.goalies || [];
 
-  return `
-    <div class="h2h-stat-head">
-      ${teamTag(away)}
-      <b>Team stats</b>
-      ${teamTag(home)}
-    </div>
+      return players.map(player => {
+        const shots =
+          player.shotsAgainst ??
+          player.shotsAgainstTotal;
 
-    ${
-      rows ||
-      '<p class="h2h-muted">Team statistics unavailable.</p>'
-    }
-  `;
-}
+        const saves =
+          player.saves ??
+          (
+            shots != null &&
+            player.goalsAgainst != null
+              ? num(shots) - num(player.goalsAgainst)
+              : null
+          );
 
+        const pct =
+          player.savePctg ??
+          (
+            shots > 0 && saves != null
+              ? saves / shots
+              : null
+          );
 
-/* ==========================================
-   EXPANDED SCORESHEET
-========================================== */
+        const outcome = player.decision || '';
 
-function scoresheet(payload, g) {
-  const summary =
-    payload?.landing?.summary;
+        return `
+          <div class="h2h-goalie">
+            ${teamTag(code)}
 
-  const hasScoring =
-    Array.isArray(summary?.scoring);
+            <div>
+              <strong>
+                ${esc(playerName(player))}
+                ${esc(outcome)}
+              </strong>
 
-  const hasBox =
-    !!payload?.boxscore?.playerByGameStats;
+              <small>
+                ${
+                  saves != null && shots != null
+                    ? `${num(saves)} saves on ${num(shots)}`
+                    : 'Goalie statistics unavailable'
+                }
 
-  if (!hasScoring && !hasBox) {
-    return `
+                ${
+                  pct != null
+                    ? ` · ${Number(pct)
+                        .toFixed(3)
+                        .replace(/^0/, '')}`
+                    : ''
+                }
+              </small>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }).join('');
+
+    return output || `
       <p class="h2h-muted">
-        Detailed scoresheet not available for this game.
+        Goaltending details unavailable.
       </p>
     `;
   }
 
-  return `
-    <div class="h2h-score-grid">
+  /*
+    TEAM STATISTICS
+  */
 
-      <div>
-        <h4>Scoring</h4>
-        ${scoring(payload)}
-      </div>
+  const statLabels = {
+    sog: 'Shots',
+    shots: 'Shots',
+    faceoffWinningPctg: 'Faceoff %',
+    faceoffPct: 'Faceoff %',
+    powerPlayPct: 'Power play %',
+    powerPlay: 'Power play',
+    pim: 'Penalty minutes',
+    penaltyMinutes: 'Penalty minutes',
+    hits: 'Hits',
+    blockedShotAttempts: 'Blocked shots',
+    blockedShots: 'Blocked shots',
+    giveaways: 'Giveaways',
+    takeaways: 'Takeaways'
+  };
 
-      <div>
-        <h4>Goalies</h4>
-        ${goalies(payload)}
+  function stats(payload, game) {
+    const entries =
+      payload?.landing?.summary?.teamGameStats || [];
 
-        <div class="h2h-stats">
-          ${stats(payload, g)}
-        </div>
-      </div>
-
-    </div>
-  `;
-}
-
-
-/* ==========================================
-   RENDER HEAD-TO-HEAD RESULTS
-========================================== */
-
-function paint(games, t, opp, cache) {
-  const sub = $('hoist-h2h-sub');
-  const summary = $('hoist-h2h-summary');
-  const list = $('hoist-h2h-games');
-
-  if (!sub || !summary || !list) return;
-
-  sub.textContent =
-    `${t} vs ${opp} · ` +
-    `${games.length} most recent completed ` +
-    `regular-season meetings` +
-    (
-      games.length < 10
-        ? ' · limited history'
-        : ''
-    );
-
-  if (!games.length) {
-    summary.innerHTML = '';
-
-    list.innerHTML = `
-      <div class="empty">
-        No completed regular-season meetings
-        in the cached history.
-      </div>
-    `;
-
-    return;
-  }
-
-  /* ========================================
-     RECORD: W–L–OTL
-  ======================================== */
-
-  let wins = 0;
-  let losses = 0;
-  let otLosses = 0;
-
-  for (const g of games) {
-    const home =
-      g.homeTeam.abbrev === t;
-
-    const own = num(
-      (home ? g.homeTeam : g.awayTeam).score
-    );
-
-    const against = num(
-      (home ? g.awayTeam : g.homeTeam).score
-    );
-
-    if (own > against) {
-      wins++;
-    } else if (overtimeLoss(g)) {
-      otLosses++;
-    } else {
-      losses++;
+    if (!Array.isArray(entries) || !entries.length) {
+      return `
+        <p class="h2h-muted">
+          Team statistics unavailable.
+        </p>
+      `;
     }
-  }
 
-  summary.innerHTML = `
-    <div class="hoist-h2h-record-card">
+    const away = game.awayTeam.abbrev;
+    const home = game.homeTeam.abbrev;
 
-      <div class="hoist-h2h-record-label">
-        RECORD
-      </div>
+    const rows = entries
+      .filter(item =>
+        statLabels[item.category] ||
+        statLabels[item.name]
+      )
+      .map(item => {
+        const label =
+          statLabels[item.category] ||
+          statLabels[item.name];
 
-      <div class="hoist-h2h-record-value">
-        ${wins}–${losses}–${otLosses}
-      </div>
+        const awayValue =
+          item.awayValue ??
+          item.away ??
+          '—';
 
-      <div class="hoist-h2h-record-detail">
-        W – L – OTL
-      </div>
+        const homeValue =
+          item.homeValue ??
+          item.home ??
+          '—';
 
-    </div>
-  `;
-
-  /* ========================================
-     INDIVIDUAL MATCHUPS
-  ======================================== */
-
-  list.innerHTML = games.map(g => {
-    const home =
-      g.homeTeam.abbrev === t;
-
-    const own = num(
-      (home ? g.homeTeam : g.awayTeam).score
-    );
-
-    const against = num(
-      (home ? g.awayTeam : g.homeTeam).score
-    );
-
-    const win = own > against;
-    const code = other(g, t);
-    const id = String(g.id);
-    const payload = cache[id];
-
-    const date = String(g.gameDate || '');
-    const d = new Date(date + 'T12:00:00');
-
-    const formatted = Number.isNaN(d.getTime())
-      ? date
-      : d.toLocaleDateString('en-US', {
-          month: 'short',
-          day: 'numeric',
-          year: 'numeric'
-        });
+        return `
+          <div class="h2h-stat">
+            <strong>${esc(awayValue)}</strong>
+            <span>${esc(label)}</span>
+            <strong>${esc(homeValue)}</strong>
+          </div>
+        `;
+      }).join('');
 
     return `
-      <details class="h2h-game">
+      <div class="h2h-stat-head">
+        ${teamTag(away)}
+        <b>Team stats</b>
+        ${teamTag(home)}
+      </div>
 
-        <summary class="h2h-game-toggle">
+      ${
+        rows ||
+        '<p class="h2h-muted">Team statistics unavailable.</p>'
+      }
+    `;
+  }
 
-          <span class="h2h-result ${
-            win ? 'h2h-win' : 'h2h-loss'
-          }">
-            ${win ? 'W' : 'L'}
-          </span>
+  /*
+    EXPANDED SCORESHEET
+  */
 
-          <span class="h2h-game-info">
-            <strong>
-              ${home ? 'vs' : 'at'} ${esc(code)}
-            </strong>
+  function scoresheet(payload, game) {
+    const summary = payload?.landing?.summary;
 
-            <small>${esc(formatted)}</small>
-          </span>
+    const hasScoring =
+      Array.isArray(summary?.scoring);
 
-          <span class="h2h-game-score">
-            <img
-              src="${logo(g.awayTeam.abbrev)}"
-              alt=""
-              loading="lazy"
-            >
+    const hasBox =
+      !!payload?.boxscore?.playerByGameStats;
 
-            <b>
-              ${num(g.awayTeam.score)}–${num(g.homeTeam.score)}
-            </b>
+    if (!hasScoring && !hasBox) {
+      return `
+        <p class="h2h-muted">
+          Detailed scoresheet not available.
+        </p>
+      `;
+    }
 
-            <img
-              src="${logo(g.homeTeam.abbrev)}"
-              alt=""
-              loading="lazy"
-            >
-          </span>
-
-          <span
-            class="h2h-chevron"
-            aria-hidden="true"
-          >⌄</span>
-
-        </summary>
-
-        <div class="h2h-score-content">
-          ${
-            payload
-              ? scoresheet(payload, g)
-              : `
-                <p class="h2h-muted">
-                  Scoresheet is not cached yet.
-                  Run the Update Head-to-Head History
-                  workflow again to backfill game details.
-                </p>
-              `
-          }
+    return `
+      <div class="h2h-score-grid">
+        <div>
+          <h4>Scoring</h4>
+          ${scoring(payload)}
         </div>
 
-      </details>
+        <div>
+          <h4>Goalies</h4>
+          ${goalies(payload)}
+
+          <div class="h2h-stats">
+            ${stats(payload, game)}
+          </div>
+        </div>
+      </div>
     `;
-  }).join('');
-}
+  }
 
+  /*
+    RENDER HEAD-TO-HEAD RESULTS
+  */
 
-/* ==========================================
-   UPDATE SELECTED TEAM
-========================================== */
+  function paint(games, team, opponent, cache) {
+    const sub = $('hoist-h2h-sub');
+    const summary = $('hoist-h2h-summary');
+    const list = $('hoist-h2h-games');
 
-async function update() {
-  widget();
+    if (!sub || !summary || !list) return;
 
-  const sub = $('hoist-h2h-sub');
-  const list = $('hoist-h2h-games');
-
-  if (!sub || !list) return;
-
-  const token = ++run;
-
-  const t =
-    $('team-select')?.value ||
-    (
-      typeof state !== 'undefined'
-        ? state.team
-        : null
-    ) ||
-    'MTL';
-
-  const schedule =
-    (
-      typeof state !== 'undefined' &&
-      Array.isArray(state.schedule)
-    )
-      ? state.schedule
-      : [];
-
-  const upcoming = schedule
-    .filter(g =>
-      g?.gameDate &&
-      !final(g) &&
-      num(g.gameType) === 2
-    )
-    .sort((a, b) =>
-      a.gameDate.localeCompare(b.gameDate)
-    );
-
-  const opp = upcoming.length
-    ? other(upcoming[0], t)
-    : null;
-
-  if (!opp) {
     sub.textContent =
-      'No upcoming regular-season opponent found for the selected team.';
+      `${team} vs ${opponent} · ` +
+      `${games.length} most recent completed ` +
+      `regular-season meetings` +
+      (
+        games.length < 10
+          ? ' · limited history'
+          : ''
+      );
 
-    $('hoist-h2h-summary').innerHTML = '';
+    if (!games.length) {
+      summary.innerHTML = '';
 
-    list.innerHTML = `
-      <div class="empty">
-        Matchups appear when the next opponent
-        is available.
-      </div>
-    `;
+      list.innerHTML = `
+        <div class="empty">
+          No completed regular-season meetings
+          in the cached history.
+        </div>
+      `;
 
-    return;
-  }
+      return;
+    }
 
-  sub.textContent =
-    `${t} vs ${opp} · loading cached history…`;
+    /*
+      W-L-OTL RECORD
+    */
 
-  list.innerHTML = `
-    <div class="empty">
-      Loading last 10 meetings…
-    </div>
-  `;
+    let wins = 0;
+    let losses = 0;
+    let otLosses = 0;
 
-  try {
-    const all = await history();
+    for (const game of games) {
+      const home =
+        game.homeTeam.abbrev === team;
 
-    if (token !== run) return;
+      const own = num(
+        (home ? game.homeTeam : game.awayTeam).score
+      );
 
-    const unique = new Map();
+      const against = num(
+        (home ? game.awayTeam : game.homeTeam).score
+      );
 
-    for (const g of all) {
-      if (
-        num(g.gameType) === 2 &&
-        final(g) &&
-        other(g, t) === opp
-      ) {
-        unique.set(
-          String(
-            g.id ||
-            `${g.gameDate}-${g.homeTeam.abbrev}-${g.awayTeam.abbrev}`
-          ),
-          g
-        );
+      if (own > against) {
+        wins++;
+      } else if (overtimeLoss(game)) {
+        otLosses++;
+      } else {
+        losses++;
       }
     }
 
-    const games = [...unique.values()]
-      .sort((a, b) =>
-        String(b.gameDate).localeCompare(
-          String(a.gameDate)
-        )
-      )
-      .slice(0, 10);
+    summary.innerHTML = `
+      <div class="hoist-h2h-record-card">
+        <div class="hoist-h2h-record-label">
+          RECORD
+        </div>
 
-    let cache = {};
+        <div class="hoist-h2h-record-value">
+          ${wins}–${losses}–${otLosses}
+        </div>
 
-    try {
-      cache = await details();
-    } catch (e) {
-      console.warn(
-        'Hoist scoresheets not yet cached:',
-        e.message
+        <div class="hoist-h2h-record-detail">
+          W – L – OTL
+        </div>
+      </div>
+    `;
+
+    /*
+      INDIVIDUAL MATCHUPS
+    */
+
+    list.innerHTML = games.map(game => {
+      const home =
+        game.homeTeam.abbrev === team;
+
+      const own = num(
+        (home ? game.homeTeam : game.awayTeam).score
       );
+
+      const against = num(
+        (home ? game.awayTeam : game.homeTeam).score
+      );
+
+      const win = own > against;
+      const code = other(game, team);
+      const id = String(game.id);
+      const payload = cache[id];
+
+      const date = String(game.gameDate || '');
+      const parsed = new Date(date + 'T12:00:00');
+
+      const formatted = Number.isNaN(parsed.getTime())
+        ? date
+        : parsed.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          });
+
+      return `
+        <details class="h2h-game">
+          <summary class="h2h-game-toggle">
+
+            <span class="h2h-result ${
+              win ? 'h2h-win' : 'h2h-loss'
+            }">
+              ${win ? 'W' : 'L'}
+            </span>
+
+            <span class="h2h-game-info">
+              <strong>
+                ${home ? 'vs' : 'at'} ${esc(code)}
+              </strong>
+
+              <small>${esc(formatted)}</small>
+            </span>
+
+            <span class="h2h-game-score">
+              <img
+                src="${logo(game.awayTeam.abbrev)}"
+                alt=""
+                loading="lazy"
+              >
+
+              <b>
+                ${num(game.awayTeam.score)}–${num(game.homeTeam.score)}
+              </b>
+
+              <img
+                src="${logo(game.homeTeam.abbrev)}"
+                alt=""
+                loading="lazy"
+              >
+            </span>
+
+            <span
+              class="h2h-chevron"
+              aria-hidden="true"
+            >⌄</span>
+
+          </summary>
+
+          <div class="h2h-score-content">
+            ${
+              payload
+                ? scoresheet(payload, game)
+                : `
+                  <p class="h2h-muted">
+                    Scoresheet is not cached yet.
+                    Run the Update Head-to-Head History
+                    workflow to backfill game details.
+                  </p>
+                `
+            }
+          </div>
+        </details>
+      `;
+    }).join('');
+  }
+
+  /*
+    UPDATE SELECTED TEAM
+  */
+
+  async function update() {
+    widget();
+
+    const sub = $('hoist-h2h-sub');
+    const list = $('hoist-h2h-games');
+
+    if (!sub || !list) return;
+
+    const token = ++run;
+
+    const team =
+      $('team-select')?.value ||
+      (
+        typeof state !== 'undefined'
+          ? state.team
+          : null
+      ) ||
+      'MTL';
+
+    const schedule =
+      (
+        typeof state !== 'undefined' &&
+        Array.isArray(state.schedule)
+      )
+        ? state.schedule
+        : [];
+
+    const upcoming = schedule
+      .filter(game =>
+        game?.gameDate &&
+        !final(game) &&
+        num(game.gameType) === 2
+      )
+      .sort((a, b) =>
+        a.gameDate.localeCompare(b.gameDate)
+      );
+
+    const opponent = upcoming.length
+      ? other(upcoming[0], team)
+      : null;
+
+    if (!opponent) {
+      sub.textContent =
+        'No upcoming regular-season opponent found for the selected team.';
+
+      $('hoist-h2h-summary').innerHTML = '';
+
+      list.innerHTML = `
+        <div class="empty">
+          Matchups appear when the next opponent
+          is available.
+        </div>
+      `;
+
+      return;
     }
 
-    if (token !== run) return;
-
-    paint(games, t, opp, cache);
-
-  } catch (e) {
-    if (token !== run) return;
-
     sub.textContent =
-      `${t} vs ${opp} · historical cache unavailable`;
-
-    $('hoist-h2h-summary').innerHTML = '';
+      `${team} vs ${opponent} · loading cached history…`;
 
     list.innerHTML = `
       <div class="empty">
-        ${esc(e.message)}.
-        Run the "Update Head-to-Head History"
-        GitHub Action.
+        Loading last 10 meetings…
       </div>
     `;
-  }
-}
 
+    try {
+      const all = await history();
 
-/* ==========================================
-   INITIALIZE
-========================================== */
+      if (token !== run) return;
 
-function init() {
-  widget();
+      const unique = new Map();
 
-  $('team-select')?.addEventListener(
-    'change',
-    () => setTimeout(update, 800)
-  );
+      for (const game of all) {
+        if (
+          num(game.gameType) === 2 &&
+          final(game) &&
+          other(game, team) === opponent
+        ) {
+          unique.set(
+            String(
+              game.id ||
+              `${game.gameDate}-${game.homeTeam.abbrev}-${game.awayTeam.abbrev}`
+            ),
+            game
+          );
+        }
+      }
 
-  $('refresh')?.addEventListener(
-    'click',
-    () => setTimeout(update, 1500)
-  );
+      const games = [...unique.values()]
+        .sort((a, b) =>
+          String(b.gameDate).localeCompare(
+            String(a.gameDate)
+          )
+        )
+        .slice(0, 10);
 
-  setTimeout(update, 1600);
+      if (!games.length) {
+        paint([], team, opponent, {});
+        return;
+      }
 
-  setTimeout(() => {
-    if (
-      !$('hoist-h2h-games')
-        ?.querySelector('.h2h-game')
-    ) {
-      update();
+      let cache = {};
+
+      try {
+        cache = await details(games);
+      } catch (error) {
+        console.warn(
+          'Hoist scoresheets unavailable:',
+          error
+        );
+      }
+
+      if (token !== run) return;
+
+      paint(games, team, opponent, cache);
+
+    } catch (error) {
+      if (token !== run) return;
+
+      sub.textContent =
+        `${team} vs ${opponent} · historical cache unavailable`;
+
+      $('hoist-h2h-summary').innerHTML = '';
+
+      list.innerHTML = `
+        <div class="empty">
+          ${esc(error.message)}
+          Run the Update Head-to-Head History
+          GitHub Action.
+        </div>
+      `;
     }
-  }, 5000);
-}
+  }
 
-if (document.readyState === 'loading') {
-  document.addEventListener(
-    'DOMContentLoaded',
-    init
-  );
-} else {
-  init();
-}
+  /*
+    INITIALIZE
+  */
+
+  function init() {
+    widget();
+
+    $('team-select')?.addEventListener(
+      'change',
+      () => setTimeout(update, 800)
+    );
+
+    $('refresh')?.addEventListener(
+      'click',
+      () => setTimeout(update, 1500)
+    );
+
+    setTimeout(update, 1600);
+
+    setTimeout(() => {
+      if (
+        !$('hoist-h2h-games')
+          ?.querySelector('.h2h-game')
+      ) {
+        update();
+      }
+    }, 5000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener(
+      'DOMContentLoaded',
+      init
+    );
+  } else {
+    init();
+  }
 
 })();
