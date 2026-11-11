@@ -3,7 +3,7 @@
   "type": "roster",
   "status": "roster",
   "source": "NHL Web API",
-  "updatedAt": "2026-11-11T13:28:53.851348+00:00",
+  "updatedAt": "2026-11-11T19:17:27.708051+00:00",
   "forwards": [
     {
       "id": 8484153,
@@ -67,13 +67,6 @@
       "position": "C",
       "number": 95,
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/ANA/8485400.png"
-    },
-    {
-      "id": 8484201,
-      "name": "Nico Myatovic",
-      "position": "L",
-      "number": 48,
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/ANA/8484201.png"
     },
     {
       "id": 8481754,
