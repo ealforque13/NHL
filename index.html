@@ -3752,6 +3752,42 @@ body[data-theme="light"] #games .hoist-game-card {
   #games .hoist-card-feature-player .hoist-card-hot-portrait img{width:47px;height:47px;max-width:47px;max-height:47px}
 }
 </style>
+
+<style>
+/* Games V39: truly round portrait masks, a third central flame, and desktop three-category layout. */
+#games .hoist-card-feature-player .hoist-card-hot-portrait {
+  position:relative!important;display:inline-block!important;flex:0 0 58px!important;
+  width:58px!important;height:58px!important;border-radius:9999px!important;
+  overflow:hidden!important;clip-path:circle(50% at 50% 50%)!important;
+  background:#050608!important;isolation:isolate!important;
+}
+#games .hoist-card-feature-player .hoist-card-hot-portrait > img,
+#games .hoist-card-feature-player .hoist-card-hot-portrait > img.hoist-game-player-headshot {
+  position:absolute!important;z-index:2!important;left:2px!important;bottom:0!important;
+  width:54px!important;height:54px!important;min-width:0!important;
+  max-width:54px!important;max-height:54px!important;
+  object-fit:contain!important;object-position:center bottom!important;
+  border-radius:50%!important;clip-path:circle(50% at 50% 50%)!important;
+  background:transparent!important;box-shadow:none!important;
+}
+#games .hoist-card-hot-flame-center {
+  position:absolute;z-index:1;left:50%;bottom:3px;width:19px;height:53px;
+  transform:translateX(-50%);pointer-events:none;
+  background:linear-gradient(to top,rgba(227,49,10,.95) 0%,rgba(255,114,20,.94) 36%,rgba(255,204,77,.78) 66%,rgba(255,237,159,.08) 92%,transparent 100%);
+  clip-path:polygon(46% 0%,70% 24%,60% 41%,86% 59%,100% 81%,82% 100%,16% 100%,0 77%,32% 47%,29% 27%);
+  filter:blur(1.3px);opacity:.86;
+}
+/* Games V40: retain the original carousel on desktop, in a narrower centered area. */
+@media(min-width:901px){
+  #games .hoist-game-feature-stage,
+  #games .hoist-card-slide-dots {max-width:900px;width:100%;margin-left:auto;margin-right:auto}
+}
+@media(max-width:650px){
+  #games .hoist-card-feature-player .hoist-card-hot-portrait{width:50px!important;height:50px!important;flex-basis:50px!important}
+  #games .hoist-card-feature-player .hoist-card-hot-portrait > img,
+  #games .hoist-card-feature-player .hoist-card-hot-portrait > img.hoist-game-player-headshot{width:46px!important;height:46px!important;max-width:46px!important;max-height:46px!important}
+}
+</style>
 </head>
 
 <body>
@@ -5842,7 +5878,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     if(!away&&!home){feature.querySelector('.hoist-game-feature-loading').textContent='Recent player statistics unavailable.';return;}
     const data=[away,home];
-    feature.innerHTML=`<div class="hoist-game-feature-heading">LAST 5 GAMES</div><div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true"></span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
+    feature.innerHTML=`<div class="hoist-game-feature-heading">LAST 5 GAMES</div><div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true"><span class="hoist-card-hot-flame-center"></span></span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
