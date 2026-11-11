@@ -3608,23 +3608,28 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-overview-table thead th{background:transparent!important;box-shadow:none!important}
 #games .hoist-game-overview-table .hoist-sort-button{background:transparent!important}
 #games .hoist-game-overview-table .hoist-sort-button:hover{background:transparent!important}
-/* More room for names; tightly grouped numeric columns toward the right. */
+/* Restore the equal Overview-style category widths (40% player, 12% each stat). */
 #games .hoist-game-overview-table th:first-child,
-#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:first-child{width:48%!important}
-#games .hoist-game-overview-table th:nth-child(2),
-#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(2){width:9%!important}
-#games .hoist-game-overview-table th:nth-child(3),
-#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(3),
-#games .hoist-game-overview-table th:nth-child(4),
-#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(4){width:8%!important}
-#games .hoist-game-overview-table th:nth-child(5),
-#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(5){width:10%!important}
-#games .hoist-game-overview-table th:nth-child(6),
-#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(6){width:17%!important}
-#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td:nth-child(n+2){padding-left:2px!important;padding-right:2px!important}
+#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:first-child{width:40%!important}
+#games .hoist-game-overview-table th:nth-child(n+2),
+#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(n+2){width:12%!important}
 #games .hoist-game-overview-table tr.hoist-game-overview-player-row>td:last-child{padding-right:18px!important}
 @media(max-width:900px){#games .hoist-game-h2h-teams{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}}
-@media(max-width:650px){#games .hoist-game-overview-table th:first-child,#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:first-child{width:43%!important}#games .hoist-game-overview-table th:nth-child(2),#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(2){width:10%!important}#games .hoist-game-overview-table th:nth-child(3),#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(3),#games .hoist-game-overview-table th:nth-child(4),#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(4){width:9%!important}#games .hoist-game-overview-table th:nth-child(5),#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(5){width:11%!important}#games .hoist-game-overview-table th:nth-child(6),#games .hoist-game-overview-table tbody tr.hoist-game-overview-player-row>td:nth-child(6){width:18%!important}}
+/* Compact and right-align the PTS, G and A stats inside each player's expanded history. */
+#games .hoist-game-overview-history .hoist-game-history-head,
+#games .hoist-game-overview-history .hoist-game-history-row{
+  grid-template-columns:minmax(0,1fr) repeat(3,42px)!important;
+  gap:4px!important;
+  text-align:right!important;
+}
+#games .hoist-game-overview-history .hoist-game-history-head span:first-child,
+#games .hoist-game-overview-history .hoist-game-history-row span:first-child{text-align:left!important}
+@media(max-width:650px){
+  #games .hoist-game-overview-history .hoist-game-history-head,
+  #games .hoist-game-overview-history .hoist-game-history-row{
+    grid-template-columns:minmax(0,1fr) repeat(3,32px)!important;gap:3px!important;
+  }
+}
 </style>
 </head>
 
@@ -5646,7 +5651,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><h3 class="hoist-game-team-group-title"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span> ${esc(names[i])}</h3><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP</p></section>`).join('')}</div>`;
+    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div></section>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
