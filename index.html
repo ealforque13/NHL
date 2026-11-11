@@ -3305,6 +3305,17 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
   #teams .hoist-division-list{grid-template-columns:minmax(0,1fr)}
 }
 </style>
+<style>
+/* Tampa Bay Lightning: use a white silhouette on every dashboard page.
+   Matches logos in Overview, Games, Standings, Stats, Lineups and Teams. */
+img[src*="TBL_" i],
+img[src*="/TBL." i],
+img[src*="/TBL/" i],
+img[data-hoist-team="TBL"],
+#team-logo[data-hoist-team="TBL"] {
+  filter:brightness(0) invert(1) !important;
+}
+</style>
 </head>
 
 <body>
@@ -3336,11 +3347,11 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
       ◫ <span>Overview</span>
     </button>
 
+    <button class="nav-item" data-tab="games">▦ <span>Games</span></button>
     <button class="nav-item" data-tab="standings">
       ▤ <span>Standings</span>
     </button>
-<button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
-    <button class="nav-item" data-tab="games">▦ <span>Games</span></button>
+    <button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
 
     <button class="nav-item" data-tab="lineups">♟ <span>Lineups</span></button>
 </nav>
@@ -5164,6 +5175,25 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start);
   else start();
+})();
+</script>
+
+<script>
+/* Keep the main Overview logo white when Tampa Bay is the selected team. */
+(() => {
+  const syncTampaLogo = () => {
+    const select = document.getElementById('team-select');
+    const logo = document.getElementById('team-logo');
+    if (select && logo) {
+      if (select.value === 'TBL') logo.setAttribute('data-hoist-team','TBL');
+      else logo.removeAttribute('data-hoist-team');
+    }
+  };
+  document.addEventListener('DOMContentLoaded', () => {
+    syncTampaLogo();
+    document.getElementById('team-select')?.addEventListener('change',syncTampaLogo);
+    setTimeout(syncTampaLogo,1000);
+  });
 })();
 </script>
 </body>
