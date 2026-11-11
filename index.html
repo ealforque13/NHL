@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="hoist-build" content="20261110-35">
+<meta name="hoist-build" content="20261111-games-redesign">
 
 <script>
 try {
@@ -3308,8 +3308,8 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 <style>
 /* Tampa Bay Lightning: use a white silhouette on every dashboard page.
    Matches logos in Overview, Games, Standings, Stats, Lineups and Teams. */
-img[src*="TBL_" i],
-img[src*="/TBL." i],
+img[src*="TBL_" i]:not(.hoist-team-headshot):not(.hoist-stats-headshot),
+img[src*="/TBL." i]:not(.hoist-team-headshot):not(.hoist-stats-headshot),
 img[data-hoist-team="TBL"],
 #team-logo[data-hoist-team="TBL"] {
   filter:brightness(0) invert(1) !important;
@@ -3332,6 +3332,31 @@ img[data-hoist-team="TBL"],
 #games .hoist-game-leader-ppg{font-weight:800;color:#fff;font-size:14px;white-space:nowrap}
 #games .hoist-game-leaders-note{font-size:11px;color:var(--muted,#9ca8b9);margin:10px 0 0}
 @media(max-width:650px){#games .hoist-game-leaders-grid{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<style>
+/* Hoist Games: roomy single-column desktop layout and familiar right-side chevron. */
+#games .hoist-games-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:12px!important}
+#games .hoist-game-card{width:100%;box-sizing:border-box;padding:20px 24px!important;min-width:0}
+#games .hoist-game-card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+#games .hoist-game-expand{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:38px;height:38px;padding:0;border:1px solid rgba(140,153,177,.27);background:rgba(125,155,195,.08);color:inherit;cursor:pointer}
+#games .hoist-game-expand svg{transition:transform .18s ease}
+#games .hoist-game-card[aria-expanded="true"] .hoist-game-expand svg{transform:rotate(180deg)}
+#games .hoist-game-card:hover{border-color:rgba(73,181,255,.42)}
+#games .hoist-game-leaders{margin-top:18px;padding-top:18px;border-top:1px solid rgba(140,153,177,.25)}
+#games .hoist-game-leaders-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#games .hoist-game-leaders-team{min-width:0}
+#games .hoist-game-leaders-team h4{font-size:15px;margin:0 0 12px;font-weight:800}
+#games .hoist-game-leader{display:flex;align-items:center;gap:12px;padding:12px 5px;border-top:1px solid rgba(140,153,177,.17);min-width:0}
+#games .hoist-game-leader-rank{font-size:12px;font-weight:800;color:var(--muted,#9ca8b9);width:14px;flex-shrink:0}
+#games .hoist-game-leader img.hoist-game-player-headshot{width:52px;height:52px;object-fit:contain;flex-shrink:0;border-radius:50%!important;filter:none!important}
+#games .hoist-game-leader-name{flex:1;min-width:0}
+#games .hoist-game-leader-name strong{display:block;font-size:14px;white-space:normal;overflow-wrap:anywhere}
+#games .hoist-game-leader-name small{display:block;margin-top:5px;font-size:12px;line-height:1.5;color:var(--muted,#9ca8b9);white-space:normal}
+#games .hoist-game-leader-ppg{font-size:19px;font-weight:800;white-space:nowrap;color:inherit;text-align:right}
+#games .hoist-game-leader-ppg small{display:block;font-size:10px;color:var(--muted,#9ca8b9)}
+@media(max-width:800px){#games .hoist-game-leaders-grid{grid-template-columns:minmax(0,1fr);gap:18px}}
+@media(max-width:650px){#games .hoist-game-card{padding:14px!important}#games .hoist-game-leader{gap:8px}#games .hoist-game-leader img.hoist-game-player-headshot{width:42px;height:42px}#games .hoist-game-leader-name small{font-size:11px}#games .hoist-game-leader-ppg{font-size:16px}}
 </style>
 </head>
 
@@ -5215,64 +5240,97 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <script>
-/* Game-card matchup leaders, reusing Overview's cached player-versus-opponent data. */
+/* Games: accessible expandable matchup cards with opponent-specific leaders. */
 (() => {
-  const escape = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const cache = new Map();
   const codes = new Set('ANA BOS BUF CGY CAR CHI COL CBJ DAL DET EDM FLA LAK MIN MTL NSH NJD NYI NYR OTT PHI PIT SJS SEA STL TBL TOR UTA VAN VGK WSH WPG'.split(' '));
+  const num = v => Number.isFinite(Number(v)) ? Number(v) : null;
   async function getTeam(code) {
-    if(!cache.has(code)) cache.set(code,fetch(`./data/matchups/${encodeURIComponent(code)}.json`,{cache:'no-cache'}).then(r=>{
-      if(!r.ok)throw Error('Player matchup data unavailable');return r.json();
-    }).catch(e=>{cache.delete(code);throw e}));
+    if (!cache.has(code)) cache.set(code, fetch(`./data/matchups/${encodeURIComponent(code)}.json`, {cache:'no-cache'}).then(r => {
+      if (!r.ok) throw Error('Matchup data unavailable');
+      return r.json();
+    }).catch(e => {cache.delete(code);throw e}));
     return cache.get(code);
   }
-  const score = (player,opponent) => {
-    const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent);
-    const gp=games.length,points=games.reduce((sum,g)=>sum+(Number(g.points)||0),0);
-    return {player,gp,points,ppg:gp?points/gp:0};
-  };
-  function teamHtml(data,team,opponent){
-    const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>0)
-      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.player.name).localeCompare(String(b.player.name))).slice(0,3);
-    const items=rows.length?rows.map(r=>{
+  function score(player, opponent) {
+    const games = (player.games || []).filter(g => String(g.opponent || '').toUpperCase() === opponent);
+    const gp = games.length;
+    const points = games.reduce((n,g) => n + (num(g.points) ?? 0), 0);
+    // Show an em dash rather than fabricating goals/assists if the cached game records lack them.
+    const goalsKnown = games.every(g => num(g.goals ?? g.g) !== null);
+    const assistsKnown = games.every(g => num(g.assists ?? g.a) !== null);
+    const goals = goalsKnown ? games.reduce((n,g) => n + num(g.goals ?? g.g), 0) : null;
+    const assists = assistsKnown ? games.reduce((n,g) => n + num(g.assists ?? g.a), 0) : null;
+    return {player,gp,points,goals,assists,ppg:gp ? points/gp : 0};
+  }
+  function teamHtml(data, team, opponent) {
+    const rows = (data.players || []).map(p => score(p,opponent)).filter(r => r.gp > 0)
+      .sort((a,b) => b.ppg-a.ppg || b.points-a.points || b.gp-a.gp || String(a.player.name).localeCompare(String(b.player.name))).slice(0,3);
+    const items = rows.length ? rows.map((r,i) => {
       const p=r.player;
-      const headshot=typeof p.headshot==='string'&&p.headshot.startsWith('https://')?p.headshot:`https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(p.id)}.png`;
-      return `<div class="hoist-game-leader"><img src="${escape(headshot)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="hoist-game-leader-name"><strong>${escape(p.name)}</strong><small>${r.points} PTS · ${r.gp} GP</small></div><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} P/GP</span></div>`;
-    }).join(''):'<p class="hoist-game-leaders-note">No recorded games against this opponent.</p>';
-    return `<section><h4>${escape(team)} players vs ${escape(opponent)}</h4>${items}</section>`;
+      const headshot = typeof p.headshot==='string' && /^https:\/\//.test(p.headshot) ? p.headshot :
+        `https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(p.id)}.png`;
+      return `<div class="hoist-game-leader"><span class="hoist-game-leader-rank">${i+1}</span><img class="hoist-game-player-headshot" src="${esc(headshot)}" alt="" loading="lazy" onerror="this.style.display='none'"><div class="hoist-game-leader-name"><strong>${esc(p.name)}</strong><small>G ${r.goals ?? '—'} &nbsp;·&nbsp; A ${r.assists ?? '—'} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; GP ${r.gp}</small></div><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span></div>`;
+    }).join('') : '<p class="hoist-game-leaders-note">No recorded games against this opponent.</p>';
+    return `<section class="hoist-game-leaders-team"><h4>${esc(team)} vs ${esc(opponent)}</h4>${items}</section>`;
   }
-  async function toggle(card){
-    const existing=card.querySelector('.hoist-game-leaders');
-    if(existing){existing.remove();card.setAttribute('aria-expanded','false');return}
-    document.querySelectorAll('#games .hoist-game-leaders').forEach(e=>{e.closest('.hoist-game-card')?.setAttribute('aria-expanded','false');e.remove()});
-    const label=card.querySelector('.hoist-game-card-foot span')?.textContent||'';
+  function gameCodes(card) {
+    const label=card.querySelector('.hoist-game-card-foot span')?.textContent || '';
     const match=label.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);
-    if(!match||!codes.has(match[1])||!codes.has(match[2]))return;
-    const [away,home]=[match[1],match[2]];
-    const detail=document.createElement('div');detail.className='hoist-game-leaders';
-    detail.innerHTML='<p class="hoist-game-leaders-note">Loading top performers…</p>';
-    card.append(detail);card.setAttribute('aria-expanded','true');
-    const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
-    if(!detail.isConnected)return;
-    detail.innerHTML=`<div class="hoist-game-leaders-grid">${results.map((r,i)=>r.status==='fulfilled'?teamHtml(r.value,i?home:away,i?away:home):`<section><h4>${i?home:away} players vs ${i?away:home}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Regular-season head-to-head player history · Active roster skaters · Ranked by points per game (minimum 1 GP)</p>`;
+    return match && codes.has(match[1]) && codes.has(match[2]) ? [match[1],match[2]] : null;
   }
-  document.addEventListener('click',e=>{
-    if(e.target.closest('#games .hoist-game-leaders'))return;
+  function close(card) {
+    card.querySelector('.hoist-game-leaders')?.remove();
+    card.setAttribute('aria-expanded','false');
+    card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','false');
+  }
+  async function toggle(card) {
+    if (card.getAttribute('aria-expanded') === 'true') {close(card);return}
+    document.querySelectorAll('#games .hoist-game-card[aria-expanded="true"]').forEach(close);
+    const pair=gameCodes(card);
+    if (!pair) return;
+    const [away,home]=pair;
+    const detail=document.createElement('div');
+    detail.className='hoist-game-leaders';
+    detail.innerHTML='<p class="hoist-game-leaders-note">Loading top performers…</p>';
+    card.append(detail);
+    card.setAttribute('aria-expanded','true');
+    card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','true');
+    const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
+    if (!detail.isConnected || card.getAttribute('aria-expanded') !== 'true') return;
+    detail.innerHTML=`<div class="hoist-game-leaders-grid">${results.map((r,i) => r.status==='fulfilled' ? teamHtml(r.value,i?home:away,i?away:home) : `<section class="hoist-game-leaders-team"><h4>${i?home:away} vs ${i?away:home}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`).join('')}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 1 GP)</p>`;
+  }
+  function prepare(card) {
+    if (card.dataset.hoistPrepared) return;
+    card.dataset.hoistPrepared='1';
+    card.setAttribute('aria-expanded','false');
+    const head=card.querySelector('.hoist-game-card-head');
+    if (head && !head.querySelector('.hoist-game-expand')) {
+      const button=document.createElement('button');
+      button.type='button';button.className='hoist-game-expand';
+      button.setAttribute('aria-label','Show head-to-head top performers');
+      button.setAttribute('aria-expanded','false');
+      button.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      head.append(button);
+    }
+  }
+  document.addEventListener('click',e => {
+    if (e.target.closest('#games .hoist-game-leaders')) return;
     const card=e.target.closest('#games .hoist-game-card');
-    if(card)toggle(card);
+    if (card) toggle(card);
   });
-  document.addEventListener('keydown',e=>{
-    const card=e.target.closest('#games .hoist-game-card');
-    if(card&&e.target===card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();toggle(card)}
-  });
-  const observer=new MutationObserver(records=>{
-    records.forEach(r=>r.addedNodes.forEach(node=>{
-      if(node.nodeType!==1)return;
-      const cards=node.matches?.('#games .hoist-game-card')?[node]:node.querySelectorAll?.('#games .hoist-game-card')||[];
-      cards.forEach(c=>{c.tabIndex=0;c.setAttribute('role','button');c.setAttribute('aria-expanded','false');c.setAttribute('aria-label','Show top head-to-head performers for this game')});
-    }));
-  });
-  function init(){const grid=document.getElementById('hoist-games-grid');if(grid)observer.observe(grid,{childList:true,subtree:true})}
+  const observer=new MutationObserver(records => records.forEach(r => r.addedNodes.forEach(node => {
+    if (node.nodeType!==1) return;
+    if (node.matches?.('#games .hoist-game-card')) prepare(node);
+    node.querySelectorAll?.('#games .hoist-game-card').forEach(prepare);
+  })));
+  function init() {
+    const grid=document.getElementById('hoist-games-grid');
+    if (!grid) return;
+    grid.querySelectorAll('.hoist-game-card').forEach(prepare);
+    observer.observe(grid,{childList:true,subtree:true});
+  }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
