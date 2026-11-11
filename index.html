@@ -3796,6 +3796,15 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-feature-content[hidden]{display:none!important}
 #games .hoist-game-feature-content{padding-top:12px}
 </style>
+<style>
+/* Games V43: lineup metadata beneath the player name and stacked metric. */
+#games .hoist-card-feature-info .hoist-card-feature-meta{display:block;margin-top:3px;font-size:10px;line-height:1.25;color:var(--muted,#9ca8b9);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#games .hoist-card-feature-info .hoist-card-feature-circles{margin-top:7px}
+#games .hoist-card-feature-number{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;line-height:1.05;color:#fff;flex-shrink:0;min-width:48px}
+#games .hoist-card-feature-number > span{font-size:25px;font-weight:850;color:#fff}
+#games .hoist-card-feature-number > small{display:block;font-size:10px!important;font-weight:600!important;line-height:1.2!important;color:var(--muted,#9ca8b9)!important;text-transform:uppercase;letter-spacing:.04em}
+@media(max-width:650px){#games .hoist-card-feature-number > span{font-size:22px}}
+</style>
 </head>
 
 <body>
@@ -5843,6 +5852,34 @@ document.addEventListener('DOMContentLoaded', function () {
       return `<span class="hoist-card-feature-circle ${state}" title="${esc(title)}"></span>`;
     }).join('')}</span>`;
   }
+  // Cached lineup metadata supplies jersey numbers and positions for the feature cards.
+  const featureRosterCache=new Map();
+  function featureRoster(code){
+    if(!featureRosterCache.has(code))featureRosterCache.set(code,fetch(`./data/lineups/${encodeURIComponent(code)}.json`,{cache:'no-cache'})
+      .then(r=>r.ok?r.json():null).then(d=>{
+        const byId=new Map(),byName=new Map();
+        for(const p of [...(d?.forwards||[]),...(d?.defense||[]),...(d?.goalies||[])]){
+          const raw=p.positionCode??p.positionAbbrev??p.position??p.pos??'';
+          const position=typeof raw==='object'?(raw.abbrev??raw.code??raw.name??''):raw;
+          const info={number:p.number??p.sweaterNumber??p.jerseyNumber,position};
+          if(p.id!=null)byId.set(String(p.id),info);
+          if(p.name)byName.set(String(p.name).toLowerCase().replace(/[^a-z0-9]/g,''),info);
+        }
+        return {byId,byName};
+      }).catch(()=>({byId:new Map(),byName:new Map()})));
+    return featureRosterCache.get(code);
+  }
+  function featurePlayerMeta(p,team,roster){
+    const norm=String(p.name||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+    const match=roster?.byId.get(String(p.id??p.playerId??''))??roster?.byName.get(norm);
+    const number=match?.number??p.sweaterNumber??p.jerseyNumber??p.number;
+    const raw=match?.position??p.positionCode??p.positionAbbrev??p.position??p.pos;
+    const position=typeof raw==='object'?(raw.abbrev??raw.code??raw.name??''):raw;
+    const parts=[team];
+    if(number!==undefined&&number!==null&&String(number)!=='')parts.push(`#${number}`);
+    if(position)parts.push(String(position).toUpperCase());
+    return `<small class="hoist-card-feature-meta">${parts.map(v=>esc(String(v))).join(' - ')}</small>`;
+  }
   const slideCategories=[['goals','GOALS','G'],['assists','ASSISTS','A'],['points','POINTS','PTS']];
   function showSlide(card,index){
     const slides=[...card.querySelectorAll('.hoist-card-slide')];
@@ -5868,7 +5905,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const feature=document.createElement('section');feature.className='hoist-game-hot-feature';feature.setAttribute('aria-label','Last five games player leaders');
     feature.innerHTML='<button type="button" class="hoist-game-feature-toggle" aria-expanded="false"><span>LAST 5 GAMES</span><span class="hoist-game-feature-chevron" aria-hidden="true">›</span></button><div class="hoist-game-feature-content" hidden><p class="hoist-game-feature-loading">Loading recent player leaders…</p></div>';
     foot.before(feature);
-    const [standings,away,home]=await Promise.all([standingsRecords(),getTeam(pair[0]).catch(()=>null),getTeam(pair[1]).catch(()=>null)]);
+    const [standings,away,home,awayRoster,homeRoster]=await Promise.all([standingsRecords(),getTeam(pair[0]).catch(()=>null),getTeam(pair[1]).catch(()=>null),featureRoster(pair[0]),featureRoster(pair[1])]);
     if(!card.isConnected||!feature.isConnected)return;
     teams.forEach((row,i)=>{
       const code=pair[i];const item=standings.find(r=>String(r.teamAbbrev?.default||r.teamAbbrev||r.abbrev||'').toUpperCase()===code);
@@ -5876,8 +5913,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if(record&&item){const w=num(item.wins),l=num(item.losses),o=num(item.otLosses??item.overtimeLosses);if(w!==null&&l!==null&&o!==null)record.textContent=`${w}-${l}-${o}`;}
     });
     if(!away&&!home){feature.querySelector('.hoist-game-feature-loading').textContent='Recent player statistics unavailable.';return;}
-    const data=[away,home];
-    feature.querySelector('.hoist-game-feature-content').innerHTML=`<div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true"><span class="hoist-card-hot-flame-center"></span></span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
+    const data=[away,home],rosters=[awayRoster,homeRoster];
+    feature.querySelector('.hoist-game-feature-content').innerHTML=`<div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player">${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true"><span class="hoist-card-hot-flame-center"></span></span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featurePlayerMeta(leader.p,pair[i],rosters[i])}${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number"><span>${leader.total}</span><small>${label.toLowerCase()}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
