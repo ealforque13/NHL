@@ -3821,6 +3821,30 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-h2h-player-meta{display:block;color:#91a0b5;font-size:10px;font-weight:500;line-height:1.25;white-space:nowrap;margin-top:1px}
 @media(max-width:650px){#games .hoist-game-h2h-player-meta{font-size:9px}}
 </style>
+
+<style>
+/* V49 — Overview hot-player indicators: circles, team colours, original dimensions. */
+#overview #mi-hot .hoist-last-five-box {
+  border-radius:50% !important;
+  width:12px !important;height:12px !important;flex:0 0 12px !important;
+  min-width:12px !important;min-height:12px !important;
+  max-width:12px !important;max-height:12px !important;
+  box-sizing:border-box !important;
+}
+#overview #mi-hot .hoist-last-five-box.has-point {
+  background:var(--hoist-overview-hot-color,#49b5ff) !important;
+  border:1px solid var(--hoist-overview-hot-color,#49b5ff) !important;
+}
+#overview #mi-hot .hoist-last-five-box.no-point {
+  background:transparent !important;
+  border:1px solid var(--hoist-overview-hot-color,#49b5ff) !important;
+}
+#overview #mi-hot .hoist-last-five-box.did-not-play {
+  background:transparent !important;
+  border:1px dashed var(--hoist-overview-hot-color,#49b5ff) !important;
+  opacity:.45;
+}
+</style>
 </head>
 
 <body>
@@ -6007,6 +6031,87 @@ document.addEventListener('DOMContentLoaded', function () {
   })));
   function init(){const grid=document.getElementById('hoist-games-grid');if(!grid)return;grid.querySelectorAll('.hoist-game-card').forEach(prepare);observer.observe(grid,{childList:true,subtree:true});}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<script>
+/* V49 — Sync Overview hot-player form and streak labels to cached NHL matchup data.
+   This is deliberately scoped to #mi-hot and leaves row sizes / table markup intact. */
+(function(){
+  'use strict';
+  const colors={ANA:'#F47A38',BOS:'#FFB81C',BUF:'#FFB81C',CGY:'#F1BE48',CAR:'#E31837',CHI:'#CF0A2C',COL:'#6F263D',CBJ:'#CE1126',DAL:'#8FAD15',DET:'#CE1126',EDM:'#FF4C00',FLA:'#C8102E',LAK:'#A2AAAD',MIN:'#A6192E',MTL:'#AF1E2D',NSH:'#FFB81C',NJD:'#CE1126',NYI:'#F47D30',NYR:'#CE1126',OTT:'#DA1A32',PHI:'#F74902',PIT:'#FCB514',SJS:'#00A8E0',SEA:'#99D9D9',STL:'#FCB514',TBL:'#0065B1',TOR:'#5B9BD5',UTA:'#71AFE5',VAN:'#00843D',VGK:'#B4975A',WSH:'#C8102E',WPG:'#7BADD3'};
+  const dataCache=new Map();
+  const pending=new Map();
+  const season='20262027';
+  let timer=0;
+  function selectedClub(){
+    try {if(typeof state!=='undefined' && state.team) return String(state.team).toUpperCase();}catch(_){}
+    return '';
+  }
+  function getPlayers(club){
+    if(dataCache.has(club)) return Promise.resolve(dataCache.get(club));
+    if(pending.has(club)) return pending.get(club);
+    const request=fetch('./data/matchups/'+encodeURIComponent(club)+'.json',{cache:'no-cache'})
+      .then(r=>{if(!r.ok)throw Error('Matchup data unavailable');return r.json();})
+      .then(d=>{const players=Array.isArray(d.players)?d.players:[];dataCache.set(club,players);return players;})
+      .finally(()=>pending.delete(club));
+    pending.set(club,request);return request;
+  }
+  function gameValue(game,key){return Number(game && game[key])||0;}
+  function consecutive(games,key){
+    let count=0;
+    for(let i=games.length-1;i>=0;i--){
+      if(gameValue(games[i],key)<=0)break;
+      count++;
+    }
+    return count;
+  }
+  async function update(){
+    const tbody=document.getElementById('mi-hot');
+    const club=selectedClub();
+    if(!tbody||!club)return;
+    let players;
+    try {players=await getPlayers(club);}catch(_){return;}
+    if(club!==selectedClub())return;
+    const byId=new Map(players.map(p=>[String(p.id),p]));
+    const byName=new Map(players.map(p=>[String(p.name||'').trim().toLowerCase(),p]));
+    for(const row of tbody.querySelectorAll('tr.hoist-hot-player-row')){
+      const img=row.querySelector('.mi-person img');
+      const name=row.querySelector('.mi-person strong')?.textContent?.trim().toLowerCase();
+      const imageId=img?.getAttribute('src')?.match(/\/(\d+)\.png(?:\?|$)/)?.[1];
+      const player=(imageId&&byId.get(imageId))||byName.get(name);
+      if(!player)continue;
+      const recent=(player.games||[]).filter(g=>String(g.season)===season).slice(-5);
+      const goalStreak=consecutive(recent,'goals');
+      const pointStreak=consecutive(recent,'points');
+      const message=goalStreak>=3?goalStreak+'-GAME GOAL STREAK':pointStreak>=3?pointStreak+'-GAME POINT STREAK':'';
+      const indicator=row.querySelector('.hoist-hot-performance');
+      if(indicator){
+        if(indicator.textContent!==message)indicator.textContent=message;
+        indicator.classList.toggle('is-streak',Boolean(message));
+        indicator.style.setProperty('display',message?'block':'none','important');
+      }
+      const boxes=row.querySelector('.hoist-last-five-boxes');
+      if(boxes){
+        boxes.style.setProperty('--hoist-overview-hot-color',colors[club]||'#49b5ff');
+        boxes.querySelectorAll('.hoist-last-five-box').forEach(box=>box.style.borderRadius='50%');
+      }
+    }
+  }
+  function init(){
+    const tbody=document.getElementById('mi-hot');
+    if(!tbody)return;
+    const observer=new MutationObserver(()=>{
+      clearTimeout(timer);
+      timer=setTimeout(update,30);
+    });
+    observer.observe(tbody,{childList:true,subtree:true});
+    update();
+    // Observe team selection changes without modifying the Overview renderer.
+    document.addEventListener('change',()=>setTimeout(update,100));
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+  else init();
 })();
 </script>
 </body>
