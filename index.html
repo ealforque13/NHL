@@ -3805,6 +3805,17 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-card-feature-number > small{display:block;font-size:10px!important;font-weight:600!important;line-height:1.2!important;color:var(--muted,#9ca8b9)!important;text-transform:uppercase;letter-spacing:.04em}
 @media(max-width:650px){#games .hoist-card-feature-number > span{font-size:22px}}
 </style>
+<style>
+/* V45: Matchup tables expand in the normal document flow ABOVE Last 5 Games. */
+#games .hoist-game-card {display:flex!important;flex-direction:column!important;align-items:stretch!important;}
+#games .hoist-game-card > .hoist-game-card-head {order:0;}
+#games .hoist-game-card > .hoist-game-team,
+#games .hoist-game-card > .hoist-game-card-teams,
+#games .hoist-game-card > .hoist-game-matchup {order:1;}
+#games .hoist-game-card > .hoist-game-leaders {order:2!important;position:relative!important;inset:auto!important;float:none!important;width:100%!important;}
+#games .hoist-game-card > .hoist-game-hot-feature {order:3!important;position:relative!important;inset:auto!important;float:none!important;width:100%!important;}
+#games .hoist-game-card > .hoist-game-card-foot {order:4;}
+</style>
 </head>
 
 <body>
@@ -4417,7 +4428,7 @@ body[data-theme="light"] #games .hoist-game-card {
 <section id="games" class="tab-section">
   <article class="panel section-panel hoist-games-panel">
     <div class="section-head hoist-games-head">
-      <div><div class="eyebrow">HOIST OFFICIAL · NHL SCOREBOARD</div><h3>Games</h3></div>
+      <div class="eyebrow">HOIST OFFICIAL · NHL SCOREBOARD</div>
       <div class="hoist-games-date-controls">
         <button type="button" id="hoist-games-prev" aria-label="Previous day">‹</button>
         <input type="date" id="hoist-games-date" aria-label="Choose game date" />
@@ -5819,7 +5830,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const pair=gameCodes(card);if(!pair)return;
     const [away,home]=pair,detail=document.createElement('div');detail.className='hoist-game-leaders';
     detail.innerHTML='<p class="hoist-game-leaders-note">Loading matchup and recent-form statistics…</p>';
-    card.append(detail);card.setAttribute('aria-expanded','true');card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','true');
+    // Insert immediately after the team matchup, before Last 5 Games.
+    // The explicit flex ordering below also protects this layout when the feature loads asynchronously.
+    const lastFive=card.querySelector('.hoist-game-hot-feature');
+    if(lastFive)lastFive.before(detail);
+    else {const foot=card.querySelector('.hoist-game-card-foot');if(foot)foot.before(detail);else card.append(detail);}
+    card.setAttribute('aria-expanded','true');card.querySelector('.hoist-game-expand')?.setAttribute('aria-expanded','true');
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
