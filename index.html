@@ -3446,6 +3446,26 @@ html body #games img.hoist-game-player-headshot {
   #games .hoist-game-stats-columns { display:block; }
 }
 </style>
+<style>
+/* Games V19: compact nested team and stat accordions. */
+#games .hoist-game-team-dropdown {margin:0!important;padding:0!important;border:1px solid rgba(125,155,195,.28);border-radius:12px;overflow:hidden}
+#games .hoist-game-team-dropdown + .hoist-game-team-dropdown {margin-top:10px!important;padding-top:0!important}
+#games .hoist-game-team-dropdown > summary,#games .hoist-game-stat-dropdown > summary {display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;user-select:none}
+#games .hoist-game-team-dropdown > summary::-webkit-details-marker,#games .hoist-game-stat-dropdown > summary::-webkit-details-marker {display:none}
+#games .hoist-game-team-dropdown > .hoist-game-team-group-title {padding:16px 18px;margin:0!important;font-size:17px;font-weight:800}
+#games .hoist-game-team-summary-name {display:flex;align-items:center;gap:14px}
+#games .hoist-game-team-side {font-size:11px;letter-spacing:.1em;opacity:.65;min-width:44px}
+#games .hoist-game-dropdown-chevron {font-size:25px;line-height:1;font-weight:400;transition:transform .2s;flex:none}
+#games details[open] > summary > .hoist-game-dropdown-chevron {transform:rotate(90deg)}
+#games .hoist-game-team-content {padding:0 14px 14px}
+#games .hoist-game-stats-columns {display:flex!important;flex-direction:column;gap:10px!important}
+#games .hoist-game-stat-dropdown {min-width:0;border:1px solid rgba(125,155,195,.23);border-radius:9px;overflow:hidden;margin:0!important;padding:0!important}
+#games .hoist-game-stat-dropdown > .hoist-game-section-title {margin:0!important;padding:14px 16px;font-size:13px;line-height:1.4}
+#games .hoist-game-stat-content {padding:0 14px 14px}
+#games .hoist-game-stat-dropdown.hoist-game-hot-section {margin:0!important;padding:0!important;border-top:1px solid rgba(125,155,195,.23)!important}
+#games .hoist-game-team-dropdown > summary:hover,#games .hoist-game-stat-dropdown > summary:hover {background:rgba(125,155,195,.07)}
+@media(max-width:600px){#games .hoist-game-team-dropdown > .hoist-game-team-group-title{padding:13px}#games .hoist-game-team-content{padding:0 8px 8px}#games .hoist-game-stat-content{padding:0 8px 10px}}
+</style>
 </head>
 
 <body>
@@ -5461,7 +5481,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=results.map((r,i)=>`<div class="hoist-game-team-group"><h3 class="hoist-game-team-group-title">${i===0?'AWAY':'HOME'} — ${names[i]}</h3><div class="hoist-game-stats-columns"><div class="hoist-game-h2h-column"><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]} players vs ${opponents[i]}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p></div><div class="hoist-game-hot-section"><div class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${names[i]}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div></div></div>`).join('');
+    detail.innerHTML=results.map((r,i)=>`<details class="hoist-game-team-group hoist-game-team-dropdown"><summary class="hoist-game-team-group-title"><span class="hoist-game-team-summary-name"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span><strong>${esc(names[i])}</strong></span><span class="hoist-game-dropdown-chevron" aria-hidden="true">›</span></summary><div class="hoist-game-team-content"><div class="hoist-game-stats-columns"><details class="hoist-game-stat-dropdown hoist-game-h2h-column"><summary class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS<span class="hoist-game-dropdown-chevron" aria-hidden="true">›</span></summary><div class="hoist-game-stat-content"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP (minimum 2 GP)</p></div></details><details class="hoist-game-stat-dropdown hoist-game-hot-section"><summary class="hoist-game-section-title">HOT PLAYERS — LAST 5 RECORDED GAMES<span class="hoist-game-dropdown-chevron" aria-hidden="true">›</span></summary><div class="hoist-game-stat-content"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?hotHtml(r.value,names[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])}</h4><p class="hoist-game-leaders-note">Recent-form data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Ranked by points in each player's last 5 recorded games. Available cached games may not include every recent NHL game.</p></div></details></div></div></details>`).join('');
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
