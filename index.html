@@ -3588,6 +3588,16 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-overview-table thead th:nth-child(n+3){height:46px!important}
 #games .hoist-game-overview-table .hoist-sort-button{height:46px!important;min-height:46px!important;padding:8px 0 0!important;box-sizing:border-box!important}
 </style>
+<style>
+/* V26: default PTS/GP selection, selected-only triangle, abbreviated mobile names. */
+#games .hoist-game-name-short{display:none}
+@media(max-width:650px){
+  #games .hoist-game-name-full{display:none}
+  #games .hoist-game-name-short{display:inline}
+}
+#games .hoist-game-overview-table th[data-sort]:not(.hoist-sort-active) .hoist-sort-arrow{visibility:hidden!important}
+#games .hoist-game-overview-table th.hoist-sort-active .hoist-sort-arrow{visibility:visible!important}
+</style>
 </head>
 
 <body>
@@ -5571,11 +5581,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const opponentText=opponent?` VS ${esc(opponent)}`:'';
     return `<span class="hoist-game-streak-label" aria-label="${count} game ${type.toLowerCase()} streak${opponent ? ` versus ${esc(opponent)}` : ''}">${count}-GAME ${type} STREAK${opponentText}</span>`;
   }
+  function shortPlayerName(name) {
+    const parts=String(name||'').trim().split(/\s+/);
+    return parts.length>1?`${parts[0].charAt(0)}. ${parts.slice(1).join(' ')}`:String(name||'');
+  }
   function teamHtml(data,team,opponent) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,5);
-    const items=rows.length?rows.map(r=>`<tr class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
-    const heading=(key,label)=>`<th data-sort="${key}"><button type="button" class="hoist-sort-button" aria-label="Sort by ${label}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
+    const items=rows.length?rows.map(r=>`<tr class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong><span class="hoist-game-name-full">${esc(r.p.name)}</span><span class="hoist-game-name-short">${esc(shortPlayerName(r.p.name))}</span>${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
+    const heading=(key,label)=>`<th data-sort="${key}"${key==='ppg'?' class="hoist-sort-active" data-direction="desc" aria-sort="descending"':''}><button type="button" class="hoist-sort-button" aria-label="Sort by ${label}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
     return `<section class="hoist-game-leaders-team hoist-game-overview-format"><div class="hoist-game-table-top"><h4>${esc(team)} players vs ${esc(opponent)}</h4></div><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th>${heading('goals','G')}${heading('assists','A')}${heading('points','PTS')}${heading('ppg','PTS/GP')}</tr></thead><tbody>${items}</tbody></table></div></section>`;
   }
   function hotHtml(data,team) {
