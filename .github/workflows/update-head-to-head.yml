@@ -35,39 +35,18 @@ jobs:
           H2H_MAX_NEW: '800'
         run: python scripts/build_h2h_scoresheets.py
 
-      - name: Check scoresheet file size
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          path = Path("data/head-to-head-scoresheets.json")
-
-          if not path.exists():
-              raise SystemExit("Scoresheet file was not generated.")
-
-          size_mb = path.stat().st_size / (1024 * 1024)
-
-          print(f"Scoresheet size: {size_mb:.2f} MiB")
-
-          if path.stat().st_size > 90 * 1024 * 1024:
-              raise SystemExit(
-                  "Scoresheet exceeds the 90 MiB safety limit. "
-                  "Split the data before committing."
-              )
-          PY
-
       - name: Commit updated caches
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data/head-to-head.json
-          git add data/head-to-head-scoresheets.json
+          git add data/head-to-head-scoresheets/
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update NHL head-to-head scoresheets"
+            git commit -m "Update NHL head-to-head caches"
             git pull --rebase origin "${{ github.ref_name }}"
             git push origin "HEAD:${{ github.ref_name }}"
           fi
