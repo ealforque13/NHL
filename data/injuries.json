@@ -1,0 +1,486 @@
+{
+  "updatedAt": "2026-11-11T02:10:10.572757+00:00",
+  "source": "Realtime Sports API",
+  "players": {
+    "8473419": {
+      "injured": true,
+      "description": "Head coach Paul Maurice said Friday that Marchand (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
+      "status": "Injured Reserve",
+      "team": "FLA"
+    },
+    "8473533": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "CAR"
+    },
+    "8474141": {
+      "injured": true,
+      "description": "Kane (upper body) was placed on injured reserve Sunday.",
+      "status": "Injured Reserve",
+      "team": "CHI"
+    },
+    "8475168": {
+      "injured": true,
+      "description": "Duchene will be out for approximately three months after undergoing surgery to repair a core injury, the team announced Monday.",
+      "status": "Injured Reserve",
+      "team": "DAL"
+    },
+    "8475810": {
+      "injured": true,
+      "description": "Rust (lower body) will be re-evaluated in six weeks, Michelle Crechiolo of the Penguins' official site reports Thursday.",
+      "status": "Injured Reserve",
+      "team": "PIT"
+    },
+    "8476312": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "COL"
+    },
+    "8476456": {
+      "injured": true,
+      "description": "Huberdeau (hip) took the ice in a regular jersey Friday, Pat Steinberg of QR Calgary 770 AM reports.",
+      "status": "Injured Reserve",
+      "team": "CGY"
+    },
+    "8476480": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "WPG"
+    },
+    "8476539": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "NSH"
+    },
+    "8476853": {
+      "injured": true,
+      "description": "Rielly (lower body) has been deemed day-to-day and will not play in Tuesday's home clash against the Avalanche, per David Alter of The Hockey News.",
+      "status": "Out",
+      "team": "TOR"
+    },
+    "8476875": {
+      "injured": true,
+      "description": "Matheson (lower body) is expected to miss two weeks, Renaud Lavoie of TVA Sports reports Saturday.",
+      "status": "Out",
+      "team": "MTL"
+    },
+    "8476891": {
+      "injured": true,
+      "description": "Grzelcyk (lower body) suffered a \"flare-up\" and could be out for at least \"a few days,\" head coach Lindy Ruff told Rachel Lenzi of The Buffalo News on Tuesday.",
+      "status": "Injured Reserve",
+      "team": "BUF"
+    },
+    "8476925": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "TOR"
+    },
+    "8476979": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "LAK"
+    },
+    "8477220": {
+      "injured": true,
+      "description": "Schmidt (upper body) has no timeline for his return to the lineup, per Brogan Houston of the Deseret News on Monday.",
+      "status": "Out",
+      "team": "UTA"
+    },
+    "8477406": {
+      "injured": true,
+      "description": "Janmark (undisclosed) does not have a timetable for his return from injury.",
+      "status": "Injured Reserve",
+      "team": "EDM"
+    },
+    "8477425": {
+      "injured": true,
+      "description": "Wood (undisclosed) was transferred to long-term injured reserve Wednesday, David Alter of The Hockey News reports.",
+      "status": "Injured Reserve",
+      "team": "TOR"
+    },
+    "8477444": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "OTT"
+    },
+    "8477478": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CAR"
+    },
+    "8477493": {
+      "injured": true,
+      "description": "Head coach Paul Maurice said Friday that Barkov (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
+      "status": "Injured Reserve",
+      "team": "FLA"
+    },
+    "8477499": {
+      "injured": true,
+      "description": "Ristolainen (hand) was placed on injured reserve, retroactive to Oct. 24, on Tuesday.",
+      "status": "Injured Reserve",
+      "team": "PHI"
+    },
+    "8477506": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "NYI"
+    },
+    "8477511": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "NJD"
+    },
+    "8477845": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "PIT"
+    },
+    "8477942": {
+      "injured": true,
+      "description": "Fiala (lower leg) should play Thursday against the Islanders or Saturday against Calgary, according to Emily Kaplan.",
+      "status": "Injured Reserve",
+      "team": "LAK"
+    },
+    "8477955": {
+      "injured": true,
+      "description": "McCann (lower body) will be out for approximately 10 weeks, the team announced Sunday.",
+      "status": "Injured Reserve",
+      "team": "SEA"
+    },
+    "8477998": {
+      "injured": true,
+      "description": "Foegele (knee) will miss 3-4 weeks, Jackson Starr of the Senators' official site reports Saturday.",
+      "status": "Injured Reserve",
+      "team": "OTT"
+    },
+    "8478010": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "TBL"
+    },
+    "8478396": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "VGK"
+    },
+    "8478421": {
+      "injured": true,
+      "description": "Greer (upper body) was placed on injured reserve Monday.",
+      "status": "Injured Reserve",
+      "team": "ANA"
+    },
+    "8478450": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "VGK"
+    },
+    "8478476": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "DAL"
+    },
+    "8478507": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "UTA"
+    },
+    "8478873": {
+      "injured": true,
+      "description": "Terry (hip) will likely make his 2026-27 debut against Nashville on Wednesday, according to Eric Stephens of The Athletic.",
+      "status": "Injured Reserve",
+      "team": "ANA"
+    },
+    "8479324": {
+      "injured": true,
+      "description": "Lindgren (upper body) was placed on injured reserve by the Kraken on Thursday and is expected to miss four to six weeks.",
+      "status": "Injured Reserve",
+      "team": "SEA"
+    },
+    "8479346": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "STL"
+    },
+    "8479576": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "WSH"
+    },
+    "8479941": {
+      "injured": true,
+      "description": "Danforth (upper body) was placed on injured reserve Thursday, per the NHL media site.",
+      "status": "Injured Reserve",
+      "team": "BUF"
+    },
+    "8479977": {
+      "injured": true,
+      "description": "Yamamoto (upper body) was placed on injured reserve Friday.",
+      "status": "Injured Reserve",
+      "team": "UTA"
+    },
+    "8479981": {
+      "injured": true,
+      "description": "Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
+      "status": "Injured Reserve",
+      "team": "FLA"
+    },
+    "8480036": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "DAL"
+    },
+    "8480068": {
+      "injured": true,
+      "description": "Poehling (knee) is expected to miss 6-8 weeks with an MCL sprain.",
+      "status": "Injured Reserve",
+      "team": "ANA"
+    },
+    "8480078": {
+      "injured": true,
+      "description": "Chytil (shoulder) will not be in action versus the Flyers on Monday, Canucks play-by-play announcer Brendan Batchelor reports.",
+      "status": "Injured Reserve",
+      "team": "VAN"
+    },
+    "8480434": {
+      "injured": true,
+      "description": "Durzi (undisclosed) was put on injured reserve Thursday, per Mollie Walker of the New York Post.",
+      "status": "Injured Reserve",
+      "team": "NYR"
+    },
+    "8480831": {
+      "injured": true,
+      "description": "Regula (undisclosed) was designated for long-term injured reserve Thursday.",
+      "status": "Injured Reserve",
+      "team": "EDM"
+    },
+    "8480840": {
+      "injured": true,
+      "description": "Back was placed on long-term injured reserve on Saturday.",
+      "status": "Injured Reserve",
+      "team": "DAL"
+    },
+    "8480860": {
+      "injured": true,
+      "description": "Bahl will undergo surgery for a ruptured Achilles tendon and won't play again in the 2026-27 season, the Flames announced Sunday.",
+      "status": "Injured Reserve",
+      "team": "CGY"
+    },
+    "8480873": {
+      "injured": true,
+      "description": "Sandin (knee) will be with the Capitals for their two-game road trip, Tarik El-Bashir of Monumental Sports Network reports Monday.",
+      "status": "Injured Reserve",
+      "team": "WSH"
+    },
+    "8480876": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "SEA"
+    },
+    "8480893": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "TOR"
+    },
+    "8481006": {
+      "injured": true,
+      "description": "Tucker had arthroscopic knee surgery and will be re-assessed in six weeks, the team announced Wednesday.",
+      "status": "Injured Reserve",
+      "team": "STL"
+    },
+    "8481014": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "NYI"
+    },
+    "8481524": {
+      "injured": true,
+      "description": "Byram (upper body) was placed on injured reserve Tuesday.",
+      "status": "Injured Reserve",
+      "team": "CHI"
+    },
+    "8481607": {
+      "injured": true,
+      "description": "Johansson (undisclosed) will be with the Red Wings for their upcoming four-game road trip, Ansar Khan of MLive.com reports Friday.",
+      "status": "Injured Reserve",
+      "team": "DET"
+    },
+    "8481711": {
+      "injured": true,
+      "description": "Maccelli (lower body) is day-to-day, according to Andrew Gross of Newsday on Monday.",
+      "status": "Injured Reserve",
+      "team": "NYI"
+    },
+    "8481725": {
+      "injured": true,
+      "description": "Soderblom (upper body) is week-to-week, per Penguins PR on Monday.",
+      "status": "Injured Reserve",
+      "team": "PIT"
+    },
+    "8482122": {
+      "injured": true,
+      "description": "Faber (skull) skated with his teammates for the first time Thursday, Joe Smith of The Athletic reports.",
+      "status": "Injured Reserve",
+      "team": "MIN"
+    },
+    "8482178": {
+      "injured": true,
+      "description": "Head coach Joel Quenneville said Friday that Moore (lower body) is still \"a ways from skating,\" Patrick Present of The Hockey News reports.",
+      "status": "Injured Reserve",
+      "team": "ANA"
+    },
+    "8482667": {
+      "injured": true,
+      "description": "Eklund had surgery to repair a torn ankle tendon and will be out 10-12 weeks, Bruce Garrioch of Postmedia reports Thursday.",
+      "status": "Injured Reserve",
+      "team": "OTT"
+    },
+    "8482699": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "UTA"
+    },
+    "8482742": {
+      "injured": true,
+      "description": "ir-lt",
+      "status": "Injured Reserve",
+      "team": "COL"
+    },
+    "8482758": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "PIT"
+    },
+    "8482874": {
+      "injured": true,
+      "description": "Melanson's upper-body injury was diagnosed Saturday as an anterior mediastinum hematoma with vascular pseudo aneurysm. He will continue to be evaluated and is out indefinitely.",
+      "status": "Injured Reserve",
+      "team": "SEA"
+    },
+    "8483455": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "EDM"
+    },
+    "8483472": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "UTA"
+    },
+    "8483512": {
+      "injured": true,
+      "description": "Savoie (lower body) was shifted to long-term injured reserve Thursday.",
+      "status": "Injured Reserve",
+      "team": "EDM"
+    },
+    "8483546": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "TOR"
+    },
+    "8483565": {
+      "injured": true,
+      "description": "Blankenburg (undisclosed) was placed on injured reserve by the Maple Leafs on Friday, David Alter of The Hockey News reports.",
+      "status": "Injured Reserve",
+      "team": "TOR"
+    },
+    "8483669": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "NYR"
+    },
+    "8483733": {
+      "injured": true,
+      "description": "Grebenkin (back) underwent successful surgery and is expected to miss at least four months.",
+      "status": "Injured Reserve",
+      "team": "PHI"
+    },
+    "8483771": {
+      "injured": true,
+      "description": "Vilmanis (undisclosed) will probably miss a few games, according to George Richards of Florida Hockey Now on Saturday.",
+      "status": "Out",
+      "team": "FLA"
+    },
+    "8484180": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "CGY"
+    },
+    "8484221": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "NYI"
+    },
+    "8484240": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "VAN"
+    },
+    "8484797": {
+      "injured": true,
+      "description": "Helenius (upper body) is week-to-week, according to Matthew Fairburn of The Athletic on Monday.",
+      "status": "Out",
+      "team": "BUF"
+    },
+    "8484984": {
+      "injured": true,
+      "description": "Demidov (foot) skated Tuesday and could resume training with the team next week, Patrick Friolet of RDS reports.",
+      "status": "Injured Reserve",
+      "team": "MTL"
+    },
+    "8484994": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "SJS"
+    },
+    "8485383": {
+      "injured": true,
+      "description": "O'Brien (lower body) was placed on non-roster injured reserve Wednesday.",
+      "status": "Injured Reserve",
+      "team": "SEA"
+    },
+    "8485395": {
+      "injured": true,
+      "description": "Head coach Marco Sturm announced Saturday that Hagens (back) is expected to miss multiple weeks, per Jack Studley of Boston Hockey Now.",
+      "status": "Injured Reserve",
+      "team": "BOS"
+    },
+    "8485957": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "NYR"
+    }
+  }
+}
