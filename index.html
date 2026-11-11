@@ -3710,6 +3710,8 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-card-feature-circle{width:10px;height:10px;box-sizing:border-box;border-radius:50%;border:1px solid var(--hoist-feature-team-color);background:transparent;flex-shrink:0}
 #games .hoist-card-feature-circle.scored{background:var(--hoist-feature-team-color)}
 #games .hoist-card-feature-circle.missing{border-color:rgba(145,166,190,.32)}
+#games .hoist-card-feature-circles .hoist-card-feature-circle{display:inline-block!important;width:10px!important;height:10px!important;min-width:10px!important;min-height:10px!important;max-width:10px!important;max-height:10px!important;padding:0!important;margin:0!important;aspect-ratio:1/1!important;border-radius:50%!important;box-sizing:border-box!important;flex:0 0 10px!important}
+#games .hoist-card-feature-circle.no-stat{background:transparent!important}
 @media(max-width:650px){#games .hoist-card-feature-number{font-size:22px}}
 </style>
 </head>
@@ -5763,7 +5765,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return `<span class="hoist-card-feature-circles" style="--hoist-feature-team-color:${colour}" aria-label="${esc(label)} in the last five games, oldest to newest">${Array.from({length:5},(_,i)=>{
       const game=recent[i-(5-recent.length)];
       const value=game?metric(game):null;
-      const state=!game?'missing':value!==null&&value>0?'scored':'empty';
+      const state=!game?'missing':value!==null&&value>0?'scored':'no-stat';
       const title=!game?'No recorded game':`${formatGameDate(dateOf(game))}: ${value??'unknown'} ${label}`;
       return `<span class="hoist-card-feature-circle ${state}" title="${esc(title)}"></span>`;
     }).join('')}</span>`;
