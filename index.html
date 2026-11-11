@@ -3084,6 +3084,18 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
 #stats .hoist-stats-headshot-fallback{width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:#263e5e;color:#b8d8f6;font-size:13px}
 #stats .hoist-stats-jersey:has(.hoist-stats-headshot){flex:0 0 32px;min-width:32px;width:32px}
 @media(max-width:650px){#stats .hoist-stats-headshot,#stats .hoist-stats-headshot-fallback{width:25px;height:25px}#stats .hoist-stats-jersey:has(.hoist-stats-headshot){flex:0 0 27px;min-width:27px;width:27px}}
+
+/* Build 20261110-64 — League leader rank and larger seamless headshots. */
+#stats .hoist-stats-rank{flex:0 0 25px;min-width:25px;text-align:right;color:#dce9fb;font-size:13px;font-weight:750;font-variant-numeric:tabular-nums}
+#stats .hoist-stats-headshot,#stats .hoist-stats-headshot-fallback{width:46px!important;height:46px!important;border-radius:50%;background:transparent!important;object-fit:contain!important;object-position:center bottom!important}
+#stats .hoist-stats-jersey:has(.hoist-stats-headshot),#stats .hoist-stats-jersey:has(.hoist-stats-headshot-fallback){flex:0 0 46px!important;min-width:46px!important;width:46px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+#stats .hoist-stats-headshot{mix-blend-mode:normal}
+@media(max-width:650px){
+ #stats .hoist-stats-rank{flex:0 0 19px;min-width:19px;font-size:12px}
+ #stats .hoist-stats-headshot,#stats .hoist-stats-headshot-fallback{width:39px!important;height:39px!important}
+ #stats .hoist-stats-jersey:has(.hoist-stats-headshot),#stats .hoist-stats-jersey:has(.hoist-stats-headshot-fallback),#stats .hoist-stats-rail-row .hoist-stats-jersey:has(.hoist-stats-headshot){flex:0 0 39px!important;min-width:39px!important;width:39px!important}
+ #stats .hoist-stats-team-cell,#stats .hoist-stats-rail-row .hoist-stats-team-cell{gap:5px!important}
+}
 </style>
 </head>
 
@@ -4572,10 +4584,10 @@ document.addEventListener('DOMContentLoaded', function () {
    const previous=`https://assets.nhle.com/mugs/nhl/20252026/${club}/${playerId}.png`;
    return `<img class="hoist-stats-headshot" src="${current}" alt="" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${previous}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"><span class="hoist-stats-headshot-fallback" style="display:none" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
  };
- const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${mode==='league'?statsHeadshot(p):esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
+ const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${mode==='league'?statsHeadshot(p):esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
- function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
  function syncStatsPlayerRail(){
    const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
    if(!shell)return;
