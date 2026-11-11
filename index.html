@@ -3248,6 +3248,24 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     -webkit-text-fill-color: #49B5FF !important;
   }
 }
+
+/* HOIST STANDINGS — goal differential colours on all screens and views.
+   Keep these colours even when DIFF is the selected sorting column. */
+#standings .hoist-conference-table tr.hoist-team-row > td.hoist-diff-positive,
+#standings #hoist-standings-table tr.hoist-team-row > td.hoist-diff-positive {
+  color: #4ade80 !important;
+  -webkit-text-fill-color: #4ade80 !important;
+}
+#standings .hoist-conference-table tr.hoist-team-row > td.hoist-diff-negative,
+#standings #hoist-standings-table tr.hoist-team-row > td.hoist-diff-negative {
+  color: #fb7185 !important;
+  -webkit-text-fill-color: #fb7185 !important;
+}
+#standings .hoist-conference-table tr.hoist-team-row > td.hoist-diff-zero,
+#standings #hoist-standings-table tr.hoist-team-row > td.hoist-diff-zero {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
 </style>
 </head>
 
@@ -4292,7 +4310,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <td><span class="hoist-standing-team"><img src="${escapeHtml(logo)}" alt="" loading="lazy"${code === 'TBL' ? ' data-hoist-team="TBL"' : ''}><span class="hoist-standing-name-full">${escapeHtml(name(r))}</span><span class="hoist-standing-name-short">${escapeHtml(code)}</span></span></td>
       <td>${num(r.gamesPlayed)}</td><td>${num(r.wins)}</td><td>${num(r.losses)}</td><td>${num(r.otLosses)}</td>
       <td><strong>${num(r.points)}</strong></td><td>${pct(r)}</td><td>${num(r.regulationWins)}</td><td>${num(r.regulationPlusOtWins)}</td>
-      <td>${num(r.goalFor)}</td><td>${num(r.goalAgainst)}</td><td>${diff > 0 ? '+' : ''}${diff}</td>
+      <td>${num(r.goalFor)}</td><td>${num(r.goalAgainst)}</td><td class="hoist-diff ${diff > 0 ? 'hoist-diff-positive' : diff < 0 ? 'hoist-diff-negative' : 'hoist-diff-zero'}">${diff > 0 ? '+' : ''}${diff}</td>
       <td>${record(r,'home')}</td><td>${record(r,'road')}</td><td>${num(r.shootoutWins)}-${num(r.shootoutLosses)}</td>
       <td>${record(r,'l10')}</td><td>${escapeHtml(streak(r))}</td>
     </tr>`;
@@ -4835,28 +4853,62 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 <script src="games.js?v=20261110-46" defer></script>
 
-<!-- KEEP CURRENT PAGE ON RELOAD -->
+<!-- KEEP STANDINGS / LINEUPS / OTHER PAGES ACTIVE AFTER REFRESH -->
 <script>
 (() => {
   const storageKey = 'hoist-active-page';
+  const supported = new Set(['overview','standings','stats','games','lineups']);
+
+  function savePage(page) {
+    if (!supported.has(page)) return;
+    try { sessionStorage.setItem(storageKey, page); } catch (_) {}
+  }
+
+  function openLineups() {
+    document.querySelectorAll('.tab-section').forEach(section => {
+      section.classList.toggle('hidden', section.id !== 'lineups');
+    });
+    document.querySelectorAll('.sidebar .nav-item[data-tab]').forEach(button => {
+      button.classList.toggle('active', button.dataset.tab === 'lineups');
+    });
+    const heading = document.getElementById('page-title');
+    if (heading) heading.textContent = 'NHL Lineups';
+    document.body.classList.remove('hoist-standings-active');
+    savePage('lineups');
+  }
+
+  // Legacy app.js may not recognize the added Lineups page.
+  // Handle that tab before its original navigation handler.
   document.addEventListener('click', event => {
     const nav = event.target.closest('[data-tab], [data-go]');
     if (!nav) return;
     const page = nav.dataset.tab || nav.dataset.go;
-    if (page) {
-      if (page === 'games') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Games'; });
-      if (page === 'stats') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Stats'; });
-      if (page === 'lineups') queueMicrotask(() => { const heading=document.getElementById('page-title'); if(heading) heading.textContent='NHL Lineups'; });
-      try { sessionStorage.setItem(storageKey, page); } catch (_) {}
+    if (!supported.has(page)) return;
+    savePage(page);
+    if (page === 'lineups') {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openLineups();
     }
   }, true);
-  document.addEventListener('DOMContentLoaded', () => {
+
+  function restorePage() {
     let page = '';
     try { page = sessionStorage.getItem(storageKey) || ''; } catch (_) {}
-    if (!page) return;
-    const button = Array.from(document.querySelectorAll('[data-tab]'))
-      .find(el => el.dataset.tab === page);
+    if (!supported.has(page) || page === 'overview') return;
+
+    if (page === 'lineups') {
+      openLineups();
+      return;
+    }
+    const button = document.querySelector(`.sidebar .nav-item[data-tab="${page}"]`);
     if (button) button.click();
+  }
+
+  // Restore after the deferred app.js scripts initialize their tab handlers.
+  // This avoids a refresh resetting Standings and Lineups to Overview.
+  window.addEventListener('load', () => {
+    requestAnimationFrame(() => setTimeout(restorePage, 120));
   });
 })();
 </script>
