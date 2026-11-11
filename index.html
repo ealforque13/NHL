@@ -3190,6 +3190,29 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 #standings .hoist-standings-subtitle {
   color: #ffffff !important;
 }
+
+/* DESKTOP STANDINGS — subtle active-column highlight, inspired by NHL tables.
+   The existing sorting code moves .hoist-active-stat to the clicked column. */
+@media (min-width: 1100px) {
+  #standings .hoist-desktop-groups .hoist-conference-table th.hoist-active-stat,
+  #standings .hoist-desktop-groups .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat,
+  #standings #hoist-standings-table th.hoist-active-stat,
+  #standings #hoist-standings-table tbody tr.hoist-team-row > td.hoist-active-stat {
+    background-color: rgba(73, 181, 255, .14) !important;
+    box-shadow: inset 1px 0 0 rgba(73, 181, 255, .26),
+                inset -1px 0 0 rgba(73, 181, 255, .26) !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table thead th.hoist-active-stat,
+  #standings #hoist-standings-table thead th.hoist-active-stat {
+    box-shadow: inset 1px 0 0 rgba(73, 181, 255, .26),
+                inset -1px 0 0 rgba(73, 181, 255, .26),
+                inset 0 1px 0 rgba(73, 181, 255, .30) !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table tbody tr.hoist-team-row:last-child > td.hoist-active-stat,
+  #standings #hoist-standings-table tbody tr.hoist-team-row:last-child > td.hoist-active-stat {
+    border-bottom: 1px solid rgba(73, 181, 255, .30) !important;
+  }
+}
 </style>
 </head>
 
