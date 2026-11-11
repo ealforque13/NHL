@@ -3673,6 +3673,35 @@ body[data-theme="light"] #games .hoist-game-card {
   #games .hoist-game-history-pts-mobile { display:inline; }
 }
 </style>
+
+<style>
+/* Games V34: records, full team names, and compact two-team recent-form carousel. */
+#games .hoist-game-team{flex-wrap:wrap;column-gap:12px;row-gap:2px}
+#games .hoist-game-team-name{flex:1 1 calc(100% - 65px);font-size:15px;white-space:normal;overflow:visible}
+#games .hoist-game-team-record{display:block;flex-basis:calc(100% - 52px);margin-left:49px;margin-top:-5px;color:var(--muted,#9ca8b9);font-size:11px;letter-spacing:.025em}
+#games .hoist-game-team-score{margin-left:auto}
+#games .hoist-game-hot-feature{margin-top:20px;padding:17px 0 8px;border-top:1px solid rgba(145,166,190,.17)}
+#games .hoist-game-feature-heading{font-size:12px;font-weight:800;letter-spacing:.11em;margin-bottom:13px}
+#games .hoist-game-feature-loading{font-size:12px;color:var(--muted,#9ca8b9)}
+#games .hoist-game-feature-stage{display:grid;grid-template-columns:24px minmax(0,1fr) 24px;align-items:center;gap:8px}
+#games .hoist-card-slide-nav{border:0;background:none;color:var(--muted,#9ca8b9);font-size:27px;cursor:pointer;padding:0;line-height:1.3}
+#games .hoist-card-slide-nav:hover{color:#49b5ff}
+#games .hoist-card-slide[hidden]{display:none!important}
+#games .hoist-card-slide-title{text-align:center;color:var(--muted,#9ca8b9);font-size:10px;font-weight:750;letter-spacing:.07em;margin-bottom:11px}
+#games .hoist-card-slide-players{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+#games .hoist-card-feature-player{display:flex;align-items:center;gap:10px;min-width:0;padding:8px 12px;background:rgba(124,151,187,.065)}
+#games .hoist-card-feature-team{font-size:10px;font-weight:800;color:var(--muted,#9ca8b9)}
+#games .hoist-card-feature-player img{width:48px;height:48px;object-fit:contain;border-radius:50%;flex-shrink:0}
+#games .hoist-card-feature-info{display:flex;flex-direction:column;min-width:0;flex:1}
+#games .hoist-card-feature-info strong{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#games .hoist-card-feature-info small{font-size:10px;color:var(--muted,#9ca8b9);margin-top:3px}
+#games .hoist-card-feature-number{font-size:25px;font-weight:850;color:#49b5ff;display:flex;align-items:baseline;gap:5px}
+#games .hoist-card-feature-number small{font-size:10px;color:var(--muted,#9ca8b9)}
+#games .hoist-card-slide-dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+#games .hoist-card-slide-dot{height:6px;width:6px;border-radius:50%;border:0;background:rgba(150,166,190,.5);cursor:pointer;padding:0}
+#games .hoist-card-slide-dot.active{background:#49b5ff;width:18px;border-radius:5px}
+@media(max-width:650px){#games .hoist-card-slide-players{grid-template-columns:1fr;gap:6px}#games .hoist-card-feature-player{padding:7px}#games .hoist-card-feature-info strong{font-size:12px}#games .hoist-card-feature-player img{width:42px;height:42px}#games .hoist-game-team-name{font-size:14px}}
+</style>
 </head>
 
 <body>
@@ -5702,9 +5731,60 @@ document.addEventListener('DOMContentLoaded', function () {
     const names=[away,home],opponents=[home,away];
     detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div></section>`).join('')}</div>`;
   }
+  // Compact game-card feature: team records and rotating last-five leaders.
+  const fullTeamNames={ANA:'Anaheim Ducks',BOS:'Boston Bruins',BUF:'Buffalo Sabres',CGY:'Calgary Flames',CAR:'Carolina Hurricanes',CHI:'Chicago Blackhawks',COL:'Colorado Avalanche',CBJ:'Columbus Blue Jackets',DAL:'Dallas Stars',DET:'Detroit Red Wings',EDM:'Edmonton Oilers',FLA:'Florida Panthers',LAK:'Los Angeles Kings',MIN:'Minnesota Wild',MTL:'Montreal Canadiens',NSH:'Nashville Predators',NJD:'New Jersey Devils',NYI:'New York Islanders',NYR:'New York Rangers',OTT:'Ottawa Senators',PHI:'Philadelphia Flyers',PIT:'Pittsburgh Penguins',SJS:'San Jose Sharks',SEA:'Seattle Kraken',STL:'St. Louis Blues',TBL:'Tampa Bay Lightning',TOR:'Toronto Maple Leafs',UTA:'Utah Mammoth',VAN:'Vancouver Canucks',VGK:'Vegas Golden Knights',WSH:'Washington Capitals',WPG:'Winnipeg Jets'};
+  let standingsPromise;
+  function standingsRecords(){
+    if(!standingsPromise)standingsPromise=fetch('./data/standings.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Standings unavailable');return r.json()}).then(d=>Array.isArray(d)?d:(d.standings||d.teams||d.data||[])).catch(()=>[]);
+    return standingsPromise;
+  }
+  function leadersLastFive(data,key){
+    return (data.players||[]).map(p=>{
+      const recent=[...(p.games||[])].sort(byRecent).slice(0,5);
+      const total=recent.reduce((n,g)=>n+(key==='goals'?(goals(g)??0):key==='assists'?(assists(g)??0):(pts(g)??0)),0);
+      return {p,total,count:recent.length};
+    }).filter(r=>r.count>0).sort((a,b)=>b.total-a.total||String(a.p.name).localeCompare(String(b.p.name)))[0]||null;
+  }
+  const slideCategories=[['goals','GOALS','G'],['assists','ASSISTS','A'],['points','POINTS','PTS']];
+  function showSlide(card,index){
+    const slides=[...card.querySelectorAll('.hoist-card-slide')];
+    if(!slides.length)return;
+    const chosen=(index+slides.length)%slides.length;
+    slides.forEach((el,i)=>{el.hidden=i!==chosen;el.setAttribute('aria-hidden',String(i!==chosen));});
+    card.querySelectorAll('.hoist-card-slide-dot').forEach((el,i)=>{el.classList.toggle('active',i===chosen);el.setAttribute('aria-current',i===chosen?'true':'false');});
+    const feature=card.querySelector('.hoist-game-hot-feature');if(feature)feature.dataset.slide=String(chosen);
+  }
+  async function decorateCard(card){
+    const pair=gameCodes(card);if(!pair)return;
+    const teams=card.querySelectorAll('.hoist-game-team');
+    teams.forEach((row,i)=>{
+      if(i>1)return;
+      const old=row.querySelector('.hoist-game-team-name');if(!old)return;
+      const code=pair[i];old.textContent=fullTeamNames[code]||old.textContent;
+      if(!row.querySelector('.hoist-game-team-record')){
+        const record=document.createElement('small');record.className='hoist-game-team-record';record.textContent='';old.insertAdjacentElement('afterend',record);
+      }
+    });
+    const foot=card.querySelector('.hoist-game-card-foot');
+    if(!foot||card.querySelector('.hoist-game-hot-feature'))return;
+    const feature=document.createElement('section');feature.className='hoist-game-hot-feature';feature.setAttribute('aria-label','Last five games player leaders');
+    feature.innerHTML='<div class="hoist-game-feature-heading">LAST 5 GAMES</div><p class="hoist-game-feature-loading">Loading recent player leaders…</p>';
+    foot.before(feature);
+    const [standings,away,home]=await Promise.all([standingsRecords(),getTeam(pair[0]).catch(()=>null),getTeam(pair[1]).catch(()=>null)]);
+    if(!card.isConnected||!feature.isConnected)return;
+    teams.forEach((row,i)=>{
+      const code=pair[i];const item=standings.find(r=>String(r.teamAbbrev?.default||r.teamAbbrev||r.abbrev||'').toUpperCase()===code);
+      const record=row.querySelector('.hoist-game-team-record');
+      if(record&&item){const w=num(item.wins),l=num(item.losses),o=num(item.otLosses??item.overtimeLosses);if(w!==null&&l!==null&&o!==null)record.textContent=`${w}-${l}-${o}`;}
+    });
+    if(!away&&!home){feature.querySelector('.hoist-game-feature-loading').textContent='Recent player statistics unavailable.';return;}
+    const data=[away,home];
+    feature.innerHTML=`<div class="hoist-game-feature-heading">LAST 5 GAMES</div><div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`${portrait(leader.p,pair[i])}<span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong><small>${label.toLowerCase()} in last 5 recorded games</small></span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
+  }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
     const head=card.querySelector('.hoist-game-card-head');
+    decorateCard(card);
     if(head&&!head.querySelector('.hoist-game-expand')){
       const button=document.createElement('button');button.type='button';button.className='hoist-game-expand';button.setAttribute('aria-label','Show head-to-head top performers');button.setAttribute('aria-expanded','false');
       button.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';head.append(button);
@@ -5712,6 +5792,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('keydown',e=>{const row=e.target.closest('#games tr.hoist-game-overview-player-row');if(row&&(e.key==='Enter'||e.key===' ')){e.preventDefault();row.click();}});
   document.addEventListener('click',e=>{
+    const slideButton=e.target.closest('#games .hoist-card-slide-nav, #games .hoist-card-slide-dot');
+    if(slideButton){e.preventDefault();e.stopPropagation();const card=slideButton.closest('.hoist-game-card');const feature=slideButton.closest('.hoist-game-hot-feature');const current=Number(feature?.dataset.slide||0);showSlide(card,slideButton.dataset.slideTo!==undefined?Number(slideButton.dataset.slideTo):current+Number(slideButton.dataset.slideStep||0));return;}
     const sort=e.target.closest('#games .hoist-game-overview-table th[data-sort] .hoist-sort-button');
     if(sort){e.preventDefault();e.stopPropagation();const table=sort.closest('table'),th=sort.closest('th'),key=th.dataset.sort,body=table.tBodies[0],ascending=th.dataset.direction==='desc';
       table.querySelectorAll('th[data-sort]').forEach(h=>{h.classList.remove('hoist-sort-active');h.removeAttribute('aria-sort');if(h!==th)delete h.dataset.direction;});
