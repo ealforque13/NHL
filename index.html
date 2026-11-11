@@ -3066,6 +3066,13 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
 #overview #matchup-intelligence .hoist-sortable-table thead th.hoist-sort-active .hoist-sort-arrow,
 #overview #matchup-intelligence .hoist-sortable-table thead th.hoist-sort-active .hoist-h2h-label-desktop,
 #overview #matchup-intelligence .hoist-sortable-table thead th.hoist-sort-active .hoist-h2h-label-mobile { color:#49B5FF!important; }
+
+/* Build 20261110-61: jersey number and position below skater names, Team + League. */
+#stats .hoist-stats-name{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;min-width:0!important;white-space:normal!important;overflow:hidden!important;line-height:1.25!important}
+#stats .hoist-stats-name .hoist-stat-name-full,#stats .hoist-stats-name .hoist-stat-name-short{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#stats .hoist-stats-player-meta{display:block!important;max-width:100%;margin-top:3px;font-size:10px!important;font-weight:500!important;line-height:1.2!important;color:#9db4d5!important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#stats .hoist-stats-rail-row .hoist-stats-name{display:flex!important;flex-direction:column!important;white-space:normal!important}
+@media(max-width:650px){#stats .hoist-stats-player-meta{font-size:10px!important;margin-top:2px}}
 </style>
 </head>
 
@@ -4526,9 +4533,11 @@ document.addEventListener('DOMContentLoaded', function () {
        const byId=new Map(),byName=new Map();
        for(const p of [...(data.forwards||[]),...(data.defense||[]),...(data.goalies||[])]){
          const num=p.number??p.sweaterNumber??p.jerseyNumber;
-         if(num==null||num==='')continue;
-         if(p.id!=null)byId.set(String(p.id),String(num));
-         if(p.name)byName.set(normalize(p.name),String(num));
+         const rawPosition=p.positionCode??p.positionAbbrev??p.position??p.pos??'';
+         const pos=typeof rawPosition==='object'?(rawPosition.abbrev??rawPosition.code??rawPosition.name??''):rawPosition;
+         const info={number:num==null?'':String(num),position:String(pos||'')};
+         if(p.id!=null)byId.set(String(p.id),info);
+         if(p.name)byName.set(normalize(p.name),info);
        }
        return {byId,byName};
      }catch{return {byId:new Map(),byName:new Map()};}
@@ -4537,7 +4546,13 @@ document.addEventListener('DOMContentLoaded', function () {
    return pending;
  }
  const jersey=p=>p._hoistJersey??'—';
- const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(mode==='league'?p.team:jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span></span></span>`;
+ const positionLabel=p=>{
+   const raw=p._hoistPosition??p.positionCode??p.positionAbbrev??p.position??p.pos??'';
+   const value=typeof raw==='object'?(raw.abbrev??raw.code??raw.name??''):raw;
+   const key=String(value||'').toUpperCase();
+   return ({C:'Centre',L:'Left Wing',LW:'Left Wing',R:'Right Wing',RW:'Right Wing',D:'Defence',LD:'Defence',RD:'Defence',G:'Goaltender'})[key]||String(value||'—');
+ };
+ const playerCell=p=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${esc(mode==='league'?p.team:jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
  function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map(p=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
@@ -4562,7 +4577,9 @@ document.addEventListener('DOMContentLoaded', function () {
  const numbers=await rosterNumbers(code);
  for(const p of players){
    const id=p.playerId??p.id??p.playerID;
-   p._hoistJersey=(id!=null?numbers.byId.get(String(id)):null)??numbers.byName.get(normalize(name(p)))??null;
+   const roster=(id!=null?numbers.byId.get(String(id)):null)??numbers.byName.get(normalize(name(p)))??null;
+   p._hoistJersey=roster?.number||p.sweaterNumber||p.jerseyNumber||null;
+   p._hoistPosition=roster?.position||null;
  }
  cache.set(code,players);return players;}
  async function render(){const seq=++sequence;const league=mode==='league';el('hoist-stats-team').closest('.hoist-stats-picker').hidden=league;el('hoist-stats-status').textContent=league?'Loading league-wide player statistics…':'Loading team player statistics…';el('hoist-stats-content').innerHTML='';try{
