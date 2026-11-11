@@ -3404,6 +3404,16 @@ html body #games img.hoist-game-player-headshot {
 #games .hoist-game-form-box.no-point{background:rgba(120,145,180,.08);border:1px solid rgba(120,145,180,.24)}
 #games .hoist-game-form-box.did-not-play{background:transparent;border:1px dashed rgba(120,145,180,.24);opacity:.45}
 </style>
+<style>
+/* Games V10: team-colour scoring circles and Overview-style blue stat accent. */
+#games .hoist-game-form-box {border-radius:50%!important;width:12px;height:12px;flex-basis:12px}
+#games .hoist-game-form-box.has-point {background:var(--hoist-form-team-color,#49b5ff)!important;border:1px solid var(--hoist-form-team-color,#49b5ff)!important}
+#games .hoist-game-form-box.no-point {background:transparent!important;border:1px solid rgba(120,145,180,.45)!important}
+#games .hoist-game-form-box.did-not-play {background:transparent!important;border:1px dashed rgba(120,145,180,.4)!important}
+#games .hoist-game-leader-ppg {color:#48a9ff!important}
+#games .hoist-game-leader-ppg small {color:#48a9ff!important}
+#games .hoist-game-leader-name strong .hoist-injury-plus {display:inline!important;color:#ff354d!important}
+</style>
 </head>
 
 <body>
@@ -5340,15 +5350,25 @@ document.addEventListener('DOMContentLoaded', function () {
     return {p,games,gp,points,gs,as,ppg:gp?points/gp:0};
   }
   function injuryMark(p) {
+    // Reuse verified injury markers already rendered by the Overview matchup tables.
+    const normalized = v => String(v||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+    const target = normalized(p.name);
+    const overviewInjured = [...document.querySelectorAll('#mi-left tr, #mi-right tr, #mi-hot tr')].some(row => {
+      const mark=row.querySelector('.hoist-injury-plus');
+      if(!mark)return false;
+      const cell=row.querySelector('td:first-child');
+      return cell && normalized(cell.textContent.replace(/\+/g,'')).includes(target);
+    });
     // Only show an injury marker when the data explicitly identifies an injury.
     const status=String(p.injuryStatus ?? p.injury_status ?? p.status ?? '').toLowerCase().trim();
     const confirmed=p.injured===true || p.isInjured===true || p.is_injured===true ||
       ['injured','injury','out','day-to-day','day to day','ir','ltir','injured reserve'].includes(status);
-    return confirmed ? '<span class="hoist-injury-plus" aria-label="Injured" title="Injured">+</span>' : '';
+    return (confirmed || overviewInjured) ? '<span class="hoist-injury-plus" aria-label="Injured" title="Injured">+</span>' : '';
   }
-  function formBoxes(games) {
+  function formBoxes(games,team) {
+    const colour=portraitColours[String(team||'').toUpperCase()]||'#49b5ff';
     const latest=[...(games||[])].sort(byRecent).slice(0,5);
-    return `<span class="hoist-game-form-boxes" aria-label="Points scored in the last five recorded games">${Array.from({length:5},(_,i)=>{
+    return `<span class="hoist-game-form-boxes" style="--hoist-form-team-color:${colour}" aria-label="Points scored in the last five recorded games">${Array.from({length:5},(_,i)=>{
       const game=latest[i];
       const cls=!game?'did-not-play':(pts(game)??0)>0?'has-point':'no-point';
       const title=!game?'No recorded game':`${formatGameDate(dateOf(game))}: ${pts(game)??'unknown'} points`;
@@ -5358,7 +5378,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function teamHtml(data,team,opponent) {
     const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
       .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,3);
-    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
+    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>GP ${r.gp} &nbsp;·&nbsp; PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.ppg.toFixed(2)} <small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</p>';
     return `<section class="hoist-game-leaders-team"><h4>${esc(team)} vs ${esc(opponent)}</h4>${items}</section>`;
   }
   function hotHtml(data,team) {
@@ -5366,7 +5386,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const games=[...(p.games||[])].sort(byRecent).slice(0,5);
       return {p,games,gp:games.length,points:games.reduce((n,g)=>n+(pts(g)??0),0),gs:games.every(g=>goals(g)!==null)?games.reduce((n,g)=>n+goals(g),0):null,as:games.every(g=>assists(g)!==null)?games.reduce((n,g)=>n+assists(g),0):null};
     }).filter(r=>r.gp>0).sort((a,b)=>b.points-a.points||(b.points/b.gp)-(a.points/a.gp)).slice(0,3);
-    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry hoist-game-hot-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle hoist-game-hot-player" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games)}</span><span class="hoist-game-leader-ppg">${(r.points/r.gp).toFixed(2)}<small>P/GP</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 recorded games — ${esc(r.p.name)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">Recent player game data unavailable.</p>';
+    const items=rows.length?rows.map((r,i)=>`<div class="hoist-game-player-entry hoist-game-hot-entry"><button type="button" class="hoist-game-leader hoist-game-player-toggle hoist-game-hot-player" aria-expanded="false">${portrait(r.p,team)}<span class="hoist-game-leader-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong><small>PTS ${r.points} &nbsp;·&nbsp; G ${r.gs??'—'} &nbsp;·&nbsp; A ${r.as??'—'}</small>${formBoxes(r.games,team)}</span><span class="hoist-game-leader-ppg">${r.points}<small>PTS</small></span><span class="hoist-game-player-chevron" aria-hidden="true">›</span></button><div class="hoist-game-player-history" hidden><div class="hoist-game-history-title">Last 5 recorded games — ${esc(r.p.name)}</div>${history(r.games)}</div></div>`).join(''):'<p class="hoist-game-leaders-note">Recent player game data unavailable.</p>';
     return `<section class="hoist-game-leaders-team"><h4>${esc(team)}</h4>${items}</section>`;
   }
   function gameCodes(card) {
