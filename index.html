@@ -3096,6 +3096,46 @@ body.light-mode .hoist-games-date-controls input,body[data-theme="light"] .hoist
  #stats .hoist-stats-jersey:has(.hoist-stats-headshot),#stats .hoist-stats-jersey:has(.hoist-stats-headshot-fallback),#stats .hoist-stats-rail-row .hoist-stats-jersey:has(.hoist-stats-headshot){flex:0 0 39px!important;min-width:39px!important;width:39px!important}
  #stats .hoist-stats-team-cell,#stats .hoist-stats-rail-row .hoist-stats-team-cell{gap:5px!important}
 }
+
+/* Build 20261111-65 — Team-coloured background for player headshots site-wide. */
+html body img.hoist-team-headshot,
+html body #stats img.hoist-stats-headshot,
+html body #overview .mi-person img.hoist-team-headshot,
+html body .hoist-lineup-avatar img.hoist-team-headshot {
+  background-color:var(--hoist-headshot-team-color,#293e5d)!important;
+  background-image:none!important;
+}
+html body .mi-avatar-fallback,
+html body .hoist-stats-headshot-fallback,
+html body .hoist-lineup-avatar:has(img) {
+  background-color:var(--hoist-headshot-team-color,#293e5d)!important;
+}
+/* Retain the existing headshot sizes, rankings, and circular crop. */
+
+/* Build 20261111-66 — Team colour INSIDE the circular headshot, not outside it. */
+html body img.hoist-team-headshot {
+  border-radius:50%!important;
+  background-color:var(--hoist-headshot-team-color,#293e5d)!important;
+  background-clip:padding-box!important;
+  box-shadow:none!important;
+}
+html body .hoist-headshot-circle {
+  border-radius:50%!important;
+  overflow:hidden!important;
+  background:var(--hoist-headshot-team-color,#293e5d)!important;
+  background-clip:padding-box!important;
+  box-shadow:none!important;
+}
+html body #stats .hoist-stats-jersey.hoist-headshot-circle {
+  border-radius:50%!important;
+  background:var(--hoist-headshot-team-color,#293e5d)!important;
+}
+html body .hoist-headshot-circle img.hoist-team-headshot {
+  display:block;
+  background:transparent!important;
+  border-radius:50%!important;
+  object-fit:contain!important;
+}
 </style>
 </head>
 
@@ -4791,5 +4831,61 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+
+<script>
+/* Build 20261111-65: Apply each NHL club's colour to headshot backgrounds. */
+(() => {
+  const colours = {
+    ANA:'#F47A38',BOS:'#FFB81C',BUF:'#003087',CGY:'#C8102E',CAR:'#E31837',
+    CHI:'#CF0A2C',COL:'#6F263D',CBJ:'#002654',DAL:'#006847',DET:'#CE1126',
+    EDM:'#FF4C00',FLA:'#C8102E',LAK:'#555F67',MIN:'#154734',MTL:'#AF1E2D',
+    NSH:'#FFB81C',NJD:'#CE1126',NYI:'#00539B',NYR:'#0038A8',OTT:'#C52032',
+    PHI:'#F74902',PIT:'#FCB514',SJS:'#006D75',SEA:'#005A9C',STL:'#002F87',
+    TBL:'#0065B1',TOR:'#003E7E',UTA:'#6CACE4',VAN:'#00843D',VGK:'#B4975A',
+    WSH:'#C8102E',WPG:'#041E42'
+  };
+  const teamFromSrc = src => {
+    const match = String(src||'').match(/\/mugs\/nhl\/\d{8}\/([A-Z]{3})\//i);
+    return match ? match[1].toUpperCase() : null;
+  };
+  function apply(root) {
+    if (!root) return;
+    const imgs = root.matches?.('img') ? [root] : root.querySelectorAll?.('img') || [];
+    imgs.forEach(img => {
+      const isPlayer = img.classList.contains('hoist-stats-headshot') ||
+        !!img.closest('.mi-person, .hoist-lineup-avatar, .hoist-hot-players-panel');
+      if (!isPlayer) return;
+      let team = teamFromSrc(img.getAttribute('src'));
+      if (!team && img.closest('.hoist-lineup-avatar')) {
+        team = document.getElementById('hoist-lineup-team')?.value || null;
+      }
+      if (!team && img.closest('#mi-left')) {
+        team = typeof state !== 'undefined' ? state.team : null;
+      }
+      if (!team && img.closest('#mi-right')) {
+        team = teamFromSrc(img.getAttribute('src'));
+      }
+      if (!team || !colours[team]) return;
+      img.classList.add('hoist-team-headshot');
+      img.style.setProperty('--hoist-headshot-team-color', colours[team]);
+      const parent = img.parentElement;
+      if (parent) {
+        parent.style.setProperty('--hoist-headshot-team-color', colours[team]);
+        if (parent.matches('.hoist-stats-jersey, .hoist-lineup-avatar')) parent.classList.add('hoist-headshot-circle');
+      }
+    });
+  }
+  function start() {
+    apply(document.body);
+    new MutationObserver(records => {
+      records.forEach(record => record.addedNodes.forEach(node => {
+        if (node.nodeType === 1) apply(node);
+      }));
+    }).observe(document.body, {childList:true,subtree:true});
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',start);
+  else start();
+})();
+</script>
 </body>
 </html>
