@@ -3228,6 +3228,26 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     color: #ffffff !important;
   }
 }
+
+/* DESKTOP STANDINGS — selected cells always have WHITE text.
+   Only the sort-direction triangle remains blue. */
+@media (min-width: 1100px) {
+  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort].hoist-active-stat,
+  #standings .hoist-desktop-groups .hoist-conference-table tr.hoist-team-row > td.hoist-active-stat,
+  #standings .hoist-desktop-groups .hoist-conference-table tr.hoist-team-row > td.hoist-active-stat *,
+  #standings .hoist-desktop-groups .hoist-conference-table .hoist-division-divider > th.hoist-active-stat,
+  #standings #hoist-standings-table th[data-standings-sort].hoist-active-stat,
+  #standings #hoist-standings-table tr.hoist-team-row > td.hoist-active-stat,
+  #standings #hoist-standings-table tr.hoist-team-row > td.hoist-active-stat * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+  #standings .hoist-desktop-groups .hoist-conference-table th[data-standings-sort].hoist-active-stat::after,
+  #standings #hoist-standings-table th[data-standings-sort].hoist-active-stat::after {
+    color: #49B5FF !important;
+    -webkit-text-fill-color: #49B5FF !important;
+  }
+}
 </style>
 </head>
 
