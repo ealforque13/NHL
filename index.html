@@ -3213,6 +3213,21 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
     border-bottom: 1px solid rgba(73, 181, 255, .30) !important;
   }
 }
+
+/* DESKTOP STANDINGS — white text in every column, selected or not. */
+@media (min-width: 1100px) {
+  #standings .hoist-desktop-groups .hoist-conference-table :is(th, td),
+  #standings .hoist-desktop-groups .hoist-conference-table :is(th, td) *,
+  #standings #hoist-standings-table :is(th, td),
+  #standings #hoist-standings-table :is(th, td) *,
+  #standings .hoist-standings-page-title,
+  #standings .hoist-standings-subtitle,
+  #standings .hoist-group-title,
+  #standings .hoist-conference-title,
+  #standings [data-standings-view] {
+    color: #ffffff !important;
+  }
+}
 </style>
 </head>
 
