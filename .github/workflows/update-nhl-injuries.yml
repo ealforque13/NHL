@@ -1,0 +1,60 @@
+
+name: Update NHL injuries
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    # Update injuries every 6 hours (UTC)
+    - cron: "0 */6 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nhl-injuries-refresh
+  cancel-in-progress: false
+
+jobs:
+  update-injuries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # Download repository files
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Fetch the latest NHL injuries
+      - name: Update NHL injury data
+        env:
+          RSA_API_KEY: ${{ secrets.RSA_API_KEY }}
+        run: |
+          python scripts/update_injuries.py
+
+      # Commit updated injury JSON to GitHub
+      - name: Commit and push injury data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ ! -f data/injuries.json ]; then
+            echo "Injury data file was not generated."
+            exit 1
+          fi
+
+          git add data/injuries.json
+
+          if git diff --cached --quiet; then
+            echo "No injury data changes."
+          else
+            git commit -m "Auto-update NHL injury reports"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
