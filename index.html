@@ -3572,6 +3572,22 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-overview-player-name strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
 @media(max-width:650px){#games .hoist-game-overview-table tr.hoist-game-overview-player-row,#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td{height:56px!important}#games .hoist-game-overview-table th{font-size:10px!important}#games .hoist-game-overview-table .hoist-sort-button{font-size:10px!important}#games .hoist-game-overview-table tr.hoist-game-overview-player-row>td{padding:6px 2px!important}}
 </style>
+<style>
+/* V25: Overview-matched Games table sorting; no GP selector. */
+#games .hoist-game-overview-table thead th{color:#fff!important}
+#games .hoist-game-overview-table .hoist-sort-button{color:#fff!important;background:transparent!important;flex-direction:column!important;gap:2px!important}
+#games .hoist-game-overview-table .hoist-sort-arrow{display:block!important;height:10px!important;line-height:10px!important;font-size:0!important;color:#49B5FF!important}
+#games .hoist-game-overview-table .hoist-sort-arrow::after{content:' '!important;display:inline-block!important;width:0!important;height:0!important;border-left:4px solid transparent!important;border-right:4px solid transparent!important;border-top:6px solid currentColor!important;opacity:.55!important;vertical-align:middle!important}
+#games .hoist-game-overview-table th[data-direction='asc'] .hoist-sort-arrow::after{border-top:0!important;border-bottom:6px solid currentColor!important;opacity:1!important}
+#games .hoist-game-overview-table th[data-direction='desc'] .hoist-sort-arrow::after{border-bottom:0!important;border-top:6px solid currentColor!important;opacity:1!important}
+#games .hoist-game-overview-table th.hoist-sort-active .hoist-sort-button{color:#49B5FF!important;font-weight:800!important}
+#games .hoist-game-overview-table:has(th:nth-child(3).hoist-sort-active) tbody tr.hoist-game-overview-player-row>td:nth-child(3),
+#games .hoist-game-overview-table:has(th:nth-child(4).hoist-sort-active) tbody tr.hoist-game-overview-player-row>td:nth-child(4),
+#games .hoist-game-overview-table:has(th:nth-child(5).hoist-sort-active) tbody tr.hoist-game-overview-player-row>td:nth-child(5),
+#games .hoist-game-overview-table:has(th:nth-child(6).hoist-sort-active) tbody tr.hoist-game-overview-player-row>td:nth-child(6){color:#49B5FF!important;font-weight:800!important}
+#games .hoist-game-overview-table thead th:nth-child(n+3){height:46px!important}
+#games .hoist-game-overview-table .hoist-sort-button{height:46px!important;min-height:46px!important;padding:8px 0 0!important;box-sizing:border-box!important}
+</style>
 </head>
 
 <body>
@@ -5556,11 +5572,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return `<span class="hoist-game-streak-label" aria-label="${count} game ${type.toLowerCase()} streak${opponent ? ` versus ${esc(opponent)}` : ''}">${count}-GAME ${type} STREAK${opponentText}</span>`;
   }
   function teamHtml(data,team,opponent) {
-    const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=1)
-      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,50);
+    const rows=(data.players||[]).map(p=>score(p,opponent)).filter(r=>r.gp>=2)
+      .sort((a,b)=>b.ppg-a.ppg||b.points-a.points||b.gp-a.gp||String(a.p.name).localeCompare(String(b.p.name))).slice(0,5);
     const items=rows.length?rows.map(r=>`<tr class="hoist-game-overview-player-row hoist-game-player-toggle" tabindex="0" role="button" aria-expanded="false" aria-label="Show recent games for ${esc(r.p.name)}" data-gp="${r.gp}" data-goals="${r.gs??-1}" data-assists="${r.as??-1}" data-points="${r.points}" data-ppg="${r.ppg}"><td><span class="hoist-game-overview-player">${portrait(r.p,team)}<span class="hoist-game-overview-player-name"><strong>${esc(r.p.name)}${injuryMark(r.p)}</strong>${pointStreak(r.games,opponent)}</span></span></td><td>${r.gp}</td><td>${r.gs??'—'}</td><td>${r.as??'—'}</td><td>${r.points}</td><td class="hoist-game-overview-ppg">${r.ppg.toFixed(2)}<span class="hoist-game-row-chevron" aria-hidden="true"></span></td></tr><tr class="hoist-game-overview-history" hidden><td colspan="6"><div class="hoist-game-history-title">Last 5 games vs ${esc(opponent)}</div>${history(r.games)}</td></tr>`).join(''):'<tr><td colspan="6" class="hoist-game-leaders-note">No players with at least 2 recorded games against this opponent.</td></tr>';
     const heading=(key,label)=>`<th data-sort="${key}"><button type="button" class="hoist-sort-button" aria-label="Sort by ${label}">${label}<span class="hoist-sort-arrow" aria-hidden="true"></span></button></th>`;
-    return `<section class="hoist-game-leaders-team hoist-game-overview-format"><div class="hoist-game-table-top"><h4>${esc(team)} players vs ${esc(opponent)}</h4><div class="hoist-game-gp-filter"><label>GP <select aria-label="Minimum games played against ${esc(opponent)}"><option value="1">1+</option><option value="2" selected>2+</option><option value="3">3+</option><option value="5">5+</option><option value="10">10+</option></select></label></div></div><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th>${heading('goals','G')}${heading('assists','A')}${heading('points','PTS')}${heading('ppg','PTS/GP')}</tr></thead><tbody>${items}</tbody></table></div></section>`;
+    return `<section class="hoist-game-leaders-team hoist-game-overview-format"><div class="hoist-game-table-top"><h4>${esc(team)} players vs ${esc(opponent)}</h4></div><div class="table-scroll"><table class="mi-table hoist-sortable-table hoist-game-overview-table"><thead><tr><th>PLAYER</th><th>GP</th>${heading('goals','G')}${heading('assists','A')}${heading('points','PTS')}${heading('ppg','PTS/GP')}</tr></thead><tbody>${items}</tbody></table></div></section>`;
   }
   function hotHtml(data,team) {
     const rows=(data.players||[]).map(p=>{
@@ -5588,8 +5604,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const results=await Promise.allSettled([getTeam(away),getTeam(home)]);
     if(!detail.isConnected||card.getAttribute('aria-expanded')!=='true')return;
     const names=[away,home],opponents=[home,away];
-    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><h3 class="hoist-game-team-group-title"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span> ${esc(names[i])}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP · Use GP filter to adjust</p></section>`).join('')}</div>`;
-    detail.querySelectorAll('.hoist-game-gp-filter select').forEach(select=>select.dispatchEvent(new Event('change',{bubbles:true})));
+    detail.innerHTML=`<div class="hoist-game-h2h-teams">${results.map((r,i)=>`<section class="hoist-game-team-group"><h3 class="hoist-game-team-group-title"><span class="hoist-game-team-side">${i===0?'AWAY':'HOME'}</span> ${esc(names[i])}</h3><div class="hoist-game-section-title">HEAD-TO-HEAD TOP PERFORMERS</div><div class="hoist-game-leaders-grid">${r.status==='fulfilled'?teamHtml(r.value,names[i],opponents[i]):`<section class="hoist-game-leaders-team"><h4>${esc(names[i])} players vs ${esc(opponents[i])}</h4><p class="hoist-game-leaders-note">Matchup data unavailable.</p></section>`}</div><p class="hoist-game-leaders-note">Regular-season history · Active roster skaters · Ranked by P/GP</p></section>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
@@ -5599,16 +5614,10 @@ document.addEventListener('DOMContentLoaded', function () {
       button.innerHTML='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m9 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';head.append(button);
     }
   }
-  document.addEventListener('change',e=>{
-    if(!e.target.matches('#games .hoist-game-gp-filter select'))return;
-    const section=e.target.closest('.hoist-game-overview-format'),minimum=Number(e.target.value);
-    const rows=[...section.querySelectorAll('tr.hoist-game-overview-player-row')];
-    let visible=0;rows.forEach(row=>{const show=Number(row.dataset.gp)>=minimum&&visible<5;if(show)visible++;row.hidden=!show;const detail=row.nextElementSibling;if(detail?.classList.contains('hoist-game-overview-history'))detail.hidden=!show||row.getAttribute('aria-expanded')!=='true';});
-  });
   document.addEventListener('keydown',e=>{const row=e.target.closest('#games tr.hoist-game-overview-player-row');if(row&&(e.key==='Enter'||e.key===' ')){e.preventDefault();row.click();}});
   document.addEventListener('click',e=>{
     const sort=e.target.closest('#games .hoist-game-overview-table th[data-sort] .hoist-sort-button');
-    if(sort){e.preventDefault();e.stopPropagation();const table=sort.closest('table'),th=sort.closest('th'),key=th.dataset.sort,body=table.tBodies[0],ascending=th.dataset.direction!=='asc';
+    if(sort){e.preventDefault();e.stopPropagation();const table=sort.closest('table'),th=sort.closest('th'),key=th.dataset.sort,body=table.tBodies[0],ascending=th.dataset.direction==='desc';
       table.querySelectorAll('th[data-sort]').forEach(h=>{h.classList.remove('hoist-sort-active');h.removeAttribute('aria-sort');if(h!==th)delete h.dataset.direction;});
       th.dataset.direction=ascending?'asc':'desc';th.classList.add('hoist-sort-active');th.setAttribute('aria-sort',ascending?'ascending':'descending');
       const pairs=[...body.querySelectorAll('tr.hoist-game-overview-player-row')].map(row=>({row,history:row.nextElementSibling}));
