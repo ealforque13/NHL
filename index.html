@@ -3714,6 +3714,31 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-card-feature-circle.no-stat{background:transparent!important}
 @media(max-width:650px){#games .hoist-card-feature-number{font-size:22px}}
 </style>
+<style>
+/* Games V37: black portrait badges with a restrained flame behind each hot player. */
+#games .hoist-card-hot-portrait {
+  position:relative;display:inline-flex;align-items:center;justify-content:center;
+  flex:0 0 58px;width:58px;height:58px;isolation:isolate;
+  border-radius:50%;background:#080a0e;overflow:hidden;
+}
+#games .hoist-card-hot-flame {
+  position:absolute;z-index:0;left:50%;top:42%;transform:translate(-50%,-50%);
+  font-size:42px;line-height:1;opacity:.82;filter:saturate(1.15);
+  pointer-events:none;user-select:none;
+}
+#games .hoist-card-hot-portrait img.hoist-game-player-headshot,
+#games .hoist-card-feature-player .hoist-card-hot-portrait img {
+  position:relative;z-index:1;display:block;width:54px;height:54px;
+  max-width:54px;max-height:54px;object-fit:contain;object-position:center bottom;
+  background:transparent!important;background-color:transparent!important;
+  border-radius:0!important;filter:none!important;flex:0 0 auto;
+}
+@media(max-width:650px){
+  #games .hoist-card-hot-portrait{width:50px;height:50px;flex-basis:50px}
+  #games .hoist-card-hot-flame{font-size:37px}
+  #games .hoist-card-feature-player .hoist-card-hot-portrait img{width:47px;height:47px;max-width:47px;max-height:47px}
+}
+</style>
 </head>
 
 <body>
@@ -5804,7 +5829,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     if(!away&&!home){feature.querySelector('.hoist-game-feature-loading').textContent='Recent player statistics unavailable.';return;}
     const data=[away,home];
-    feature.innerHTML=`<div class="hoist-game-feature-heading">LAST 5 GAMES</div><div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`${portrait(leader.p,pair[i])}<span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
+    feature.innerHTML=`<div class="hoist-game-feature-heading">LAST 5 GAMES</div><div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true">🔥</span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
