@@ -3814,12 +3814,10 @@ body[data-theme="light"] #games .hoist-game-card {
   <div class="side-label">NAVIGATION</div>
 
   <nav id="nav">
-    <button class="nav-item" data-tab="teams">◈ <span>Teams</span></button>
-    <button class="nav-item active" data-tab="overview">
+    <button class="nav-item active" data-tab="games">▦ <span>Games</span></button>
+    <button class="nav-item" data-tab="overview">
       ◫ <span>Overview</span>
     </button>
-
-    <button class="nav-item" data-tab="games">▦ <span>Games</span></button>
     <button class="nav-item" data-tab="standings">
       ▤ <span>Standings</span>
     </button>
@@ -3860,7 +3858,7 @@ body[data-theme="light"] #games .hoist-game-card {
       <span class="eyebrow-line"></span>
       NHL DASHBOARD
     </div>
-    <h1 id="page-title">Team Overview</h1>
+    <h1 id="page-title">NHL Games</h1>
   </div>
 
   <div class="top-actions">
@@ -3880,11 +3878,10 @@ body[data-theme="light"] #games .hoist-game-card {
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Menu
   </button>
   <div id="hoist-mobile-menu-options" class="hoist-mobile-menu-options" hidden>
-    <button type="button" data-mobile-tab="teams">Teams</button>
+    <button type="button" data-mobile-tab="games">Games</button>
     <button type="button" data-mobile-tab="overview">Overview</button>
     <button type="button" data-mobile-tab="standings">Standings</button>
     <button type="button" data-mobile-tab="stats">Stats</button>
-    <button type="button" data-mobile-tab="games">Games</button>
     <button type="button" data-mobile-tab="lineups">Lineups</button>
   </div>
 </div>
@@ -3957,7 +3954,7 @@ body[data-theme="light"] #games .hoist-game-card {
 
 <!-- OVERVIEW -->
 
-<section id="overview" class="tab-section">
+<section id="overview" class="tab-section hidden">
 
 <div class="hoist-overview-top">
 
@@ -4400,7 +4397,7 @@ body[data-theme="light"] #games .hoist-game-card {
 </section>
 
 <!-- LEAGUE GAMES -->
-<section id="games" class="tab-section hidden">
+<section id="games" class="tab-section">
   <article class="panel section-panel hoist-games-panel">
     <div class="section-head hoist-games-head">
       <div><div class="eyebrow">HOIST OFFICIAL · NHL SCOREBOARD</div><h3>Games</h3></div>
@@ -5375,7 +5372,7 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();event.stopImmediatePropagation();openGames();
   },true);
   document.addEventListener('DOMContentLoaded',()=>{
-    try{if(sessionStorage.getItem('hoist-active-page')==='games')openGames()}catch(_){}
+    try{const page=sessionStorage.getItem('hoist-active-page');if(!page||page==='games'||page==='teams')openGames()}catch(_){openGames()}
   });
 })();
 </script>
@@ -5426,8 +5423,6 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     });
   }
   document.addEventListener('click',event=>{
-    const nav=event.target.closest('.sidebar [data-tab="teams"]');
-    if(nav){event.preventDefault();event.stopImmediatePropagation();openTeams();return;}
     const teamButton=event.target.closest('#hoist-teams-grid [data-team-code]');
     if(!teamButton)return;
     const selector=document.getElementById('team-select');if(!selector)return;
@@ -5443,7 +5438,6 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
   },true);
   window.addEventListener('load',()=>{
     buildDirectory();
-    try{if(sessionStorage.getItem('hoist-active-page')==='teams')openTeams()}catch(_){}
   });
 })();
 </script>
@@ -5452,7 +5446,7 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
 <script>
 (() => {
   const storageKey = 'hoist-active-page';
-  const supported = new Set(['overview','standings','stats','games','lineups','teams']);
+  const supported = new Set(['overview','standings','stats','games','lineups']);
 
   function savePage(page) {
     if (!supported.has(page)) return;
@@ -5490,11 +5484,8 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
   function restorePage() {
     let page = '';
     try { page = sessionStorage.getItem(storageKey) || ''; } catch (_) {}
-    if (!supported.has(page) || page === 'overview') return;
+    if (!supported.has(page)) page = 'games';
 
-    if (page === 'teams') {
-      return; // Teams restores through its own navigation handler on load.
-    }
     if (page === 'lineups') {
       openLineups();
       return;
