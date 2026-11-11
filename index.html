@@ -1377,7 +1377,7 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
 /* MOBILE: one continuous, independently scrolling standings table per conference. */
 #standings .hoist-mobile-unified { display:none; }
 #standings .hoist-active-stat, #standings .hoist-conference-table .hoist-active-stat,
-#standings #hoist-standings-table .hoist-active-stat { color:#f05260 !important; font-weight:900 !important; }
+#standings #hoist-standings-table .hoist-active-stat { color:#49B5FF !important; font-weight:900 !important; }
 @media(max-width:650px) {
   #standings .hoist-desktop-groups { display:none !important; }
   #standings .hoist-mobile-unified { display:block !important; }
@@ -1420,7 +1420,7 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     padding:0 !important; border-top:4px solid #f4f7ff !important;
     border-bottom:0 !important; background:transparent !important;
   }
-  /* PTS defaults to normal; the selected sort highlights the ENTIRE column in red. */
+  /* PTS defaults to normal; the selected sort highlights the entire column in blue. */
   #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td:nth-child(7):not(.hoist-active-stat),
   #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider th[data-standings-sort="points"]:not(.hoist-active-stat) {
     color:inherit !important;
@@ -1428,9 +1428,9 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
   #standings .hoist-mobile-unified .hoist-conference-table :is(th,td).hoist-active-stat,
   #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td.hoist-active-stat,
   #standings .hoist-mobile-unified .hoist-conference-table .hoist-division-divider th.hoist-active-stat {
-    color:#ff5366 !important; font-weight:900 !important;
+    color:#49B5FF !important; font-weight:900 !important;
   }
-  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td.hoist-active-stat strong { color:#ff5366 !important; }
+  #standings .hoist-mobile-unified .hoist-conference-table tr.hoist-team-row td.hoist-active-stat strong { color:#49B5FF !important; }
 }
 
 /* MOBILE: permanently anchored team identity, including division rows. */
@@ -1843,7 +1843,7 @@ body.hoist-standings-active .hoist-franchise-hero { display:none !important; }
     font-weight:inherit !important;
   }
   #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat {
-    color:#ff5366 !important;
+    color:#49B5FF !important;
     font-weight:900 !important;
   }
   #standings .hoist-mobile-unified .hoist-conference-table tbody tr.hoist-team-row > td.hoist-active-stat strong {
@@ -2393,7 +2393,7 @@ body:has(#stats:not(.hidden)) .hoist-franchise-hero{display:none!important}
 #stats .hoist-stats-rail-row.hoist-stat-selected button,
 #stats .hoist-stats-table .hoist-stat-selected,
 #stats .hoist-stat-arrow {
-  color:#ff5366 !important;
+  color:#49B5FF !important;
 }
 /* Mobile: keep equal columns, but show slightly more statistics. */
 @media (max-width:650px) {
