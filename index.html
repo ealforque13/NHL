@@ -3492,6 +3492,22 @@ html body #games .hoist-games-panel {width:100%!important;max-width:none!importa
 @media(max-width:900px){#games .hoist-game-stats-columns {grid-template-columns:minmax(0,1fr)!important;gap:26px!important}}
 @media(max-width:600px){#games .hoist-game-card {padding:15px 0!important}#games .hoist-game-team-content {padding:12px 0 16px!important}#games .hoist-game-team-dropdown > .hoist-game-team-group-title {padding:13px 5px!important}}
 </style>
+<style>
+/* Games V21 — distinct borderless card surfaces, with full-width layout retained. */
+#games .hoist-game-card {
+  background:rgba(125,155,195,.095)!important;
+  border:0!important;
+  border-radius:16px!important;
+  padding:20px 24px!important;
+  box-shadow:none!important;
+}
+#games .hoist-game-card + .hoist-game-card {margin-top:14px!important}
+body.light-mode #games .hoist-game-card,
+body[data-theme="light"] #games .hoist-game-card {
+  background:rgba(45,75,115,.075)!important;
+}
+@media(max-width:600px){#games .hoist-game-card {padding:16px!important;border-radius:12px!important}}
+</style>
 </head>
 
 <body>
