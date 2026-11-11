@@ -3788,6 +3788,14 @@ body[data-theme="light"] #games .hoist-game-card {
   #games .hoist-card-feature-player .hoist-card-hot-portrait > img.hoist-game-player-headshot{width:46px!important;height:46px!important;max-width:46px!important;max-height:46px!important}
 }
 </style>
+<style>
+/* V42: collapsible Last 5 Games, independently controlled from game matchup. */
+#games .hoist-game-feature-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:8px 0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;font-size:12px;font-weight:800;letter-spacing:.11em;cursor:pointer}
+#games .hoist-game-feature-chevron{font-size:23px;font-weight:400;line-height:1;transition:transform .18s ease;color:var(--muted,#a7b6cc)}
+#games .hoist-game-feature-toggle[aria-expanded="true"] .hoist-game-feature-chevron{transform:rotate(90deg)}
+#games .hoist-game-feature-content[hidden]{display:none!important}
+#games .hoist-game-feature-content{padding-top:12px}
+</style>
 </head>
 
 <body>
@@ -5858,7 +5866,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const foot=card.querySelector('.hoist-game-card-foot');
     if(!foot||card.querySelector('.hoist-game-hot-feature'))return;
     const feature=document.createElement('section');feature.className='hoist-game-hot-feature';feature.setAttribute('aria-label','Last five games player leaders');
-    feature.innerHTML='<div class="hoist-game-feature-heading">LAST 5 GAMES</div><p class="hoist-game-feature-loading">Loading recent player leaders…</p>';
+    feature.innerHTML='<button type="button" class="hoist-game-feature-toggle" aria-expanded="false"><span>LAST 5 GAMES</span><span class="hoist-game-feature-chevron" aria-hidden="true">›</span></button><div class="hoist-game-feature-content" hidden><p class="hoist-game-feature-loading">Loading recent player leaders…</p></div>';
     foot.before(feature);
     const [standings,away,home]=await Promise.all([standingsRecords(),getTeam(pair[0]).catch(()=>null),getTeam(pair[1]).catch(()=>null)]);
     if(!card.isConnected||!feature.isConnected)return;
@@ -5869,7 +5877,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     if(!away&&!home){feature.querySelector('.hoist-game-feature-loading').textContent='Recent player statistics unavailable.';return;}
     const data=[away,home];
-    feature.innerHTML=`<div class="hoist-game-feature-heading">LAST 5 GAMES</div><div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true"><span class="hoist-card-hot-flame-center"></span></span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
+    feature.querySelector('.hoist-game-feature-content').innerHTML=`<div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player"><span class="hoist-card-feature-team">${esc(pair[i])}</span>${leader?`<span class="hoist-card-hot-portrait"><span class="hoist-card-hot-flame" aria-hidden="true"><span class="hoist-card-hot-flame-center"></span></span>${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number">${leader.total}<small>${short}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
@@ -5882,6 +5890,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('keydown',e=>{const row=e.target.closest('#games tr.hoist-game-overview-player-row');if(row&&(e.key==='Enter'||e.key===' ')){e.preventDefault();row.click();}});
   document.addEventListener('click',e=>{
+    const featureToggle=e.target.closest('#games .hoist-game-feature-toggle');
+    if(featureToggle){e.preventDefault();e.stopPropagation();const content=featureToggle.nextElementSibling;const expanded=featureToggle.getAttribute('aria-expanded')==='true';featureToggle.setAttribute('aria-expanded',String(!expanded));if(content)content.hidden=expanded;return;}
     const slideButton=e.target.closest('#games .hoist-card-slide-nav, #games .hoist-card-slide-dot');
     if(slideButton){e.preventDefault();e.stopPropagation();const card=slideButton.closest('.hoist-game-card');const feature=slideButton.closest('.hoist-game-hot-feature');const current=Number(feature?.dataset.slide||0);showSlide(card,slideButton.dataset.slideTo!==undefined?Number(slideButton.dataset.slideTo):current+Number(slideButton.dataset.slideStep||0));return;}
     const sort=e.target.closest('#games .hoist-game-overview-table th[data-sort] .hoist-sort-button');
@@ -5893,7 +5903,7 @@ document.addEventListener('DOMContentLoaded', function () {
       pairs.forEach(({row,history},i)=>{row.hidden=i>=5;row.setAttribute('aria-expanded','false');body.append(row);if(history?.classList.contains('hoist-game-overview-history')){history.hidden=true;body.append(history);}});return;}
     const player=e.target.closest('#games tr.hoist-game-overview-player-row');
     if(player){e.preventDefault();e.stopPropagation();const open=player.getAttribute('aria-expanded')==='true';player.setAttribute('aria-expanded',String(!open));const panel=player.nextElementSibling;if(panel?.classList.contains('hoist-game-overview-history'))panel.hidden=open;return;}
-    if(e.target.closest('#games .hoist-game-leaders'))return;
+    if(e.target.closest('#games .hoist-game-leaders, #games .hoist-game-hot-feature'))return;
     const card=e.target.closest('#games .hoist-game-card');if(card)toggle(card);
   });
   const observer=new MutationObserver(records=>records.forEach(r=>r.addedNodes.forEach(node=>{
