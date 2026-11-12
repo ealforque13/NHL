@@ -3,8 +3,15 @@
   "type": "roster",
   "status": "roster",
   "source": "NHL Web API",
-  "updatedAt": "2026-11-11T19:17:35.507714+00:00",
+  "updatedAt": "2026-11-12T01:30:51.723506+00:00",
   "forwards": [
+    {
+      "id": 8484388,
+      "name": "Daniil But",
+      "position": "L",
+      "number": 50,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8484388.png"
+    },
     {
       "id": 8479619,
       "name": "Michael Carcone",
