@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T01:04:17.574343+00:00",
+  "updatedAt": "2026-11-12T07:10:31.356152+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -64,8 +64,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NSH"
     },
     "8476853": {
@@ -100,8 +100,8 @@
     },
     "8477220": {
       "injured": true,
-      "description": "Schmidt (upper body) has no timeline for his return to the lineup, per Brogan Houston of the Deseret News on Monday.",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "UTA"
     },
     "8477406": {
@@ -158,6 +158,12 @@
       "status": "Injured Reserve",
       "team": "LAK"
     },
+    "8477951": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "UTA"
+    },
     "8477955": {
       "injured": true,
       "description": "McCann (lower body) will be out for approximately 10 weeks, the team announced Sunday.",
@@ -182,6 +188,12 @@
       "status": "Out",
       "team": "VGK"
     },
+    "8478416": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "TBL"
+    },
     "8478421": {
       "injured": true,
       "description": "Greer (upper body) was placed on injured reserve Monday.",
@@ -199,6 +211,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "UTA"
+    },
+    "8478569": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "PHI"
     },
     "8479324": {
       "injured": true,
@@ -229,12 +247,6 @@
       "description": "Danforth (upper body) was placed on injured reserve Thursday, per the NHL media site.",
       "status": "Injured Reserve",
       "team": "BUF"
-    },
-    "8479977": {
-      "injured": true,
-      "description": "Yamamoto (upper body) was placed on injured reserve Friday.",
-      "status": "Injured Reserve",
-      "team": "UTA"
     },
     "8479981": {
       "injured": true,
@@ -364,8 +376,8 @@
     },
     "8482699": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "UTA"
     },
     "8482742": {
@@ -374,17 +386,17 @@
       "status": "Injured Reserve",
       "team": "COL"
     },
-    "8482758": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "PIT"
-    },
     "8482874": {
       "injured": true,
       "description": "Melanson's upper-body injury was diagnosed Saturday as an anterior mediastinum hematoma with vascular pseudo aneurysm. He will continue to be evaluated and is out indefinitely.",
       "status": "Injured Reserve",
       "team": "SEA"
+    },
+    "8483431": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "UTA"
     },
     "8483455": {
       "injured": true,
