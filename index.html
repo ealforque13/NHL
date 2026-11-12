@@ -4095,6 +4095,33 @@ body[data-theme="light"] #games .hoist-game-card {
   #stats .hoist-stats-table-wrap {width:100%!important;max-width:100%!important;}
 }
 </style>
+<style>
+/* V66: Use the same 1320px desktop table footprint as Standings.
+   Center against the content column, not the narrower legacy Stats panel. */
+@media (min-width:1100px){
+  body:has(#stats:not(.hidden)) #stats{
+    width:min(1320px, calc(100vw - 280px))!important;
+    min-width:0!important;
+    max-width:none!important;
+    position:relative!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    margin:0!important;
+  }
+  body:has(#stats:not(.hidden)) #stats .hoist-stats-panel{
+    width:100%!important;
+    max-width:none!important;
+    min-width:0!important;
+    margin:0!important;
+    box-sizing:border-box!important;
+  }
+  body:has(#stats:not(.hidden)) #stats .hoist-stats-table-wrap{
+    width:100%!important;
+    max-width:100%!important;
+    overflow-x:auto!important;
+  }
+}
+</style>
 </head>
 
 <body>
