@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-11T13:59:06.516Z",
   "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T11:36:27.441193+00:00",
+  "cachedAtUTC": "2026-11-12T12:37:20.266800+00:00",
   "forwards": [
     [
       {
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "John Gibson",
-      "number": 36,
+      "name": "Daniil Tarasov",
+      "number": 80,
       "position": "G1",
-      "sourcePlayerId": 1870,
+      "sourcePlayerId": 28133,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Daniil Tarasov",
-      "number": 80,
+      "name": "John Gibson",
+      "number": 36,
       "position": "G2",
-      "sourcePlayerId": 28133,
+      "sourcePlayerId": 1870,
       "injuryStatus": null,
       "gameTimeDecision": false
     }

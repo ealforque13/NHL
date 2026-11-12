@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-08T15:39:22.838Z",
   "sourceDescription": "Last Game (2026-11-07)",
-  "cachedAtUTC": "2026-11-12T11:36:14.869684+00:00",
+  "cachedAtUTC": "2026-11-12T12:37:07.387421+00:00",
   "forwards": [
     [
       {
@@ -158,10 +158,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexander Nikishin",
-        "number": 21,
+        "name": "Juuso Valimaki",
+        "number": 8,
         "position": "RD",
-        "sourcePlayerId": 32897,
+        "sourcePlayerId": 2790,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -244,10 +244,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexander Nikishin",
-        "number": 21,
+        "name": "K'Andre Miller",
+        "number": 79,
         "position": "SK5",
-        "sourcePlayerId": 32897,
+        "sourcePlayerId": 4812,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Pyotr Kochetkov",
-      "number": 52,
+      "name": "Brandon Bussi",
+      "number": 32,
       "position": "G1",
-      "sourcePlayerId": 30486,
+      "sourcePlayerId": 30153,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Brandon Bussi",
-      "number": 32,
+      "name": "Pyotr Kochetkov",
+      "number": 52,
       "position": "G2",
-      "sourcePlayerId": 30153,
+      "sourcePlayerId": 30486,
       "injuryStatus": null,
       "gameTimeDecision": false
     }

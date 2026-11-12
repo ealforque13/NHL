@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-12T02:18:07.414Z",
   "sourceDescription": "Utah Mammoth",
-  "cachedAtUTC": "2026-11-12T11:37:05.231857+00:00",
+  "cachedAtUTC": "2026-11-12T12:37:58.984405+00:00",
   "forwards": [
     [
       {
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Sebastian Cossa",
-      "number": 33,
+      "name": "Karel Vejmelka",
+      "number": 70,
       "position": "G1",
-      "sourcePlayerId": 34654,
+      "sourcePlayerId": 26614,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Karel Vejmelka",
-      "number": 70,
+      "name": "Sebastian Cossa",
+      "number": 33,
       "position": "G2",
-      "sourcePlayerId": 26614,
+      "sourcePlayerId": 34654,
       "injuryStatus": null,
       "gameTimeDecision": false
     }

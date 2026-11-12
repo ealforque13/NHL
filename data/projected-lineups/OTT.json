@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T13:56:19.930Z",
+  "sourceUpdatedAt": "2026-11-12T11:57:17.320Z",
   "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T11:36:48.632525+00:00",
+  "cachedAtUTC": "2026-11-12T12:37:41.845147+00:00",
   "forwards": [
     [
       {
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Samuel Ersson",
-      "number": 33,
+      "name": "Linus Ullmark",
+      "number": 35,
       "position": "G1",
-      "sourcePlayerId": 29149,
+      "sourcePlayerId": 2534,
       "injuryStatus": null,
-      "gameTimeDecision": false
+      "gameTimeDecision": true
     },
     {
-      "name": "Jackson Parsons",
-      "number": null,
+      "name": "Samuel Ersson",
+      "number": 33,
       "position": "G2",
-      "sourcePlayerId": 33236,
+      "sourcePlayerId": 29149,
       "injuryStatus": null,
       "gameTimeDecision": false
     }
