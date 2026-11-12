@@ -3,26 +3,55 @@ name: Update projected NHL lineups
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '7,37 * * * *'
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: hoist-projected-lineups
+  cancel-in-progress: false
 
 jobs:
-  validate:
+  update-lineups:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-
+    timeout-minutes: 25
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Validate lineup Python script
+      - name: Check updater syntax
         run: python -m py_compile scripts/update_lineups.py
 
-      - name: Confirm lineup updater is ready
-        run: echo "Lineup script validated. Automated retrieval is not enabled."
+      - name: Refresh 32 projected lineups
+        id: refresh
+        continue-on-error: true
+        env:
+          DAILY_FACEOFF_SCRAPING_ALLOWED: '1'
+        run: python scripts/update_lineups.py --all --delay 2
+
+      - name: Commit valid refreshed lineups
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/projected-lineups/
+          if ! git diff --cached --quiet; then
+            git commit -m "Refresh projected NHL lineups"
+            git push
+          else
+            echo "No projected lineup changes"
+          fi
+
+      - name: Report partial refresh failures
+        if: steps.refresh.outcome == 'failure'
+        run: |
+          echo "One or more teams failed. Valid team updates were committed; previous files were preserved for failed teams."
+          exit 1
