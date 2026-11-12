@@ -4036,6 +4036,18 @@ body[data-theme="light"] #games .hoist-game-card {
  #stats .hoist-stats-player-rail .hoist-stats-rail-row.hoist-stat-selected:not(.hoist-stats-rail-head){background-image:linear-gradient(rgba(73,181,255,.14),rgba(73,181,255,.14))!important}
 }
 </style>
+<style>
+/* Stats V63: full-width, centered desktop panel for the expanded skater categories.
+   Mobile keeps the existing fixed player rail and horizontal scrolling. */
+@media (min-width:1100px){
+  body:has(#stats:not(.hidden)) .content{max-width:none!important;width:100%!important;min-width:0!important}
+  body:has(#stats:not(.hidden)) #stats{width:100%!important;max-width:none!important;margin-inline:auto!important}
+  body:has(#stats:not(.hidden)) #stats .hoist-stats-panel{width:100%!important;max-width:none!important;margin-inline:auto!important;box-sizing:border-box!important}
+  #stats .hoist-stats-fixed-shell{width:100%!important;max-width:none!important}
+  #stats .hoist-stats-table-wrap{width:100%!important;max-width:none!important}
+  #stats .hoist-stats-table{min-width:100%!important}
+}
+</style>
 </head>
 
 <body>
@@ -5481,7 +5493,8 @@ document.addEventListener('DOMContentLoaded', function () {
  const cache=new Map();let mode='league',sequence=0,sortKey='points',sortDirection=-1;
  const name=p=>[p.firstName?.default||p.firstName||'',p.lastName?.default||p.lastName||''].join(' ').trim()||p.name||'Unknown player';
  // Normalize aliases from the cached NHL club-skater data; never invent unavailable totals.
- const statAliases={evenStrengthGoals:['evenStrengthGoals','evGoals'],evenStrengthPoints:['evenStrengthPoints','evPoints'],powerPlayPoints:['powerPlayPoints','ppPoints'],overtimeGoals:['overtimeGoals','otGoals'],gameWinningGoals:['gameWinningGoals','gwGoals'],shots:['shots','shotsOnGoal']};
+ const statAliases={evenStrengthGoals:['evenStrengthGoals','evGoals','evenStrengthGoal'],evenStrengthPoints:['evenStrengthPoints','evPoints','evenStrengthPts'],powerPlayPoints:['powerPlayPoints','ppPoints','powerplayPoints','powerPlayPts','ppp'],overtimeGoals:['overtimeGoals','otGoals'],gameWinningGoals:['gameWinningGoals','gwGoals'],shots:['shots','shotsOnGoal']};
+ const directStat=(p,keys)=>{for(const key of keys){const raw=p[key];if(raw!=null&&raw!==''&&Number.isFinite(Number(raw)))return Number(raw)}return null};
  const statValue=(p,k)=>{
    if(k==='pointsPerGame'){
      const games=Number(p.gamesPlayed),points=Number(p.points);
@@ -5492,7 +5505,22 @@ document.addEventListener('DOMContentLoaded', function () {
      return p.goals!=null&&(p.shots!=null||p.shotsOnGoal!=null)&&shots>0?goals/shots*100:null;
    }
    const keys=statAliases[k]||[k];
-   for(const key of keys){if(p[key]!=null&&p[key]!==''){const value=Number(p[key]);if(Number.isFinite(value))return value;}}
+   const direct=directStat(p,keys);
+   if(direct!=null)return direct;
+   // Only derive special-team totals when every required component exists.
+   // The basic NHL club-stats feed does not always provide these splits.
+   if(k==='evenStrengthGoals'){
+     const goals=directStat(p,['goals']),ppg=directStat(p,['powerPlayGoals']),shg=directStat(p,['shortHandedGoals','shorthandedGoals','shGoals']);
+     if(goals!=null&&ppg!=null&&shg!=null)return goals-ppg-shg;
+   }
+   if(k==='powerPlayPoints'){
+     const goals=directStat(p,['powerPlayGoals']),assists=directStat(p,['powerPlayAssists','ppAssists']);
+     if(goals!=null&&assists!=null)return goals+assists;
+   }
+   if(k==='evenStrengthPoints'){
+     const points=directStat(p,['points']),ppp=statValue(p,'powerPlayPoints'),shp=directStat(p,['shortHandedPoints','shorthandedPoints','shPoints']);
+     if(points!=null&&ppp!=null&&shp!=null)return points-ppp-shp;
+   }
    return null;
  };
  const numeric=(p,k)=>statValue(p,k);
