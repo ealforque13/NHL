@@ -4491,6 +4491,33 @@ html body #lineups .hoist-lineup-group { background:transparent !important; bord
  #lineups .hoist-lineup-card-title { font-size:11px !important; }
 }
 </style>
+
+<style>
+/* Lineups refinement: centered portraits, unobtrusive separators, team colors. */
+#lineups .hoist-lineups-heading { justify-content:flex-end !important; width:100%; margin:0 0 12px !important; }
+#lineups .hoist-lineups-team-picker { justify-content:flex-end !important; margin-left:auto !important; }
+#lineups .hoist-lineup-content { width:100% !important; max-width:850px !important; margin-inline:auto !important; }
+#lineups .hoist-lineup-group { width:100% !important; margin-inline:auto !important; }
+#lineups .hoist-lineup-group + .hoist-lineup-group,
+#lineups .hoist-lineup-card + .hoist-lineup-card { border-top:1px solid rgba(151,181,224,.22) !important; }
+#lineups .hoist-lineup-card-header,
+#lineups .hoist-lineup-card-body { grid-template-columns:95px minmax(0,1fr) !important; }
+#lineups .hoist-lineup-role-headings,
+#lineups .hoist-lineup-group .hoist-lineup-players { width:min(100%,530px) !important; margin-inline:auto !important; }
+#lineups .hoist-lineup-group .hoist-lineup-players { justify-items:center !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar { background:var(--hoist-lineup-team-color,#243754) !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar img { background:transparent !important; }
+#lineups .hoist-lineup-player-name { margin-top:3px !important; }
+#lineups .hoist-lineup-player-jersey { color:#fff !important; text-align:center !important; font-size:12px; font-weight:700; margin-top:3px; min-height:1em; }
+#lineups .hoist-lineup-player-name, #lineups .hoist-lineup-player-jersey { order:initial; }
+@media(max-width:650px) {
+  #lineups .hoist-lineups-heading { justify-content:flex-end !important; }
+  #lineups .hoist-lineups-team-picker { justify-content:flex-end !important; }
+  #lineups #hoist-lineup-team { width:85px !important; min-width:85px !important; max-width:85px !important; }
+  #lineups .hoist-lineup-card-header, #lineups .hoist-lineup-card-body { grid-template-columns:58px minmax(0,1fr) !important; }
+  #lineups .hoist-lineup-player-jersey { font-size:10px; }
+}
+</style>
 </head>
 
 <body>
@@ -5869,7 +5896,8 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="hoist-lineup-avatar-wrap">
         <div class="hoist-lineup-avatar">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
       </div>
-      <div class="hoist-lineup-player-name">${esc(name)}${numberHtml}</div>
+      <div class="hoist-lineup-player-name">${esc(name)}</div>
+      <div class="hoist-lineup-player-jersey">${numberHtml.trim()}</div>
     </div>`;
   }
   function render() {
@@ -5983,11 +6011,31 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('DOMContentLoaded',() => {
     const picker = el('hoist-lineup-team');
     if (!picker) return;
+    const updatePickerLabels = () => {
+      const compact = window.matchMedia('(max-width:650px)').matches;
+      for (const option of picker.options) {
+        const entry = names.find(([code]) => code === option.value);
+        if (entry) option.textContent = compact ? entry[0] : entry[1];
+      }
+    };
     picker.innerHTML = names.map(([code,name]) => `<option value="${code}">${esc(name)}</option>`).join('');
+    updatePickerLabels();
+    window.addEventListener('resize',updatePickerLabels);
     const main = el('team-select');
     selected = main?.value && names.some(([code]) => code === main.value) ? main.value : 'MTL';
     picker.value = selected;
-    picker.addEventListener('change',() => { selected = picker.value; load(); });
+    const teamColors = {
+      ANA:'#f47a38',BOS:'#ffb81c',BUF:'#003087',CGY:'#c8102e',CAR:'#cc0000',
+      CHI:'#cf0a2c',COL:'#6f263d',CBJ:'#002654',DAL:'#006847',DET:'#ce1126',
+      EDM:'#ff4c00',FLA:'#c8102e',LAK:'#a2aaad',MIN:'#154734',MTL:'#af1e2d',
+      NSH:'#ffb81c',NJD:'#ce1126',NYI:'#00539b',NYR:'#0038a8',OTT:'#c52032',
+      PHI:'#f74902',PIT:'#ffb81c',SJS:'#006d75',SEA:'#99d9d9',STL:'#002f87',
+      TBL:'#002868',TOR:'#00205b',UTA:'#69b3e7',VAN:'#00843d',VGK:'#b4975a',
+      WSH:'#c8102e',WPG:'#041e42'
+    };
+    const applyTeamColor = () => el('lineups')?.style.setProperty('--hoist-lineup-team-color',teamColors[selected] || '#243754');
+    applyTeamColor();
+    picker.addEventListener('change',() => { selected = picker.value; applyTeamColor(); load(); });
     document.querySelectorAll('[data-lineup-position]').forEach(button => {
       button.addEventListener('click',() => {
         position = button.dataset.lineupPosition;
