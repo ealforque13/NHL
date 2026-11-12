@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:32:23.389Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-12T20:53:12.166622+00:00",
+  "sourceUpdatedAt": "2026-11-12T22:44:05.544Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-12T22:49:45.077984+00:00",
   "forwards": [
     [
       {
@@ -16,10 +16,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anthony Cirelli",
-        "number": 71,
+        "name": "Yanni Gourde",
+        "number": 37,
         "position": "C",
-        "sourcePlayerId": 3842,
+        "sourcePlayerId": 2566,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -50,10 +50,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Yanni Gourde",
-        "number": 37,
+        "name": "Gage Goncalves",
+        "number": 93,
         "position": "RW",
-        "sourcePlayerId": 2566,
+        "sourcePlayerId": 32521,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -122,10 +122,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Cernak",
-        "number": 81,
+        "name": "J.J. Moser",
+        "number": 90,
         "position": "RD",
-        "sourcePlayerId": 2749,
+        "sourcePlayerId": 34680,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -158,10 +158,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "J.J. Moser",
-        "number": 90,
+        "name": "Maxwell Crozier",
+        "number": 24,
         "position": "RD",
-        "sourcePlayerId": 34680,
+        "sourcePlayerId": 28863,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -212,18 +212,18 @@
     ],
     [
       {
-        "name": "Conor Geekie",
-        "number": 14,
+        "name": "Gage Goncalves",
+        "number": 93,
         "position": "SK1",
-        "sourcePlayerId": 31505,
+        "sourcePlayerId": 32521,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Anthony Cirelli",
-        "number": 71,
+        "name": "Conor Geekie",
+        "number": 14,
         "position": "SK2",
-        "sourcePlayerId": 3842,
+        "sourcePlayerId": 31505,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -256,10 +256,10 @@
   "penaltyKill": [
     [
       {
-        "name": "Anthony Cirelli",
-        "number": 71,
+        "name": "Zemgus Girgensons",
+        "number": 28,
         "position": "SK1",
-        "sourcePlayerId": 3842,
+        "sourcePlayerId": 1953,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -280,20 +280,20 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Cernak",
-        "number": 81,
+        "name": "J.J. Moser",
+        "number": 90,
         "position": "SK4",
-        "sourcePlayerId": 2749,
+        "sourcePlayerId": 34680,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Zemgus Girgensons",
-        "number": 28,
+        "name": "Pontus Holmberg",
+        "number": 29,
         "position": "SK1",
-        "sourcePlayerId": 1953,
+        "sourcePlayerId": 29640,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -314,10 +314,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "J.J. Moser",
-        "number": 90,
+        "name": "Maxwell Crozier",
+        "number": 24,
         "position": "SK4",
-        "sourcePlayerId": 34680,
+        "sourcePlayerId": 28863,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -348,6 +348,22 @@
       "position": "IR1",
       "sourcePlayerId": 2456,
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Anthony Cirelli",
+      "number": 71,
+      "position": "IR2",
+      "sourcePlayerId": 3842,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Erik Cernak",
+      "number": 81,
+      "position": "IR3",
+      "sourcePlayerId": 2749,
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
