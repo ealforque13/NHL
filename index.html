@@ -4337,6 +4337,37 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V76 — Lineups adopts the Standings / Stats page width, heading and tab language. */
+#lineups{width:100%;max-width:1320px;margin-inline:auto;min-width:0}
+#lineups .hoist-lineups-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:0 0 12px}
+#lineups .hoist-lineups-page-title{margin:0;color:#fff;font-size:26px;line-height:1.25;font-weight:800;letter-spacing:normal}
+#lineups .hoist-lineups-team-picker{display:flex;align-items:center;justify-content:flex-end;gap:10px;min-width:0}
+#lineups .hoist-lineups-team-picker img{width:38px;height:38px;object-fit:contain;flex:none}
+#lineups .hoist-lineups-team-picker label{font-size:12px;color:#91afd8;font-weight:750}
+#lineups .hoist-lineups-team-picker select{width:190px;max-width:100%;background:#101a2d;color:#edf4ff;border:1px solid #41577a;border-radius:7px;padding:10px;font:inherit}
+#lineups .hoist-lineup-tabs{display:flex!important;align-items:stretch;justify-content:flex-start;gap:0!important;margin:0 0 16px!important;padding:0!important;border-bottom:1px solid rgba(125,155,195,.32);width:100%}
+#lineups .hoist-lineup-tabs button{flex:0 0 auto!important;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;background:transparent!important;color:#91afd8!important;box-shadow:none!important;font-size:14px!important;font-weight:800!important;padding:12px 22px!important;cursor:pointer;white-space:nowrap}
+#lineups .hoist-lineup-tabs button.active{color:#fff!important;border-bottom-color:#e54b61!important;background:rgba(110,145,195,.10)!important;box-shadow:none!important}
+#lineups .hoist-lineup-tabs button:focus-visible{outline:2px solid #91b8ec;outline-offset:-3px}
+#lineups .hoist-lineups-panel{width:100%!important;max-width:none!important;box-sizing:border-box;margin:0!important;min-width:0}
+#lineups .hoist-lineups-info{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 15px;min-height:26px}
+#lineups .hoist-lineup-content{width:100%;min-width:0}
+#lineups .hoist-lineup-card{min-width:0}
+#lineups .hoist-lineup-card-title{color:#fff;font-size:13px;font-weight:800;letter-spacing:.04em;border-bottom:1px solid rgba(125,155,195,.32);padding-bottom:10px;margin-bottom:14px}
+@media(max-width:650px){
+ #lineups .hoist-lineups-heading{gap:8px;margin-bottom:8px}
+ #lineups .hoist-lineups-page-title{font-size:23px}
+ #lineups .hoist-lineups-team-picker{gap:5px}
+ #lineups .hoist-lineups-team-picker img{width:27px;height:27px}
+ #lineups .hoist-lineups-team-picker label{display:none}
+ #lineups .hoist-lineups-team-picker select{width:85px;font-size:12px;padding:7px 4px}
+ #lineups .hoist-lineup-tabs{margin-bottom:8px!important}
+ #lineups .hoist-lineup-tabs button{flex:1 1 33.333%!important;padding:12px 6px!important;font-size:12px!important}
+ #lineups .hoist-lineups-panel{padding:12px 8px!important}
+ #lineups .hoist-lineup-card-title{font-size:12px}
+}
+</style>
 </head>
 
 <body>
@@ -4981,24 +5012,21 @@ body[data-theme="light"] #games .hoist-game-card {
 
 <!-- TEAM LINEUPS -->
 <section id="lineups" class="tab-section hidden">
-  <article class="panel section-panel hoist-lineups-panel">
-    <div class="section-head">
-      <div><div class="eyebrow">HOIST OFFICIAL · HOCKEY INTELLIGENCE</div><h3>NHL Lineups</h3></div>
-    </div>
-    <div class="hoist-lineup-team-bar">
+  <div class="hoist-lineups-heading">
+    <h2 class="hoist-lineups-page-title">NHL Lineups</h2>
+    <div class="hoist-lineups-team-picker">
       <img id="hoist-lineup-logo" alt="" />
-      <div class="hoist-lineup-team-meta">
-        <label for="hoist-lineup-team">SELECT TEAM</label>
-        <select id="hoist-lineup-team" aria-label="Select lineup team"></select>
-        <span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span>
-      </div>
-      <span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span>
+      <label for="hoist-lineup-team">Team</label>
+      <select id="hoist-lineup-team" aria-label="Select lineup team"></select>
     </div>
-    <div class="hoist-lineup-tabs" role="tablist" aria-label="Lineup positions">
-      <button type="button" class="active" data-lineup-position="forwards">Forwards</button>
-      <button type="button" data-lineup-position="defense">Defense</button>
-      <button type="button" data-lineup-position="goalies">Goalies</button>
-    </div>
+  </div>
+  <div class="hoist-lineup-tabs hoist-view-tabs" role="tablist" aria-label="Lineup positions">
+    <button type="button" class="active" data-lineup-position="forwards">Forwards</button>
+    <button type="button" data-lineup-position="defense">Defense</button>
+    <button type="button" data-lineup-position="goalies">Goalies</button>
+  </div>
+  <article class="panel section-panel hoist-lineups-panel">
+    <div class="hoist-lineups-info"><span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span><span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span></div>
     <p id="hoist-lineup-status" class="muted" role="status">Choose a team to view its lineup.</p>
     <div id="hoist-lineup-content" class="hoist-lineup-content"></div>
     <p class="hoist-lineup-disclaimer muted">Player lists are current NHL rosters, not projected or confirmed game-day line combinations. NHL roster information may include extra players.</p>
