@@ -4002,27 +4002,25 @@ body[data-theme="light"] #games .hoist-game-card {
 </style>
 
 <style>
-/* V59 — match the actual rendered desktop Standings selection, including its
-   alternating selected-row shades (rather than a uniform translucent overlay). */
-@media (min-width:1100px) {
-  #stats .hoist-stats-table thead th.hoist-stat-selected {
-    background:#19304b!important;
-    box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26),inset 0 1px 0 rgba(73,181,255,.30)!important;
+/* V60: Standings-style alternating ROW backgrounds, independent of sorting.
+   Keep the V58 sorting outline/arrow and its translucent blue overlay. */
+#stats .hoist-stats-table tbody tr:nth-child(odd) > td,
+#stats .hoist-stats-table tbody tr:nth-child(odd) > td:first-child {
+  background-color:#101b2e!important;
+}
+#stats .hoist-stats-table tbody tr:nth-child(even) > td,
+#stats .hoist-stats-table tbody tr:nth-child(even) > td:first-child {
+  background-color:#1c2a40!important;
+}
+/* Preserve the selected column's original translucent fill on top of row striping. */
+@media(min-width:1100px){
+  #stats .hoist-stats-table tbody tr > td.hoist-stat-selected {
+    background-image:linear-gradient(rgba(73,181,255,.14),rgba(73,181,255,.14))!important;
   }
-  #stats .hoist-stats-table tbody tr:nth-child(odd) > td.hoist-stat-selected {
-    background:#19304b!important;
-    box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26)!important;
-  }
-  #stats .hoist-stats-table tbody tr:nth-child(even) > td.hoist-stat-selected {
-    background:#223d5b!important;
-    box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26)!important;
-  }
-  #stats .hoist-stats-table tbody tr:last-child > td.hoist-stat-selected {
-    border-bottom:1px solid rgba(73,181,255,.30)!important;
-  }
-  #stats .hoist-stats-table th.hoist-stat-selected button,
-  #stats .hoist-stats-table td.hoist-stat-selected {color:#fff!important;-webkit-text-fill-color:#fff!important;}
-  #stats .hoist-stats-table th.hoist-stat-selected .hoist-stat-arrow {color:#49b5ff!important;-webkit-text-fill-color:#49b5ff!important;}
+}
+@media(max-width:650px){
+  #stats .hoist-stats-rail-row:nth-child(odd):not(.hoist-stats-rail-head){background-color:#101b2e!important}
+  #stats .hoist-stats-rail-row:nth-child(even):not(.hoist-stats-rail-head){background-color:#1c2a40!important}
 }
 </style>
 </head>
