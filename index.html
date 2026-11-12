@@ -4162,6 +4162,24 @@ body[data-theme="light"] #games .hoist-game-card {
   /* Preserve the selected sorting column's existing blue outline. */
 }
 </style>
+<style>
+/* V69 — desktop Stats visual adjustments; mobile unaffected. */
+@media (min-width:651px){
+  /* Match the lighter blue of the alternating player rows. */
+  #stats .hoist-stats-table thead th{background-color:#1c2a40!important;}
+  /* Remove filled tab backgrounds, preserving active underline. */
+  #stats > .hoist-stats-filters button,
+  #stats > .hoist-stats-filters button.is-active{background:transparent!important;background-color:transparent!important;}
+  /* Restore full-size team selector, anchored to the panel's top-right. */
+  #stats .hoist-stats-panel{position:relative!important;}
+  #stats .hoist-stats-toolbar{position:absolute!important;top:14px!important;right:20px!important;left:auto!important;width:auto!important;max-width:calc(100% - 40px)!important;z-index:5!important;}
+  #stats .hoist-stats-picker{width:230px!important;min-width:230px!important;max-width:230px!important;}
+  #stats .hoist-stats-picker select{width:100%!important;max-width:100%!important;font-size:13px!important;padding:11px 34px 11px 12px!important;}
+  /* Align RK directly above the centered rank values. */
+  #stats .hoist-stats-league-rank-label{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:25px!important;min-width:25px!important;margin-right:9px!important;text-align:center!important;}
+  #stats .hoist-stats-rank{flex:0 0 25px!important;width:25px!important;min-width:25px!important;display:inline-flex!important;justify-content:center!important;align-items:center!important;text-align:center!important;}
+}
+</style>
 </head>
 
 <body>
@@ -4796,7 +4814,7 @@ body[data-theme="light"] #games .hoist-game-card {
   <article class="panel section-panel hoist-stats-panel">
     <div class="hoist-stats-controls">
     <div class="hoist-stats-toolbar">
-      <div class="hoist-stats-picker"><label for="hoist-stats-team">SELECT TEAM</label><select id="hoist-stats-team" aria-label="Select team for statistics"></select></div>
+      <div class="hoist-stats-picker"><select id="hoist-stats-team" aria-label="Select team for statistics"></select></div>
     </div>
     </div>
     <p id="hoist-stats-status" class="muted" role="status">Loading NHL player statistics…</p>
