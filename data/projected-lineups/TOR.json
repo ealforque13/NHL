@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T17:28:09.180Z",
-  "sourceDescription": "Mark Masters",
-  "cachedAtUTC": "2026-11-12T22:49:47.135091+00:00",
+  "sourceUpdatedAt": "2026-11-12T23:38:23.790Z",
+  "sourceDescription": "David Alter",
+  "cachedAtUTC": "2026-11-12T23:46:49.407648+00:00",
   "forwards": [
     [
       {
@@ -100,6 +100,14 @@
         "sourcePlayerId": 3798,
         "injuryStatus": null,
         "gameTimeDecision": false
+      },
+      {
+        "name": "Zack MacEwen",
+        "number": 19,
+        "position": "RW",
+        "sourcePlayerId": 4489,
+        "injuryStatus": null,
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -150,10 +158,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Chris Tanev",
-        "number": 8,
+        "name": "Cole McWard",
+        "number": null,
         "position": "RD",
-        "sourcePlayerId": 1494,
+        "sourcePlayerId": 30512,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -272,10 +280,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Chris Tanev",
-        "number": 8,
+        "name": "Troy Stecher",
+        "number": 28,
         "position": "SK4",
-        "sourcePlayerId": 1494,
+        "sourcePlayerId": 2702,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -306,10 +314,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Stecher",
-        "number": 28,
+        "name": "Dakota Mermis",
+        "number": 36,
         "position": "SK4",
-        "sourcePlayerId": 2702,
+        "sourcePlayerId": 2914,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -375,10 +383,10 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Zack MacEwen",
-      "number": 19,
+      "name": "Chris Tanev",
+      "number": 8,
       "position": "IR6",
-      "sourcePlayerId": 4489,
+      "sourcePlayerId": 1494,
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T13:54:53.032Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T22:49:22.293115+00:00",
+  "sourceUpdatedAt": "2026-11-12T23:40:42.138Z",
+  "sourceDescription": "Anthony Martineau",
+  "cachedAtUTC": "2026-11-12T23:46:24.440008+00:00",
   "forwards": [
     [
       {
@@ -140,10 +140,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexandre Carrier",
-        "number": 45,
+        "name": "Mike Matheson",
+        "number": 8,
         "position": "RD",
-        "sourcePlayerId": 2732,
+        "sourcePlayerId": 2583,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -158,10 +158,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Engstrom",
-        "number": 42,
+        "name": "Alexandre Carrier",
+        "number": 45,
         "position": "RD",
-        "sourcePlayerId": 36434,
+        "sourcePlayerId": 2732,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -356,14 +356,6 @@
       "position": "IR2",
       "sourcePlayerId": 4479,
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Mike Matheson",
-      "number": 8,
-      "position": "IR3",
-      "sourcePlayerId": 2583,
-      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

@@ -2,36 +2,10 @@
   "team": "WSH",
   "teamName": "Washington Capitals",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T13:55:38.261Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T22:49:57.466636+00:00",
+  "sourceUpdatedAt": "2026-11-12T23:44:09.663Z",
+  "sourceDescription": "Mike Vogel",
+  "cachedAtUTC": "2026-11-12T23:46:59.891076+00:00",
   "forwards": [
-    [
-      {
-        "name": "Alex Tuch",
-        "number": 89,
-        "position": "LW",
-        "sourcePlayerId": 2739,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Dylan Strome",
-        "number": 17,
-        "position": "C",
-        "sourcePlayerId": 2474,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jordan Kyrou",
-        "number": 25,
-        "position": "RW",
-        "sourcePlayerId": 3867,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Aliaksei Protas",
@@ -46,6 +20,58 @@
         "number": 80,
         "position": "C",
         "sourcePlayerId": 2636,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Tuch",
+        "number": 89,
+        "position": "RW",
+        "sourcePlayerId": 2739,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jordan Kyrou",
+        "number": 25,
+        "position": "LW",
+        "sourcePlayerId": 3867,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Strome",
+        "number": 17,
+        "position": "C",
+        "sourcePlayerId": 2474,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Leonard",
+        "number": 9,
+        "position": "RW",
+        "sourcePlayerId": 35645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Boone Jenner",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 1902,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Sourdif",
+        "number": 34,
+        "position": "C",
+        "sourcePlayerId": 29606,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -68,32 +94,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Sourdif",
-        "number": 34,
-        "position": "C",
-        "sourcePlayerId": 29606,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Anthony Beauvillier",
-        "number": 72,
-        "position": "RW",
-        "sourcePlayerId": 2487,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Boone Jenner",
-        "number": 22,
-        "position": "LW",
-        "sourcePlayerId": 1902,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Ilya Protas",
         "number": null,
         "position": "C",
@@ -102,10 +102,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Leonard",
-        "number": 9,
+        "name": "Anthony Beauvillier",
+        "number": 72,
         "position": "RW",
-        "sourcePlayerId": 35645,
+        "sourcePlayerId": 2487,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
