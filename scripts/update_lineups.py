@@ -1,67 +1,140 @@
+
 #!/usr/bin/env python3
-"""Fetch current NHL team rosters and headshots into GitHub Pages JSON.
-No paid API key required. NHL web endpoints are unofficial and may change.
+"""Best-effort Daily Faceoff projected lineups cache.
+
+Only run if automated access is permitted. No login, bypass, or protected API.
+The parser is deliberately conservative: an incomplete page does not replace
+existing JSON. HTML structure must be verified against live pages before use.
 """
 import json
 import os
+import pathlib
+import re
 import time
+import urllib.error
+import urllib.parse
+import urllib.request
+import urllib.robotparser
 from datetime import datetime, timezone
-from pathlib import Path
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup
 
-TEAMS = "ANA BOS BUF CGY CAR CHI COL CBJ DAL DET EDM FLA LAK MIN MTL NSH NJD NYI NYR OTT PHI PIT SJS SEA STL TBL TOR UTA VAN VGK WSH WPG".split()
-OUT = Path(__file__).resolve().parents[1] / "data" / "lineups"
-OUT.mkdir(parents=True, exist_ok=True)
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+TEAMS = {
+    'ANA':'anaheim-ducks','BOS':'boston-bruins','BUF':'buffalo-sabres',
+    'CGY':'calgary-flames','CAR':'carolina-hurricanes','CHI':'chicago-blackhawks',
+    'COL':'colorado-avalanche','CBJ':'columbus-blue-jackets','DAL':'dallas-stars',
+    'DET':'detroit-red-wings','EDM':'edmonton-oilers','FLA':'florida-panthers',
+    'LAK':'los-angeles-kings','MIN':'minnesota-wild','MTL':'montreal-canadiens',
+    'NSH':'nashville-predators','NJD':'new-jersey-devils','NYI':'new-york-islanders',
+    'NYR':'new-york-rangers','OTT':'ottawa-senators','PHI':'philadelphia-flyers',
+    'PIT':'pittsburgh-penguins','SJS':'san-jose-sharks','SEA':'seattle-kraken',
+    'STL':'st-louis-blues','TBL':'tampa-bay-lightning','TOR':'toronto-maple-leafs',
+    'UTA':'utah-mammoth','VAN':'vancouver-canucks','VGK':'vegas-golden-knights',
+    'WSH':'washington-capitals','WPG':'winnipeg-jets',
+}
+BASE = 'https://www.dailyfaceoff.com'
+UA = 'HoistOfficialLineupCache/1.0 (public projected-lineups cache)'
 
-def player(p):
-    def name_part(field):
-        value = p.get(field) or {}
-        return value.get("default", "") if isinstance(value, dict) else str(value)
-    return {
-        "id": p.get("id"),
-        "name": " ".join(filter(None, [name_part("firstName"), name_part("lastName")])),
-        "position": p.get("positionCode") or "",
-        "number": p.get("sweaterNumber"),
-        "headshot": p.get("headshot") or "",
-    }
 
-def fetch(team):
-    url = f"https://api-web.nhle.com/v1/roster/{team}/current"
-    req = Request(url, headers={"User-Agent": "HoistOfficialRosterUpdater/1.0", "Accept": "application/json"})
-    with urlopen(req, timeout=25) as response:
-        return json.load(response)
+def fetch(url):
+    request = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept':'text/html'})
+    with urllib.request.urlopen(request, timeout=25) as response:
+        return response.read().decode('utf-8', errors='replace')
+
+
+def robots_allow(url):
+    parser = urllib.robotparser.RobotFileParser()
+    parser.set_url(BASE + '/robots.txt')
+    parser.read()
+    return parser.can_fetch(UA, url)
+
+
+def roster(code):
+    path = ROOT / 'data' / 'rosters' / f'{code}.json'
+    payload = json.loads(path.read_text(encoding='utf-8'))
+    people = {}
+    for group in ('forwards', 'defensemen', 'goalies'):
+        for p in payload.get(group, []):
+            first = p.get('firstName', {})
+            last = p.get('lastName', {})
+            if isinstance(first, dict): first = first.get('default', '')
+            if isinstance(last, dict): last = last.get('default', '')
+            name = f'{first} {last}'.strip()
+            if not name: continue
+            people[name] = {'name':name, 'id':p.get('id'),
+                            'number':p.get('sweaterNumber'),
+                            'position':p.get('positionCode'),
+                            'headshot':p.get('headshot', '')}
+    return people
+
+
+def extract_section(text, start, stops):
+    m = re.search(start, text, flags=re.I)
+    if not m: raise ValueError('Section not found: ' + start)
+    section = text[m.end():]
+    end = [hit.start() for pat in stops for hit in [re.search(pat, section, flags=re.I)] if hit]
+    return section[:min(end)] if end else section
+
+
+def names_in_section(section, people, limit):
+    # Match whole names from the NHL roster in displayed order. Never infer lines.
+    matches = []
+    for name, person in people.items():
+        pattern = r'(?<!\w)' + re.escape(name).replace(r'\ ', r'\s+') + r'(?!\w)'
+        m = re.search(pattern, section, flags=re.I)
+        if m: matches.append((m.start(), person))
+    matches.sort(key=lambda item: item[0])
+    result = [p for _, p in matches]
+    if len(result) < limit:
+        raise ValueError(f'Incomplete section: {len(result)} of {limit} names found')
+    return result[:limit]
+
+
+def parse(html, code, url):
+    soup = BeautifulSoup(html, 'html.parser')
+    for el in soup(['script','style','noscript']): el.decompose()
+    text = soup.get_text(' ', strip=True)
+    # Restrict to the first set of displayed lines, before cap summary / editorial.
+    forwards = extract_section(text, r'\bForwards\b', [r'\bDefensive Pairings\b', r'\bDefense\b'])
+    defense = extract_section(text, r'\bDefensive Pairings\b', [r'\bClick player jersey\b', r'\bCap Summary\b'])
+    goalies = extract_section(text, r'\bGoalies\b', [r'\bClick player jersey\b', r'\bInjuries\b'])
+    people = roster(code)
+    f = names_in_section(forwards, people, 12)
+    d = names_in_section(defense, people, 6)
+    g = names_in_section(goalies, people, 2)
+    return {'team':code,'type':'projected','status':'projected',
+            'source':'Daily Faceoff','sourceUrl':url,
+            'updatedAt':datetime.now(timezone.utc).isoformat(),
+            'forwards':[f[i:i+3] for i in range(0,12,3)],
+            'defense':[d[i:i+2] for i in range(0,6,2)],
+            'goalies':[[g[0]],[g[1]]]}
+
 
 def main():
-    errors = []
-    for team in TEAMS:
+    # Explicit opt-in until access rights and parser have been verified.
+    if os.environ.get('DAILY_FACEOFF_SCRAPING_ALLOWED') != '1':
+        print('Skipping: set DAILY_FACEOFF_SCRAPING_ALLOWED=1 only after confirming automated access is permitted.')
+        return
+    successes = 0
+    for code, slug in TEAMS.items():
+        url = f'{BASE}/teams/{slug}/line-combinations'
         try:
-            data = fetch(team)
-            if not isinstance(data, dict) or not all(isinstance(data.get(k), list) for k in ("forwards", "defensemen", "goalies")):
-                raise ValueError("Unexpected roster response")
-            roster = {
-                "team": team,
-                "type": "roster",
-                "status": "roster",
-                "source": "NHL Web API",
-                "updatedAt": datetime.now(timezone.utc).isoformat(),
-                "forwards": [player(p) for p in data["forwards"]],
-                "defense": [player(p) for p in data["defensemen"]],
-                "goalies": [player(p) for p in data["goalies"]],
-            }
-            if not any(roster[k] for k in ("forwards", "defense", "goalies")):
-                raise ValueError("Empty roster; refusing to overwrite")
-            path = OUT / f"{team}.json"
-            path.write_text(json.dumps(roster, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-            print(f"{team}: {sum(len(roster[k]) for k in ('forwards','defense','goalies'))} players")
-        except (HTTPError, URLError, TimeoutError, ValueError, OSError) as exc:
-            print(f"WARNING {team}: {exc}")
-            errors.append(team)
-        time.sleep(0.2)
-    if errors:
-        print("Failed teams (previous cached files preserved):", ", ".join(errors))
-        if len(errors) == len(TEAMS):
-            raise SystemExit("No teams updated; check API availability")
+            if not robots_allow(url):
+                print(f'SKIP {code}: robots.txt does not permit access')
+                continue
+            payload = parse(fetch(url), code, url)
+            target = ROOT / 'data' / 'projected-lineups' / f'{code}.json'
+            target.parent.mkdir(parents=True, exist_ok=True)
+            tmp = target.with_suffix('.tmp')
+            tmp.write_text(json.dumps(payload, ensure_ascii=False, separators=(',',':'))+'\n', encoding='utf-8')
+            tmp.replace(target)
+            successes += 1
+            print(f'OK {code}')
+        except Exception as exc:
+            print(f'WARN {code}: {exc}; previous data preserved')
+        time.sleep(1.5)
+    print(f'Updated {successes}/{len(TEAMS)} projected lineups')
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
     main()
