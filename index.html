@@ -4830,6 +4830,53 @@ html body #lineups .hoist-lineup-group {
   #lineups .hoist-lineup-pp .hoist-lineup-avatar::after {font-size:8px;}
   #lineups .hoist-lineup-pp .hoist-lineup-avatar::before {font-size:37px !important;}
 }
+
+/* 2026-11-12: front-of-jersey portraits. Surname nameplate, crest and chest stripe. */
+#lineups .hoist-lineup-group .hoist-lineup-avatar,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar {
+  background-color:var(--hoist-lineup-team-color,#243754) !important;
+  background-image:var(--hoist-jersey-front-stripes,none) !important;
+  background-position:center !important;
+  background-repeat:no-repeat !important;
+  background-size:100% 100% !important;
+}
+/* Replace old large jersey numerals with the club crest behind the portrait. */
+#lineups .hoist-lineup-group .hoist-lineup-avatar::before,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::before {
+  content:'' !important;
+  position:absolute !important;
+  inset:26% 5% 5% !important;
+  display:block !important;
+  background:var(--hoist-lineup-front-crest,none) center center / contain no-repeat !important;
+  transform:none !important;
+  opacity:.82 !important;
+  filter:none !important;
+  -webkit-text-stroke:0 !important;
+  text-shadow:none !important;
+  z-index:0 !important;
+  pointer-events:none !important;
+}
+/* Keep the jersey nameplate above the player's face, without a number in the square. */
+#lineups .hoist-lineup-group .hoist-lineup-avatar::after,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::after {
+  content:attr(data-surname) !important;
+  top:5px !important;
+  z-index:3 !important;
+  color:var(--hoist-jersey-front-letter,#fff) !important;
+  -webkit-text-stroke:.45px var(--hoist-jersey-number-outline,#14243a) !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar img,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar img {
+  position:relative !important;
+  z-index:1 !important;
+  background:transparent !important;
+}
+@media(max-width:650px) {
+  #lineups .hoist-lineup-group .hoist-lineup-avatar::before,
+  #lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::before {
+    inset:28% 4% 4% !important;
+  }
+}
 </style>
 </head>
 
@@ -6399,6 +6446,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!page) return;
       page.style.setProperty('--hoist-lineup-team-color',teamColors[selected] || '#243754');
       page.style.removeProperty('--hoist-lineup-watermark');
+      // Official crest, behind the player; jersey-front chest striping (not back-of-jersey stripes).
+      page.style.setProperty('--hoist-lineup-front-crest', `url("https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg")`);
+      // Montreal's distinctive broad blue chest band with thin white borders.
+      // Other teams retain their club colour and a subtle contrasting jersey-inspired chest band.
+      const chestBand = selected === 'MTL' ? '#003087' : (jerseyTrim[selected] || '#ffffff');
+      const bandEdge = selected === 'MTL' ? '#ffffff' : (jerseyOutline[selected] || '#ffffff');
+      page.style.setProperty('--hoist-jersey-front-stripes',
+        `linear-gradient(to bottom,transparent 0%,transparent 52%,${bandEdge} 52%,${bandEdge} 54%,${chestBand} 54%,${chestBand} 76%,${bandEdge} 76%,${bandEdge} 78%,transparent 78%)`);
+      page.style.setProperty('--hoist-jersey-front-letter', '#ffffff');
       page.style.setProperty('--hoist-jersey-trim', jerseyTrim[selected] || '#ffffff');
       page.style.setProperty('--hoist-jersey-number-outline', jerseyOutline[selected] || '#15243a');
     };
