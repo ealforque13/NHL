@@ -4777,6 +4777,59 @@ html body #lineups .hoist-lineup-group {
     -webkit-text-stroke:1px rgba(16,25,42,.85) !important;
   }
 }
+
+/* Jersey-back portrait squares: surname above slightly smaller stitched numerals. */
+#lineups .hoist-lineup-group .hoist-lineup-avatar,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar {
+  background-color:var(--hoist-lineup-team-color,#243754) !important;
+  background-image:linear-gradient(to bottom,
+    transparent 0%,transparent 73%,
+    var(--hoist-jersey-trim,#fff) 73%,var(--hoist-jersey-trim,#fff) 76%,
+    var(--hoist-lineup-team-color,#243754) 76%,var(--hoist-lineup-team-color,#243754) 82%,
+    var(--hoist-jersey-trim,#fff) 82%,var(--hoist-jersey-trim,#fff) 85%,
+    transparent 85%) !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar::before,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::before {
+  font-family:Impact,'Arial Narrow','Arial Black',sans-serif !important;
+  font-size:clamp(42px,5.8vw,82px) !important;
+  transform:translateY(10%) scaleX(.92) !important;
+  letter-spacing:-.045em !important;
+  opacity:.82 !important;
+  -webkit-text-stroke:2px var(--hoist-jersey-number-outline,#14243a) !important;
+  text-shadow:1px 1px 0 var(--hoist-jersey-number-outline,#14243a),-1px -1px 0 var(--hoist-jersey-number-outline,#14243a) !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar::after,
+#lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::after {
+  content:attr(data-surname);
+  position:absolute;
+  top:5px;left:2px;right:2px;
+  z-index:3;
+  color:#fff;
+  font-family:Impact,'Arial Narrow','Arial Black',sans-serif;
+  font-weight:900;
+  font-size:clamp(10px,1.3vw,16px);
+  letter-spacing:.065em;
+  line-height:1.1;
+  text-align:center;
+  text-transform:uppercase;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:clip;
+  -webkit-text-stroke:.45px var(--hoist-jersey-number-outline,#14243a);
+  text-shadow:0 1px 2px var(--hoist-jersey-number-outline,#14243a),1px 1px 0 var(--hoist-jersey-number-outline,#14243a);
+  pointer-events:none;
+}
+@media(max-width:650px) {
+  #lineups .hoist-lineup-group .hoist-lineup-avatar::before,
+  #lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::before {font-size:47px !important;transform:translateY(11%) scaleX(.9) !important;-webkit-text-stroke:1.5px var(--hoist-jersey-number-outline,#14243a) !important;}
+  #lineups .hoist-lineup-group .hoist-lineup-avatar::after,
+  #lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::after {font-size:10px;top:4px;letter-spacing:.025em;}
+}
+@media(max-width:380px) {
+  #lineups .hoist-lineup-pp .hoist-lineup-avatar::after {font-size:8px;}
+  #lineups .hoist-lineup-pp .hoist-lineup-avatar::before {font-size:37px !important;}
+}
 </style>
 </head>
 
@@ -6174,7 +6227,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return `<div class="hoist-lineup-player">
       <div class="hoist-lineup-player-position">${esc(positionText)}</div>
       <div class="hoist-lineup-avatar-wrap">
-        <div class="hoist-lineup-avatar" data-jersey="${number !== null && number !== undefined && number !== '' ? esc(number) : ''}">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
+        <div class="hoist-lineup-avatar" data-jersey="${number !== null && number !== undefined && number !== '' ? esc(number) : ''}" data-surname="${esc(String(name).trim().split(/\s+/).slice(1).join(' ') || String(name).trim())}">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
       </div>
       <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name)}</span><span class="hoist-lineup-name-mobile">${esc(mobilePlayerName(name))}</span></div>
       <div class="hoist-lineup-player-jersey">${numberHtml.trim()}</div>
@@ -6338,11 +6391,16 @@ document.addEventListener('DOMContentLoaded', function () {
       TBL:'#002868',TOR:'#00205b',UTA:'#69b3e7',VAN:'#00843d',VGK:'#b4975a',
       WSH:'#c8102e',WPG:'#041e42'
     };
+    // Contrasting trim and outline evoke each club's jersey-back details.
+    const jerseyTrim = {ANA:'#f9f4e8',BOS:'#ffb81c',BUF:'#ffb81c',CGY:'#f1be48',CAR:'#ffffff',CHI:'#ffffff',COL:'#a2aaad',CBJ:'#ce1126',DAL:'#ffffff',DET:'#ffffff',EDM:'#ffffff',FLA:'#f9c846',LAK:'#ffffff',MIN:'#eaaa00',MTL:'#ffffff',NSH:'#ffffff',NJD:'#ffffff',NYI:'#f47d30',NYR:'#ffffff',OTT:'#c8a45d',PHI:'#ffffff',PIT:'#ffffff',SEA:'#e84a5f',SJS:'#e57200',STL:'#fcb514',TBL:'#ffffff',TOR:'#ffffff',UTA:'#ffffff',VAN:'#ffffff',VGK:'#ffffff',WSH:'#ffffff',WPG:'#ffffff'};
+    const jerseyOutline = {BOS:'#111111',BUF:'#003087',CGY:'#c8102e',COL:'#6f263d',EDM:'#00205b',FLA:'#c8102e',LAK:'#111111',MTL:'#003087',NJD:'#111111',NYR:'#ce1126',PHI:'#111111',PIT:'#111111',SEA:'#001628',STL:'#002f87',TOR:'#00205b',VAN:'#00205b',VGK:'#333f42',WSH:'#002d62'};
     const applyTeamColor = () => {
       const page = el('lineups');
       if (!page) return;
       page.style.setProperty('--hoist-lineup-team-color',teamColors[selected] || '#243754');
       page.style.removeProperty('--hoist-lineup-watermark');
+      page.style.setProperty('--hoist-jersey-trim', jerseyTrim[selected] || '#ffffff');
+      page.style.setProperty('--hoist-jersey-number-outline', jerseyOutline[selected] || '#15243a');
     };
     applyTeamColor();
     picker.addEventListener('change',() => { selected = picker.value; applyTeamColor(); load(); });
