@@ -4225,6 +4225,44 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V72 — mobile Stats: flush table, external-looking team picker and active sorting. */
+@media(max-width:650px){
+  #stats{position:relative!important}
+  #stats > .hoist-stats-filters{margin-bottom:0!important;padding-bottom:0!important;min-height:40px!important;align-items:center!important}
+  #stats .hoist-stats-panel{padding-top:0!important;margin-top:0!important}
+  #stats .hoist-stats-controls{height:0!important;min-height:0!important;padding:0!important;margin:0!important}
+  #stats .hoist-stats-toolbar{position:absolute!important;top:-43px!important;right:0!important;left:auto!important;margin:0!important;z-index:15!important}
+  #stats .hoist-stats-picker{width:120px!important;min-width:0!important;max-width:120px!important}
+  #stats .hoist-stats-picker select{width:100%!important;min-width:0!important;max-width:100%!important}
+  #stats #hoist-stats-status:empty{display:none!important}
+  #stats #hoist-stats-content{margin-top:0!important;padding-top:0!important}
+  #stats .hoist-stats-fixed-shell{margin-top:0!important}
+  /* Restore the desktop translucent blue selection over alternating row colours. */
+  #stats .hoist-stats-table thead th.hoist-stat-selected,
+  #stats .hoist-stats-table tbody td.hoist-stat-selected,
+  #stats .hoist-stats-player-rail .hoist-stats-rail-row.hoist-stat-selected{
+    background-image:linear-gradient(rgba(73,181,255,.14),rgba(73,181,255,.14))!important;
+    box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26)!important;
+  }
+  #stats .hoist-stats-table thead th.hoist-stat-selected{
+    box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26),inset 0 1px 0 rgba(73,181,255,.30)!important;
+  }
+  #stats .hoist-stats-table thead th.hoist-stat-selected .hoist-stat-arrow{color:#49b5ff!important;-webkit-text-fill-color:#49b5ff!important}
+}
+</style>
+<style>
+/* V73 — mobile Stats League/Team tabs: remove filled light-blue backgrounds,
+   retain the active underline and leave table sorting highlights untouched. */
+@media (max-width:650px){
+  #stats > .hoist-stats-filters button,
+  #stats > .hoist-stats-filters button.is-active{
+    background:transparent!important;
+    background-color:transparent!important;
+    background-image:none!important;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -5777,18 +5815,18 @@ document.addEventListener('DOMContentLoaded', function () {
  let leaguePage=1;
  const pageSize=50;
  const pagination=(total)=>{const pages=Math.ceil(total/pageSize);if(pages<=1)return '';return `<nav class="hoist-stats-pagination" aria-label="League stats pages"><button type="button" data-stats-page="prev" ${leaguePage===1?'disabled':''}>‹ Previous</button><span>Page ${leaguePage} of ${pages} · ${total} players</span><button type="button" data-stats-page="next" ${leaguePage===pages?'disabled':''}>Next ›</button></nav>`;};
- async function render(){const seq=++sequence;const league=mode==='league';el('hoist-stats-team').closest('.hoist-stats-picker').hidden=league;el('hoist-stats-status').textContent=league?'Loading league-wide player statistics…':'Loading team player statistics…';el('hoist-stats-content').innerHTML='';try{
+ async function render(){const previousScroll=el('hoist-stats-content')?.querySelector('.hoist-stats-table-wrap')?.scrollLeft??0;const seq=++sequence;const league=mode==='league';el('hoist-stats-team').closest('.hoist-stats-picker').hidden=league;el('hoist-stats-status').textContent=league?'Loading league-wide player statistics…':'Loading team player statistics…';el('hoist-stats-content').innerHTML='';try{
  let players,heading;
  if(league){const settled=await Promise.allSettled(teams.map(([code])=>getTeam(code)));if(seq!==sequence)return;players=settled.flatMap(r=>r.status==='fulfilled'?r.value:[]);heading='2026–27 NHL Skater Leaders';const missing=settled.filter(r=>r.status==='rejected').length;el('hoist-stats-status').textContent=missing?`${missing} team file(s) unavailable.`:'';}
  else{const code=el('hoist-stats-team').value;players=await getTeam(code);if(seq!==sequence)return;heading=`2026–27 ${teamName[code]} — Player Stats`;el('hoist-stats-status').textContent='';}
  players.sort((a,b)=>{const av=numeric(a,sortKey),bv=numeric(b,sortKey);const cmp=sortKey==='name'?name(a).localeCompare(name(b)):av==null?bv==null?0:1:bv==null?-1:sortDirection*(av-bv);return cmp||(numeric(b,'points')??0)-(numeric(a,'points')??0)||name(a).localeCompare(name(b));});
  const pages=Math.max(1,Math.ceil(players.length/pageSize));leaguePage=Math.min(leaguePage,pages);const offset=league?(leaguePage-1)*pageSize:0;const visible=league?players.slice(offset,offset+pageSize):players;
  el('hoist-stats-content').innerHTML=`<h4 class="hoist-stats-subtitle">${esc(heading)}</h4>${players.length?table(visible,offset):'<p class="muted">No player statistics available yet.</p>'}${league?pagination(players.length):''}`;
- requestAnimationFrame(syncStatsPlayerRail);
+ requestAnimationFrame(()=>{const wrap=el('hoist-stats-content')?.querySelector('.hoist-stats-table-wrap');if(wrap)wrap.scrollLeft=previousScroll;syncStatsPlayerRail();});
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
  document.addEventListener('DOMContentLoaded',()=>{if(!el('stats'))return;const picker=el('hoist-stats-team');const sortedTeams=teams.slice().sort((a,b)=>a[1].localeCompare(b[1]));
  const syncTeamLabels=()=>{const mobile=window.matchMedia('(max-width:650px)').matches;const current=picker.value;picker.innerHTML=sortedTeams.map(([code,n])=>`<option value="${code}">${esc(mobile?code:n)}</option>`).join('');if(current)picker.value=current;};
- syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;leaguePage=1;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',render);el('hoist-stats-content').addEventListener('click',event=>{const pageButton=event.target.closest('[data-stats-page]');if(pageButton){if(pageButton.disabled)return;leaguePage=Math.max(1,leaguePage+(pageButton.dataset.statsPage==='next'?1:-1));render();return;}const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=key==='name'?1:-1;}leaguePage=1;render()});render()});
+ syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;leaguePage=1;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',render);el('hoist-stats-content').addEventListener('click',event=>{const pageButton=event.target.closest('[data-stats-page]');if(pageButton){if(pageButton.disabled)return;leaguePage=Math.max(1,leaguePage+(pageButton.dataset.statsPage==='next'?1:-1));render();return;}const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=key==='name'?1:-1;}leaguePage=1;const viewportY=window.scrollY;render().then(()=>window.scrollTo({top:viewportY,behavior:'instant'}))});render()});
 })();
 </script>
 
