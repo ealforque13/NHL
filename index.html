@@ -3845,6 +3845,17 @@ body[data-theme="light"] #games .hoist-game-card {
   opacity:.45;
 }
 </style>
+
+<style>
+/* Stats V51 — optically center the player portrait within its existing circular crop. */
+@media(min-width:651px){
+ #stats .hoist-stats-jersey.hoist-headshot-circle img.hoist-stats-headshot{object-position:54% bottom!important;transform:translateX(2px)!important}
+}
+/* League rank and player header: separate visual headings, preserve existing table geometry. */
+#stats .hoist-stats-league-rank-label{display:inline-block;min-width:25px;margin-right:10px;text-align:right}
+#stats .hoist-stats-player-header-label{display:inline-block}
+@media(max-width:650px){#stats .hoist-stats-league-rank-label{min-width:19px;margin-right:5px}}
+</style>
 </head>
 
 <body>
@@ -5325,7 +5336,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const raw=p._hoistPosition??p.positionCode??p.positionAbbrev??p.position??p.pos??'';
    const value=typeof raw==='object'?(raw.abbrev??raw.code??raw.name??''):raw;
    const key=String(value||'').toUpperCase();
-   return ({C:'Centre',L:'Left Wing',LW:'Left Wing',R:'Right Wing',RW:'Right Wing',D:'Defence',LD:'Defence',RD:'Defence',G:'Goaltender'})[key]||String(value||'—');
+   return ({C:'C',L:'LW',LW:'LW',R:'RW',RW:'RW',D:'D',LD:'D',RD:'D',G:'G',CENTER:'C',CENTRE:'C',LEFTWING:'LW',RIGHTWING:'RW',DEFENSE:'D',DEFENCE:'D'})[key]||String(value||'—');
  };
  const statsHeadshot=p=>{
    const id=p.playerId??p.id??p.playerID;
@@ -5338,8 +5349,8 @@ document.addEventListener('DOMContentLoaded', function () {
  };
  const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
- const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
- function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${key==='name' && mode==='league'?label:esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
+ function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RANK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
  function syncStatsPlayerRail(){
    const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
    if(!shell)return;
