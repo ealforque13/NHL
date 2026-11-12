@@ -2,9 +2,9 @@
   "team": "NSH",
   "teamName": "Nashville Predators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T02:39:06.626Z",
-  "sourceDescription": "Brooks Bratten",
-  "cachedAtUTC": "2026-11-12T13:55:53.387856+00:00",
+  "sourceUpdatedAt": "2026-11-12T14:40:59.242Z",
+  "sourceDescription": "Last Game (2026-11-11)",
+  "cachedAtUTC": "2026-11-12T14:57:48.552538+00:00",
   "forwards": [
     [
       {
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Justus Annunen",
-      "number": 29,
+      "name": "Juuse Saros",
+      "number": 74,
       "position": "G1",
-      "sourcePlayerId": 29146,
+      "sourcePlayerId": 2557,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Juuse Saros",
-      "number": 74,
+      "name": "Justus Annunen",
+      "number": 29,
       "position": "G2",
-      "sourcePlayerId": 2557,
+      "sourcePlayerId": 29146,
       "injuryStatus": null,
       "gameTimeDecision": false
     }

@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T01:46:35.879Z",
-  "sourceDescription": "@EdmontonOilers",
-  "cachedAtUTC": "2026-11-12T13:55:40.559601+00:00",
+  "sourceUpdatedAt": "2026-11-12T14:36:55.072Z",
+  "sourceDescription": "Last Game (2026-11-11)",
+  "cachedAtUTC": "2026-11-12T14:57:35.912944+00:00",
   "forwards": [
     [
       {
@@ -34,10 +34,10 @@
     ],
     [
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
+        "name": "Colton Dach",
+        "number": 34,
         "position": "LW",
-        "sourcePlayerId": 2385,
+        "sourcePlayerId": 32903,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,10 +60,10 @@
     ],
     [
       {
-        "name": "Colton Dach",
-        "number": 34,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "LW",
-        "sourcePlayerId": 32903,
+        "sourcePlayerId": 2385,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -76,10 +76,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mathieu Joseph",
-        "number": 21,
+        "name": "Trent Frederic",
+        "number": 10,
         "position": "RW",
-        "sourcePlayerId": 3891,
+        "sourcePlayerId": 2662,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -102,10 +102,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trent Frederic",
-        "number": 10,
+        "name": "Mathieu Joseph",
+        "number": 21,
         "position": "RW",
-        "sourcePlayerId": 2662,
+        "sourcePlayerId": 3891,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Tristan Jarry",
-      "number": 35,
+      "name": "Devon Levi",
+      "number": 27,
       "position": "G1",
-      "sourcePlayerId": 2626,
+      "sourcePlayerId": 33010,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Devon Levi",
-      "number": 27,
+      "name": "Tristan Jarry",
+      "number": 35,
       "position": "G2",
-      "sourcePlayerId": 33010,
+      "sourcePlayerId": 2626,
       "injuryStatus": null,
       "gameTimeDecision": false
     }

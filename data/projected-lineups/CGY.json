@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-10T17:45:07.692Z",
-  "sourceDescription": "Pat Steinberg",
-  "cachedAtUTC": "2026-11-12T13:55:29.904598+00:00",
+  "sourceUpdatedAt": "2026-11-12T14:35:01.978Z",
+  "sourceDescription": "Last Game (2026-11-11)",
+  "cachedAtUTC": "2026-11-12T14:57:25.351881+00:00",
   "forwards": [
     [
       {
@@ -356,14 +356,6 @@
       "position": "IR2",
       "sourcePlayerId": 27807,
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Samuel Honzek",
-      "number": 29,
-      "position": "IR3",
-      "sourcePlayerId": 37733,
-      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

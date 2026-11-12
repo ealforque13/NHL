@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T02:18:07.414Z",
-  "sourceDescription": "Utah Mammoth",
-  "cachedAtUTC": "2026-11-12T13:56:16.865507+00:00",
+  "sourceUpdatedAt": "2026-11-12T14:39:17.654Z",
+  "sourceDescription": "Last Game (2026-11-11)",
+  "cachedAtUTC": "2026-11-12T14:58:11.896079+00:00",
   "forwards": [
     [
       {
@@ -170,10 +170,10 @@
   "powerPlay": [
     [
       {
-        "name": "Anders Lee",
-        "number": 72,
+        "name": "Barrett Hayton",
+        "number": 27,
         "position": "SK1",
-        "sourcePlayerId": 2071,
+        "sourcePlayerId": 4796,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -220,18 +220,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Barrett Hayton",
-        "number": 27,
+        "name": "Michael Carcone",
+        "number": 53,
         "position": "SK2",
-        "sourcePlayerId": 4796,
+        "sourcePlayerId": 3864,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Carcone",
-        "number": 53,
+        "name": "Anders Lee",
+        "number": 72,
         "position": "SK3",
-        "sourcePlayerId": 3864,
+        "sourcePlayerId": 2071,
         "injuryStatus": null,
         "gameTimeDecision": false
       },

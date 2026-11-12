@@ -2,9 +2,9 @@
   "team": "NYR",
   "teamName": "New York Rangers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T16:44:22.324Z",
-  "sourceDescription": "Mollie Walker",
-  "cachedAtUTC": "2026-11-12T13:55:57.661849+00:00",
+  "sourceUpdatedAt": "2026-11-12T14:34:27.541Z",
+  "sourceDescription": "Last Game (2026-11-11)",
+  "cachedAtUTC": "2026-11-12T14:57:52.761049+00:00",
   "forwards": [
     [
       {
@@ -244,10 +244,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Scott Morrow",
-        "number": 60,
+        "name": "Adam Fox",
+        "number": 23,
         "position": "SK5",
-        "sourcePlayerId": 34620,
+        "sourcePlayerId": 27251,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
