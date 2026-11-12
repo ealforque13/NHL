@@ -4742,7 +4742,6 @@ html body #lineups .hoist-lineup-group {
   #lineups .hoist-lineup-name-mobile { display:inline !important; }
 }
 
-<style>
 /* HUT-style jersey numerals behind portraits; no team crest watermark. */
 #lineups .hoist-lineup-group .hoist-lineup-avatar::before,
 #lineups .hoist-lineup-roster-grid .hoist-lineup-avatar::before {
@@ -4778,7 +4777,6 @@ html body #lineups .hoist-lineup-group {
     -webkit-text-stroke:1px rgba(16,25,42,.85) !important;
   }
 }
-</style>
 </style>
 </head>
 
@@ -6344,7 +6342,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const page = el('lineups');
       if (!page) return;
       page.style.setProperty('--hoist-lineup-team-color',teamColors[selected] || '#243754');
-      page.style.setProperty('--hoist-lineup-watermark',`url("https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg")`);
+      page.style.removeProperty('--hoist-lineup-watermark');
     };
     applyTeamColor();
     picker.addEventListener('change',() => { selected = picker.value; applyTeamColor(); load(); });
