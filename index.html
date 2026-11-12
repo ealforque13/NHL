@@ -4478,8 +4478,8 @@ body[data-theme="light"] #games .hoist-game-card {
     
     <div class="hoist-stats-controls">
     <div class="hoist-stats-filters" role="group" aria-label="Stats scope">
-      <button type="button" class="is-active" data-stats-mode="team" aria-pressed="true">Team</button>
-      <button type="button" data-stats-mode="league" aria-pressed="false">League</button>
+      <button type="button" class="is-active" data-stats-mode="league" aria-pressed="true">League</button>
+      <button type="button" data-stats-mode="team" aria-pressed="false">Team</button>
     </div>
     <div class="hoist-stats-toolbar">
       <div class="hoist-stats-picker"><label for="hoist-stats-team">SELECT TEAM</label><select id="hoist-stats-team" aria-label="Select team for statistics"></select></div>
@@ -5289,7 +5289,7 @@ document.addEventListener('DOMContentLoaded', function () {
  const teams=[['ANA','Anaheim Ducks'],['BOS','Boston Bruins'],['BUF','Buffalo Sabres'],['CGY','Calgary Flames'],['CAR','Carolina Hurricanes'],['CHI','Chicago Blackhawks'],['COL','Colorado Avalanche'],['CBJ','Columbus Blue Jackets'],['DAL','Dallas Stars'],['DET','Detroit Red Wings'],['EDM','Edmonton Oilers'],['FLA','Florida Panthers'],['LAK','Los Angeles Kings'],['MIN','Minnesota Wild'],['MTL','Montreal Canadiens'],['NSH','Nashville Predators'],['NJD','New Jersey Devils'],['NYI','New York Islanders'],['NYR','New York Rangers'],['OTT','Ottawa Senators'],['PHI','Philadelphia Flyers'],['PIT','Pittsburgh Penguins'],['SJS','San Jose Sharks'],['SEA','Seattle Kraken'],['STL','St. Louis Blues'],['TBL','Tampa Bay Lightning'],['TOR','Toronto Maple Leafs'],['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],['WSH','Washington Capitals'],['WPG','Winnipeg Jets']];
  const teamName=Object.fromEntries(teams);
  const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['shots','SOG'],['shootingPctg','S%']];
- const cache=new Map();let mode='team',sequence=0,sortKey='points',sortDirection=-1;
+ const cache=new Map();let mode='league',sequence=0,sortKey='points',sortDirection=-1;
  const name=p=>[p.firstName?.default||p.firstName||'',p.lastName?.default||p.lastName||''].join(' ').trim()||p.name||'Unknown player';
  const numeric=(p,k)=>Number(p[k]??0);
  const display=(p,k)=>p[k] == null?'—':k==='shootingPctg'?Number(p[k]).toFixed(1):String(p[k]);
@@ -5329,14 +5329,14 @@ document.addEventListener('DOMContentLoaded', function () {
  };
  const statsHeadshot=p=>{
    const id=p.playerId??p.id??p.playerID;
-   if(id==null)return `<span class="hoist-stats-headshot-fallback" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
+   if(id==null)return `<span class="hoist-stats-headshot-fallback" style="--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
    const club=encodeURIComponent(p.team);
    const playerId=encodeURIComponent(String(id));
    const current=`https://assets.nhle.com/mugs/nhl/20262027/${club}/${playerId}.png`;
    const previous=`https://assets.nhle.com/mugs/nhl/20252026/${club}/${playerId}.png`;
-   return `<img class="hoist-stats-headshot" src="${current}" alt="" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${previous}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"><span class="hoist-stats-headshot-fallback" style="display:none" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
+   return `<img class="hoist-stats-headshot hoist-team-headshot" style="--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}" src="${current}" alt="" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${previous}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"><span class="hoist-stats-headshot-fallback" style="display:none;--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
  };
- const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'}">${mode==='league'?statsHeadshot(p):esc(jersey(p))}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
+ const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
  function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name','PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
