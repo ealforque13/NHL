@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T11:57:17.320Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T14:57:54.869593+00:00",
+  "sourceUpdatedAt": "2026-11-12T15:45:24.609Z",
+  "sourceDescription": "Bruce Garrioch",
+  "cachedAtUTC": "2026-11-12T16:03:08.546535+00:00",
   "forwards": [
     [
       {
@@ -34,10 +34,10 @@
     ],
     [
       {
-        "name": "Nick Cousins",
-        "number": 21,
+        "name": "Philip Tomasino",
+        "number": 53,
         "position": "LW",
-        "sourcePlayerId": 1893,
+        "sourcePlayerId": 29220,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,10 +60,10 @@
     ],
     [
       {
-        "name": "Michael Amadio",
-        "number": 22,
+        "name": "Claude Giroux",
+        "number": 28,
         "position": "LW",
-        "sourcePlayerId": 2910,
+        "sourcePlayerId": 1126,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -76,20 +76,20 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Claude Giroux",
-        "number": 28,
+        "name": "Michael Amadio",
+        "number": 22,
         "position": "RW",
-        "sourcePlayerId": 1126,
+        "sourcePlayerId": 2910,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Philip Tomasino",
-        "number": 53,
+        "name": "Sammy Blais",
+        "number": 79,
         "position": "LW",
-        "sourcePlayerId": 29220,
+        "sourcePlayerId": 2848,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -325,20 +325,20 @@
   ],
   "goalies": [
     {
-      "name": "Linus Ullmark",
-      "number": 35,
-      "position": "G1",
-      "sourcePlayerId": 2534,
-      "injuryStatus": null,
-      "gameTimeDecision": true
-    },
-    {
       "name": "Samuel Ersson",
       "number": 33,
-      "position": "G2",
+      "position": "G1",
       "sourcePlayerId": 29149,
       "injuryStatus": null,
       "gameTimeDecision": false
+    },
+    {
+      "name": "Linus Ullmark",
+      "number": 35,
+      "position": "G2",
+      "sourcePlayerId": 2534,
+      "injuryStatus": null,
+      "gameTimeDecision": true
     }
   ],
   "injuries": [
@@ -371,6 +371,14 @@
       "number": 35,
       "position": "IR4",
       "sourcePlayerId": 2534,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Nick Cousins",
+      "number": 21,
+      "position": "IR5",
+      "sourcePlayerId": 1893,
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

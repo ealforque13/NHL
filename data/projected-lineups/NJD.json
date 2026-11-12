@@ -2,36 +2,10 @@
   "team": "NJD",
   "teamName": "New Jersey Devils",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T14:01:38.356Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T14:57:46.440811+00:00",
+  "sourceUpdatedAt": "2026-11-12T15:46:50.414Z",
+  "sourceDescription": "Amanda Stein",
+  "cachedAtUTC": "2026-11-12T16:03:00.173241+00:00",
   "forwards": [
-    [
-      {
-        "name": "Timo Meier",
-        "number": 28,
-        "position": "LW",
-        "sourcePlayerId": 2480,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Nico Hischier",
-        "number": 13,
-        "position": "C",
-        "sourcePlayerId": 2781,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Luke Evangelista",
-        "number": 77,
-        "position": "RW",
-        "sourcePlayerId": 29787,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Arseny Gritsyuk",
@@ -60,18 +34,44 @@
     ],
     [
       {
-        "name": "Evan Rodrigues",
-        "number": 17,
+        "name": "Timo Meier",
+        "number": 28,
         "position": "LW",
-        "sourcePlayerId": 2620,
+        "sourcePlayerId": 2480,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Cody Glass",
-        "number": 12,
+        "name": "Nico Hischier",
+        "number": 13,
         "position": "C",
-        "sourcePlayerId": 2785,
+        "sourcePlayerId": 2781,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Luke Evangelista",
+        "number": 77,
+        "position": "RW",
+        "sourcePlayerId": 29787,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Stefan Noesen",
+        "number": 11,
+        "position": "LW",
+        "sourcePlayerId": 1842,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Evan Rodrigues",
+        "number": 17,
+        "position": "C",
+        "sourcePlayerId": 2620,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -86,18 +86,26 @@
     ],
     [
       {
-        "name": "Amadeus Lombardi",
-        "number": 93,
+        "name": "Jesper Boqvist",
+        "number": 70,
         "position": "LW",
-        "sourcePlayerId": 31074,
+        "sourcePlayerId": 28107,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jesper Boqvist",
-        "number": 70,
+        "name": "Cody Glass",
+        "number": 12,
+        "position": "C",
+        "sourcePlayerId": 2785,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lenni Hameenaho",
+        "number": 29,
         "position": "RW",
-        "sourcePlayerId": 28107,
+        "sourcePlayerId": 38454,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -298,20 +306,20 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brett Pesce",
-        "number": 22,
+        "name": "Brenden Dillon",
+        "number": 5,
         "position": "SK3",
-        "sourcePlayerId": 2541,
+        "sourcePlayerId": 1575,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Johnathan Kovacevic",
-        "number": 8,
+        "name": "Brett Pesce",
+        "number": 22,
         "position": "SK4",
-        "sourcePlayerId": 28131,
+        "sourcePlayerId": 2541,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],
