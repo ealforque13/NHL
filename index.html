@@ -4297,6 +4297,46 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V75 — match the selected Standings view tab on both screen sizes. */
+#stats > .hoist-stats-filters .hoist-view-tab.is-active{
+  background:rgba(110,145,195,.10)!important;
+  background-color:rgba(110,145,195,.10)!important;
+  background-image:none!important;
+  color:#fff!important;
+  border-bottom-color:#8fc6ff!important;
+}
+@media(max-width:650px){
+  /* Unframed abbreviation picker, placed above the tab underline. */
+  #stats .hoist-stats-toolbar{
+    top:-60px!important;
+    right:0!important;
+  }
+  #stats .hoist-stats-picker,
+  #stats .hoist-stats-picker select{
+    background:transparent!important;
+    background-color:transparent!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    outline-offset:2px;
+  }
+  #stats .hoist-stats-picker select{
+    appearance:none!important;
+    -webkit-appearance:none!important;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")!important;
+    background-repeat:no-repeat!important;
+    background-position:right 6px center!important;
+    background-size:10px 7px!important;
+    color:#fff!important;
+    padding:6px 20px 6px 8px!important;
+  }
+  #stats .hoist-stats-picker select option{
+    background:#101b2e!important;
+    color:#fff!important;
+  }
+}
+</style>
 </head>
 
 <body>
