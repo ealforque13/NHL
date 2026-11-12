@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T01:56:16.603Z",
-  "sourceDescription": "Lou Korac",
-  "cachedAtUTC": "2026-11-12T19:57:45.682920+00:00",
+  "sourceUpdatedAt": "2026-11-12T20:37:50.951Z",
+  "sourceDescription": "Jeremy Rutherford",
+  "cachedAtUTC": "2026-11-12T20:53:10.052771+00:00",
   "forwards": [
     [
       {
@@ -60,17 +60,9 @@
     ],
     [
       {
-        "name": "Pavel Buchnevich",
-        "number": 89,
-        "position": "LW",
-        "sourcePlayerId": 2673,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Dalibor Dvorsky",
         "number": 15,
-        "position": "C",
+        "position": "LW",
         "sourcePlayerId": 35010,
         "injuryStatus": null,
         "gameTimeDecision": false
@@ -78,8 +70,16 @@
       {
         "name": "Connor McMichael",
         "number": 77,
-        "position": "RW",
+        "position": "C",
         "sourcePlayerId": 29203,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pavel Buchnevich",
+        "number": 89,
+        "position": "RW",
+        "sourcePlayerId": 2673,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
