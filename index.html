@@ -4037,16 +4037,17 @@ body[data-theme="light"] #games .hoist-game-card {
 }
 </style>
 <style>
-/* Stats V63: full-width, centered desktop panel for the expanded skater categories.
-   Mobile keeps the existing fixed player rail and horizontal scrolling. */
-@media (min-width:1100px){
-  body:has(#stats:not(.hidden)) .content{max-width:none!important;width:100%!important;min-width:0!important}
-  body:has(#stats:not(.hidden)) #stats{width:100%!important;max-width:none!important;margin-inline:auto!important}
-  body:has(#stats:not(.hidden)) #stats .hoist-stats-panel{width:100%!important;max-width:none!important;margin-inline:auto!important;box-sizing:border-box!important}
-  #stats .hoist-stats-fixed-shell{width:100%!important;max-width:none!important}
-  #stats .hoist-stats-table-wrap{width:100%!important;max-width:none!important}
-  #stats .hoist-stats-table{min-width:100%!important}
+/* Stats V64: match Standings content width, while retaining horizontal scroll for wide tables. */
+@media(min-width:1100px){
+  body:has(#stats:not(.hidden)) .content{max-width:var(--hoist-original-content-max,1200px)!important;width:100%!important;margin-inline:auto!important}
+  #stats{width:100%!important;max-width:100%!important;margin-inline:auto!important}
+  #stats .hoist-stats-panel{width:100%!important;max-width:100%!important;margin-inline:auto!important;box-sizing:border-box!important}
+  #stats .hoist-stats-table-wrap{max-width:100%!important;overflow-x:auto!important}
 }
+/* Scope selectors sit above the Stats panel, matching the Standings tab placement. */
+#stats > .hoist-stats-filters{display:flex!important;flex-direction:row!important;align-items:center!important;gap:8px!important;width:auto!important;margin:0 0 12px!important}
+#stats > .hoist-stats-filters button{width:auto!important;flex:none!important;padding:10px 20px!important}
+@media(max-width:650px){#stats > .hoist-stats-filters{margin-bottom:8px!important}}
 </style>
 </head>
 
@@ -4675,13 +4676,12 @@ body[data-theme="light"] #games .hoist-game-card {
 
 <!-- STATS -->
 <section id="stats" class="tab-section hidden">
+  <div class="hoist-stats-filters hoist-view-tabs" role="group" aria-label="Stats scope">
+    <button type="button" class="hoist-view-tab is-active" data-stats-mode="league" aria-pressed="true">League</button>
+    <button type="button" class="hoist-view-tab" data-stats-mode="team" aria-pressed="false">Team</button>
+  </div>
   <article class="panel section-panel hoist-stats-panel">
-    
     <div class="hoist-stats-controls">
-    <div class="hoist-stats-filters" role="group" aria-label="Stats scope">
-      <button type="button" class="is-active" data-stats-mode="league" aria-pressed="true">League</button>
-      <button type="button" data-stats-mode="team" aria-pressed="false">Team</button>
-    </div>
     <div class="hoist-stats-toolbar">
       <div class="hoist-stats-picker"><label for="hoist-stats-team">SELECT TEAM</label><select id="hoist-stats-team" aria-label="Select team for statistics"></select></div>
     </div>
@@ -5489,11 +5489,11 @@ document.addEventListener('DOMContentLoaded', function () {
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const teams=[['ANA','Anaheim Ducks'],['BOS','Boston Bruins'],['BUF','Buffalo Sabres'],['CGY','Calgary Flames'],['CAR','Carolina Hurricanes'],['CHI','Chicago Blackhawks'],['COL','Colorado Avalanche'],['CBJ','Columbus Blue Jackets'],['DAL','Dallas Stars'],['DET','Detroit Red Wings'],['EDM','Edmonton Oilers'],['FLA','Florida Panthers'],['LAK','Los Angeles Kings'],['MIN','Minnesota Wild'],['MTL','Montreal Canadiens'],['NSH','Nashville Predators'],['NJD','New Jersey Devils'],['NYI','New York Islanders'],['NYR','New York Rangers'],['OTT','Ottawa Senators'],['PHI','Philadelphia Flyers'],['PIT','Pittsburgh Penguins'],['SJS','San Jose Sharks'],['SEA','Seattle Kraken'],['STL','St. Louis Blues'],['TBL','Tampa Bay Lightning'],['TOR','Toronto Maple Leafs'],['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],['WSH','Washington Capitals'],['WPG','Winnipeg Jets']];
  const teamName=Object.fromEntries(teams);
- const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['pointsPerGame','P/GP'],['evenStrengthGoals','EVG'],['evenStrengthPoints','EVP'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['powerPlayPoints','PPP'],['overtimeGoals','OTG'],['gameWinningGoals','GWG'],['shots','SOG'],['shootingPctg','S%']];
+ const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['pointsPerGame','P/GP'],['evenStrengthGoals','EVG'],['evenStrengthPoints','EVP'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['powerPlayPoints','PPP'],['powerPlayAssists','PPA'],['overtimeGoals','OTG'],['gameWinningGoals','GWG'],['shots','SOG'],['shootingPctg','S%']];
  const cache=new Map();let mode='league',sequence=0,sortKey='points',sortDirection=-1;
  const name=p=>[p.firstName?.default||p.firstName||'',p.lastName?.default||p.lastName||''].join(' ').trim()||p.name||'Unknown player';
  // Normalize aliases from the cached NHL club-skater data; never invent unavailable totals.
- const statAliases={evenStrengthGoals:['evenStrengthGoals','evGoals','evenStrengthGoal'],evenStrengthPoints:['evenStrengthPoints','evPoints','evenStrengthPts'],powerPlayPoints:['powerPlayPoints','ppPoints','powerplayPoints','powerPlayPts','ppp'],overtimeGoals:['overtimeGoals','otGoals'],gameWinningGoals:['gameWinningGoals','gwGoals'],shots:['shots','shotsOnGoal']};
+ const statAliases={evenStrengthGoals:['evenStrengthGoals','evGoals','evenStrengthGoal'],evenStrengthPoints:['evenStrengthPoints','evPoints','evenStrengthPts'],powerPlayPoints:['powerPlayPoints','ppPoints','powerplayPoints','powerPlayPts','ppp'],powerPlayAssists:['powerPlayAssists','ppAssists','powerplayAssists','powerplayAssist','ppAssist','ppa'],overtimeGoals:['overtimeGoals','otGoals'],gameWinningGoals:['gameWinningGoals','gwGoals'],shots:['shots','shotsOnGoal']};
  const directStat=(p,keys)=>{for(const key of keys){const raw=p[key];if(raw!=null&&raw!==''&&Number.isFinite(Number(raw)))return Number(raw)}return null};
  const statValue=(p,k)=>{
    if(k==='pointsPerGame'){
@@ -5514,7 +5514,7 @@ document.addEventListener('DOMContentLoaded', function () {
      if(goals!=null&&ppg!=null&&shg!=null)return goals-ppg-shg;
    }
    if(k==='powerPlayPoints'){
-     const goals=directStat(p,['powerPlayGoals']),assists=directStat(p,['powerPlayAssists','ppAssists']);
+     const goals=directStat(p,['powerPlayGoals']),assists=directStat(p,statAliases.powerPlayAssists);
      if(goals!=null&&assists!=null)return goals+assists;
    }
    if(k==='evenStrengthPoints'){
