@@ -1,140 +1,109 @@
-
 #!/usr/bin/env python3
-"""Best-effort Daily Faceoff projected lineups cache.
+"""Build Hoist Official projected-lineup JSON from Daily Faceoff page HTML.
 
-Only run if automated access is permitted. No login, bypass, or protected API.
-The parser is deliberately conservative: an incomplete page does not replace
-existing JSON. HTML structure must be verified against live pages before use.
+By default, parse a locally saved HTML file with --html. Network retrieval is
+opt-in and should only be enabled after verifying permission for automated use.
 """
+import argparse
 import json
 import os
-import pathlib
-import re
-import time
-import urllib.error
-import urllib.parse
-import urllib.request
-import urllib.robotparser
+from pathlib import Path
 from datetime import datetime, timezone
-from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
+from html.parser import HTMLParser
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-TEAMS = {
-    'ANA':'anaheim-ducks','BOS':'boston-bruins','BUF':'buffalo-sabres',
-    'CGY':'calgary-flames','CAR':'carolina-hurricanes','CHI':'chicago-blackhawks',
-    'COL':'colorado-avalanche','CBJ':'columbus-blue-jackets','DAL':'dallas-stars',
-    'DET':'detroit-red-wings','EDM':'edmonton-oilers','FLA':'florida-panthers',
-    'LAK':'los-angeles-kings','MIN':'minnesota-wild','MTL':'montreal-canadiens',
-    'NSH':'nashville-predators','NJD':'new-jersey-devils','NYI':'new-york-islanders',
-    'NYR':'new-york-rangers','OTT':'ottawa-senators','PHI':'philadelphia-flyers',
-    'PIT':'pittsburgh-penguins','SJS':'san-jose-sharks','SEA':'seattle-kraken',
-    'STL':'st-louis-blues','TBL':'tampa-bay-lightning','TOR':'toronto-maple-leafs',
-    'UTA':'utah-mammoth','VAN':'vancouver-canucks','VGK':'vegas-golden-knights',
-    'WSH':'washington-capitals','WPG':'winnipeg-jets',
-}
-BASE = 'https://www.dailyfaceoff.com'
-UA = 'HoistOfficialLineupCache/1.0 (public projected-lineups cache)'
+ROOT = Path(__file__).resolve().parents[1]
 
+class NextDataParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.capture = False
+        self.parts = []
+    def handle_starttag(self, tag, attrs):
+        if tag == 'script' and dict(attrs).get('id') == '__NEXT_DATA__':
+            self.capture = True
+    def handle_endtag(self, tag):
+        if tag == 'script' and self.capture:
+            self.capture = False
+    def handle_data(self, data):
+        if self.capture:
+            self.parts.append(data)
 
-def fetch(url):
-    request = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept':'text/html'})
-    with urllib.request.urlopen(request, timeout=25) as response:
-        return response.read().decode('utf-8', errors='replace')
+def parse_html(html):
+    parser = NextDataParser()
+    parser.feed(html)
+    if not parser.parts:
+        raise ValueError('Missing __NEXT_DATA__ script; page structure may have changed')
+    data = json.loads(''.join(parser.parts))
+    combos = data['props']['pageProps']['combinations']
+    if not isinstance(combos.get('players'), list) or not combos.get('teamAbbreviation'):
+        raise ValueError('Invalid combinations data')
+    return combos
 
+def player_info(p):
+    return {
+        'name': p.get('name'), 'number': p.get('jerseyNumber'),
+        'position': (p.get('positionIdentifier') or '').upper(),
+        'sourcePlayerId': p.get('playerId'),
+        'injuryStatus': p.get('injuryStatus'),
+        'gameTimeDecision': bool(p.get('gameTimeDecision')),
+    }
 
-def robots_allow(url):
-    parser = urllib.robotparser.RobotFileParser()
-    parser.set_url(BASE + '/robots.txt')
-    parser.read()
-    return parser.can_fetch(UA, url)
-
-
-def roster(code):
-    path = ROOT / 'data' / 'rosters' / f'{code}.json'
-    payload = json.loads(path.read_text(encoding='utf-8'))
-    people = {}
-    for group in ('forwards', 'defensemen', 'goalies'):
-        for p in payload.get(group, []):
-            first = p.get('firstName', {})
-            last = p.get('lastName', {})
-            if isinstance(first, dict): first = first.get('default', '')
-            if isinstance(last, dict): last = last.get('default', '')
-            name = f'{first} {last}'.strip()
-            if not name: continue
-            people[name] = {'name':name, 'id':p.get('id'),
-                            'number':p.get('sweaterNumber'),
-                            'position':p.get('positionCode'),
-                            'headshot':p.get('headshot', '')}
-    return people
-
-
-def extract_section(text, start, stops):
-    m = re.search(start, text, flags=re.I)
-    if not m: raise ValueError('Section not found: ' + start)
-    section = text[m.end():]
-    end = [hit.start() for pat in stops for hit in [re.search(pat, section, flags=re.I)] if hit]
-    return section[:min(end)] if end else section
-
-
-def names_in_section(section, people, limit):
-    # Match whole names from the NHL roster in displayed order. Never infer lines.
-    matches = []
-    for name, person in people.items():
-        pattern = r'(?<!\w)' + re.escape(name).replace(r'\ ', r'\s+') + r'(?!\w)'
-        m = re.search(pattern, section, flags=re.I)
-        if m: matches.append((m.start(), person))
-    matches.sort(key=lambda item: item[0])
-    result = [p for _, p in matches]
-    if len(result) < limit:
-        raise ValueError(f'Incomplete section: {len(result)} of {limit} names found')
-    return result[:limit]
-
-
-def parse(html, code, url):
-    soup = BeautifulSoup(html, 'html.parser')
-    for el in soup(['script','style','noscript']): el.decompose()
-    text = soup.get_text(' ', strip=True)
-    # Restrict to the first set of displayed lines, before cap summary / editorial.
-    forwards = extract_section(text, r'\bForwards\b', [r'\bDefensive Pairings\b', r'\bDefense\b'])
-    defense = extract_section(text, r'\bDefensive Pairings\b', [r'\bClick player jersey\b', r'\bCap Summary\b'])
-    goalies = extract_section(text, r'\bGoalies\b', [r'\bClick player jersey\b', r'\bInjuries\b'])
-    people = roster(code)
-    f = names_in_section(forwards, people, 12)
-    d = names_in_section(defense, people, 6)
-    g = names_in_section(goalies, people, 2)
-    return {'team':code,'type':'projected','status':'projected',
-            'source':'Daily Faceoff','sourceUrl':url,
-            'updatedAt':datetime.now(timezone.utc).isoformat(),
-            'forwards':[f[i:i+3] for i in range(0,12,3)],
-            'defense':[d[i:i+2] for i in range(0,6,2)],
-            'goalies':[[g[0]],[g[1]]]}
-
+def transform(c):
+    groups = {}
+    for p in c['players']:
+        gid = p.get('groupIdentifier')
+        if not gid or not p.get('name'):
+            continue
+        groups.setdefault(gid, []).append(player_info(p))
+    # DFO includes multiple entries per player for different special teams units.
+    def group(key, expected):
+        values = groups.get(key, [])
+        if len(values) != expected:
+            raise ValueError(f'{key}: expected {expected} players, got {len(values)}')
+        return values
+    return {
+        'team': c['teamAbbreviation'],
+        'teamName': c.get('teamName'),
+        'source': 'Daily Faceoff',
+        'sourceUpdatedAt': c.get('updatedAt'),
+        'sourceDescription': c.get('sourceName'),
+        'cachedAtUTC': datetime.now(timezone.utc).isoformat(),
+        'forwards': [group(f'f{i}', 3) for i in range(1, 5)],
+        'defense': [group(f'd{i}', 2) for i in range(1, 4)],
+        'powerPlay': [group(f'pp{i}', 5) for i in range(1, 3)],
+        'penaltyKill': [group(f'pk{i}', 4) for i in range(1, 3)],
+        'goalies': group('g', 2),
+        'injuries': [player_info(p) for p in c['players'] if p.get('injuryStatus') and p.get('categoryIdentifier') == 'oi'],
+    }
 
 def main():
-    # Explicit opt-in until access rights and parser have been verified.
-    if os.environ.get('DAILY_FACEOFF_SCRAPING_ALLOWED') != '1':
-        print('Skipping: set DAILY_FACEOFF_SCRAPING_ALLOWED=1 only after confirming automated access is permitted.')
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--html', help='Saved Daily Faceoff page HTML to parse without networking')
+    ap.add_argument('--url', help='Daily Faceoff lineup page URL (requires explicit permission flag)')
+    ap.add_argument('--output', help='Output path; defaults to data/projected-lineups/TEAM.json')
+    args = ap.parse_args()
+    if args.html:
+        html = Path(args.html).read_text(encoding='utf-8')
+    elif args.url:
+        if os.environ.get('DAILY_FACEOFF_SCRAPING_ALLOWED') != '1':
+            print('Skipping: automated Daily Faceoff retrieval is not enabled.')
+            return
+        if not args.url.startswith('https://www.dailyfaceoff.com/teams/') or '/line-combinations' not in args.url:
+            raise ValueError('Only Daily Faceoff team line-combinations URLs are supported')
+        request = Request(args.url, headers={'User-Agent': 'HoistOfficialLineups/1.0', 'Accept': 'text/html'})
+        with urlopen(request, timeout=25) as response:
+            html = response.read().decode('utf-8')
+    else:
+        print('No HTML supplied. Use --html for an offline test; no lineup files changed.')
         return
-    successes = 0
-    for code, slug in TEAMS.items():
-        url = f'{BASE}/teams/{slug}/line-combinations'
-        try:
-            if not robots_allow(url):
-                print(f'SKIP {code}: robots.txt does not permit access')
-                continue
-            payload = parse(fetch(url), code, url)
-            target = ROOT / 'data' / 'projected-lineups' / f'{code}.json'
-            target.parent.mkdir(parents=True, exist_ok=True)
-            tmp = target.with_suffix('.tmp')
-            tmp.write_text(json.dumps(payload, ensure_ascii=False, separators=(',',':'))+'\n', encoding='utf-8')
-            tmp.replace(target)
-            successes += 1
-            print(f'OK {code}')
-        except Exception as exc:
-            print(f'WARN {code}: {exc}; previous data preserved')
-        time.sleep(1.5)
-    print(f'Updated {successes}/{len(TEAMS)} projected lineups')
-
+    result = transform(parse_html(html))
+    destination = Path(args.output) if args.output else ROOT / 'data' / 'projected-lineups' / (result['team'] + '.json')
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temp = destination.with_suffix('.tmp')
+    temp.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    temp.replace(destination)
+    print(f"Saved {destination} ({result['team']})")
 
 if __name__ == '__main__':
     main()
