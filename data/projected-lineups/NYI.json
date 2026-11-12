@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T16:02:27.780Z",
-  "sourceDescription": "Andrew Gross",
-  "cachedAtUTC": "2026-11-12T18:56:58.284269+00:00",
+  "sourceUpdatedAt": "2026-11-12T19:29:43.357Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-12T19:57:30.887105+00:00",
   "forwards": [
     [
       {
@@ -60,18 +60,18 @@
     ],
     [
       {
-        "name": "Ondrej Palat",
-        "number": 18,
+        "name": "Matias Maccelli",
+        "number": 63,
         "position": "LW",
-        "sourcePlayerId": 1830,
+        "sourcePlayerId": 30063,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jean-Gabriel Pageau",
-        "number": 44,
+        "name": "Casey Cizikas",
+        "number": 53,
         "position": "C",
-        "sourcePlayerId": 2057,
+        "sourcePlayerId": 1807,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -88,16 +88,8 @@
       {
         "name": "Kyle MacLean",
         "number": 32,
-        "position": "LW",
-        "sourcePlayerId": 27755,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Casey Cizikas",
-        "number": 53,
         "position": "C",
-        "sourcePlayerId": 1807,
+        "sourcePlayerId": 27755,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -145,7 +137,7 @@
         "position": "RD",
         "sourcePlayerId": 2146,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -194,10 +186,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Victor Eklund",
-        "number": 73,
+        "name": "Matias Maccelli",
+        "number": 63,
         "position": "SK4",
-        "sourcePlayerId": 38469,
+        "sourcePlayerId": 30063,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -220,10 +212,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ondrej Palat",
-        "number": 18,
+        "name": "Victor Eklund",
+        "number": 73,
         "position": "SK2",
-        "sourcePlayerId": 1830,
+        "sourcePlayerId": 38469,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -290,10 +282,10 @@
     ],
     [
       {
-        "name": "Jean-Gabriel Pageau",
-        "number": 44,
+        "name": "Casey Cizikas",
+        "number": 53,
         "position": "SK1",
-        "sourcePlayerId": 2057,
+        "sourcePlayerId": 1807,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -359,14 +351,6 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Matias Maccelli",
-      "number": 63,
-      "position": "IR3",
-      "sourcePlayerId": 30063,
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Calum Ritchie",
       "number": 64,
       "position": "IR4",
@@ -375,10 +359,10 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Ryan Pulock",
-      "number": 6,
+      "name": "Jean-Gabriel Pageau",
+      "number": 44,
       "position": "IR5",
-      "sourcePlayerId": 2146,
+      "sourcePlayerId": 2057,
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

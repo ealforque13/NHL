@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:39:17.654Z",
+  "sourceUpdatedAt": "2026-11-12T19:51:04.960Z",
   "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-12T18:57:19.150735+00:00",
+  "cachedAtUTC": "2026-11-12T19:57:52.002389+00:00",
   "forwards": [
     [
       {
@@ -21,7 +21,7 @@
         "position": "C",
         "sourcePlayerId": 2678,
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Daniil But",
@@ -191,7 +191,7 @@
         "position": "SK3",
         "sourcePlayerId": 2678,
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Mikhail Sergachev",
@@ -261,7 +261,7 @@
         "position": "SK1",
         "sourcePlayerId": 2678,
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Lawson Crouse",
@@ -371,6 +371,14 @@
       "number": 92,
       "position": "IR4",
       "sourcePlayerId": 33387,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Nick Schmaltz",
+      "number": 8,
+      "position": "IR5",
+      "sourcePlayerId": 2678,
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

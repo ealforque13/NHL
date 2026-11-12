@@ -2,9 +2,9 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T01:35:38.009Z",
+  "sourceUpdatedAt": "2026-11-12T19:47:32.255Z",
   "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-12T18:56:47.799869+00:00",
+  "cachedAtUTC": "2026-11-12T19:57:20.319896+00:00",
   "forwards": [
     [
       {
@@ -39,7 +39,7 @@
         "position": "LW",
         "sourcePlayerId": 2455,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Quinton Byfield",
@@ -68,10 +68,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Turcotte",
-        "number": 15,
+        "name": "Scott Laughton",
+        "number": 21,
         "position": "C",
-        "sourcePlayerId": 30420,
+        "sourcePlayerId": 2018,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -94,18 +94,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Samuel Helenius",
-        "number": null,
+        "name": "Erik Haula",
+        "number": 56,
         "position": "C",
-        "sourcePlayerId": 34674,
+        "sourcePlayerId": 2135,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Haula",
-        "number": 56,
+        "name": "Joel Armia",
+        "number": 40,
         "position": "RW",
-        "sourcePlayerId": 2135,
+        "sourcePlayerId": 1952,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -127,7 +127,7 @@
         "position": "RD",
         "sourcePlayerId": 744,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -207,7 +207,7 @@
         "position": "SK5",
         "sourcePlayerId": 2455,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -228,10 +228,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Turcotte",
-        "number": 15,
+        "name": "Corey Perry",
+        "number": 90,
         "position": "SK3",
-        "sourcePlayerId": 30420,
+        "sourcePlayerId": 36,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -244,10 +244,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Corey Perry",
-        "number": 90,
+        "name": "Drew Doughty",
+        "number": 8,
         "position": "SK5",
-        "sourcePlayerId": 36,
+        "sourcePlayerId": 744,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -285,7 +285,7 @@
         "position": "SK4",
         "sourcePlayerId": 744,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -343,26 +343,10 @@
   ],
   "injuries": [
     {
-      "name": "Kevin Fiala",
-      "number": 22,
-      "position": "IR1",
-      "sourcePlayerId": 2455,
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Erik Gustafsson",
       "number": 64,
       "position": "IR2",
       "sourcePlayerId": 2550,
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Drew Doughty",
-      "number": 8,
-      "position": "IR3",
-      "sourcePlayerId": 744,
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
