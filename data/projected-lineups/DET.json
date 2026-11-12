@@ -2,9 +2,9 @@
   "team": "DET",
   "teamName": "Detroit Red Wings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T13:59:06.516Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T17:04:52.244553+00:00",
+  "sourceUpdatedAt": "2026-11-12T17:11:33.603Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-12T17:56:58.492280+00:00",
   "forwards": [
     [
       {
@@ -60,10 +60,10 @@
     ],
     [
       {
-        "name": "Michael Rasmussen",
-        "number": 27,
+        "name": "Carter Mazur",
+        "number": 43,
         "position": "LW",
-        "sourcePlayerId": 2784,
+        "sourcePlayerId": 34532,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -212,10 +212,10 @@
     ],
     [
       {
-        "name": "Michael Rasmussen",
-        "number": 27,
+        "name": "Andrew Copp",
+        "number": 18,
         "position": "SK1",
-        "sourcePlayerId": 2784,
+        "sourcePlayerId": 2457,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -290,10 +290,10 @@
     ],
     [
       {
-        "name": "Michael Rasmussen",
-        "number": 27,
+        "name": "Andrew Copp",
+        "number": 18,
         "position": "SK1",
-        "sourcePlayerId": 2784,
+        "sourcePlayerId": 2457,
         "injuryStatus": null,
         "gameTimeDecision": false
       },

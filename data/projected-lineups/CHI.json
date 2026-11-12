@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T17:28:43.895Z",
-  "sourceDescription": "Kalen Lumpkins",
-  "cachedAtUTC": "2026-11-12T17:04:45.459010+00:00",
+  "sourceUpdatedAt": "2026-11-12T17:28:12.483Z",
+  "sourceDescription": "Charlie Roumeliotis",
+  "cachedAtUTC": "2026-11-12T17:56:52.055179+00:00",
   "forwards": [
     [
       {
@@ -50,12 +50,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Teuvo Teravainen",
-        "number": 86,
+        "name": "Patrick Kane",
+        "number": 88,
         "position": "RW",
-        "sourcePlayerId": 2128,
+        "sourcePlayerId": 305,
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -170,10 +170,10 @@
   "powerPlay": [
     [
       {
-        "name": "Frank Nazar",
-        "number": null,
+        "name": "Anton Frondell",
+        "number": 16,
         "position": "SK1",
-        "sourcePlayerId": 33280,
+        "sourcePlayerId": 38471,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -186,12 +186,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anton Frondell",
-        "number": 16,
+        "name": "Patrick Kane",
+        "number": 88,
         "position": "SK3",
-        "sourcePlayerId": 38471,
+        "sourcePlayerId": 305,
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Connor Bedard",
@@ -220,18 +220,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Donato",
-        "number": 8,
+        "name": "Frank Nazar",
+        "number": null,
         "position": "SK2",
-        "sourcePlayerId": 4635,
+        "sourcePlayerId": 33280,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Teuvo Teravainen",
-        "number": 86,
+        "name": "Ryan Donato",
+        "number": 8,
         "position": "SK3",
-        "sourcePlayerId": 2128,
+        "sourcePlayerId": 4635,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,10 +298,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Teuvo Teravainen",
-        "number": 86,
+        "name": "Jordan Greenway",
+        "number": 12,
         "position": "SK2",
-        "sourcePlayerId": 2128,
+        "sourcePlayerId": 4644,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
