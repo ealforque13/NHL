@@ -4447,6 +4447,50 @@ body[data-theme="light"] #games .hoist-game-card {
   #lineups .hoist-lineup-group .hoist-lineup-player-name { font-size:10px !important; line-height:1.2; }
 }
 </style>
+
+<style>
+/* Hoist Lineups — centered, unboxed NHL 14 HUT-inspired presentation. */
+#lineups { max-width:1320px; margin-inline:auto; text-align:center; }
+#lineups .hoist-lineups-heading { justify-content:center !important; margin:0 0 18px !important; }
+#lineups .hoist-lineups-team-picker { justify-content:center !important; }
+#lineups .hoist-lineup-tabs { justify-content:center !important; flex-wrap:wrap; gap:0 !important; }
+#lineups .hoist-lineup-tabs button { color:#fff !important; }
+#lineups .hoist-lineup-tabs button.active { color:#fff !important; border-bottom-color:#48a9ff !important; }
+#lineups .hoist-lineups-panel,
+html body #lineups .hoist-lineups-panel { background:transparent !important; border:0 !important; box-shadow:none !important; padding:0 !important; }
+#lineups .hoist-lineups-info, #lineups .hoist-lineup-footer { display:none !important; }
+#lineups .hoist-lineup-content { max-width:850px !important; margin:0 auto !important; gap:22px !important; align-items:center !important; }
+#lineups .hoist-lineup-card,
+#lineups .hoist-lineup-group,
+html body #lineups .hoist-lineup-group { background:transparent !important; border:0 !important; box-shadow:none !important; padding:8px 0 12px !important; min-height:0 !important; width:100%; }
+#lineups .hoist-lineup-group + .hoist-lineup-group,
+#lineups .hoist-lineup-card + .hoist-lineup-card { border:0 !important; }
+#lineups .hoist-lineup-card-header,
+#lineups .hoist-lineup-card-body { grid-template-columns:95px minmax(0,1fr) !important; gap:6px !important; align-items:center !important; }
+#lineups .hoist-lineup-card-title { color:#fff !important; font-size:15px !important; text-align:center !important; }
+#lineups .hoist-lineup-role-headings,
+#lineups .hoist-lineup-group .hoist-lineup-players { max-width:530px !important; gap:8px !important; justify-content:center !important; }
+#lineups .hoist-lineup-role-headings span { color:#fff !important; text-align:center !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player { align-items:center !important; text-align:center !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { width:90px !important; max-width:100% !important; margin:0 auto 7px !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar,
+#lineups .hoist-lineup-group .hoist-lineup-avatar img { width:88px !important; height:88px !important; border-radius:0 !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar { overflow:hidden !important; background:rgba(125,155,195,.08) !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar img { object-fit:cover !important; object-position:center top !important; }
+#lineups .hoist-lineup-player-name { color:#fff !important; text-align:center !important; }
+#lineups .hoist-lineup-roster-grid { justify-content:center !important; }
+@media(max-width:650px){
+ #lineups .hoist-lineup-tabs { justify-content:center !important; }
+ #lineups .hoist-lineup-tabs button { flex:0 1 auto !important; font-size:11px !important; padding:10px 8px !important; }
+ #lineups .hoist-lineup-card-header, #lineups .hoist-lineup-card-body { grid-template-columns:58px minmax(0,1fr) !important; gap:3px !important; }
+ #lineups .hoist-lineup-content { gap:14px !important; }
+ #lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { width:58px !important; }
+ #lineups .hoist-lineup-group .hoist-lineup-avatar,
+ #lineups .hoist-lineup-group .hoist-lineup-avatar img { width:56px !important; height:56px !important; }
+ #lineups .hoist-lineup-role-headings, #lineups .hoist-lineup-group .hoist-lineup-players { gap:3px !important; }
+ #lineups .hoist-lineup-card-title { font-size:11px !important; }
+}
+</style>
 </head>
 
 <body>
