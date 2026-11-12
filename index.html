@@ -4405,6 +4405,48 @@ body[data-theme="light"] #games .hoist-game-card {
  #lineups .hoist-lineup-player-position { font-size:10px !important; }
 }
 </style>
+
+<style>
+/* Hoist Lineups v2: separate compact, evenly sized combination cards. */
+#lineups .hoist-lineup-tabs button { color:#fff !important; }
+#lineups .hoist-lineup-tabs button.active { color:#fff !important; border-bottom-color:#48a9ff !important; }
+#lineups .hoist-lineup-content { display:flex !important; flex-direction:column; gap:10px !important; max-width:900px; margin:0 auto; }
+#lineups .hoist-lineup-group {
+  box-sizing:border-box; width:100%; min-height:154px;
+  padding:14px 18px 12px !important; background:rgba(105,145,200,.075) !important;
+  border:1px solid rgba(125,155,195,.22) !important;
+  box-shadow:none !important; display:flex; flex-direction:column; justify-content:flex-start;
+}
+#lineups .hoist-lineup-group + .hoist-lineup-group { border-top:1px solid rgba(125,155,195,.22) !important; }
+#lineups .hoist-lineup-card-header, #lineups .hoist-lineup-card-body {
+  display:grid; grid-template-columns:118px minmax(0,1fr); gap:8px; align-items:center;
+}
+#lineups .hoist-lineup-card-header { margin-bottom:3px; }
+#lineups .hoist-lineup-card-title { margin:0 !important; padding:0 !important; color:#fff !important; font-size:15px !important; text-align:left; }
+#lineups .hoist-lineup-role-headings, #lineups .hoist-lineup-group .hoist-lineup-players {
+  display:grid !important; grid-template-columns:repeat(var(--lineup-columns),minmax(0,1fr)) !important;
+  gap:5px !important; max-width:590px; width:100%; margin:0 auto;
+}
+#lineups .hoist-lineup-role-headings span { text-align:center; font-size:12px; font-weight:800; color:#fff !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player-position { display:none !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player { gap:0; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { width:66px !important; max-width:100% !important; margin:0 auto 5px !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar { width:62px !important; height:62px !important; margin:0 auto !important; }
+#lineups .hoist-lineup-player-name { color:#fff !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player-name { font-size:13px !important; font-weight:750; text-align:center; white-space:normal; }
+#lineups .hoist-lineup-player-number { display:none !important; }
+@media(max-width:650px) {
+  #lineups .hoist-lineup-content { gap:8px !important; }
+  #lineups .hoist-lineup-group { min-height:120px; padding:10px 7px !important; }
+  #lineups .hoist-lineup-card-header, #lineups .hoist-lineup-card-body { grid-template-columns:57px minmax(0,1fr); gap:3px; }
+  #lineups .hoist-lineup-card-title { font-size:11px !important; }
+  #lineups .hoist-lineup-role-headings, #lineups .hoist-lineup-group .hoist-lineup-players { gap:2px !important; }
+  #lineups .hoist-lineup-role-headings span { font-size:10px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { width:44px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar { width:42px !important; height:42px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-player-name { font-size:10px !important; line-height:1.2; }
+}
+</style>
 </head>
 
 <body>
@@ -5777,14 +5819,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const photo = (typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '') || headshots.get(normalize(name)) || '';
     const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber;
     const positionText = role || (p.position && !/^SK\d+$/i.test(p.position) && !/^G\d+$/i.test(p.position) ? p.position : '');
-    const numberHtml = number !== null && number !== undefined && number !== '' ? `<span class="hoist-lineup-player-number">#${esc(number)}</span>` : '';
+    const numberHtml = number !== null && number !== undefined && number !== '' ? ` #${esc(number)}` : '';
     return `<div class="hoist-lineup-player">
       <div class="hoist-lineup-player-position">${esc(positionText)}</div>
       <div class="hoist-lineup-avatar-wrap">
         <div class="hoist-lineup-avatar">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
-        ${numberHtml}
       </div>
-      <div class="hoist-lineup-player-name">${esc(name)}</div>
+      <div class="hoist-lineup-player-name">${esc(name)}${numberHtml}</div>
     </div>`;
   }
   function render() {
@@ -5811,9 +5852,17 @@ document.addEventListener('DOMContentLoaded', function () {
     root.innerHTML = Array.from({length:Math.max(counts[position],groups.length)},(_,i) => {
       const players = Array.isArray(groups[i]) ? groups[i] : [];
       const roles = labels[position];
-      return `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${titles[position]} ${i+1}</div>
-        <div class="hoist-lineup-players ${roles.length===2?'two':''}" style="${roles.length>3?'grid-template-columns:repeat('+roles.length+',minmax(0,1fr));':''}">
-        ${roles.map((role,j) => playerMarkup(players[j],role)).join('')}</div></div>`;
+      const columns = roles.length;
+      return `<div class="hoist-lineup-card hoist-lineup-group" style="--lineup-columns:${columns}">
+        <div class="hoist-lineup-card-header">
+          <div class="hoist-lineup-card-title">${titles[position]} ${i+1}</div>
+          <div class="hoist-lineup-role-headings">${roles.map(role => `<span>${esc(role)}</span>`).join('')}</div>
+        </div>
+        <div class="hoist-lineup-card-body">
+          <div class="hoist-lineup-card-spacer" aria-hidden="true"></div>
+          <div class="hoist-lineup-players">${roles.map((role,j) => playerMarkup(players[j],role)).join('')}</div>
+        </div>
+      </div>`;
     }).join('');
   }
   async function fetchJson(path) {
