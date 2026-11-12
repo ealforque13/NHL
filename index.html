@@ -4518,6 +4518,119 @@ html body #lineups .hoist-lineup-group { background:transparent !important; bord
   #lineups .hoist-lineup-player-jersey { font-size:10px; }
 }
 </style>
+
+<style>
+/* Hoist Lineups: centered HUT-style portraits with a subtle white team crest. */
+#lineups .hoist-lineup-content {
+  width:100% !important;
+  max-width:820px !important;
+  margin-inline:auto !important;
+  justify-items:center !important;
+}
+#lineups .hoist-lineup-group,
+html body #lineups .hoist-lineup-group {
+  width:100% !important;
+  padding:18px 0 22px !important;
+  margin:0 auto !important;
+  border:0 !important;
+  background:transparent !important;
+}
+#lineups .hoist-lineup-group + .hoist-lineup-group {
+  border-top:1px solid rgba(151,181,224,.22) !important;
+}
+#lineups .hoist-lineup-group > .hoist-lineup-players {
+  display:grid !important;
+  grid-template-columns:repeat(var(--lineup-columns),minmax(0,128px)) !important;
+  width:100% !important;
+  max-width:none !important;
+  gap:14px !important;
+  justify-content:center !important;
+  justify-items:center !important;
+  margin:0 auto !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-player {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  width:100% !important;
+  min-width:0 !important;
+  text-align:center !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-player-position {
+  order:0 !important;
+  margin:0 0 9px !important;
+  color:#fff !important;
+  font-size:12px !important;
+  font-weight:750 !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar-wrap {
+  order:1 !important;
+  width:90px !important;
+  max-width:100% !important;
+  margin:0 auto 8px !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar {
+  position:relative !important;
+  isolation:isolate !important;
+  width:88px !important;
+  height:88px !important;
+  margin:0 auto !important;
+  overflow:hidden !important;
+  border-radius:0 !important;
+  background:var(--hoist-lineup-team-color,#243754) !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar::before {
+  content:'';
+  position:absolute;
+  inset:9px;
+  z-index:0;
+  background-image:var(--hoist-lineup-watermark,none);
+  background-position:center;
+  background-size:contain;
+  background-repeat:no-repeat;
+  opacity:.22;
+  filter:grayscale(1) brightness(0) invert(1);
+  pointer-events:none;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar img {
+  position:relative !important;
+  z-index:1 !important;
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  object-position:center top !important;
+  border-radius:0 !important;
+  background:transparent !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-player-name {
+  order:2 !important;
+  width:100% !important;
+  margin:0 !important;
+  color:#fff !important;
+  font-size:13px !important;
+  font-weight:750 !important;
+  text-align:center !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-player-jersey {
+  order:3 !important;
+  margin:4px 0 0 !important;
+  color:#fff !important;
+  font-size:12px !important;
+  font-weight:700 !important;
+  text-align:center !important;
+}
+@media(max-width:650px) {
+  #lineups .hoist-lineup-group > .hoist-lineup-players {
+    grid-template-columns:repeat(var(--lineup-columns),minmax(0,1fr)) !important;
+    gap:5px !important;
+  }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { width:58px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar { width:56px !important; height:56px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar::before { inset:6px; }
+  #lineups .hoist-lineup-group .hoist-lineup-player-name { font-size:10px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-player-jersey { font-size:10px !important; }
+}
+</style>
 </head>
 
 <body>
@@ -5926,14 +6039,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const roles = labels[position];
       const columns = roles.length;
       return `<div class="hoist-lineup-card hoist-lineup-group" style="--lineup-columns:${columns}">
-        <div class="hoist-lineup-card-header">
-          <div class="hoist-lineup-card-title">${titles[position]} ${i+1}</div>
-          <div class="hoist-lineup-role-headings">${roles.map(role => `<span>${esc(role)}</span>`).join('')}</div>
-        </div>
-        <div class="hoist-lineup-card-body">
-          <div class="hoist-lineup-card-spacer" aria-hidden="true"></div>
-          <div class="hoist-lineup-players">${roles.map((role,j) => playerMarkup(players[j],role)).join('')}</div>
-        </div>
+        <div class="hoist-lineup-players">${roles.map((role,j) => playerMarkup(players[j],role)).join('')}</div>
       </div>`;
     }).join('');
   }
@@ -6033,7 +6139,12 @@ document.addEventListener('DOMContentLoaded', function () {
       TBL:'#002868',TOR:'#00205b',UTA:'#69b3e7',VAN:'#00843d',VGK:'#b4975a',
       WSH:'#c8102e',WPG:'#041e42'
     };
-    const applyTeamColor = () => el('lineups')?.style.setProperty('--hoist-lineup-team-color',teamColors[selected] || '#243754');
+    const applyTeamColor = () => {
+      const page = el('lineups');
+      if (!page) return;
+      page.style.setProperty('--hoist-lineup-team-color',teamColors[selected] || '#243754');
+      page.style.setProperty('--hoist-lineup-watermark',`url("https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg")`);
+    };
     applyTeamColor();
     picker.addEventListener('change',() => { selected = picker.value; applyTeamColor(); load(); });
     document.querySelectorAll('[data-lineup-position]').forEach(button => {
