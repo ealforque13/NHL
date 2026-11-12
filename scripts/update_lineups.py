@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """Build Hoist Official projected-lineup JSON from Daily Faceoff page HTML.
 
@@ -9,6 +8,7 @@ import argparse
 import json
 import os
 import time
+import random
 from pathlib import Path
 from datetime import datetime, timezone
 from urllib.request import Request, urlopen
@@ -61,8 +61,13 @@ def transform(c):
     # DFO includes multiple entries per player for different special teams units.
     def group(key, expected):
         values = groups.get(key, [])
-        if len(values) != expected:
-            raise ValueError(f'{key}: expected {expected} players, got {len(values)}')
+        # A fourth forward line can legitimately be missing one player.
+        # Keep the available names instead of rejecting the entire team.
+        minimum = 2 if key == 'f4' else expected
+        if not minimum <= len(values) <= expected:
+            raise ValueError(f'{key}: expected {minimum}-{expected} players, got {len(values)}')
+        if len(values) < expected:
+            print(f'PARTIAL {c["teamAbbreviation"]} {key}: {len(values)}/{expected} players', flush=True)
         return values
     return {
         'team': c['teamAbbreviation'],
@@ -98,12 +103,14 @@ TEAMS = {
     'WPG': 'winnipeg-jets', 'WSH': 'washington-capitals',
 }
 
+
 def save_result(result, output):
     output.parent.mkdir(parents=True, exist_ok=True)
     # Atomic replacement, never replace a valid file with an invalid response.
     temp = output.with_suffix('.tmp')
     temp.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     temp.replace(output)
+
 
 def update_teams(teams, delay):
     if os.environ.get('DAILY_FACEOFF_SCRAPING_ALLOWED') != '1':
@@ -136,6 +143,7 @@ def update_teams(teams, delay):
     print(f'Lineup refresh complete: {updated}/{len(teams)} updated; failures: {", ".join(failures) or "none"}')
     if failures:
         raise SystemExit(1)
+
 
 def main():
     ap = argparse.ArgumentParser()
