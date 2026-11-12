@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T13:02:36.958240+00:00",
+  "updatedAt": "2026-11-12T18:52:41.523965+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -16,7 +16,7 @@
     },
     "8474141": {
       "injured": true,
-      "description": "Kane (upper body) was placed on injured reserve Sunday.",
+      "description": "Kane (upper body) will likely be in the lineup versus Buffalo on Thursday, Mark Lazerus of The Athletic reports.",
       "status": "Injured Reserve",
       "team": "CHI"
     },
@@ -64,8 +64,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NSH"
     },
     "8476853": {
@@ -73,12 +73,6 @@
       "description": "day-to-day",
       "status": "Day-To-Day",
       "team": "TOR"
-    },
-    "8476875": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "MTL"
     },
     "8476891": {
       "injured": true,
@@ -88,8 +82,8 @@
     },
     "8476925": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "TOR"
     },
     "8476979": {
@@ -122,11 +116,11 @@
       "status": "Injured Reserve",
       "team": "OTT"
     },
-    "8477478": {
+    "8477488": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "CAR"
+      "description": "Pesce has been ruled out for Thursday's game against Washington due to an illness, Kristy Flannery of The Hockey News reports.",
+      "status": "Out",
+      "team": "NJD"
     },
     "8477493": {
       "injured": true,
@@ -238,7 +232,7 @@
     },
     "8479772": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "MacEwen (wrist) is a game-time decision for Thursday's home clash against the Wild, per Andre Leal of The Hockey News.",
       "status": "Day-To-Day",
       "team": "TOR"
     },
@@ -274,8 +268,8 @@
     },
     "8480192": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Kovacevic (undisclosed) is undergoing imaging Thursday and won't play in the Devils' home matchup against the Capitals, Kristy Flannery of The Hockey News reports.",
+      "status": "Out",
       "team": "NJD"
     },
     "8480434": {
@@ -388,14 +382,14 @@
     },
     "8482874": {
       "injured": true,
-      "description": "Melanson's upper-body injury was diagnosed Saturday as an anterior mediastinum hematoma with vascular pseudo aneurysm. He will continue to be evaluated and is out indefinitely.",
+      "description": "Melanson (chest) was sporting a regular jersey during Thursday's game-day skate, Sound of Hockey reports.",
       "status": "Injured Reserve",
       "team": "SEA"
     },
     "8483431": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "UTA"
     },
     "8483455": {
@@ -439,12 +433,6 @@
       "description": "Grebenkin (back) underwent successful surgery and is expected to miss at least four months.",
       "status": "Injured Reserve",
       "team": "PHI"
-    },
-    "8483771": {
-      "injured": true,
-      "description": "Vilmanis (undisclosed) will probably miss a few games, according to George Richards of Florida Hockey Now on Saturday.",
-      "status": "Out",
-      "team": "FLA"
     },
     "8484221": {
       "injured": true,
