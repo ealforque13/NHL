@@ -3915,6 +3915,21 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V55 — mobile Stats: shorter header labels and a slightly narrower pinned player column. */
+@media (max-width:650px) {
+  #stats .hoist-stats-league-rank-label { font-size:0!important; }
+  #stats .hoist-stats-league-rank-label::after { content:"RK"; font-size:9px; }
+  #stats .hoist-stats-player-header-label { display:none!important; }
+  #stats .hoist-stats-player-rail,
+  #stats .hoist-stats-fixed-shell .hoist-stats-table th:first-child,
+  #stats .hoist-stats-fixed-shell .hoist-stats-table td:first-child,
+  #stats .hoist-stats-table th:first-child,
+  #stats .hoist-stats-table td:first-child {
+    width:171px!important; min-width:171px!important; max-width:171px!important;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -5409,7 +5424,7 @@ document.addEventListener('DOMContentLoaded', function () {
  const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${key==='name' && mode==='league'?label:esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
- function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RANK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'PLAYER')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RANK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'<span class="hoist-stats-player-header-label">PLAYER</span>')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
  function syncStatsPlayerRail(){
    const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
    if(!shell)return;
