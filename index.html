@@ -5477,11 +5477,26 @@ document.addEventListener('DOMContentLoaded', function () {
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const teams=[['ANA','Anaheim Ducks'],['BOS','Boston Bruins'],['BUF','Buffalo Sabres'],['CGY','Calgary Flames'],['CAR','Carolina Hurricanes'],['CHI','Chicago Blackhawks'],['COL','Colorado Avalanche'],['CBJ','Columbus Blue Jackets'],['DAL','Dallas Stars'],['DET','Detroit Red Wings'],['EDM','Edmonton Oilers'],['FLA','Florida Panthers'],['LAK','Los Angeles Kings'],['MIN','Minnesota Wild'],['MTL','Montreal Canadiens'],['NSH','Nashville Predators'],['NJD','New Jersey Devils'],['NYI','New York Islanders'],['NYR','New York Rangers'],['OTT','Ottawa Senators'],['PHI','Philadelphia Flyers'],['PIT','Pittsburgh Penguins'],['SJS','San Jose Sharks'],['SEA','Seattle Kraken'],['STL','St. Louis Blues'],['TBL','Tampa Bay Lightning'],['TOR','Toronto Maple Leafs'],['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],['WSH','Washington Capitals'],['WPG','Winnipeg Jets']];
  const teamName=Object.fromEntries(teams);
- const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['shots','SOG'],['shootingPctg','S%']];
+ const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['pointsPerGame','P/GP'],['evenStrengthGoals','EVG'],['evenStrengthPoints','EVP'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['powerPlayPoints','PPP'],['overtimeGoals','OTG'],['gameWinningGoals','GWG'],['shots','SOG'],['shootingPctg','S%']];
  const cache=new Map();let mode='league',sequence=0,sortKey='points',sortDirection=-1;
  const name=p=>[p.firstName?.default||p.firstName||'',p.lastName?.default||p.lastName||''].join(' ').trim()||p.name||'Unknown player';
- const numeric=(p,k)=>Number(p[k]??0);
- const display=(p,k)=>p[k] == null?'—':k==='shootingPctg'?Number(p[k]).toFixed(1):String(p[k]);
+ // Normalize aliases from the cached NHL club-skater data; never invent unavailable totals.
+ const statAliases={evenStrengthGoals:['evenStrengthGoals','evGoals'],evenStrengthPoints:['evenStrengthPoints','evPoints'],powerPlayPoints:['powerPlayPoints','ppPoints'],overtimeGoals:['overtimeGoals','otGoals'],gameWinningGoals:['gameWinningGoals','gwGoals'],shots:['shots','shotsOnGoal']};
+ const statValue=(p,k)=>{
+   if(k==='pointsPerGame'){
+     const games=Number(p.gamesPlayed),points=Number(p.points);
+     return p.gamesPlayed!=null&&p.points!=null&&games>0?points/games:null;
+   }
+   if(k==='shootingPctg'){
+     const goals=Number(p.goals),shots=Number(p.shots??p.shotsOnGoal);
+     return p.goals!=null&&(p.shots!=null||p.shotsOnGoal!=null)&&shots>0?goals/shots*100:null;
+   }
+   const keys=statAliases[k]||[k];
+   for(const key of keys){if(p[key]!=null&&p[key]!==''){const value=Number(p[key]);if(Number.isFinite(value))return value;}}
+   return null;
+ };
+ const numeric=(p,k)=>statValue(p,k);
+ const display=(p,k)=>{const value=statValue(p,k);return value==null?'—':k==='shootingPctg'||k==='pointsPerGame'?value.toFixed(k==='pointsPerGame'?2:1):String(value)};
  const teamColors={ANA:'#F47A38',BOS:'#FFB81C',BUF:'#FFB81C',CGY:'#F1BE48',CAR:'#E31837',CHI:'#CF0A2C',COL:'#6F263D',CBJ:'#CE1126',DAL:'#8FAD15',DET:'#CE1126',EDM:'#FF4C00',FLA:'#C8102E',LAK:'#A2AAAD',MIN:'#A6192E',MTL:'#AF1E2D',NSH:'#FFB81C',NJD:'#CE1126',NYI:'#F47D30',NYR:'#CE1126',OTT:'#DA1A32',PHI:'#F74902',PIT:'#FCB514',SJS:'#00A8E0',SEA:'#99D9D9',STL:'#FCB514',TBL:'#0065B1',TOR:'#5B9BD5',UTA:'#71AFE5',VAN:'#00843D',VGK:'#B4975A',WSH:'#C8102E',WPG:'#7BADD3'};
  // Club skater stats omit sweater numbers. Join them to the NHL roster cache
  // written by scripts/update_lineups.py (data/lineups/TEAM.json).
@@ -5559,7 +5574,7 @@ document.addEventListener('DOMContentLoaded', function () {
  let players,heading;
  if(league){const settled=await Promise.allSettled(teams.map(([code])=>getTeam(code)));if(seq!==sequence)return;players=settled.flatMap(r=>r.status==='fulfilled'?r.value:[]);heading='2026–27 NHL Skater Leaders';const missing=settled.filter(r=>r.status==='rejected').length;el('hoist-stats-status').textContent=missing?`${missing} team file(s) unavailable.`:'';}
  else{const code=el('hoist-stats-team').value;players=await getTeam(code);if(seq!==sequence)return;heading=`2026–27 ${teamName[code]} — Player Stats`;el('hoist-stats-status').textContent='';}
- players.sort((a,b)=>{const cmp=sortKey==='name'?name(a).localeCompare(name(b)):numeric(a,sortKey)-numeric(b,sortKey);return sortDirection*cmp||numeric(b,'points')-numeric(a,'points')||name(a).localeCompare(name(b));});
+ players.sort((a,b)=>{const av=numeric(a,sortKey),bv=numeric(b,sortKey);const cmp=sortKey==='name'?name(a).localeCompare(name(b)):av==null?bv==null?0:1:bv==null?-1:sortDirection*(av-bv);return cmp||(numeric(b,'points')??0)-(numeric(a,'points')??0)||name(a).localeCompare(name(b));});
  el('hoist-stats-content').innerHTML=`<h4 class="hoist-stats-subtitle">${esc(heading)}</h4>${players.length?table(players):'<p class="muted">No player statistics available yet.</p>'}`;
  requestAnimationFrame(syncStatsPlayerRail);
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
