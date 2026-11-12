@@ -3886,6 +3886,35 @@ body[data-theme="light"] #games .hoist-game-card {
  #stats .hoist-stats-league-rank-label { width:25px!important; min-width:25px!important; text-align:center!important; }
 }
 </style>
+<style>
+/* Stats V54: give mobile player names room and align League rank to the left edge. */
+@media (max-width:650px) {
+  #stats .hoist-stats-player-rail {
+    width:190px!important; min-width:190px!important; max-width:190px!important;
+  }
+  #stats .hoist-stats-fixed-shell .hoist-stats-table th:first-child,
+  #stats .hoist-stats-fixed-shell .hoist-stats-table td:first-child,
+  #stats .hoist-stats-table th:first-child,
+  #stats .hoist-stats-table td:first-child {
+    width:190px!important; min-width:190px!important; max-width:190px!important;
+  }
+  #stats .hoist-stats-rail-row {padding-left:2px!important;padding-right:5px!important;}
+  #stats .hoist-stats-rail-head button {padding-left:2px!important;padding-right:5px!important;}
+  #stats .hoist-stats-rail-row .hoist-stats-team-cell {gap:5px!important;}
+  #stats .hoist-stats-rank {
+    flex:0 0 18px!important;min-width:18px!important;width:18px!important;
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    margin:0!important;padding:0!important;
+  }
+  #stats .hoist-stats-league-rank-label {
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    width:18px!important;min-width:18px!important;margin-right:5px!important;
+  }
+  #stats .hoist-stats-rail-row .hoist-stats-name {
+    flex:1 1 auto!important;min-width:0!important;
+  }
+}
+</style>
 </head>
 
 <body>
