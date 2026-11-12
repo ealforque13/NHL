@@ -4730,6 +4730,17 @@ html body #lineups .hoist-lineup-group {
   #lineups .hoist-lineup-group { padding-top:7px !important; padding-bottom:7px !important; }
   #lineups .hoist-lineup-pp > .hoist-lineup-players { row-gap:10px !important; }
 }
+/* Lineups refinement: monochrome watermark, hidden PP slot codes, mobile initials. */
+#lineups .hoist-lineup-group .hoist-lineup-avatar::before {
+  filter: grayscale(1) saturate(0) brightness(1.25) contrast(1.1) !important;
+  opacity: .48 !important;
+}
+#lineups .hoist-lineup-pp .hoist-lineup-player-position { display:none !important; }
+#lineups .hoist-lineup-name-mobile { display:none !important; }
+@media (max-width:650px) {
+  #lineups .hoist-lineup-name-full { display:none !important; }
+  #lineups .hoist-lineup-name-mobile { display:inline !important; }
+}
 </style>
 </head>
 
@@ -6102,6 +6113,10 @@ document.addEventListener('DOMContentLoaded', function () {
     zacharybolduc:['zackbolduc','zachbolduc']
   };
   const officialJerseyOverrides = {MTL:{oliverkapanen:91}};
+  function mobilePlayerName(name) {
+    const parts = String(name || '').trim().split(/\s+/);
+    return parts.length > 1 ? `${parts[0].charAt(0)}. ${parts.slice(1).join(' ')}` : name;
+  }
   function photoFor(name,p) {
     const key = normalize(name);
     const aliases = [key,...(playerAliases[key] || [])];
@@ -6117,14 +6132,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const name = typeof player === 'string' ? player : p.name || 'Not available';
     const photo = photoFor(name,p);
     const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? officialJerseyOverrides[selected]?.[normalize(name)];
-    const positionText = role || (p.position && !/^SK\d+$/i.test(p.position) && !/^G\d+$/i.test(p.position) ? p.position : '');
+    const rawPosition = role || p.position || '';
+    const positionText = /^SK\d+$/i.test(rawPosition) || /^G\d+$/i.test(rawPosition) ? '' : rawPosition;
     const numberHtml = number !== null && number !== undefined && number !== '' ? ` #${esc(number)}` : '';
     return `<div class="hoist-lineup-player">
       <div class="hoist-lineup-player-position">${esc(positionText)}</div>
       <div class="hoist-lineup-avatar-wrap">
         <div class="hoist-lineup-avatar">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
       </div>
-      <div class="hoist-lineup-player-name">${esc(name)}</div>
+      <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name)}</span><span class="hoist-lineup-name-mobile">${esc(mobilePlayerName(name))}</span></div>
       <div class="hoist-lineup-player-jersey">${numberHtml.trim()}</div>
     </div>`;
   }
