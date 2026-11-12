@@ -3967,19 +3967,25 @@ body[data-theme="light"] #games .hoist-game-card {
 </style>
 
 <style>
-/* V57 — selected Stats category mirrors the filled Standings column. */
-#stats .hoist-stats-table th.hoist-stat-selected,
-#stats .hoist-stats-table td.hoist-stat-selected {
-  background-color:rgba(38,105,176,.23)!important;
-  box-shadow:inset 1px 0 0 rgba(73,181,255,.45),inset -1px 0 0 rgba(73,181,255,.45)!important;
-  color:#fff!important;
-  -webkit-text-fill-color:#fff!important;
+/* V58: exact desktop Standings active-column fill, opacity and border effects. */
+@media(min-width:1100px){
+ #stats .hoist-stats-table th.hoist-stat-selected,
+ #stats .hoist-stats-table tbody td.hoist-stat-selected{
+  background-color:rgba(73,181,255,.14)!important;
+  box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26)!important;
+ }
+ #stats .hoist-stats-table thead th.hoist-stat-selected{
+  box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26),inset 0 1px 0 rgba(73,181,255,.30)!important;
+  border-top:0!important;
+ }
+ #stats .hoist-stats-table tbody tr:last-child td.hoist-stat-selected{
+  border-bottom:1px solid rgba(73,181,255,.30)!important;
+ }
 }
-#stats .hoist-stats-table th.hoist-stat-selected {border-top:1px solid rgba(73,181,255,.6)!important;}
-#stats .hoist-stats-table tbody tr:last-child td.hoist-stat-selected {border-bottom:1px solid rgba(73,181,255,.6)!important;}
 #stats .hoist-stats-table th.hoist-stat-selected button,
-#stats .hoist-stats-table td.hoist-stat-selected * {color:#fff!important;-webkit-text-fill-color:#fff!important;}
-#stats .hoist-stats-table th.hoist-stat-selected .hoist-stat-arrow {color:#49b5ff!important;-webkit-text-fill-color:#49b5ff!important;}
+#stats .hoist-stats-table td.hoist-stat-selected,
+#stats .hoist-stats-table td.hoist-stat-selected *{color:#fff!important;-webkit-text-fill-color:#fff!important}
+#stats .hoist-stats-table th.hoist-stat-selected .hoist-stat-arrow{color:#49b5ff!important;-webkit-text-fill-color:#49b5ff!important}
 @media(max-width:650px){
   #stats .hoist-stats-player-rail,
   #stats .hoist-stats-fixed-shell .hoist-stats-table th:first-child,
@@ -5485,7 +5491,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const previous=`https://assets.nhle.com/mugs/nhl/20252026/${club}/${playerId}.png`;
    return `<img class="hoist-stats-headshot hoist-team-headshot" style="--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}" src="${current}" alt="" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${previous}'}else{this.style.display='none';this.nextElementSibling.style.display='inline-flex'}"><span class="hoist-stats-headshot-fallback" style="display:none;--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}" aria-hidden="true">${esc(String(name(p)).slice(0,1))}</span>`;
  };
- const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
+ const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span><span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${key==='name'?label:esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
  function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RANK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'<span class="hoist-stats-player-header-label">PLAYER</span>')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
