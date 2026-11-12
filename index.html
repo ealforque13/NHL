@@ -4706,6 +4706,31 @@ html body #lineups .hoist-lineup-group {
   #lineups .hoist-lineup-pp .hoist-lineup-avatar { width:74px !important; height:74px !important; }
 }
 </style>
+<style>
+/* Hoist Lineups — compact vertical rhythm and detailed white crest artwork. */
+#lineups .hoist-lineup-content { gap:8px !important; }
+#lineups .hoist-lineup-group { padding-top:10px !important; padding-bottom:10px !important; margin-top:0 !important; margin-bottom:0 !important; }
+#lineups .hoist-lineup-group > .hoist-lineup-players { row-gap:12px !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player-position { margin-bottom:4px !important; }
+#lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { margin-bottom:4px !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player-name { line-height:1.15 !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player-jersey { margin-top:2px !important; line-height:1.1 !important; }
+/* Keep crest detail rather than flattening the entire SVG to a solid silhouette. */
+#lineups .hoist-lineup-group .hoist-lineup-avatar::before {
+  inset:-7% !important;
+  background-size:contain !important;
+  opacity:.47 !important;
+  filter:grayscale(1) brightness(1.7) contrast(1.7)
+    drop-shadow(1px 0 0 rgba(255,255,255,.85))
+    drop-shadow(-1px 0 0 rgba(255,255,255,.85)) !important;
+}
+#lineups .hoist-lineup-pp > .hoist-lineup-players { row-gap:13px !important; }
+#lineups .hoist-lineup-injuries { margin-top:17px !important; padding-top:13px !important; }
+@media(max-width:650px) {
+  #lineups .hoist-lineup-group { padding-top:7px !important; padding-bottom:7px !important; }
+  #lineups .hoist-lineup-pp > .hoist-lineup-players { row-gap:10px !important; }
+}
+</style>
 </head>
 
 <body>
@@ -6071,12 +6096,27 @@ document.addEventListener('DOMContentLoaded', function () {
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
   const normalize = name => String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   let headshots = new Map();
+  const playerAliases = {
+    zackbolduc:['zacharybolduc','zachbolduc','zackbolduc'],
+    zachbolduc:['zacharybolduc','zackbolduc'],
+    zacharybolduc:['zackbolduc','zachbolduc']
+  };
+  const officialJerseyOverrides = {MTL:{oliverkapanen:91}};
+  function photoFor(name,p) {
+    const key = normalize(name);
+    const aliases = [key,...(playerAliases[key] || [])];
+    for (const alias of aliases) {
+      const cached = headshots.get(alias);
+      if (cached) return cached;
+    }
+    return typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '';
+  }
 
   function playerMarkup(player, role) {
     const p = player && typeof player === 'object' ? player : {};
     const name = typeof player === 'string' ? player : p.name || 'Not available';
-    const photo = (typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '') || headshots.get(normalize(name)) || '';
-    const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber;
+    const photo = photoFor(name,p);
+    const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? officialJerseyOverrides[selected]?.[normalize(name)];
     const positionText = role || (p.position && !/^SK\d+$/i.test(p.position) && !/^G\d+$/i.test(p.position) ? p.position : '');
     const numberHtml = number !== null && number !== undefined && number !== '' ? ` #${esc(number)}` : '';
     return `<div class="hoist-lineup-player">
@@ -6179,7 +6219,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     await addRoster(code);
     // Bolduc previously played for St. Louis; its cached roster may retain his photo.
-    if (code === 'MTL' && !next.has('zackbolduc')) await addRoster('STL', true);
+    if (code === 'MTL' && !['zackbolduc','zachbolduc','zacharybolduc'].some(k => next.has(k))) await addRoster('STL', true);
     if (token !== requestId) return;
     headshots = next;
     render();
