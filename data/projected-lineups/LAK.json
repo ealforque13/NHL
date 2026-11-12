@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-12T01:35:38.009Z",
   "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-12T17:57:04.914734+00:00",
+  "cachedAtUTC": "2026-11-12T18:56:47.799869+00:00",
   "forwards": [
     [
       {
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Anton Forsberg",
-      "number": 31,
+      "name": "Darcy Kuemper",
+      "number": 35,
       "position": "G1",
-      "sourcePlayerId": 2394,
+      "sourcePlayerId": 1692,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Darcy Kuemper",
-      "number": 35,
+      "name": "Anton Forsberg",
+      "number": 31,
       "position": "G2",
-      "sourcePlayerId": 1692,
+      "sourcePlayerId": 2394,
       "injuryStatus": null,
       "gameTimeDecision": false
     }

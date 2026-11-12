@@ -2,9 +2,9 @@
   "team": "VAN",
   "teamName": "Vancouver Canucks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-10T19:47:41.561Z",
+  "sourceUpdatedAt": "2026-11-12T18:19:33.681Z",
   "sourceDescription": "Thomas Drance",
-  "cachedAtUTC": "2026-11-12T17:57:39.279771+00:00",
+  "cachedAtUTC": "2026-11-12T18:57:21.236425+00:00",
   "forwards": [
     [
       {
@@ -76,20 +76,20 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Drew O'Connor",
-        "number": 18,
+        "name": "Linus Karlsson",
+        "number": 94,
         "position": "RW",
-        "sourcePlayerId": 32925,
+        "sourcePlayerId": 29135,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Arshdeep Bains",
-        "number": null,
+        "name": "Drew O'Connor",
+        "number": 18,
         "position": "LW",
-        "sourcePlayerId": 28969,
+        "sourcePlayerId": 32925,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -140,30 +140,30 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jamie Oleksiak",
-        "number": 4,
+        "name": "Tom Willander",
+        "number": 5,
         "position": "RD",
-        "sourcePlayerId": 1790,
+        "sourcePlayerId": 38455,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Guillaume Brisebois",
-        "number": 55,
+        "name": "Jamie Oleksiak",
+        "number": 4,
         "position": "LD",
-        "sourcePlayerId": 3789,
+        "sourcePlayerId": 1790,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Tom Willander",
+        "name": "Cameron Crotty",
         "number": 5,
         "position": "RD",
-        "sourcePlayerId": 38455,
+        "sourcePlayerId": 28075,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -306,18 +306,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Guillaume Brisebois",
-        "number": 55,
+        "name": "Jamie Oleksiak",
+        "number": 4,
         "position": "SK3",
-        "sourcePlayerId": 3789,
+        "sourcePlayerId": 1790,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jamie Oleksiak",
-        "number": 4,
+        "name": "Tom Willander",
+        "number": 5,
         "position": "SK4",
-        "sourcePlayerId": 1790,
+        "sourcePlayerId": 38455,
         "injuryStatus": null,
         "gameTimeDecision": false
       }

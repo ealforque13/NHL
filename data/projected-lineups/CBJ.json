@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T15:44:05.486Z",
-  "sourceDescription": "Mark Scheig",
-  "cachedAtUTC": "2026-11-12T17:56:47.793627+00:00",
+  "sourceUpdatedAt": "2026-11-12T18:16:23.041Z",
+  "sourceDescription": "@BlueJacketsNHL",
+  "cachedAtUTC": "2026-11-12T18:56:29.777724+00:00",
   "forwards": [
     [
       {
@@ -34,10 +34,10 @@
     ],
     [
       {
-        "name": "Dmitri Voronkov",
-        "number": 10,
+        "name": "Valeri Nichushkin",
+        "number": 43,
         "position": "LW",
-        "sourcePlayerId": 31266,
+        "sourcePlayerId": 2142,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -50,10 +50,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Valeri Nichushkin",
-        "number": 43,
+        "name": "Dmitri Voronkov",
+        "number": 10,
         "position": "RW",
-        "sourcePlayerId": 2142,
+        "sourcePlayerId": 31266,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
