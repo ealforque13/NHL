@@ -4631,6 +4631,81 @@ html body #lineups .hoist-lineup-group {
   #lineups .hoist-lineup-group .hoist-lineup-player-jersey { font-size:10px !important; }
 }
 </style>
+
+<style>
+/* Lineups: larger NHL HUT portraits, formation layout, and injury reports. */
+#lineups .hoist-lineup-content { max-width:900px !important; gap:18px !important; }
+#lineups .hoist-lineup-group > .hoist-lineup-players {
+  grid-template-columns:repeat(var(--lineup-columns),minmax(0,170px)) !important;
+  gap:18px !important; justify-content:center !important; justify-items:center !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-player-position {
+  display:block !important; order:0 !important; color:#fff !important;
+  font-size:13px !important; margin:0 0 8px !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar-wrap {
+  width:132px !important; max-width:100% !important; margin:0 auto 9px !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar {
+  width:130px !important; height:130px !important; max-width:100% !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar::before {
+  inset:0 !important; background-size:100% auto !important;
+  opacity:.28 !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-avatar img {
+  width:100% !important; height:100% !important;
+}
+#lineups .hoist-lineup-group .hoist-lineup-player-name { font-size:14px !important; }
+#lineups .hoist-lineup-group .hoist-lineup-player-jersey { font-size:13px !important; }
+/* Goalies: exactly two side-by-side, centered. */
+#lineups .hoist-lineup-goalies > .hoist-lineup-players {
+  grid-template-columns:repeat(2,minmax(0,170px)) !important;
+}
+/* Power play: two lower players centered between the three above. */
+#lineups .hoist-lineup-pp > .hoist-lineup-players {
+  grid-template-columns:repeat(6,minmax(0,76px)) !important;
+  column-gap:7px !important; row-gap:24px !important;
+}
+#lineups .hoist-lineup-pp .hoist-lineup-player { grid-column:span 2; }
+#lineups .hoist-lineup-pp .hoist-lineup-player:nth-child(4) { grid-column:2 / span 2; }
+#lineups .hoist-lineup-pp .hoist-lineup-player:nth-child(5) { grid-column:4 / span 2; }
+#lineups .hoist-lineup-injuries {
+  width:min(100%,650px); margin:30px auto 0; padding:20px 0 8px;
+  border-top:1px solid rgba(151,181,224,.3); text-align:center;
+}
+#lineups .hoist-lineup-injuries h3 {
+  color:#fff; font-size:14px; font-weight:800; letter-spacing:.09em;
+  margin:0 0 14px;
+}
+#lineups .hoist-lineup-injury-list { display:flex; flex-wrap:wrap; justify-content:center; gap:10px 24px; }
+#lineups .hoist-lineup-injury-player { display:flex; flex-direction:column; align-items:center; gap:3px; }
+#lineups .hoist-lineup-injury-name { color:#fff; font-size:13px; font-weight:700; }
+#lineups .hoist-lineup-injury-status { color:#c2cee1; font-size:11px; }
+@media(max-width:650px) {
+  #lineups .hoist-lineup-group > .hoist-lineup-players {
+    grid-template-columns:repeat(var(--lineup-columns),minmax(0,110px)) !important;
+    gap:6px !important;
+  }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar-wrap { width:92px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-avatar { width:90px !important; height:90px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-player-name { font-size:11px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-player-jersey { font-size:11px !important; }
+  #lineups .hoist-lineup-group .hoist-lineup-player-position { font-size:11px !important; }
+  #lineups .hoist-lineup-goalies > .hoist-lineup-players { grid-template-columns:repeat(2,minmax(0,110px)) !important; }
+  #lineups .hoist-lineup-pp > .hoist-lineup-players {
+    grid-template-columns:repeat(6,minmax(0,47px)) !important;
+    column-gap:3px !important; row-gap:16px !important;
+  }
+  #lineups .hoist-lineup-pp .hoist-lineup-avatar-wrap { width:86px !important; }
+  #lineups .hoist-lineup-pp .hoist-lineup-avatar { width:84px !important; height:84px !important; }
+}
+@media(max-width:380px) {
+  #lineups .hoist-lineup-pp > .hoist-lineup-players { grid-template-columns:repeat(6,minmax(0,42px)) !important; }
+  #lineups .hoist-lineup-pp .hoist-lineup-avatar-wrap { width:76px !important; }
+  #lineups .hoist-lineup-pp .hoist-lineup-avatar { width:74px !important; height:74px !important; }
+}
+</style>
 </head>
 
 <body>
@@ -6013,6 +6088,29 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="hoist-lineup-player-jersey">${numberHtml.trim()}</div>
     </div>`;
   }
+  function injuryMarkup() {
+    if (!lineup || lineup.type === 'roster' || !Array.isArray(lineup.injuries)) return '';
+    const seen = new Set();
+    const injured = lineup.injuries.filter(p => {
+      if (!p || !p.name) return false;
+      const key = normalize(p.name);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      const pos = String(p.position || '').toUpperCase();
+      if (position === 'forwards') return ['LW','C','RW','F'].includes(pos);
+      if (position === 'defense') return ['D','LD','RD'].includes(pos);
+      if (position === 'goalies') return pos === 'G';
+      return false;
+    });
+    if (!injured.length) return '';
+    return `<section class="hoist-lineup-injuries" aria-label="Injured players">
+      <h3>INJURED PLAYERS</h3>
+      <div class="hoist-lineup-injury-list">${injured.map(p => `<div class="hoist-lineup-injury-player">
+        <span class="hoist-lineup-injury-name">${esc(p.name)}${p.number != null && p.number !== '' ? ` #${esc(p.number)}` : ''}</span>
+        ${p.injuryStatus ? `<span class="hoist-lineup-injury-status">${esc(p.injuryStatus)}</span>` : ''}
+      </div>`).join('')}</div>
+    </section>`;
+  }
   function render() {
     const root = el('hoist-lineup-content');
     if (!root) return;
@@ -6028,20 +6126,29 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     let groups = Array.isArray(lineup[position]) ? lineup[position] : [];
-    // Some lineup providers store goalies as a flat array; other sources nest each goalie.
-    if (position === 'goalies' && groups.length && !Array.isArray(groups[0])) groups = groups.map(p => [p]);
+    if (position === 'goalies' && groups.length) {
+      // DFO stores both goalies in one flat list; display them on one centered row.
+      groups = [groups.flat().filter(Boolean)];
+    }
     if (!groups.length) {
-      root.innerHTML = '<p class="muted">No combinations available for this position.</p>';
+      root.innerHTML = '<p class="muted">No combinations available for this position.</p>' + injuryMarkup();
       return;
     }
-    root.innerHTML = Array.from({length:Math.max(counts[position],groups.length)},(_,i) => {
+    const groupMarkup = Array.from({length: position === 'goalies' ? 1 : Math.max(counts[position],groups.length)},(_,i) => {
       const players = Array.isArray(groups[i]) ? groups[i] : [];
-      const roles = labels[position];
-      const columns = roles.length;
-      return `<div class="hoist-lineup-card hoist-lineup-group" style="--lineup-columns:${columns}">
+      const roles = position === 'goalies' ? ['G','G'] : labels[position];
+      if (position === 'powerPlay') {
+        // Five players: 3 across the top, 2 centered in the gaps below.
+        const order = [0,1,2,3,4];
+        return `<div class="hoist-lineup-card hoist-lineup-group hoist-lineup-pp" style="--lineup-columns:3">
+          <div class="hoist-lineup-players">${order.map((j) => playerMarkup(players[j],players[j]?.position || roles[j])).join('')}</div>
+        </div>`;
+      }
+      return `<div class="hoist-lineup-card hoist-lineup-group ${position === 'goalies' ? 'hoist-lineup-goalies' : ''}" style="--lineup-columns:${roles.length}">
         <div class="hoist-lineup-players">${roles.map((role,j) => playerMarkup(players[j],role)).join('')}</div>
       </div>`;
     }).join('');
+    root.innerHTML = groupMarkup + injuryMarkup();
   }
   async function fetchJson(path) {
     const response = await fetch(path,{cache:'no-cache'});
