@@ -4878,6 +4878,31 @@ html body #lineups .hoist-lineup-group {
   }
 }
 </style>
+
+<style id="hoist-dfo-jersey-redesign">
+/* DFO-inspired jersey lineup: no portrait cards, centered jersey silhouettes. */
+#lineups .hoist-lineup-group .hoist-lineup-players,
+#lineups .hoist-lineup-roster-grid {justify-items:center!important;justify-content:center!important;}
+#lineups .hoist-dfo-player {display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;min-width:0!important;gap:3px!important;text-align:center!important;}
+#lineups .hoist-dfo-jersey {width:118px;height:116px;position:relative;display:block;flex:none;filter:drop-shadow(0 5px 6px rgba(0,0,0,.24));background:none!important;border:none!important;}
+#lineups .hoist-dfo-shirt {display:block;width:100%;height:100%;}
+#lineups .hoist-dfo-crest {position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);width:43px;height:43px;object-fit:contain;filter:drop-shadow(0 1px 1px rgba(0,0,0,.4));}
+#lineups .hoist-dfo-player .hoist-lineup-player-position {display:block!important;min-height:15px!important;color:#fff!important;font-size:12px!important;font-weight:700!important;margin:0 0 2px!important;}
+#lineups .hoist-dfo-player .hoist-lineup-player-name {display:block!important;margin:0!important;color:#fff!important;font-size:13px!important;font-weight:750!important;line-height:1.2!important;max-width:155px;}
+#lineups .hoist-dfo-player .hoist-lineup-player-jersey {display:block!important;color:#fff!important;font-size:11px!important;font-weight:600!important;margin:0!important;}
+#lineups .hoist-lineup-group {border-bottom:1px solid rgba(155,180,215,.14)!important;padding-bottom:14px!important;margin-bottom:12px!important;}
+#lineups .hoist-lineup-pp .hoist-lineup-player-position {display:none!important;}
+@media(max-width:650px){
+ #lineups .hoist-dfo-jersey{width:86px;height:88px;}
+ #lineups .hoist-dfo-crest{width:31px;height:31px;}
+ #lineups .hoist-dfo-player .hoist-lineup-player-name{font-size:11px!important;}
+ #lineups .hoist-dfo-player .hoist-lineup-player-jersey{font-size:10px!important;}
+ #lineups .hoist-lineup-group{padding-bottom:9px!important;margin-bottom:9px!important;}
+}
+/* Games: no live scores, period counters, or live labels. Completed-game scores remain. */
+#games .hoist-game-card:has(.hoist-game-live) .hoist-game-team-score,
+#games .hoist-game-live {display:none!important;}
+</style>
 </head>
 
 <body>
@@ -5488,7 +5513,7 @@ html body #lineups .hoist-lineup-group {
 <section id="games" class="tab-section">
   <article class="panel section-panel hoist-games-panel">
     <div class="section-head hoist-games-head">
-      <div class="eyebrow">HOIST OFFICIAL · NHL SCOREBOARD</div>
+      <div class="eyebrow">HOIST OFFICIAL · NHL GAMES</div>
       <div class="hoist-games-date-controls">
         <button type="button" id="hoist-games-prev" aria-label="Previous day">‹</button>
         <input type="date" id="hoist-games-date" aria-label="Choose game date" />
@@ -5499,7 +5524,7 @@ html body #lineups .hoist-lineup-group {
     <div id="hoist-games-day" class="hoist-games-day"></div>
     <p id="hoist-games-status" class="muted" role="status">Loading NHL games…</p>
     <div id="hoist-games-grid" class="hoist-games-grid"></div>
-    <p class="hoist-games-footnote muted">Times shown in Eastern Time · Live scoring is temporarily disabled.</p>
+    <p class="hoist-games-footnote muted">Times shown in Eastern Time.</p>
   </article>
 </section>
 
@@ -6263,21 +6288,49 @@ document.addEventListener('DOMContentLoaded', function () {
     return typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '';
   }
 
+  // Daily Faceoff-inspired jersey presentation; original projected-lineup data remains unchanged.
+  const jerseyPalettes = {
+    ANA:['#F47A38','#151515','#FFFFFF'],BOS:['#111111','#FFB81C','#FFFFFF'],BUF:['#003087','#FFB81C','#FFFFFF'],
+    CAR:['#CC0000','#111111','#FFFFFF'],CBJ:['#002654','#CE1126','#FFFFFF'],CGY:['#C8102E','#F1BE48','#FFFFFF'],
+    CHI:['#CF0A2C','#111111','#FFFFFF'],COL:['#6F263D','#236192','#FFFFFF'],DAL:['#006847','#111111','#FFFFFF'],
+    DET:['#CE1126','#FFFFFF','#FFFFFF'],EDM:['#041E42','#FF4C00','#FFFFFF'],FLA:['#C8102E','#041E42','#FFFFFF'],
+    LAK:['#111111','#A2AAAD','#FFFFFF'],MIN:['#154734','#A6192E','#EAAA00'],MTL:['#AF1E2D','#003087','#FFFFFF'],
+    NJD:['#CE1126','#111111','#FFFFFF'],NSH:['#FFB81C','#041E42','#FFFFFF'],NYI:['#00539B','#F47D30','#FFFFFF'],
+    NYR:['#0038A8','#CE1126','#FFFFFF'],OTT:['#C52032','#111111','#CBA044'],PHI:['#F74902','#111111','#FFFFFF'],
+    PIT:['#111111','#FCB514','#FFFFFF'],SEA:['#001628','#99D9D9','#FFFFFF'],SJS:['#006D75','#EA7200','#FFFFFF'],
+    STL:['#002F87','#FCB514','#FFFFFF'],TBL:['#002868','#FFFFFF','#FFFFFF'],TOR:['#003E7E','#FFFFFF','#FFFFFF'],
+    UTA:['#6CACE4','#111111','#FFFFFF'],VAN:['#00843D','#00205B','#FFFFFF'],VGK:['#333F42','#B4975A','#FFFFFF'],
+    WPG:['#041E42','#7B303E','#FFFFFF'],WSH:['#C8102E','#041E42','#FFFFFF']
+  };
+  function jerseyMarkup(name, number) {
+    const [primary,trim,white] = jerseyPalettes[selected] || ['#294365','#FFFFFF','#FFFFFF'];
+    const logo = `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(selected)}_light.svg`;
+    // An original SVG jersey illustration, not a copy of Daily Faceoff artwork.
+    return `<div class="hoist-dfo-jersey" style="--jersey-main:${primary};--jersey-trim:${trim};--jersey-white:${white}" aria-hidden="true">
+      <svg class="hoist-dfo-shirt" viewBox="0 0 140 132" xmlns="http://www.w3.org/2000/svg">
+        <path d="M45 9 L57 4 Q70 17 83 4 L95 9 L130 30 L116 65 L101 58 L101 125 L39 125 L39 58 L24 65 L10 30 Z" fill="${primary}" stroke="${trim}" stroke-width="2.5"/>
+        <path d="M45 9 L57 4 Q70 17 83 4 L95 9" fill="none" stroke="${white}" stroke-width="3"/>
+        <path d="M57 4 Q70 23 83 4" fill="none" stroke="${trim}" stroke-width="5"/>
+        <path d="M13 39 L29 43 L26 51 L10 47 M111 43 L127 39 L130 47 L114 51" fill="${white}" opacity=".94"/>
+        <path d="M40 89 H100 V101 H40 Z" fill="${trim}"/>
+        <path d="M40 90 H100 M40 100 H100" stroke="${white}" stroke-width="3"/>
+        <path d="M40 121 H100" stroke="${trim}" stroke-width="6"/>
+      </svg>
+      <img class="hoist-dfo-crest" src="${logo}" alt="" loading="lazy" onerror="this.style.display='none'">
+    </div>`;
+  }
   function playerMarkup(player, role) {
     const p = player && typeof player === 'object' ? player : {};
     const name = typeof player === 'string' ? player : p.name || 'Not available';
-    const photo = photoFor(name,p);
     const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? officialJerseyOverrides[selected]?.[normalize(name)];
     const rawPosition = role || p.position || '';
     const positionText = /^SK\d+$/i.test(rawPosition) || /^G\d+$/i.test(rawPosition) ? '' : rawPosition;
-    const numberHtml = number !== null && number !== undefined && number !== '' ? ` #${esc(number)}` : '';
-    return `<div class="hoist-lineup-player">
+    const numberHtml = number !== null && number !== undefined && number !== '' ? `#${esc(number)}` : '';
+    return `<div class="hoist-lineup-player hoist-dfo-player">
       <div class="hoist-lineup-player-position">${esc(positionText)}</div>
-      <div class="hoist-lineup-avatar-wrap">
-        <div class="hoist-lineup-avatar" data-jersey="${number !== null && number !== undefined && number !== '' ? esc(number) : ''}" data-surname="${esc(String(name).trim().split(/\s+/).slice(1).join(' ') || String(name).trim())}">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
-      </div>
+      ${jerseyMarkup(name,number)}
       <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name)}</span><span class="hoist-lineup-name-mobile">${esc(mobilePlayerName(name))}</span></div>
-      <div class="hoist-lineup-player-jersey">${numberHtml.trim()}</div>
+      <div class="hoist-lineup-player-jersey">${numberHtml}</div>
     </div>`;
   }
   function injuryMarkup() {
