@@ -3965,6 +3965,35 @@ body[data-theme="light"] #games .hoist-game-card {
 #games .hoist-game-card:has(.hoist-game-live) .hoist-game-team-score,
 #games .hoist-game-card:has(.hoist-game-live) .hoist-game-live {display:none!important}
 </style>
+
+<style>
+/* V57 — selected Stats category mirrors the filled Standings column. */
+#stats .hoist-stats-table th.hoist-stat-selected,
+#stats .hoist-stats-table td.hoist-stat-selected {
+  background-color:rgba(38,105,176,.23)!important;
+  box-shadow:inset 1px 0 0 rgba(73,181,255,.45),inset -1px 0 0 rgba(73,181,255,.45)!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+#stats .hoist-stats-table th.hoist-stat-selected {border-top:1px solid rgba(73,181,255,.6)!important;}
+#stats .hoist-stats-table tbody tr:last-child td.hoist-stat-selected {border-bottom:1px solid rgba(73,181,255,.6)!important;}
+#stats .hoist-stats-table th.hoist-stat-selected button,
+#stats .hoist-stats-table td.hoist-stat-selected * {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+#stats .hoist-stats-table th.hoist-stat-selected .hoist-stat-arrow {color:#49b5ff!important;-webkit-text-fill-color:#49b5ff!important;}
+@media(max-width:650px){
+  #stats .hoist-stats-player-rail,
+  #stats .hoist-stats-fixed-shell .hoist-stats-table th:first-child,
+  #stats .hoist-stats-fixed-shell .hoist-stats-table td:first-child,
+  #stats .hoist-stats-table th:first-child,
+  #stats .hoist-stats-table td:first-child {width:154px!important;min-width:154px!important;max-width:154px!important;}
+  #stats .hoist-stats-rail-row.hoist-stat-selected{background-color:rgba(38,105,176,.23)!important;}
+}
+@media(min-width:651px){
+  #stats .hoist-stats-controls{display:flex!important;align-items:flex-end!important;justify-content:space-between!important;gap:16px!important;}
+  #stats .hoist-stats-toolbar{margin:0 0 18px auto!important;justify-content:flex-end!important;}
+  #stats .hoist-stats-picker{min-width:210px!important;}
+}
+</style>
 </head>
 
 <body>
@@ -5458,7 +5487,7 @@ document.addEventListener('DOMContentLoaded', function () {
  };
  const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell">${mode==='league'?`<span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span>`:''}<span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
- const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${key==='name' && mode==='league'?label:esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
+ const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${key==='name'?label:esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
  function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RANK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'<span class="hoist-stats-player-header-label">PLAYER</span>')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
  function syncStatsPlayerRail(){
    const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
