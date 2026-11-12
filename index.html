@@ -4139,6 +4139,29 @@ body[data-theme="light"] #games .hoist-game-card {
   #stats .hoist-stats-table thead th.hoist-stat-sortable button{padding-top:5px!important;padding-bottom:5px!important}
 }
 </style>
+
+<style>
+/* V68: desktop-only Stats refinements. */
+@media (min-width:651px){
+  /* Align the stats column headings with the upper edge of their header cells. */
+  #stats .hoist-stats-table thead th{vertical-align:top!important;}
+  #stats .hoist-stats-table thead th.hoist-stat-sortable button{align-items:flex-start!important;line-height:1.2!important;}
+  /* Use the same dark shade as the odd (1st, 3rd, 5th) player rows. */
+  #stats .hoist-stats-table thead th{background-color:#101b2e!important;}
+  /* Keep the active sorting tint, but not a separate solid header colour. */
+  #stats .hoist-stats-table thead th.hoist-stat-selected{background-image:linear-gradient(rgba(73,181,255,.14),rgba(73,181,255,.14))!important;}
+  /* Team selector stays within the Stats panel and never overflows the table. */
+  #stats .hoist-stats-toolbar{right:20px!important;left:auto!important;max-width:calc(100% - 40px)!important;box-sizing:border-box!important;}
+  #stats .hoist-stats-picker{width:190px!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important;}
+  #stats .hoist-stats-picker select{display:block;width:100%!important;max-width:100%!important;min-width:0!important;box-sizing:border-box!important;font-size:12px!important;padding:8px 26px 8px 9px!important;}
+  /* Remove the outer table border and individual row/grid lines. */
+  #stats .hoist-stats-table-wrap{border:0!important;border-radius:0!important;}
+  #stats .hoist-stats-table{border:0!important;}
+  #stats .hoist-stats-table thead th{border-top:0!important;border-bottom:0!important;}
+  #stats .hoist-stats-table tbody td{border:0!important;}
+  /* Preserve the selected sorting column's existing blue outline. */
+}
+</style>
 </head>
 
 <body>
@@ -5661,7 +5684,7 @@ document.addEventListener('DOMContentLoaded', function () {
  const playerCell=(p,rank)=>`<span class="hoist-stats-team-cell"><span class="hoist-stats-rank" aria-label="Rank ${rank}">${rank}</span><span class="hoist-stats-jersey hoist-headshot-circle" style="--hoist-jersey-color:${teamColors[p.team]||'#8bc8ff'};--hoist-headshot-team-color:${teamColors[p.team]||'#293e5d'}">${statsHeadshot(p)}</span><span class="hoist-stats-name"><span class="hoist-stat-name-full">${esc(name(p))}</span><span class="hoist-stat-name-short">${esc(shortName(p))}</span><small class="hoist-stats-player-meta">${mode==='league'?`${esc(p.team)} · `:''}#${esc(jersey(p))} · ${esc(positionLabel(p))}</small></span></span>`;
  const shortName=p=>{const full=name(p).trim();const parts=full.split(/\s+/);return parts.length>1?`${parts[0][0]}. ${parts.slice(1).join(' ')}`:full};
  const header=(key,label)=>`<th scope="col" class="hoist-stat-sortable ${sortKey===key?'hoist-stat-selected':''}" data-stat-key="${esc(key)}" aria-sort="${sortKey===key?(sortDirection===-1?'descending':'ascending'):'none'}"><button type="button" data-stat-sort="${esc(key)}">${key==='name'?label:esc(label)}${sortKey===key?`<span class="hoist-stat-arrow">${sortDirection===-1?'▾':'▴'}</span>`:''}</button></th>`;
- function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RANK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'<span class="hoist-stats-league-rank-label">RANK</span><span class="hoist-stats-player-header-label">PLAYER</span>')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
+ function table(players){return `<div class="hoist-stats-fixed-shell"><div class="hoist-stats-player-rail" aria-hidden="true"></div><div class="hoist-stats-table-wrap"><table class="hoist-stats-table"><thead><tr>${header('name',mode==='league'?'<span class=\"hoist-stats-league-rank-label\">RK</span><span class=\"hoist-stats-player-header-label\">PLAYER</span>':'<span class="hoist-stats-league-rank-label">RK</span><span class="hoist-stats-player-header-label">PLAYER</span>')}${fields.map(([k,label])=>header(k,label)).join('')}</tr></thead><tbody>${players.map((p,i)=>`<tr><td class="${sortKey==='name'?'hoist-stat-selected':''}">${playerCell(p,i+1)}</td>${fields.map(([k])=>`<td class="${sortKey===k?'hoist-stat-selected':''}">${esc(display(p,k))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`}
  function syncStatsPlayerRail(){
    const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
    if(!shell)return;
