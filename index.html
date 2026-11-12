@@ -4188,6 +4188,43 @@ body[data-theme="light"] #games .hoist-game-card {
 #stats .hoist-stats-pagination button:disabled{opacity:.4;cursor:default}
 @media(min-width:651px){#stats .hoist-stats-subtitle{margin-top:0!important;margin-bottom:5px!important;transform:translateY(-3px)}}
 </style>
+<style>
+/* V71 — mobile Stats table visual consistency. Desktop is unchanged. */
+@media (max-width:650px){
+  /* Exactly the same two solid blues across the header and alternating rows. */
+  #stats .hoist-stats-table thead th,
+  #stats .hoist-stats-table thead th.hoist-stat-selected,
+  #stats .hoist-stats-player-rail .hoist-stats-rail-row.hoist-stats-rail-head {
+    background:#1c2a40!important;
+    background-color:#1c2a40!important;
+    background-image:none!important;
+  }
+  #stats .hoist-stats-table tbody tr:nth-child(odd)>td{background-color:#101b2e!important}
+  #stats .hoist-stats-table tbody tr:nth-child(even)>td{background-color:#1c2a40!important}
+  #stats .hoist-stats-table tbody tr>td.hoist-stat-selected,
+  #stats .hoist-stats-player-rail .hoist-stats-rail-row.hoist-stat-selected{background-image:none!important}
+  /* RK stays visible in white in the pinned rail and in the actual header. */
+  #stats .hoist-stats-league-rank-label,
+  #stats .hoist-stats-league-rank-label::after,
+  #stats .hoist-stats-rail-head button,
+  #stats .hoist-stats-table thead th:first-child,
+  #stats .hoist-stats-table thead th:first-child button{
+    color:#fff!important;-webkit-text-fill-color:#fff!important;
+  }
+  /* Remove the redundant heading on mobile only. */
+  #stats .hoist-stats-subtitle{display:none!important}
+  /* Remove outer frame and row/header cell borders; keep sorting controls functional. */
+  #stats .hoist-stats-panel,
+  #stats .hoist-stats-fixed-shell,
+  #stats .hoist-stats-table-wrap,
+  #stats .hoist-stats-table{border:0!important;border-radius:0!important;outline:0!important}
+  #stats .hoist-stats-table thead th,
+  #stats .hoist-stats-table tbody td,
+  #stats .hoist-stats-player-rail .hoist-stats-rail-row{
+    border:0!important;outline:0!important;
+  }
+}
+</style>
 </head>
 
 <body>
