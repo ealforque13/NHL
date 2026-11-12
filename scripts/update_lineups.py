@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """Build Hoist Official projected-lineup JSON from Daily Faceoff page HTML.
 
@@ -7,6 +8,7 @@ opt-in and should only be enabled after verifying permission for automated use.
 import argparse
 import json
 import os
+import time
 from pathlib import Path
 from datetime import datetime, timezone
 from urllib.request import Request, urlopen
@@ -77,12 +79,76 @@ def transform(c):
         'injuries': [player_info(p) for p in c['players'] if p.get('injuryStatus') and p.get('categoryIdentifier') == 'oi'],
     }
 
+TEAMS = {
+    'ANA': 'anaheim-ducks', 'BOS': 'boston-bruins',
+    'BUF': 'buffalo-sabres', 'CAR': 'carolina-hurricanes',
+    'CBJ': 'columbus-blue-jackets', 'CGY': 'calgary-flames',
+    'CHI': 'chicago-blackhawks', 'COL': 'colorado-avalanche',
+    'DAL': 'dallas-stars', 'DET': 'detroit-red-wings',
+    'EDM': 'edmonton-oilers', 'FLA': 'florida-panthers',
+    'LAK': 'los-angeles-kings', 'MIN': 'minnesota-wild',
+    'MTL': 'montreal-canadiens', 'NJD': 'new-jersey-devils',
+    'NSH': 'nashville-predators', 'NYI': 'new-york-islanders',
+    'NYR': 'new-york-rangers', 'OTT': 'ottawa-senators',
+    'PHI': 'philadelphia-flyers', 'PIT': 'pittsburgh-penguins',
+    'SEA': 'seattle-kraken', 'SJS': 'san-jose-sharks',
+    'STL': 'st-louis-blues', 'TBL': 'tampa-bay-lightning',
+    'TOR': 'toronto-maple-leafs', 'UTA': 'utah-mammoth',
+    'VAN': 'vancouver-canucks', 'VGK': 'vegas-golden-knights',
+    'WPG': 'winnipeg-jets', 'WSH': 'washington-capitals',
+}
+
+def save_result(result, output):
+    output.parent.mkdir(parents=True, exist_ok=True)
+    # Atomic replacement, never replace a valid file with an invalid response.
+    temp = output.with_suffix('.tmp')
+    temp.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    temp.replace(output)
+
+def update_teams(teams, delay):
+    if os.environ.get('DAILY_FACEOFF_SCRAPING_ALLOWED') != '1':
+        raise SystemExit('Set DAILY_FACEOFF_SCRAPING_ALLOWED=1 only when authorized')
+    failures = []
+    updated = 0
+    for idx, team in enumerate(teams):
+        if team not in TEAMS:
+            raise ValueError(f'Unknown NHL team abbreviation: {team}')
+        url = f'https://www.dailyfaceoff.com/teams/{TEAMS[team]}/line-combinations'
+        try:
+            req = Request(url, headers={
+                'User-Agent': 'HoistOfficialLineups/1.0 (+https://ealforque13.github.io/NHL/)',
+                'Accept': 'text/html',
+            })
+            with urlopen(req, timeout=30) as response:
+                html = response.read().decode('utf-8')
+            result = transform(parse_html(html))
+            if result['team'].upper() != team:
+                raise ValueError(f'Team mismatch: requested {team}, received {result["team"]}')
+            dest = ROOT / 'data' / 'projected-lineups' / f'{team}.json'
+            save_result(result, dest)
+            updated += 1
+            print(f'OK {team}: {result.get("sourceUpdatedAt")}', flush=True)
+        except Exception as exc:
+            failures.append(team)
+            print(f'FAILED {team}: {type(exc).__name__}: {exc}', flush=True)
+        if idx + 1 < len(teams):
+            time.sleep(max(0, delay))
+    print(f'Lineup refresh complete: {updated}/{len(teams)} updated; failures: {", ".join(failures) or "none"}')
+    if failures:
+        raise SystemExit(1)
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--html', help='Saved Daily Faceoff page HTML to parse without networking')
     ap.add_argument('--url', help='Daily Faceoff lineup page URL (requires explicit permission flag)')
     ap.add_argument('--output', help='Output path; defaults to data/projected-lineups/TEAM.json')
+    ap.add_argument('--all', action='store_true', help='Update all 32 NHL teams')
+    ap.add_argument('--team', help='Update one NHL team by abbreviation, e.g. MTL')
+    ap.add_argument('--delay', type=float, default=2.0, help='Seconds between team requests')
     args = ap.parse_args()
+    if args.all or args.team:
+        update_teams([args.team.upper()] if args.team else list(TEAMS), args.delay)
+        return
     if args.html:
         html = Path(args.html).read_text(encoding='utf-8')
     elif args.url:
@@ -99,10 +165,7 @@ def main():
         return
     result = transform(parse_html(html))
     destination = Path(args.output) if args.output else ROOT / 'data' / 'projected-lineups' / (result['team'] + '.json')
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    temp = destination.with_suffix('.tmp')
-    temp.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    temp.replace(destination)
+    save_result(result, destination)
     print(f"Saved {destination} ({result['team']})")
 
 if __name__ == '__main__':
