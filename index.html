@@ -4375,6 +4375,36 @@ body[data-theme="light"] #games .hoist-game-card {
  #lineups .hoist-lineup-card-title{font-size:12px}
 }
 </style>
+<style>
+/* Hoist Lineups: clean, borderless lines and blue navigation. */
+#lineups .hoist-lineups-heading { justify-content:flex-end !important; }
+#lineups .hoist-lineups-page-title { display:none !important; }
+#lineups .hoist-lineup-tabs button.active { border-bottom-color:#48a9ff !important; }
+#lineups .hoist-lineup-card { background:transparent !important; border:0 !important; box-shadow:none !important; padding:18px 12px 24px !important; }
+#lineups .hoist-lineup-card + .hoist-lineup-card { border-top:1px solid rgba(125,155,195,.16) !important; }
+#lineups .hoist-lineup-card-title { border:0 !important; margin:0 0 12px !important; padding:0 !important; font-size:16px !important; }
+#lineups .hoist-lineup-players { align-items:start; gap:12px !important; }
+#lineups .hoist-lineup-player { display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; min-width:0; }
+#lineups .hoist-lineup-player-position { order:0; margin:0 0 8px !important; font-size:12px !important; font-weight:800; color:#91b8ec !important; line-height:1.2; text-align:center; }
+#lineups .hoist-lineup-avatar-wrap { order:1; position:relative; width:90px; max-width:calc(100% - 28px); margin:0 auto 8px; }
+#lineups .hoist-lineup-avatar { width:76px !important; height:76px !important; max-width:100%; margin:0 auto !important; border-radius:50% !important; overflow:hidden; }
+#lineups .hoist-lineup-avatar img { width:100%; height:100%; object-fit:cover; border-radius:50% !important; }
+#lineups .hoist-lineup-player-number { position:absolute; left:calc(50% + 40px); top:50%; transform:translateY(-50%); color:#91b8ec; font-size:13px; font-weight:800; white-space:nowrap; }
+#lineups .hoist-lineup-player-name { order:2; display:block; font-size:14px !important; font-weight:750; line-height:1.35; color:inherit; text-align:center; }
+#lineups .hoist-lineups-info { justify-content:flex-end !important; margin-bottom:0 !important; }
+#lineups #hoist-lineup-status:empty { display:none !important; }
+#lineups .hoist-lineup-footer { display:flex; justify-content:flex-end; margin-top:18px; padding-top:10px; font-size:12px; }
+#lineups .hoist-lineup-disclaimer { display:none !important; }
+@media(max-width:650px) {
+ #lineups .hoist-lineup-card { padding:15px 2px 20px !important; }
+ #lineups .hoist-lineup-players { gap:3px !important; }
+ #lineups .hoist-lineup-avatar-wrap { width:65px; max-width:calc(100% - 17px); }
+ #lineups .hoist-lineup-avatar { width:54px !important; height:54px !important; }
+ #lineups .hoist-lineup-player-number { left:calc(50% + 28px); font-size:10px; }
+ #lineups .hoist-lineup-player-name { font-size:11px !important; }
+ #lineups .hoist-lineup-player-position { font-size:10px !important; }
+}
+</style>
 </head>
 
 <body>
@@ -5020,7 +5050,7 @@ body[data-theme="light"] #games .hoist-game-card {
 <!-- TEAM LINEUPS -->
 <section id="lineups" class="tab-section hidden">
   <div class="hoist-lineups-heading">
-    <h2 class="hoist-lineups-page-title">NHL Lineups</h2>
+    
     <div class="hoist-lineups-team-picker">
       <img id="hoist-lineup-logo" alt="" />
       <label for="hoist-lineup-team">Team</label>
@@ -5035,10 +5065,10 @@ body[data-theme="light"] #games .hoist-game-card {
     <button type="button" data-lineup-position="penaltyKill">Penalty Kill</button>
   </div>
   <article class="panel section-panel hoist-lineups-panel">
-    <div class="hoist-lineups-info"><span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span><span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span></div>
+    <div class="hoist-lineups-info"><span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span></div>
     <p id="hoist-lineup-status" class="muted" role="status">Choose a team to view its lineup.</p>
     <div id="hoist-lineup-content" class="hoist-lineup-content"></div>
-    <p class="hoist-lineup-disclaimer muted">Projected combinations are displayed when available; otherwise the current NHL roster is shown. Line combinations can change before puck drop.</p>
+    <div class="hoist-lineup-footer"><span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span></div>
   </article>
 </section>
 
@@ -5746,11 +5776,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const name = typeof player === 'string' ? player : p.name || 'Not available';
     const photo = (typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '') || headshots.get(normalize(name)) || '';
     const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber;
-    const positionText = p.position && !/^SK\d+$/i.test(p.position) && !/^G\d+$/i.test(p.position) ? p.position : role;
+    const positionText = role || (p.position && !/^SK\d+$/i.test(p.position) && !/^G\d+$/i.test(p.position) ? p.position : '');
+    const numberHtml = number !== null && number !== undefined && number !== '' ? `<span class="hoist-lineup-player-number">#${esc(number)}</span>` : '';
     return `<div class="hoist-lineup-player">
-      <div class="hoist-lineup-avatar">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy">` : '♟'}</div>
-      <div class="hoist-lineup-player-name">${esc(name)}${number !== null && number !== undefined && number !== '' ? ` <span class="muted">#${esc(number)}</span>` : ''}</div>
       <div class="hoist-lineup-player-position">${esc(positionText)}</div>
+      <div class="hoist-lineup-avatar-wrap">
+        <div class="hoist-lineup-avatar">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy" onerror="this.style.display='none';this.parentElement.classList.add('hoist-avatar-missing')">` : '<span class="hoist-avatar-placeholder">♟</span>'}</div>
+        ${numberHtml}
+      </div>
+      <div class="hoist-lineup-player-name">${esc(name)}</div>
     </div>`;
   }
   function render() {
@@ -5791,21 +5825,30 @@ document.addEventListener('DOMContentLoaded', function () {
     return data && typeof data === 'object' && ['forwards','defense','goalies'].some(k => Array.isArray(data[k]));
   }
   async function enrichHeadshots(code, token) {
-    try {
-      const data = await fetchJson(`./data/rosters/${encodeURIComponent(code)}.json`);
-      if (token !== requestId) return;
-      const next = new Map();
-      for (const group of ['forwards','defensemen','goalies']) {
-        for (const p of data[group] || []) {
-          const first = typeof p.firstName === 'object' ? p.firstName?.default : p.firstName;
-          const last = typeof p.lastName === 'object' ? p.lastName?.default : p.lastName;
-          const name = `${first || ''} ${last || ''}`.trim();
-          if (name && p.headshot) next.set(normalize(name),p.headshot);
+    const next = new Map();
+    async function addRoster(teamCode, onlyMissing = false) {
+      try {
+        const data = await fetchJson(`./data/rosters/${encodeURIComponent(teamCode)}.json`);
+        for (const group of ['forwards','defensemen','goalies']) {
+          for (const p of data[group] || []) {
+            const first = typeof p.firstName === 'object' ? p.firstName?.default : p.firstName;
+            const last = typeof p.lastName === 'object' ? p.lastName?.default : p.lastName;
+            const name = `${first || ''} ${last || ''}`.trim();
+            const key = normalize(name);
+            if (!key || (onlyMissing && next.has(key))) continue;
+            const nhlId = p.id || p.playerId;
+            const photo = p.headshot || (nhlId ? `https://assets.nhle.com/mugs/nhl/20262027/${teamCode}/${nhlId}.png` : '');
+            if (photo) next.set(key, photo);
+          }
         }
-      }
-      headshots = next;
-      render();
-    } catch (_) { /* Optional enrichment; lineups still render. */ }
+      } catch (_) { /* Optional cached roster may not exist. */ }
+    }
+    await addRoster(code);
+    // Bolduc previously played for St. Louis; its cached roster may retain his photo.
+    if (code === 'MTL' && !next.has('zackbolduc')) await addRoster('STL', true);
+    if (token !== requestId) return;
+    headshots = next;
+    render();
   }
   async function load() {
     const token = ++requestId;
@@ -5840,9 +5883,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const updated = data.sourceUpdatedAt || data.updatedAt || data.cachedAtUTC || '';
     const timestamp = updated ? new Date(updated) : null;
     el('hoist-lineup-updated').textContent = timestamp && !Number.isNaN(timestamp.getTime()) ? `Updated ${timestamp.toLocaleString()}` : 'Update time unavailable';
-    el('hoist-lineup-status').textContent = isRoster
-      ? 'Current NHL roster · projected game-day combinations are not available'
-      : `Projected combinations${data.source ? ' · Source: '+data.source : ''}${data.sourceDescription ? ' · '+data.sourceDescription : ''}`;
+    el('hoist-lineup-status').textContent = isRoster ? 'Current NHL roster — projected lines unavailable.' : '';
     render();
     if (!isRoster) enrichHeadshots(selected,token);
   }
