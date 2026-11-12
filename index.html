@@ -3338,6 +3338,13 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
   pointer-events:none;
 }
 @media(max-width:650px){#games .hoist-game-streak-label{font-size:9px;right:20px}}
+/* Five lineup categories should wrap cleanly on narrow screens. */
+@media (max-width:650px) {
+  #lineups .hoist-lineup-tabs { flex-wrap:wrap !important; }
+  #lineups .hoist-lineup-tabs button { flex:1 1 30% !important; }
+  #lineups .hoist-lineup-players { gap:4px !important; }
+  #lineups .hoist-lineup-player-name { overflow-wrap:anywhere; }
+}
 </style>
 <style>
 /* Tampa Bay Lightning: use a white silhouette on every dashboard page.
@@ -5024,12 +5031,14 @@ body[data-theme="light"] #games .hoist-game-card {
     <button type="button" class="active" data-lineup-position="forwards">Forwards</button>
     <button type="button" data-lineup-position="defense">Defense</button>
     <button type="button" data-lineup-position="goalies">Goalies</button>
+    <button type="button" data-lineup-position="powerPlay">Power Play</button>
+    <button type="button" data-lineup-position="penaltyKill">Penalty Kill</button>
   </div>
   <article class="panel section-panel hoist-lineups-panel">
     <div class="hoist-lineups-info"><span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span><span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span></div>
     <p id="hoist-lineup-status" class="muted" role="status">Choose a team to view its lineup.</p>
     <div id="hoist-lineup-content" class="hoist-lineup-content"></div>
-    <p class="hoist-lineup-disclaimer muted">Player lists are current NHL rosters, not projected or confirmed game-day line combinations. NHL roster information may include extra players.</p>
+    <p class="hoist-lineup-disclaimer muted">Projected combinations are displayed when available; otherwise the current NHL roster is shown. Line combinations can change before puck drop.</p>
   </article>
 </section>
 
@@ -5701,12 +5710,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <script>
-/* Lineups are read from optional first-party cached JSON, never scraped
-   in a visitor's browser. Example: data/lineups/MTL.json.
-   No invented lineup is displayed when data is missing. */
+/* Hoist Official lineups: prefer cached projected combinations, fall back to
+   existing data/lineups/TEAM.json roster. Never fetch Daily Faceoff from browser.
+   Keep roster files untouched because Stats and Games depend on their schema. */
 (() => {
-  const $l = id => document.getElementById(id);
-  const clean = value => String(value ?? '').replace(/[&<>"']/g, c => ({
+  const el = id => document.getElementById(id);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   }[c]));
   const names = [
@@ -5722,74 +5731,133 @@ document.addEventListener('DOMContentLoaded', function () {
     ['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],
     ['WSH','Washington Capitals'],['WPG','Winnipeg Jets']
   ];
+  const labels = {
+    forwards:['LW','C','RW'], defense:['LD','RD'], goalies:['G'],
+    powerPlay:['F','F','F','F','D'], penaltyKill:['F','F','D','D']
+  };
+  const counts = {forwards:4,defense:3,goalies:2,powerPlay:2,penaltyKill:2};
+  const titles = {forwards:'LINE',defense:'PAIR',goalies:'GOALIE',powerPlay:'POWER PLAY UNIT',penaltyKill:'PENALTY KILL UNIT'};
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
-  const labels = {forwards:['LW','C','RW'],defense:['LD','RD'],goalies:['G']};
-  const counts = {forwards:4,defense:3,goalies:2};
-  const title = {forwards:'LINE',defense:'PAIR',goalies:'GOALIE'};
+  const normalize = name => String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+  let headshots = new Map();
+
   function playerMarkup(player, role) {
     const p = player && typeof player === 'object' ? player : {};
     const name = typeof player === 'string' ? player : p.name || 'Not available';
-    const headshot = typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '';
+    const photo = (typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '') || headshots.get(normalize(name)) || '';
+    const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber;
+    const positionText = p.position && !/^SK\d+$/i.test(p.position) && !/^G\d+$/i.test(p.position) ? p.position : role;
     return `<div class="hoist-lineup-player">
-      <div class="hoist-lineup-avatar">${headshot ? `<img src="${clean(headshot)}" alt="" loading="lazy">` : '♟'}</div>
-      <div class="hoist-lineup-player-name">${clean(name)}</div>
-      <div class="hoist-lineup-player-position">${clean(role)}</div>
+      <div class="hoist-lineup-avatar">${photo ? `<img src="${esc(photo)}" alt="" loading="lazy">` : '♟'}</div>
+      <div class="hoist-lineup-player-name">${esc(name)}${number !== null && number !== undefined && number !== '' ? ` <span class="muted">#${esc(number)}</span>` : ''}</div>
+      <div class="hoist-lineup-player-position">${esc(positionText)}</div>
     </div>`;
   }
   function render() {
-    const root = $l('hoist-lineup-content');
+    const root = el('hoist-lineup-content');
     if (!root) return;
-    if (lineup?.type === 'roster') {
+    if (!lineup) { root.innerHTML = ''; return; }
+    if (lineup.type === 'roster') {
+      if (position === 'powerPlay' || position === 'penaltyKill') {
+        root.innerHTML = '<p class="muted">Special-teams combinations are not available for this team yet.</p>';
+        return;
+      }
       const players = Array.isArray(lineup[position]) ? lineup[position] : [];
       root.innerHTML = `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${position.toUpperCase()} · ${players.length} PLAYERS ON ROSTER</div>
-        <div class="hoist-lineup-roster-grid">${players.map(p=>playerMarkup(p,p.position || '')) .join('')}</div></div>`;
+        <div class="hoist-lineup-roster-grid">${players.map(p => playerMarkup(p,p.position || '')).join('')}</div></div>`;
       return;
     }
-    const groups = Array.isArray(lineup?.[position]) ? lineup[position] : [];
-    root.innerHTML = Array.from({length:counts[position]},(_,i)=>{
+    let groups = Array.isArray(lineup[position]) ? lineup[position] : [];
+    // Some lineup providers store goalies as a flat array; other sources nest each goalie.
+    if (position === 'goalies' && groups.length && !Array.isArray(groups[0])) groups = groups.map(p => [p]);
+    if (!groups.length) {
+      root.innerHTML = '<p class="muted">No combinations available for this position.</p>';
+      return;
+    }
+    root.innerHTML = Array.from({length:Math.max(counts[position],groups.length)},(_,i) => {
       const players = Array.isArray(groups[i]) ? groups[i] : [];
       const roles = labels[position];
-      return `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${title[position]} ${i+1}</div>
-        <div class="hoist-lineup-players ${roles.length===2?'two':''}">
-        ${roles.map((role,j)=>playerMarkup(players[j],role)).join('')}</div></div>`;
+      return `<div class="hoist-lineup-card"><div class="hoist-lineup-card-title">${titles[position]} ${i+1}</div>
+        <div class="hoist-lineup-players ${roles.length===2?'two':''}" style="${roles.length>3?'grid-template-columns:repeat('+roles.length+',minmax(0,1fr));':''}">
+        ${roles.map((role,j) => playerMarkup(players[j],role)).join('')}</div></div>`;
     }).join('');
+  }
+  async function fetchJson(path) {
+    const response = await fetch(path,{cache:'no-cache'});
+    if (!response.ok) throw Error(`HTTP ${response.status}`);
+    return response.json();
+  }
+  function valid(data) {
+    return data && typeof data === 'object' && ['forwards','defense','goalies'].some(k => Array.isArray(data[k]));
+  }
+  async function enrichHeadshots(code, token) {
+    try {
+      const data = await fetchJson(`./data/rosters/${encodeURIComponent(code)}.json`);
+      if (token !== requestId) return;
+      const next = new Map();
+      for (const group of ['forwards','defensemen','goalies']) {
+        for (const p of data[group] || []) {
+          const first = typeof p.firstName === 'object' ? p.firstName?.default : p.firstName;
+          const last = typeof p.lastName === 'object' ? p.lastName?.default : p.lastName;
+          const name = `${first || ''} ${last || ''}`.trim();
+          if (name && p.headshot) next.set(normalize(name),p.headshot);
+        }
+      }
+      headshots = next;
+      render();
+    } catch (_) { /* Optional enrichment; lineups still render. */ }
   }
   async function load() {
     const token = ++requestId;
     lineup = null;
-    $l('hoist-lineup-logo').src = `https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg`;
-    $l('hoist-lineup-status').textContent = 'Checking for available lineup data…';
-    $l('hoist-lineup-updated').textContent = 'Awaiting lineup data';
-    $l('hoist-lineup-badge').textContent = 'UNAVAILABLE';
+    headshots = new Map();
+    el('hoist-lineup-logo').src = `https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg`;
+    el('hoist-lineup-status').textContent = 'Checking projected lineups…';
+    el('hoist-lineup-updated').textContent = 'Awaiting lineup data';
+    el('hoist-lineup-badge').textContent = 'UNAVAILABLE';
     render();
+    let data = null;
     try {
-      const res = await fetch(`./data/lineups/${selected}.json`,{cache:'no-cache'});
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      if (token !== requestId) return;
-      if (!data || !['forwards','defense','goalies'].some(k=>Array.isArray(data[k]))) throw new Error('Invalid lineup data');
-      lineup = data;
-      $l('hoist-lineup-badge').textContent = data.type === 'roster' ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
-      $l('hoist-lineup-updated').textContent = data.updatedAt ? `Updated ${new Date(data.updatedAt).toLocaleString()}` : 'Update time unavailable';
-      $l('hoist-lineup-status').textContent = data.type === 'roster' ? 'Current NHL roster · players are not arranged into game-day lines' : (data.source ? `Source: ${data.source}` : 'Lineup data available');
+      const projected = await fetchJson(`./data/projected-lineups/${encodeURIComponent(selected)}.json`);
+      if (!valid(projected) || projected.type === 'roster') throw Error('Invalid projected lineup');
+      data = projected;
     } catch (_) {
-      if (token !== requestId) return;
-      $l('hoist-lineup-status').textContent = 'No roster file found yet. Run the included GitHub Actions roster updater to populate this page.';
+      try {
+        const roster = await fetchJson(`./data/lineups/${encodeURIComponent(selected)}.json`);
+        if (!valid(roster)) throw Error('Invalid roster data');
+        data = roster;
+      } catch (_) { /* Both sources unavailable. */ }
     }
+    if (token !== requestId) return;
+    if (!data) {
+      el('hoist-lineup-status').textContent = 'No lineup or roster file is available for this team.';
+      render();
+      return;
+    }
+    lineup = data;
+    const isRoster = data.type === 'roster';
+    el('hoist-lineup-badge').textContent = isRoster ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
+    const updated = data.sourceUpdatedAt || data.updatedAt || data.cachedAtUTC || '';
+    const timestamp = updated ? new Date(updated) : null;
+    el('hoist-lineup-updated').textContent = timestamp && !Number.isNaN(timestamp.getTime()) ? `Updated ${timestamp.toLocaleString()}` : 'Update time unavailable';
+    el('hoist-lineup-status').textContent = isRoster
+      ? 'Current NHL roster · projected game-day combinations are not available'
+      : `Projected combinations${data.source ? ' · Source: '+data.source : ''}${data.sourceDescription ? ' · '+data.sourceDescription : ''}`;
     render();
+    if (!isRoster) enrichHeadshots(selected,token);
   }
-  document.addEventListener('DOMContentLoaded',()=>{
-    const picker=$l('hoist-lineup-team');
+  document.addEventListener('DOMContentLoaded',() => {
+    const picker = el('hoist-lineup-team');
     if (!picker) return;
-    picker.innerHTML=names.map(([code,name])=>`<option value="${code}">${clean(name)}</option>`).join('');
-    const main=$l('team-select');
-    selected=main?.value && names.some(([code])=>code===main.value) ? main.value : 'MTL';
-    picker.value=selected;
-    picker.addEventListener('change',()=>{selected=picker.value;load()});
-    document.querySelectorAll('[data-lineup-position]').forEach(button=>{
-      button.addEventListener('click',()=>{
-        position=button.dataset.lineupPosition;
-        document.querySelectorAll('[data-lineup-position]').forEach(b=>b.classList.toggle('active',b===button));
+    picker.innerHTML = names.map(([code,name]) => `<option value="${code}">${esc(name)}</option>`).join('');
+    const main = el('team-select');
+    selected = main?.value && names.some(([code]) => code === main.value) ? main.value : 'MTL';
+    picker.value = selected;
+    picker.addEventListener('change',() => { selected = picker.value; load(); });
+    document.querySelectorAll('[data-lineup-position]').forEach(button => {
+      button.addEventListener('click',() => {
+        position = button.dataset.lineupPosition;
+        document.querySelectorAll('[data-lineup-position]').forEach(b => b.classList.toggle('active',b === button));
         render();
       });
     });
