@@ -1,0 +1,370 @@
+{
+  "team": "ANA",
+  "teamName": "Anaheim Ducks",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T02:48:15.138Z",
+  "sourceDescription": "Derek Lee",
+  "cachedAtUTC": "2026-11-12T04:29:15.501995+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Alex Killorn",
+        "number": 17,
+        "position": "LW",
+        "sourcePlayerId": 1877,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Leo Carlsson",
+        "number": 91,
+        "position": "C",
+        "sourcePlayerId": 37943,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Judd Caulfield",
+        "number": 28,
+        "position": "RW",
+        "sourcePlayerId": 30440,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cutter Gauthier",
+        "number": 61,
+        "position": "LW",
+        "sourcePlayerId": 33248,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikael Granlund",
+        "number": 64,
+        "position": "C",
+        "sourcePlayerId": 1934,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Beckett Sennecke",
+        "number": 45,
+        "position": "RW",
+        "sourcePlayerId": 36637,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nikita Nesterenko",
+        "number": 13,
+        "position": "LW",
+        "sourcePlayerId": 30726,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tim Washe",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 32021,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Troy Terry",
+        "number": 19,
+        "position": "RW",
+        "sourcePlayerId": 4645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jeff Malott",
+        "number": 39,
+        "position": "LW",
+        "sourcePlayerId": 34555,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Roger McQueen",
+        "number": 95,
+        "position": "C",
+        "sourcePlayerId": 37324,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Colangelo",
+        "number": 12,
+        "position": "RW",
+        "sourcePlayerId": 32857,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Jackson Lacombe",
+        "number": 2,
+        "position": "LD",
+        "sourcePlayerId": 30438,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Drew Helleson",
+        "number": 14,
+        "position": "RD",
+        "sourcePlayerId": 30429,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Pavel Mintyukov",
+        "number": 34,
+        "position": "LD",
+        "sourcePlayerId": 34372,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Warren",
+        "number": 47,
+        "position": "RD",
+        "sourcePlayerId": 34076,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Travis Mitchell",
+        "number": 34,
+        "position": "LD",
+        "sourcePlayerId": 27964,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tristan Luneau",
+        "number": 67,
+        "position": "RD",
+        "sourcePlayerId": 34070,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Beckett Sennecke",
+        "number": 45,
+        "position": "SK1",
+        "sourcePlayerId": 36637,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Leo Carlsson",
+        "number": 91,
+        "position": "SK2",
+        "sourcePlayerId": 37943,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikael Granlund",
+        "number": 64,
+        "position": "SK3",
+        "sourcePlayerId": 1934,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jackson Lacombe",
+        "number": 2,
+        "position": "SK4",
+        "sourcePlayerId": 30438,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cutter Gauthier",
+        "number": 61,
+        "position": "SK5",
+        "sourcePlayerId": 33248,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Judd Caulfield",
+        "number": 28,
+        "position": "SK1",
+        "sourcePlayerId": 30440,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Killorn",
+        "number": 17,
+        "position": "SK2",
+        "sourcePlayerId": 1877,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikita Nesterenko",
+        "number": 13,
+        "position": "SK3",
+        "sourcePlayerId": 30726,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Troy Terry",
+        "number": 19,
+        "position": "SK4",
+        "sourcePlayerId": 4645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tristan Luneau",
+        "number": 67,
+        "position": "SK5",
+        "sourcePlayerId": 34070,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Tim Washe",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 32021,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Killorn",
+        "number": 17,
+        "position": "SK2",
+        "sourcePlayerId": 1877,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jackson Lacombe",
+        "number": 2,
+        "position": "SK3",
+        "sourcePlayerId": 30438,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tristan Luneau",
+        "number": 67,
+        "position": "SK4",
+        "sourcePlayerId": 34070,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Leo Carlsson",
+        "number": 91,
+        "position": "SK1",
+        "sourcePlayerId": 37943,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jeff Malott",
+        "number": 39,
+        "position": "SK2",
+        "sourcePlayerId": 34555,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Warren",
+        "number": 47,
+        "position": "SK3",
+        "sourcePlayerId": 34076,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pavel Mintyukov",
+        "number": 34,
+        "position": "SK4",
+        "sourcePlayerId": 34372,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Laurent Brossoit",
+      "number": 31,
+      "position": "G1",
+      "sourcePlayerId": 2101,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Ville Husso",
+      "number": 33,
+      "position": "G2",
+      "sourcePlayerId": 3837,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Ian Moore",
+      "number": null,
+      "position": "IR2",
+      "sourcePlayerId": 31897,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Ryan Poehling",
+      "number": 25,
+      "position": "IR3",
+      "sourcePlayerId": 2792,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "A.J. Greer",
+      "number": 18,
+      "position": "IR4",
+      "sourcePlayerId": 2706,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

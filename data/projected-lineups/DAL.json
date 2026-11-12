@@ -1,0 +1,378 @@
+{
+  "team": "DAL",
+  "teamName": "Dallas Stars",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T01:55:46.857Z",
+  "sourceDescription": "Robert Tiffin",
+  "cachedAtUTC": "2026-11-12T04:29:32.444363+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Jamie Benn",
+        "number": 14,
+        "position": "LW",
+        "sourcePlayerId": 425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Wyatt Johnston",
+        "number": 53,
+        "position": "C",
+        "sourcePlayerId": 30835,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikko Rantanen",
+        "number": 96,
+        "position": "RW",
+        "sourcePlayerId": 2477,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jason Robertson",
+        "number": 21,
+        "position": "LW",
+        "sourcePlayerId": 2793,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Roope Hintz",
+        "number": 24,
+        "position": "C",
+        "sourcePlayerId": 2863,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Arttu Hyry",
+        "number": 25,
+        "position": "RW",
+        "sourcePlayerId": 38114,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Sam Steel",
+        "number": 18,
+        "position": "LW",
+        "sourcePlayerId": 2663,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Hryckowian",
+        "number": 49,
+        "position": "C",
+        "sourcePlayerId": 31798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Seguin",
+        "number": 91,
+        "position": "RW",
+        "sourcePlayerId": 139,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Joel Kiviranta",
+        "number": 94,
+        "position": "LW",
+        "sourcePlayerId": 31187,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Radek Faksa",
+        "number": 12,
+        "position": "C",
+        "sourcePlayerId": 1989,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "David Perron",
+        "number": 16,
+        "position": "RW",
+        "sourcePlayerId": 1338,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Thomas Harley",
+        "number": 55,
+        "position": "LD",
+        "sourcePlayerId": 29213,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nils Lundkvist",
+        "number": 5,
+        "position": "RD",
+        "sourcePlayerId": 4821,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Lian Bichsel",
+        "number": 6,
+        "position": "LD",
+        "sourcePlayerId": 36369,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Esa Lindell",
+        "number": 23,
+        "position": "RD",
+        "sourcePlayerId": 2517,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Trey Taylor",
+        "number": 27,
+        "position": "LD",
+        "sourcePlayerId": 31852,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Myers",
+        "number": 57,
+        "position": "RD",
+        "sourcePlayerId": 176,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Wyatt Johnston",
+        "number": 53,
+        "position": "SK1",
+        "sourcePlayerId": 30835,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Roope Hintz",
+        "number": 24,
+        "position": "SK2",
+        "sourcePlayerId": 2863,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikko Rantanen",
+        "number": 96,
+        "position": "SK3",
+        "sourcePlayerId": 2477,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Thomas Harley",
+        "number": 55,
+        "position": "SK4",
+        "sourcePlayerId": 29213,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jason Robertson",
+        "number": 21,
+        "position": "SK5",
+        "sourcePlayerId": 2793,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Justin Hryckowian",
+        "number": 49,
+        "position": "SK1",
+        "sourcePlayerId": 31798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Seguin",
+        "number": 91,
+        "position": "SK2",
+        "sourcePlayerId": 139,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jamie Benn",
+        "number": 14,
+        "position": "SK3",
+        "sourcePlayerId": 425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Esa Lindell",
+        "number": 23,
+        "position": "SK4",
+        "sourcePlayerId": 2517,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "David Perron",
+        "number": 16,
+        "position": "SK5",
+        "sourcePlayerId": 1338,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Arttu Hyry",
+        "number": 25,
+        "position": "SK1",
+        "sourcePlayerId": 38114,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Joel Kiviranta",
+        "number": 94,
+        "position": "SK2",
+        "sourcePlayerId": 31187,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Esa Lindell",
+        "number": 23,
+        "position": "SK3",
+        "sourcePlayerId": 2517,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Thomas Harley",
+        "number": 55,
+        "position": "SK4",
+        "sourcePlayerId": 29213,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Radek Faksa",
+        "number": 12,
+        "position": "SK1",
+        "sourcePlayerId": 1989,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Hryckowian",
+        "number": 49,
+        "position": "SK2",
+        "sourcePlayerId": 31798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nils Lundkvist",
+        "number": 5,
+        "position": "SK3",
+        "sourcePlayerId": 4821,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Myers",
+        "number": 57,
+        "position": "SK4",
+        "sourcePlayerId": 176,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Jake Oettinger",
+      "number": 29,
+      "position": "G1",
+      "sourcePlayerId": 2813,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Casey DeSmith",
+      "number": 1,
+      "position": "G2",
+      "sourcePlayerId": 2572,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Matt Duchene",
+      "number": 95,
+      "position": "IR1",
+      "sourcePlayerId": 341,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Oskar Back",
+      "number": 10,
+      "position": "IR2",
+      "sourcePlayerId": 29109,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Kyle Capobianco",
+      "number": 20,
+      "position": "IR3",
+      "sourcePlayerId": 2921,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Miro Heiskanen",
+      "number": 4,
+      "position": "IR4",
+      "sourcePlayerId": 2803,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

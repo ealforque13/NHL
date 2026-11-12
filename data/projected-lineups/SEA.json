@@ -1,0 +1,370 @@
+{
+  "team": "SEA",
+  "teamName": "Seattle Kraken",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T01:55:18.159Z",
+  "sourceDescription": "Tom Gulitti",
+  "cachedAtUTC": "2026-11-12T04:30:02.053818+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Bobby McMann",
+        "number": 74,
+        "position": "LW",
+        "sourcePlayerId": 32922,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matty Beniers",
+        "number": 10,
+        "position": "C",
+        "sourcePlayerId": 30804,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Eberle",
+        "number": 7,
+        "position": "RW",
+        "sourcePlayerId": 530,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jani Nyman",
+        "number": 38,
+        "position": "LW",
+        "sourcePlayerId": 36373,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Chandler Stephenson",
+        "number": 9,
+        "position": "C",
+        "sourcePlayerId": 2538,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mackie Samoskevich",
+        "number": 11,
+        "position": "RW",
+        "sourcePlayerId": 31226,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kaapo Kakko",
+        "number": 84,
+        "position": "LW",
+        "sourcePlayerId": 30605,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Berkly Catton",
+        "number": 27,
+        "position": "C",
+        "sourcePlayerId": 36542,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Wood",
+        "number": 71,
+        "position": "RW",
+        "sourcePlayerId": 33571,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ben Meyers",
+        "number": 59,
+        "position": "LW",
+        "sourcePlayerId": 30084,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Frederick Gaudreau",
+        "number": 89,
+        "position": "C",
+        "sourcePlayerId": 2701,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Winterton",
+        "number": 26,
+        "position": "RW",
+        "sourcePlayerId": 30837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Vince Dunn",
+        "number": 29,
+        "position": "LD",
+        "sourcePlayerId": 2837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Larsson",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 1741,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryker Evans",
+        "number": 41,
+        "position": "LD",
+        "sourcePlayerId": 32988,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Montour",
+        "number": 62,
+        "position": "RD",
+        "sourcePlayerId": 2724,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Joshua Mahura",
+        "number": 28,
+        "position": "LD",
+        "sourcePlayerId": 3924,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ville Ottavainen",
+        "number": 46,
+        "position": "RD",
+        "sourcePlayerId": 31756,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Jordan Eberle",
+        "number": 7,
+        "position": "SK1",
+        "sourcePlayerId": 530,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matty Beniers",
+        "number": 10,
+        "position": "SK2",
+        "sourcePlayerId": 30804,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Bobby McMann",
+        "number": 74,
+        "position": "SK3",
+        "sourcePlayerId": 32922,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Chandler Stephenson",
+        "number": 9,
+        "position": "SK4",
+        "sourcePlayerId": 2538,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Vince Dunn",
+        "number": 29,
+        "position": "SK5",
+        "sourcePlayerId": 2837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kaapo Kakko",
+        "number": 84,
+        "position": "SK1",
+        "sourcePlayerId": 30605,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Berkly Catton",
+        "number": 27,
+        "position": "SK2",
+        "sourcePlayerId": 36542,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Wood",
+        "number": 71,
+        "position": "SK3",
+        "sourcePlayerId": 33571,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mackie Samoskevich",
+        "number": 11,
+        "position": "SK4",
+        "sourcePlayerId": 31226,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Montour",
+        "number": 62,
+        "position": "SK5",
+        "sourcePlayerId": 2724,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Frederick Gaudreau",
+        "number": 89,
+        "position": "SK1",
+        "sourcePlayerId": 2701,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Meyers",
+        "number": 59,
+        "position": "SK2",
+        "sourcePlayerId": 30084,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Vince Dunn",
+        "number": 29,
+        "position": "SK3",
+        "sourcePlayerId": 2837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Larsson",
+        "number": 6,
+        "position": "SK4",
+        "sourcePlayerId": 1741,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Chandler Stephenson",
+        "number": 9,
+        "position": "SK1",
+        "sourcePlayerId": 2538,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Winterton",
+        "number": 26,
+        "position": "SK2",
+        "sourcePlayerId": 30837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryker Evans",
+        "number": 41,
+        "position": "SK3",
+        "sourcePlayerId": 32988,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Montour",
+        "number": 62,
+        "position": "SK4",
+        "sourcePlayerId": 2724,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Philipp Grubauer",
+      "number": 31,
+      "position": "G1",
+      "sourcePlayerId": 2065,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Joey Daccord",
+      "number": 35,
+      "position": "G2",
+      "sourcePlayerId": 23589,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Jared McCann",
+      "number": 19,
+      "position": "IR1",
+      "sourcePlayerId": 2488,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jacob Melanson",
+      "number": 63,
+      "position": "IR2",
+      "sourcePlayerId": 31241,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Ryan Lindgren",
+      "number": 55,
+      "position": "IR3",
+      "sourcePlayerId": 4632,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

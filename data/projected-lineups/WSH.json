@@ -1,0 +1,362 @@
+{
+  "team": "WSH",
+  "teamName": "Washington Capitals",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:55:38.261Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:30:21.035039+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Alex Tuch",
+        "number": 89,
+        "position": "LW",
+        "sourcePlayerId": 2739,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Strome",
+        "number": 17,
+        "position": "C",
+        "sourcePlayerId": 2474,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Kyrou",
+        "number": 25,
+        "position": "RW",
+        "sourcePlayerId": 3867,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Aliaksei Protas",
+        "number": 21,
+        "position": "LW",
+        "sourcePlayerId": 30448,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pierre-Luc Dubois",
+        "number": 80,
+        "position": "C",
+        "sourcePlayerId": 2636,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tom Wilson",
+        "number": 43,
+        "position": "RW",
+        "sourcePlayerId": 1930,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Alex Ovechkin",
+        "number": 8,
+        "position": "LW",
+        "sourcePlayerId": 1534,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Sourdif",
+        "number": 34,
+        "position": "C",
+        "sourcePlayerId": 29606,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anthony Beauvillier",
+        "number": 72,
+        "position": "RW",
+        "sourcePlayerId": 2487,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Boone Jenner",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 1902,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ilya Protas",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 38137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Leonard",
+        "number": 9,
+        "position": "RW",
+        "sourcePlayerId": 35645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Jakob Chychrun",
+        "number": 6,
+        "position": "LD",
+        "sourcePlayerId": 2643,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matt Roy",
+        "number": 3,
+        "position": "RD",
+        "sourcePlayerId": 4512,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Martin Fehervary",
+        "number": 42,
+        "position": "LD",
+        "sourcePlayerId": 29099,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Timothy Liljegren",
+        "number": 37,
+        "position": "RD",
+        "sourcePlayerId": 2805,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cole Hutson",
+        "number": null,
+        "position": "LD",
+        "sourcePlayerId": 37137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack St. Ivany",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 25428,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Tom Wilson",
+        "number": 43,
+        "position": "SK1",
+        "sourcePlayerId": 1930,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Strome",
+        "number": 17,
+        "position": "SK2",
+        "sourcePlayerId": 2474,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Kyrou",
+        "number": 25,
+        "position": "SK3",
+        "sourcePlayerId": 3867,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Ovechkin",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 1534,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jakob Chychrun",
+        "number": 6,
+        "position": "SK5",
+        "sourcePlayerId": 2643,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ilya Protas",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 38137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pierre-Luc Dubois",
+        "number": 80,
+        "position": "SK2",
+        "sourcePlayerId": 2636,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Tuch",
+        "number": 89,
+        "position": "SK3",
+        "sourcePlayerId": 2739,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Leonard",
+        "number": 9,
+        "position": "SK4",
+        "sourcePlayerId": 35645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cole Hutson",
+        "number": null,
+        "position": "SK5",
+        "sourcePlayerId": 37137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Boone Jenner",
+        "number": 22,
+        "position": "SK1",
+        "sourcePlayerId": 1902,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tom Wilson",
+        "number": 43,
+        "position": "SK2",
+        "sourcePlayerId": 1930,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Martin Fehervary",
+        "number": 42,
+        "position": "SK3",
+        "sourcePlayerId": 29099,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matt Roy",
+        "number": 3,
+        "position": "SK4",
+        "sourcePlayerId": 4512,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Aliaksei Protas",
+        "number": 21,
+        "position": "SK1",
+        "sourcePlayerId": 30448,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Tuch",
+        "number": 89,
+        "position": "SK2",
+        "sourcePlayerId": 2739,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jakob Chychrun",
+        "number": 6,
+        "position": "SK3",
+        "sourcePlayerId": 2643,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Timothy Liljegren",
+        "number": 37,
+        "position": "SK4",
+        "sourcePlayerId": 2805,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Logan Thompson",
+      "number": 48,
+      "position": "G1",
+      "sourcePlayerId": 28990,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Charlie Lindgren",
+      "number": 79,
+      "position": "G2",
+      "sourcePlayerId": 2615,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Rasmus Sandin",
+      "number": 38,
+      "position": "IR1",
+      "sourcePlayerId": 4806,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Vincent Desharnais",
+      "number": 73,
+      "position": "IR2",
+      "sourcePlayerId": 25716,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

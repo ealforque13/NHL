@@ -1,0 +1,370 @@
+{
+  "team": "WPG",
+  "teamName": "Winnipeg Jets",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T14:03:22.718Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:30:18.944053+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Kyle Connor",
+        "number": 81,
+        "position": "LW",
+        "sourcePlayerId": 2483,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Scheifele",
+        "number": 55,
+        "position": "C",
+        "sourcePlayerId": 1784,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Gabriel Vilardi",
+        "number": 13,
+        "position": "RW",
+        "sourcePlayerId": 2783,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cole Perfetti",
+        "number": 91,
+        "position": "LW",
+        "sourcePlayerId": 29837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brayden Yager",
+        "number": 29,
+        "position": "C",
+        "sourcePlayerId": 33533,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dawson Mercer",
+        "number": 19,
+        "position": "RW",
+        "sourcePlayerId": 29327,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Alex Iafallo",
+        "number": 9,
+        "position": "LW",
+        "sourcePlayerId": 2888,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Lowry",
+        "number": 17,
+        "position": "C",
+        "sourcePlayerId": 2118,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Viggo Björck",
+        "number": 61,
+        "position": "RW",
+        "sourcePlayerId": 38960,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cole Koepke",
+        "number": 45,
+        "position": "LW",
+        "sourcePlayerId": 29652,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Morgan Barron",
+        "number": 36,
+        "position": "C",
+        "sourcePlayerId": 26531,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Isak Rosen",
+        "number": 63,
+        "position": "RW",
+        "sourcePlayerId": 34670,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Josh Morrissey",
+        "number": 44,
+        "position": "LD",
+        "sourcePlayerId": 2144,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan DeMelo",
+        "number": 2,
+        "position": "RD",
+        "sourcePlayerId": 2033,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dylan Samberg",
+        "number": 54,
+        "position": "LD",
+        "sourcePlayerId": 28066,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Neal Pionk",
+        "number": 4,
+        "position": "RD",
+        "sourcePlayerId": 4545,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Mario Ferraro",
+        "number": 38,
+        "position": "LD",
+        "sourcePlayerId": 27666,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyrel Bauer",
+        "number": 77,
+        "position": "RD",
+        "sourcePlayerId": 29948,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Gabriel Vilardi",
+        "number": 13,
+        "position": "SK1",
+        "sourcePlayerId": 2783,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Scheifele",
+        "number": 55,
+        "position": "SK2",
+        "sourcePlayerId": 1784,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cole Perfetti",
+        "number": 91,
+        "position": "SK3",
+        "sourcePlayerId": 29837,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Morrissey",
+        "number": 44,
+        "position": "SK4",
+        "sourcePlayerId": 2144,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kyle Connor",
+        "number": 81,
+        "position": "SK5",
+        "sourcePlayerId": 2483,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Alex Iafallo",
+        "number": 9,
+        "position": "SK1",
+        "sourcePlayerId": 2888,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brayden Yager",
+        "number": 29,
+        "position": "SK2",
+        "sourcePlayerId": 33533,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Viggo Björck",
+        "number": 61,
+        "position": "SK3",
+        "sourcePlayerId": 38960,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Neal Pionk",
+        "number": 4,
+        "position": "SK4",
+        "sourcePlayerId": 4545,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dawson Mercer",
+        "number": 19,
+        "position": "SK5",
+        "sourcePlayerId": 29327,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Adam Lowry",
+        "number": 17,
+        "position": "SK1",
+        "sourcePlayerId": 2118,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dawson Mercer",
+        "number": 19,
+        "position": "SK2",
+        "sourcePlayerId": 29327,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Samberg",
+        "number": 54,
+        "position": "SK3",
+        "sourcePlayerId": 28066,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Neal Pionk",
+        "number": 4,
+        "position": "SK4",
+        "sourcePlayerId": 4545,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Morgan Barron",
+        "number": 36,
+        "position": "SK1",
+        "sourcePlayerId": 26531,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kyle Connor",
+        "number": 81,
+        "position": "SK2",
+        "sourcePlayerId": 2483,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mario Ferraro",
+        "number": 38,
+        "position": "SK3",
+        "sourcePlayerId": 27666,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan DeMelo",
+        "number": 2,
+        "position": "SK4",
+        "sourcePlayerId": 2033,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Stuart Skinner",
+      "number": 74,
+      "position": "G1",
+      "sourcePlayerId": 4741,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Nico Daws",
+      "number": 50,
+      "position": "G2",
+      "sourcePlayerId": 29186,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Nick Bjugstad",
+      "number": 77,
+      "position": "IR1",
+      "sourcePlayerId": 2107,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Vladislav Namestnikov",
+      "number": 7,
+      "position": "IR2",
+      "sourcePlayerId": 1865,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Elias Salomonsson",
+      "number": 57,
+      "position": "IR4",
+      "sourcePlayerId": 36380,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "team": "CHI",
+  "teamName": "Chicago Blackhawks",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T17:28:43.895Z",
+  "sourceDescription": "Kalen Lumpkins",
+  "cachedAtUTC": "2026-11-12T04:29:28.245342+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Roman Kantserov",
+        "number": 80,
+        "position": "LW",
+        "sourcePlayerId": 38906,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor Bedard",
+        "number": 98,
+        "position": "C",
+        "sourcePlayerId": 33531,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Bertuzzi",
+        "number": 59,
+        "position": "RW",
+        "sourcePlayerId": 2392,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Andrew Mangiapane",
+        "number": 88,
+        "position": "LW",
+        "sourcePlayerId": 4622,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anton Frondell",
+        "number": 16,
+        "position": "C",
+        "sourcePlayerId": 38471,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Teuvo Teravainen",
+        "number": 86,
+        "position": "RW",
+        "sourcePlayerId": 2128,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Oliver Moore",
+        "number": 11,
+        "position": "LW",
+        "sourcePlayerId": 33143,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Frank Nazar",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 33280,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Donato",
+        "number": 8,
+        "position": "RW",
+        "sourcePlayerId": 4635,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cole Smith",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 32926,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Greene",
+        "number": 20,
+        "position": "C",
+        "sourcePlayerId": 31310,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Greenway",
+        "number": 12,
+        "position": "RW",
+        "sourcePlayerId": 4644,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Alex Vlasic",
+        "number": 72,
+        "position": "LD",
+        "sourcePlayerId": 30427,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ian Cole",
+        "number": 28,
+        "position": "RD",
+        "sourcePlayerId": 1313,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ethan Del Mastro",
+        "number": 38,
+        "position": "LD",
+        "sourcePlayerId": 30841,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artyom Levshunov",
+        "number": 55,
+        "position": "RD",
+        "sourcePlayerId": 38138,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Wyatt Kaiser",
+        "number": null,
+        "position": "LD",
+        "sourcePlayerId": 37913,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Rinzel",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 34789,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Frank Nazar",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 33280,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Roman Kantserov",
+        "number": 80,
+        "position": "SK2",
+        "sourcePlayerId": 38906,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anton Frondell",
+        "number": 16,
+        "position": "SK3",
+        "sourcePlayerId": 38471,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor Bedard",
+        "number": 98,
+        "position": "SK4",
+        "sourcePlayerId": 33531,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Rinzel",
+        "number": 6,
+        "position": "SK5",
+        "sourcePlayerId": 34789,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Tyler Bertuzzi",
+        "number": 59,
+        "position": "SK1",
+        "sourcePlayerId": 2392,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Donato",
+        "number": 8,
+        "position": "SK2",
+        "sourcePlayerId": 4635,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Teuvo Teravainen",
+        "number": 86,
+        "position": "SK3",
+        "sourcePlayerId": 2128,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Oliver Moore",
+        "number": 11,
+        "position": "SK4",
+        "sourcePlayerId": 33143,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artyom Levshunov",
+        "number": 55,
+        "position": "SK5",
+        "sourcePlayerId": 38138,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Anton Frondell",
+        "number": 16,
+        "position": "SK1",
+        "sourcePlayerId": 38471,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cole Smith",
+        "number": 22,
+        "position": "SK2",
+        "sourcePlayerId": 32926,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Vlasic",
+        "number": 72,
+        "position": "SK3",
+        "sourcePlayerId": 30427,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ian Cole",
+        "number": 28,
+        "position": "SK4",
+        "sourcePlayerId": 1313,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Frank Nazar",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 33280,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Teuvo Teravainen",
+        "number": 86,
+        "position": "SK2",
+        "sourcePlayerId": 2128,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Wyatt Kaiser",
+        "number": null,
+        "position": "SK3",
+        "sourcePlayerId": 37913,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artyom Levshunov",
+        "number": 55,
+        "position": "SK4",
+        "sourcePlayerId": 38138,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Spencer Knight",
+      "number": 30,
+      "position": "G1",
+      "sourcePlayerId": 30475,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Drew Commesso",
+      "number": null,
+      "position": "G2",
+      "sourcePlayerId": 30793,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Patrick Kane",
+      "number": 88,
+      "position": "IR1",
+      "sourcePlayerId": 305,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Bowen Byram",
+      "number": 24,
+      "position": "IR2",
+      "sourcePlayerId": 28523,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

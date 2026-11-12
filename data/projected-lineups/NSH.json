@@ -1,0 +1,362 @@
+{
+  "team": "NSH",
+  "teamName": "Nashville Predators",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T02:39:06.626Z",
+  "sourceDescription": "Brooks Bratten",
+  "cachedAtUTC": "2026-11-12T04:29:49.299208+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Steven Stamkos",
+        "number": 91,
+        "position": "LW",
+        "sourcePlayerId": 1392,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan O'Reilly",
+        "number": 90,
+        "position": "C",
+        "sourcePlayerId": 362,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mavrik Bourque",
+        "number": 22,
+        "position": "RW",
+        "sourcePlayerId": 29958,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Filip Forsberg",
+        "number": 9,
+        "position": "LW",
+        "sourcePlayerId": 2064,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shane Wright",
+        "number": 15,
+        "position": "C",
+        "sourcePlayerId": 30830,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nils Hoglander",
+        "number": 21,
+        "position": "RW",
+        "sourcePlayerId": 30614,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ross Colton",
+        "number": 79,
+        "position": "LW",
+        "sourcePlayerId": 27086,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Drury",
+        "number": 18,
+        "position": "C",
+        "sourcePlayerId": 27584,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Edstrom",
+        "number": 84,
+        "position": "RW",
+        "sourcePlayerId": 30691,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Reid Schaefer",
+        "number": 49,
+        "position": "LW",
+        "sourcePlayerId": 32867,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Kerfoot",
+        "number": 14,
+        "position": "C",
+        "sourcePlayerId": 2833,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Vitali Pinchuk",
+        "number": 51,
+        "position": "RW",
+        "sourcePlayerId": 31775,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Roman Josi",
+        "number": 59,
+        "position": "LD",
+        "sourcePlayerId": 897,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Wilsby",
+        "number": 2,
+        "position": "RD",
+        "sourcePlayerId": 36308,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Brady Skjei",
+        "number": 76,
+        "position": "LD",
+        "sourcePlayerId": 2425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Perbix",
+        "number": 48,
+        "position": "RD",
+        "sourcePlayerId": 28161,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Daemon Hunt",
+        "number": 52,
+        "position": "LD",
+        "sourcePlayerId": 29543,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jayden Struble",
+        "number": 3,
+        "position": "RD",
+        "sourcePlayerId": 30435,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Filip Forsberg",
+        "number": 9,
+        "position": "SK1",
+        "sourcePlayerId": 2064,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan O'Reilly",
+        "number": 90,
+        "position": "SK2",
+        "sourcePlayerId": 362,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mavrik Bourque",
+        "number": 22,
+        "position": "SK3",
+        "sourcePlayerId": 29958,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Steven Stamkos",
+        "number": 91,
+        "position": "SK4",
+        "sourcePlayerId": 1392,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Roman Josi",
+        "number": 59,
+        "position": "SK5",
+        "sourcePlayerId": 897,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nils Hoglander",
+        "number": 21,
+        "position": "SK1",
+        "sourcePlayerId": 30614,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shane Wright",
+        "number": 15,
+        "position": "SK2",
+        "sourcePlayerId": 30830,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Kerfoot",
+        "number": 14,
+        "position": "SK3",
+        "sourcePlayerId": 2833,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Vitali Pinchuk",
+        "number": 51,
+        "position": "SK4",
+        "sourcePlayerId": 31775,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brady Skjei",
+        "number": 76,
+        "position": "SK5",
+        "sourcePlayerId": 2425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Jack Drury",
+        "number": 18,
+        "position": "SK1",
+        "sourcePlayerId": 27584,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Kerfoot",
+        "number": 14,
+        "position": "SK2",
+        "sourcePlayerId": 2833,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brady Skjei",
+        "number": 76,
+        "position": "SK3",
+        "sourcePlayerId": 2425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Perbix",
+        "number": 48,
+        "position": "SK4",
+        "sourcePlayerId": 28161,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryan O'Reilly",
+        "number": 90,
+        "position": "SK1",
+        "sourcePlayerId": 362,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Edstrom",
+        "number": 84,
+        "position": "SK2",
+        "sourcePlayerId": 30691,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Daemon Hunt",
+        "number": 52,
+        "position": "SK3",
+        "sourcePlayerId": 29543,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Wilsby",
+        "number": 2,
+        "position": "SK4",
+        "sourcePlayerId": 36308,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Justus Annunen",
+      "number": 29,
+      "position": "G1",
+      "sourcePlayerId": 29146,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Juuse Saros",
+      "number": 74,
+      "position": "G2",
+      "sourcePlayerId": 2557,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "William Trudeau",
+      "number": 85,
+      "position": "IR1",
+      "sourcePlayerId": 32461,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jonathan Marchessault",
+      "number": 81,
+      "position": "IR2",
+      "sourcePlayerId": 2399,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

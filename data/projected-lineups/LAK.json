@@ -1,0 +1,370 @@
+{
+  "team": "LAK",
+  "teamName": "Los Angeles Kings",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T01:35:38.009Z",
+  "sourceDescription": "Zach Dooley",
+  "cachedAtUTC": "2026-11-12T04:29:40.846704+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Artemi Panarin",
+        "number": 10,
+        "position": "LW",
+        "sourcePlayerId": 2519,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Laferriere",
+        "number": 14,
+        "position": "C",
+        "sourcePlayerId": 32954,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adrian Kempe",
+        "number": 9,
+        "position": "RW",
+        "sourcePlayerId": 2747,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kevin Fiala",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 2455,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Quinton Byfield",
+        "number": 55,
+        "position": "C",
+        "sourcePlayerId": 29855,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mats Zuccarello",
+        "number": 36,
+        "position": "RW",
+        "sourcePlayerId": 1065,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Trevor Moore",
+        "number": 12,
+        "position": "LW",
+        "sourcePlayerId": 2878,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Turcotte",
+        "number": 15,
+        "position": "C",
+        "sourcePlayerId": 30420,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Corey Perry",
+        "number": 90,
+        "position": "RW",
+        "sourcePlayerId": 36,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Andre Lee",
+        "number": null,
+        "position": "LW",
+        "sourcePlayerId": 30215,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Samuel Helenius",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 34674,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Haula",
+        "number": 56,
+        "position": "RW",
+        "sourcePlayerId": 2135,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Mikey Anderson",
+        "number": 44,
+        "position": "LD",
+        "sourcePlayerId": 25509,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Drew Doughty",
+        "number": 8,
+        "position": "RD",
+        "sourcePlayerId": 744,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      }
+    ],
+    [
+      {
+        "name": "Joel Edmundson",
+        "number": 6,
+        "position": "LD",
+        "sourcePlayerId": 2532,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandt Clarke",
+        "number": 92,
+        "position": "RD",
+        "sourcePlayerId": 30833,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Brian Dumoulin",
+        "number": 2,
+        "position": "LD",
+        "sourcePlayerId": 1928,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cody Ceci",
+        "number": 44,
+        "position": "RD",
+        "sourcePlayerId": 2052,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Artemi Panarin",
+        "number": 10,
+        "position": "SK1",
+        "sourcePlayerId": 2519,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Quinton Byfield",
+        "number": 55,
+        "position": "SK2",
+        "sourcePlayerId": 29855,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Laferriere",
+        "number": 14,
+        "position": "SK3",
+        "sourcePlayerId": 32954,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adrian Kempe",
+        "number": 9,
+        "position": "SK4",
+        "sourcePlayerId": 2747,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kevin Fiala",
+        "number": 22,
+        "position": "SK5",
+        "sourcePlayerId": 2455,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      }
+    ],
+    [
+      {
+        "name": "Mats Zuccarello",
+        "number": 36,
+        "position": "SK1",
+        "sourcePlayerId": 1065,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Haula",
+        "number": 56,
+        "position": "SK2",
+        "sourcePlayerId": 2135,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Turcotte",
+        "number": 15,
+        "position": "SK3",
+        "sourcePlayerId": 30420,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandt Clarke",
+        "number": 92,
+        "position": "SK4",
+        "sourcePlayerId": 30833,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Corey Perry",
+        "number": 90,
+        "position": "SK5",
+        "sourcePlayerId": 36,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Quinton Byfield",
+        "number": 55,
+        "position": "SK1",
+        "sourcePlayerId": 29855,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Trevor Moore",
+        "number": 12,
+        "position": "SK2",
+        "sourcePlayerId": 2878,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikey Anderson",
+        "number": 44,
+        "position": "SK3",
+        "sourcePlayerId": 25509,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Drew Doughty",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 744,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      }
+    ],
+    [
+      {
+        "name": "Erik Haula",
+        "number": 56,
+        "position": "SK1",
+        "sourcePlayerId": 2135,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andre Lee",
+        "number": null,
+        "position": "SK2",
+        "sourcePlayerId": 30215,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Joel Edmundson",
+        "number": 6,
+        "position": "SK3",
+        "sourcePlayerId": 2532,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brian Dumoulin",
+        "number": 2,
+        "position": "SK4",
+        "sourcePlayerId": 1928,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Darcy Kuemper",
+      "number": 35,
+      "position": "G1",
+      "sourcePlayerId": 1692,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Anton Forsberg",
+      "number": 31,
+      "position": "G2",
+      "sourcePlayerId": 2394,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Kevin Fiala",
+      "number": 22,
+      "position": "IR1",
+      "sourcePlayerId": 2455,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Erik Gustafsson",
+      "number": 64,
+      "position": "IR2",
+      "sourcePlayerId": 2550,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Drew Doughty",
+      "number": 8,
+      "position": "IR3",
+      "sourcePlayerId": 744,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

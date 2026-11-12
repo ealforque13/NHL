@@ -1,0 +1,386 @@
+{
+  "team": "NYI",
+  "teamName": "New York Islanders",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T16:02:27.780Z",
+  "sourceDescription": "Andrew Gross",
+  "cachedAtUTC": "2026-11-12T04:29:51.443462+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Simon Holmstrom",
+        "number": 92,
+        "position": "LW",
+        "sourcePlayerId": 30654,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Bo Horvat",
+        "number": 14,
+        "position": "C",
+        "sourcePlayerId": 2141,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kyle Palmieri",
+        "number": 21,
+        "position": "RW",
+        "sourcePlayerId": 34,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Emil Heineman",
+        "number": 51,
+        "position": "LW",
+        "sourcePlayerId": 33094,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brayden Schenn",
+        "number": 10,
+        "position": "C",
+        "sourcePlayerId": 773,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Eklund",
+        "number": 73,
+        "position": "RW",
+        "sourcePlayerId": 38469,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ondrej Palat",
+        "number": 18,
+        "position": "LW",
+        "sourcePlayerId": 1830,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jean-Gabriel Pageau",
+        "number": 44,
+        "position": "C",
+        "sourcePlayerId": 2057,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anthony Duclair",
+        "number": 11,
+        "position": "RW",
+        "sourcePlayerId": 2380,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kyle MacLean",
+        "number": 32,
+        "position": "LW",
+        "sourcePlayerId": 27755,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Casey Cizikas",
+        "number": 53,
+        "position": "C",
+        "sourcePlayerId": 1807,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mitchell Chaffee",
+        "number": 41,
+        "position": "RW",
+        "sourcePlayerId": 32923,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Logan Stanley",
+        "number": 8,
+        "position": "LD",
+        "sourcePlayerId": 2652,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Schaefer",
+        "number": 48,
+        "position": "RD",
+        "sourcePlayerId": 38474,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Adam Pelech",
+        "number": 3,
+        "position": "LD",
+        "sourcePlayerId": 2449,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Pulock",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 2146,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      }
+    ],
+    [
+      {
+        "name": "Ben Hutton",
+        "number": 17,
+        "position": "LD",
+        "sourcePlayerId": 2508,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tony DeAngelo",
+        "number": 77,
+        "position": "RD",
+        "sourcePlayerId": 2664,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Simon Holmstrom",
+        "number": 92,
+        "position": "SK1",
+        "sourcePlayerId": 30654,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Bo Horvat",
+        "number": 14,
+        "position": "SK2",
+        "sourcePlayerId": 2141,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brayden Schenn",
+        "number": 10,
+        "position": "SK3",
+        "sourcePlayerId": 773,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Eklund",
+        "number": 73,
+        "position": "SK4",
+        "sourcePlayerId": 38469,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Schaefer",
+        "number": 48,
+        "position": "SK5",
+        "sourcePlayerId": 38474,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kyle Palmieri",
+        "number": 21,
+        "position": "SK1",
+        "sourcePlayerId": 34,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ondrej Palat",
+        "number": 18,
+        "position": "SK2",
+        "sourcePlayerId": 1830,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anthony Duclair",
+        "number": 11,
+        "position": "SK3",
+        "sourcePlayerId": 2380,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Emil Heineman",
+        "number": 51,
+        "position": "SK4",
+        "sourcePlayerId": 33094,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tony DeAngelo",
+        "number": 77,
+        "position": "SK5",
+        "sourcePlayerId": 2664,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Bo Horvat",
+        "number": 14,
+        "position": "SK1",
+        "sourcePlayerId": 2141,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Simon Holmstrom",
+        "number": 92,
+        "position": "SK2",
+        "sourcePlayerId": 30654,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Pelech",
+        "number": 3,
+        "position": "SK3",
+        "sourcePlayerId": 2449,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan Stanley",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 2652,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jean-Gabriel Pageau",
+        "number": 44,
+        "position": "SK1",
+        "sourcePlayerId": 2057,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Emil Heineman",
+        "number": 51,
+        "position": "SK2",
+        "sourcePlayerId": 33094,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Hutton",
+        "number": 17,
+        "position": "SK3",
+        "sourcePlayerId": 2508,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Schaefer",
+        "number": 48,
+        "position": "SK4",
+        "sourcePlayerId": 38474,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Ilya Sorokin",
+      "number": 30,
+      "position": "G1",
+      "sourcePlayerId": 25264,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Semyon Varlamov",
+      "number": 40,
+      "position": "G2",
+      "sourcePlayerId": 1545,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Mathew Barzal",
+      "number": 13,
+      "position": "IR1",
+      "sourcePlayerId": 2482,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Alexander Romanov",
+      "number": 28,
+      "position": "IR2",
+      "sourcePlayerId": 29623,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Matias Maccelli",
+      "number": 63,
+      "position": "IR3",
+      "sourcePlayerId": 30063,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Calum Ritchie",
+      "number": 64,
+      "position": "IR4",
+      "sourcePlayerId": 35084,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Ryan Pulock",
+      "number": 6,
+      "position": "IR5",
+      "sourcePlayerId": 2146,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

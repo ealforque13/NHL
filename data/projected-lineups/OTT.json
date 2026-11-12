@@ -1,0 +1,378 @@
+{
+  "team": "OTT",
+  "teamName": "Ottawa Senators",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:56:19.930Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:29:55.647361+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Fabian Zetterlund",
+        "number": 20,
+        "position": "LW",
+        "sourcePlayerId": 28130,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tim Stützle",
+        "number": 18,
+        "position": "C",
+        "sourcePlayerId": 31746,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Cozens",
+        "number": 24,
+        "position": "RW",
+        "sourcePlayerId": 28444,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nick Cousins",
+        "number": 21,
+        "position": "LW",
+        "sourcePlayerId": 1893,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shane Pinto",
+        "number": 12,
+        "position": "C",
+        "sourcePlayerId": 30117,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Drake Batherson",
+        "number": 19,
+        "position": "RW",
+        "sourcePlayerId": 4831,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Amadio",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 2910,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ridly Greig",
+        "number": 71,
+        "position": "C",
+        "sourcePlayerId": 30383,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Claude Giroux",
+        "number": 28,
+        "position": "RW",
+        "sourcePlayerId": 1126,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Philip Tomasino",
+        "number": 53,
+        "position": "LW",
+        "sourcePlayerId": 29220,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Stephen Halliday",
+        "number": 34,
+        "position": "C",
+        "sourcePlayerId": 30030,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Hayden Hodgson",
+        "number": 42,
+        "position": "RW",
+        "sourcePlayerId": 23173,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Jake Sanderson",
+        "number": 85,
+        "position": "LD",
+        "sourcePlayerId": 30807,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artem Zub",
+        "number": 2,
+        "position": "RD",
+        "sourcePlayerId": 27678,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Thomas Chabot",
+        "number": 72,
+        "position": "LD",
+        "sourcePlayerId": 2492,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Spence",
+        "number": 21,
+        "position": "RD",
+        "sourcePlayerId": 29922,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Tyler Kleven",
+        "number": 43,
+        "position": "LD",
+        "sourcePlayerId": 30802,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikolas Matinpalo",
+        "number": 33,
+        "position": "RD",
+        "sourcePlayerId": 37937,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Drake Batherson",
+        "number": 19,
+        "position": "SK1",
+        "sourcePlayerId": 4831,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Claude Giroux",
+        "number": 28,
+        "position": "SK2",
+        "sourcePlayerId": 1126,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Cozens",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 28444,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tim Stützle",
+        "number": 18,
+        "position": "SK4",
+        "sourcePlayerId": 31746,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake Sanderson",
+        "number": 85,
+        "position": "SK5",
+        "sourcePlayerId": 30807,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Fabian Zetterlund",
+        "number": 20,
+        "position": "SK1",
+        "sourcePlayerId": 28130,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shane Pinto",
+        "number": 12,
+        "position": "SK2",
+        "sourcePlayerId": 30117,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Stephen Halliday",
+        "number": 34,
+        "position": "SK3",
+        "sourcePlayerId": 30030,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Philip Tomasino",
+        "number": 53,
+        "position": "SK4",
+        "sourcePlayerId": 29220,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Thomas Chabot",
+        "number": 72,
+        "position": "SK5",
+        "sourcePlayerId": 2492,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Shane Pinto",
+        "number": 12,
+        "position": "SK1",
+        "sourcePlayerId": 30117,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ridly Greig",
+        "number": 71,
+        "position": "SK2",
+        "sourcePlayerId": 30383,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake Sanderson",
+        "number": 85,
+        "position": "SK3",
+        "sourcePlayerId": 30807,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artem Zub",
+        "number": 2,
+        "position": "SK4",
+        "sourcePlayerId": 27678,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Tim Stützle",
+        "number": 18,
+        "position": "SK1",
+        "sourcePlayerId": 31746,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Amadio",
+        "number": 22,
+        "position": "SK2",
+        "sourcePlayerId": 2910,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Thomas Chabot",
+        "number": 72,
+        "position": "SK3",
+        "sourcePlayerId": 2492,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikolas Matinpalo",
+        "number": 33,
+        "position": "SK4",
+        "sourcePlayerId": 37937,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Samuel Ersson",
+      "number": 33,
+      "position": "G1",
+      "sourcePlayerId": 29149,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jackson Parsons",
+      "number": null,
+      "position": "G2",
+      "sourcePlayerId": 33236,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "William Eklund",
+      "number": 72,
+      "position": "IR1",
+      "sourcePlayerId": 34666,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Warren Foegele",
+      "number": 37,
+      "position": "IR2",
+      "sourcePlayerId": 3911,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Andre Burakovsky",
+      "number": 28,
+      "position": "IR3",
+      "sourcePlayerId": 2154,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Linus Ullmark",
+      "number": 35,
+      "position": "IR4",
+      "sourcePlayerId": 2534,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

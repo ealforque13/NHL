@@ -1,0 +1,354 @@
+{
+  "team": "CBJ",
+  "teamName": "Columbus Blue Jackets",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:58:07.635Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:29:23.930900+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Matthew Knies",
+        "number": 89,
+        "position": "LW",
+        "sourcePlayerId": 34619,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sean Monahan",
+        "number": 23,
+        "position": "C",
+        "sourcePlayerId": 2138,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kent Johnson",
+        "number": 91,
+        "position": "RW",
+        "sourcePlayerId": 34612,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dmitri Voronkov",
+        "number": 10,
+        "position": "LW",
+        "sourcePlayerId": 31266,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Fantilli",
+        "number": 19,
+        "position": "C",
+        "sourcePlayerId": 33179,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Valeri Nichushkin",
+        "number": 43,
+        "position": "RW",
+        "sourcePlayerId": 2142,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cole Sillinger",
+        "number": 4,
+        "position": "LW",
+        "sourcePlayerId": 34454,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Charlie Coyle",
+        "number": 3,
+        "position": "C",
+        "sourcePlayerId": 1856,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mathieu Olivier",
+        "number": 24,
+        "position": "RW",
+        "sourcePlayerId": 23595,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryan Lomberg",
+        "number": 94,
+        "position": "LW",
+        "sourcePlayerId": 3905,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Williams",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 38425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Steven Lorentz",
+        "number": 18,
+        "position": "RW",
+        "sourcePlayerId": 3916,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Zach Werenski",
+        "number": 8,
+        "position": "LD",
+        "sourcePlayerId": 2479,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Damon Severson",
+        "number": 78,
+        "position": "RD",
+        "sourcePlayerId": 2038,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ivan Provorov",
+        "number": 9,
+        "position": "LD",
+        "sourcePlayerId": 2478,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Denton Mateychuk",
+        "number": 5,
+        "position": "RD",
+        "sourcePlayerId": 31514,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dante Fabbro",
+        "number": 15,
+        "position": "LD",
+        "sourcePlayerId": 2651,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Gudbranson",
+        "number": 44,
+        "position": "RD",
+        "sourcePlayerId": 1710,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Matthew Knies",
+        "number": 89,
+        "position": "SK1",
+        "sourcePlayerId": 34619,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sean Monahan",
+        "number": 23,
+        "position": "SK2",
+        "sourcePlayerId": 2138,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Charlie Coyle",
+        "number": 3,
+        "position": "SK3",
+        "sourcePlayerId": 1856,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Werenski",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 2479,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kent Johnson",
+        "number": 91,
+        "position": "SK5",
+        "sourcePlayerId": 34612,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Valeri Nichushkin",
+        "number": 43,
+        "position": "SK1",
+        "sourcePlayerId": 2142,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Fantilli",
+        "number": 19,
+        "position": "SK2",
+        "sourcePlayerId": 33179,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dmitri Voronkov",
+        "number": 10,
+        "position": "SK3",
+        "sourcePlayerId": 31266,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Denton Mateychuk",
+        "number": 5,
+        "position": "SK4",
+        "sourcePlayerId": 31514,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ivan Provorov",
+        "number": 9,
+        "position": "SK5",
+        "sourcePlayerId": 2478,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Sean Monahan",
+        "number": 23,
+        "position": "SK1",
+        "sourcePlayerId": 2138,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Valeri Nichushkin",
+        "number": 43,
+        "position": "SK2",
+        "sourcePlayerId": 2142,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Denton Mateychuk",
+        "number": 5,
+        "position": "SK3",
+        "sourcePlayerId": 31514,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ivan Provorov",
+        "number": 9,
+        "position": "SK4",
+        "sourcePlayerId": 2478,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Charlie Coyle",
+        "number": 3,
+        "position": "SK1",
+        "sourcePlayerId": 1856,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mathieu Olivier",
+        "number": 24,
+        "position": "SK2",
+        "sourcePlayerId": 23595,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Werenski",
+        "number": 8,
+        "position": "SK3",
+        "sourcePlayerId": 2479,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Damon Severson",
+        "number": 78,
+        "position": "SK4",
+        "sourcePlayerId": 2038,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Cam Talbot",
+      "number": 33,
+      "position": "G1",
+      "sourcePlayerId": 1059,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jet Greaves",
+      "number": null,
+      "position": "G2",
+      "sourcePlayerId": 29751,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Isac Lundestrom",
+      "number": 21,
+      "position": "IR1",
+      "sourcePlayerId": 4804,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

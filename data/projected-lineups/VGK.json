@@ -1,0 +1,354 @@
+{
+  "team": "VGK",
+  "teamName": "Vegas Golden Knights",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T02:19:27.570Z",
+  "sourceDescription": "Danny Webster",
+  "cachedAtUTC": "2026-11-12T04:30:16.843201+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Trevor Connelly",
+        "number": 24,
+        "position": "LW",
+        "sourcePlayerId": 36773,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Eichel",
+        "number": 9,
+        "position": "C",
+        "sourcePlayerId": 2472,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Stone",
+        "number": 61,
+        "position": "RW",
+        "sourcePlayerId": 1779,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Brett Howden",
+        "number": 21,
+        "position": "LW",
+        "sourcePlayerId": 2660,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "William Karlsson",
+        "number": 71,
+        "position": "C",
+        "sourcePlayerId": 2387,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mitch Marner",
+        "number": 16,
+        "position": "RW",
+        "sourcePlayerId": 2475,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ivan Barbashev",
+        "number": 49,
+        "position": "LW",
+        "sourcePlayerId": 2737,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tomas Hertl",
+        "number": 48,
+        "position": "C",
+        "sourcePlayerId": 2125,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Olofsson",
+        "number": 95,
+        "position": "RW",
+        "sourcePlayerId": 4718,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Braeden Bowman",
+        "number": 42,
+        "position": "LW",
+        "sourcePlayerId": 30925,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nic Dowd",
+        "number": 26,
+        "position": "C",
+        "sourcePlayerId": 2607,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marc Gatcomb",
+        "number": 17,
+        "position": "RW",
+        "sourcePlayerId": 37866,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Brayden McNabb",
+        "number": 3,
+        "position": "LD",
+        "sourcePlayerId": 1681,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shea Theodore",
+        "number": 27,
+        "position": "RD",
+        "sourcePlayerId": 2157,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jeremy Lauzon",
+        "number": 3,
+        "position": "LD",
+        "sourcePlayerId": 3787,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Andersson",
+        "number": 4,
+        "position": "RD",
+        "sourcePlayerId": 2762,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Parker Wotherspoon",
+        "number": 29,
+        "position": "LD",
+        "sourcePlayerId": 3836,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Coghlan",
+        "number": 52,
+        "position": "RD",
+        "sourcePlayerId": 4601,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Mark Stone",
+        "number": 61,
+        "position": "SK1",
+        "sourcePlayerId": 1779,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tomas Hertl",
+        "number": 48,
+        "position": "SK2",
+        "sourcePlayerId": 2125,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Olofsson",
+        "number": 95,
+        "position": "SK3",
+        "sourcePlayerId": 4718,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Eichel",
+        "number": 9,
+        "position": "SK4",
+        "sourcePlayerId": 2472,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mitch Marner",
+        "number": 16,
+        "position": "SK5",
+        "sourcePlayerId": 2475,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Braeden Bowman",
+        "number": 42,
+        "position": "SK1",
+        "sourcePlayerId": 30925,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "William Karlsson",
+        "number": 71,
+        "position": "SK2",
+        "sourcePlayerId": 2387,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Trevor Connelly",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 36773,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Andersson",
+        "number": 4,
+        "position": "SK4",
+        "sourcePlayerId": 2762,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shea Theodore",
+        "number": 27,
+        "position": "SK5",
+        "sourcePlayerId": 2157,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "William Karlsson",
+        "number": 71,
+        "position": "SK1",
+        "sourcePlayerId": 2387,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mitch Marner",
+        "number": 16,
+        "position": "SK2",
+        "sourcePlayerId": 2475,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brayden McNabb",
+        "number": 3,
+        "position": "SK3",
+        "sourcePlayerId": 1681,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shea Theodore",
+        "number": 27,
+        "position": "SK4",
+        "sourcePlayerId": 2157,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jack Eichel",
+        "number": 9,
+        "position": "SK1",
+        "sourcePlayerId": 2472,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Stone",
+        "number": 61,
+        "position": "SK2",
+        "sourcePlayerId": 1779,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jeremy Lauzon",
+        "number": 3,
+        "position": "SK3",
+        "sourcePlayerId": 3787,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Parker Wotherspoon",
+        "number": 29,
+        "position": "SK4",
+        "sourcePlayerId": 3836,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Carter Hart",
+      "number": 79,
+      "position": "G1",
+      "sourcePlayerId": 3874,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Adin Hill",
+      "number": 33,
+      "position": "G2",
+      "sourcePlayerId": 2906,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Noah Hanifin",
+      "number": 15,
+      "position": "IR2",
+      "sourcePlayerId": 2473,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "team": "DET",
+  "teamName": "Detroit Red Wings",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:59:06.516Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:29:34.544119+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Alex DeBrincat",
+        "number": 93,
+        "position": "LW",
+        "sourcePlayerId": 2699,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Emmitt Finnie",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 33612,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Viktor Arvidsson",
+        "number": 33,
+        "position": "RW",
+        "sourcePlayerId": 2453,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Brandsegg-Nygård",
+        "number": null,
+        "position": "LW",
+        "sourcePlayerId": 38141,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andrew Copp",
+        "number": 18,
+        "position": "C",
+        "sourcePlayerId": 2457,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lucas Raymond",
+        "number": 23,
+        "position": "RW",
+        "sourcePlayerId": 31783,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Rasmussen",
+        "number": 27,
+        "position": "LW",
+        "sourcePlayerId": 2784,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marco Kasper",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 36364,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "J.T. Compher",
+        "number": 37,
+        "position": "RW",
+        "sourcePlayerId": 2751,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Mason Appleton",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 4582,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sheldon Dries",
+        "number": 15,
+        "position": "C",
+        "sourcePlayerId": 4826,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Keegan Kolesar",
+        "number": 55,
+        "position": "RW",
+        "sourcePlayerId": 3790,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "William Wallinder",
+        "number": 54,
+        "position": "LD",
+        "sourcePlayerId": 33029,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Moritz Seider",
+        "number": 53,
+        "position": "RD",
+        "sourcePlayerId": 30610,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ben Chiarot",
+        "number": 8,
+        "position": "LD",
+        "sourcePlayerId": 1587,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Faulk",
+        "number": 72,
+        "position": "RD",
+        "sourcePlayerId": 1651,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Andreas Englund",
+        "number": 24,
+        "position": "LD",
+        "sourcePlayerId": 2716,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anton Johansson",
+        "number": 42,
+        "position": "RD",
+        "sourcePlayerId": 36465,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Viktor Arvidsson",
+        "number": 33,
+        "position": "SK1",
+        "sourcePlayerId": 2453,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Emmitt Finnie",
+        "number": null,
+        "position": "SK2",
+        "sourcePlayerId": 33612,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lucas Raymond",
+        "number": 23,
+        "position": "SK3",
+        "sourcePlayerId": 31783,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex DeBrincat",
+        "number": 93,
+        "position": "SK4",
+        "sourcePlayerId": 2699,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Moritz Seider",
+        "number": 53,
+        "position": "SK5",
+        "sourcePlayerId": 30610,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Rasmussen",
+        "number": 27,
+        "position": "SK1",
+        "sourcePlayerId": 2784,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "J.T. Compher",
+        "number": 37,
+        "position": "SK2",
+        "sourcePlayerId": 2751,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marco Kasper",
+        "number": null,
+        "position": "SK3",
+        "sourcePlayerId": 36364,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Brandsegg-Nygård",
+        "number": null,
+        "position": "SK4",
+        "sourcePlayerId": 38141,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Faulk",
+        "number": 72,
+        "position": "SK5",
+        "sourcePlayerId": 1651,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "J.T. Compher",
+        "number": 37,
+        "position": "SK1",
+        "sourcePlayerId": 2751,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mason Appleton",
+        "number": 22,
+        "position": "SK2",
+        "sourcePlayerId": 4582,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Chiarot",
+        "number": 8,
+        "position": "SK3",
+        "sourcePlayerId": 1587,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Moritz Seider",
+        "number": 53,
+        "position": "SK4",
+        "sourcePlayerId": 30610,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Rasmussen",
+        "number": 27,
+        "position": "SK1",
+        "sourcePlayerId": 2784,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Keegan Kolesar",
+        "number": 55,
+        "position": "SK2",
+        "sourcePlayerId": 3790,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andreas Englund",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 2716,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Faulk",
+        "number": 72,
+        "position": "SK4",
+        "sourcePlayerId": 1651,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "John Gibson",
+      "number": 36,
+      "position": "G1",
+      "sourcePlayerId": 1870,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Daniil Tarasov",
+      "number": 80,
+      "position": "G2",
+      "sourcePlayerId": 28133,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Albert Johansson",
+      "number": 20,
+      "position": "IR1",
+      "sourcePlayerId": 30661,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Simon Edvinsson",
+      "number": 77,
+      "position": "IR4",
+      "sourcePlayerId": 34667,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Dylan Larkin",
+      "number": 71,
+      "position": "IR5",
+      "sourcePlayerId": 2522,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

@@ -1,0 +1,354 @@
+{
+  "team": "PHI",
+  "teamName": "Philadelphia Flyers",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T01:39:14.222Z",
+  "sourceDescription": "Jackie Spiegel",
+  "cachedAtUTC": "2026-11-12T04:29:57.747669+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Michael Bunting",
+        "number": 58,
+        "position": "LW",
+        "sourcePlayerId": 3778,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Christian Dvorak",
+        "number": 22,
+        "position": "C",
+        "sourcePlayerId": 2682,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Owen Tippett",
+        "number": 74,
+        "position": "RW",
+        "sourcePlayerId": 2786,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Tyson Foerster",
+        "number": 71,
+        "position": "LW",
+        "sourcePlayerId": 29750,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Trevor Zegras",
+        "number": 46,
+        "position": "C",
+        "sourcePlayerId": 30202,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Travis Konecny",
+        "number": 11,
+        "position": "RW",
+        "sourcePlayerId": 2498,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Porter Martone",
+        "number": null,
+        "position": "LW",
+        "sourcePlayerId": 37366,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Cates",
+        "number": 27,
+        "position": "C",
+        "sourcePlayerId": 28087,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matvei Michkov",
+        "number": 39,
+        "position": "RW",
+        "sourcePlayerId": 33997,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Denver Barkey",
+        "number": 86,
+        "position": "LW",
+        "sourcePlayerId": 35098,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sean Couturier",
+        "number": 14,
+        "position": "C",
+        "sourcePlayerId": 1777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noel Acciari",
+        "number": 52,
+        "position": "RW",
+        "sourcePlayerId": 2589,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Travis Sanheim",
+        "number": 6,
+        "position": "LD",
+        "sourcePlayerId": 2827,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jamie Drysdale",
+        "number": 9,
+        "position": "RD",
+        "sourcePlayerId": 29756,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cam York",
+        "number": 8,
+        "position": "LD",
+        "sourcePlayerId": 30422,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Oliver Bonk",
+        "number": 59,
+        "position": "RD",
+        "sourcePlayerId": 35107,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nick Seeler",
+        "number": 24,
+        "position": "LD",
+        "sourcePlayerId": 4630,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Ristolainen",
+        "number": 55,
+        "position": "RD",
+        "sourcePlayerId": 2140,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Porter Martone",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 37366,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Denver Barkey",
+        "number": 86,
+        "position": "SK2",
+        "sourcePlayerId": 35098,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matvei Michkov",
+        "number": 39,
+        "position": "SK3",
+        "sourcePlayerId": 33997,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Trevor Zegras",
+        "number": 46,
+        "position": "SK4",
+        "sourcePlayerId": 30202,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jamie Drysdale",
+        "number": 9,
+        "position": "SK5",
+        "sourcePlayerId": 29756,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Travis Konecny",
+        "number": 11,
+        "position": "SK1",
+        "sourcePlayerId": 2498,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Christian Dvorak",
+        "number": 22,
+        "position": "SK2",
+        "sourcePlayerId": 2682,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyson Foerster",
+        "number": 71,
+        "position": "SK3",
+        "sourcePlayerId": 29750,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Owen Tippett",
+        "number": 74,
+        "position": "SK4",
+        "sourcePlayerId": 2786,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Oliver Bonk",
+        "number": 59,
+        "position": "SK5",
+        "sourcePlayerId": 35107,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Sean Couturier",
+        "number": 14,
+        "position": "SK1",
+        "sourcePlayerId": 1777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noel Acciari",
+        "number": 52,
+        "position": "SK2",
+        "sourcePlayerId": 2589,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cam York",
+        "number": 8,
+        "position": "SK3",
+        "sourcePlayerId": 30422,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Travis Sanheim",
+        "number": 6,
+        "position": "SK4",
+        "sourcePlayerId": 2827,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Noah Cates",
+        "number": 27,
+        "position": "SK1",
+        "sourcePlayerId": 28087,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Christian Dvorak",
+        "number": 22,
+        "position": "SK2",
+        "sourcePlayerId": 2682,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Seeler",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 4630,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Ristolainen",
+        "number": 55,
+        "position": "SK4",
+        "sourcePlayerId": 2140,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Dan Vladar",
+      "number": 80,
+      "position": "G1",
+      "sourcePlayerId": 3831,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Joseph Woll",
+      "number": 53,
+      "position": "G2",
+      "sourcePlayerId": 27288,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Nikita Grebenkin",
+      "number": 71,
+      "position": "IR1",
+      "sourcePlayerId": 34689,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "team": "MIN",
+  "teamName": "Minnesota Wild",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:53:34.020Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:29:42.953917+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Kirill Kaprizov",
+        "number": 97,
+        "position": "LW",
+        "sourcePlayerId": 26611,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Joel Eriksson Ek",
+        "number": 14,
+        "position": "C",
+        "sourcePlayerId": 2494,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matt Boldy",
+        "number": 12,
+        "position": "RW",
+        "sourcePlayerId": 30421,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Blake Coleman",
+        "number": 20,
+        "position": "LW",
+        "sourcePlayerId": 2728,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael McCarron",
+        "number": 47,
+        "position": "C",
+        "sourcePlayerId": 2156,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Bobby Brink",
+        "number": 10,
+        "position": "RW",
+        "sourcePlayerId": 30223,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Maxim Shabanov",
+        "number": 49,
+        "position": "LW",
+        "sourcePlayerId": 38466,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Danila Yurov",
+        "number": 22,
+        "position": "C",
+        "sourcePlayerId": 36363,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Yakov Trenin",
+        "number": 13,
+        "position": "RW",
+        "sourcePlayerId": 3775,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Marcus Foligno",
+        "number": 17,
+        "position": "LW",
+        "sourcePlayerId": 1689,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Hartman",
+        "number": 38,
+        "position": "C",
+        "sourcePlayerId": 2161,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Foligno",
+        "number": 17,
+        "position": "RW",
+        "sourcePlayerId": 1081,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Quinn Hughes",
+        "number": 43,
+        "position": "LD",
+        "sourcePlayerId": 4794,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonas Brodin",
+        "number": 25,
+        "position": "RD",
+        "sourcePlayerId": 1740,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jared Spurgeon",
+        "number": 46,
+        "position": "LD",
+        "sourcePlayerId": 1557,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Olli Maatta",
+        "number": 3,
+        "position": "RD",
+        "sourcePlayerId": 1792,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Matt Kiersted",
+        "number": 26,
+        "position": "LD",
+        "sourcePlayerId": 34534,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Bogosian",
+        "number": 24,
+        "position": "RD",
+        "sourcePlayerId": 53,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Maxim Shabanov",
+        "number": 49,
+        "position": "SK1",
+        "sourcePlayerId": 38466,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Joel Eriksson Ek",
+        "number": 14,
+        "position": "SK2",
+        "sourcePlayerId": 2494,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kirill Kaprizov",
+        "number": 97,
+        "position": "SK3",
+        "sourcePlayerId": 26611,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Quinn Hughes",
+        "number": 43,
+        "position": "SK4",
+        "sourcePlayerId": 4794,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matt Boldy",
+        "number": 12,
+        "position": "SK5",
+        "sourcePlayerId": 30421,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Blake Coleman",
+        "number": 20,
+        "position": "SK1",
+        "sourcePlayerId": 2728,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Hartman",
+        "number": 38,
+        "position": "SK2",
+        "sourcePlayerId": 2161,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Danila Yurov",
+        "number": 22,
+        "position": "SK3",
+        "sourcePlayerId": 36363,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Quinn Hughes",
+        "number": 43,
+        "position": "SK4",
+        "sourcePlayerId": 4794,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Bobby Brink",
+        "number": 10,
+        "position": "SK5",
+        "sourcePlayerId": 30223,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Michael McCarron",
+        "number": 47,
+        "position": "SK1",
+        "sourcePlayerId": 2156,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Blake Coleman",
+        "number": 20,
+        "position": "SK2",
+        "sourcePlayerId": 2728,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Olli Maatta",
+        "number": 3,
+        "position": "SK3",
+        "sourcePlayerId": 1792,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonas Brodin",
+        "number": 25,
+        "position": "SK4",
+        "sourcePlayerId": 1740,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryan Hartman",
+        "number": 38,
+        "position": "SK1",
+        "sourcePlayerId": 2161,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Yakov Trenin",
+        "number": 13,
+        "position": "SK2",
+        "sourcePlayerId": 3775,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Bogosian",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 53,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jared Spurgeon",
+        "number": 46,
+        "position": "SK4",
+        "sourcePlayerId": 1557,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Jesper Wallstedt",
+      "number": null,
+      "position": "G1",
+      "sourcePlayerId": 31763,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Calvin Pickard",
+      "number": 31,
+      "position": "G2",
+      "sourcePlayerId": 1607,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Brock Faber",
+      "number": 7,
+      "position": "IR1",
+      "sourcePlayerId": 30792,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Filip Gustavsson",
+      "number": 32,
+      "position": "IR2",
+      "sourcePlayerId": 4565,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

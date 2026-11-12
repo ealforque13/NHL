@@ -1,0 +1,362 @@
+{
+  "team": "VAN",
+  "teamName": "Vancouver Canucks",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-10T19:47:41.561Z",
+  "sourceDescription": "Thomas Drance",
+  "cachedAtUTC": "2026-11-12T04:30:14.732965+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Jake DeBrusk",
+        "number": 74,
+        "position": "LW",
+        "sourcePlayerId": 2490,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Elias Pettersson",
+        "number": 40,
+        "position": "C",
+        "sourcePlayerId": 2801,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brock Boeser",
+        "number": 6,
+        "position": "RW",
+        "sourcePlayerId": 2497,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Paul Cotter",
+        "number": 47,
+        "position": "LW",
+        "sourcePlayerId": 27620,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Filip Chytil",
+        "number": 77,
+        "position": "C",
+        "sourcePlayerId": 2811,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Jonathan Lekkerimaki",
+        "number": 88,
+        "position": "RW",
+        "sourcePlayerId": 36365,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Liam Ohgren",
+        "number": 92,
+        "position": "LW",
+        "sourcePlayerId": 36367,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marco Rossi",
+        "number": 23,
+        "position": "C",
+        "sourcePlayerId": 29821,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Drew O'Connor",
+        "number": 18,
+        "position": "RW",
+        "sourcePlayerId": 32925,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Arshdeep Bains",
+        "number": null,
+        "position": "LW",
+        "sourcePlayerId": 28969,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Max Sasson",
+        "number": null,
+        "position": "C",
+        "sourcePlayerId": 30007,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brendan Gallagher",
+        "number": 11,
+        "position": "RW",
+        "sourcePlayerId": 1791,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Zeev Buium",
+        "number": 8,
+        "position": "LD",
+        "sourcePlayerId": 33153,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Filip Hronek",
+        "number": 17,
+        "position": "RD",
+        "sourcePlayerId": 3862,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Elias Nils Pettersson",
+        "number": 25,
+        "position": "LD",
+        "sourcePlayerId": 36406,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jamie Oleksiak",
+        "number": 4,
+        "position": "RD",
+        "sourcePlayerId": 1790,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Guillaume Brisebois",
+        "number": 55,
+        "position": "LD",
+        "sourcePlayerId": 3789,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tom Willander",
+        "number": 5,
+        "position": "RD",
+        "sourcePlayerId": 38455,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Jake DeBrusk",
+        "number": 74,
+        "position": "SK1",
+        "sourcePlayerId": 2490,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Elias Pettersson",
+        "number": 40,
+        "position": "SK2",
+        "sourcePlayerId": 2801,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brock Boeser",
+        "number": 6,
+        "position": "SK3",
+        "sourcePlayerId": 2497,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonathan Lekkerimaki",
+        "number": 88,
+        "position": "SK4",
+        "sourcePlayerId": 36365,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Filip Hronek",
+        "number": 17,
+        "position": "SK5",
+        "sourcePlayerId": 3862,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Paul Cotter",
+        "number": 47,
+        "position": "SK1",
+        "sourcePlayerId": 27620,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Filip Chytil",
+        "number": 77,
+        "position": "SK2",
+        "sourcePlayerId": 2811,
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Liam Ohgren",
+        "number": 92,
+        "position": "SK3",
+        "sourcePlayerId": 36367,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zeev Buium",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 33153,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marco Rossi",
+        "number": 23,
+        "position": "SK5",
+        "sourcePlayerId": 29821,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Elias Pettersson",
+        "number": 40,
+        "position": "SK1",
+        "sourcePlayerId": 2801,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brock Boeser",
+        "number": 6,
+        "position": "SK2",
+        "sourcePlayerId": 2497,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Elias Nils Pettersson",
+        "number": 25,
+        "position": "SK3",
+        "sourcePlayerId": 36406,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Filip Hronek",
+        "number": 17,
+        "position": "SK4",
+        "sourcePlayerId": 3862,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Max Sasson",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 30007,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Drew O'Connor",
+        "number": 18,
+        "position": "SK2",
+        "sourcePlayerId": 32925,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Guillaume Brisebois",
+        "number": 55,
+        "position": "SK3",
+        "sourcePlayerId": 3789,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jamie Oleksiak",
+        "number": 4,
+        "position": "SK4",
+        "sourcePlayerId": 1790,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Leevi Merilainen",
+      "number": 31,
+      "position": "G1",
+      "sourcePlayerId": 34600,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Kevin Lankinen",
+      "number": 32,
+      "position": "G2",
+      "sourcePlayerId": 4757,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Thatcher Demko",
+      "number": 35,
+      "position": "IR1",
+      "sourcePlayerId": 2722,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Filip Chytil",
+      "number": 77,
+      "position": "IR2",
+      "sourcePlayerId": 2811,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

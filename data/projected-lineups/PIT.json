@@ -1,0 +1,370 @@
+{
+  "team": "PIT",
+  "teamName": "Pittsburgh Penguins",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T02:43:03.895Z",
+  "sourceDescription": "@penguins",
+  "cachedAtUTC": "2026-11-12T04:29:59.944047+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Evgeni Malkin",
+        "number": 71,
+        "position": "LW",
+        "sourcePlayerId": 1236,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sidney Crosby",
+        "number": 87,
+        "position": "C",
+        "sourcePlayerId": 1216,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rickard Rakell",
+        "number": 67,
+        "position": "RW",
+        "sourcePlayerId": 1682,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nicholas Robertson",
+        "number": 14,
+        "position": "LW",
+        "sourcePlayerId": 29254,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Kindel",
+        "number": 81,
+        "position": "C",
+        "sourcePlayerId": 37573,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Egor Chinakhov",
+        "number": 59,
+        "position": "RW",
+        "sourcePlayerId": 30655,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ville Koivunen",
+        "number": 41,
+        "position": "LW",
+        "sourcePlayerId": 34677,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tommy Novak",
+        "number": 18,
+        "position": "C",
+        "sourcePlayerId": 26595,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Brazeau",
+        "number": 15,
+        "position": "RW",
+        "sourcePlayerId": 28622,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Rutger McGroarty",
+        "number": 2,
+        "position": "LW",
+        "sourcePlayerId": 33262,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Blake Lizotte",
+        "number": 46,
+        "position": "C",
+        "sourcePlayerId": 27482,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor Dewar",
+        "number": 19,
+        "position": "RW",
+        "sourcePlayerId": 25396,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Spencer Stastney",
+        "number": 24,
+        "position": "LD",
+        "sourcePlayerId": 28862,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Karlsson",
+        "number": 65,
+        "position": "RD",
+        "sourcePlayerId": 1087,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Samuel Girard",
+        "number": 49,
+        "position": "LD",
+        "sourcePlayerId": 2773,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kaedan Korczak",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 28524,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Declan Carlile",
+        "number": 72,
+        "position": "LD",
+        "sourcePlayerId": 30124,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kris Letang",
+        "number": 58,
+        "position": "RD",
+        "sourcePlayerId": 1233,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Ben Kindel",
+        "number": 81,
+        "position": "SK1",
+        "sourcePlayerId": 37573,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tommy Novak",
+        "number": 18,
+        "position": "SK2",
+        "sourcePlayerId": 26595,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rickard Rakell",
+        "number": 67,
+        "position": "SK3",
+        "sourcePlayerId": 1682,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Karlsson",
+        "number": 65,
+        "position": "SK4",
+        "sourcePlayerId": 1087,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sidney Crosby",
+        "number": 87,
+        "position": "SK5",
+        "sourcePlayerId": 1216,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ville Koivunen",
+        "number": 41,
+        "position": "SK1",
+        "sourcePlayerId": 34677,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Brazeau",
+        "number": 15,
+        "position": "SK2",
+        "sourcePlayerId": 28622,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Egor Chinakhov",
+        "number": 59,
+        "position": "SK3",
+        "sourcePlayerId": 30655,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kris Letang",
+        "number": 58,
+        "position": "SK4",
+        "sourcePlayerId": 1233,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Evgeni Malkin",
+        "number": 71,
+        "position": "SK5",
+        "sourcePlayerId": 1236,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Blake Lizotte",
+        "number": 46,
+        "position": "SK1",
+        "sourcePlayerId": 27482,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor Dewar",
+        "number": 19,
+        "position": "SK2",
+        "sourcePlayerId": 25396,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Declan Carlile",
+        "number": 72,
+        "position": "SK3",
+        "sourcePlayerId": 30124,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kaedan Korczak",
+        "number": 6,
+        "position": "SK4",
+        "sourcePlayerId": 28524,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Rickard Rakell",
+        "number": 67,
+        "position": "SK1",
+        "sourcePlayerId": 1682,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nicholas Robertson",
+        "number": 14,
+        "position": "SK2",
+        "sourcePlayerId": 29254,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Spencer Stastney",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 28862,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Karlsson",
+        "number": 65,
+        "position": "SK4",
+        "sourcePlayerId": 1087,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Sergei Murashov",
+      "number": 1,
+      "position": "G1",
+      "sourcePlayerId": 36361,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Arturs Silovs",
+      "number": null,
+      "position": "G2",
+      "sourcePlayerId": 31270,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Trevor van Riemsdyk",
+      "number": 57,
+      "position": "IR2",
+      "sourcePlayerId": 2383,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Ryan Graves",
+      "number": 27,
+      "position": "IR3",
+      "sourcePlayerId": 3689,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Bryan Rust",
+      "number": 17,
+      "position": "IR4",
+      "sourcePlayerId": 2407,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

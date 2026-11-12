@@ -1,0 +1,378 @@
+{
+  "team": "UTA",
+  "teamName": "Utah Mammoth",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T02:18:07.414Z",
+  "sourceDescription": "Utah Mammoth",
+  "cachedAtUTC": "2026-11-12T04:30:12.594371+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Clayton Keller",
+        "number": 9,
+        "position": "LW",
+        "sourcePlayerId": 2642,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Schmaltz",
+        "number": 8,
+        "position": "C",
+        "sourcePlayerId": 2678,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Daniil But",
+        "number": 50,
+        "position": "RW",
+        "sourcePlayerId": 38459,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jack McBain",
+        "number": 22,
+        "position": "LW",
+        "sourcePlayerId": 28796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Vincent Trocheck",
+        "number": 16,
+        "position": "C",
+        "sourcePlayerId": 2006,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lawson Crouse",
+        "number": 67,
+        "position": "RW",
+        "sourcePlayerId": 2476,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Anders Lee",
+        "number": 72,
+        "position": "LW",
+        "sourcePlayerId": 2071,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Barrett Hayton",
+        "number": 27,
+        "position": "C",
+        "sourcePlayerId": 4796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kailer Yamamoto",
+        "number": 56,
+        "position": "RW",
+        "sourcePlayerId": 2796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Liam O'Brien",
+        "number": 38,
+        "position": "LW",
+        "sourcePlayerId": 2377,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kevin Stenlund",
+        "number": 82,
+        "position": "C",
+        "sourcePlayerId": 4556,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Carcone",
+        "number": 53,
+        "position": "RW",
+        "sourcePlayerId": 3864,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Mikhail Sergachev",
+        "number": 98,
+        "position": "LD",
+        "sourcePlayerId": 2639,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "MacKenzie Weegar",
+        "number": 52,
+        "position": "RD",
+        "sourcePlayerId": 2777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dmitri Simashev",
+        "number": 26,
+        "position": "LD",
+        "sourcePlayerId": 38458,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andrew Peeke",
+        "number": 20,
+        "position": "RD",
+        "sourcePlayerId": 27242,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Artem Duda",
+        "number": null,
+        "position": "LD",
+        "sourcePlayerId": 36382,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick DeSimone",
+        "number": 57,
+        "position": "RD",
+        "sourcePlayerId": 2886,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Anders Lee",
+        "number": 72,
+        "position": "SK1",
+        "sourcePlayerId": 2071,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Vincent Trocheck",
+        "number": 16,
+        "position": "SK2",
+        "sourcePlayerId": 2006,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Schmaltz",
+        "number": 8,
+        "position": "SK3",
+        "sourcePlayerId": 2678,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikhail Sergachev",
+        "number": 98,
+        "position": "SK4",
+        "sourcePlayerId": 2639,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Clayton Keller",
+        "number": 9,
+        "position": "SK5",
+        "sourcePlayerId": 2642,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kailer Yamamoto",
+        "number": 56,
+        "position": "SK1",
+        "sourcePlayerId": 2796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Barrett Hayton",
+        "number": 27,
+        "position": "SK2",
+        "sourcePlayerId": 4796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Carcone",
+        "number": 53,
+        "position": "SK3",
+        "sourcePlayerId": 3864,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Daniil But",
+        "number": 50,
+        "position": "SK4",
+        "sourcePlayerId": 38459,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "MacKenzie Weegar",
+        "number": 52,
+        "position": "SK5",
+        "sourcePlayerId": 2777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Nick Schmaltz",
+        "number": 8,
+        "position": "SK1",
+        "sourcePlayerId": 2678,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lawson Crouse",
+        "number": 67,
+        "position": "SK2",
+        "sourcePlayerId": 2476,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikhail Sergachev",
+        "number": 98,
+        "position": "SK3",
+        "sourcePlayerId": 2639,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "MacKenzie Weegar",
+        "number": 52,
+        "position": "SK4",
+        "sourcePlayerId": 2777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kevin Stenlund",
+        "number": 82,
+        "position": "SK1",
+        "sourcePlayerId": 4556,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack McBain",
+        "number": 22,
+        "position": "SK2",
+        "sourcePlayerId": 28796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dmitri Simashev",
+        "number": 26,
+        "position": "SK3",
+        "sourcePlayerId": 38458,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andrew Peeke",
+        "number": 20,
+        "position": "SK4",
+        "sourcePlayerId": 27242,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Sebastian Cossa",
+      "number": 33,
+      "position": "G1",
+      "sourcePlayerId": 34654,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Karel Vejmelka",
+      "number": 70,
+      "position": "G2",
+      "sourcePlayerId": 26614,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "John Marino",
+      "number": 6,
+      "position": "IR1",
+      "sourcePlayerId": 25570,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Nate Schmidt",
+      "number": 88,
+      "position": "IR2",
+      "sourcePlayerId": 2093,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Dylan Guenther",
+      "number": 11,
+      "position": "IR3",
+      "sourcePlayerId": 34613,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Logan Cooley",
+      "number": 92,
+      "position": "IR4",
+      "sourcePlayerId": 33387,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

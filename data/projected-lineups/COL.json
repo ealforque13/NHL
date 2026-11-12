@@ -1,0 +1,362 @@
+{
+  "team": "COL",
+  "teamName": "Colorado Avalanche",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:50:33.680Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:29:30.353624+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Artturi Lehkonen",
+        "number": 62,
+        "position": "LW",
+        "sourcePlayerId": 2679,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nathan MacKinnon",
+        "number": 29,
+        "position": "C",
+        "sourcePlayerId": 2130,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Martin Necas",
+        "number": 88,
+        "position": "RW",
+        "sourcePlayerId": 2804,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Gabriel Landeskog",
+        "number": 92,
+        "position": "LW",
+        "sourcePlayerId": 1763,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nazem Kadri",
+        "number": 91,
+        "position": "C",
+        "sourcePlayerId": 1425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nicolas Roy",
+        "number": 10,
+        "position": "RW",
+        "sourcePlayerId": 3818,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jaden Schwartz",
+        "number": 71,
+        "position": "LW",
+        "sourcePlayerId": 1864,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brock Nelson",
+        "number": 11,
+        "position": "C",
+        "sourcePlayerId": 1921,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "T.J. Hughes",
+        "number": 13,
+        "position": "RW",
+        "sourcePlayerId": 38896,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Parker Kelly",
+        "number": 17,
+        "position": "LW",
+        "sourcePlayerId": 4600,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Fedor Svechkov",
+        "number": 9,
+        "position": "C",
+        "sourcePlayerId": 34353,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan O'Connor",
+        "number": 25,
+        "position": "RW",
+        "sourcePlayerId": 24994,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Brett Kulak",
+        "number": 77,
+        "position": "LD",
+        "sourcePlayerId": 2466,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cale Makar",
+        "number": 8,
+        "position": "RD",
+        "sourcePlayerId": 2788,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Devon Toews",
+        "number": 7,
+        "position": "LD",
+        "sourcePlayerId": 2874,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Malinski",
+        "number": 70,
+        "position": "RD",
+        "sourcePlayerId": 37993,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Noah Juulsen",
+        "number": 47,
+        "position": "LD",
+        "sourcePlayerId": 2500,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brent Burns",
+        "number": 84,
+        "position": "RD",
+        "sourcePlayerId": 792,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "T.J. Hughes",
+        "number": 13,
+        "position": "SK1",
+        "sourcePlayerId": 38896,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nazem Kadri",
+        "number": 91,
+        "position": "SK2",
+        "sourcePlayerId": 1425,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Martin Necas",
+        "number": 88,
+        "position": "SK3",
+        "sourcePlayerId": 2804,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nathan MacKinnon",
+        "number": 29,
+        "position": "SK4",
+        "sourcePlayerId": 2130,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cale Makar",
+        "number": 8,
+        "position": "SK5",
+        "sourcePlayerId": 2788,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Artturi Lehkonen",
+        "number": 62,
+        "position": "SK1",
+        "sourcePlayerId": 2679,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Gabriel Landeskog",
+        "number": 92,
+        "position": "SK2",
+        "sourcePlayerId": 1763,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jaden Schwartz",
+        "number": 71,
+        "position": "SK3",
+        "sourcePlayerId": 1864,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Devon Toews",
+        "number": 7,
+        "position": "SK4",
+        "sourcePlayerId": 2874,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brock Nelson",
+        "number": 11,
+        "position": "SK5",
+        "sourcePlayerId": 1921,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Parker Kelly",
+        "number": 17,
+        "position": "SK1",
+        "sourcePlayerId": 4600,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan O'Connor",
+        "number": 25,
+        "position": "SK2",
+        "sourcePlayerId": 24994,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Devon Toews",
+        "number": 7,
+        "position": "SK3",
+        "sourcePlayerId": 2874,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cale Makar",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 2788,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nicolas Roy",
+        "number": 10,
+        "position": "SK1",
+        "sourcePlayerId": 3818,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artturi Lehkonen",
+        "number": 62,
+        "position": "SK2",
+        "sourcePlayerId": 2679,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brett Kulak",
+        "number": 77,
+        "position": "SK3",
+        "sourcePlayerId": 2466,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brent Burns",
+        "number": 84,
+        "position": "SK4",
+        "sourcePlayerId": 792,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Mackenzie Blackwood",
+      "number": 39,
+      "position": "G1",
+      "sourcePlayerId": 3792,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Scott Wedgewood",
+      "number": 41,
+      "position": "G2",
+      "sourcePlayerId": 1873,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Josh Manson",
+      "number": 42,
+      "position": "IR1",
+      "sourcePlayerId": 2400,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Zachary L'Heureux",
+      "number": 68,
+      "position": "IR3",
+      "sourcePlayerId": 31229,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

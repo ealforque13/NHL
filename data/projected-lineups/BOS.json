@@ -1,0 +1,354 @@
+{
+  "team": "BOS",
+  "teamName": "Boston Bruins",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T16:43:33.671Z",
+  "sourceDescription": "Jim McBride",
+  "cachedAtUTC": "2026-11-12T04:29:17.610274+00:00",
+  "forwards": [
+    [
+      {
+        "name": "JJ Peterka",
+        "number": 10,
+        "position": "LW",
+        "sourcePlayerId": 31777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pavel Zacha",
+        "number": 18,
+        "position": "C",
+        "sourcePlayerId": 2481,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "David Pastrnak",
+        "number": 88,
+        "position": "RW",
+        "sourcePlayerId": 2376,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Eyssimont",
+        "number": 81,
+        "position": "LW",
+        "sourcePlayerId": 4693,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Fraser Minten",
+        "number": 93,
+        "position": "C",
+        "sourcePlayerId": 31575,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Morgan Geekie",
+        "number": 39,
+        "position": "RW",
+        "sourcePlayerId": 28001,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Casey Mittelstadt",
+        "number": 11,
+        "position": "LW",
+        "sourcePlayerId": 2782,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Elias Lindholm",
+        "number": 28,
+        "position": "C",
+        "sourcePlayerId": 2133,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marat Khusnutdinov",
+        "number": 92,
+        "position": "RW",
+        "sourcePlayerId": 31738,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Tanner Jeannot",
+        "number": 84,
+        "position": "LW",
+        "sourcePlayerId": 4695,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Poitras",
+        "number": 51,
+        "position": "C",
+        "sourcePlayerId": 33196,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Kastelic",
+        "number": 47,
+        "position": "RW",
+        "sourcePlayerId": 2904,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Hampus Lindholm",
+        "number": 27,
+        "position": "LD",
+        "sourcePlayerId": 1947,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Charlie McAvoy",
+        "number": 73,
+        "position": "RD",
+        "sourcePlayerId": 2645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nikita Zadorov",
+        "number": 91,
+        "position": "LD",
+        "sourcePlayerId": 2147,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Will Borgen",
+        "number": 17,
+        "position": "RD",
+        "sourcePlayerId": 4680,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Frederic Brunet",
+        "number": 42,
+        "position": "LD",
+        "sourcePlayerId": 31316,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mason Lohrei",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 37934,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Morgan Geekie",
+        "number": 39,
+        "position": "SK1",
+        "sourcePlayerId": 28001,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Elias Lindholm",
+        "number": 28,
+        "position": "SK2",
+        "sourcePlayerId": 2133,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pavel Zacha",
+        "number": 18,
+        "position": "SK3",
+        "sourcePlayerId": 2481,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "David Pastrnak",
+        "number": 88,
+        "position": "SK4",
+        "sourcePlayerId": 2376,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Charlie McAvoy",
+        "number": 73,
+        "position": "SK5",
+        "sourcePlayerId": 2645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Matthew Poitras",
+        "number": 51,
+        "position": "SK1",
+        "sourcePlayerId": 33196,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Fraser Minten",
+        "number": 93,
+        "position": "SK2",
+        "sourcePlayerId": 31575,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Casey Mittelstadt",
+        "number": 11,
+        "position": "SK3",
+        "sourcePlayerId": 2782,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mason Lohrei",
+        "number": 6,
+        "position": "SK4",
+        "sourcePlayerId": 37934,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "JJ Peterka",
+        "number": 10,
+        "position": "SK5",
+        "sourcePlayerId": 31777,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Fraser Minten",
+        "number": 93,
+        "position": "SK1",
+        "sourcePlayerId": 31575,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Marat Khusnutdinov",
+        "number": 92,
+        "position": "SK2",
+        "sourcePlayerId": 31738,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikita Zadorov",
+        "number": 91,
+        "position": "SK3",
+        "sourcePlayerId": 2147,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Will Borgen",
+        "number": 17,
+        "position": "SK4",
+        "sourcePlayerId": 4680,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Pavel Zacha",
+        "number": 18,
+        "position": "SK1",
+        "sourcePlayerId": 2481,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Kastelic",
+        "number": 47,
+        "position": "SK2",
+        "sourcePlayerId": 2904,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Hampus Lindholm",
+        "number": 27,
+        "position": "SK3",
+        "sourcePlayerId": 1947,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Charlie McAvoy",
+        "number": 73,
+        "position": "SK4",
+        "sourcePlayerId": 2645,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Jeremy Swayman",
+      "number": 1,
+      "position": "G1",
+      "sourcePlayerId": 28098,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Michael DiPietro",
+      "number": 80,
+      "position": "G2",
+      "sourcePlayerId": 4771,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "James Hagens",
+      "number": 44,
+      "position": "IR1",
+      "sourcePlayerId": 37375,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

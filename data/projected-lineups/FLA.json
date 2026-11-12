@@ -1,0 +1,378 @@
+{
+  "team": "FLA",
+  "teamName": "Florida Panthers",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:57:06.058Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T04:29:38.747616+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Brady Tkachuk",
+        "number": 8,
+        "position": "LW",
+        "sourcePlayerId": 4790,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Bennett",
+        "number": 9,
+        "position": "C",
+        "sourcePlayerId": 2366,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Tkachuk",
+        "number": 19,
+        "position": "RW",
+        "sourcePlayerId": 2635,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Carter Verhaeghe",
+        "number": 23,
+        "position": "LW",
+        "sourcePlayerId": 2818,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Reinhart",
+        "number": 13,
+        "position": "C",
+        "sourcePlayerId": 2364,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lars Eller",
+        "number": 20,
+        "position": "RW",
+        "sourcePlayerId": 840,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Eetu Luostarinen",
+        "number": 27,
+        "position": "LW",
+        "sourcePlayerId": 28129,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anton Lundell",
+        "number": 15,
+        "position": "C",
+        "sourcePlayerId": 33026,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Devine",
+        "number": 38,
+        "position": "RW",
+        "sourcePlayerId": 30941,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Bokondji Imama",
+        "number": 14,
+        "position": "LW",
+        "sourcePlayerId": 3925,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cole Schwindt",
+        "number": 79,
+        "position": "C",
+        "sourcePlayerId": 29210,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Garnet Hathaway",
+        "number": 21,
+        "position": "RW",
+        "sourcePlayerId": 2561,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Gustav Forsling",
+        "number": 42,
+        "position": "LD",
+        "sourcePlayerId": 2431,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aaron Ekblad",
+        "number": 5,
+        "position": "RD",
+        "sourcePlayerId": 2363,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Niko Mikkola",
+        "number": 77,
+        "position": "LD",
+        "sourcePlayerId": 4770,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Seth Jones",
+        "number": 3,
+        "position": "RD",
+        "sourcePlayerId": 2137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dmitry Kulikov",
+        "number": 7,
+        "position": "LD",
+        "sourcePlayerId": 593,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Radko Gudas",
+        "number": 6,
+        "position": "RD",
+        "sourcePlayerId": 1366,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Brady Tkachuk",
+        "number": 8,
+        "position": "SK1",
+        "sourcePlayerId": 4790,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Reinhart",
+        "number": 13,
+        "position": "SK2",
+        "sourcePlayerId": 2364,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Carter Verhaeghe",
+        "number": 23,
+        "position": "SK3",
+        "sourcePlayerId": 2818,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Seth Jones",
+        "number": 3,
+        "position": "SK4",
+        "sourcePlayerId": 2137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Tkachuk",
+        "number": 19,
+        "position": "SK5",
+        "sourcePlayerId": 2635,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Sam Bennett",
+        "number": 9,
+        "position": "SK1",
+        "sourcePlayerId": 2366,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anton Lundell",
+        "number": 15,
+        "position": "SK2",
+        "sourcePlayerId": 33026,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Eetu Luostarinen",
+        "number": 27,
+        "position": "SK3",
+        "sourcePlayerId": 28129,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aaron Ekblad",
+        "number": 5,
+        "position": "SK4",
+        "sourcePlayerId": 2363,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Gustav Forsling",
+        "number": 42,
+        "position": "SK5",
+        "sourcePlayerId": 2431,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Anton Lundell",
+        "number": 15,
+        "position": "SK1",
+        "sourcePlayerId": 33026,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Eetu Luostarinen",
+        "number": 27,
+        "position": "SK2",
+        "sourcePlayerId": 28129,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Niko Mikkola",
+        "number": 77,
+        "position": "SK3",
+        "sourcePlayerId": 4770,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Seth Jones",
+        "number": 3,
+        "position": "SK4",
+        "sourcePlayerId": 2137,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Lars Eller",
+        "number": 20,
+        "position": "SK1",
+        "sourcePlayerId": 840,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Garnet Hathaway",
+        "number": 21,
+        "position": "SK2",
+        "sourcePlayerId": 2561,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Gustav Forsling",
+        "number": 42,
+        "position": "SK3",
+        "sourcePlayerId": 2431,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aaron Ekblad",
+        "number": 5,
+        "position": "SK4",
+        "sourcePlayerId": 2363,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Jacob Markstrom",
+      "number": 25,
+      "position": "G1",
+      "sourcePlayerId": 594,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Akira Schmid",
+      "number": 40,
+      "position": "G2",
+      "sourcePlayerId": 29148,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Aleksander Barkov",
+      "number": 16,
+      "position": "IR1",
+      "sourcePlayerId": 2132,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jonah Gadjovich",
+      "number": 12,
+      "position": "IR2",
+      "sourcePlayerId": 4612,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Brad Marchand",
+      "number": 63,
+      "position": "IR3",
+      "sourcePlayerId": 124,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Sandis Vilmanis",
+      "number": 95,
+      "position": "IR4",
+      "sourcePlayerId": 36428,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

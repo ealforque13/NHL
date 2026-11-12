@@ -1,0 +1,354 @@
+{
+  "team": "TBL",
+  "teamName": "Tampa Bay Lightning",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T23:37:18.704Z",
+  "sourceDescription": "Gabby Shirley",
+  "cachedAtUTC": "2026-11-12T04:30:08.353117+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Brandon Hagel",
+        "number": 38,
+        "position": "LW",
+        "sourcePlayerId": 27046,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anthony Cirelli",
+        "number": 71,
+        "position": "C",
+        "sourcePlayerId": 3842,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikita Kucherov",
+        "number": 86,
+        "position": "RW",
+        "sourcePlayerId": 2031,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jake Guentzel",
+        "number": 59,
+        "position": "LW",
+        "sourcePlayerId": 2707,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam O'Reilly",
+        "number": 23,
+        "position": "C",
+        "sourcePlayerId": 36872,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Yanni Gourde",
+        "number": 37,
+        "position": "RW",
+        "sourcePlayerId": 2566,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ilya Mikheyev",
+        "number": 95,
+        "position": "LW",
+        "sourcePlayerId": 30651,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zemgus Girgensons",
+        "number": 28,
+        "position": "C",
+        "sourcePlayerId": 1953,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pontus Holmberg",
+        "number": 29,
+        "position": "RW",
+        "sourcePlayerId": 29640,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jeffrey Viel",
+        "number": 28,
+        "position": "LW",
+        "sourcePlayerId": 24312,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Conor Geekie",
+        "number": 14,
+        "position": "C",
+        "sourcePlayerId": 31505,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Scott Sabourin",
+        "number": 46,
+        "position": "RW",
+        "sourcePlayerId": 2171,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Ryan McDonagh",
+        "number": 27,
+        "position": "LD",
+        "sourcePlayerId": 1048,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Cernak",
+        "number": 81,
+        "position": "RD",
+        "sourcePlayerId": 2749,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Charle-Edouard D'Astous",
+        "number": 51,
+        "position": "LD",
+        "sourcePlayerId": 26500,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "John Carlson",
+        "number": 74,
+        "position": "RD",
+        "sourcePlayerId": 1507,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Victor Hedman",
+        "number": 77,
+        "position": "LD",
+        "sourcePlayerId": 1369,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "J.J. Moser",
+        "number": 90,
+        "position": "RD",
+        "sourcePlayerId": 34680,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Jake Guentzel",
+        "number": 59,
+        "position": "SK1",
+        "sourcePlayerId": 2707,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam O'Reilly",
+        "number": 23,
+        "position": "SK2",
+        "sourcePlayerId": 36872,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikita Kucherov",
+        "number": 86,
+        "position": "SK3",
+        "sourcePlayerId": 2031,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "John Carlson",
+        "number": 74,
+        "position": "SK4",
+        "sourcePlayerId": 1507,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Charle-Edouard D'Astous",
+        "number": 51,
+        "position": "SK5",
+        "sourcePlayerId": 26500,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Conor Geekie",
+        "number": 14,
+        "position": "SK1",
+        "sourcePlayerId": 31505,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anthony Cirelli",
+        "number": 71,
+        "position": "SK2",
+        "sourcePlayerId": 3842,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pontus Holmberg",
+        "number": 29,
+        "position": "SK3",
+        "sourcePlayerId": 29640,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Hagel",
+        "number": 38,
+        "position": "SK4",
+        "sourcePlayerId": 27046,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Hedman",
+        "number": 77,
+        "position": "SK5",
+        "sourcePlayerId": 1369,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Anthony Cirelli",
+        "number": 71,
+        "position": "SK1",
+        "sourcePlayerId": 3842,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Hagel",
+        "number": 38,
+        "position": "SK2",
+        "sourcePlayerId": 27046,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan McDonagh",
+        "number": 27,
+        "position": "SK3",
+        "sourcePlayerId": 1048,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Erik Cernak",
+        "number": 81,
+        "position": "SK4",
+        "sourcePlayerId": 2749,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Zemgus Girgensons",
+        "number": 28,
+        "position": "SK1",
+        "sourcePlayerId": 1953,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ilya Mikheyev",
+        "number": 95,
+        "position": "SK2",
+        "sourcePlayerId": 30651,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Hedman",
+        "number": 77,
+        "position": "SK3",
+        "sourcePlayerId": 1369,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "J.J. Moser",
+        "number": 90,
+        "position": "SK4",
+        "sourcePlayerId": 34680,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Andrei Vasilevskiy",
+      "number": 88,
+      "position": "G1",
+      "sourcePlayerId": 2413,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Dennis Hildeby",
+      "number": null,
+      "position": "G2",
+      "sourcePlayerId": 36477,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Brayden Point",
+      "number": 21,
+      "position": "IR1",
+      "sourcePlayerId": 2456,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}

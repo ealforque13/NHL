@@ -1,0 +1,370 @@
+{
+  "team": "BUF",
+  "teamName": "Buffalo Sabres",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T23:38:07.937Z",
+  "sourceDescription": "Heather Engel",
+  "cachedAtUTC": "2026-11-12T04:29:19.716255+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Zach Benson",
+        "number": 6,
+        "position": "LW",
+        "sourcePlayerId": 33544,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Ostlund",
+        "number": 86,
+        "position": "C",
+        "sourcePlayerId": 36383,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Quinn",
+        "number": 22,
+        "position": "RW",
+        "sourcePlayerId": 29241,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Peyton Krebs",
+        "number": 19,
+        "position": "LW",
+        "sourcePlayerId": 28684,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Norris",
+        "number": 9,
+        "position": "C",
+        "sourcePlayerId": 28056,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tage Thompson",
+        "number": 72,
+        "position": "RW",
+        "sourcePlayerId": 2659,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jason Zucker",
+        "number": 17,
+        "position": "LW",
+        "sourcePlayerId": 1898,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan McLeod",
+        "number": 71,
+        "position": "C",
+        "sourcePlayerId": 4810,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Doan",
+        "number": 91,
+        "position": "RW",
+        "sourcePlayerId": 32990,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Beck Malenstyn",
+        "number": 29,
+        "position": "LW",
+        "sourcePlayerId": 3914,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyson Kozak",
+        "number": 48,
+        "position": "C",
+        "sourcePlayerId": 32822,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Carrick",
+        "number": 39,
+        "position": "RW",
+        "sourcePlayerId": 1914,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Mattias Samuelsson",
+        "number": 23,
+        "position": "LD",
+        "sourcePlayerId": 28792,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Dahlin",
+        "number": 26,
+        "position": "RD",
+        "sourcePlayerId": 4786,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Owen Power",
+        "number": 25,
+        "position": "LD",
+        "sourcePlayerId": 30051,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Olen Zellweger",
+        "number": 8,
+        "position": "RD",
+        "sourcePlayerId": 34623,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Conor Timmins",
+        "number": 21,
+        "position": "LD",
+        "sourcePlayerId": 2797,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Metsa",
+        "number": 73,
+        "position": "RD",
+        "sourcePlayerId": 28387,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Zach Benson",
+        "number": 6,
+        "position": "SK1",
+        "sourcePlayerId": 33544,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Ostlund",
+        "number": 86,
+        "position": "SK2",
+        "sourcePlayerId": 36383,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Quinn",
+        "number": 22,
+        "position": "SK3",
+        "sourcePlayerId": 29241,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tage Thompson",
+        "number": 72,
+        "position": "SK4",
+        "sourcePlayerId": 2659,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Dahlin",
+        "number": 26,
+        "position": "SK5",
+        "sourcePlayerId": 4786,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jason Zucker",
+        "number": 17,
+        "position": "SK1",
+        "sourcePlayerId": 1898,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan McLeod",
+        "number": 71,
+        "position": "SK2",
+        "sourcePlayerId": 4810,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Doan",
+        "number": 91,
+        "position": "SK3",
+        "sourcePlayerId": 32990,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Owen Power",
+        "number": 25,
+        "position": "SK4",
+        "sourcePlayerId": 30051,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Norris",
+        "number": 9,
+        "position": "SK5",
+        "sourcePlayerId": 28056,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Tyson Kozak",
+        "number": 48,
+        "position": "SK1",
+        "sourcePlayerId": 32822,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Beck Malenstyn",
+        "number": 29,
+        "position": "SK2",
+        "sourcePlayerId": 3914,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mattias Samuelsson",
+        "number": 23,
+        "position": "SK3",
+        "sourcePlayerId": 28792,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Conor Timmins",
+        "number": 21,
+        "position": "SK4",
+        "sourcePlayerId": 2797,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Zach Benson",
+        "number": 6,
+        "position": "SK1",
+        "sourcePlayerId": 33544,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Ostlund",
+        "number": 86,
+        "position": "SK2",
+        "sourcePlayerId": 36383,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Rasmus Dahlin",
+        "number": 26,
+        "position": "SK3",
+        "sourcePlayerId": 4786,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Owen Power",
+        "number": 25,
+        "position": "SK4",
+        "sourcePlayerId": 30051,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Ukko-Pekka Luukkonen",
+      "number": 1,
+      "position": "G1",
+      "sourcePlayerId": 4783,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Colten Ellis",
+      "number": 92,
+      "position": "G2",
+      "sourcePlayerId": 28686,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Matt Grzelcyk",
+      "number": 24,
+      "position": "IR1",
+      "sourcePlayerId": 2723,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Alex Lyon",
+      "number": 34,
+      "position": "IR3",
+      "sourcePlayerId": 2873,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Konsta Helenius",
+      "number": 94,
+      "position": "IR4",
+      "sourcePlayerId": 38139,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}

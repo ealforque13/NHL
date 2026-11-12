@@ -1,0 +1,354 @@
+{
+  "team": "CAR",
+  "teamName": "Carolina Hurricanes",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-08T15:39:22.838Z",
+  "sourceDescription": "Last Game (2026-11-07)",
+  "cachedAtUTC": "2026-11-12T04:29:21.828014+00:00",
+  "forwards": [
+    [
+      {
+        "name": "William Carrier",
+        "number": 28,
+        "position": "LW",
+        "sourcePlayerId": 2704,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sebastian Aho",
+        "number": 20,
+        "position": "C",
+        "sourcePlayerId": 2677,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andrei Svechnikov",
+        "number": 37,
+        "position": "RW",
+        "sourcePlayerId": 4787,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nikolaj Ehlers",
+        "number": 27,
+        "position": "LW",
+        "sourcePlayerId": 2370,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan Stankoven",
+        "number": 22,
+        "position": "C",
+        "sourcePlayerId": 34617,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jackson Blake",
+        "number": 53,
+        "position": "RW",
+        "sourcePlayerId": 31812,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Taylor Hall",
+        "number": 71,
+        "position": "LW",
+        "sourcePlayerId": 537,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Jankowski",
+        "number": 77,
+        "position": "C",
+        "sourcePlayerId": 2711,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Seth Jarvis",
+        "number": 24,
+        "position": "RW",
+        "sourcePlayerId": 29549,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Eric Robinson",
+        "number": 50,
+        "position": "LW",
+        "sourcePlayerId": 4650,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jesperi Kotkaniemi",
+        "number": 82,
+        "position": "C",
+        "sourcePlayerId": 4788,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Martinook",
+        "number": 48,
+        "position": "RW",
+        "sourcePlayerId": 2049,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Jaccob Slavin",
+        "number": 74,
+        "position": "LD",
+        "sourcePlayerId": 2516,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jalen Chatfield",
+        "number": 5,
+        "position": "RD",
+        "sourcePlayerId": 3900,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "K'Andre Miller",
+        "number": 79,
+        "position": "LD",
+        "sourcePlayerId": 4812,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sean Walker",
+        "number": 26,
+        "position": "RD",
+        "sourcePlayerId": 4829,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Shayne Gostisbehere",
+        "number": 4,
+        "position": "LD",
+        "sourcePlayerId": 2398,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alexander Nikishin",
+        "number": 21,
+        "position": "RD",
+        "sourcePlayerId": 32897,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Andrei Svechnikov",
+        "number": 37,
+        "position": "SK1",
+        "sourcePlayerId": 4787,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sebastian Aho",
+        "number": 20,
+        "position": "SK2",
+        "sourcePlayerId": 2677,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jackson Blake",
+        "number": 53,
+        "position": "SK3",
+        "sourcePlayerId": 31812,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikolaj Ehlers",
+        "number": 27,
+        "position": "SK4",
+        "sourcePlayerId": 2370,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shayne Gostisbehere",
+        "number": 4,
+        "position": "SK5",
+        "sourcePlayerId": 2398,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Taylor Hall",
+        "number": 71,
+        "position": "SK1",
+        "sourcePlayerId": 537,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Jankowski",
+        "number": 77,
+        "position": "SK2",
+        "sourcePlayerId": 2711,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Seth Jarvis",
+        "number": 24,
+        "position": "SK3",
+        "sourcePlayerId": 29549,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan Stankoven",
+        "number": 22,
+        "position": "SK4",
+        "sourcePlayerId": 34617,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alexander Nikishin",
+        "number": 21,
+        "position": "SK5",
+        "sourcePlayerId": 32897,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Sebastian Aho",
+        "number": 20,
+        "position": "SK1",
+        "sourcePlayerId": 2677,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Eric Robinson",
+        "number": 50,
+        "position": "SK2",
+        "sourcePlayerId": 4650,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jaccob Slavin",
+        "number": 74,
+        "position": "SK3",
+        "sourcePlayerId": 2516,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jalen Chatfield",
+        "number": 5,
+        "position": "SK4",
+        "sourcePlayerId": 3900,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Logan Stankoven",
+        "number": 22,
+        "position": "SK1",
+        "sourcePlayerId": 34617,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jordan Martinook",
+        "number": 48,
+        "position": "SK2",
+        "sourcePlayerId": 2049,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "K'Andre Miller",
+        "number": 79,
+        "position": "SK3",
+        "sourcePlayerId": 4812,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sean Walker",
+        "number": 26,
+        "position": "SK4",
+        "sourcePlayerId": 4829,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Pyotr Kochetkov",
+      "number": 52,
+      "position": "G1",
+      "sourcePlayerId": 30486,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Brandon Bussi",
+      "number": 32,
+      "position": "G2",
+      "sourcePlayerId": 30153,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Jordan Staal",
+      "number": 11,
+      "position": "IR1",
+      "sourcePlayerId": 1246,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

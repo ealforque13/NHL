@@ -1,0 +1,354 @@
+{
+  "team": "SJS",
+  "teamName": "San Jose Sharks",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T02:37:44.514Z",
+  "sourceDescription": "Curtis Pashelka",
+  "cachedAtUTC": "2026-11-12T04:30:04.145445+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Michael Misa",
+        "number": 77,
+        "position": "LW",
+        "sourcePlayerId": 37508,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Macklin Celebrini",
+        "number": 71,
+        "position": "C",
+        "sourcePlayerId": 37106,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Will Smith",
+        "number": 2,
+        "position": "RW",
+        "sourcePlayerId": 38126,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Mason Marchment",
+        "number": 27,
+        "position": "LW",
+        "sourcePlayerId": 2855,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alexander Wennberg",
+        "number": 21,
+        "position": "C",
+        "sourcePlayerId": 2145,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kiefer Sherwood",
+        "number": 44,
+        "position": "RW",
+        "sourcePlayerId": 4675,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ivar Stenberg",
+        "number": 41,
+        "position": "LW",
+        "sourcePlayerId": 38939,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ty Dellandrea",
+        "number": 10,
+        "position": "C",
+        "sourcePlayerId": 4813,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Toffoli",
+        "number": 73,
+        "position": "RW",
+        "sourcePlayerId": 1656,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Barclay Goodrow",
+        "number": 23,
+        "position": "LW",
+        "sourcePlayerId": 2395,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zack Ostapchuk",
+        "number": 63,
+        "position": "C",
+        "sourcePlayerId": 34545,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Collin Graf",
+        "number": 51,
+        "position": "RW",
+        "sourcePlayerId": 38105,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Darnell Nurse",
+        "number": 25,
+        "position": "LD",
+        "sourcePlayerId": 2139,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Kesselring",
+        "number": 7,
+        "position": "RD",
+        "sourcePlayerId": 29644,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Sam Dickinson",
+        "number": null,
+        "position": "LD",
+        "sourcePlayerId": 37090,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Trouba",
+        "number": 65,
+        "position": "RD",
+        "sourcePlayerId": 2099,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dmitry Orlov",
+        "number": 9,
+        "position": "LD",
+        "sourcePlayerId": 1572,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Eric Pohlkamp",
+        "number": null,
+        "position": "RD",
+        "sourcePlayerId": 33798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Ivar Stenberg",
+        "number": 41,
+        "position": "SK1",
+        "sourcePlayerId": 38939,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alexander Wennberg",
+        "number": 21,
+        "position": "SK2",
+        "sourcePlayerId": 2145,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Will Smith",
+        "number": 2,
+        "position": "SK3",
+        "sourcePlayerId": 38126,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Macklin Celebrini",
+        "number": 71,
+        "position": "SK4",
+        "sourcePlayerId": 37106,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Trouba",
+        "number": 65,
+        "position": "SK5",
+        "sourcePlayerId": 2099,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Mason Marchment",
+        "number": 27,
+        "position": "SK1",
+        "sourcePlayerId": 2855,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Misa",
+        "number": 77,
+        "position": "SK2",
+        "sourcePlayerId": 37508,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Toffoli",
+        "number": 73,
+        "position": "SK3",
+        "sourcePlayerId": 1656,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dmitry Orlov",
+        "number": 9,
+        "position": "SK4",
+        "sourcePlayerId": 1572,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Eric Pohlkamp",
+        "number": null,
+        "position": "SK5",
+        "sourcePlayerId": 33798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Alexander Wennberg",
+        "number": 21,
+        "position": "SK1",
+        "sourcePlayerId": 2145,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Collin Graf",
+        "number": 51,
+        "position": "SK2",
+        "sourcePlayerId": 38105,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Darnell Nurse",
+        "number": 25,
+        "position": "SK3",
+        "sourcePlayerId": 2139,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Trouba",
+        "number": 65,
+        "position": "SK4",
+        "sourcePlayerId": 2099,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Barclay Goodrow",
+        "number": 23,
+        "position": "SK1",
+        "sourcePlayerId": 2395,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zack Ostapchuk",
+        "number": 63,
+        "position": "SK2",
+        "sourcePlayerId": 34545,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Dickinson",
+        "number": null,
+        "position": "SK3",
+        "sourcePlayerId": 37090,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Kesselring",
+        "number": 7,
+        "position": "SK4",
+        "sourcePlayerId": 29644,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Yaroslav Askarov",
+      "number": 30,
+      "position": "G1",
+      "sourcePlayerId": 33018,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Alex Nedeljkovic",
+      "number": 33,
+      "position": "G2",
+      "sourcePlayerId": 2727,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Igor Chernyshov",
+      "number": 92,
+      "position": "IR2",
+      "sourcePlayerId": 38146,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

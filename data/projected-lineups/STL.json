@@ -1,0 +1,362 @@
+{
+  "team": "STL",
+  "teamName": "St Louis Blues",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-12T01:56:16.603Z",
+  "sourceDescription": "Lou Korac",
+  "cachedAtUTC": "2026-11-12T04:30:06.244513+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Dylan Holloway",
+        "number": 81,
+        "position": "LW",
+        "sourcePlayerId": 32948,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Robert Thomas",
+        "number": 18,
+        "position": "C",
+        "sourcePlayerId": 2810,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jimmy Snuggerud",
+        "number": 21,
+        "position": "RW",
+        "sourcePlayerId": 31706,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jake Neighbours",
+        "number": 63,
+        "position": "LW",
+        "sourcePlayerId": 29498,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mason McTavish",
+        "number": 83,
+        "position": "C",
+        "sourcePlayerId": 30834,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonatan Berggren",
+        "number": 29,
+        "position": "RW",
+        "sourcePlayerId": 29107,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Pavel Buchnevich",
+        "number": 89,
+        "position": "LW",
+        "sourcePlayerId": 2673,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dalibor Dvorsky",
+        "number": 15,
+        "position": "C",
+        "sourcePlayerId": 35010,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor McMichael",
+        "number": 77,
+        "position": "RW",
+        "sourcePlayerId": 29203,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Alexey Toropchenko",
+        "number": 13,
+        "position": "LW",
+        "sourcePlayerId": 28113,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pius Suter",
+        "number": 24,
+        "position": "C",
+        "sourcePlayerId": 32940,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ross Johnston",
+        "number": 49,
+        "position": "RW",
+        "sourcePlayerId": 3759,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Philip Broberg",
+        "number": 6,
+        "position": "LD",
+        "sourcePlayerId": 30607,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan Mailloux",
+        "number": 23,
+        "position": "RD",
+        "sourcePlayerId": 30862,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Justin Barron",
+        "number": 72,
+        "position": "LD",
+        "sourcePlayerId": 29338,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Colton Parayko",
+        "number": 55,
+        "position": "RD",
+        "sourcePlayerId": 2531,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cam Fowler",
+        "number": 17,
+        "position": "LD",
+        "sourcePlayerId": 16,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Carlo",
+        "number": 25,
+        "position": "RD",
+        "sourcePlayerId": 2692,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Jimmy Snuggerud",
+        "number": 21,
+        "position": "SK1",
+        "sourcePlayerId": 31706,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mason McTavish",
+        "number": 83,
+        "position": "SK2",
+        "sourcePlayerId": 30834,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake Neighbours",
+        "number": 63,
+        "position": "SK3",
+        "sourcePlayerId": 29498,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Robert Thomas",
+        "number": 18,
+        "position": "SK4",
+        "sourcePlayerId": 2810,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Philip Broberg",
+        "number": 6,
+        "position": "SK5",
+        "sourcePlayerId": 30607,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Pavel Buchnevich",
+        "number": 89,
+        "position": "SK1",
+        "sourcePlayerId": 2673,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor McMichael",
+        "number": 77,
+        "position": "SK2",
+        "sourcePlayerId": 29203,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Holloway",
+        "number": 81,
+        "position": "SK3",
+        "sourcePlayerId": 32948,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cam Fowler",
+        "number": 17,
+        "position": "SK4",
+        "sourcePlayerId": 16,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dalibor Dvorsky",
+        "number": 15,
+        "position": "SK5",
+        "sourcePlayerId": 35010,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Pius Suter",
+        "number": 24,
+        "position": "SK1",
+        "sourcePlayerId": 32940,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake Neighbours",
+        "number": 63,
+        "position": "SK2",
+        "sourcePlayerId": 29498,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Philip Broberg",
+        "number": 6,
+        "position": "SK3",
+        "sourcePlayerId": 30607,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Colton Parayko",
+        "number": 55,
+        "position": "SK4",
+        "sourcePlayerId": 2531,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Robert Thomas",
+        "number": 18,
+        "position": "SK1",
+        "sourcePlayerId": 2810,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alexey Toropchenko",
+        "number": 13,
+        "position": "SK2",
+        "sourcePlayerId": 28113,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cam Fowler",
+        "number": 17,
+        "position": "SK3",
+        "sourcePlayerId": 16,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Carlo",
+        "number": 25,
+        "position": "SK4",
+        "sourcePlayerId": 2692,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Joel Hofer",
+      "number": 30,
+      "position": "G1",
+      "sourcePlayerId": 28910,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jordan Binnington",
+      "number": 50,
+      "position": "G2",
+      "sourcePlayerId": 1984,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Tyler Tucker",
+      "number": 75,
+      "position": "IR2",
+      "sourcePlayerId": 27631,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Dillon Dube",
+      "number": 65,
+      "position": "IR4",
+      "sourcePlayerId": 3907,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    }
+  ]
+}

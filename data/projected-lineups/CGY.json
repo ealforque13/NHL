@@ -1,0 +1,370 @@
+{
+  "team": "CGY",
+  "teamName": "Calgary Flames",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-10T17:45:07.692Z",
+  "sourceDescription": "Pat Steinberg",
+  "cachedAtUTC": "2026-11-12T04:29:26.126223+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Joel Farabee",
+        "number": 86,
+        "position": "LW",
+        "sourcePlayerId": 4799,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikael Backlund",
+        "number": 11,
+        "position": "C",
+        "sourcePlayerId": 193,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matt Coronato",
+        "number": 27,
+        "position": "RW",
+        "sourcePlayerId": 32801,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Yegor Sharangovich",
+        "number": 17,
+        "position": "LW",
+        "sourcePlayerId": 29637,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Morgan Frost",
+        "number": 48,
+        "position": "C",
+        "sourcePlayerId": 2814,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aydar Suniev",
+        "number": 61,
+        "position": "RW",
+        "sourcePlayerId": 34016,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Matvei Gridin",
+        "number": 92,
+        "position": "LW",
+        "sourcePlayerId": 36778,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Martin Pospisil",
+        "number": 76,
+        "position": "C",
+        "sourcePlayerId": 28414,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Strome",
+        "number": 16,
+        "position": "RW",
+        "sourcePlayerId": 1825,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Brennan Othmann",
+        "number": 78,
+        "position": "LW",
+        "sourcePlayerId": 30831,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonathan Castagna",
+        "number": 38,
+        "position": "C",
+        "sourcePlayerId": 35221,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Klapka",
+        "number": 43,
+        "position": "RW",
+        "sourcePlayerId": 34398,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Joel Hanley",
+        "number": 44,
+        "position": "LD",
+        "sourcePlayerId": 2605,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Simon Nemec",
+        "number": 71,
+        "position": "RD",
+        "sourcePlayerId": 35669,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jacob Middleton",
+        "number": 5,
+        "position": "LD",
+        "sourcePlayerId": 22822,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Whitecloud",
+        "number": 28,
+        "position": "RD",
+        "sourcePlayerId": 4658,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Yan Kuznetsov",
+        "number": 37,
+        "position": "LD",
+        "sourcePlayerId": 30745,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zayne Parekh",
+        "number": 19,
+        "position": "RD",
+        "sourcePlayerId": 36725,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "Joel Farabee",
+        "number": 86,
+        "position": "SK1",
+        "sourcePlayerId": 4799,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Morgan Frost",
+        "number": 48,
+        "position": "SK2",
+        "sourcePlayerId": 2814,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matt Coronato",
+        "number": 27,
+        "position": "SK3",
+        "sourcePlayerId": 32801,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matvei Gridin",
+        "number": 92,
+        "position": "SK4",
+        "sourcePlayerId": 36778,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zayne Parekh",
+        "number": 19,
+        "position": "SK5",
+        "sourcePlayerId": 36725,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Adam Klapka",
+        "number": 43,
+        "position": "SK1",
+        "sourcePlayerId": 34398,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Strome",
+        "number": 16,
+        "position": "SK2",
+        "sourcePlayerId": 1825,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aydar Suniev",
+        "number": 61,
+        "position": "SK3",
+        "sourcePlayerId": 34016,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Simon Nemec",
+        "number": 71,
+        "position": "SK4",
+        "sourcePlayerId": 35669,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Yegor Sharangovich",
+        "number": 17,
+        "position": "SK5",
+        "sourcePlayerId": 29637,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Mikael Backlund",
+        "number": 11,
+        "position": "SK1",
+        "sourcePlayerId": 193,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Yegor Sharangovich",
+        "number": 17,
+        "position": "SK2",
+        "sourcePlayerId": 29637,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Middleton",
+        "number": 5,
+        "position": "SK3",
+        "sourcePlayerId": 22822,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Whitecloud",
+        "number": 28,
+        "position": "SK4",
+        "sourcePlayerId": 4658,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Joel Farabee",
+        "number": 86,
+        "position": "SK1",
+        "sourcePlayerId": 4799,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonathan Castagna",
+        "number": 38,
+        "position": "SK2",
+        "sourcePlayerId": 35221,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Yan Kuznetsov",
+        "number": 37,
+        "position": "SK3",
+        "sourcePlayerId": 30745,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Joel Hanley",
+        "number": 44,
+        "position": "SK4",
+        "sourcePlayerId": 2605,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Devin Cooley",
+      "number": null,
+      "position": "G1",
+      "sourcePlayerId": 32944,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Dustin Wolf",
+      "number": 32,
+      "position": "G2",
+      "sourcePlayerId": 29507,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Jonathan Huberdeau",
+      "number": 10,
+      "position": "IR1",
+      "sourcePlayerId": 1798,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Kevin Bahl",
+      "number": 7,
+      "position": "IR2",
+      "sourcePlayerId": 27807,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Samuel Honzek",
+      "number": 29,
+      "position": "IR3",
+      "sourcePlayerId": 37733,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
+}
