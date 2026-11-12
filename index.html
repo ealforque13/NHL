@@ -4122,6 +4122,23 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V67 — remove unused space above the Stats heading and tighten its category bar. */
+@media (min-width:651px){
+  #stats .hoist-stats-panel{position:relative!important}
+  #stats .hoist-stats-controls{height:0!important;min-height:0!important;margin:0!important;padding:0!important;display:block!important}
+  #stats .hoist-stats-toolbar{position:absolute!important;right:20px!important;top:16px!important;margin:0!important;z-index:5!important}
+  #stats .hoist-stats-subtitle{margin-top:0!important;margin-bottom:8px!important}
+  #stats #hoist-stats-status:empty{display:none!important}
+  #stats .hoist-stats-table thead th{padding-top:7px!important;padding-bottom:7px!important}
+  #stats .hoist-stats-table thead th.hoist-stat-sortable button{padding-top:7px!important;padding-bottom:7px!important}
+}
+@media(max-width:650px){
+  #stats .hoist-stats-subtitle{margin-top:0!important;margin-bottom:7px!important}
+  #stats .hoist-stats-table thead th{padding-top:5px!important;padding-bottom:5px!important}
+  #stats .hoist-stats-table thead th.hoist-stat-sortable button{padding-top:5px!important;padding-bottom:5px!important}
+}
+</style>
 </head>
 
 <body>
@@ -5562,7 +5579,7 @@ document.addEventListener('DOMContentLoaded', function () {
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const teams=[['ANA','Anaheim Ducks'],['BOS','Boston Bruins'],['BUF','Buffalo Sabres'],['CGY','Calgary Flames'],['CAR','Carolina Hurricanes'],['CHI','Chicago Blackhawks'],['COL','Colorado Avalanche'],['CBJ','Columbus Blue Jackets'],['DAL','Dallas Stars'],['DET','Detroit Red Wings'],['EDM','Edmonton Oilers'],['FLA','Florida Panthers'],['LAK','Los Angeles Kings'],['MIN','Minnesota Wild'],['MTL','Montreal Canadiens'],['NSH','Nashville Predators'],['NJD','New Jersey Devils'],['NYI','New York Islanders'],['NYR','New York Rangers'],['OTT','Ottawa Senators'],['PHI','Philadelphia Flyers'],['PIT','Pittsburgh Penguins'],['SJS','San Jose Sharks'],['SEA','Seattle Kraken'],['STL','St. Louis Blues'],['TBL','Tampa Bay Lightning'],['TOR','Toronto Maple Leafs'],['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],['WSH','Washington Capitals'],['WPG','Winnipeg Jets']];
  const teamName=Object.fromEntries(teams);
- const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['pointsPerGame','P/GP'],['evenStrengthGoals','EVG'],['evenStrengthPoints','EVP'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['powerPlayPoints','PPP'],['powerPlayAssists','PPA'],['overtimeGoals','OTG'],['gameWinningGoals','GWG'],['shots','SOG'],['shootingPctg','S%']];
+ const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['pointsPerGame','P/GP'],['evenStrengthGoals','EVG'],['evenStrengthPoints','EVP'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['powerPlayPoints','PPP'],['overtimeGoals','OTG'],['gameWinningGoals','GWG'],['shots','SOG'],['shootingPctg','S%']];
  const cache=new Map();let mode='league',sequence=0,sortKey='points',sortDirection=-1;
  const name=p=>[p.firstName?.default||p.firstName||'',p.lastName?.default||p.lastName||''].join(' ').trim()||p.name||'Unknown player';
  // Normalize aliases from the cached NHL club-skater data; never invent unavailable totals.
