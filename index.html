@@ -3930,6 +3930,41 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+
+<style>
+/* V56: Stats sorting styled like desktop Standings. */
+#stats .hoist-stats-table thead th,
+#stats .hoist-stats-table thead th.hoist-stat-selected,
+#stats .hoist-stats-table thead th.hoist-stat-sortable button,
+#stats .hoist-stats-table thead th.hoist-stat-selected button {
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+#stats .hoist-stats-table .hoist-stat-arrow {
+  color:#49b5ff!important;
+  -webkit-text-fill-color:#49b5ff!important;
+}
+@media(min-width:651px){
+  #stats .hoist-stats-table th.hoist-stat-selected,
+  #stats .hoist-stats-table td.hoist-stat-selected {
+    box-shadow:inset 1px 0 0 rgba(73,181,255,.30),inset -1px 0 0 rgba(73,181,255,.30)!important;
+  }
+  #stats .hoist-stats-table th.hoist-stat-selected {
+    border-top:1px solid rgba(73,181,255,.40)!important;
+  }
+  #stats .hoist-stats-table tbody tr:last-child td.hoist-stat-selected {
+    border-bottom:1px solid rgba(73,181,255,.40)!important;
+  }
+  #stats .hoist-stats-table td.hoist-stat-selected,
+  #stats .hoist-stats-table td.hoist-stat-selected * {
+    color:#fff!important;
+    -webkit-text-fill-color:#fff!important;
+  }
+}
+/* V56: do not show live/in-progress scoring; completed-game scores remain. */
+#games .hoist-game-card:has(.hoist-game-live) .hoist-game-team-score,
+#games .hoist-game-card:has(.hoist-game-live) .hoist-game-live {display:none!important}
+</style>
 </head>
 
 <body>
@@ -4553,7 +4588,7 @@ body[data-theme="light"] #games .hoist-game-card {
     <div id="hoist-games-day" class="hoist-games-day"></div>
     <p id="hoist-games-status" class="muted" role="status">Loading NHL games…</p>
     <div id="hoist-games-grid" class="hoist-games-grid"></div>
-    <p class="hoist-games-footnote muted">Times shown in Eastern Time · Scores reflect the latest cached schedule refresh.</p>
+    <p class="hoist-games-footnote muted">Times shown in Eastern Time · Live scoring is temporarily disabled.</p>
   </article>
 </section>
 
