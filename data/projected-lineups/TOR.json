@@ -1,0 +1,386 @@
+{
+  "team": "TOR",
+  "teamName": "Toronto Maple Leafs",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T17:28:09.180Z",
+  "sourceDescription": "Mark Masters",
+  "cachedAtUTC": "2026-11-12T04:36:18.342508+00:00",
+  "forwards": [
+    [
+      {
+        "name": "Easton Cowan",
+        "number": 53,
+        "position": "LW",
+        "sourcePlayerId": 35106,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Auston Matthews",
+        "number": 34,
+        "position": "C",
+        "sourcePlayerId": 2433,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Roslovic",
+        "number": 96,
+        "position": "RW",
+        "sourcePlayerId": 2499,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryan Tverberg",
+        "number": null,
+        "position": "LW",
+        "sourcePlayerId": 32967,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "John Tavares",
+        "number": 91,
+        "position": "C",
+        "sourcePlayerId": 1016,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "William Nylander",
+        "number": 88,
+        "position": "RW",
+        "sourcePlayerId": 2375,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Gavin McKenna",
+        "number": 92,
+        "position": "LW",
+        "sourcePlayerId": 37717,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Paul",
+        "number": 20,
+        "position": "C",
+        "sourcePlayerId": 2357,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dakota Joshua",
+        "number": 81,
+        "position": "RW",
+        "sourcePlayerId": 25020,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Brandon Duhaime",
+        "number": 24,
+        "position": "LW",
+        "sourcePlayerId": 26984,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Teddy Blueger",
+        "number": 73,
+        "position": "C",
+        "sourcePlayerId": 3798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "defense": [
+    [
+      {
+        "name": "Jake McCabe",
+        "number": 22,
+        "position": "LD",
+        "sourcePlayerId": 2349,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Darren Raddysh",
+        "number": 43,
+        "position": "RD",
+        "sourcePlayerId": 4756,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
+        "position": "LD",
+        "sourcePlayerId": 1172,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Troy Stecher",
+        "number": 28,
+        "position": "RD",
+        "sourcePlayerId": 2702,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dakota Mermis",
+        "number": 36,
+        "position": "LD",
+        "sourcePlayerId": 2914,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Chris Tanev",
+        "number": 8,
+        "position": "RD",
+        "sourcePlayerId": 1494,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "powerPlay": [
+    [
+      {
+        "name": "John Tavares",
+        "number": 91,
+        "position": "SK1",
+        "sourcePlayerId": 1016,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "William Nylander",
+        "number": 88,
+        "position": "SK2",
+        "sourcePlayerId": 2375,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Roslovic",
+        "number": 96,
+        "position": "SK3",
+        "sourcePlayerId": 2499,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Darren Raddysh",
+        "number": 43,
+        "position": "SK4",
+        "sourcePlayerId": 4756,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Auston Matthews",
+        "number": 34,
+        "position": "SK5",
+        "sourcePlayerId": 2433,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryan Tverberg",
+        "number": null,
+        "position": "SK1",
+        "sourcePlayerId": 32967,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Paul",
+        "number": 20,
+        "position": "SK2",
+        "sourcePlayerId": 2357,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Easton Cowan",
+        "number": 53,
+        "position": "SK3",
+        "sourcePlayerId": 35106,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
+        "position": "SK4",
+        "sourcePlayerId": 1172,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Gavin McKenna",
+        "number": 92,
+        "position": "SK5",
+        "sourcePlayerId": 37717,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {
+        "name": "Teddy Blueger",
+        "number": 73,
+        "position": "SK1",
+        "sourcePlayerId": 3798,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Duhaime",
+        "number": 24,
+        "position": "SK2",
+        "sourcePlayerId": 26984,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake McCabe",
+        "number": 22,
+        "position": "SK3",
+        "sourcePlayerId": 2349,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Chris Tanev",
+        "number": 8,
+        "position": "SK4",
+        "sourcePlayerId": 1494,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nick Paul",
+        "number": 20,
+        "position": "SK1",
+        "sourcePlayerId": 2357,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Easton Cowan",
+        "number": 53,
+        "position": "SK2",
+        "sourcePlayerId": 35106,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
+        "position": "SK3",
+        "sourcePlayerId": 1172,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Troy Stecher",
+        "number": 28,
+        "position": "SK4",
+        "sourcePlayerId": 2702,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ]
+  ],
+  "goalies": [
+    {
+      "name": "Sergei Bobrovsky",
+      "number": 72,
+      "position": "G1",
+      "sourcePlayerId": 1117,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Anthony Stolarz",
+      "number": 41,
+      "position": "G2",
+      "sourcePlayerId": 2432,
+      "injuryStatus": null,
+      "gameTimeDecision": false
+    }
+  ],
+  "injuries": [
+    {
+      "name": "Elvis Merzlikins",
+      "number": 90,
+      "position": "IR1",
+      "sourcePlayerId": 25263,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Max Domi",
+      "number": 11,
+      "position": "IR2",
+      "sourcePlayerId": 2131,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Kirill Marchenko",
+      "number": 86,
+      "position": "IR3",
+      "sourcePlayerId": 29119,
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Marshall Rifai",
+      "number": null,
+      "position": "IR4",
+      "sourcePlayerId": 25666,
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Morgan Rielly",
+      "number": 44,
+      "position": "IR5",
+      "sourcePlayerId": 1935,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Zack MacEwen",
+      "number": 19,
+      "position": "IR6",
+      "sourcePlayerId": 4489,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
+}
