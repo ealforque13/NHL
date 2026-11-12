@@ -3856,6 +3856,36 @@ body[data-theme="light"] #games .hoist-game-card {
 #stats .hoist-stats-player-header-label{display:inline-block}
 @media(max-width:650px){#stats .hoist-stats-league-rank-label{min-width:19px;margin-right:5px}}
 </style>
+<style>
+/* Stats V52: compact mobile League + Team tables, without scaling the entire page. */
+@media (max-width:650px) {
+ #stats .hoist-stats-table {font-size:11px!important;}
+ #stats .hoist-stats-table td {font-size:11px!important;padding:7px 5px!important;}
+ #stats .hoist-stats-table thead th {font-size:9px!important;letter-spacing:0!important;}
+ #stats .hoist-stats-table th.hoist-stat-sortable button {padding:8px 5px!important;gap:2px!important;}
+ #stats .hoist-stats-table th:not(:first-child),#stats .hoist-stats-table td:not(:first-child){min-width:34px!important;}
+ #stats .hoist-stats-team-cell,#stats .hoist-stats-rail-row .hoist-stats-team-cell{gap:4px!important;}
+ #stats .hoist-stats-table th:first-child,#stats .hoist-stats-table td:first-child{width:108px!important;min-width:108px!important;max-width:108px!important;}
+ #stats .hoist-stats-player-rail{width:108px!important;min-width:108px!important;max-width:108px!important;}
+ #stats .hoist-stats-rail-row{padding:7px 4px!important;font-size:11px!important;}
+ #stats .hoist-stats-rail-row.hoist-stats-rail-head{font-size:9px!important;}
+ #stats .hoist-stats-headshot,#stats .hoist-stats-headshot-fallback{width:32px!important;height:32px!important;}
+ #stats .hoist-stats-jersey:has(.hoist-stats-headshot),#stats .hoist-stats-jersey:has(.hoist-stats-headshot-fallback),#stats .hoist-stats-rail-row .hoist-stats-jersey:has(.hoist-stats-headshot){width:32px!important;min-width:32px!important;flex:0 0 32px!important;}
+ #stats .hoist-stats-player-meta{font-size:8px!important;}
+ #stats .hoist-stats-rank{flex:0 0 18px!important;min-width:18px!important;width:18px!important;font-size:11px!important;text-align:center!important;}
+ #stats .hoist-stats-league-rank-label{min-width:18px!important;width:18px!important;margin-right:4px!important;text-align:center!important;}
+}
+/* Align League ranking values and RANK label in both layouts. */
+#stats .hoist-stats-rank{text-align:center!important;}
+#stats .hoist-stats-league-rank-label{text-align:center!important;}
+</style>
+<style>
+/* Stats V53: center desktop League rank numbers beneath RANK without changing column sizing. */
+@media (min-width:651px) {
+ #stats .hoist-stats-rank { flex:0 0 25px!important; width:25px!important; min-width:25px!important; text-align:center!important; display:inline-flex!important; align-items:center!important; justify-content:center!important; }
+ #stats .hoist-stats-league-rank-label { width:25px!important; min-width:25px!important; text-align:center!important; }
+}
+</style>
 </head>
 
 <body>
