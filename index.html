@@ -4263,6 +4263,40 @@ body[data-theme="light"] #games .hoist-game-card {
   }
 }
 </style>
+<style>
+/* V74 — mobile Stats tab divider and compact team selector. */
+@media (max-width:650px){
+  /* Match the thin divider beneath Standings view tabs, with breathing room. */
+  #stats > .hoist-stats-filters{
+    border-bottom:1px solid rgba(125,155,195,.32)!important;
+    margin-bottom:12px!important;
+    padding-bottom:0!important;
+    box-sizing:border-box!important;
+    width:100%!important;
+  }
+  /* Keep the picker on the same row as League/Team, above the divider. */
+  #stats .hoist-stats-toolbar{
+    top:-49px!important;
+    right:0!important;
+    left:auto!important;
+    z-index:15!important;
+  }
+  #stats .hoist-stats-picker{
+    width:76px!important;
+    min-width:76px!important;
+    max-width:76px!important;
+  }
+  #stats .hoist-stats-picker select{
+    width:76px!important;
+    min-width:76px!important;
+    max-width:76px!important;
+    padding:7px 20px 7px 9px!important;
+    font-size:12px!important;
+    line-height:1.2!important;
+    box-sizing:border-box!important;
+  }
+}
+</style>
 </head>
 
 <body>
