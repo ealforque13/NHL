@@ -1,0 +1,84 @@
+
+{
+  "team": "MTL",
+  "teamName": "Montreal Canadiens",
+  "source": "Daily Faceoff",
+  "sourceUpdatedAt": "2026-11-11T13:54:53.032Z",
+  "sourceDescription": "Last Game (2026-11-10)",
+  "cachedAtUTC": "2026-11-12T03:59:37.543579+00:00",
+  "forwards": [
+    [
+      {"name":"Cole Caufield","number":13,"position":"LW","sourcePlayerId":30424,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Nick Suzuki","number":14,"position":"C","sourcePlayerId":2789,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Juraj Slafkovsky","number":20,"position":"RW","sourcePlayerId":35721,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Zack Bolduc","number":76,"position":"LW","sourcePlayerId":31240,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Phillip Danault","number":24,"position":"C","sourcePlayerId":1846,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Alexandre Texier","number":85,"position":"RW","sourcePlayerId":4759,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Kirby Dach","number":77,"position":"LW","sourcePlayerId":29585,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Oliver Kapanen","number":null,"position":"C","sourcePlayerId":34678,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Alex Newhook","number":15,"position":"RW","sourcePlayerId":30425,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Chris Kreider","number":22,"position":"LW","sourcePlayerId":1926,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Jake Evans","number":71,"position":"C","sourcePlayerId":4708,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Josh Anderson","number":17,"position":"RW","sourcePlayerId":21932,"injuryStatus":null,"gameTimeDecision":false}
+    ]
+  ],
+  "defense": [
+    [
+      {"name":"Lane Hutson","number":48,"position":"LD","sourcePlayerId":33307,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Noah Dobson","number":8,"position":"RD","sourcePlayerId":4789,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Kaiden Guhle","number":21,"position":"LD","sourcePlayerId":32947,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Alexandre Carrier","number":45,"position":"RD","sourcePlayerId":2732,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Arber Xhekaj","number":72,"position":"LD","sourcePlayerId":29784,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Adam Engstrom","number":42,"position":"RD","sourcePlayerId":36434,"injuryStatus":null,"gameTimeDecision":false}
+    ]
+  ],
+  "powerPlay": [
+    [
+      {"name":"Juraj Slafkovsky","number":20,"position":"SK1","sourcePlayerId":35721,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Nick Suzuki","number":14,"position":"SK2","sourcePlayerId":2789,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Zack Bolduc","number":76,"position":"SK3","sourcePlayerId":31240,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Cole Caufield","number":13,"position":"SK4","sourcePlayerId":30424,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Lane Hutson","number":48,"position":"SK5","sourcePlayerId":33307,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Chris Kreider","number":22,"position":"SK1","sourcePlayerId":1926,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Oliver Kapanen","number":null,"position":"SK2","sourcePlayerId":34678,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Alexandre Texier","number":85,"position":"SK3","sourcePlayerId":4759,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Noah Dobson","number":8,"position":"SK4","sourcePlayerId":4789,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Alex Newhook","number":15,"position":"SK5","sourcePlayerId":30425,"injuryStatus":null,"gameTimeDecision":false}
+    ]
+  ],
+  "penaltyKill": [
+    [
+      {"name":"Phillip Danault","number":24,"position":"SK1","sourcePlayerId":1846,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Jake Evans","number":71,"position":"SK2","sourcePlayerId":4708,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Kaiden Guhle","number":21,"position":"SK3","sourcePlayerId":32947,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Alexandre Carrier","number":45,"position":"SK4","sourcePlayerId":2732,"injuryStatus":null,"gameTimeDecision":false}
+    ],
+    [
+      {"name":"Nick Suzuki","number":14,"position":"SK1","sourcePlayerId":2789,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Josh Anderson","number":17,"position":"SK2","sourcePlayerId":21932,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Arber Xhekaj","number":72,"position":"SK3","sourcePlayerId":29784,"injuryStatus":null,"gameTimeDecision":false},
+      {"name":"Noah Dobson","number":8,"position":"SK4","sourcePlayerId":4789,"injuryStatus":null,"gameTimeDecision":false}
+    ]
+  ],
+  "goalies": [
+    {"name":"Jacob Fowler","number":32,"position":"G1","sourcePlayerId":38444,"injuryStatus":null,"gameTimeDecision":false},
+    {"name":"Jakub Dobes","number":75,"position":"G2","sourcePlayerId":31895,"injuryStatus":null,"gameTimeDecision":false}
+  ],
+  "injuries": [
+    {"name":"Ivan Demidov","number":null,"position":"IR1","sourcePlayerId":38445,"injuryStatus":"ir","gameTimeDecision":false},
+    {"name":"Sam Montembeault","number":35,"position":"IR2","sourcePlayerId":4479,"injuryStatus":"ir","gameTimeDecision":false},
+    {"name":"Mike Matheson","number":8,"position":"IR3","sourcePlayerId":2583,"injuryStatus":"out","gameTimeDecision":false}
+  ]
+}
