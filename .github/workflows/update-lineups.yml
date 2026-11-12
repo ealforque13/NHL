@@ -1,57 +1,376 @@
 
-name: Update NHL data
+#!/usr/bin/env python3
+"""Fetch projected NHL lineups from Daily Faceoff for Hoist Official.
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '*/15 * * * *'
+Requires:
+    pip install beautifulsoup4
 
-permissions:
-  contents: write
+Automated access must be permitted before enabling scraping.
+The parser is preliminary and must be verified against live pages.
+"""
 
-concurrency:
-  group: nhl-data-refresh
-  cancel-in-progress: false
+import json
+import os
+import pathlib
+import re
+import time
+import urllib.request
+import urllib.robotparser
+from datetime import datetime, timezone
 
-jobs:
-  refresh:
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
+from bs4 import BeautifulSoup
 
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
+ROOT = pathlib.Path(__file__).resolve().parents[1]
 
-      - name: Install lineup parser dependency
-        run: python -m pip install beautifulsoup4
+BASE = "https://www.dailyfaceoff.com"
 
-      - name: Fetch and cache NHL data
-        run: python scripts/update_data.py
+USER_AGENT = (
+    "HoistOfficialLineupCache/1.0 "
+    "(public projected-lineups cache)"
+)
 
-      - name: Update matchup intelligence data
-        run: python scripts/update_matchups.py
+TEAMS = {
+    "ANA": "anaheim-ducks",
+    "BOS": "boston-bruins",
+    "BUF": "buffalo-sabres",
+    "CGY": "calgary-flames",
+    "CAR": "carolina-hurricanes",
+    "CHI": "chicago-blackhawks",
+    "COL": "colorado-avalanche",
+    "CBJ": "columbus-blue-jackets",
+    "DAL": "dallas-stars",
+    "DET": "detroit-red-wings",
+    "EDM": "edmonton-oilers",
+    "FLA": "florida-panthers",
+    "LAK": "los-angeles-kings",
+    "MIN": "minnesota-wild",
+    "MTL": "montreal-canadiens",
+    "NSH": "nashville-predators",
+    "NJD": "new-jersey-devils",
+    "NYI": "new-york-islanders",
+    "NYR": "new-york-rangers",
+    "OTT": "ottawa-senators",
+    "PHI": "philadelphia-flyers",
+    "PIT": "pittsburgh-penguins",
+    "SJS": "san-jose-sharks",
+    "SEA": "seattle-kraken",
+    "STL": "st-louis-blues",
+    "TBL": "tampa-bay-lightning",
+    "TOR": "toronto-maple-leafs",
+    "UTA": "utah-mammoth",
+    "VAN": "vancouver-canucks",
+    "VGK": "vegas-golden-knights",
+    "WSH": "washington-capitals",
+    "WPG": "winnipeg-jets",
+}
 
-      - name: Update projected NHL lineups
-        env:
-          DAILY_FACEOFF_SCRAPING_ALLOWED: ${{ vars.DAILY_FACEOFF_SCRAPING_ALLOWED || '0' }}
-        run: python scripts/update_lineups.py
 
-      - name: Commit refreshed data
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
-          if ! git diff --cached --quiet; then
-            git commit -m "Update NHL dashboard data"
-            git push
-          else
-            echo "No data changes to commit"
-          fi
+def fetch(url):
+    """Download a public HTML page."""
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": USER_AGENT,
+            "Accept": "text/html",
+        },
+    )
+
+    with urllib.request.urlopen(request, timeout=25) as response:
+        return response.read().decode(
+            "utf-8",
+            errors="replace",
+        )
+
+
+def robots_allow(url):
+    """Check whether robots.txt permits the requested page."""
+    parser = urllib.robotparser.RobotFileParser()
+    parser.set_url(BASE + "/robots.txt")
+    parser.read()
+    return parser.can_fetch(USER_AGENT, url)
+
+
+def load_roster(team):
+    """Read the existing NHL roster JSON for player information."""
+    path = ROOT / "data" / "rosters" / f"{team}.json"
+
+    with path.open("r", encoding="utf-8") as file:
+        payload = json.load(file)
+
+    players = {}
+
+    for group in ("forwards", "defensemen", "goalies"):
+        for player in payload.get(group, []):
+            first = player.get("firstName", {})
+            last = player.get("lastName", {})
+
+            if isinstance(first, dict):
+                first = first.get("default", "")
+
+            if isinstance(last, dict):
+                last = last.get("default", "")
+
+            name = f"{first} {last}".strip()
+
+            if not name:
+                continue
+
+            players[name] = {
+                "name": name,
+                "id": player.get("id"),
+                "number": player.get("sweaterNumber"),
+                "position": player.get("positionCode"),
+                "headshot": player.get("headshot", ""),
+            }
+
+    return players
+
+
+def extract_section(text, start, stops):
+    """Extract a section between known page headings."""
+    match = re.search(start, text, flags=re.I)
+
+    if not match:
+        raise ValueError(
+            f"Could not find section: {start}"
+        )
+
+    section = text[match.end():]
+
+    positions = []
+
+    for pattern in stops:
+        found = re.search(pattern, section, flags=re.I)
+
+        if found:
+            positions.append(found.start())
+
+    if positions:
+        return section[:min(positions)]
+
+    return section
+
+
+def names_in_section(section, players, limit):
+    """Find roster player names in the order displayed on the page."""
+    matches = []
+
+    for name, player in players.items():
+        pattern = (
+            r"(?<!\w)"
+            + re.escape(name).replace(r"\ ", r"\s+")
+            + r"(?!\w)"
+        )
+
+        match = re.search(
+            pattern,
+            section,
+            flags=re.I,
+        )
+
+        if match:
+            matches.append(
+                (match.start(), player)
+            )
+
+    matches.sort(key=lambda item: item[0])
+
+    result = [
+        player
+        for _, player in matches
+    ]
+
+    if len(result) < limit:
+        raise ValueError(
+            f"Incomplete section: "
+            f"{len(result)} of {limit} players found"
+        )
+
+    return result[:limit]
+
+
+def parse_lineups(html, team, url):
+    """Extract projected forward lines, defense pairs, and goalies."""
+    soup = BeautifulSoup(
+        html,
+        "html.parser",
+    )
+
+    for element in soup(
+        ["script", "style", "noscript"]
+    ):
+        element.decompose()
+
+    text = soup.get_text(
+        " ",
+        strip=True,
+    )
+
+    forwards_text = extract_section(
+        text,
+        r"\bForwards\b",
+        [
+            r"\bDefensive Pairings\b",
+            r"\bDefense\b",
+        ],
+    )
+
+    defense_text = extract_section(
+        text,
+        r"\bDefensive Pairings\b",
+        [
+            r"\bClick player jersey\b",
+            r"\bCap Summary\b",
+        ],
+    )
+
+    goalies_text = extract_section(
+        text,
+        r"\bGoalies\b",
+        [
+            r"\bClick player jersey\b",
+            r"\bInjuries\b",
+        ],
+    )
+
+    players = load_roster(team)
+
+    forwards = names_in_section(
+        forwards_text,
+        players,
+        12,
+    )
+
+    defense = names_in_section(
+        defense_text,
+        players,
+        6,
+    )
+
+    goalies = names_in_section(
+        goalies_text,
+        players,
+        2,
+    )
+
+    return {
+        "team": team,
+        "type": "projected",
+        "status": "projected",
+        "source": "Daily Faceoff",
+        "sourceUrl": url,
+        "updatedAt": datetime.now(
+            timezone.utc
+        ).isoformat(),
+        "forwards": [
+            forwards[i:i + 3]
+            for i in range(0, 12, 3)
+        ],
+        "defense": [
+            defense[i:i + 2]
+            for i in range(0, 6, 2)
+        ],
+        "goalies": [
+            [goalies[0]],
+            [goalies[1]],
+        ],
+    }
+
+
+def save_lineups(team, payload):
+    """Safely write a team's projected lineups JSON."""
+    destination = (
+        ROOT
+        / "data"
+        / "projected-lineups"
+        / f"{team}.json"
+    )
+
+    destination.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    temporary = destination.with_suffix(
+        ".tmp"
+    )
+
+    temporary.write_text(
+        json.dumps(
+            payload,
+            ensure_ascii=False,
+            separators=(",", ":"),
+        ) + "\n",
+        encoding="utf-8",
+    )
+
+    temporary.replace(destination)
+
+
+def main():
+    """Update projected lineups for all NHL teams."""
+    if (
+        os.environ.get(
+            "DAILY_FACEOFF_SCRAPING_ALLOWED"
+        ) != "1"
+    ):
+        print(
+            "Daily Faceoff scraping is disabled. "
+            "Confirm automated access is permitted "
+            "and verify the parser before enabling."
+        )
+        return
+
+    successful = 0
+
+    for team, slug in TEAMS.items():
+        url = (
+            f"{BASE}/teams/"
+            f"{slug}/line-combinations"
+        )
+
+        try:
+            if not robots_allow(url):
+                print(
+                    f"SKIP {team}: "
+                    "robots.txt does not permit access"
+                )
+                continue
+
+            html = fetch(url)
+
+            payload = parse_lineups(
+                html,
+                team,
+                url,
+            )
+
+            save_lineups(
+                team,
+                payload,
+            )
+
+            successful += 1
+
+            print(
+                f"OK {team}: "
+                "Projected lineups updated"
+            )
+
+        except Exception as error:
+            print(
+                f"WARN {team}: {error}. "
+                "Previous data preserved."
+            )
+
+        time.sleep(1.5)
+
+    print(
+        f"Finished: {successful}/{len(TEAMS)} "
+        "projected lineups updated"
+    )
+
+
+if __name__ == "__main__":
+    main()
