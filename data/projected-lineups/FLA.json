@@ -2,9 +2,9 @@
   "team": "FLA",
   "teamName": "Florida Panthers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T13:57:06.058Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-12T16:02:51.859521+00:00",
+  "sourceUpdatedAt": "2026-11-12T17:00:23.279Z",
+  "sourceDescription": "Jameson Olive",
+  "cachedAtUTC": "2026-11-12T17:04:56.522814+00:00",
   "forwards": [
     [
       {
@@ -76,10 +76,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jack Devine",
-        "number": 38,
+        "name": "Sandis Vilmanis",
+        "number": 95,
         "position": "RW",
-        "sourcePlayerId": 30941,
+        "sourcePlayerId": 36428,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -364,14 +364,6 @@
       "position": "IR3",
       "sourcePlayerId": 124,
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Sandis Vilmanis",
-      "number": 95,
-      "position": "IR4",
-      "sourcePlayerId": 36428,
-      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]
