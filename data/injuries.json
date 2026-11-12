@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T18:53:26.705689+00:00",
+  "updatedAt": "2026-11-12T01:04:17.574343+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -19,6 +19,12 @@
       "description": "Kane (upper body) was placed on injured reserve Sunday.",
       "status": "Injured Reserve",
       "team": "CHI"
+    },
+    "8474563": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "LAK"
     },
     "8475168": {
       "injured": true,
@@ -128,12 +134,6 @@
       "status": "Injured Reserve",
       "team": "FLA"
     },
-    "8477499": {
-      "injured": true,
-      "description": "Ristolainen (hand) is expected to play Wednesday in Edmonton, per Jackie Spiegel of The Philadelphia Inquirer.",
-      "status": "Injured Reserve",
-      "team": "PHI"
-    },
     "8477506": {
       "injured": true,
       "description": "out",
@@ -142,8 +142,8 @@
     },
     "8477511": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "Mantha (throat) was placed on long-term injured reserve by the Devils on Wednesday, retroactive to Nov. 7.",
+      "status": "Injured Reserve",
       "team": "NJD"
     },
     "8477845": {
@@ -188,12 +188,6 @@
       "status": "Injured Reserve",
       "team": "ANA"
     },
-    "8478450": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "VGK"
-    },
     "8478476": {
       "injured": true,
       "description": "ir",
@@ -205,12 +199,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "UTA"
-    },
-    "8478873": {
-      "injured": true,
-      "description": "Terry (hip) will likely make his 2026-27 debut against Nashville on Wednesday, according to Eric Stephens of The Athletic.",
-      "status": "Injured Reserve",
-      "team": "ANA"
     },
     "8479324": {
       "injured": true,
@@ -262,7 +250,7 @@
     },
     "8480068": {
       "injured": true,
-      "description": "Poehling (knee) is expected to miss 6-8 weeks with an MCL sprain.",
+      "description": "Poehling (lower body) was placed on long-term injured reserve by the Ducks on Wednesday.",
       "status": "Injured Reserve",
       "team": "ANA"
     },
@@ -356,12 +344,6 @@
       "status": "Injured Reserve",
       "team": "PIT"
     },
-    "8481806": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "BUF"
-    },
     "8482122": {
       "injured": true,
       "description": "Faber (skull) has told the Wild that he's ready to play and expects to return for Saturday's game against the Bruins, Michael Russo of The Athletic reports Wednesday.",
@@ -370,7 +352,7 @@
     },
     "8482178": {
       "injured": true,
-      "description": "Head coach Joel Quenneville said Friday that Moore (lower body) is still \"a ways from skating,\" Patrick Present of The Hockey News reports.",
+      "description": "Moore (lower body) might be an option to play by the end of the week, Derek Lee of The Hockey News reports Wednesday.",
       "status": "Injured Reserve",
       "team": "ANA"
     },
@@ -451,12 +433,6 @@
       "description": "Vilmanis (undisclosed) will probably miss a few games, according to George Richards of Florida Hockey Now on Saturday.",
       "status": "Out",
       "team": "FLA"
-    },
-    "8484180": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "CGY"
     },
     "8484221": {
       "injured": true,
