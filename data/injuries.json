@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T18:52:41.523965+00:00",
+  "updatedAt": "2026-11-13T01:00:17.641848+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -13,18 +13,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "CAR"
-    },
-    "8474141": {
-      "injured": true,
-      "description": "Kane (upper body) will likely be in the lineup versus Buffalo on Thursday, Mark Lazerus of The Athletic reports.",
-      "status": "Injured Reserve",
-      "team": "CHI"
-    },
-    "8474563": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "LAK"
     },
     "8475168": {
       "injured": true,
@@ -50,6 +38,12 @@
       "status": "Out",
       "team": "OTT"
     },
+    "8476419": {
+      "injured": true,
+      "description": "Pageau is dealing with a lower-body injury and will be sidelined against the Kings on Thursday.",
+      "status": "Out",
+      "team": "NYI"
+    },
     "8476456": {
       "injured": true,
       "description": "Huberdeau (hip) took the ice in a regular jersey Friday, Pat Steinberg of QR Calgary 770 AM reports.",
@@ -70,8 +64,8 @@
     },
     "8476853": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "TOR"
     },
     "8476891": {
@@ -88,13 +82,13 @@
     },
     "8476979": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "LAK"
     },
     "8477220": {
       "injured": true,
-      "description": "ir",
+      "description": "The Mammoth announced Thursday that Schmidt (upper body) is considered week-to-week, Cole Bagley of KSL Sports reports.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
@@ -128,12 +122,6 @@
       "status": "Injured Reserve",
       "team": "FLA"
     },
-    "8477506": {
-      "injured": true,
-      "description": "out",
-      "status": "Out",
-      "team": "NYI"
-    },
     "8477511": {
       "injured": true,
       "description": "Mantha (throat) was placed on long-term injured reserve by the Devils on Wednesday, retroactive to Nov. 7.",
@@ -146,15 +134,9 @@
       "status": "Injured Reserve",
       "team": "PIT"
     },
-    "8477942": {
-      "injured": true,
-      "description": "Fiala (lower leg) should play Thursday against the Islanders or Saturday against Calgary, according to Emily Kaplan.",
-      "status": "Injured Reserve",
-      "team": "LAK"
-    },
     "8477951": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Schmaltz (lower body) is considered a game-time decision for Thursday's matchup against St. Louis, Cole Bagley of KSL Sports reports.",
       "status": "Day-To-Day",
       "team": "UTA"
     },
@@ -206,6 +188,12 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
+    "8478519": {
+      "injured": true,
+      "description": "Cirelli (undisclosed) will miss Thursday's game versus the Blue Jackets, Mark Scheig of The Hockey Writers reports.",
+      "status": "Out",
+      "team": "TBL"
+    },
     "8478569": {
       "injured": true,
       "description": "day-to-day",
@@ -229,12 +217,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "WSH"
-    },
-    "8479772": {
-      "injured": true,
-      "description": "MacEwen (wrist) is a game-time decision for Thursday's home clash against the Wild, per Andre Leal of The Hockey News.",
-      "status": "Day-To-Day",
-      "team": "TOR"
     },
     "8479941": {
       "injured": true,
@@ -338,12 +320,6 @@
       "status": "Injured Reserve",
       "team": "DET"
     },
-    "8481711": {
-      "injured": true,
-      "description": "Maccelli (lower body) is day-to-day, according to Andrew Gross of Newsday on Monday.",
-      "status": "Injured Reserve",
-      "team": "NYI"
-    },
     "8481725": {
       "injured": true,
       "description": "Soderblom (upper body) is week-to-week, per Penguins PR on Monday.",
@@ -388,8 +364,8 @@
     },
     "8483431": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Cooley (upper body) will miss Thursday's game against St. Louis, per Cole Bagley of KSL Sports.",
+      "status": "Out",
       "team": "UTA"
     },
     "8483455": {
@@ -448,8 +424,8 @@
     },
     "8484797": {
       "injured": true,
-      "description": "Helenius (upper body) is week-to-week, according to Matthew Fairburn of The Athletic on Monday.",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "BUF"
     },
     "8484984": {
