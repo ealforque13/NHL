@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T17:28:12.483Z",
-  "sourceDescription": "Charlie Roumeliotis",
-  "cachedAtUTC": "2026-11-12T23:46:07.696183+00:00",
+  "sourceUpdatedAt": "2026-11-13T00:41:00.098Z",
+  "sourceDescription": "Jack Bushman",
+  "cachedAtUTC": "2026-11-13T01:09:21.343154+00:00",
   "forwards": [
     [
       {
@@ -55,7 +55,7 @@
         "position": "RW",
         "sourcePlayerId": 305,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -191,7 +191,7 @@
         "position": "SK3",
         "sourcePlayerId": 305,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Connor Bedard",
@@ -342,14 +342,6 @@
     }
   ],
   "injuries": [
-    {
-      "name": "Patrick Kane",
-      "number": 88,
-      "position": "IR1",
-      "sourcePlayerId": 305,
-      "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
     {
       "name": "Bowen Byram",
       "number": 24,

@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T22:44:05.544Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-12T23:46:47.342039+00:00",
+  "sourceUpdatedAt": "2026-11-12T23:51:42.302Z",
+  "sourceDescription": "Benjamin Pierce",
+  "cachedAtUTC": "2026-11-13T01:10:01.043615+00:00",
   "forwards": [
     [
       {
@@ -16,10 +16,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Yanni Gourde",
-        "number": 37,
+        "name": "Jake Guentzel",
+        "number": 59,
         "position": "C",
-        "sourcePlayerId": 2566,
+        "sourcePlayerId": 2707,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,32 +28,6 @@
         "number": 86,
         "position": "RW",
         "sourcePlayerId": 2031,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Jake Guentzel",
-        "number": 59,
-        "position": "LW",
-        "sourcePlayerId": 2707,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Sam O'Reilly",
-        "number": 23,
-        "position": "C",
-        "sourcePlayerId": 36872,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Gage Goncalves",
-        "number": 93,
-        "position": "RW",
-        "sourcePlayerId": 32521,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -86,18 +60,36 @@
     ],
     [
       {
-        "name": "Jeffrey Viel",
-        "number": 28,
+        "name": "Conor Geekie",
+        "number": 14,
         "position": "LW",
-        "sourcePlayerId": 24312,
+        "sourcePlayerId": 31505,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Conor Geekie",
-        "number": 14,
+        "name": "Sam O'Reilly",
+        "number": 23,
         "position": "C",
-        "sourcePlayerId": 31505,
+        "sourcePlayerId": 36872,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Gage Goncalves",
+        "number": 93,
+        "position": "RW",
+        "sourcePlayerId": 32521,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jeffrey Viel",
+        "number": 28,
+        "position": "LW",
+        "sourcePlayerId": 24312,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -112,24 +104,6 @@
     ]
   ],
   "defense": [
-    [
-      {
-        "name": "Ryan McDonagh",
-        "number": 27,
-        "position": "LD",
-        "sourcePlayerId": 1048,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "J.J. Moser",
-        "number": 90,
-        "position": "RD",
-        "sourcePlayerId": 34680,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Charle-Edouard D'Astous",
@@ -154,6 +128,24 @@
         "number": 77,
         "position": "LD",
         "sourcePlayerId": 1369,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "J.J. Moser",
+        "number": 90,
+        "position": "RD",
+        "sourcePlayerId": 34680,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ryan McDonagh",
+        "number": 27,
+        "position": "LD",
+        "sourcePlayerId": 1048,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -363,6 +355,14 @@
       "number": 81,
       "position": "IR3",
       "sourcePlayerId": 2749,
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Yanni Gourde",
+      "number": 37,
+      "position": "IR4",
+      "sourcePlayerId": 2566,
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

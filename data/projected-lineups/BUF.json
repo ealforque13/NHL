@@ -2,9 +2,9 @@
   "team": "BUF",
   "teamName": "Buffalo Sabres",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T16:36:38.719Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-12T23:45:59.393699+00:00",
+  "sourceUpdatedAt": "2026-11-13T00:40:16.267Z",
+  "sourceDescription": "Paul Hamilton",
+  "cachedAtUTC": "2026-11-13T01:09:13.026765+00:00",
   "forwards": [
     [
       {
@@ -16,36 +16,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Ostlund",
-        "number": 86,
-        "position": "C",
-        "sourcePlayerId": 36383,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jack Quinn",
-        "number": 22,
-        "position": "RW",
-        "sourcePlayerId": 29241,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Peyton Krebs",
         "number": 19,
-        "position": "LW",
-        "sourcePlayerId": 28684,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Josh Norris",
-        "number": 9,
         "position": "C",
-        "sourcePlayerId": 28056,
+        "sourcePlayerId": 28684,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -68,10 +42,36 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan McLeod",
-        "number": 71,
+        "name": "Noah Ostlund",
+        "number": 86,
         "position": "C",
-        "sourcePlayerId": 4810,
+        "sourcePlayerId": 36383,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Quinn",
+        "number": 22,
+        "position": "RW",
+        "sourcePlayerId": 29241,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jiri Kulich",
+        "number": 20,
+        "position": "LW",
+        "sourcePlayerId": 36381,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Norris",
+        "number": 9,
+        "position": "C",
+        "sourcePlayerId": 28056,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -86,26 +86,26 @@
     ],
     [
       {
-        "name": "Beck Malenstyn",
-        "number": 29,
-        "position": "LW",
-        "sourcePlayerId": 3914,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Tyson Kozak",
         "number": 48,
-        "position": "C",
+        "position": "LW",
         "sourcePlayerId": 32822,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Carrick",
-        "number": 39,
+        "name": "Ryan McLeod",
+        "number": 71,
+        "position": "C",
+        "sourcePlayerId": 4810,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Beck Malenstyn",
+        "number": 29,
         "position": "RW",
-        "sourcePlayerId": 1914,
+        "sourcePlayerId": 3914,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -140,28 +140,28 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Olen Zellweger",
-        "number": 8,
+        "name": "Conor Timmins",
+        "number": 21,
         "position": "RD",
-        "sourcePlayerId": 34623,
+        "sourcePlayerId": 2797,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Conor Timmins",
-        "number": 21,
+        "name": "Olen Zellweger",
+        "number": 8,
         "position": "LD",
-        "sourcePlayerId": 2797,
+        "sourcePlayerId": 34623,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Metsa",
-        "number": 73,
+        "name": "Louis Crevier",
+        "number": 46,
         "position": "RD",
-        "sourcePlayerId": 28387,
+        "sourcePlayerId": 29897,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -330,7 +330,7 @@
       "position": "G1",
       "sourcePlayerId": 2873,
       "injuryStatus": null,
-      "gameTimeDecision": true
+      "gameTimeDecision": false
     },
     {
       "name": "Colten Ellis",
@@ -347,14 +347,6 @@
       "number": 24,
       "position": "IR1",
       "sourcePlayerId": 2723,
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Alex Lyon",
-      "number": 34,
-      "position": "IR3",
-      "sourcePlayerId": 2873,
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
