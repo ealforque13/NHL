@@ -5198,6 +5198,18 @@ html body #lineups .hoist-lineup-group {
   height: 3px !important;
 }
 </style>
+<script>
+/* Persist UI choices between refreshes and browser sessions. */
+window.hoistPrefs = {
+  get(key, fallback) {
+    try { return localStorage.getItem('hoist-ui-' + key) ?? fallback; }
+    catch (_) { return fallback; }
+  },
+  set(key, value) {
+    try { localStorage.setItem('hoist-ui-' + key, String(value)); } catch (_) {}
+  }
+};
+</script>
 </head>
 
 <body>
@@ -6189,7 +6201,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let painting = false;
   let customSort = null;
   let activeStat = 'points';
-  let currentView = 'wildcard';
+  let currentView = ['wildcard','division','conference','league'].includes(window.hoistPrefs.get('standings-view','wildcard')) ? window.hoistPrefs.get('standings-view','wildcard') : 'wildcard';
   let syncedScrollLeft = 0;
   let descending = true;
 
@@ -6485,11 +6497,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const table = $('hoist-standings-table');
     if (!body || !table) return;
     updateHeroVisibility();
+    document.querySelectorAll('#standings [data-standings-view]').forEach(tab => {
+      const on = tab.dataset.standingsView === currentView;
+      tab.classList.toggle('is-active', on);
+      tab.setAttribute('aria-pressed', String(on));
+    });
     new MutationObserver(() => { updateHeroVisibility(); requestAnimationFrame(anchorMobileTeamRails); }).observe($('standings'),{attributes:true,attributeFilter:['class']});
     document.querySelectorAll('#standings [data-standings-view]').forEach(button => {
       button.addEventListener('click', () => {
         if (currentView === button.dataset.standingsView) return;
         currentView = button.dataset.standingsView;
+        window.hoistPrefs.set('standings-view', currentView);
         customSort = null;
         syncedScrollLeft = 0;
         document.querySelectorAll('#standings [data-standings-view]').forEach(tab => {
@@ -6561,6 +6579,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const counts = {forwards:4,defense:3,goalies:2,powerPlay:2,penaltyKill:2};
   const titles = {forwards:'LINE',defense:'PAIR',goalies:'GOALIE',powerPlay:'POWER PLAY UNIT',penaltyKill:'PENALTY KILL UNIT'};
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
+  const savedPosition = window.hoistPrefs.get('lineup-position', 'forwards');
+  if (['forwards','defense','goalies','powerPlay','penaltyKill'].includes(savedPosition)) position = savedPosition;
   const normalize = name => String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
   let headshots = new Map();
   const playerAliases = {
@@ -6789,7 +6809,8 @@ document.addEventListener('DOMContentLoaded', function () {
     updatePickerLabels();
     window.addEventListener('resize',updatePickerLabels);
     const main = el('team-select');
-    selected = main?.value && names.some(([code]) => code === main.value) ? main.value : 'MTL';
+    const savedTeam = window.hoistPrefs.get('lineup-team', '');
+    selected = names.some(([code]) => code === savedTeam) ? savedTeam : (main?.value && names.some(([code]) => code === main.value) ? main.value : 'MTL');
     picker.value = selected;
     const teamColors = {
       ANA:'#f47a38',BOS:'#ffb81c',BUF:'#003087',CGY:'#c8102e',CAR:'#cc0000',
@@ -6821,10 +6842,12 @@ document.addEventListener('DOMContentLoaded', function () {
       page.style.setProperty('--hoist-jersey-number-outline', jerseyOutline[selected] || '#15243a');
     };
     applyTeamColor();
-    picker.addEventListener('change',() => { selected = picker.value; applyTeamColor(); load(); });
+    document.querySelectorAll('[data-lineup-position]').forEach(b => b.classList.toggle('active', b.dataset.lineupPosition === position));
+    picker.addEventListener('change',() => { selected = picker.value; window.hoistPrefs.set('lineup-team', selected); applyTeamColor(); load(); });
     document.querySelectorAll('[data-lineup-position]').forEach(button => {
       button.addEventListener('click',() => {
         position = button.dataset.lineupPosition;
+        window.hoistPrefs.set('lineup-position', position);
         document.querySelectorAll('[data-lineup-position]').forEach(b => b.classList.toggle('active',b === button));
         render();
       });
@@ -6842,7 +6865,7 @@ document.addEventListener('DOMContentLoaded', function () {
  const teams=[['ANA','Anaheim Ducks'],['BOS','Boston Bruins'],['BUF','Buffalo Sabres'],['CGY','Calgary Flames'],['CAR','Carolina Hurricanes'],['CHI','Chicago Blackhawks'],['COL','Colorado Avalanche'],['CBJ','Columbus Blue Jackets'],['DAL','Dallas Stars'],['DET','Detroit Red Wings'],['EDM','Edmonton Oilers'],['FLA','Florida Panthers'],['LAK','Los Angeles Kings'],['MIN','Minnesota Wild'],['MTL','Montreal Canadiens'],['NSH','Nashville Predators'],['NJD','New Jersey Devils'],['NYI','New York Islanders'],['NYR','New York Rangers'],['OTT','Ottawa Senators'],['PHI','Philadelphia Flyers'],['PIT','Pittsburgh Penguins'],['SJS','San Jose Sharks'],['SEA','Seattle Kraken'],['STL','St. Louis Blues'],['TBL','Tampa Bay Lightning'],['TOR','Toronto Maple Leafs'],['UTA','Utah Mammoth'],['VAN','Vancouver Canucks'],['VGK','Vegas Golden Knights'],['WSH','Washington Capitals'],['WPG','Winnipeg Jets']];
  const teamName=Object.fromEntries(teams);
  const fields=[['gamesPlayed','GP'],['goals','G'],['assists','A'],['points','PTS'],['pointsPerGame','P/GP'],['evenStrengthGoals','EVG'],['evenStrengthPoints','EVP'],['plusMinus','+/-'],['penaltyMinutes','PIM'],['powerPlayGoals','PPG'],['powerPlayPoints','PPP'],['overtimeGoals','OTG'],['gameWinningGoals','GWG'],['shots','SOG'],['shootingPctg','S%']];
- const cache=new Map();let mode='league',sequence=0,sortKey='points',sortDirection=-1;
+ const cache=new Map();let mode=window.hoistPrefs.get('stats-mode','league')==='team'?'team':'league',sequence=0,sortKey='points',sortDirection=-1;
  const name=p=>[p.firstName?.default||p.firstName||'',p.lastName?.default||p.lastName||''].join(' ').trim()||p.name||'Unknown player';
  // Normalize aliases from the cached NHL club-skater data; never invent unavailable totals.
  const statAliases={evenStrengthGoals:['evenStrengthGoals','evGoals','evenStrengthGoal'],evenStrengthPoints:['evenStrengthPoints','evPoints','evenStrengthPts'],powerPlayPoints:['powerPlayPoints','ppPoints','powerplayPoints','powerPlayPts','ppp'],powerPlayAssists:['powerPlayAssists','ppAssists','powerplayAssists','powerplayAssist','ppAssist','ppa'],overtimeGoals:['overtimeGoals','otGoals'],gameWinningGoals:['gameWinningGoals','gwGoals'],shots:['shots','shotsOnGoal']};
@@ -6964,7 +6987,9 @@ document.addEventListener('DOMContentLoaded', function () {
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
  document.addEventListener('DOMContentLoaded',()=>{if(!el('stats'))return;const picker=el('hoist-stats-team');const sortedTeams=teams.slice().sort((a,b)=>a[1].localeCompare(b[1]));
  const syncTeamLabels=()=>{const mobile=window.matchMedia('(max-width:650px)').matches;const current=picker.value;picker.innerHTML=sortedTeams.map(([code,n])=>`<option value="${code}">${esc(mobile?code:n)}</option>`).join('');if(current)picker.value=current;};
- syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;leaguePage=1;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',render);el('hoist-stats-content').addEventListener('click',event=>{const pageButton=event.target.closest('[data-stats-page]');if(pageButton){if(pageButton.disabled)return;leaguePage=Math.max(1,leaguePage+(pageButton.dataset.statsPage==='next'?1:-1));render();return;}const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=key==='name'?1:-1;}leaguePage=1;const viewportY=window.scrollY;render().then(()=>window.scrollTo({top:viewportY,behavior:'instant'}))});render()});
+ syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===window.hoistPrefs.get('stats-team',''))?window.hoistPrefs.get('stats-team',''):teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';
+ document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b.dataset.statsMode===mode;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});
+ document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;window.hoistPrefs.set('stats-mode',mode);leaguePage=1;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',()=>{window.hoistPrefs.set('stats-team',picker.value);render()});el('hoist-stats-content').addEventListener('click',event=>{const pageButton=event.target.closest('[data-stats-page]');if(pageButton){if(pageButton.disabled)return;leaguePage=Math.max(1,leaguePage+(pageButton.dataset.statsPage==='next'?1:-1));render();return;}const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=key==='name'?1:-1;}leaguePage=1;const viewportY=window.scrollY;render().then(()=>window.scrollTo({top:viewportY,behavior:'instant'}))});render()});
 })();
 </script>
 
@@ -6980,7 +7005,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     const heading = document.getElementById('page-title');
     if (heading) heading.textContent = 'NHL Stats';
-    try { sessionStorage.setItem('hoist-active-page', 'stats'); } catch (_) {}
+    try { sessionStorage.setItem('hoist-active-page', 'stats'); window.hoistPrefs.set('active-page','stats'); } catch (_) {}
   }
   // The existing app.js only knows the original page names. Prevent it from
   // immediately switching back when the new Stats navigation item is clicked.
@@ -7008,7 +7033,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.sidebar .nav-item[data-tab]').forEach(button=>button.classList.toggle('active',button.dataset.tab==='games'));
     const title=document.getElementById('page-title');if(title)title.textContent='NHL Games';
     document.body.classList.remove('hoist-standings-active');
-    try{sessionStorage.setItem('hoist-active-page','games')}catch(_){}
+    try{sessionStorage.setItem('hoist-active-page','games');window.hoistPrefs.set('active-page','games')}catch(_){}
     document.dispatchEvent(new CustomEvent('hoist:games-open'));
   }
   document.addEventListener('click',event=>{
@@ -7017,7 +7042,7 @@ document.addEventListener('DOMContentLoaded', function () {
     event.preventDefault();event.stopImmediatePropagation();openGames();
   },true);
   document.addEventListener('DOMContentLoaded',()=>{
-    try{const page=sessionStorage.getItem('hoist-active-page');if(!page||page==='games'||page==='teams')openGames()}catch(_){openGames()}
+    try{const page=window.hoistPrefs.get('active-page',sessionStorage.getItem('hoist-active-page'));if(!page||page==='games')openGames()}catch(_){openGames()}
   });
 })();
 </script>
@@ -7040,7 +7065,7 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     document.querySelectorAll('.sidebar .nav-item[data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab==='teams'));
     const heading=document.getElementById('page-title');if(heading)heading.textContent='NHL Teams';
     document.body.classList.remove('hoist-standings-active');
-    try{sessionStorage.setItem('hoist-active-page','teams')}catch(_){}
+    try{sessionStorage.setItem('hoist-active-page','teams');window.hoistPrefs.set('active-page','teams')}catch(_){}
   }
   function buildDirectory(){
     const root=document.getElementById('hoist-teams-grid');if(!root)return;
@@ -7073,7 +7098,7 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     const selector=document.getElementById('team-select');if(!selector)return;
     selector.value=teamButton.dataset.teamCode;
     selector.dispatchEvent(new Event('change',{bubbles:true}));
-    try{sessionStorage.setItem('hoist-active-page','overview')}catch(_){}
+    try{sessionStorage.setItem('hoist-active-page','overview');window.hoistPrefs.set('active-page','overview')}catch(_){}
     const overview=document.querySelector('.sidebar [data-tab="overview"]');
     if(overview)overview.click();
     else{
@@ -7091,11 +7116,12 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
 <script>
 (() => {
   const storageKey = 'hoist-active-page';
-  const supported = new Set(['overview','standings','stats','games','lineups']);
+  const supported = new Set(['overview','standings','stats','games','lineups','teams']);
 
   function savePage(page) {
     if (!supported.has(page)) return;
     try { sessionStorage.setItem(storageKey, page); } catch (_) {}
+    window.hoistPrefs.set('active-page', page);
   }
 
   function openLineups() {
@@ -7110,6 +7136,16 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     document.body.classList.remove('hoist-standings-active');
     savePage('lineups');
   }
+
+  // Capture every navigation selection, including the legacy app.js pages.
+  document.addEventListener('click', event => {
+    const target = event.target.closest('.sidebar .nav-item[data-tab], #hoist-mobile-menu-options [data-mobile-tab]');
+    if (!target) return;
+    const page = target.dataset.tab || target.dataset.mobileTab;
+    if (['overview','standings','stats','games','lineups','teams'].includes(page)) {
+      window.hoistPrefs.set('active-page', page);
+    }
+  }, true);
 
   // Legacy app.js may not recognize the added Lineups page.
   // Handle that tab before its original navigation handler.
@@ -7128,7 +7164,8 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
 
   function restorePage() {
     let page = '';
-    try { page = sessionStorage.getItem(storageKey) || ''; } catch (_) {}
+    page = window.hoistPrefs.get('active-page', '');
+    if (!page) { try { page = sessionStorage.getItem(storageKey) || ''; } catch (_) {} }
     if (!supported.has(page)) page = 'games';
 
     if (page === 'lineups') {
@@ -7714,7 +7751,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const root=document.createElement('section');root.className='hoist-streaks';root.hidden=true;
   root.setAttribute('aria-label','Active streaks for players in the selected day’s games');
   host.insertAdjacentElement('afterend',root);
-  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false,activeFilter='point';
+  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false,activeFilter=window.hoistPrefs.get('streak-filter','point')==='goal'?'goal':'point';
   const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const gameDate=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
   const stat=(g,keys)=>{for(const k of keys){if(g[k]!==null&&g[k]!==undefined&&Number.isFinite(Number(g[k])))return Number(g[k]);}return null;};
@@ -7733,7 +7770,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   root.addEventListener('click',e=>{
     const filter=e.target.closest('button[data-filter]');
-    if(filter){activeFilter=filter.dataset.filter;page=0;draw();return;}
+    if(filter){activeFilter=filter.dataset.filter;window.hoistPrefs.set('streak-filter',activeFilter);page=0;draw();return;}
     const dot=e.target.closest('button[data-page]');if(dot){page=Number(dot.dataset.page);draw();return;}
     const btn=e.target.closest('button[data-move]');if(!btn)return;
     page+=Number(btn.dataset.move);draw();
