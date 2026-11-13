@@ -5172,6 +5172,32 @@ html body #lineups .hoist-lineup-group {
   #games .hoist-streak-filters button {padding:8px 10px 10px!important;}
 }
 </style>
+<style>
+/* Games Active Streaks: match the Standings view-tab selection exactly.
+   Square corners and preserve the existing blue underline. */
+#games .hoist-streak-filters button,
+#games .hoist-streak-filters button.is-active {
+  border-radius: 0 !important;
+}
+#games .hoist-streak-filters button.is-active {
+  background: rgba(110,145,195,.10) !important;
+}
+#games .hoist-streak-filters button.is-active::after {
+  border-radius: 0 !important;
+}
+/* End the selected background precisely at the blue underline. */
+#games .hoist-streak-filters button.is-active {
+  background: linear-gradient(to bottom,
+    rgba(110,145,195,.10) 0,
+    rgba(110,145,195,.10) calc(100% - 3px),
+    transparent calc(100% - 3px),
+    transparent 100%) !important;
+}
+#games .hoist-streak-filters button.is-active::after {
+  bottom: 0 !important;
+  height: 3px !important;
+}
+</style>
 </head>
 
 <body>
