@@ -5041,6 +5041,20 @@ html body #lineups .hoist-lineup-group {
  #games .hoist-streak-stats > .hoist-streak-number {font-size:24px;min-width:22px;}
 }
 </style>
+<style>
+/* Stack streak count and label at the bottom-right of each card. */
+#games .hoist-streak-stats {
+  display:flex!important;flex-direction:column!important;align-items:flex-end!important;
+  justify-content:flex-end!important;gap:5px!important;margin-left:auto!important;
+  align-self:stretch!important;text-align:right!important;min-width:max-content;
+}
+#games .hoist-streak-stats > .hoist-streak-number {
+  display:block!important;text-align:right!important;line-height:1!important;
+}
+#games .hoist-streak-stats > small {
+  display:block!important;text-align:right!important;margin:0!important;line-height:1.2!important;
+}
+</style>
 </head>
 
 <body>
@@ -7570,7 +7584,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if(!items.length){root.hidden=true;return;}
     root.hidden=false;const pages=Math.ceil(items.length/2);page=(page+pages)%pages;
     const visible=items.slice(page*2,page*2+2);
-    root.innerHTML=`<div class="hoist-streak-head"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><span class="hoist-streak-controls"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><span class="hoist-streak-count">${page+1} / ${pages}</span><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></span></div><div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><small>${x.count} GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small><strong class="hoist-streak-number">${x.count}</strong></span></div>`).join('')}</div>`;
+    root.innerHTML=`<div class="hoist-streak-head"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><span class="hoist-streak-controls"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><span class="hoist-streak-count">${page+1} / ${pages}</span><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></span></div><div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><strong class="hoist-streak-number">${x.count}</strong><small>GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small></span></div>`).join('')}</div>`;
   }
   root.addEventListener('click',e=>{const btn=e.target.closest('button[data-move]');if(!btn)return;page+=Number(btn.dataset.move);draw();});
   function teamsOnPage(){
