@@ -5140,6 +5140,34 @@ html body #lineups .hoist-lineup-group {
   }
 }
 </style>
+<style>
+/* Active Streaks tabs: matching blue highlight on desktop and mobile. */
+#games .hoist-streak-filters {
+  display:flex; align-items:stretch; gap:6px;
+  padding:0; background:transparent!important;
+  border:0!important; border-radius:0!important; box-shadow:none!important;
+}
+#games .hoist-streak-filters button {
+  position:relative; padding:9px 13px 11px!important;
+  background:transparent!important; border:0!important;
+  border-radius:7px 7px 0 0!important; box-shadow:none!important;
+  opacity:.7; font-size:12px; font-weight:750;
+  transition:background .16s ease,opacity .16s ease;
+}
+#games .hoist-streak-filters button.is-active {
+  opacity:1; color:inherit;
+  background:rgba(52,139,255,.16)!important;
+  box-shadow:none!important;
+}
+#games .hoist-streak-filters button.is-active::after {
+  content:""; position:absolute; bottom:0; left:0; right:0;
+  height:3px; background:#348bff; border-radius:2px;
+}
+@media(max-width:650px) {
+  #games .hoist-streak-filters {margin-left:auto; gap:5px;}
+  #games .hoist-streak-filters button {padding:8px 10px 10px!important;}
+}
+</style>
 </head>
 
 <body>
