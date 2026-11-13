@@ -5210,6 +5210,47 @@ window.hoistPrefs = {
   }
 };
 </script>
+
+<style>
+/* Compact weekly calendar and expandable full-month picker */
+#overview .hoist-calendar-panel{position:relative}
+#overview .hoist-calendar-toggle{display:grid;place-items:center;width:34px;height:34px;border:1px solid rgba(125,155,195,.28);border-radius:7px;background:transparent;color:inherit;cursor:pointer;flex-shrink:0}
+#overview .hoist-calendar-toggle[aria-expanded="true"]{background:rgba(52,139,255,.13);border-color:#348bff}
+#overview .hoist-weekbar{display:flex;align-items:center;gap:5px;width:100%;margin:9px 0 12px}
+#overview .hoist-week-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));flex:1;min-width:0;gap:2px}
+#overview .hoist-week-day{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;padding:10px 2px 12px;border:0;border-bottom:3px solid transparent;background:transparent;color:inherit;cursor:pointer;font:inherit}
+#overview .hoist-week-day .hoist-week-name{font-size:11px;opacity:.65;font-weight:600}
+#overview .hoist-week-day .hoist-week-num{font-size:17px;font-weight:750}
+#overview .hoist-week-day[aria-selected="true"]{background:rgba(52,139,255,.12);border-bottom-color:#348bff}
+#overview .hoist-week-day .hoist-today-mark{position:absolute;right:calc(50% - 16px);top:30px;width:5px;height:5px;border-radius:50%;background:#348bff}
+#overview .hoist-week-step{width:23px;flex-shrink:0;border:0;background:transparent;color:inherit;font-size:24px;cursor:pointer;padding:4px 0}
+#overview .hoist-month-popover[hidden]{display:none!important}
+#overview .hoist-month-popover{position:absolute;z-index:60;top:65px;right:12px;width:min(420px,calc(100% - 24px));padding:14px;background:var(--panel,#111c2c);background-color:#152236;border:1px solid rgba(125,155,195,.35);border-radius:10px;box-shadow:0 16px 44px rgba(0,0,0,.35)}
+#overview .hoist-month-popover .hoist-calendar-month-controls{justify-content:center;margin-bottom:10px}
+#overview .hoist-month-popover .v2-day{cursor:pointer!important}
+#overview .hoist-month-popover .v2-day.hoist-picked-day{outline:2px solid #348bff;outline-offset:-2px;background:rgba(52,139,255,.13)!important}
+#overview .hoist-month-popover .v2-day.hoist-today{box-shadow:inset 0 0 0 2px #348bff!important}
+#overview .hoist-month-popover .v2-day.hoist-today:after{content:"";position:absolute;top:3px;right:3px;width:6px;height:6px;border-radius:50%;background:#348bff}
+@media(max-width:650px){#overview .hoist-week-day{padding:9px 1px 11px}#overview .hoist-week-day .hoist-week-name{font-size:10px}#overview .hoist-week-day .hoist-week-num{font-size:15px}#overview .hoist-month-popover{top:58px;right:6px;width:calc(100% - 12px);padding:8px}}
+</style>
+<style>
+/* Full-month calendar is a floating modal, never part of page layout. */
+#hoist-month-backdrop[hidden],#hoist-month-popover[hidden]{display:none!important}
+#hoist-month-backdrop{position:fixed;inset:0;background:rgba(2,8,20,.67);z-index:10020;backdrop-filter:blur(3px)}
+#hoist-month-popover{position:fixed!important;top:50%!important;left:50%!important;right:auto!important;transform:translate(-50%,-50%);z-index:10021!important;width:min(440px,calc(100vw - 28px))!important;max-height:min(85vh,720px);overflow-y:auto;box-sizing:border-box;padding:18px!important;background:#152236!important;border:1px solid rgba(125,155,195,.4);border-radius:12px;box-shadow:0 25px 90px rgba(0,0,0,.6)}
+#hoist-month-popover .hoist-month-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;gap:8px}
+#hoist-month-popover .hoist-month-top strong{font-size:15px;letter-spacing:.04em}
+#hoist-month-popover .hoist-month-close{border:0;background:transparent;color:inherit;font-size:24px;line-height:1;cursor:pointer;padding:4px 8px}
+#hoist-month-popover .hoist-calendar-month-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:12px}
+#hoist-month-popover .hoist-calendar-month-controls button{border:1px solid rgba(125,155,195,.3);background:transparent;color:inherit;padding:5px 12px;border-radius:5px;cursor:pointer}
+#hoist-month-popover .v2-weekdays{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));text-align:center;gap:0;font-size:11px;opacity:.7;margin-bottom:5px}
+#hoist-month-popover .v2-calendar{display:grid!important;grid-template-columns:repeat(7,minmax(0,1fr))!important;gap:2px!important;border:0!important}
+#hoist-month-popover .v2-day{position:relative!important;min-width:0!important;min-height:48px!important;height:auto!important;aspect-ratio:1/1!important;padding:5px!important;box-sizing:border-box!important;border:1px solid rgba(125,155,195,.18)!important;border-radius:5px!important;overflow:hidden!important;cursor:pointer!important}
+#hoist-month-popover .v2-day.hoist-picked-day{outline:2px solid #348bff;outline-offset:-2px;background:rgba(52,139,255,.13)!important}
+#hoist-month-popover .v2-day.hoist-today{box-shadow:inset 0 0 0 2px #348bff!important}
+#hoist-month-popover .v2-day.hoist-today:after{content:"";position:absolute;top:3px;right:3px;width:6px;height:6px;border-radius:50%;background:#348bff}
+@media(max-width:600px){#hoist-month-popover{padding:12px!important}#hoist-month-popover .v2-day{min-height:38px!important;padding:3px!important}}
+</style>
 </head>
 
 <body>
@@ -5393,13 +5434,23 @@ window.hoistPrefs = {
         </div>
       </div>
 
-      <div class="v2-controls hoist-calendar-month-controls">
-        <button id="v2-prev" type="button">←</button>
-        <strong id="v2-month-label"></strong>
-        <button id="v2-next" type="button">→</button>
-      </div>
+      <button type="button" id="hoist-calendar-toggle" class="hoist-calendar-toggle" aria-label="Open monthly calendar" aria-expanded="false" title="Full month">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg>
+      </button>
     </div>
 
+    <div class="hoist-weekbar" aria-label="Select a day of the week">
+      <button type="button" class="hoist-week-step" id="hoist-week-prev" aria-label="Previous week">‹</button>
+      <div class="hoist-week-days" id="hoist-week-days"></div>
+      <button type="button" class="hoist-week-step" id="hoist-week-next" aria-label="Next week">›</button>
+    </div>
+    <div class="hoist-month-popover" id="hoist-month-popover" role="dialog" aria-modal="true" aria-label="Choose calendar date" hidden>
+    <div class="hoist-month-top"><strong>CALENDAR</strong><button type="button" class="hoist-month-close" id="hoist-month-close" aria-label="Close calendar">×</button></div>
+    <div class="v2-controls hoist-calendar-month-controls">
+      <button id="v2-prev" type="button" aria-label="Previous month">←</button>
+      <strong id="v2-month-label"></strong>
+      <button id="v2-next" type="button" aria-label="Next month">→</button>
+    </div>
     <div class="v2-weekdays">
       <span>Sun</span>
       <span>Mon</span>
@@ -5416,6 +5467,7 @@ window.hoistPrefs = {
       aria-label="NHL schedule calendar"
     ></div>
 
+    </div>
     <div class="hoist-calendar-legend">
       <span class="hoist-legend-item">
         <span class="hoist-legend-dot hoist-legend-home"></span>
@@ -6106,41 +6158,91 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-<!-- STATIC CALENDAR -->
-
+<!-- WEEKLY CALENDAR WITH MONTH PICKER -->
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const calendar = document.getElementById("v2-calendar");
-  if (!calendar) return;
-
-  calendar.addEventListener("click", function (event) {
-    event.preventDefault();
-    event.stopImmediatePropagation();
-  }, true);
-
-  calendar.addEventListener("keydown", function (event) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      event.stopImmediatePropagation();
+document.addEventListener('DOMContentLoaded', function(){
+  const grid=document.getElementById('v2-calendar');
+  const week=document.getElementById('hoist-week-days');
+  const popup=document.getElementById('hoist-month-popover');
+  const toggle=document.getElementById('hoist-calendar-toggle');
+  const monthLabel=document.getElementById('v2-month-label');
+  if(!grid||!week||!popup||!toggle)return;
+  const today=new Date();today.setHours(12,0,0,0);
+  const key=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+  const parse=v=>{const d=new Date(v+'T12:00:00');return isNaN(d)?new Date(today):d};
+  let selected;try{selected=parse(localStorage.getItem('hoist-overview-calendar-date')||key(today))}catch(e){selected=new Date(today)}
+  let start=new Date(selected);start.setDate(start.getDate()-start.getDay());
+  const same=(a,b)=>key(a)===key(b);
+  function showWeek(){
+    week.replaceChildren();
+    for(let i=0;i<7;i++){
+      const d=new Date(start);d.setDate(start.getDate()+i);
+      const btn=document.createElement('button');
+      btn.type='button';btn.className='hoist-week-day';
+      btn.setAttribute('aria-selected',String(same(d,selected)));
+      btn.setAttribute('aria-label',d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}));
+      btn.innerHTML='<span class="hoist-week-name">'+d.toLocaleDateString(undefined,{weekday:'short'})+'</span><span class="hoist-week-num">'+d.getDate()+'</span>'+(same(d,today)?'<span class="hoist-today-mark" aria-label="Today"></span>':'');
+      btn.addEventListener('click',()=>choose(d));
+      week.appendChild(btn);
     }
-  }, true);
-
-  function makeCalendarStatic() {
-    calendar.querySelectorAll(
-      'button, a, [tabindex], [role="button"]'
-    ).forEach(function (element) {
-      element.setAttribute("tabindex", "-1");
-      element.removeAttribute("role");
-      element.removeAttribute("aria-pressed");
+  }
+  function choose(d){
+    selected=new Date(d);selected.setHours(12,0,0,0);
+    start=new Date(selected);start.setDate(start.getDate()-start.getDay());
+    try{localStorage.setItem('hoist-overview-calendar-date',key(selected))}catch(e){}
+    showWeek();highlight();
+    popup.hidden=true;backdrop.hidden=true;toggle.setAttribute('aria-expanded','false');
+  }
+  document.getElementById('hoist-week-prev')?.addEventListener('click',()=>{start.setDate(start.getDate()-7);choose(start)});
+  document.getElementById('hoist-week-next')?.addEventListener('click',()=>{start.setDate(start.getDate()+7);choose(start)});
+  // Portal the month picker to the document body so it cannot resize or clip the page.
+  const backdrop=document.createElement('div');
+  backdrop.id='hoist-month-backdrop';backdrop.hidden=true;
+  document.body.appendChild(backdrop);
+  document.body.appendChild(popup);
+  function closeMonth(){popup.hidden=true;backdrop.hidden=true;toggle.setAttribute('aria-expanded','false');toggle.focus()}
+  function openMonth(){popup.hidden=false;backdrop.hidden=false;toggle.setAttribute('aria-expanded','true');highlight();document.getElementById('hoist-month-close')?.focus()}
+  toggle.addEventListener('click',()=>popup.hidden?openMonth():closeMonth());
+  backdrop.addEventListener('click',closeMonth);
+  document.getElementById('hoist-month-close')?.addEventListener('click',closeMonth);
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!popup.hidden)closeMonth()});
+  function monthFromLabel(){
+    const label=(monthLabel?.textContent||'').trim();
+    const d=new Date('1 '+label);
+    return isNaN(d)?null:d;
+  }
+  function highlight(){
+    const base=monthFromLabel();
+    const cells=[...grid.querySelectorAll('.v2-day')];
+    cells.forEach((cell,index)=>{
+      cell.classList.remove('hoist-picked-day');
+      if(!base)return;
+      const first=new Date(base.getFullYear(),base.getMonth(),1);
+      const offset=first.getDay();
+      const d=new Date(base.getFullYear(),base.getMonth(),index-offset+1);
+      if(same(d,selected))cell.classList.add('hoist-picked-day');
+      if(same(d,today))cell.classList.add('hoist-today');
     });
   }
-
-  makeCalendarStatic();
-
-  new MutationObserver(makeCalendarStatic).observe(calendar, {
-    childList: true,
-    subtree: true
-  });
+  // Capture month-grid selections without triggering game-card navigation.
+  grid.addEventListener('click',e=>{
+    const cell=e.target.closest('.v2-day');if(!cell)return;
+    e.preventDefault();e.stopImmediatePropagation();
+    const base=monthFromLabel();if(!base)return;
+    const cells=[...grid.querySelectorAll('.v2-day')];
+    const first=new Date(base.getFullYear(),base.getMonth(),1);
+    const d=new Date(base.getFullYear(),base.getMonth(),cells.indexOf(cell)-first.getDay()+1);
+    choose(d);
+  },true);
+  grid.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){
+      const cell=e.target.closest('.v2-day');if(cell){e.preventDefault();cell.click()}
+    }
+  },true);
+  const observer=new MutationObserver(()=>{if(!popup.hidden)highlight()});
+  observer.observe(grid,{childList:true,subtree:true});
+  if(monthLabel)observer.observe(monthLabel,{childList:true,characterData:true,subtree:true});
+  showWeek();
 });
 </script>
 
