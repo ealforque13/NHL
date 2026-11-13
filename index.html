@@ -5248,6 +5248,15 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #hoist-games-calendar-overlay #hoist-games-jump-today{color:#69aaff;font-size:12px}
 @media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}#games .hoist-games-week-day .gc{font-size:9px}#games .hoist-games-week-day .gc .game-word{display:none}}
 </style>
+<style>
+/* Games: remove redundant panel heading and keep dates visible while scrolling. */
+#games .hoist-games-head{height:0!important;min-height:0!important;margin:0!important;padding:0!important;gap:0!important;border:0!important;overflow:visible!important}
+#games .hoist-games-weekbar{position:sticky!important;top:0;z-index:120;box-sizing:border-box;margin:0 0 12px!important;padding:7px 3px 9px!important;border-bottom:1px solid rgba(145,155,170,.34);background:var(--panel,#152236);background-color:#152236;box-shadow:0 4px 10px rgba(0,0,0,.06)}
+body.light-mode #games .hoist-games-weekbar,body[data-theme="light"] #games .hoist-games-weekbar{background:#fff}
+/* Allow the sticky weekbar to travel throughout the Games section. */
+#games,#games .hoist-games-panel{overflow:visible!important}
+@media(max-width:600px){#games .hoist-games-weekbar{padding:5px 1px 8px!important}}
+</style>
 </head>
 
 <body>
@@ -5858,7 +5867,6 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 <section id="games" class="tab-section">
   <article class="panel section-panel hoist-games-panel">
     <div class="section-head hoist-games-head">
-      <div class="eyebrow">HOIST OFFICIAL · NHL GAMES</div>
       <div class="hoist-games-date-controls hoist-games-native-controls" aria-hidden="true">
         <button type="button" id="hoist-games-prev" aria-label="Previous day">‹</button>
         <input type="date" id="hoist-games-date" aria-label="Choose game date" tabindex="-1"/>
