@@ -5087,91 +5087,28 @@ html body #lineups .hoist-lineup-group {
 }
 </style>
 <style>
-/* Mobile-only Active Streaks refinement: filters right, arrows flanking cards,
-   borderless arrows, and compact dots below. Desktop is unchanged. */
+/* Mobile-only: full-size streak cards and borderless arrows below the cards. */
 @media (max-width:650px) {
-  #games .hoist-streaks {
-    display:grid;
-    grid-template-columns:24px minmax(0,1fr) 24px;
-    column-gap:5px;
-    row-gap:10px;
-    padding:13px 9px 12px;
-    overflow:hidden;
-  }
-  #games .hoist-streak-head {
-    grid-column:1/-1;
-    grid-row:1;
-    width:100%;
-    margin:0 0 2px;
-    padding:0 3px;
-    min-width:0;
-  }
+  #games .hoist-streak-head {padding-right:0; width:100%;}
   #games .hoist-streak-heading {
-    display:flex;
-    width:100%;
-    align-items:center;
-    justify-content:space-between;
-    flex-wrap:nowrap;
-    gap:6px;
-    min-width:0;
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:nowrap; width:100%; gap:8px;
   }
-  #games .hoist-streak-title {font-size:10px;letter-spacing:.07em;white-space:nowrap;}
-  #games .hoist-streak-filters {margin-left:auto;flex:0 0 auto;gap:2px;padding:2px;}
-  #games .hoist-streak-filters button {font-size:10px;padding:6px 9px;}
-  #games .hoist-streak-track {
-    grid-column:2;
-    grid-row:2;
-    grid-template-columns:minmax(0,1fr);
-    gap:8px;
-    min-width:0;
-    align-self:center;
+  #games .hoist-streak-title {white-space:nowrap;}
+  #games .hoist-streak-filters {margin-left:auto; flex:0 0 auto;}
+  #games .hoist-streak-track {width:100%;}
+  #games .hoist-streak-controls {
+    position:static; display:flex; justify-content:center; align-items:center;
+    width:100%; margin:14px auto 0; gap:15px;
   }
-  #games .hoist-streak-player {
-    min-width:0;
-    gap:7px;
-    padding:8px 7px;
-  }
-  #games .hoist-streak-avatar {
-    width:40px!important;height:40px!important;
-    min-width:40px!important;flex-basis:40px!important;
-  }
-  #games .hoist-streak-person strong {font-size:11px;}
-  #games .hoist-streak-person small {font-size:9px;}
-  #games .hoist-streak-stats {gap:4px!important;min-width:0;}
-  #games .hoist-streak-stats > .hoist-streak-number {font-size:23px;}
-  #games .hoist-streak-stats > small {font-size:8px;letter-spacing:0;white-space:nowrap;}
-  #games .hoist-streak-controls {display:contents;}
   #games .hoist-streak-controls > button[data-move] {
-    position:static;
-    align-self:center;
-    justify-self:center;
-    width:24px;
-    min-width:24px;
-    height:40px;
-    padding:0;
-    margin:0;
-    background:transparent!important;
-    border:0!important;
-    box-shadow:none!important;
-    outline-offset:1px;
-    border-radius:0;
-    font-size:29px;
-    line-height:1;
-    opacity:.8;
+    position:static; width:32px; min-width:32px; height:32px;
+    padding:0; background:transparent!important; border:0!important;
+    box-shadow:none!important; border-radius:0; font-size:29px;
+    line-height:1; opacity:.8;
   }
-  #games .hoist-streak-controls > button[data-move='-1'] {grid-column:1;grid-row:2;}
-  #games .hoist-streak-controls > button[data-move='1'] {grid-column:3;grid-row:2;}
-  #games .hoist-streak-pagination {
-    grid-column:1/-1;
-    grid-row:3;
-    justify-self:center;
-    width:min(100%,280px);
-    max-width:100%;
-    margin:0 auto;
-    gap:6px;
-  }
-  #games .hoist-streak-dots {justify-content:center;}
-  #games .hoist-streak-empty {grid-column:2;grid-row:2;}
+  #games .hoist-streak-pagination {min-width:0; max-width:min(230px,calc(100vw - 150px));}
+  #games .hoist-streak-dots {display:flex; justify-content:center;}
 }
 </style>
 </head>
