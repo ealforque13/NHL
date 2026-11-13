@@ -5249,13 +5249,15 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 @media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}#games .hoist-games-week-day .gc{font-size:9px}#games .hoist-games-week-day .gc .game-word{display:none}}
 </style>
 <style>
-/* Games: remove redundant panel heading and keep dates visible while scrolling. */
+/* Games: compact calendar, without the extra bar background. */
 #games .hoist-games-head{height:0!important;min-height:0!important;margin:0!important;padding:0!important;gap:0!important;border:0!important;overflow:visible!important}
-#games .hoist-games-weekbar{position:sticky!important;top:0;z-index:120;box-sizing:border-box;margin:0 0 12px!important;padding:7px 3px 9px!important;border-bottom:1px solid rgba(145,155,170,.34);background:var(--panel,#152236);background-color:#152236;box-shadow:0 4px 10px rgba(0,0,0,.06)}
-body.light-mode #games .hoist-games-weekbar,body[data-theme="light"] #games .hoist-games-weekbar{background:#fff}
-/* Allow the sticky weekbar to travel throughout the Games section. */
+#games .hoist-games-weekbar{position:static!important;top:auto!important;z-index:auto;box-sizing:border-box;margin:0 0 12px!important;padding:7px 3px 9px!important;border-bottom:1px solid rgba(145,155,170,.34);background:transparent!important;background-color:transparent!important;box-shadow:none!important}
+/* Keep the date strip visible only on mobile, with a lightweight translucent surface. */
 #games,#games .hoist-games-panel{overflow:visible!important}
-@media(max-width:600px){#games .hoist-games-weekbar{padding:5px 1px 8px!important}}
+@media(max-width:600px){
+  #games .hoist-games-weekbar{position:sticky!important;top:0!important;z-index:120;padding:5px 1px 8px!important;background:rgba(21,34,54,.87)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  body.light-mode #games .hoist-games-weekbar,body[data-theme="light"] #games .hoist-games-weekbar{background:rgba(255,255,255,.88)!important}
+}
 </style>
 </head>
 
