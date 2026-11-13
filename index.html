@@ -3349,7 +3349,7 @@ html body .hoist-headshot-circle img.hoist-team-headshot {
 <style>
 /* Tampa Bay Lightning: use a white silhouette on every dashboard page.
    Matches logos in Overview, Games, Standings, Stats, Lineups and Teams. */
-img[src*="TBL_" i]:not(.hoist-team-headshot):not(.hoist-stats-headshot),
+img[src*="TBL_" i]:not(.hoist-team-headshot):not(.hoist-stats-headshot):not(.hoist-authentic-jersey-img),
 img[src*="/TBL." i]:not(.hoist-team-headshot):not(.hoist-stats-headshot),
 img[data-hoist-team="TBL"],
 #team-logo[data-hoist-team="TBL"] {
@@ -3358,6 +3358,10 @@ img[data-hoist-team="TBL"],
 </style>
 
 <style>
+/* Preserve original player jersey artwork; the white-logo rule must not affect jerseys. */
+#lineups img.hoist-authentic-jersey-img[src*="/uploads/player/jersey/"] {
+  filter:drop-shadow(0 12px 13px rgba(0,0,0,.26)) !important;
+}
 /* Games player portraits use the same club-colour circles as Overview and Stats. */
 html body #games img.hoist-game-player-headshot {
   background-color:var(--hoist-headshot-team-color,#293e5d)!important;
