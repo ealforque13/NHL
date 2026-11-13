@@ -2,9 +2,9 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T19:47:32.255Z",
+  "sourceUpdatedAt": "2026-11-13T02:36:38.329Z",
   "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-13T02:26:28.934523+00:00",
+  "cachedAtUTC": "2026-11-13T03:28:24.269331+00:00",
   "forwards": [
     [
       {
@@ -68,18 +68,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Scott Laughton",
-        "number": 21,
+        "name": "Erik Haula",
+        "number": 56,
         "position": "C",
-        "sourcePlayerId": 2018,
+        "sourcePlayerId": 2135,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Corey Perry",
-        "number": 90,
+        "name": "Joel Armia",
+        "number": 40,
         "position": "RW",
-        "sourcePlayerId": 36,
+        "sourcePlayerId": 1952,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -94,18 +94,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Haula",
-        "number": 56,
+        "name": "Scott Laughton",
+        "number": 21,
         "position": "C",
-        "sourcePlayerId": 2135,
+        "sourcePlayerId": 2018,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Joel Armia",
-        "number": 40,
+        "name": "Corey Perry",
+        "number": 90,
         "position": "RW",
-        "sourcePlayerId": 1952,
+        "sourcePlayerId": 36,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -132,10 +132,10 @@
     ],
     [
       {
-        "name": "Joel Edmundson",
-        "number": 6,
+        "name": "Brian Dumoulin",
+        "number": 2,
         "position": "LD",
-        "sourcePlayerId": 2532,
+        "sourcePlayerId": 1928,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -150,10 +150,10 @@
     ],
     [
       {
-        "name": "Brian Dumoulin",
-        "number": 2,
+        "name": "Joel Edmundson",
+        "number": 6,
         "position": "LD",
-        "sourcePlayerId": 1928,
+        "sourcePlayerId": 2532,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
