@@ -5221,7 +5221,8 @@ window.hoistPrefs = {
 #games .hoist-games-week-day .gc{font-size:9px;line-height:1.2;opacity:.56;white-space:nowrap;font-weight:500}
 #games .hoist-games-week-day[aria-selected="true"] .gc{opacity:1;color:#64aaff;font-weight:700}
 #games .hoist-games-week-day[aria-selected="true"]{background:rgba(52,139,255,.12);border-bottom-color:#348bff}
-#games .hoist-games-week-day.is-today .dn:after{content:"";display:block;width:4px;height:4px;background:#348bff;border-radius:50%;margin:2px auto -6px}
+#games .hoist-games-week-day .wd{display:inline-flex;align-items:center;justify-content:center;gap:4px}
+#games .hoist-games-week-day.is-today .wd:after{content:"";display:inline-block;width:5px;height:5px;flex:none;background:#348bff;border-radius:50%}
 #games .hoist-games-week-arrow,#games .hoist-games-calendar-button{display:grid;place-items:center;flex-shrink:0;width:26px;height:32px;padding:0;border:0;background:transparent;color:inherit;cursor:pointer;font-size:23px}
 #games .hoist-games-calendar-button{width:30px;margin-left:3px}
 #hoist-games-calendar-overlay[hidden]{display:none!important}
@@ -5236,12 +5237,16 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #hoist-games-calendar-overlay .hoist-games-month-grid .dow{text-align:center;font-size:10px;opacity:.6;padding:7px 0}
 #hoist-games-calendar-overlay .hoist-games-month-grid button{position:relative;min-height:35px;border-radius:5px;font-size:12px}
 #hoist-games-calendar-overlay .hoist-games-month-grid button.is-selected{background:rgba(52,139,255,.19);box-shadow:inset 0 -2px #348bff}
+#hoist-games-calendar-overlay .hoist-games-month-grid button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:4px 0}
+#hoist-games-calendar-overlay .hoist-games-month-grid button .month-day-number{font-size:12px;line-height:1.1}
+#hoist-games-calendar-overlay .hoist-games-month-grid button .month-game-count{font-size:9px;line-height:1.1;opacity:.6}
+#hoist-games-calendar-overlay .hoist-games-month-grid button.is-selected .month-game-count{color:#64aaff;opacity:1;font-weight:700}
 #hoist-games-calendar-overlay .hoist-games-month-grid button.is-today:after{content:"";position:absolute;bottom:3px;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background:#348bff}
 #hoist-games-calendar-overlay .hoist-games-month-grid button:hover{background:rgba(52,139,255,.12)}
 #hoist-games-calendar-overlay .hoist-games-calendar-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:11px;opacity:.85}
 #hoist-games-calendar-overlay .hoist-games-calendar-foot i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#348bff;margin-right:4px}
 #hoist-games-calendar-overlay #hoist-games-jump-today{color:#69aaff;font-size:12px}
-@media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}#games .hoist-games-week-day .gc{font-size:8px}}
+@media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}#games .hoist-games-week-day .gc{font-size:9px}#games .hoist-games-week-day .gc .game-word{display:none}}
 </style>
 </head>
 
@@ -7934,10 +7939,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const failures=results.filter(r=>r.status==='rejected').length;
         if(failures)console.warn('Games calendar: '+failures+' cached team schedules unavailable');
         renderCountLabels();
+        renderMonth();
       })().catch(error=>{
         console.error('Games calendar counts unavailable:',error);
         countPromise=null;
         renderCountLabels();
+        renderMonth();
       });
       return countPromise;
     }
@@ -7945,7 +7952,7 @@ document.addEventListener('DOMContentLoaded', function () {
       host.querySelectorAll('.hoist-games-week-day').forEach(b=>{
         const count=weekCounts.get(b.dataset.date)||0;
         const label=b.querySelector('.gc');
-        if(label)label.textContent=countPromise?count+' '+(count===1?'game':'games'):'…';
+        if(label)label.innerHTML=countPromise?count+'<span class="game-word"> '+(count===1?'game':'games')+'</span>':'…';
       });
     }
     const same=(a,b)=>key(a)===key(b);
@@ -7983,9 +7990,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const count=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
       for(let n=1;n<=count;n++){
         const d=new Date(month.getFullYear(),month.getMonth(),n,12);
-        const b=document.createElement('button');b.type='button';b.textContent=n;
+        const b=document.createElement('button');b.type='button';
+        const gamesForDay=weekCounts.get(key(d))||0;
+        b.innerHTML='<span class="month-day-number">'+n+'</span><span class="month-game-count">'+(countPromise?gamesForDay:'…')+'</span>';
         b.className=(same(d,current)?'is-selected ':'')+(same(d,today)?'is-today':'');
-        b.setAttribute('aria-label',d.toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'}));
+        b.setAttribute('aria-label',d.toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'})+', '+gamesForDay+' games');
         b.addEventListener('click',()=>select(d));grid.appendChild(b);
       }
     }
