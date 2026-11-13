@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T13:00:20.414214+00:00",
+  "updatedAt": "2026-11-13T18:49:15.335787+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -10,7 +10,7 @@
     },
     "8473533": {
       "injured": true,
-      "description": "ir",
+      "description": "Staal (calf) will be a game-time decision versus the Kraken on Saturday after head coach Rod Brind'Amour told reporters, \"So, we'll find out probably tomorrow after you know gets through the morning, and hopefully he does play,\" per Tom Gul",
       "status": "Injured Reserve",
       "team": "CAR"
     },
@@ -40,8 +40,8 @@
     },
     "8476331": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "DeMelo (lower body) was placed on injured reserve Friday.",
+      "status": "Injured Reserve",
       "team": "WPG"
     },
     "8476393": {
@@ -52,13 +52,13 @@
     },
     "8476419": {
       "injured": true,
-      "description": "Pageau is dealing with a lower-body injury and will be sidelined against the Kings on Thursday.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8476456": {
       "injured": true,
-      "description": "Huberdeau (hip) took the ice in a regular jersey Friday, Pat Steinberg of QR Calgary 770 AM reports.",
+      "description": "Huberdeau (hip) won't travel with the Flames during their upcoming three-game road trip, Pat Steinberg of QR Calgary 770 AM reports Friday.",
       "status": "Injured Reserve",
       "team": "CGY"
     },
@@ -76,8 +76,8 @@
     },
     "8476853": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TOR"
     },
     "8476891": {
@@ -94,8 +94,8 @@
     },
     "8476979": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8477220": {
@@ -124,8 +124,8 @@
     },
     "8477488": {
       "injured": true,
-      "description": "Pesce has been ruled out for Thursday's game against Washington due to an illness, Kristy Flannery of The Hockey News reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NJD"
     },
     "8477492": {
@@ -154,8 +154,8 @@
     },
     "8477951": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "UTA"
     },
     "8477955": {
@@ -184,8 +184,8 @@
     },
     "8478416": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8478421": {
@@ -214,8 +214,8 @@
     },
     "8478519": {
       "injured": true,
-      "description": "Cirelli (undisclosed) will miss Thursday's game versus the Blue Jackets, Mark Scheig of The Hockey Writers reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8478569": {
@@ -226,7 +226,7 @@
     },
     "8479324": {
       "injured": true,
-      "description": "Lindgren (upper body) was placed on injured reserve by the Kraken on Thursday and is expected to miss four to six weeks.",
+      "description": "Lindgren (upper body) will be a game-time decision ahead of Saturday's matchup with Carolina, Tom Gulitti of NHL.com reports.",
       "status": "Injured Reserve",
       "team": "SEA"
     },
@@ -256,7 +256,7 @@
     },
     "8480036": {
       "injured": true,
-      "description": "Heiskanen (upper body) has been ruled out for Thursday's game against the Jets, Stars TV host Brien Rea reports.",
+      "description": "Heiskanen (upper body) has been ruled out against the Sabres on Saturday, Stars TV host Brien Rea reports.",
       "status": "Out",
       "team": "DAL"
     },
@@ -274,7 +274,7 @@
     },
     "8480078": {
       "injured": true,
-      "description": "Chytil (shoulder) will not be in action versus the Flyers on Monday, Canucks play-by-play announcer Brendan Batchelor reports.",
+      "description": "Chytil (shoulder) looks set to return to the lineup against the Rangers on Friday, Jeff Paterson of CanucksArmy.com reports.",
       "status": "Injured Reserve",
       "team": "VAN"
     },
@@ -388,20 +388,20 @@
     },
     "8482874": {
       "injured": true,
-      "description": "Melanson (chest) was sporting a regular jersey during Thursday's game-day skate, Sound of Hockey reports.",
+      "description": "Melanson (chest) will be a game-time call for Saturday's clash with the Hurricanes, Tom Gulitti of NHL.com reports.",
       "status": "Injured Reserve",
       "team": "SEA"
     },
     "8483425": {
       "injured": true,
-      "description": "Bichsel (lower body) is expected to miss at least two games after getting injured Thursday versus the Jets, Robert Tiffin of NHL.com reports.",
+      "description": "Head coach Glen Gulutzan said Friday that Bichsel (lower body) will be out for \"a couple weeks,\" Stars TV host Brien Rea reports.",
       "status": "Out",
       "team": "DAL"
     },
     "8483431": {
       "injured": true,
-      "description": "Cooley (upper body) will miss Thursday's game against St. Louis, per Cole Bagley of KSL Sports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "UTA"
     },
     "8483455": {
@@ -451,12 +451,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "NYI"
-    },
-    "8484240": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "VAN"
     },
     "8484797": {
       "injured": true,
