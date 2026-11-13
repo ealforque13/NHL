@@ -2,9 +2,9 @@
   "team": "BOS",
   "teamName": "Boston Bruins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:23:31.249Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-13T16:29:58.011140+00:00",
+  "sourceUpdatedAt": "2026-11-13T17:16:09.635Z",
+  "sourceDescription": "Jack Studley",
+  "cachedAtUTC": "2026-11-13T17:29:04.799949+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Frederic Brunet",
-        "number": 42,
+        "name": "Jonathan Aspirot",
+        "number": 45,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 31316,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31316/BOS_42__Brunet.png",
+        "sourcePlayerId": 26475,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26475/BOS_45__Aspirot.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
