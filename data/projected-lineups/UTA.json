@@ -2,26 +2,52 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T19:51:04.960Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-13T01:10:05.183687+00:00",
+  "sourceUpdatedAt": "2026-11-13T01:50:28.528Z",
+  "sourceDescription": "Utah Mammoth",
+  "cachedAtUTC": "2026-11-13T02:26:59.998889+00:00",
   "forwards": [
     [
       {
-        "name": "Clayton Keller",
-        "number": 9,
+        "name": "Anders Lee",
+        "number": 72,
         "position": "LW",
-        "sourcePlayerId": 2642,
+        "sourcePlayerId": 2071,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Nick Schmaltz",
-        "number": 8,
+        "name": "Vincent Trocheck",
+        "number": 16,
         "position": "C",
-        "sourcePlayerId": 2678,
+        "sourcePlayerId": 2006,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Clayton Keller",
+        "number": 9,
+        "position": "RW",
+        "sourcePlayerId": 2642,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kailer Yamamoto",
+        "number": 56,
+        "position": "LW",
+        "sourcePlayerId": 2796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Barrett Hayton",
+        "number": 27,
+        "position": "C",
+        "sourcePlayerId": 4796,
+        "injuryStatus": null,
+        "gameTimeDecision": false
       },
       {
         "name": "Daniil But",
@@ -34,18 +60,18 @@
     ],
     [
       {
-        "name": "Jack McBain",
-        "number": 22,
+        "name": "Michael Carcone",
+        "number": 53,
         "position": "LW",
-        "sourcePlayerId": 28796,
+        "sourcePlayerId": 3864,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Vincent Trocheck",
-        "number": 16,
+        "name": "Jack McBain",
+        "number": 22,
         "position": "C",
-        "sourcePlayerId": 2006,
+        "sourcePlayerId": 28796,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,36 +86,10 @@
     ],
     [
       {
-        "name": "Anders Lee",
-        "number": 72,
+        "name": "Ben McCartney",
+        "number": null,
         "position": "LW",
-        "sourcePlayerId": 2071,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Barrett Hayton",
-        "number": 27,
-        "position": "C",
-        "sourcePlayerId": 4796,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Kailer Yamamoto",
-        "number": 56,
-        "position": "RW",
-        "sourcePlayerId": 2796,
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Liam O'Brien",
-        "number": 38,
-        "position": "LW",
-        "sourcePlayerId": 2377,
+        "sourcePlayerId": 28455,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -102,10 +102,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Carcone",
-        "number": 53,
+        "name": "Liam O'Brien",
+        "number": 38,
         "position": "RW",
-        "sourcePlayerId": 3864,
+        "sourcePlayerId": 2377,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -122,10 +122,10 @@
         "gameTimeDecision": false
       },
       {
-        "name": "MacKenzie Weegar",
-        "number": 52,
+        "name": "Andrew Peeke",
+        "number": 20,
         "position": "RD",
-        "sourcePlayerId": 2777,
+        "sourcePlayerId": 27242,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -140,28 +140,28 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Andrew Peeke",
-        "number": 20,
+        "name": "MacKenzie Weegar",
+        "number": 52,
         "position": "RD",
-        "sourcePlayerId": 27242,
+        "sourcePlayerId": 2777,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Artem Duda",
-        "number": null,
+        "name": "Zac Jones",
+        "number": 15,
         "position": "LD",
-        "sourcePlayerId": 36382,
+        "sourcePlayerId": 30457,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Nick DeSimone",
-        "number": 57,
+        "name": "Artem Duda",
+        "number": null,
         "position": "RD",
-        "sourcePlayerId": 2886,
+        "sourcePlayerId": 36382,
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,10 +170,10 @@
   "powerPlay": [
     [
       {
-        "name": "Barrett Hayton",
-        "number": 27,
+        "name": "Anders Lee",
+        "number": 72,
         "position": "SK1",
-        "sourcePlayerId": 4796,
+        "sourcePlayerId": 2071,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -186,12 +186,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nick Schmaltz",
-        "number": 8,
+        "name": "Barrett Hayton",
+        "number": 27,
         "position": "SK3",
-        "sourcePlayerId": 2678,
+        "sourcePlayerId": 4796,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Mikhail Sergachev",
@@ -220,18 +220,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Carcone",
-        "number": 53,
+        "name": "Jack McBain",
+        "number": 22,
         "position": "SK2",
-        "sourcePlayerId": 3864,
+        "sourcePlayerId": 28796,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Anders Lee",
-        "number": 72,
+        "name": "Michael Carcone",
+        "number": 53,
         "position": "SK3",
-        "sourcePlayerId": 2071,
+        "sourcePlayerId": 3864,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -256,12 +256,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Nick Schmaltz",
-        "number": 8,
+        "name": "Kevin Stenlund",
+        "number": 82,
         "position": "SK1",
-        "sourcePlayerId": 2678,
+        "sourcePlayerId": 4556,
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Lawson Crouse",
@@ -290,10 +290,10 @@
     ],
     [
       {
-        "name": "Kevin Stenlund",
-        "number": 82,
+        "name": "Vincent Trocheck",
+        "number": 16,
         "position": "SK1",
-        "sourcePlayerId": 4556,
+        "sourcePlayerId": 2006,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
