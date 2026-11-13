@@ -4995,6 +4995,25 @@ html body #lineups .hoist-lineup-group {
   #games .hoist-game-team-score {width:38px!important;font-size:22px!important;}
 }
 </style>
+<style>
+/* Games page: compact, independent point-streak carousel */
+#games .hoist-streaks {margin:14px 0 23px;border:1px solid var(--border,rgba(145,166,195,.23));background:var(--panel,#141d2c);border-radius:13px;padding:15px 18px;overflow:hidden}
+#games .hoist-streaks[hidden]{display:none!important}
+#games .hoist-streak-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+#games .hoist-streak-title{font-size:11px;letter-spacing:.13em;font-weight:850;color:inherit}
+#games .hoist-streak-controls{display:flex;align-items:center;gap:7px}
+#games .hoist-streak-controls button{background:transparent;border:1px solid var(--border,rgba(145,166,195,.3));border-radius:7px;color:inherit;min-width:29px;height:28px;cursor:pointer}
+#games .hoist-streak-count{font-size:11px;opacity:.65;min-width:38px;text-align:center}
+#games .hoist-streak-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#games .hoist-streak-player{display:flex;align-items:center;gap:12px;min-width:0;padding:9px 12px;background:rgba(130,151,185,.065);border-radius:9px}
+#games .hoist-streak-player img{width:53px;height:53px;object-fit:contain;flex:none;border-radius:50%;background:rgba(150,165,190,.12)}
+#games .hoist-streak-person{min-width:0;flex:1}
+#games .hoist-streak-person strong{display:block;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#games .hoist-streak-person small{display:block;font-size:10px;opacity:.65;margin-top:3px}
+#games .hoist-streak-number{font-size:27px;font-weight:850;line-height:1;text-align:center;flex:none}
+#games .hoist-streak-number small{display:block;font-size:9px;font-weight:700;letter-spacing:.04em;margin-top:5px;opacity:.7}
+@media(max-width:650px){#games .hoist-streak-track{grid-template-columns:1fr}#games .hoist-streaks{padding:13px}#games .hoist-streak-player{padding:8px}#games .hoist-streak-player img{width:46px;height:46px}}
+</style>
 </head>
 
 <body>
@@ -7497,6 +7516,69 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
   else init();
+})();
+</script>
+<script>
+/* Point streaks for teams playing on the selected Games date.
+   Uses the same cached matchup JSON as Last 5 Games; no new API calls. */
+(()=>{
+  'use strict';
+  const grid=document.getElementById('hoist-games-grid');
+  const day=document.getElementById('hoist-games-date');
+  const host=document.getElementById('hoist-games-day');
+  if(!grid||!host)return;
+  const root=document.createElement('section');root.className='hoist-streaks';root.hidden=true;
+  root.setAttribute('aria-label','Active point streaks for players in today’s games');
+  host.insertAdjacentElement('afterend',root);
+  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false;
+  const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const gameDate=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
+  const points=g=>{for(const k of ['points','pts','p']){if(g[k]!==null&&g[k]!==undefined&&Number.isFinite(Number(g[k])))return Number(g[k]);}return null;};
+  const load=team=>{if(!cache.has(team))cache.set(team,fetch(`./data/matchups/${team}.json`,{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No stats');return r.json()}).catch(()=>({players:[]})));return cache.get(team);};
+  function draw(){
+    if(!items.length){root.hidden=true;return;}
+    root.hidden=false;const pages=Math.ceil(items.length/2);page=(page+pages)%pages;
+    const visible=items.slice(page*2,page*2+2);
+    root.innerHTML=`<div class="hoist-streak-head"><span class="hoist-streak-title">🔥 ACTIVE POINT STREAKS</span><span class="hoist-streak-controls"><button type="button" data-move="-1" aria-label="Previous point streaks" ${pages<2?'disabled':''}>‹</button><span class="hoist-streak-count">${page+1} / ${pages}</span><button type="button" data-move="1" aria-label="Next point streaks" ${pages<2?'disabled':''}>›</button></span></div><div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-number">${x.count}<small>GAME STREAK</small></span></div>`).join('')}</div>`;
+  }
+  root.addEventListener('click',e=>{const btn=e.target.closest('button[data-move]');if(!btn)return;page+=Number(btn.dataset.move);draw();});
+  function teamsOnPage(){
+    const matches=[];
+    for(const card of grid.querySelectorAll('.hoist-game-card')){
+      const label=card.querySelector('.hoist-game-card-foot span')?.textContent||'';
+      const m=label.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);
+      if(m)matches.push({away:m[1],home:m[2]});
+    }
+    return matches;
+  }
+  async function update(){
+    const matches=teamsOnPage();const selected=day?.value||'';
+    const key=selected+'|'+matches.map(m=>m.away+'-'+m.home).join(',');
+    if(key===currentKey)return;
+    currentKey=key;const ticket=++run;items=[];page=0;root.hidden=true;
+    if(!matches.length)return;
+    const unique=[...new Set(matches.flatMap(m=>[m.away,m.home]))];
+    const data=await Promise.all(unique.map(async team=>[team,await load(team)]));
+    if(ticket!==run)return;
+    const matchByTeam=new Map();matches.forEach(m=>{matchByTeam.set(m.away,`at ${m.home}`);matchByTeam.set(m.home,`vs ${m.away}`);});
+    for(const [team,source] of data){
+      for(const p of source.players||[]){
+        // Historical dates are calculated as of the selected date, not using later results.
+        const games=[...(p.games||[])].filter(g=>gameDate(g)&&(!selected||gameDate(g)<selected)).sort((a,b)=>gameDate(b).localeCompare(gameDate(a)));
+        let count=0;
+        for(const g of games){const value=points(g);if(value===null||value<=0)break;count++;}
+        if(count<3)continue;
+        const id=p.id??p.playerId??p.playerID;
+        items.push({name:p.name||'Unknown player',team,matchup:matchByTeam.get(team)||'',count,image:typeof p.headshot==='string'&&p.headshot.startsWith('https://')?p.headshot:`https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(id||'')}.png`});
+      }
+    }
+    items.sort((a,b)=>b.count-a.count||a.name.localeCompare(b.name));
+    draw();
+  }
+  function schedule(){if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;update();});}
+  new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
+  day?.addEventListener('change',schedule);
+  schedule();
 })();
 </script>
 </body>
