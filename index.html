@@ -4920,6 +4920,18 @@ html body #lineups .hoist-lineup-group {
  #lineups .hoist-lineup-group{padding:12px 0 17px!important;}
 }
 </style>
+<style>
+/* Injured players appear after their position's active lineup. */
+#lineups .hoist-injured-section { margin-top:26px!important; padding:22px 10px 12px!important; border-top:1px solid rgba(145,166,195,.3); }
+#lineups .hoist-injured-section h3 { text-align:center; font-size:17px; font-weight:800; letter-spacing:.11em; margin:0 0 20px; }
+#lineups .hoist-injury-count { font-size:12px; font-weight:700; opacity:.6; vertical-align:middle; }
+#lineups .hoist-injured-players { display:flex; justify-content:center; flex-wrap:wrap; gap:22px 35px; }
+#lineups .hoist-injured-card { width:150px; display:flex; align-items:center; flex-direction:column; text-align:center; }
+#lineups .hoist-injured-card .hoist-authentic-jersey { width:130px; max-width:100%; }
+#lineups .hoist-injured-name { font-size:14px; font-weight:750; margin-top:9px; }
+#lineups .hoist-injured-status { margin-top:6px; padding:4px 9px; border:1px solid rgba(228,97,97,.4); border-radius:30px; color:#ff9d9d; font-size:10px; font-weight:800; letter-spacing:.08em; }
+@media(max-width:650px) { #lineups .hoist-injured-card { width:120px; } #lineups .hoist-injured-card .hoist-authentic-jersey { width:110px; } }
+</style>
 </head>
 
 <body>
@@ -6354,26 +6366,34 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name)}</span><span class="hoist-lineup-name-mobile">${esc(mobilePlayerName(name))}</span></div>
     </div>`;
   }
+  const injuryPositions = new Map();
+  function injuryCategory(p) {
+    const key = normalize(p.name);
+    if (selected === 'MTL' && (p.sourcePlayerId === 38445 || key === 'ivandemidov')) return 'forwards';
+    const value = String(injuryPositions.get(key) || p.rosterPosition || p.positionName || p.position || '').toUpperCase().trim();
+    if (/^(LW|RW|C|F|LEFT WING|RIGHT WING|CENTER|CENTRE|FORWARD)$/.test(value)) return 'forwards';
+    if (/^(D|LD|RD|DEFENSE|DEFENCE|DEFENSEMAN|DEFENCEMAN|LEFT DEFENSE|RIGHT DEFENSE)$/.test(value)) return 'defense';
+    if (/^(G|GOALIE|GOALTENDER)$/.test(value)) return 'goalies';
+    return '';
+  }
   function injuryMarkup() {
-    if (!lineup || lineup.type === 'roster' || !Array.isArray(lineup.injuries)) return '';
+    if (!lineup || lineup.type === 'roster' || !Array.isArray(lineup.injuries) ||
+        !['forwards','defense','goalies'].includes(position)) return '';
     const seen = new Set();
     const injured = lineup.injuries.filter(p => {
       if (!p || !p.name) return false;
       const key = normalize(p.name);
-      if (seen.has(key)) return false;
+      if (seen.has(key) || injuryCategory(p) !== position) return false;
       seen.add(key);
-      const pos = String(p.position || '').toUpperCase();
-      if (position === 'forwards') return ['LW','C','RW','F'].includes(pos);
-      if (position === 'defense') return ['D','LD','RD'].includes(pos);
-      if (position === 'goalies') return pos === 'G';
-      return false;
+      return true;
     });
     if (!injured.length) return '';
-    return `<section class="hoist-lineup-injuries" aria-label="Injured players">
-      <h3>INJURED PLAYERS</h3>
-      <div class="hoist-lineup-injury-list">${injured.map(p => `<div class="hoist-lineup-injury-player">
-        <span class="hoist-lineup-injury-name">${esc(p.name)}${p.number != null && p.number !== '' ? ` #${esc(p.number)}` : ''}</span>
-        ${p.injuryStatus ? `<span class="hoist-lineup-injury-status">${esc(p.injuryStatus)}</span>` : ''}
+    return `<section class="hoist-lineup-injuries hoist-injured-section" aria-label="Injured players">
+      <h3>INJURED <span class="hoist-injury-count">${injured.length}</span></h3>
+      <div class="hoist-injured-players">${injured.map(p => `<div class="hoist-injured-card">
+        ${jerseyMarkup(p.name,p.number,p)}
+        <div class="hoist-injured-name">${esc(p.name)}</div>
+        <div class="hoist-injured-status">${esc(String(p.injuryStatus || 'Injured').toUpperCase())}</div>
       </div>`).join('')}</div>
     </section>`;
   }
@@ -6435,6 +6455,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const last = typeof p.lastName === 'object' ? p.lastName?.default : p.lastName;
             const name = `${first || ''} ${last || ''}`.trim();
             const key = normalize(name);
+            if (key && !onlyMissing) injuryPositions.set(key, group === 'forwards' ? 'F' : group === 'defensemen' ? 'D' : 'G');
             if (!key || (onlyMissing && next.has(key))) continue;
             const nhlId = p.id || p.playerId;
             const photo = p.headshot || (nhlId ? `https://assets.nhle.com/mugs/nhl/20262027/${teamCode}/${nhlId}.png` : '');
@@ -6454,6 +6475,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const token = ++requestId;
     lineup = null;
     headshots = new Map();
+    injuryPositions.clear();
     el('hoist-lineup-logo').src = `https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg`;
     el('hoist-lineup-status').textContent = 'Checking projected lineups…';
     el('hoist-lineup-updated').textContent = 'Awaiting lineup data';
