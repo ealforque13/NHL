@@ -5111,6 +5111,35 @@ html body #lineups .hoist-lineup-group {
   #games .hoist-streak-dots {display:flex; justify-content:center;}
 }
 </style>
+<style>
+/* Mobile only: understated Points / Goals text tabs with blue active underline. */
+@media (max-width:650px) {
+  #games .hoist-streak-filters {
+    display:flex; align-items:stretch; gap:12px;
+    padding:0; margin-left:auto;
+    background:transparent!important;
+    border:0!important; border-radius:0!important;
+    box-shadow:none!important;
+  }
+  #games .hoist-streak-filters button {
+    position:relative; padding:8px 1px 9px!important;
+    background:transparent!important;
+    border:0!important; border-radius:0!important;
+    box-shadow:none!important;
+    font-size:12px; font-weight:750;
+    opacity:.65;
+  }
+  #games .hoist-streak-filters button.is-active {
+    opacity:1; color:inherit;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+  #games .hoist-streak-filters button.is-active::after {
+    content:""; position:absolute; bottom:0; left:0; right:0;
+    height:3px; background:#348bff; border-radius:2px;
+  }
+}
+</style>
 </head>
 
 <body>
