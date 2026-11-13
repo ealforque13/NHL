@@ -2,9 +2,9 @@
   "team": "NYR",
   "teamName": "New York Rangers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:34:27.541Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-13T03:28:37.125657+00:00",
+  "sourceUpdatedAt": "2026-11-13T03:30:12.935Z",
+  "sourceDescription": "Vince Mercogliano",
+  "cachedAtUTC": "2026-11-13T04:35:57.907030+00:00",
   "forwards": [
     [
       {
@@ -325,18 +325,18 @@
   ],
   "goalies": [
     {
-      "name": "Joonas Korpisalo",
-      "number": 70,
+      "name": "Dylan Garand",
+      "number": null,
       "position": "G1",
-      "sourcePlayerId": 2556,
+      "sourcePlayerId": 32794,
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Dylan Garand",
-      "number": null,
+      "name": "Joonas Korpisalo",
+      "number": 70,
       "position": "G2",
-      "sourcePlayerId": 32794,
+      "sourcePlayerId": 2556,
       "injuryStatus": null,
       "gameTimeDecision": false
     }
