@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T23:51:42.302Z",
-  "sourceDescription": "Benjamin Pierce",
-  "cachedAtUTC": "2026-11-13T14:31:53.723540+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:35:14.728Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T18:40:23.062418+00:00",
   "forwards": [
     [
       {
@@ -72,16 +72,6 @@
     ],
     [
       {
-        "name": "Conor Geekie",
-        "number": 14,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 31505,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31505/TBL_14__Geekie.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Sam O'Reilly",
         "number": 23,
         "position": "C",
@@ -110,6 +100,16 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 24312,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/24312/TBL_25__Viel.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Conor Geekie",
+        "number": 14,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 31505,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31505/TBL_14__Geekie.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -387,22 +387,22 @@
   ],
   "goalies": [
     {
-      "name": "Dennis Hildeby",
-      "number": null,
+      "name": "Andrei Vasilevskiy",
+      "number": 88,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 36477,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36477/TBL_35__Hildeby.png",
+      "sourcePlayerId": 2413,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2413/TBL_88_Vasilevskiy.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Andrei Vasilevskiy",
-      "number": 88,
+      "name": "Dennis Hildeby",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2413,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2413/TBL_88_Vasilevskiy.png",
+      "sourcePlayerId": 36477,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36477/TBL_35__Hildeby.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
