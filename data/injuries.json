@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T01:00:17.641848+00:00",
+  "updatedAt": "2026-11-13T07:08:12.758448+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -20,6 +20,12 @@
       "status": "Injured Reserve",
       "team": "DAL"
     },
+    "8475184": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "MTL"
+    },
     "8475810": {
       "injured": true,
       "description": "Rust (lower body) will be re-evaluated in six weeks, Michelle Crechiolo of the Penguins' official site reports Thursday.",
@@ -31,6 +37,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "COL"
+    },
+    "8476331": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "WPG"
     },
     "8476393": {
       "injured": true,
@@ -116,6 +128,12 @@
       "status": "Out",
       "team": "NJD"
     },
+    "8477492": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "COL"
+    },
     "8477493": {
       "injured": true,
       "description": "Head coach Paul Maurice said Friday that Barkov (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
@@ -136,8 +154,8 @@
     },
     "8477951": {
       "injured": true,
-      "description": "Schmaltz (lower body) is considered a game-time decision for Thursday's matchup against St. Louis, Cole Bagley of KSL Sports reports.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "UTA"
     },
     "8477955": {
@@ -181,6 +199,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "DAL"
+    },
+    "8478493": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "MIN"
     },
     "8478507": {
       "injured": true,
@@ -241,6 +265,12 @@
       "description": "Poehling (lower body) was placed on long-term injured reserve by the Ducks on Wednesday.",
       "status": "Injured Reserve",
       "team": "ANA"
+    },
+    "8480069": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "COL"
     },
     "8480078": {
       "injured": true,
@@ -361,6 +391,12 @@
       "description": "Melanson (chest) was sporting a regular jersey during Thursday's game-day skate, Sound of Hockey reports.",
       "status": "Injured Reserve",
       "team": "SEA"
+    },
+    "8483425": {
+      "injured": true,
+      "description": "Bichsel (lower body) is expected to miss at least two games after getting injured Thursday versus the Jets, Robert Tiffin of NHL.com reports.",
+      "status": "Out",
+      "team": "DAL"
     },
     "8483431": {
       "injured": true,
