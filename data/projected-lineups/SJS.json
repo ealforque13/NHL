@@ -2,18 +2,18 @@
   "team": "SJS",
   "teamName": "San Jose Sharks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:43:03.785Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-13T18:40:18.928862+00:00",
+  "sourceUpdatedAt": "2026-11-13T19:27:20.261Z",
+  "sourceDescription": "Max Miller",
+  "cachedAtUTC": "2026-11-13T19:33:54.930961+00:00",
   "forwards": [
     [
       {
-        "name": "Michael Misa",
-        "number": 77,
+        "name": "Ivar Stenberg",
+        "number": 41,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 37508,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37508/SJS_77_Misa.png",
+        "sourcePlayerId": 38939,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38939/SJS_41__Stenberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -50,6 +50,38 @@
         "gameTimeDecision": false
       },
       {
+        "name": "Michael Misa",
+        "number": 77,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 37508,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37508/SJS_77_Misa.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Collin Graf",
+        "number": 51,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 38105,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Tyler Toffoli",
+        "number": 73,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 1656,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1656/SJS_73_Toffoli.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
         "name": "Alexander Wennberg",
         "number": 21,
         "position": "C",
@@ -66,38 +98,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 4675,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4675/SJS_44__Sherwood.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Ivar Stenberg",
-        "number": 41,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 38939,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38939/SJS_41__Stenberg.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Ty Dellandrea",
-        "number": 10,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 4813,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4813/SJS_10_Dellandrea.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Tyler Toffoli",
-        "number": 73,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 1656,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1656/SJS_73_Toffoli.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Collin Graf",
-        "number": 51,
+        "name": "Adam Gaudette",
+        "number": 81,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38105,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
+        "sourcePlayerId": 4646,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4646/SJS_81_Gaudette.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

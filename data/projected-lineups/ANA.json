@@ -2,18 +2,18 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:41:42.598Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-13T18:39:31.091068+00:00",
+  "sourceUpdatedAt": "2026-11-13T19:25:33.579Z",
+  "sourceDescription": "Patrick Present",
+  "cachedAtUTC": "2026-11-13T19:33:05.222748+00:00",
   "forwards": [
     [
       {
-        "name": "Alex Killorn",
-        "number": 17,
+        "name": "Judd Caulfield",
+        "number": 28,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
+        "sourcePlayerId": 30440,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Judd Caulfield",
-        "number": 28,
+        "name": "Troy Terry",
+        "number": 19,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30440,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
+        "sourcePlayerId": 4645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Nikita Nesterenko",
-        "number": 13,
+        "name": "Alex Killorn",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30726,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30726/ANA_13_Nesterenko.png",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Terry",
-        "number": 19,
+        "name": "Jeff Malott",
+        "number": 39,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
+        "sourcePlayerId": 34555,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Jeff Malott",
-        "number": 39,
+        "name": "Frank Vatrano",
+        "number": 77,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 34555,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
+        "sourcePlayerId": 2545,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Travis Mitchell",
-        "number": 34,
+        "name": "Tyson Hinds",
+        "number": 55,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 27964,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27964/ANA_34_Mitchell.png",
+        "sourcePlayerId": 31256,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31256/ANA_55_Hinds.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikita Nesterenko",
-        "number": 13,
+        "name": "Sam Colangelo",
+        "number": 12,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30726,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30726/ANA_13_Nesterenko.png",
+        "sourcePlayerId": 32857,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32857/ANA_12_Colangelo.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

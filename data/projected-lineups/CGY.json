@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:35:01.978Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-13T18:39:41.482535+00:00",
+  "sourceUpdatedAt": "2026-11-13T19:23:46.375Z",
+  "sourceDescription": "Pat Steinberg",
+  "cachedAtUTC": "2026-11-13T19:33:16.134179+00:00",
   "forwards": [
     [
       {
@@ -34,38 +34,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 32801,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32801/CGY_27_Coronato.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Yegor Sharangovich",
-        "number": 17,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 29637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Morgan Frost",
-        "number": 48,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2814,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Aydar Suniev",
-        "number": 61,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 34016,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -104,12 +72,44 @@
     ],
     [
       {
-        "name": "Brennan Othmann",
-        "number": 78,
+        "name": "Yegor Sharangovich",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30831,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30831/CGY_78_Othmann.png",
+        "sourcePlayerId": 29637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Morgan Frost",
+        "number": 48,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2814,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Klapka",
+        "number": 43,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 34398,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34398/CGY_43__Klapka.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "William Stromgren",
+        "number": 65,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 38696,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38696/CGY_65_Stromgren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Klapka",
-        "number": 43,
+        "name": "Aydar Suniev",
+        "number": 61,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 34398,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34398/CGY_43__Klapka.png",
+        "sourcePlayerId": 34016,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:36:09.815Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-13T18:39:39.401988+00:00",
+  "sourceUpdatedAt": "2026-11-13T19:21:44.346Z",
+  "sourceDescription": "Mark Scheig",
+  "cachedAtUTC": "2026-11-13T19:33:14.028004+00:00",
   "forwards": [
     [
       {
@@ -18,14 +18,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Fantilli",
-        "number": 19,
+        "name": "Sean Monahan",
+        "number": 23,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 33179,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33179/CBJ_19_Fantilli.png",
+        "sourcePlayerId": 2138,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Kent Johnson",
@@ -40,32 +40,32 @@
     ],
     [
       {
-        "name": "Valeri Nichushkin",
-        "number": 43,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 2142,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2142/CBJ_43_Nichushkin.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Sean Monahan",
-        "number": 23,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2138,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Dmitri Voronkov",
         "number": 10,
-        "position": "RW",
-        "positionName": "Right Wing",
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 31266,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31266/CBJ_10_Voronkov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Fantilli",
+        "number": 19,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 33179,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33179/CBJ_19_Fantilli.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Valeri Nichushkin",
+        "number": 43,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2142,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2142/CBJ_43_Nichushkin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,14 +216,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Sean Monahan",
+        "number": 23,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 34454,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
+        "sourcePlayerId": 2138,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Charlie Coyle",
@@ -319,7 +319,7 @@
         "sourcePlayerId": 2138,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Valeri Nichushkin",
@@ -426,6 +426,16 @@
       "sourcePlayerId": 4804,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4804/CBJ_21_Lundestrom.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Sean Monahan",
+      "number": 23,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 2138,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:39:41.020Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-13T18:40:33.475006+00:00",
+  "sourceUpdatedAt": "2026-11-13T19:24:43.855Z",
+  "sourceDescription": "Mitchell Clinton",
+  "cachedAtUTC": "2026-11-13T19:34:10.124415+00:00",
   "forwards": [
     [
       {
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Isak Rosen",
-        "number": 63,
+        "name": "Nino Niederreiter",
+        "number": 62,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 34670,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34670/WPG_27_Rosen.png",
+        "sourcePlayerId": 1553,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1553/WPG_62_Niederreiter.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -148,14 +148,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dylan DeMelo",
-        "number": 2,
+        "name": "Mario Ferraro",
+        "number": 38,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2033,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
+        "sourcePlayerId": 27666,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27666/WPG_38__Ferraro.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Mario Ferraro",
-        "number": 38,
+        "name": "Haydn Fleury",
+        "number": 24,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 27666,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27666/WPG_38__Ferraro.png",
+        "sourcePlayerId": 2369,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2369/WPG_24_Fleury.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,14 +384,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dylan DeMelo",
-        "number": 2,
+        "name": "Tyrel Bauer",
+        "number": 77,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2033,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
+        "sourcePlayerId": 29948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -445,7 +445,7 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 2033,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
