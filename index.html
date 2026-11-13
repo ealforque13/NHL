@@ -5066,6 +5066,26 @@ html body #lineups .hoist-lineup-group {
 #games .hoist-streak-empty{padding:19px 10px;text-align:center;font-size:12px;opacity:.6}
 @media(max-width:650px){#games .hoist-streak-head{align-items:flex-start}#games .hoist-streak-heading{gap:9px}#games .hoist-streak-filters button{padding:6px 9px}}
 </style>
+<style>
+/* Streak carousel navigation: discreet desktop placement and mobile bottom pagination. */
+#games .hoist-streaks{position:relative}
+#games .hoist-streak-head{padding-right:126px}
+#games .hoist-streak-controls{position:absolute;right:18px;top:12px;display:flex;align-items:center;justify-content:center;gap:10px;margin:0}
+#games .hoist-streak-pagination{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:42px}
+#games .hoist-streak-count{font-size:11px;line-height:1.2;font-variant-numeric:tabular-nums;white-space:nowrap}
+#games .hoist-streak-dots{display:none;align-items:center;justify-content:center;gap:6px;max-width:100%;overflow-x:auto;scrollbar-width:none}
+#games .hoist-streak-dots::-webkit-scrollbar{display:none}
+#games .hoist-streak-controls .hoist-streak-dot{display:block;flex:0 0 6px;width:6px;height:6px;min-width:6px;min-height:6px;padding:0;border:0;border-radius:50%;background:currentColor;opacity:.22;transition:opacity .18s,transform .18s}
+#games .hoist-streak-controls .hoist-streak-dot.is-active{opacity:.95;transform:scale(1.35)}
+@media(max-width:650px){
+ #games .hoist-streak-head{padding-right:0}
+ #games .hoist-streak-controls{position:static;right:auto;top:auto;margin:14px auto 0;gap:15px;width:100%;padding:1px 0 0}
+ #games .hoist-streak-controls > button{width:32px;height:32px;border-radius:50%;font-size:20px;line-height:1;flex:0 0 32px}
+ #games .hoist-streak-pagination{min-width:0;max-width:min(230px,calc(100vw - 150px));gap:8px}
+ #games .hoist-streak-dots{display:flex;width:100%;padding:3px 4px}
+ #games .hoist-streak-count{font-size:11px;opacity:.72}
+}
+</style>
 </head>
 
 <body>
@@ -7597,11 +7617,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const pages=Math.max(1,Math.ceil(filtered.length/2));page=(page+pages)%pages;
     const visible=filtered.slice(page*2,page*2+2);
     root.hidden=false;
-    root.innerHTML=`<div class="hoist-streak-head"><div class="hoist-streak-heading"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><div class="hoist-streak-filters" role="group" aria-label="Streak type"><button type="button" data-filter="point" aria-pressed="${activeFilter==='point'}" class="${activeFilter==='point'?'is-active':''}">Points</button><button type="button" data-filter="goal" aria-pressed="${activeFilter==='goal'}" class="${activeFilter==='goal'?'is-active':''}">Goals</button></div></div><span class="hoist-streak-controls"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><span class="hoist-streak-count">${page+1} / ${pages}</span><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></span></div>${visible.length?`<div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><strong class="hoist-streak-number">${x.count}</strong><small>GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small></span></div>`).join('')}</div>`:`<div class="hoist-streak-empty">No ${activeFilter==='goal'?'3+ game goal':'4+ game point'} streaks for today's matchups.</div>`}`;
+    root.innerHTML=`<div class="hoist-streak-head"><div class="hoist-streak-heading"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><div class="hoist-streak-filters" role="group" aria-label="Streak type"><button type="button" data-filter="point" aria-pressed="${activeFilter==='point'}" class="${activeFilter==='point'?'is-active':''}">Points</button><button type="button" data-filter="goal" aria-pressed="${activeFilter==='goal'}" class="${activeFilter==='goal'?'is-active':''}">Goals</button></div></div></div>${visible.length?`<div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><strong class="hoist-streak-number">${x.count}</strong><small>GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small></span></div>`).join('')}</div>`:`<div class="hoist-streak-empty">No ${activeFilter==='goal'?'3+ game goal':'4+ game point'} streaks for today's matchups.</div>`}<nav class="hoist-streak-controls" aria-label="Active streak slides"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><div class="hoist-streak-pagination"><span class="hoist-streak-count" aria-live="polite">${page+1} / ${pages}</span><div class="hoist-streak-dots" aria-label="Select streak page">${Array.from({length:pages},(_,i)=>`<button type="button" class="hoist-streak-dot ${i===page?'is-active':''}" data-page="${i}" aria-label="Page ${i+1} of ${pages}" ${i===page?'aria-current="page"':''}></button>`).join('')}</div></div><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></nav>`;
   }
   root.addEventListener('click',e=>{
     const filter=e.target.closest('button[data-filter]');
     if(filter){activeFilter=filter.dataset.filter;page=0;draw();return;}
+    const dot=e.target.closest('button[data-page]');if(dot){page=Number(dot.dataset.page);draw();return;}
     const btn=e.target.closest('button[data-move]');if(!btn)return;
     page+=Number(btn.dataset.move);draw();
   });
