@@ -5055,6 +5055,17 @@ html body #lineups .hoist-lineup-group {
   display:block!important;text-align:right!important;margin:0!important;line-height:1.2!important;
 }
 </style>
+<style>
+/* Active Streaks: unobtrusive mutually exclusive points/goals filters. */
+#games .hoist-streak-heading{display:flex;align-items:center;gap:15px;flex-wrap:wrap;min-width:0}
+#games .hoist-streak-filters{display:flex;gap:4px;padding:3px;background:rgba(130,151,185,.08);border:1px solid var(--border,rgba(145,166,195,.18));border-radius:9px}
+#games .hoist-streak-filters button{appearance:none;background:transparent;border:0;border-radius:6px;color:inherit;opacity:.6;font-size:11px;font-weight:750;padding:6px 12px;cursor:pointer;transition:background .15s,opacity .15s}
+#games .hoist-streak-filters button.is-active{background:rgba(130,151,185,.22);opacity:1;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+#games .hoist-streak-filters button:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+#games .hoist-streak-controls button:disabled{opacity:.3;cursor:default}
+#games .hoist-streak-empty{padding:19px 10px;text-align:center;font-size:12px;opacity:.6}
+@media(max-width:650px){#games .hoist-streak-head{align-items:flex-start}#games .hoist-streak-heading{gap:9px}#games .hoist-streak-filters button{padding:6px 9px}}
+</style>
 </head>
 
 <body>
@@ -7571,7 +7582,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const root=document.createElement('section');root.className='hoist-streaks';root.hidden=true;
   root.setAttribute('aria-label','Active streaks for players in the selected day’s games');
   host.insertAdjacentElement('afterend',root);
-  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false;
+  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false,activeFilter='goal';
   const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const gameDate=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
   const stat=(g,keys)=>{for(const k of keys){if(g[k]!==null&&g[k]!==undefined&&Number.isFinite(Number(g[k])))return Number(g[k]);}return null;};
@@ -7581,12 +7592,19 @@ document.addEventListener('DOMContentLoaded', function () {
   const consecutive=(games,getter)=>{let n=0;for(const g of games){const value=getter(g);if(value===null||value<=0)break;n++;}return n;};
   const load=team=>{if(!cache.has(team))cache.set(team,fetch(`./data/matchups/${team}.json`,{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No stats');return r.json()}).catch(()=>({players:[]})));return cache.get(team);};
   function draw(){
-    if(!items.length){root.hidden=true;return;}
-    root.hidden=false;const pages=Math.ceil(items.length/2);page=(page+pages)%pages;
-    const visible=items.slice(page*2,page*2+2);
-    root.innerHTML=`<div class="hoist-streak-head"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><span class="hoist-streak-controls"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><span class="hoist-streak-count">${page+1} / ${pages}</span><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></span></div><div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><strong class="hoist-streak-number">${x.count}</strong><small>GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small></span></div>`).join('')}</div>`;
+    // Goal streaks are selected by default; point streaks require 4+ games.
+    const filtered=items.filter(x=>x.type===activeFilter);
+    const pages=Math.max(1,Math.ceil(filtered.length/2));page=(page+pages)%pages;
+    const visible=filtered.slice(page*2,page*2+2);
+    root.hidden=false;
+    root.innerHTML=`<div class="hoist-streak-head"><div class="hoist-streak-heading"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><div class="hoist-streak-filters" role="group" aria-label="Streak type"><button type="button" data-filter="point" aria-pressed="${activeFilter==='point'}" class="${activeFilter==='point'?'is-active':''}">Points</button><button type="button" data-filter="goal" aria-pressed="${activeFilter==='goal'}" class="${activeFilter==='goal'?'is-active':''}">Goals</button></div></div><span class="hoist-streak-controls"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><span class="hoist-streak-count">${page+1} / ${pages}</span><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></span></div>${visible.length?`<div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><strong class="hoist-streak-number">${x.count}</strong><small>GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small></span></div>`).join('')}</div>`:`<div class="hoist-streak-empty">No ${activeFilter==='goal'?'3+ game goal':'4+ game point'} streaks for today's matchups.</div>`}`;
   }
-  root.addEventListener('click',e=>{const btn=e.target.closest('button[data-move]');if(!btn)return;page+=Number(btn.dataset.move);draw();});
+  root.addEventListener('click',e=>{
+    const filter=e.target.closest('button[data-filter]');
+    if(filter){activeFilter=filter.dataset.filter;page=0;draw();return;}
+    const btn=e.target.closest('button[data-move]');if(!btn)return;
+    page+=Number(btn.dataset.move);draw();
+  });
   function teamsOnPage(){
     const matches=[];
     for(const card of grid.querySelectorAll('.hoist-game-card')){
@@ -7601,7 +7619,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const key=selected+'|'+matches.map(m=>m.away+'-'+m.home).join(',');
     if(key===currentKey)return;
     currentKey=key;const ticket=++run;items=[];page=0;root.hidden=true;
-    if(!matches.length)return;
+    if(!matches.length){root.hidden=true;return;}
     const unique=[...new Set(matches.flatMap(m=>[m.away,m.home]))];
     const data=await Promise.all(unique.map(async team=>[team,await load(team)]));
     if(ticket!==run)return;
@@ -7612,10 +7630,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const games=[...(p.games||[])].filter(g=>gameDate(g)&&(!selected||gameDate(g)<selected)).sort((a,b)=>gameDate(b).localeCompare(gameDate(a)));
         const pointCount=consecutive(games,points);
         const goalCount=consecutive(games,goals);
-        if(pointCount<3&&goalCount<3)continue;
+        if(pointCount<4&&goalCount<3)continue;
         const id=p.id??p.playerId??p.playerID;
         const base={name:p.name||'Unknown player',team,matchup:matchByTeam.get(team)||'',image:typeof p.headshot==='string'&&p.headshot.startsWith('https://')?p.headshot:`https://assets.nhle.com/mugs/nhl/20262027/${team}/${encodeURIComponent(id||'')}.png`};
-        if(pointCount>=3)items.push({...base,type:'point',count:pointCount});
+        if(pointCount>=4)items.push({...base,type:'point',count:pointCount});
         if(goalCount>=3)items.push({...base,type:'goal',count:goalCount});
       }
     }
