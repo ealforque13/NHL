@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-12T17:00:23.279Z",
   "sourceDescription": "Jameson Olive",
-  "cachedAtUTC": "2026-11-13T11:57:53.124051+00:00",
+  "cachedAtUTC": "2026-11-13T12:36:51.598251+00:00",
   "forwards": [
     [
       {
@@ -12,6 +12,7 @@
         "number": 8,
         "position": "LW",
         "sourcePlayerId": 4790,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4790/FLA_8_Tkachuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -20,6 +21,7 @@
         "number": 9,
         "position": "C",
         "sourcePlayerId": 2366,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2366/FLA_9_Bennett_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,6 +30,7 @@
         "number": 19,
         "position": "RW",
         "sourcePlayerId": 2635,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2635/FLA_19_Tkachuk_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -38,6 +41,7 @@
         "number": 23,
         "position": "LW",
         "sourcePlayerId": 2818,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2818/FLA_23_Verhaeghe_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -46,6 +50,7 @@
         "number": 13,
         "position": "C",
         "sourcePlayerId": 2364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2364/FLA_13_Reinhart_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -54,6 +59,7 @@
         "number": 20,
         "position": "RW",
         "sourcePlayerId": 840,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -64,6 +70,7 @@
         "number": 27,
         "position": "LW",
         "sourcePlayerId": 28129,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28129/FLA_27_Luostarinen_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,6 +79,7 @@
         "number": 15,
         "position": "C",
         "sourcePlayerId": 33026,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -80,6 +88,7 @@
         "number": 95,
         "position": "RW",
         "sourcePlayerId": 36428,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36428/FLA_95__Vilmanis.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -90,6 +99,7 @@
         "number": 14,
         "position": "LW",
         "sourcePlayerId": 3925,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3925/FLA_14__Imama.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -98,6 +108,7 @@
         "number": 79,
         "position": "C",
         "sourcePlayerId": 29210,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29210/FLA_79_Schwindt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -106,6 +117,7 @@
         "number": 21,
         "position": "RW",
         "sourcePlayerId": 2561,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2561/FLA_21_Hathaway.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -118,6 +130,7 @@
         "number": 42,
         "position": "LD",
         "sourcePlayerId": 2431,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2431/FLA_42_Forsling_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -126,6 +139,7 @@
         "number": 5,
         "position": "RD",
         "sourcePlayerId": 2363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -136,6 +150,7 @@
         "number": 77,
         "position": "LD",
         "sourcePlayerId": 4770,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4770/FLA_77_Mikkola_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -144,6 +159,7 @@
         "number": 3,
         "position": "RD",
         "sourcePlayerId": 2137,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2137/FLA_3_Jones_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -154,6 +170,7 @@
         "number": 7,
         "position": "LD",
         "sourcePlayerId": 593,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/593/FLA_7_Kulikov_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -162,6 +179,7 @@
         "number": 6,
         "position": "RD",
         "sourcePlayerId": 1366,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1366/FLA_6_Gudas.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -174,6 +192,7 @@
         "number": 8,
         "position": "SK1",
         "sourcePlayerId": 4790,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4790/FLA_8_Tkachuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,6 +201,7 @@
         "number": 13,
         "position": "SK2",
         "sourcePlayerId": 2364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2364/FLA_13_Reinhart_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -190,6 +210,7 @@
         "number": 23,
         "position": "SK3",
         "sourcePlayerId": 2818,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2818/FLA_23_Verhaeghe_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -198,6 +219,7 @@
         "number": 3,
         "position": "SK4",
         "sourcePlayerId": 2137,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2137/FLA_3_Jones_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -206,6 +228,7 @@
         "number": 19,
         "position": "SK5",
         "sourcePlayerId": 2635,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2635/FLA_19_Tkachuk_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,6 +239,7 @@
         "number": 9,
         "position": "SK1",
         "sourcePlayerId": 2366,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2366/FLA_9_Bennett_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -224,6 +248,7 @@
         "number": 15,
         "position": "SK2",
         "sourcePlayerId": 33026,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -232,6 +257,7 @@
         "number": 27,
         "position": "SK3",
         "sourcePlayerId": 28129,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28129/FLA_27_Luostarinen_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -240,6 +266,7 @@
         "number": 5,
         "position": "SK4",
         "sourcePlayerId": 2363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -248,6 +275,7 @@
         "number": 42,
         "position": "SK5",
         "sourcePlayerId": 2431,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2431/FLA_42_Forsling_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -260,6 +288,7 @@
         "number": 15,
         "position": "SK1",
         "sourcePlayerId": 33026,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,6 +297,7 @@
         "number": 27,
         "position": "SK2",
         "sourcePlayerId": 28129,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28129/FLA_27_Luostarinen_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -276,6 +306,7 @@
         "number": 77,
         "position": "SK3",
         "sourcePlayerId": 4770,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4770/FLA_77_Mikkola_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -284,6 +315,7 @@
         "number": 3,
         "position": "SK4",
         "sourcePlayerId": 2137,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2137/FLA_3_Jones_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -294,6 +326,7 @@
         "number": 20,
         "position": "SK1",
         "sourcePlayerId": 840,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -302,6 +335,7 @@
         "number": 21,
         "position": "SK2",
         "sourcePlayerId": 2561,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2561/FLA_21_Hathaway.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -310,6 +344,7 @@
         "number": 42,
         "position": "SK3",
         "sourcePlayerId": 2431,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2431/FLA_42_Forsling_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -318,6 +353,7 @@
         "number": 5,
         "position": "SK4",
         "sourcePlayerId": 2363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -329,6 +365,7 @@
       "number": 40,
       "position": "G1",
       "sourcePlayerId": 29148,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29148/FLA_40_Schmid.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
@@ -337,6 +374,7 @@
       "number": 25,
       "position": "G2",
       "sourcePlayerId": 594,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/594/FLA_25_Markstrom.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -347,6 +385,7 @@
       "number": 16,
       "position": "IR1",
       "sourcePlayerId": 2132,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
@@ -355,6 +394,7 @@
       "number": 12,
       "position": "IR2",
       "sourcePlayerId": 4612,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4612/FLA_12_Gadjovich_2_.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
@@ -363,6 +403,7 @@
       "number": 63,
       "position": "IR3",
       "sourcePlayerId": 124,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/124/FLA_63_Marchand_2_.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }
