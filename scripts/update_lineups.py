@@ -93,13 +93,16 @@ def transform(c):
 
         groups.setdefault(gid, []).append(player_info(p))
 
-    # DFO includes multiple entries per player for different special teams units.
+    # Daily Faceoff includes multiple entries per player
+    # for different special teams units.
     def group(key, expected):
         values = groups.get(key, [])
 
-        # A fourth forward line can legitimately be missing one player.
-        # Keep the available names instead of rejecting the entire team.
-        minimum = 2 if key == 'f4' else expected
+        # FIX: Allow incomplete forward lines.
+        # Any forward line can contain 2 or 3 players.
+        # This prevents the entire team update from failing
+        # when Daily Faceoff temporarily leaves one spot empty.
+        minimum = 2 if key.startswith('f') else expected
 
         if not minimum <= len(values) <= expected:
             raise ValueError(
@@ -196,7 +199,8 @@ TEAMS = {
 def save_result(result, output):
     output.parent.mkdir(parents=True, exist_ok=True)
 
-    # Atomic replacement, never replace a valid file with an invalid response.
+    # Atomic replacement, never replace a valid file
+    # with an invalid response.
     temp = output.with_suffix('.tmp')
 
     temp.write_text(
