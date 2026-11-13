@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-11T13:53:34.020Z",
-  "sourceDescription": "Last Game (2026-11-10)",
-  "cachedAtUTC": "2026-11-13T13:09:04.800276+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:24:30.290Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T14:31:28.326167+00:00",
   "forwards": [
     [
       {
@@ -223,7 +223,7 @@
         "sourcePlayerId": 2494,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2494/MIN_14_Eriksson_Ek.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Kirill Kaprizov",
@@ -436,6 +436,16 @@
       "sourcePlayerId": 4565,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4565/MIN_32_Gustavsson.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Joel Eriksson Ek",
+      "number": 14,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 2494,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2494/MIN_14_Eriksson_Ek.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

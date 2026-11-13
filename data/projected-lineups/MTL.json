@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T23:50:21.066Z",
-  "sourceDescription": "Guillaume Lefrancois",
-  "cachedAtUTC": "2026-11-13T13:09:06.872817+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:22:46.199Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T14:31:30.473784+00:00",
   "forwards": [
     [
       {
@@ -79,7 +79,7 @@
         "sourcePlayerId": 1926,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Jake Evans",
@@ -265,7 +265,7 @@
         "sourcePlayerId": 1926,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Oliver Kapanen",
@@ -436,6 +436,16 @@
       "sourcePlayerId": 4479,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4479/MTL_35_Montembeault.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Chris Kreider",
+      "number": 22,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 1926,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T23:38:23.790Z",
-  "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-13T13:09:31.728133+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:25:21.770Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T14:31:55.837461+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Anthony Stolarz",
-      "number": 41,
+      "name": "Sergei Bobrovsky",
+      "number": 72,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2432,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
+      "sourcePlayerId": 1117,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Sergei Bobrovsky",
-      "number": 72,
+      "name": "Anthony Stolarz",
+      "number": 41,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1117,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
+      "sourcePlayerId": 2432,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

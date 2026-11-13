@@ -2,9 +2,9 @@
   "team": "COL",
   "teamName": "Colorado Avalanche",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T18:29:42.851Z",
-  "sourceDescription": "Aarif Deen",
-  "cachedAtUTC": "2026-11-13T13:08:52.319538+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:26:12.394Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T14:31:15.681028+00:00",
   "forwards": [
     [
       {
@@ -25,7 +25,7 @@
         "sourcePlayerId": 2130,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2130/COL_29_MacKinnon.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Martin Necas",
@@ -155,7 +155,7 @@
         "sourcePlayerId": 2788,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -243,7 +243,7 @@
         "sourcePlayerId": 2130,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2130/COL_29_MacKinnon.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Cale Makar",
@@ -253,7 +253,7 @@
         "sourcePlayerId": 2788,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -349,7 +349,7 @@
         "sourcePlayerId": 2788,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -436,6 +436,26 @@
       "sourcePlayerId": 31229,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31229/COL_68_L_Heureux_.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Nathan MacKinnon",
+      "number": 29,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 2130,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2130/COL_29_MacKinnon.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Cale Makar",
+      "number": 8,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 2788,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
