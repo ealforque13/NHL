@@ -5218,6 +5218,8 @@ window.hoistPrefs = {
 #games .hoist-games-week-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;position:relative;min-width:0;padding:7px 2px 8px;border:0;border-bottom:2px solid transparent;background:transparent;color:inherit;font:inherit;cursor:pointer}
 #games .hoist-games-week-day .wd{font-size:10px;letter-spacing:.06em;text-transform:uppercase;opacity:.66;font-weight:600}
 #games .hoist-games-week-day .dn{font-size:15px;font-weight:700;line-height:1.2}
+#games .hoist-games-week-day .gc{font-size:9px;line-height:1.2;opacity:.56;white-space:nowrap;font-weight:500}
+#games .hoist-games-week-day[aria-selected="true"] .gc{opacity:1;color:#64aaff;font-weight:700}
 #games .hoist-games-week-day[aria-selected="true"]{background:rgba(52,139,255,.12);border-bottom-color:#348bff}
 #games .hoist-games-week-day.is-today .dn:after{content:"";display:block;width:4px;height:4px;background:#348bff;border-radius:50%;margin:2px auto -6px}
 #games .hoist-games-week-arrow,#games .hoist-games-calendar-button{display:grid;place-items:center;flex-shrink:0;width:26px;height:32px;padding:0;border:0;background:transparent;color:inherit;cursor:pointer;font-size:23px}
@@ -5239,7 +5241,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #hoist-games-calendar-overlay .hoist-games-calendar-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:11px;opacity:.85}
 #hoist-games-calendar-overlay .hoist-games-calendar-foot i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#348bff;margin-right:4px}
 #hoist-games-calendar-overlay #hoist-games-jump-today{color:#69aaff;font-size:12px}
-@media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}}
+@media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}#games .hoist-games-week-day .gc{font-size:8px}}
 </style>
 </head>
 
@@ -7899,6 +7901,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const parse=v=>{const d=new Date(String(v||'')+'T12:00:00');return Number.isNaN(+d)?new Date(today):d};
     let current=parse(input.value||key(today));
     let month=new Date(current.getFullYear(),current.getMonth(),1);
+    const weekCounts=new Map();
+    const weekRequests=new Map();
+    async function fetchWeekCounts(start){
+      const weekKey=key(start);
+      if(weekRequests.has(weekKey))return weekRequests.get(weekKey);
+      const task=(async()=>{
+        try{
+          const response=await fetch('https://api-web.nhle.com/v1/schedule/'+weekKey,{cache:'no-store'});
+          if(!response.ok)throw new Error('Schedule unavailable');
+          const data=await response.json();
+          for(const day of (data.gameWeek||[])){
+            if(!day.date||!Array.isArray(day.games))continue;
+            // Only regular-season and playoff games, excluding preseason.
+            weekCounts.set(day.date,day.games.filter(g=>Number(g.gameType)===2||Number(g.gameType)===3).length);
+          }
+        }catch(e){console.warn('Could not load NHL game counts:',e)}
+        renderCountLabels();
+      })();
+      weekRequests.set(weekKey,task);
+      return task;
+    }
+    function renderCountLabels(){
+      host.querySelectorAll('.hoist-games-week-day').forEach(b=>{
+        const count=weekCounts.get(b.dataset.date);
+        const label=b.querySelector('.gc');
+        if(label)label.textContent=count===undefined?'':count+' '+(count===1?'game':'games');
+      });
+    }
     const same=(a,b)=>key(a)===key(b);
     function select(d){
       current=new Date(d);current.setHours(12,0,0,0);
@@ -7915,10 +7945,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const b=document.createElement('button');b.type='button';
         b.className='hoist-games-week-day'+(same(d,today)?' is-today':'');
         b.setAttribute('aria-selected',String(same(d,current)));
+        b.dataset.date=key(d);
         b.setAttribute('aria-label',d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}));
-        b.innerHTML='<span class="wd">'+d.toLocaleDateString(undefined,{weekday:'short'})+'</span><span class="dn">'+d.getDate()+'</span>';
+        b.innerHTML='<span class="wd">'+d.toLocaleDateString(undefined,{weekday:'short'})+'</span><span class="dn">'+d.getDate()+'</span><span class="gc"></span>';
         b.addEventListener('click',()=>select(d));host.appendChild(b);
       }
+      renderCountLabels();
+      fetchWeekCounts(start);
     }
     function renderMonth(){
       document.getElementById('hoist-games-month-label').textContent=month.toLocaleDateString(undefined,{month:'long',year:'numeric'});
