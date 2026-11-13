@@ -6305,8 +6305,8 @@ document.addEventListener('DOMContentLoaded', function () {
     return typeof p.headshot === 'string' && /^https:\/\//.test(p.headshot) ? p.headshot : '';
   }
 
-  // Artwork-first layout. Only use images explicitly supplied in lineup JSON or
-  // approved by the site's owner. No inferred or scraped jersey URLs.
+  // Artwork-first layout. All 32 teams accept player-specific jerseyUrl from
+  // projected-lineups JSON when licensed. Unavailable images use clean fallbacks.
   const jerseyPreview = {
     MTL: {
       2789: 'https://api.dailyfaceoff.com/uploads/player/jersey/2789/MTL_14_Suzuki.png',
