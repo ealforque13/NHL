@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T20:37:50.951Z",
-  "sourceDescription": "Jeremy Rutherford",
-  "cachedAtUTC": "2026-11-13T14:31:51.622191+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:45:51.705Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:43.270707+00:00",
   "forwards": [
     [
       {
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cam Fowler",
-        "number": 17,
+        "name": "Logan Mailloux",
+        "number": 23,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 16,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/16/STL_17_Fowler.png",
+        "sourcePlayerId": 30862,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30862/STL_23_Mailloux.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

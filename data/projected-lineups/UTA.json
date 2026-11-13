@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T01:50:28.528Z",
-  "sourceDescription": "Utah Mammoth",
-  "cachedAtUTC": "2026-11-13T14:31:57.965140+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:46:48.271Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:49.448778+00:00",
   "forwards": [
     [
       {
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Anders Lee",
-        "number": 72,
+        "name": "Kailer Yamamoto",
+        "number": 56,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2071,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2071/UTA_72__Lee.png",
+        "sourcePlayerId": 2796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,22 +258,22 @@
     ],
     [
       {
-        "name": "Kailer Yamamoto",
-        "number": 56,
+        "name": "Anders Lee",
+        "number": 72,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
+        "sourcePlayerId": 2071,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2071/UTA_72__Lee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jack McBain",
-        "number": 22,
+        "name": "Lawson Crouse",
+        "number": 67,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 28796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28796/UTH_22_McBain.png",
+        "sourcePlayerId": 2476,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2476/UTH_67_Crouse.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

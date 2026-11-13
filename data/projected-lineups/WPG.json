@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T18:20:15.884Z",
-  "sourceDescription": "Ken Wiebe",
-  "cachedAtUTC": "2026-11-13T14:32:04.318274+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:39:41.020Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:55.615413+00:00",
   "forwards": [
     [
       {
@@ -155,7 +155,7 @@
         "sourcePlayerId": 2033,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -391,7 +391,7 @@
         "sourcePlayerId": 2033,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -436,6 +436,16 @@
       "sourcePlayerId": 1865,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1865/WPG_7_Namestnikov.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Dylan DeMelo",
+      "number": 2,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 2033,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {

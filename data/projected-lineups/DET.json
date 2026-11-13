@@ -2,9 +2,9 @@
   "team": "DET",
   "teamName": "Detroit Red Wings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T17:11:33.603Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-13T14:31:19.875069+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:32:16.985Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:12.147587+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Viktor Arvidsson",
-        "number": 33,
+        "name": "Marco Kasper",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2453,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2453/DET_33_Arvidsson.png",
+        "sourcePlayerId": 36364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36364/DET_92_Kasper.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -82,22 +82,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Marco Kasper",
-        "number": null,
+        "name": "J.T. Compher",
+        "number": 37,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 36364,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36364/DET_92_Kasper.png",
+        "sourcePlayerId": 2751,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2751/DET_37_Compher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "J.T. Compher",
-        "number": 37,
+        "name": "Viktor Arvidsson",
+        "number": 33,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2751,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2751/DET_37_Compher.png",
+        "sourcePlayerId": 2453,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2453/DET_33_Arvidsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Andrew Copp",
-        "number": 18,
+        "name": "Carter Mazur",
+        "number": 43,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2457,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2457/DET_18_Copp.png",
+        "sourcePlayerId": 34532,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34532/DET_34__Mazur.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

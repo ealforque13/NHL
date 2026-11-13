@@ -2,9 +2,9 @@
   "team": "DAL",
   "teamName": "Dallas Stars",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T01:55:46.857Z",
-  "sourceDescription": "Robert Tiffin",
-  "cachedAtUTC": "2026-11-13T14:31:17.773569+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:40:48.287Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:10.077681+00:00",
   "forwards": [
     [
       {
@@ -167,7 +167,7 @@
         "sourcePlayerId": 36369,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36369/DAL_6_Bichsel.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Esa Lindell",
@@ -455,6 +455,16 @@
       "positionName": "Injured Reserve 4",
       "sourcePlayerId": 2803,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2803/DAL_4_Heiskanen.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Lian Bichsel",
+      "number": 6,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 36369,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36369/DAL_6_Bichsel.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

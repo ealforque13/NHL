@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T02:35:53.536Z",
-  "sourceDescription": "Andrew Gross",
-  "cachedAtUTC": "2026-11-13T14:31:36.843387+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:47:44.852Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:28.705331+00:00",
   "forwards": [
     [
       {
@@ -196,12 +196,12 @@
   "powerPlay": [
     [
       {
-        "name": "Simon Holmstrom",
-        "number": 92,
+        "name": "Victor Eklund",
+        "number": 73,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 30654,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30654/NYI_92_Holmstrom.png",
+        "sourcePlayerId": 38469,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38469/NYI_73_Eklund.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Victor Eklund",
-        "number": 73,
+        "name": "Simon Holmstrom",
+        "number": 92,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 38469,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38469/NYI_73_Eklund.png",
+        "sourcePlayerId": 30654,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30654/NYI_92_Holmstrom.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

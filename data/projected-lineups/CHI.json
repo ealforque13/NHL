@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T00:41:00.098Z",
-  "sourceDescription": "Jack Bushman",
-  "cachedAtUTC": "2026-11-13T14:31:13.556675+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:38:41.813Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:05.943706+00:00",
   "forwards": [
     [
       {
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Patrick Kane",
-        "number": 88,
+        "name": "Ryan Donato",
+        "number": 8,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 305,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/305/CHI_88_Kane.png",
+        "sourcePlayerId": 4635,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4635/CHI_8_Donato.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Donato",
-        "number": 8,
+        "name": "Patrick Kane",
+        "number": 88,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4635,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4635/CHI_8_Donato.png",
+        "sourcePlayerId": 305,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/305/CHI_88_Kane.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -138,34 +138,12 @@
   "defense": [
     [
       {
-        "name": "Alex Vlasic",
-        "number": 72,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 30427,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30427/CHI_72_Vlasic.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Ian Cole",
         "number": 28,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 1313,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1313/CHI_28__Cole.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Ethan Del Mastro",
-        "number": 38,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 30841,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30841/CHI_38_Del_Mastro.png",
+        "sourcePlayerId": 1313,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1313/CHI_28__Cole.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +160,12 @@
     ],
     [
       {
-        "name": "Wyatt Kaiser",
-        "number": null,
+        "name": "Alex Vlasic",
+        "number": 72,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 37913,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37913/CHI_44_Kaiser.png",
+        "sourcePlayerId": 30427,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30427/CHI_72_Vlasic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -201,17 +179,39 @@
         "injuryStatus": null,
         "gameTimeDecision": false
       }
+    ],
+    [
+      {
+        "name": "Wyatt Kaiser",
+        "number": null,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 37913,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37913/CHI_44_Kaiser.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ethan Del Mastro",
+        "number": 38,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 30841,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30841/CHI_38_Del_Mastro.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
     ]
   ],
   "powerPlay": [
     [
       {
-        "name": "Anton Frondell",
-        "number": 16,
+        "name": "Frank Nazar",
+        "number": null,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 38471,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38471/CHI_16__Frondell.png",
+        "sourcePlayerId": 33280,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33280/CHI_91_Nazar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Frank Nazar",
-        "number": null,
+        "name": "Anton Frondell",
+        "number": 16,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 33280,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33280/CHI_91_Nazar.png",
+        "sourcePlayerId": 38471,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38471/CHI_16__Frondell.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

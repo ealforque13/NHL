@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T18:16:23.041Z",
-  "sourceDescription": "@BlueJacketsNHL",
-  "cachedAtUTC": "2026-11-13T14:31:09.355196+00:00",
+  "sourceUpdatedAt": "2026-11-13T14:36:09.815Z",
+  "sourceDescription": "Last Game (2026-11-12)",
+  "cachedAtUTC": "2026-11-13T15:23:01.804512+00:00",
   "forwards": [
     [
       {
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sean Monahan",
-        "number": 23,
+        "name": "Cole Sillinger",
+        "number": 4,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2138,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
+        "sourcePlayerId": 34454,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Zach Werenski",
+        "number": 8,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2479,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2479/CBJ_8_Werenski.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
