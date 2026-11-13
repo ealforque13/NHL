@@ -5210,6 +5210,37 @@ window.hoistPrefs = {
   }
 };
 </script>
+<style>
+/* Games: compact, seven-day navigation and non-disruptive calendar popup */
+#games .hoist-games-native-controls{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important;clip-path:inset(50%)!important}
+#games .hoist-games-weekbar{display:flex;align-items:center;gap:6px;margin:4px 0 14px;min-width:0}
+#games .hoist-games-week-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));flex:1;gap:2px;min-width:0}
+#games .hoist-games-week-day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;position:relative;min-width:0;padding:7px 2px 8px;border:0;border-bottom:2px solid transparent;background:transparent;color:inherit;font:inherit;cursor:pointer}
+#games .hoist-games-week-day .wd{font-size:10px;letter-spacing:.06em;text-transform:uppercase;opacity:.66;font-weight:600}
+#games .hoist-games-week-day .dn{font-size:15px;font-weight:700;line-height:1.2}
+#games .hoist-games-week-day[aria-selected="true"]{background:rgba(52,139,255,.12);border-bottom-color:#348bff}
+#games .hoist-games-week-day.is-today .dn:after{content:"";display:block;width:4px;height:4px;background:#348bff;border-radius:50%;margin:2px auto -6px}
+#games .hoist-games-week-arrow,#games .hoist-games-calendar-button{display:grid;place-items:center;flex-shrink:0;width:26px;height:32px;padding:0;border:0;background:transparent;color:inherit;cursor:pointer;font-size:23px}
+#games .hoist-games-calendar-button{width:30px;margin-left:3px}
+#hoist-games-calendar-overlay[hidden]{display:none!important}
+#hoist-games-calendar-overlay{position:fixed;inset:0;z-index:10040;display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(0,0,0,.52)}
+#hoist-games-calendar-overlay .hoist-games-calendar-modal{width:min(355px,100%);max-height:90vh;overflow:auto;padding:16px;border-radius:10px;border:1px solid rgba(125,155,195,.35);background:#172438;color:#f4f7fd;box-shadow:0 20px 70px rgba(0,0,0,.5)}
+body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[data-theme="light"] #hoist-games-calendar-overlay .hoist-games-calendar-modal{background:#fff;color:#172438}
+#hoist-games-calendar-overlay .hoist-games-calendar-modal-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+#hoist-games-calendar-overlay .hoist-games-calendar-modal-head strong{flex:1;text-align:center;font-size:14px}
+#hoist-games-calendar-overlay button{border:0;background:transparent;color:inherit;cursor:pointer;font:inherit}
+#hoist-games-calendar-overlay .hoist-games-calendar-modal-head button{width:28px;height:28px;font-size:20px}
+#hoist-games-calendar-overlay .hoist-games-month-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+#hoist-games-calendar-overlay .hoist-games-month-grid .dow{text-align:center;font-size:10px;opacity:.6;padding:7px 0}
+#hoist-games-calendar-overlay .hoist-games-month-grid button{position:relative;min-height:35px;border-radius:5px;font-size:12px}
+#hoist-games-calendar-overlay .hoist-games-month-grid button.is-selected{background:rgba(52,139,255,.19);box-shadow:inset 0 -2px #348bff}
+#hoist-games-calendar-overlay .hoist-games-month-grid button.is-today:after{content:"";position:absolute;bottom:3px;left:calc(50% - 2px);width:4px;height:4px;border-radius:50%;background:#348bff}
+#hoist-games-calendar-overlay .hoist-games-month-grid button:hover{background:rgba(52,139,255,.12)}
+#hoist-games-calendar-overlay .hoist-games-calendar-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:11px;opacity:.85}
+#hoist-games-calendar-overlay .hoist-games-calendar-foot i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#348bff;margin-right:4px}
+#hoist-games-calendar-overlay #hoist-games-jump-today{color:#69aaff;font-size:12px}
+@media(max-width:600px){#games .hoist-games-weekbar{gap:2px}#games .hoist-games-week-arrow{width:16px}#games .hoist-games-calendar-button{width:24px;margin-left:0}#games .hoist-games-week-day{padding:6px 0 8px}#games .hoist-games-week-day .wd{font-size:9px}#games .hoist-games-week-day .dn{font-size:13px}}
+</style>
 </head>
 
 <body>
@@ -5821,11 +5852,31 @@ window.hoistPrefs = {
   <article class="panel section-panel hoist-games-panel">
     <div class="section-head hoist-games-head">
       <div class="eyebrow">HOIST OFFICIAL · NHL GAMES</div>
-      <div class="hoist-games-date-controls">
+      <div class="hoist-games-date-controls hoist-games-native-controls" aria-hidden="true">
         <button type="button" id="hoist-games-prev" aria-label="Previous day">‹</button>
-        <input type="date" id="hoist-games-date" aria-label="Choose game date" />
+        <input type="date" id="hoist-games-date" aria-label="Choose game date" tabindex="-1"/>
         <button type="button" id="hoist-games-next" aria-label="Next day">›</button>
         <button type="button" id="hoist-games-today">Today</button>
+      </div>
+    </div>
+    <div class="hoist-games-weekbar" aria-label="Games by date">
+      <button class="hoist-games-week-arrow" id="hoist-games-week-prev" type="button" aria-label="Previous week">‹</button>
+      <div class="hoist-games-week-days" id="hoist-games-week-days"></div>
+      <button class="hoist-games-week-arrow" id="hoist-games-week-next" type="button" aria-label="Next week">›</button>
+      <button class="hoist-games-calendar-button" id="hoist-games-calendar-button" type="button" aria-label="Open monthly calendar" aria-expanded="false" title="Select a date">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg>
+      </button>
+    </div>
+    <div class="hoist-games-calendar-overlay" id="hoist-games-calendar-overlay" hidden>
+      <div class="hoist-games-calendar-modal" role="dialog" aria-modal="true" aria-label="Choose game date">
+        <div class="hoist-games-calendar-modal-head">
+          <button type="button" id="hoist-games-month-prev" aria-label="Previous month">‹</button>
+          <strong id="hoist-games-month-label"></strong>
+          <button type="button" id="hoist-games-month-next" aria-label="Next month">›</button>
+          <button type="button" id="hoist-games-calendar-close" aria-label="Close calendar">×</button>
+        </div>
+        <div class="hoist-games-month-grid" id="hoist-games-month-grid"></div>
+        <div class="hoist-games-calendar-foot"><span><i></i> Today</span><button type="button" id="hoist-games-jump-today">Go to today</button></div>
       </div>
     </div>
     <div id="hoist-games-day" class="hoist-games-day"></div>
@@ -7834,6 +7885,76 @@ document.addEventListener('DOMContentLoaded', function () {
   new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
   day?.addEventListener('change',schedule);
   schedule();
+})();
+</script>
+<script>
+/* Games date navigator: delegates to the existing games.js date input. */
+(()=>{
+  function init(){
+    const input=document.getElementById('hoist-games-date'),host=document.getElementById('hoist-games-week-days');
+    const overlay=document.getElementById('hoist-games-calendar-overlay');
+    if(!input||!host||!overlay)return;
+    const today=new Date();today.setHours(12,0,0,0);
+    const key=d=>[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+    const parse=v=>{const d=new Date(String(v||'')+'T12:00:00');return Number.isNaN(+d)?new Date(today):d};
+    let current=parse(input.value||key(today));
+    let month=new Date(current.getFullYear(),current.getMonth(),1);
+    const same=(a,b)=>key(a)===key(b);
+    function select(d){
+      current=new Date(d);current.setHours(12,0,0,0);
+      input.value=key(current);
+      input.dispatchEvent(new Event('input',{bubbles:true}));
+      input.dispatchEvent(new Event('change',{bubbles:true}));
+      renderWeek();renderMonth();close();
+    }
+    function renderWeek(){
+      host.replaceChildren();
+      const start=new Date(current);start.setDate(start.getDate()-start.getDay());
+      for(let i=0;i<7;i++){
+        const d=new Date(start);d.setDate(start.getDate()+i);
+        const b=document.createElement('button');b.type='button';
+        b.className='hoist-games-week-day'+(same(d,today)?' is-today':'');
+        b.setAttribute('aria-selected',String(same(d,current)));
+        b.setAttribute('aria-label',d.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric',year:'numeric'}));
+        b.innerHTML='<span class="wd">'+d.toLocaleDateString(undefined,{weekday:'short'})+'</span><span class="dn">'+d.getDate()+'</span>';
+        b.addEventListener('click',()=>select(d));host.appendChild(b);
+      }
+    }
+    function renderMonth(){
+      document.getElementById('hoist-games-month-label').textContent=month.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+      const grid=document.getElementById('hoist-games-month-grid');grid.replaceChildren();
+      for(const name of ['S','M','T','W','T','F','S']){
+        const el=document.createElement('span');el.className='dow';el.textContent=name;grid.appendChild(el);
+      }
+      const first=new Date(month.getFullYear(),month.getMonth(),1);
+      for(let i=0;i<first.getDay();i++)grid.appendChild(document.createElement('span'));
+      const count=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
+      for(let n=1;n<=count;n++){
+        const d=new Date(month.getFullYear(),month.getMonth(),n,12);
+        const b=document.createElement('button');b.type='button';b.textContent=n;
+        b.className=(same(d,current)?'is-selected ':'')+(same(d,today)?'is-today':'');
+        b.setAttribute('aria-label',d.toLocaleDateString(undefined,{month:'long',day:'numeric',year:'numeric'}));
+        b.addEventListener('click',()=>select(d));grid.appendChild(b);
+      }
+    }
+    function close(){overlay.hidden=true;document.getElementById('hoist-games-calendar-button').setAttribute('aria-expanded','false')}
+    function open(){month=new Date(current.getFullYear(),current.getMonth(),1);renderMonth();overlay.hidden=false;document.getElementById('hoist-games-calendar-button').setAttribute('aria-expanded','true')}
+    document.getElementById('hoist-games-week-prev').addEventListener('click',()=>{const d=new Date(current);d.setDate(d.getDate()-7);select(d)});
+    document.getElementById('hoist-games-week-next').addEventListener('click',()=>{const d=new Date(current);d.setDate(d.getDate()+7);select(d)});
+    document.getElementById('hoist-games-calendar-button').addEventListener('click',open);
+    document.getElementById('hoist-games-calendar-close').addEventListener('click',close);
+    document.getElementById('hoist-games-month-prev').addEventListener('click',()=>{month.setMonth(month.getMonth()-1);renderMonth()});
+    document.getElementById('hoist-games-month-next').addEventListener('click',()=>{month.setMonth(month.getMonth()+1);renderMonth()});
+    document.getElementById('hoist-games-jump-today').addEventListener('click',()=>select(today));
+    overlay.addEventListener('click',e=>{if(e.target===overlay)close()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!overlay.hidden)close()});
+    input.addEventListener('change',()=>{const d=parse(input.value);if(!same(d,current)){current=d;renderWeek();renderMonth()}});
+    renderWeek();renderMonth();
+    // games.js initializes the date asynchronously; sync its initial selection.
+    setTimeout(()=>{if(input.value){current=parse(input.value);renderWeek();renderMonth()}},400);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+  else init();
 })();
 </script>
 </body>
