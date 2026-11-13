@@ -59,10 +59,9 @@ def parse_html(html):
 
 
 def player_info(p):
-    # Extract authentic player-specific jersey artwork URL.
+    # Extract player-specific jersey artwork URL.
     jersey_url = p.get('jerseyUrl')
 
-    # Only accept the expected Daily Faceoff jersey image location.
     if (
         not isinstance(jersey_url, str)
         or not jersey_url.startswith(
@@ -75,6 +74,7 @@ def player_info(p):
         'name': p.get('name'),
         'number': p.get('jerseyNumber'),
         'position': (p.get('positionIdentifier') or '').upper(),
+        'positionName': p.get('positionName'),
         'sourcePlayerId': p.get('playerId'),
         'jerseyUrl': jersey_url,
         'injuryStatus': p.get('injuryStatus'),
