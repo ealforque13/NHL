@@ -7582,7 +7582,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const root=document.createElement('section');root.className='hoist-streaks';root.hidden=true;
   root.setAttribute('aria-label','Active streaks for players in the selected day’s games');
   host.insertAdjacentElement('afterend',root);
-  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false,activeFilter='goal';
+  const cache=new Map();let currentKey='',items=[],page=0,run=0,scheduled=false,activeFilter='point';
   const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const gameDate=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
   const stat=(g,keys)=>{for(const k of keys){if(g[k]!==null&&g[k]!==undefined&&Number.isFinite(Number(g[k])))return Number(g[k]);}return null;};
@@ -7592,7 +7592,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const consecutive=(games,getter)=>{let n=0;for(const g of games){const value=getter(g);if(value===null||value<=0)break;n++;}return n;};
   const load=team=>{if(!cache.has(team))cache.set(team,fetch(`./data/matchups/${team}.json`,{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No stats');return r.json()}).catch(()=>({players:[]})));return cache.get(team);};
   function draw(){
-    // Goal streaks are selected by default; point streaks require 4+ games.
+    // Point streaks are selected by default and require 4+ games; goal streaks require 3+ games.
     const filtered=items.filter(x=>x.type===activeFilter);
     const pages=Math.max(1,Math.ceil(filtered.length/2));page=(page+pages)%pages;
     const visible=filtered.slice(page*2,page*2+2);
