@@ -5255,8 +5255,9 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 /* Keep the date strip visible only on mobile, with a lightweight translucent surface. */
 #games,#games .hoist-games-panel{overflow:visible!important}
 @media(max-width:600px){
-  #games .hoist-games-weekbar{position:sticky!important;top:0!important;z-index:120;padding:5px 1px 8px!important;background:rgba(21,34,54,.87)!important;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-  body.light-mode #games .hoist-games-weekbar,body[data-theme="light"] #games .hoist-games-weekbar{background:rgba(255,255,255,.88)!important}
+  #games .hoist-games-weekbar{position:sticky!important;top:0!important;z-index:120;padding:5px 1px 8px!important;background:#101820!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  body.light-mode #games .hoist-games-weekbar,body[data-theme="light"] #games .hoist-games-weekbar{background:#fff!important}
+  #games .hoist-games-week-day[aria-selected="true"]{background:transparent!important;background-color:transparent!important}
 }
 </style>
 </head>
