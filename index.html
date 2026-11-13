@@ -5260,6 +5260,26 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #games .hoist-games-week-day[aria-selected="true"]{background:transparent!important;background-color:transparent!important}
 }
 </style>
+<style>
+/* Games mobile: opaque date strip matching the surrounding page surface. */
+@media (max-width:600px){
+  #games .hoist-games-weekbar{
+    background:var(--hoist-games-page-background,#101820)!important;
+    background-color:var(--hoist-games-page-background,#101820)!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+    z-index:20!important;
+  }
+  body.light-mode #games .hoist-games-weekbar,
+  body[data-theme="light"] #games .hoist-games-weekbar{
+    background:var(--hoist-games-page-background,#f6f8fc)!important;
+    background-color:var(--hoist-games-page-background,#f6f8fc)!important;
+  }
+  .topbar{position:relative!important;z-index:500!important;isolation:isolate}
+  .hoist-mobile-nav{position:relative!important;z-index:510!important}
+  #hoist-mobile-menu-options{z-index:520!important}
+}
+</style>
 </head>
 
 <body>
@@ -8027,6 +8047,24 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
   else init();
+})();
+</script>
+<script>
+/* Match sticky Games date background to the actual page surface, including theme changes. */
+(()=>{
+  function syncGamesPageBackground(){
+    const strip=document.querySelector('#games .hoist-games-weekbar');
+    if(!strip)return;
+    const candidates=[document.querySelector('.content'),document.querySelector('.main'),document.querySelector('main'),document.body,document.documentElement];
+    const transparent=c=>!c||c==='transparent'||c==='rgba(0, 0, 0, 0)'||c==='rgba(0,0,0,0)';
+    const color=candidates.map(el=>el&&getComputedStyle(el).backgroundColor).find(c=>!transparent(c));
+    if(color)strip.style.setProperty('--hoist-games-page-background',color);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',syncGamesPageBackground);
+  else syncGamesPageBackground();
+  new MutationObserver(syncGamesPageBackground).observe(document.documentElement,{attributes:true,attributeFilter:['class','data-theme']});
+  if(document.body)new MutationObserver(syncGamesPageBackground).observe(document.body,{attributes:true,attributeFilter:['class','data-theme']});
+  else document.addEventListener('DOMContentLoaded',()=>new MutationObserver(syncGamesPageBackground).observe(document.body,{attributes:true,attributeFilter:['class','data-theme']}));
 })();
 </script>
 </body>
