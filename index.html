@@ -5280,6 +5280,18 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #hoist-mobile-menu-options{z-index:520!important}
 }
 </style>
+<style>
+/* Mobile-only: tighter Games matchup cards and Last 5 Games section. */
+@media (max-width: 650px) {
+  #games .hoist-game-card { padding: 12px 14px !important; }
+  #games .hoist-game-card-head { margin-bottom: 7px !important; }
+  #games .hoist-game-team { margin-top: 3px !important; margin-bottom: 3px !important; row-gap: 0 !important; }
+  #games .hoist-game-team-record { margin-top: -3px !important; }
+  #games .hoist-game-card-foot { margin-top: 8px !important; }
+  #games .hoist-game-hot-feature { margin-top: 9px !important; padding-top: 6px !important; padding-bottom: 2px !important; }
+  #games .hoist-game-feature-toggle { padding-top: 5px !important; padding-bottom: 5px !important; }
+}
+</style>
 </head>
 
 <body>
