@@ -5004,7 +5004,7 @@ html body #lineups .hoist-lineup-group {
 #games .hoist-streak-controls{display:flex;align-items:center;gap:7px}
 #games .hoist-streak-controls button{background:transparent;border:1px solid var(--border,rgba(145,166,195,.3));border-radius:7px;color:inherit;min-width:29px;height:28px;cursor:pointer}
 #games .hoist-streak-count{font-size:11px;opacity:.65;min-width:38px;text-align:center}
-#games .hoist-streak-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#games .hoist-streak-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 #games .hoist-streak-player{display:flex;align-items:center;gap:12px;min-width:0;padding:9px 12px;background:rgba(130,151,185,.065);border-radius:9px}
 #games .hoist-streak-player img{width:53px;height:53px;object-fit:contain;flex:none;border-radius:50%;background:var(--streak-team-color,#263f60);border:1px solid color-mix(in srgb,var(--streak-team-color,#263f60) 65%,white 35%)}
 #games .hoist-streak-person{min-width:0;flex:1}
@@ -7605,6 +7605,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn=e.target.closest('button[data-move]');if(!btn)return;
     page+=Number(btn.dataset.move);draw();
   });
+  // Swipe across the streak cards on touchscreens; vertical page scrolling remains natural.
+  let swipeStart=null;
+  root.addEventListener('touchstart',e=>{
+    if(!e.target.closest('.hoist-streak-track')||e.touches.length!==1){swipeStart=null;return;}
+    const touch=e.touches[0];
+    swipeStart={x:touch.clientX,y:touch.clientY};
+  },{passive:true});
+  root.addEventListener('touchend',e=>{
+    if(!swipeStart||!e.changedTouches.length)return;
+    const start=swipeStart;swipeStart=null;
+    const touch=e.changedTouches[0];
+    const dx=touch.clientX-start.x,dy=touch.clientY-start.y;
+    // Ignore taps and primarily vertical gestures.
+    if(Math.abs(dx)<45||Math.abs(dx)<Math.abs(dy)*1.3)return;
+    const filteredCount=items.filter(x=>x.type===activeFilter).length;
+    if(filteredCount<=2)return;
+    page+=dx<0?1:-1;
+    draw();
+  },{passive:true});
+  root.addEventListener('touchcancel',()=>{swipeStart=null;},{passive:true});
   function teamsOnPage(){
     const matches=[];
     for(const card of grid.querySelectorAll('.hoist-game-card')){
