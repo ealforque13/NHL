@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:22:46.199Z",
+  "sourceUpdatedAt": "2026-11-14T16:17:09.315Z",
   "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T15:42:07.005939+00:00",
+  "cachedAtUTC": "2026-11-14T16:44:06.364104+00:00",
   "forwards": [
     [
       {
@@ -72,38 +72,6 @@
     ],
     [
       {
-        "name": "Chris Kreider",
-        "number": 22,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 1926,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      },
-      {
-        "name": "Jake Evans",
-        "number": 71,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 4708,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4708/MTL_71_Evans.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Josh Anderson",
-        "number": 17,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 21932,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/21932/MTL_17_Anderson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Alex Newhook",
         "number": 15,
         "position": "LW",
@@ -130,6 +98,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 29585,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Florian Xhekaj",
+        "number": 63,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 37772,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37772/MTL_63__Xhekaj.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake Evans",
+        "number": 71,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 4708,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4708/MTL_71_Evans.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Anderson",
+        "number": 17,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 21932,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/21932/MTL_17_Anderson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -177,7 +177,7 @@
         "sourcePlayerId": 2583,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -258,14 +258,14 @@
     ],
     [
       {
-        "name": "Chris Kreider",
-        "number": 22,
+        "name": "Kirby Dach",
+        "number": 77,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1926,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
+        "sourcePlayerId": 29585,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Oliver Kapanen",
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jacob Fowler",
-      "number": 32,
+      "name": "Jakub Dobes",
+      "number": 75,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 38444,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
+      "sourcePlayerId": 31895,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jakub Dobes",
-      "number": 75,
+      "name": "Jacob Fowler",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 31895,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
+      "sourcePlayerId": 38444,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -445,6 +445,16 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 1926,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Mike Matheson",
+      "number": 8,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 2583,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
