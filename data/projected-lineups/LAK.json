@@ -2,18 +2,18 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:50:19.700Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T18:46:06.841409+00:00",
+  "sourceUpdatedAt": "2026-11-14T19:33:26.619Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-14T19:45:23.193993+00:00",
   "forwards": [
     [
       {
-        "name": "Artemi Panarin",
-        "number": 10,
+        "name": "Alex Turcotte",
+        "number": 15,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2519,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
+        "sourcePlayerId": 30420,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30420/LAK_15_Turcotte.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Artemi Panarin",
-        "number": 10,
+        "name": "Mats Zuccarello",
+        "number": 36,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2519,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
+        "sourcePlayerId": 1065,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1065/LAK_36__Zuccarello.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Mats Zuccarello",
-        "number": 36,
+        "name": "Alex Turcotte",
+        "number": 15,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1065,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1065/LAK_36__Zuccarello.png",
+        "sourcePlayerId": 30420,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30420/LAK_15_Turcotte.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -421,10 +421,20 @@
     {
       "name": "Erik Gustafsson",
       "number": 64,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
       "sourcePlayerId": 2550,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2550/LAK_64__Gustafsson.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Artemi Panarin",
+      "number": 10,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 2519,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
