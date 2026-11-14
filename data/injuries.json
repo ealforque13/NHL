@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T12:44:32.389286+00:00",
+  "updatedAt": "2026-11-14T18:39:58.734778+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -7,12 +7,6 @@
       "description": "Head coach Paul Maurice said Friday that Marchand (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
       "status": "Injured Reserve",
       "team": "FLA"
-    },
-    "8473533": {
-      "injured": true,
-      "description": "Staal (calf) will be a game-time decision versus the Kraken on Saturday after head coach Rod Brind'Amour told reporters, \"So, we'll find out probably tomorrow after you know gets through the morning, and hopefully he does play,\" per Tom Gul",
-      "status": "Injured Reserve",
-      "team": "CAR"
     },
     "8475168": {
       "injured": true,
@@ -22,8 +16,8 @@
     },
     "8475184": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Kreider (lower body) will be out for approximately 6-8 weeks, the Canadiens announced Saturday.",
+      "status": "Out",
       "team": "MTL"
     },
     "8475810": {
@@ -70,8 +64,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NSH"
     },
     "8476853": {
@@ -79,6 +73,12 @@
       "description": "day-to-day",
       "status": "Day-To-Day",
       "team": "TOR"
+    },
+    "8476875": {
+      "injured": true,
+      "description": "Matheson (undisclosed) is considered a game-time decision for Saturday's home clash against the Avalanche, per Renaud Lavoie of TVA Sports.",
+      "status": "Day-To-Day",
+      "team": "MTL"
     },
     "8476891": {
       "injured": true,
@@ -124,14 +124,14 @@
     },
     "8477488": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Pesce (illness) won't play against Washington on Saturday, Amanda Stein of the Devils' official site reports.",
+      "status": "Out",
       "team": "NJD"
     },
     "8477492": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "MacKinnon (lower body) will miss at least one month, per Corey Masisak of The Denver Post on Saturday.",
+      "status": "Out",
       "team": "COL"
     },
     "8477493": {
@@ -208,15 +208,9 @@
     },
     "8478476": {
       "injured": true,
-      "description": "ir",
+      "description": "Capobianco (leg) was moved to long-term injured reserve Saturday.",
       "status": "Injured Reserve",
       "team": "DAL"
-    },
-    "8478493": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "MIN"
     },
     "8478507": {
       "injured": true,
@@ -235,12 +229,6 @@
       "description": "day-to-day",
       "status": "Day-To-Day",
       "team": "PHI"
-    },
-    "8479324": {
-      "injured": true,
-      "description": "Lindgren (upper body) will be a game-time decision ahead of Saturday's matchup with Carolina, Tom Gulitti of NHL.com reports.",
-      "status": "Injured Reserve",
-      "team": "SEA"
     },
     "8479346": {
       "injured": true,
@@ -268,7 +256,7 @@
     },
     "8480036": {
       "injured": true,
-      "description": "Heiskanen (upper body) has been ruled out against the Sabres on Saturday, Stars TV host Brien Rea reports.",
+      "description": "Heiskanen (upper body) is doubtful for Sunday's matchup against Florida, per Mike Heika of the Stars' official site.",
       "status": "Out",
       "team": "DAL"
     },
@@ -280,8 +268,8 @@
     },
     "8480069": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "COL"
     },
     "8480192": {
@@ -362,12 +350,6 @@
       "status": "Injured Reserve",
       "team": "PIT"
     },
-    "8482122": {
-      "injured": true,
-      "description": "Faber (skull) has told the Wild that he's ready to play and expects to return for Saturday's game against the Bruins, Michael Russo of The Athletic reports Wednesday.",
-      "status": "Injured Reserve",
-      "team": "MIN"
-    },
     "8482178": {
       "injured": true,
       "description": "Moore (lower body) might be an option to play by the end of the week, Derek Lee of The Hockey News reports Wednesday.",
@@ -406,8 +388,8 @@
     },
     "8483425": {
       "injured": true,
-      "description": "Head coach Glen Gulutzan said Friday that Bichsel (lower body) will be out for \"a couple weeks,\" Stars TV host Brien Rea reports.",
-      "status": "Out",
+      "description": "Bichsel (lower body) was placed on injured reserve Saturday.",
+      "status": "Injured Reserve",
       "team": "DAL"
     },
     "8483431": {
