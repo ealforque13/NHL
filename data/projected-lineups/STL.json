@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-13T14:45:51.705Z",
   "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T11:42:15.683003+00:00",
+  "cachedAtUTC": "2026-11-14T12:52:17.278288+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Joel Hofer",
-      "number": 30,
+      "name": "Jordan Binnington",
+      "number": 50,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 28910,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28910/STL_30_Hofer.png",
+      "sourcePlayerId": 1984,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1984/STL_50_Binnington.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jordan Binnington",
-      "number": 50,
+      "name": "Joel Hofer",
+      "number": 30,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1984,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1984/STL_50_Binnington.png",
+      "sourcePlayerId": 28910,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28910/STL_30_Hofer.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

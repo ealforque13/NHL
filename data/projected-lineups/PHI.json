@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-13T17:06:28.250Z",
   "sourceDescription": "Jackie Spiegel",
-  "cachedAtUTC": "2026-11-14T11:42:07.183871+00:00",
+  "cachedAtUTC": "2026-11-14T12:52:08.915694+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Dan Vladar",
-      "number": 80,
+      "name": "Joseph Woll",
+      "number": 53,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 3831,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3831/PHI_80_Vladar.png",
+      "sourcePlayerId": 27288,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27288/PHI_53__Woll.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Joseph Woll",
-      "number": 53,
+      "name": "Dan Vladar",
+      "number": 80,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 27288,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27288/PHI_53__Woll.png",
+      "sourcePlayerId": 3831,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3831/PHI_80_Vladar.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

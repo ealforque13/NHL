@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-13T14:26:12.394Z",
   "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T11:41:39.312031+00:00",
+  "cachedAtUTC": "2026-11-14T12:51:41.671980+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Scott Wedgewood",
-      "number": 41,
+      "name": "Mackenzie Blackwood",
+      "number": 39,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1873,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
+      "sourcePlayerId": 3792,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3792/COL_39_Blackwood.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Mackenzie Blackwood",
-      "number": 39,
+      "name": "Scott Wedgewood",
+      "number": 41,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 3792,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3792/COL_39_Blackwood.png",
+      "sourcePlayerId": 1873,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
