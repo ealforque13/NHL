@@ -5304,6 +5304,10 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 @media (max-width:650px) {
   .sidebar {position:relative!important;z-index:9000!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;overflow:visible!important;min-height:0!important;}
   .sidebar .brand {min-width:0!important;flex:1 1 auto!important;}
+  .sidebar .brand .hoist-brand-logo,
+  .sidebar .brand .hoist-brand-name {display:none!important;}
+  .sidebar .brand .hoist-mobile-page-title {display:block!important;font-size:23px!important;font-weight:750!important;line-height:1.2!important;letter-spacing:-.025em!important;color:inherit!important;white-space:nowrap!important;}
+
   .sidebar .hoist-mobile-nav {display:block!important;position:relative!important;flex:0 0 auto!important;margin-left:auto!important;z-index:9100!important;}
   .sidebar .hoist-mobile-menu-button {width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;gap:0!important;background:transparent!important;border:1px solid rgba(151,181,224,.32)!important;}
   .sidebar .hoist-mobile-menu-button svg {width:21px!important;height:21px!important;}
@@ -5311,6 +5315,10 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   .main>.topbar {display:none!important;}
   .main>.content {padding-top:10px!important;}
 }
+</style>
+<style>
+/* The dynamic page heading is mobile-only; the desktop brand is unchanged. */
+.hoist-mobile-page-title{display:none}
 </style>
 </head>
 
@@ -5333,6 +5341,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
       HOIST <span class="brand-accent">OFFICIAL</span>
       <small>HOCKEY INTELLIGENCE</small>
     </span>
+    <span class="hoist-mobile-page-title" id="hoist-mobile-page-title" aria-live="polite">Games</span>
   </a>
 
 <div class="hoist-mobile-nav" id="hoist-mobile-nav">
@@ -7348,7 +7357,10 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     const navButtons=[...document.querySelectorAll('.sidebar #nav .nav-item[data-tab]')];
     const options=[...menu.querySelectorAll('[data-mobile-tab]')];
     const close=()=>{menu.hidden=true;toggle.setAttribute('aria-expanded','false')};
+    const pageTitle=document.getElementById('hoist-mobile-page-title');
+    const titles={games:'Games',overview:'Overview',standings:'Standings',stats:'Stats',lineups:'Lineups'};
     const sync=()=>{const active=navButtons.find(b=>b.classList.contains('active'));
+      if(pageTitle)pageTitle.textContent=titles[active?.dataset.tab]||'Games';
       options.forEach(b=>b.classList.toggle('is-active',!!active&&b.dataset.mobileTab===active.dataset.tab));};
     toggle.addEventListener('click',()=>{const opening=menu.hidden;menu.hidden=!opening;toggle.setAttribute('aria-expanded',String(opening));sync()});
     options.forEach(option=>option.addEventListener('click',()=>{
