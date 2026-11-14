@@ -2,9 +2,9 @@
   "team": "SEA",
   "teamName": "Seattle Kraken",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T13:04:32.443Z",
-  "sourceDescription": "Tom Gulitti",
-  "cachedAtUTC": "2026-11-14T14:45:30.506762+00:00",
+  "sourceUpdatedAt": "2026-11-14T15:15:52.605Z",
+  "sourceDescription": "Mike Benton",
+  "cachedAtUTC": "2026-11-14T15:42:23.876722+00:00",
   "forwards": [
     [
       {
@@ -182,22 +182,22 @@
     ],
     [
       {
-        "name": "Joshua Mahura",
-        "number": 28,
+        "name": "Ryan Lindgren",
+        "number": 55,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 3924,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3924/SEA_28_Mahura.png",
+        "sourcePlayerId": 4632,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4632/SEA_55_Lindgren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Ville Ottavainen",
-        "number": 46,
+        "name": "Cale Fleury",
+        "number": 8,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31756,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31756/SEA_46__Ottavainen.png",
+        "sourcePlayerId": 26737,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26737/SEA_8__Fleury.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -332,12 +332,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Joshua Mahura",
-        "number": 28,
+        "name": "Ryan Lindgren",
+        "number": 55,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 3924,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3924/SEA_28_Mahura.png",
+        "sourcePlayerId": 4632,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4632/SEA_55_Lindgren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -436,16 +436,6 @@
       "sourcePlayerId": 31241,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31241/SEA_63_Melanson.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Ryan Lindgren",
-      "number": 55,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 4632,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4632/SEA_55_Lindgren.png",
-      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]
