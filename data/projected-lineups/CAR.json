@@ -2,9 +2,9 @@
   "team": "CAR",
   "teamName": "Carolina Hurricanes",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T14:57:06.310Z",
-  "sourceDescription": "Tom Gulitti",
-  "cachedAtUTC": "2026-11-14T16:43:43.476417+00:00",
+  "sourceUpdatedAt": "2026-11-14T17:38:40.551Z",
+  "sourceDescription": "Ryan Henkel",
+  "cachedAtUTC": "2026-11-14T17:39:57.085268+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Seth Jarvis",
-        "number": 24,
+        "name": "Jordan Martinook",
+        "number": 48,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29549,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29549/CAR_24_Jarvis.png",
+        "sourcePlayerId": 2049,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2049/CAR_48_Martinook.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jordan Martinook",
-        "number": 48,
+        "name": "Seth Jarvis",
+        "number": 24,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2049,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2049/CAR_48_Martinook.png",
+        "sourcePlayerId": 29549,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29549/CAR_24_Jarvis.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

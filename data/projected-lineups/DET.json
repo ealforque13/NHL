@@ -2,9 +2,9 @@
   "team": "DET",
   "teamName": "Detroit Red Wings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:32:16.985Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T16:43:55.958321+00:00",
+  "sourceUpdatedAt": "2026-11-14T17:00:22.819Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-14T17:40:09.599101+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Mason Appleton",
-        "number": 22,
+        "name": "Michael Rasmussen",
+        "number": 27,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4582,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4582/DET_22_Appleton.png",
+        "sourcePlayerId": 2784,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2784/DET_27_Rasmussen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -322,12 +322,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mason Appleton",
-        "number": 22,
+        "name": "Michael Rasmussen",
+        "number": 27,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 4582,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4582/DET_22_Appleton.png",
+        "sourcePlayerId": 2784,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2784/DET_27_Rasmussen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

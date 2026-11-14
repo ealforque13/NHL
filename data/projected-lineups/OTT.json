@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:27:12.032Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T16:44:16.801074+00:00",
+  "sourceUpdatedAt": "2026-11-14T17:02:01.218Z",
+  "sourceDescription": "Jackson Starr",
+  "cachedAtUTC": "2026-11-14T17:40:30.416139+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Claude Giroux",
-        "number": 28,
+        "name": "Michael Amadio",
+        "number": 22,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1126,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1126/OTT_28_Giroux.png",
+        "sourcePlayerId": 2910,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2910/OTT_22_Amadio.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Amadio",
-        "number": 22,
+        "name": "Claude Giroux",
+        "number": 28,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2910,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2910/OTT_22_Amadio.png",
+        "sourcePlayerId": 1126,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1126/OTT_28_Giroux.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikolas Matinpalo",
-        "number": 33,
+        "name": "Carter Yakemchuk",
+        "number": 26,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 37937,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37937/OTT_33_Matinpalo.png",
+        "sourcePlayerId": 33595,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33595/OTT_26__Yakemchuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Philip Tomasino",
-        "number": 53,
+        "name": "Carter Yakemchuk",
+        "number": 26,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 29220,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29220/OTT_62__Tomasino.png",
+        "sourcePlayerId": 33595,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33595/OTT_26__Yakemchuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikolas Matinpalo",
-        "number": 33,
+        "name": "Jordan Spence",
+        "number": 21,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 37937,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37937/OTT_33_Matinpalo.png",
+        "sourcePlayerId": 29922,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29922/OTT_10_Spence.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

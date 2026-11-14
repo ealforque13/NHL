@@ -2,42 +2,10 @@
   "team": "DAL",
   "teamName": "Dallas Stars",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:40:48.287Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T16:43:53.909045+00:00",
+  "sourceUpdatedAt": "2026-11-14T17:01:12.667Z",
+  "sourceDescription": "Robert Tiffin",
+  "cachedAtUTC": "2026-11-14T17:40:07.502986+00:00",
   "forwards": [
-    [
-      {
-        "name": "Jamie Benn",
-        "number": 14,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Wyatt Johnston",
-        "number": 53,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 30835,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30835/DAL_53_Johnston.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Mikko Rantanen",
-        "number": 96,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2477,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2477/DAL_96_Rantanen.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Jason Robertson",
@@ -66,6 +34,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 38114,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38114/DAL_25__Hyry.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jamie Benn",
+        "number": 14,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Wyatt Johnston",
+        "number": 53,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 30835,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30835/DAL_53_Johnston.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikko Rantanen",
+        "number": 96,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2477,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2477/DAL_96_Rantanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -160,22 +160,22 @@
     ],
     [
       {
-        "name": "Lian Bichsel",
-        "number": 6,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 36369,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36369/DAL_6_Bichsel.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      },
-      {
         "name": "Esa Lindell",
         "number": 23,
-        "position": "RD",
-        "positionName": "Right Defense",
+        "position": "LD",
+        "positionName": "Left Defense",
         "sourcePlayerId": 2517,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2517/DAL_23_Lindell.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Myers",
+        "number": 57,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 176,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tyler Myers",
-        "number": 57,
+        "name": "Kyle Burroughs",
+        "number": 28,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 176,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
+        "sourcePlayerId": 3758,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3758/DAL_28__Burroughs.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -465,7 +465,7 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 36369,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36369/DAL_6_Bichsel.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     }
   ]

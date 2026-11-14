@@ -2,9 +2,9 @@
   "team": "NJD",
   "teamName": "New Jersey Devils",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:34:19.605Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T16:44:08.444178+00:00",
+  "sourceUpdatedAt": "2026-11-14T17:02:29.071Z",
+  "sourceDescription": "Amanda Stein",
+  "cachedAtUTC": "2026-11-14T17:40:22.080941+00:00",
   "forwards": [
     [
       {
@@ -182,22 +182,22 @@
     ],
     [
       {
-        "name": "Brenden Dillon",
-        "number": 5,
+        "name": "Anton Silayev",
+        "number": null,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1575,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1575/NJD_5_Dillon.png",
+        "sourcePlayerId": 38914,
+        "jerseyUrl": null,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Vladislav Kolyachonok",
-        "number": 74,
+        "name": "Brenden Dillon",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29791,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29791/NJD_Frnt.webp",
+        "sourcePlayerId": 1575,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1575/NJD_5_Dillon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
