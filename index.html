@@ -5298,6 +5298,20 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #stats .hoist-stats-player-rail:not(.hoist-stats-rail-measured){visibility:hidden!important}
 }
 </style>
+
+<style>
+/* Mobile: navigation in the logo header; remove the redundant season/title row. */
+@media (max-width:650px) {
+  .sidebar {position:relative!important;z-index:9000!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;overflow:visible!important;min-height:0!important;}
+  .sidebar .brand {min-width:0!important;flex:1 1 auto!important;}
+  .sidebar .hoist-mobile-nav {display:block!important;position:relative!important;flex:0 0 auto!important;margin-left:auto!important;z-index:9100!important;}
+  .sidebar .hoist-mobile-menu-button {width:40px!important;height:40px!important;min-height:40px!important;padding:0!important;gap:0!important;background:transparent!important;border:1px solid rgba(151,181,224,.32)!important;}
+  .sidebar .hoist-mobile-menu-button svg {width:21px!important;height:21px!important;}
+  .sidebar .hoist-mobile-menu-options {position:absolute!important;right:0!important;top:calc(100% + 8px)!important;z-index:9200!important;}
+  .main>.topbar {display:none!important;}
+  .main>.content {padding-top:10px!important;}
+}
+</style>
 </head>
 
 <body>
@@ -5320,6 +5334,19 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
       <small>HOCKEY INTELLIGENCE</small>
     </span>
   </a>
+
+<div class="hoist-mobile-nav" id="hoist-mobile-nav">
+  <button type="button" id="hoist-mobile-menu-toggle" class="hoist-mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="hoist-mobile-menu-options">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div id="hoist-mobile-menu-options" class="hoist-mobile-menu-options" hidden>
+    <button type="button" data-mobile-tab="games">Games</button>
+    <button type="button" data-mobile-tab="overview">Overview</button>
+    <button type="button" data-mobile-tab="standings">Standings</button>
+    <button type="button" data-mobile-tab="stats">Stats</button>
+    <button type="button" data-mobile-tab="lineups">Lineups</button>
+  </div>
+</div>
 
   <div class="side-label">NAVIGATION</div>
 
@@ -5381,18 +5408,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
       title="Refresh data"
     >↻</button>
   </div>
-<div class="hoist-mobile-nav" id="hoist-mobile-nav">
-  <button type="button" id="hoist-mobile-menu-toggle" class="hoist-mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="hoist-mobile-menu-options">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Menu
-  </button>
-  <div id="hoist-mobile-menu-options" class="hoist-mobile-menu-options" hidden>
-    <button type="button" data-mobile-tab="games">Games</button>
-    <button type="button" data-mobile-tab="overview">Overview</button>
-    <button type="button" data-mobile-tab="standings">Standings</button>
-    <button type="button" data-mobile-tab="stats">Stats</button>
-    <button type="button" data-mobile-tab="lineups">Lineups</button>
-  </div>
-</div>
+
 </header>
 
 <div class="content">
