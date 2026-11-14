@@ -2,9 +2,9 @@
   "team": "VAN",
   "teamName": "Vancouver Canucks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T18:19:33.681Z",
-  "sourceDescription": "Thomas Drance",
-  "cachedAtUTC": "2026-11-14T00:14:37.535350+00:00",
+  "sourceUpdatedAt": "2026-11-14T01:43:03.219Z",
+  "sourceDescription": "Brendan Batchelor",
+  "cachedAtUTC": "2026-11-14T01:44:09.276767+00:00",
   "forwards": [
     [
       {
@@ -57,7 +57,7 @@
         "sourcePlayerId": 2811,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2811/VAN_77__Chytil.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Jonathan Lekkerimaki",
@@ -275,7 +275,7 @@
         "sourcePlayerId": 2811,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2811/VAN_77__Chytil.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Liam Ohgren",
@@ -425,16 +425,6 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 2722,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2722/VAN_35_Demko.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Filip Chytil",
-      "number": 77,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 2811,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2811/VAN_77__Chytil.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }
