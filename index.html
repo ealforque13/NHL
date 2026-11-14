@@ -5389,6 +5389,11 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #games .hoist-pick-summary::-webkit-details-marker{display:none}
 #games .hoist-pick-summary{list-style:none}
 </style>
+<style>
+#games .hoist-picks-options .hoist-prop-team-filter{margin-left:auto;}
+#games .hoist-picks-options #hoist-prop-team{min-width:90px;}
+@media(max-width:650px){#games .hoist-picks-options .hoist-prop-team-filter{margin-left:auto;}}
+</style>
 </head>
 
 <body>
@@ -6046,6 +6051,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
             <label>Prop <select id="hoist-prop-line" aria-label="Prop threshold"><option value="1">1+</option></select></label>
             <label><span id="hoist-prop-hit-label">Last 5</span> <select id="hoist-prop-hit"><option value="0">ANY</option><option value="3" selected>3/5</option><option value="4">4/5</option><option value="5">5/5</option></select></label>
             <label class="hoist-prop-h2h-only"><input id="hoist-prop-h2h" type="checkbox"/> H2H matchups only</label>
+            <label class="hoist-prop-team-filter">Team <select id="hoist-prop-team" aria-label="Filter player props by team"><option value="all">All</option></select></label>
           </div>
         </div>
         <div class="hoist-picks-topline"><span id="hoist-picks-market-label">POINTS · 1+ POINT</span><span id="hoist-picks-total"></span></div>
@@ -8320,14 +8326,23 @@ document.addEventListener('DOMContentLoaded', function () {
  async function update(){
    if(body.hidden)return;
    const games=matchups(),date=dateInput?.value||'',line=Number(byId('hoist-prop-line').value)||1,minHits=Number(byId('hoist-prop-hit').value)||0,h2hOnly=byId('hoist-prop-h2h').checked;
+   const teamSelect=byId('hoist-prop-team');
+   const scheduledTeams=[...new Set(games.flatMap(g=>[g.away,g.home]))].sort();
+   const previousTeam=teamSelect.value;
+   const availableOptions=['all',...scheduledTeams];
+   if([...teamSelect.options].map(o=>o.value).join('|')!==availableOptions.join('|')){
+     teamSelect.innerHTML='<option value="all">All</option>'+scheduledTeams.map(code=>`<option value="${safe(code)}">${safe(code)}</option>`).join('');
+     teamSelect.value=scheduledTeams.includes(previousTeam)?previousTeam:'all';
+   }
+   const selectedTeam=teamSelect.value;
    byId('hoist-prop-hit-label').textContent=h2hOnly?'Last 5 H2H':'Last 5';
-   const key=[date,market,line,minHits,h2hOnly,games.map(g=>g.away+g.home).join(',')].join('|');
+   const key=[date,market,line,minHits,h2hOnly,selectedTeam,games.map(g=>g.away+g.home).join(',')].join('|');
    if(key===lastKey)return;lastKey=key;
    const ticket=++generation;
    byId('hoist-picks-market-label').textContent=market.toUpperCase()+' · '+line+'+ '+plural(line,labels[market]).toUpperCase();
    if(!games.length){list.innerHTML='<p class="hoist-picks-empty">No NHL matchups available for this date.</p>';byId('hoist-picks-total').textContent='';return;}
    list.innerHTML='<p class="hoist-picks-empty">Analyzing scheduled matchups…</p>';
-   const teams=[...new Set(games.flatMap(g=>[g.away,g.home]))];
+   const teams=scheduledTeams.filter(team=>selectedTeam==='all'||team===selectedTeam);
    const data=await Promise.all(teams.map(async team=>[team,await load(team)]));
    if(ticket!==generation)return;
    const opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
@@ -8337,12 +8352,12 @@ document.addEventListener('DOMContentLoaded', function () {
    const top=candidates;
    byId('hoist-picks-total').textContent=top.length+' candidates';
    if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No candidates meet these filters with the available game-log data. Try another market, a lower recent-hit threshold, or turn off H2H-only.</p>';return;}
-   list.innerHTML=top.map((p,i)=>`<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'recorded head-to-head meetings':'games with available data'}.</li><li>${p.h2hOnly?'Last 10 head-to-head meetings':'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' threshold streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'H2H meetings':'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line; ${p.h2hAvg.toFixed(2)} per game across ${p.h2hN} recorded meetings.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}<li>Ranked on historical results, not sportsbook odds or estimated value. Confirm availability and lines independently.</li></ul></div></details>`).join('');
+   list.innerHTML=top.map((p,i)=>`<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'recorded head-to-head meetings':'games with available data'}.</li><li>${p.h2hOnly?'Last 10 head-to-head meetings':'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' threshold streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'H2H meetings':'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line; ${p.h2hAvg.toFixed(2)} per game across ${p.h2hN} recorded meetings.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`).join('');
  }
  function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
  function setMarket(next){market=next;box.querySelectorAll('[data-prop-market]').forEach(b=>{const active=b.dataset.propMarket===market;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active))});const line=byId('hoist-prop-line');const choices=market==='shots'?[1,2,3,4,5]:[1,2,3];line.innerHTML=choices.map(n=>`<option value="${n}">${n}+</option>`).join('');lastKey='';schedule();}
  box.querySelectorAll('[data-prop-market]').forEach(b=>b.addEventListener('click',()=>setMarket(b.dataset.propMarket)));
- ['hoist-prop-line','hoist-prop-hit','hoist-prop-h2h'].forEach(id=>byId(id)?.addEventListener('change',()=>{lastKey='';schedule()}));
+ ['hoist-prop-line','hoist-prop-hit','hoist-prop-h2h','hoist-prop-team'].forEach(id=>byId(id)?.addEventListener('change',()=>{lastKey='';schedule()}));
  toggle.addEventListener('click',()=>{const open=body.hidden;body.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){lastKey='';update();}});
  new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
  dateInput?.addEventListener('change',()=>{lastKey='';schedule()});
