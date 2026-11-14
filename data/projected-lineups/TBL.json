@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:35:14.728Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T22:41:38.881805+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:35:44.614Z",
+  "sourceDescription": "Benjamin Pierce",
+  "cachedAtUTC": "2026-11-14T23:39:15.447802+00:00",
   "forwards": [
     [
       {
@@ -72,6 +72,16 @@
     ],
     [
       {
+        "name": "Yanni Gourde",
+        "number": 37,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 2566,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
         "name": "Sam O'Reilly",
         "number": 23,
         "position": "C",
@@ -110,16 +120,6 @@
         "positionName": "Center",
         "sourcePlayerId": 31505,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31505/TBL_14__Geekie.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Scott Sabourin",
-        "number": 46,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2171,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2171/TBL_46__Sabourin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -344,12 +344,12 @@
     ],
     [
       {
-        "name": "Pontus Holmberg",
-        "number": 29,
+        "name": "Yanni Gourde",
+        "number": 37,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 29640,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
+        "sourcePlayerId": 2566,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -435,16 +435,6 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 2749,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Yanni Gourde",
-      "number": 37,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2566,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

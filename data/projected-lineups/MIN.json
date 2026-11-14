@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T17:03:30.326Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T22:41:13.960101+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:38:18.082Z",
+  "sourceDescription": "Michael Russo",
+  "cachedAtUTC": "2026-11-14T23:38:50.456570+00:00",
   "forwards": [
     [
       {
@@ -148,34 +148,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Faber",
-        "number": 7,
+        "name": "Jared Spurgeon",
+        "number": 46,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
+        "sourcePlayerId": 1557,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Jared Spurgeon",
-        "number": 46,
+        "name": "Jonas Brodin",
+        "number": 25,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1557,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
+        "sourcePlayerId": 1740,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1740/MIN_25_Brodin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jonas Brodin",
-        "number": 25,
+        "name": "Brock Faber",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1740,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1740/MIN_25_Brodin.png",
+        "sourcePlayerId": 30792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

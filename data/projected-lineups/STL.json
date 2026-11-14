@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:45:51.705Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T22:41:36.793335+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:26:59.682Z",
+  "sourceDescription": "Jeremy Rutherford",
+  "cachedAtUTC": "2026-11-14T23:39:13.361698+00:00",
   "forwards": [
     [
       {
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jonatan Berggren",
-        "number": 29,
+        "name": "Connor McMichael",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
+        "sourcePlayerId": 29203,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29203/STL_77__McMichael.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -82,22 +82,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Connor McMichael",
-        "number": 77,
+        "name": "Pavel Buchnevich",
+        "number": 89,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 29203,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29203/STL_77__McMichael.png",
+        "sourcePlayerId": 2673,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Buchnevich",
-        "number": 89,
+        "name": "Aleksanteri Kaskimaki",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2673,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
+        "sourcePlayerId": 36379,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36379/STL_41__Kaskimaki.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -121,7 +121,7 @@
         "sourcePlayerId": 32940,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32940/STL_22_Suter.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Ross Johnston",
@@ -319,7 +319,7 @@
         "sourcePlayerId": 32940,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32940/STL_22_Suter.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Jake Neighbours",
@@ -436,6 +436,16 @@
       "sourcePlayerId": 3907,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3907/STL_65__Dube.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Pius Suter",
+      "number": 24,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 32940,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32940/STL_22_Suter.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
