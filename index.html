@@ -5292,6 +5292,12 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #games .hoist-game-feature-toggle { padding-top: 5px !important; padding-bottom: 5px !important; }
 }
 </style>
+<style>
+/* Avoid showing the mobile Stats overlay before row heights are measured. */
+@media(max-width:650px){
+  #stats .hoist-stats-player-rail:not(.hoist-stats-rail-measured){visibility:hidden!important}
+}
+</style>
 </head>
 
 <body>
@@ -7056,6 +7062,7 @@ document.addEventListener('DOMContentLoaded', function () {
    if(!rail||!table)return;
    const cells=[...table.querySelectorAll('thead tr,tbody tr')].map(row=>row.cells[0]);
    if(rail.children.length!==cells.length){
+     rail.classList.remove('hoist-stats-rail-measured');
      rail.innerHTML=cells.map((cell,i)=>`<div class="hoist-stats-rail-row ${i===0?'hoist-stats-rail-head':''}">${cell.innerHTML}</div>`).join('');
    }
    cells.forEach((cell,i)=>{
@@ -7063,8 +7070,36 @@ document.addEventListener('DOMContentLoaded', function () {
      row.style.height=`${cell.parentElement.getBoundingClientRect().height}px`;
      row.classList.toggle('hoist-stat-selected',cell.classList.contains('hoist-stat-selected'));
    });
+   rail.classList.add('hoist-stats-rail-measured');
  }
- window.addEventListener('resize',()=>requestAnimationFrame(syncStatsPlayerRail));
+ // Keep the pinned player rail aligned as images, fonts, and responsive rows settle.
+ let railSyncFrame=0;
+ const scheduleRailSync=()=>{
+   if(railSyncFrame)cancelAnimationFrame(railSyncFrame);
+   railSyncFrame=requestAnimationFrame(()=>{railSyncFrame=0;syncStatsPlayerRail();});
+ };
+ let statsRowObserver;
+ function watchStatsRowSizes(){
+   if(statsRowObserver)statsRowObserver.disconnect();
+   const shell=el('hoist-stats-content')?.querySelector('.hoist-stats-fixed-shell');
+   if(!shell)return;
+   const rows=shell.querySelectorAll('.hoist-stats-table thead tr,.hoist-stats-table tbody tr');
+   if(typeof ResizeObserver==='function'){
+     statsRowObserver=new ResizeObserver(scheduleRailSync);
+     rows.forEach(row=>statsRowObserver.observe(row));
+   }
+   shell.querySelectorAll('.hoist-stats-table img').forEach(img=>{
+     if(!img.complete){img.addEventListener('load',scheduleRailSync,{once:true});img.addEventListener('error',scheduleRailSync,{once:true});}
+   });
+   if(document.fonts?.ready)document.fonts.ready.then(scheduleRailSync).catch(()=>{});
+   scheduleRailSync();
+   // Mobile Safari can paint a restored tab before its table gets final geometry.
+   requestAnimationFrame(()=>requestAnimationFrame(scheduleRailSync));
+   window.addEventListener('load',scheduleRailSync,{once:true});
+   window.addEventListener('pageshow',scheduleRailSync,{once:true});
+   document.addEventListener('visibilitychange',()=>{if(!document.hidden)scheduleRailSync()},{once:true});
+ }
+ window.addEventListener('resize',scheduleRailSync);
  async function getTeam(code){if(cache.has(code))return cache.get(code);const response=await fetch(`./data/club-stats/${code}.json`,{cache:'no-cache'});if(!response.ok)throw Error('Missing cached club stats');const data=await response.json();if(!Array.isArray(data.skaters))throw Error('Invalid skater statistics');const players=data.skaters.map(p=>({...p,team:code}));
  const numbers=await rosterNumbers(code);
  for(const p of players){
@@ -7084,7 +7119,7 @@ document.addEventListener('DOMContentLoaded', function () {
  players.sort((a,b)=>{const av=numeric(a,sortKey),bv=numeric(b,sortKey);const cmp=sortKey==='name'?name(a).localeCompare(name(b)):av==null?bv==null?0:1:bv==null?-1:sortDirection*(av-bv);return cmp||(numeric(b,'points')??0)-(numeric(a,'points')??0)||name(a).localeCompare(name(b));});
  const pages=Math.max(1,Math.ceil(players.length/pageSize));leaguePage=Math.min(leaguePage,pages);const offset=league?(leaguePage-1)*pageSize:0;const visible=league?players.slice(offset,offset+pageSize):players;
  el('hoist-stats-content').innerHTML=`<h4 class="hoist-stats-subtitle">${esc(heading)}</h4>${players.length?table(visible,offset):'<p class="muted">No player statistics available yet.</p>'}${league?pagination(players.length):''}`;
- requestAnimationFrame(()=>{const wrap=el('hoist-stats-content')?.querySelector('.hoist-stats-table-wrap');if(wrap)wrap.scrollLeft=previousScroll;syncStatsPlayerRail();});
+ requestAnimationFrame(()=>{const wrap=el('hoist-stats-content')?.querySelector('.hoist-stats-table-wrap');if(wrap)wrap.scrollLeft=previousScroll;watchStatsRowSizes();});
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
  document.addEventListener('DOMContentLoaded',()=>{if(!el('stats'))return;const picker=el('hoist-stats-team');const sortedTeams=teams.slice().sort((a,b)=>a[1].localeCompare(b[1]));
  const syncTeamLabels=()=>{const mobile=window.matchMedia('(max-width:650px)').matches;const current=picker.value;picker.innerHTML=sortedTeams.map(([code,n])=>`<option value="${code}">${esc(mobile?code:n)}</option>`).join('');if(current)picker.value=current;};
