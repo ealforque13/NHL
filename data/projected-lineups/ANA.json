@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-13T19:25:33.579Z",
   "sourceDescription": "Patrick Present",
-  "cachedAtUTC": "2026-11-14T19:44:57.880209+00:00",
+  "cachedAtUTC": "2026-11-14T20:41:01.849241+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Ville Husso",
-      "number": 33,
+      "name": "Lukas Dostal",
+      "number": 1,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 3837,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3837/ANA_33_Husso.png",
+      "sourcePlayerId": 29143,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29143/ANA_1_Dostal_2_.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Lukas Dostal",
-      "number": 1,
+      "name": "Ville Husso",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29143,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29143/ANA_1_Dostal_2_.png",
+      "sourcePlayerId": 3837,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3837/ANA_33_Husso.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

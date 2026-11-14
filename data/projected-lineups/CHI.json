@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:38:41.813Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T19:45:10.530627+00:00",
+  "sourceUpdatedAt": "2026-11-14T20:11:02.477Z",
+  "sourceDescription": "Scott Powers",
+  "cachedAtUTC": "2026-11-14T20:41:14.382171+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Andrew Mangiapane",
-        "number": 88,
+        "name": "Teuvo Teravainen",
+        "number": 86,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4622/CHI_26_Mangiapane.png",
+        "sourcePlayerId": 2128,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2128/CHI_86_Teravainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,40 +124,18 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jordan Greenway",
-        "number": 12,
+        "name": "Andrew Mangiapane",
+        "number": 88,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4644,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4644/CHI_12__Greenway.png",
+        "sourcePlayerId": 4622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4622/CHI_26_Mangiapane.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ]
   ],
   "defense": [
-    [
-      {
-        "name": "Ian Cole",
-        "number": 28,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 1313,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1313/CHI_28__Cole.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Artyom Levshunov",
-        "number": 55,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 38138,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38138/CHI_55_Levshunov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Alex Vlasic",
@@ -176,6 +154,28 @@
         "positionName": "Right Defense",
         "sourcePlayerId": 34789,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34789/CHI_6_Rinzel.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ian Cole",
+        "number": 28,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 1313,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1313/CHI_28__Cole.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Artyom Levshunov",
+        "number": 55,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 38138,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38138/CHI_55_Levshunov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Donato",
-        "number": 8,
+        "name": "Teuvo Teravainen",
+        "number": 86,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4635,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4635/CHI_8_Donato.png",
+        "sourcePlayerId": 2128,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2128/CHI_86_Teravainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jordan Greenway",
-        "number": 12,
+        "name": "Teuvo Teravainen",
+        "number": 86,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 4644,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4644/CHI_12__Greenway.png",
+        "sourcePlayerId": 2128,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2128/CHI_86_Teravainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
