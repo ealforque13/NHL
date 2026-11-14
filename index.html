@@ -5394,6 +5394,23 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #games .hoist-picks-options #hoist-prop-team{min-width:90px;}
 @media(max-width:650px){#games .hoist-picks-options .hoist-prop-team-filter{margin-left:auto;}}
 </style>
+<style>
+/* Mobile compact H2H label and white Team dropdown chevron. */
+#games .hoist-h2h-mobile-label{display:none}
+#games #hoist-prop-team{
+  appearance:none;-webkit-appearance:none;
+  padding-right:25px!important;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='m1 1 5 5 5-5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 8px center;background-size:11px 7px;
+}
+@media(max-width:650px){
+  #games .hoist-h2h-full-label{display:none}
+  #games .hoist-h2h-mobile-label{display:inline}
+  #games .hoist-picks-options{gap:7px!important}
+  #games .hoist-picks-options .hoist-prop-team-filter{margin-left:auto!important}
+  #games .hoist-picks-options #hoist-prop-team{min-width:66px!important}
+}
+</style>
 </head>
 
 <body>
@@ -6050,7 +6067,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
           <div class="hoist-picks-options">
             <label>Prop <select id="hoist-prop-line" aria-label="Prop threshold"><option value="1">1+</option></select></label>
             <label><span id="hoist-prop-hit-label">Last 5</span> <select id="hoist-prop-hit"><option value="0">ANY</option><option value="3" selected>3/5</option><option value="4">4/5</option><option value="5">5/5</option></select></label>
-            <label class="hoist-prop-h2h-only"><input id="hoist-prop-h2h" type="checkbox"/> H2H matchups only</label>
+            <label class="hoist-prop-h2h-only"><input id="hoist-prop-h2h" type="checkbox"/> <span class="hoist-h2h-full-label">H2H matchups only</span><span class="hoist-h2h-mobile-label">H2H</span></label>
             <label class="hoist-prop-team-filter">Team <select id="hoist-prop-team" aria-label="Filter player props by team"><option value="all">All</option></select></label>
           </div>
         </div>
