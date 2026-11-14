@@ -5334,6 +5334,16 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   content:none!important;
 }
 </style>
+<style>
+/* Games / Last 5: move carousel arrows beside the pagination dots.
+   Player cards now receive the full width previously occupied by arrows. */
+#games .hoist-game-feature-stage {display:block!important;width:100%;max-width:100%;}
+#games .hoist-card-slides {width:100%;min-width:0;}
+#games .hoist-card-slide-dots {display:flex!important;align-items:center;justify-content:center;gap:10px;margin:10px auto 0;}
+#games .hoist-card-slide-dots .hoist-card-slide-nav {display:inline-flex;align-items:center;justify-content:center;width:28px;height:26px;flex:0 0 28px;font-size:23px;line-height:1;padding:0;border:0;background:transparent;}
+#games .hoist-card-slide-dots .hoist-card-slide-dot {flex-shrink:0;}
+@media(min-width:901px){#games .hoist-game-feature-stage,#games .hoist-card-slide-dots{max-width:900px;margin-left:auto;margin-right:auto}}
+</style>
 </head>
 
 <body>
@@ -7810,7 +7820,7 @@ document.addEventListener('DOMContentLoaded', function () {
       WSH:'#c8102e',WPG:'#041e42'
     };
     const data=[away,home],rosters=[awayRoster,homeRoster];
-    feature.querySelector('.hoist-game-feature-content').innerHTML=`<div class="hoist-game-feature-stage"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player">${leader?`<span class="hoist-card-hot-portrait" style="--hoist-portrait-team-colour:${portraitTeamColours[pair[i]]||'#304766'}">${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featurePlayerMeta(leader.p,pair[i],rosters[i])}${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number"><span>${leader.total}</span><small>${label.toLowerCase()}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div><button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div><div class="hoist-card-slide-dots">${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}</div>`;
+    feature.querySelector('.hoist-game-feature-content').innerHTML=`<div class="hoist-game-feature-stage"><div class="hoist-card-slides">${slideCategories.map(([key,label,short],idx)=>`<div class="hoist-card-slide" ${idx?'hidden':''}><div class="hoist-card-slide-title">${label} IN THE LAST 5 GAMES</div><div class="hoist-card-slide-players">${data.map((teamData,i)=>{const leader=teamData?leadersLastFive(teamData,key):null;return `<div class="hoist-card-feature-player">${leader?`<span class="hoist-card-hot-portrait" style="--hoist-portrait-team-colour:${portraitTeamColours[pair[i]]||'#304766'}">${portrait(leader.p,pair[i])}</span><span class="hoist-card-feature-info"><strong>${esc(leader.p.name)}</strong>${featurePlayerMeta(leader.p,pair[i],rosters[i])}${featureFormCircles(leader.recent,pair[i],key)}</span><span class="hoist-card-feature-number"><span>${leader.total}</span><small>${label.toLowerCase()}</small></span>`:'<span class="hoist-card-feature-info">Stats unavailable</span>'}</div>`;}).join('')}</div></div>`).join('')}</div></div><div class="hoist-card-slide-dots"><button type="button" class="hoist-card-slide-nav" data-slide-step="-1" aria-label="Previous category">‹</button>${slideCategories.map(([,label],i)=>`<button type="button" class="hoist-card-slide-dot ${i===0?'active':''}" data-slide-to="${i}" aria-label="Show ${label.toLowerCase()}" aria-current="${i===0?'true':'false'}"></button>`).join('')}<button type="button" class="hoist-card-slide-nav" data-slide-step="1" aria-label="Next category">›</button></div>`;
   }
   function prepare(card) {
     if(card.dataset.hoistPrepared)return;card.dataset.hoistPrepared='1';card.setAttribute('aria-expanded','false');
