@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T18:49:15.335787+00:00",
+  "updatedAt": "2026-11-14T00:55:09.849730+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -70,8 +70,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NSH"
     },
     "8476853": {
@@ -140,6 +140,12 @@
       "status": "Injured Reserve",
       "team": "FLA"
     },
+    "8477505": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "SJS"
+    },
     "8477511": {
       "injured": true,
       "description": "Mantha (throat) was placed on long-term injured reserve by the Devils on Wednesday, retroactive to Nov. 7.",
@@ -193,6 +199,12 @@
       "description": "Greer (upper body) was placed on injured reserve Monday.",
       "status": "Injured Reserve",
       "team": "ANA"
+    },
+    "8478465": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "VAN"
     },
     "8478476": {
       "injured": true,
@@ -272,16 +284,10 @@
       "status": "Day-To-Day",
       "team": "COL"
     },
-    "8480078": {
-      "injured": true,
-      "description": "Chytil (shoulder) looks set to return to the lineup against the Rangers on Friday, Jeff Paterson of CanucksArmy.com reports.",
-      "status": "Injured Reserve",
-      "team": "VAN"
-    },
     "8480192": {
       "injured": true,
-      "description": "Kovacevic (undisclosed) is undergoing imaging Thursday and won't play in the Devils' home matchup against the Capitals, Kristy Flannery of The Hockey News reports.",
-      "status": "Out",
+      "description": "The Devils placed Kovacevic (ankle) on injured reserve Friday, retroactive to Nov. 10.",
+      "status": "Injured Reserve",
       "team": "NJD"
     },
     "8480434": {
@@ -386,6 +392,12 @@
       "status": "Injured Reserve",
       "team": "COL"
     },
+    "8482765": {
+      "injured": true,
+      "description": "Rosen (undisclosed) has been ruled out for Saturday's game against the Blackhawks, Ken Wiebe of The Winnipeg Free Press reports.",
+      "status": "Out",
+      "team": "WPG"
+    },
     "8482874": {
       "injured": true,
       "description": "Melanson (chest) will be a game-time call for Saturday's clash with the Hurricanes, Tom Gulitti of NHL.com reports.",
@@ -400,8 +412,8 @@
     },
     "8483431": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "UTA"
     },
     "8483455": {
