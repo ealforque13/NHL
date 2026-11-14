@@ -5370,6 +5370,18 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #games .hoist-picks-empty{padding:18px 4px;font-size:12px;opacity:.72}
 @media(max-width:650px){#games .hoist-picks{margin:12px 0 18px}#games .hoist-pick-summary{gap:7px;padding:12px 2px}#games .hoist-pick-rank{flex-basis:18px}#games .hoist-pick-details{padding-left:25px}}
 </style>
+<style>
+#games .hoist-picks-filters{display:flex;flex-direction:column;gap:10px;margin:2px 2px 14px}
+#games .hoist-picks-markets{display:flex;gap:4px;flex-wrap:wrap;border-bottom:1px solid rgba(135,155,183,.23)}
+#games .hoist-picks-markets button{border:0;border-bottom:2px solid transparent;background:transparent;color:inherit;opacity:.72;padding:9px 11px;font:inherit;font-size:12px;cursor:pointer}
+#games .hoist-picks-markets button.is-active{border-bottom-color:#348bff;opacity:1;color:#65aaff;font-weight:700}
+#games .hoist-picks-options{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:11px}
+#games .hoist-picks-options label{display:inline-flex;align-items:center;gap:6px}
+#games .hoist-picks-options select{font:inherit;color:inherit;background:transparent;border:1px solid rgba(135,155,183,.35);border-radius:5px;padding:5px 7px}
+#games .hoist-picks-options select option{color:#182334;background:#f6f8fc}
+#games .hoist-pick-h2h{color:#65aaff;font-weight:600}
+@media(max-width:650px){#games .hoist-picks-markets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}#games .hoist-picks-markets button{font-size:10px;padding:9px 2px}#games .hoist-picks-options{gap:8px}}
+</style>
 </head>
 
 <body>
@@ -6016,8 +6028,21 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
         <span><strong>DAILY PLAYER PROPS</strong><small>Data-driven matchup research</small></span><span class="hoist-picks-chevron" aria-hidden="true">⌄</span>
       </button>
       <div id="hoist-picks-body" hidden>
-        <div class="hoist-picks-topline"><span>POINTS · 1+ POINT</span><span id="hoist-picks-total"></span></div>
-        <p class="hoist-picks-note">Research candidates ranked using recent form and point streaks. Not guaranteed bets; odds and lineup status are not included.</p>
+        <div class="hoist-picks-filters" aria-label="Player prop filters">
+          <div class="hoist-picks-markets" role="group" aria-label="Prop market">
+            <button type="button" class="is-active" data-prop-market="points" aria-pressed="true">Points</button>
+            <button type="button" data-prop-market="goals" aria-pressed="false">Goals</button>
+            <button type="button" data-prop-market="assists" aria-pressed="false">Assists</button>
+            <button type="button" data-prop-market="shots" aria-pressed="false">Shots on Goal</button>
+          </div>
+          <div class="hoist-picks-options">
+            <label>Prop <select id="hoist-prop-line" aria-label="Prop threshold"><option value="1">1+</option></select></label>
+            <label>Last 5 <select id="hoist-prop-hit"><option value="0">Any</option><option value="3" selected>3+ hits</option><option value="4">4+ hits</option><option value="5">5 hits</option></select></label>
+            <label class="hoist-prop-h2h-only"><input id="hoist-prop-h2h" type="checkbox"/> H2H data only</label>
+          </div>
+        </div>
+        <div class="hoist-picks-topline"><span id="hoist-picks-market-label">POINTS · 1+ POINT</span><span id="hoist-picks-total"></span></div>
+        <p class="hoist-picks-note">Research signals from available game logs. Head-to-head results appear only when opponent data is verified. No odds, guarantees, or confirmed lineup status.</p>
         <div id="hoist-picks-list" aria-live="polite">Open to load today's matchup research.</div>
       </div>
     </section>
@@ -8235,40 +8260,59 @@ document.addEventListener('DOMContentLoaded', function () {
 })();
 </script>
 <script>
-/* Daily player prop research — uses existing cached game schedules and matchup logs.
-   Displays evidence-based candidates, not fabricated odds or guarantees. */
+/* Daily player props — cached matchup logs; never fabricate missing H2H or shot data. */
 (()=>{
  'use strict';
  const byId=id=>document.getElementById(id);
  const box=byId('hoist-picks'),toggle=byId('hoist-picks-toggle'),body=byId('hoist-picks-body'),list=byId('hoist-picks-list');
  const grid=byId('hoist-games-grid'),dateInput=byId('hoist-games-date');
- if(!box||!toggle||!grid)return;
- const cache=new Map();let generation=0,queued=false,lastKey='';
- const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
- const number=v=>v===null||v===undefined||v===''?0:Number(v)||0;
- const gameDate=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
+ if(!box||!toggle||!grid||!list)return;
+ const cache=new Map();let generation=0,queued=false,lastKey='',market='points';
+ const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const num=v=>v===null||v===undefined||v===''||!Number.isFinite(Number(v))?null:Number(v);
+ const dateOf=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
  const load=code=>{if(!cache.has(code))cache.set(code,fetch('./data/matchups/'+code+'.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No matchup file');return r.json()}).catch(()=>({players:[]})));return cache.get(code)};
+ const metric=(g,m)=>{
+   const aliases={points:['points','pts','p'],goals:['goals','g'],assists:['assists','a'],shots:['shots','shotsOnGoal','sog','shots_on_goal']};
+   for(const k of aliases[m])if(Object.prototype.hasOwnProperty.call(g,k)){const v=num(g[k]);if(v!==null)return v;}
+   if(m==='points'){const g1=metric(g,'goals'),a1=metric(g,'assists');if(g1!==null&&a1!==null)return g1+a1;}
+   return null;
+ };
+ const opponentOf=g=>{
+   const raw=g.opponentAbbrev||g.opponentCode||g.opponent||g.opponentTeamAbbrev||g.opponentTeam?.abbrev;
+   const value=typeof raw==='object'?(raw.abbrev||raw.code):raw;
+   const code=String(value||'').toUpperCase().trim();
+   return /^[A-Z]{3}$/.test(code)?code:null;
+ };
  function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2]});}return found;}
- function points(g){return number(g.points??g.pts??g.p)}
- function analyze(p,team,opponent,venue,date){
-   const played=[...(p.games||[])].filter(g=>gameDate(g)&&gameDate(g)<date).sort((a,b)=>gameDate(b).localeCompare(gameDate(a)));
-   if(played.length<3)return null;
-   const last5=played.slice(0,5),last10=played.slice(0,10);
-   const hit5=last5.filter(g=>points(g)>=1).length,hit10=last10.filter(g=>points(g)>=1).length;
-   let streak=0;for(const g of played){if(points(g)<1)break;streak++;}
-   const avg5=last5.reduce((sum,g)=>sum+points(g),0)/last5.length;
-   const season=played.filter(g=>String(g.season)==='20262027');
-   const seasonAvg=season.length?season.reduce((sum,g)=>sum+points(g),0)/season.length:null;
-   // Rank only on evidence present in cached logs. Never claim a matchup H2H number without a verified opponent field.
-   const score=hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5,3)*4;
-   if(hit5<3&&streak<3)return null;
-   return {name:p.name||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length};
+ const labels={points:'point',goals:'goal',assists:'assist',shots:'shot on goal'};
+ const plural=(n,label)=>n===1?label:label==='shot on goal'?'shots on goal':label+'s';
+ function analyze(p,team,opponent,venue,date,line,minHits,h2hOnly){
+   const played=[...(p.games||[])].filter(g=>dateOf(g)&&dateOf(g)<date).sort((a,b)=>dateOf(b).localeCompare(dateOf(a)));
+   const valid=played.filter(g=>metric(g,market)!==null);
+   if(valid.length<3)return null;
+   const last5=valid.slice(0,5),last10=valid.slice(0,10);
+   const hit5=last5.filter(g=>metric(g,market)>=line).length;
+   if(hit5<minHits)return null;
+   const hit10=last10.filter(g=>metric(g,market)>=line).length;
+   let streak=0;for(const g of valid){if(metric(g,market)<line)break;streak++;}
+   const avg5=last5.reduce((sum,g)=>sum+metric(g,market),0)/last5.length;
+   const h2h=valid.filter(g=>opponentOf(g)===opponent);
+   if(h2hOnly&&!h2h.length)return null;
+   const h2hHits=h2h.filter(g=>metric(g,market)>=line).length;
+   const h2hAvg=h2h.length?h2h.reduce((sum,g)=>sum+metric(g,market),0)/h2h.length:null;
+   const season=valid.filter(g=>String(g.season)==='20262027');
+   const seasonAvg=season.length?season.reduce((sum,g)=>sum+metric(g,market),0)/season.length:null;
+   const score=hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5/line,3)*4+(h2h.length?Math.min(h2h.length,5)/5*(h2hHits/h2h.length-.5)*12:0);
+   return {name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg};
  }
  async function update(){
    if(body.hidden)return;
-   const games=matchups(),date=dateInput?.value||'',key=date+'|'+games.map(g=>g.away+g.home).join(',');
+   const games=matchups(),date=dateInput?.value||'',line=Number(byId('hoist-prop-line').value)||1,minHits=Number(byId('hoist-prop-hit').value)||0,h2hOnly=byId('hoist-prop-h2h').checked;
+   const key=[date,market,line,minHits,h2hOnly,games.map(g=>g.away+g.home).join(',')].join('|');
    if(key===lastKey)return;lastKey=key;
    const ticket=++generation;
+   byId('hoist-picks-market-label').textContent=market.toUpperCase()+' · '+line+'+ '+plural(line,labels[market]).toUpperCase();
    if(!games.length){list.innerHTML='<p class="hoist-picks-empty">No NHL matchups available for this date.</p>';byId('hoist-picks-total').textContent='';return;}
    list.innerHTML='<p class="hoist-picks-empty">Analyzing scheduled matchups…</p>';
    const teams=[...new Set(games.flatMap(g=>[g.away,g.home]))];
@@ -8276,14 +8320,17 @@ document.addEventListener('DOMContentLoaded', function () {
    if(ticket!==generation)return;
    const opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
    const candidates=[];
-   for(const [team,payload] of data){const match=opponents.get(team);if(!match)continue;for(const player of payload.players||[]){const result=analyze(player,team,match.opponent,match.venue,date);if(result)candidates.push(result);}}
+   for(const [team,payload] of data){const match=opponents.get(team);if(!match)continue;for(const player of payload.players||[]){const result=analyze(player,team,match.opponent,match.venue,date,line,minHits,h2hOnly);if(result)candidates.push(result);}}
    candidates.sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));
-   const top=candidates.slice(0,8);
+   const top=candidates.slice(0,12);
    byId('hoist-picks-total').textContent=top.length+' candidates';
-   if(!top.length){list.innerHTML='<p class="hoist-picks-empty">Not enough recent player data to identify candidates for these matchups.</p>';return;}
-   list.innerHTML=top.map((p,i)=>`<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · 1+ point</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} L5</span><span class="hoist-pick-chevron">⌄</span></summary><div class="hoist-pick-details"><ul><li>Recorded a point in ${p.hit5} of the last ${p.n5} games.</li><li>Recorded a point in ${p.hit10} of the last ${p.n10} games.</li>${p.streak?`<li>Current point streak: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Averaging ${p.avg5.toFixed(2)} points per game over the last ${p.n5}.</li>${p.seasonAvg!==null?`<li>2026–27 season: ${p.seasonAvg.toFixed(2)} PPG across ${p.nSeason} games.</li>`:''}<li>Matchup: ${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}. Head-to-head PPG and sportsbook odds are not yet included.</li></ul></div></details>`).join('');
+   if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No candidates meet these filters with the available game-log data. Try another market, a lower recent-hit threshold, or turn off H2H-only.</p>';return;}
+   list.innerHTML=top.map((p,i)=>`<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} L5</span><span class="hoist-pick-chevron">⌄</span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} games with available data.</li><li>Last 10: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>Current ${safe(labels[market])} threshold streak: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line; ${p.h2hAvg.toFixed(2)} per game across ${p.h2hN} recorded meetings.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}<li>Ranked on historical results, not sportsbook odds or estimated value. Confirm availability and lines independently.</li></ul></div></details>`).join('');
  }
  function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
+ function setMarket(next){market=next;box.querySelectorAll('[data-prop-market]').forEach(b=>{const active=b.dataset.propMarket===market;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active))});const line=byId('hoist-prop-line');const choices=market==='shots'?[1,2,3,4,5]:[1,2,3];line.innerHTML=choices.map(n=>`<option value="${n}">${n}+</option>`).join('');lastKey='';schedule();}
+ box.querySelectorAll('[data-prop-market]').forEach(b=>b.addEventListener('click',()=>setMarket(b.dataset.propMarket)));
+ ['hoist-prop-line','hoist-prop-hit','hoist-prop-h2h'].forEach(id=>byId(id)?.addEventListener('change',()=>{lastKey='';schedule()}));
  toggle.addEventListener('click',()=>{const open=body.hidden;body.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){lastKey='';update();}});
  new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
  dateInput?.addEventListener('change',()=>{lastKey='';schedule()});
