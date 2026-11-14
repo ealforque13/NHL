@@ -5344,6 +5344,32 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #games .hoist-card-slide-dots .hoist-card-slide-dot {flex-shrink:0;}
 @media(min-width:901px){#games .hoist-game-feature-stage,#games .hoist-card-slide-dots{max-width:900px;margin-left:auto;margin-right:auto}}
 </style>
+<style>
+/* Games: expandable daily player-prop research */
+#games .hoist-picks{margin:17px 0 22px;border-top:1px solid rgba(135,155,183,.24);border-bottom:1px solid rgba(135,155,183,.24)}
+#games .hoist-picks-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;gap:12px;padding:15px 3px;background:transparent;border:0;color:inherit;text-align:left;cursor:pointer}
+#games .hoist-picks-toggle>span:first-child{display:flex;flex-direction:column;gap:4px}
+#games .hoist-picks-toggle strong{font-size:14px;letter-spacing:.045em}
+#games .hoist-picks-toggle small{font-size:11px;opacity:.63}
+#games .hoist-picks-chevron{font-size:23px;line-height:1;transition:transform .2s}
+#games .hoist-picks-toggle[aria-expanded="true"] .hoist-picks-chevron{transform:rotate(180deg)}
+#games .hoist-picks-topline{display:flex;justify-content:space-between;gap:10px;font-size:10px;font-weight:700;letter-spacing:.08em;color:#66a9ff;padding:4px 3px 8px}
+#games .hoist-picks-note{font-size:11px;line-height:1.5;opacity:.7;margin:0 3px 13px}
+#games .hoist-pick{border-top:1px solid rgba(135,155,183,.17)}
+#games .hoist-pick-summary{display:flex;align-items:center;gap:12px;width:100%;padding:13px 3px;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer}
+#games .hoist-pick-rank{flex:0 0 24px;font-size:11px;opacity:.48;font-weight:700}
+#games .hoist-pick-player{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+#games .hoist-pick-player strong{font-size:13px}
+#games .hoist-pick-player small{font-size:11px;opacity:.67}
+#games .hoist-pick-signal{font-size:11px;font-weight:700;color:#65adff;white-space:nowrap}
+#games .hoist-pick-chevron{opacity:.65;transition:transform .2s}
+#games .hoist-pick[open] .hoist-pick-chevron{transform:rotate(180deg)}
+#games .hoist-pick-details{padding:0 10px 15px 39px;font-size:12px;line-height:1.65;color:inherit}
+#games .hoist-pick-details ul{margin:0;padding-left:17px}
+#games .hoist-pick-details li{margin:3px 0}
+#games .hoist-picks-empty{padding:18px 4px;font-size:12px;opacity:.72}
+@media(max-width:650px){#games .hoist-picks{margin:12px 0 18px}#games .hoist-pick-summary{gap:7px;padding:12px 2px}#games .hoist-pick-rank{flex-basis:18px}#games .hoist-pick-details{padding-left:25px}}
+</style>
 </head>
 
 <body>
@@ -5985,6 +6011,16 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
       </div>
     </div>
     <div id="hoist-games-day" class="hoist-games-day"></div>
+    <section id="hoist-picks" class="hoist-picks" aria-label="Daily player prop research">
+      <button type="button" class="hoist-picks-toggle" id="hoist-picks-toggle" aria-expanded="false" aria-controls="hoist-picks-body">
+        <span><strong>DAILY PLAYER PROPS</strong><small>Data-driven matchup research</small></span><span class="hoist-picks-chevron" aria-hidden="true">⌄</span>
+      </button>
+      <div id="hoist-picks-body" hidden>
+        <div class="hoist-picks-topline"><span>POINTS · 1+ POINT</span><span id="hoist-picks-total"></span></div>
+        <p class="hoist-picks-note">Research candidates ranked using recent form and point streaks. Not guaranteed bets; odds and lineup status are not included.</p>
+        <div id="hoist-picks-list" aria-live="polite">Open to load today's matchup research.</div>
+      </div>
+    </section>
     <p id="hoist-games-status" class="muted" role="status">Loading NHL games…</p>
     <div id="hoist-games-grid" class="hoist-games-grid"></div>
     <p class="hoist-games-footnote muted">Times shown in Eastern Time.</p>
@@ -8196,6 +8232,61 @@ document.addEventListener('DOMContentLoaded', function () {
   new MutationObserver(syncGamesPageBackground).observe(document.documentElement,{attributes:true,attributeFilter:['class','data-theme']});
   if(document.body)new MutationObserver(syncGamesPageBackground).observe(document.body,{attributes:true,attributeFilter:['class','data-theme']});
   else document.addEventListener('DOMContentLoaded',()=>new MutationObserver(syncGamesPageBackground).observe(document.body,{attributes:true,attributeFilter:['class','data-theme']}));
+})();
+</script>
+<script>
+/* Daily player prop research — uses existing cached game schedules and matchup logs.
+   Displays evidence-based candidates, not fabricated odds or guarantees. */
+(()=>{
+ 'use strict';
+ const byId=id=>document.getElementById(id);
+ const box=byId('hoist-picks'),toggle=byId('hoist-picks-toggle'),body=byId('hoist-picks-body'),list=byId('hoist-picks-list');
+ const grid=byId('hoist-games-grid'),dateInput=byId('hoist-games-date');
+ if(!box||!toggle||!grid)return;
+ const cache=new Map();let generation=0,queued=false,lastKey='';
+ const safe=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const number=v=>v===null||v===undefined||v===''?0:Number(v)||0;
+ const gameDate=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
+ const load=code=>{if(!cache.has(code))cache.set(code,fetch('./data/matchups/'+code+'.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No matchup file');return r.json()}).catch(()=>({players:[]})));return cache.get(code)};
+ function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2]});}return found;}
+ function points(g){return number(g.points??g.pts??g.p)}
+ function analyze(p,team,opponent,venue,date){
+   const played=[...(p.games||[])].filter(g=>gameDate(g)&&gameDate(g)<date).sort((a,b)=>gameDate(b).localeCompare(gameDate(a)));
+   if(played.length<3)return null;
+   const last5=played.slice(0,5),last10=played.slice(0,10);
+   const hit5=last5.filter(g=>points(g)>=1).length,hit10=last10.filter(g=>points(g)>=1).length;
+   let streak=0;for(const g of played){if(points(g)<1)break;streak++;}
+   const avg5=last5.reduce((sum,g)=>sum+points(g),0)/last5.length;
+   const season=played.filter(g=>String(g.season)==='20262027');
+   const seasonAvg=season.length?season.reduce((sum,g)=>sum+points(g),0)/season.length:null;
+   // Rank only on evidence present in cached logs. Never claim a matchup H2H number without a verified opponent field.
+   const score=hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5,3)*4;
+   if(hit5<3&&streak<3)return null;
+   return {name:p.name||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length};
+ }
+ async function update(){
+   if(body.hidden)return;
+   const games=matchups(),date=dateInput?.value||'',key=date+'|'+games.map(g=>g.away+g.home).join(',');
+   if(key===lastKey)return;lastKey=key;
+   const ticket=++generation;
+   if(!games.length){list.innerHTML='<p class="hoist-picks-empty">No NHL matchups available for this date.</p>';byId('hoist-picks-total').textContent='';return;}
+   list.innerHTML='<p class="hoist-picks-empty">Analyzing scheduled matchups…</p>';
+   const teams=[...new Set(games.flatMap(g=>[g.away,g.home]))];
+   const data=await Promise.all(teams.map(async team=>[team,await load(team)]));
+   if(ticket!==generation)return;
+   const opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
+   const candidates=[];
+   for(const [team,payload] of data){const match=opponents.get(team);if(!match)continue;for(const player of payload.players||[]){const result=analyze(player,team,match.opponent,match.venue,date);if(result)candidates.push(result);}}
+   candidates.sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));
+   const top=candidates.slice(0,8);
+   byId('hoist-picks-total').textContent=top.length+' candidates';
+   if(!top.length){list.innerHTML='<p class="hoist-picks-empty">Not enough recent player data to identify candidates for these matchups.</p>';return;}
+   list.innerHTML=top.map((p,i)=>`<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · 1+ point</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} L5</span><span class="hoist-pick-chevron">⌄</span></summary><div class="hoist-pick-details"><ul><li>Recorded a point in ${p.hit5} of the last ${p.n5} games.</li><li>Recorded a point in ${p.hit10} of the last ${p.n10} games.</li>${p.streak?`<li>Current point streak: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Averaging ${p.avg5.toFixed(2)} points per game over the last ${p.n5}.</li>${p.seasonAvg!==null?`<li>2026–27 season: ${p.seasonAvg.toFixed(2)} PPG across ${p.nSeason} games.</li>`:''}<li>Matchup: ${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}. Head-to-head PPG and sportsbook odds are not yet included.</li></ul></div></details>`).join('');
+ }
+ function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
+ toggle.addEventListener('click',()=>{const open=body.hidden;body.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){lastKey='';update();}});
+ new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
+ dateInput?.addEventListener('change',()=>{lastKey='';schedule()});
 })();
 </script>
 </body>
