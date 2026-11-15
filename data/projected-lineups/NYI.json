@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T06:08:55.353Z",
-  "sourceDescription": "Andrew Gross",
-  "cachedAtUTC": "2026-11-15T13:55:58.985219+00:00",
+  "sourceUpdatedAt": "2026-11-15T14:11:47.385Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T14:47:04.836608+00:00",
   "forwards": [
     [
       {
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Emil Heineman",
-        "number": 51,
+        "name": "Anthony Duclair",
+        "number": 11,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 33094,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33094/NYI_51_Heineman.png",
+        "sourcePlayerId": 2380,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2380/NYI_11_Duclair.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -319,7 +319,7 @@
         "sourcePlayerId": 2141,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Simon Holmstrom",

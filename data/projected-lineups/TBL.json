@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T23:35:44.614Z",
-  "sourceDescription": "Benjamin Pierce",
-  "cachedAtUTC": "2026-11-15T13:56:15.668036+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:59:56.753Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T14:47:21.408207+00:00",
   "forwards": [
     [
       {
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pontus Holmberg",
-        "number": 29,
+        "name": "Nikita Kucherov",
+        "number": 86,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29640,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
+        "sourcePlayerId": 2031,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2031/TBL_86_Kucherov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

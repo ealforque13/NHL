@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T17:02:01.218Z",
-  "sourceDescription": "Jackson Starr",
-  "cachedAtUTC": "2026-11-15T13:56:03.143230+00:00",
+  "sourceUpdatedAt": "2026-11-15T14:01:03.927Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T14:47:08.988932+00:00",
   "forwards": [
     [
       {
@@ -216,22 +216,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Claude Giroux",
-        "number": 28,
+        "name": "Shane Pinto",
+        "number": 12,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 1126,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1126/OTT_28_Giroux.png",
+        "sourcePlayerId": 30117,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30117/OTT_12_Pinto.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Dylan Cozens",
-        "number": 24,
+        "name": "Stephen Halliday",
+        "number": 34,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 28444,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28444/OTT_24_Cozens.png",
+        "sourcePlayerId": 30030,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30030/OTT_34__Halliday.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,22 +268,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Shane Pinto",
-        "number": 12,
+        "name": "Dylan Cozens",
+        "number": 24,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 30117,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30117/OTT_12_Pinto.png",
+        "sourcePlayerId": 28444,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28444/OTT_24_Cozens.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Stephen Halliday",
-        "number": 34,
+        "name": "Claude Giroux",
+        "number": 28,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30030,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30030/OTT_34__Halliday.png",
+        "sourcePlayerId": 1126,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1126/OTT_28_Giroux.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

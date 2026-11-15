@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T23:42:06.635Z",
-  "sourceDescription": "Mark Scheig",
-  "cachedAtUTC": "2026-11-15T13:55:31.783466+00:00",
+  "sourceUpdatedAt": "2026-11-15T14:04:36.110Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T14:46:37.803005+00:00",
   "forwards": [
     [
       {
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dante Fabbro",
-        "number": 15,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Adam Fantilli",
+        "number": 19,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 34454,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
+        "sourcePlayerId": 33179,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33179/CBJ_19_Fantilli.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Fantilli",
-        "number": 19,
+        "name": "Luca Del Bel Belluz",
+        "number": 93,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 33179,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33179/CBJ_19_Fantilli.png",
+        "sourcePlayerId": 30880,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Werenski",
-        "number": 8,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2479,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2479/CBJ_8_Werenski.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

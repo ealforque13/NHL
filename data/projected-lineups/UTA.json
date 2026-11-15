@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T01:38:06.020Z",
-  "sourceDescription": "Utah Mammoth",
-  "cachedAtUTC": "2026-11-15T13:56:19.917499+00:00",
+  "sourceUpdatedAt": "2026-11-15T14:10:11.060Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T14:47:25.643997+00:00",
   "forwards": [
     [
       {
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Andrew Peeke",
-        "number": 20,
+        "name": "Artem Duda",
+        "number": null,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 27242,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27242/UTA_20__Peeke.png",
+        "sourcePlayerId": 36382,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Artem Duda",
-        "number": null,
+        "name": "Andrew Peeke",
+        "number": 20,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 36382,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
+        "sourcePlayerId": 27242,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27242/UTA_20__Peeke.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

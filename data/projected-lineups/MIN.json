@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:51:19.923Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-15T13:55:50.657237+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:46:08.706Z",
+  "sourceDescription": "Anthony LaPanta",
+  "cachedAtUTC": "2026-11-15T14:46:56.533072+00:00",
   "forwards": [
     [
       {
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Faber",
-        "number": 7,
+        "name": "Jared Spurgeon",
+        "number": 46,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
+        "sourcePlayerId": 1557,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jared Spurgeon",
-        "number": 46,
+        "name": "Brock Faber",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1557,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
+        "sourcePlayerId": 30792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,32 +278,32 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Bobby Brink",
-        "number": 10,
+        "name": "Danila Yurov",
+        "number": 22,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30223,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30223/MIN_10_Brink.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Quinn Hughes",
-        "number": 43,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 4794,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4794/MIN_43__Hughes.png",
+        "sourcePlayerId": 36363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36363/MIN_22__Yurov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "Brock Faber",
         "number": 7,
-        "position": "SK5",
-        "positionName": "Skater 5",
+        "position": "SK4",
+        "positionName": "Skater 4",
         "sourcePlayerId": 30792,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Bobby Brink",
+        "number": 10,
+        "position": "SK5",
+        "positionName": "Skater 5",
+        "sourcePlayerId": 30223,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30223/MIN_10_Brink.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

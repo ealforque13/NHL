@@ -2,9 +2,9 @@
   "team": "BUF",
   "teamName": "Buffalo Sabres",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T00:40:24.231Z",
-  "sourceDescription": "Mike Harrington",
-  "cachedAtUTC": "2026-11-15T13:55:27.515148+00:00",
+  "sourceUpdatedAt": "2026-11-15T14:09:07.117Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T14:46:33.630853+00:00",
   "forwards": [
     [
       {
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan McLeod",
-        "number": 71,
+        "name": "Jiri Kulich",
+        "number": 20,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 4810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
+        "sourcePlayerId": 36381,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36381/BUF_20__Kulich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
