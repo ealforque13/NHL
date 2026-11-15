@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T00:57:51.976826+00:00",
+  "updatedAt": "2026-11-15T06:58:01.237188+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -46,8 +46,8 @@
     },
     "8476419": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Pageau (lower body) won't play Saturday versus the Ducks, Andrew Gross of Newsday reports.",
+      "status": "Out",
       "team": "NYI"
     },
     "8476456": {
@@ -146,6 +146,12 @@
       "status": "Injured Reserve",
       "team": "FLA"
     },
+    "8477500": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "NYI"
+    },
     "8477505": {
       "injured": true,
       "description": "out",
@@ -181,6 +187,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "TBL"
+    },
+    "8478173": {
+      "injured": true,
+      "description": "Hodgson sustained a groin injury versus the Penguins on Saturday, Bruce Garrioch of Postmedia reports.",
+      "status": "Day-To-Day",
+      "team": "OTT"
     },
     "8478396": {
       "injured": true,
@@ -235,6 +247,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "STL"
+    },
+    "8479378": {
+      "injured": true,
+      "description": "Stanley (lower body) won't return to Saturday's game versus the Ducks.",
+      "status": "Day-To-Day",
+      "team": "NYI"
     },
     "8479576": {
       "injured": true,
@@ -338,6 +356,12 @@
       "status": "Injured Reserve",
       "team": "CHI"
     },
+    "8481598": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "STL"
+    },
     "8481607": {
       "injured": true,
       "description": "Johansson (undisclosed) will be with the Red Wings for their upcoming four-game road trip, Ansar Khan of MLive.com reports Friday.",
@@ -403,6 +427,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "EDM"
+    },
+    "8483463": {
+      "injured": true,
+      "description": "Kaskimaki sustained an undisclosed injury near the end of Saturday's game versus the Panthers, Lou Korac of NHL.com reports.",
+      "status": "Day-To-Day",
+      "team": "STL"
     },
     "8483472": {
       "injured": true,
