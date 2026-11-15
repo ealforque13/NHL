@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T02:45:15.278Z",
   "sourceDescription": "Derek Wills",
-  "cachedAtUTC": "2026-11-15T11:43:19.030613+00:00",
+  "cachedAtUTC": "2026-11-15T12:54:03.420791+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Dustin Wolf",
-      "number": 32,
+      "name": "Devin Cooley",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29507,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
+      "sourcePlayerId": 32944,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Devin Cooley",
-      "number": null,
+      "name": "Dustin Wolf",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 32944,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
+      "sourcePlayerId": 29507,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

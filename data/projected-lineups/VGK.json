@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T01:35:58.617Z",
   "sourceDescription": "Danny Webster",
-  "cachedAtUTC": "2026-11-15T11:44:09.075458+00:00",
+  "cachedAtUTC": "2026-11-15T12:54:53.217988+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Adin Hill",
-      "number": 33,
+      "name": "Carter Hart",
+      "number": 79,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2906,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2906/VGK_33_Hill.png",
+      "sourcePlayerId": 3874,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3874/VGK_79_Hart.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Carter Hart",
-      "number": 79,
+      "name": "Adin Hill",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 3874,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3874/VGK_79_Hart.png",
+      "sourcePlayerId": 2906,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2906/VGK_33_Hill.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

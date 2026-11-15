@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-14T23:37:56.585Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-15T11:43:31.525682+00:00",
+  "cachedAtUTC": "2026-11-15T12:54:15.813195+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jacob Markstrom",
-      "number": 25,
+      "name": "Akira Schmid",
+      "number": 40,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 594,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/594/FLA_25_Markstrom.png",
+      "sourcePlayerId": 29148,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29148/FLA_40_Schmid.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Akira Schmid",
-      "number": 40,
+      "name": "Jacob Markstrom",
+      "number": 25,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29148,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29148/FLA_40_Schmid.png",
+      "sourcePlayerId": 594,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/594/FLA_25_Markstrom.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

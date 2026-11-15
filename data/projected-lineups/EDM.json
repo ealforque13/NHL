@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-14T23:58:46.468Z",
   "sourceDescription": "Edmonton Oilers",
-  "cachedAtUTC": "2026-11-15T11:43:29.441457+00:00",
+  "cachedAtUTC": "2026-11-15T12:54:13.751530+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Devon Levi",
-      "number": 27,
+      "name": "Tristan Jarry",
+      "number": 35,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 33010,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33010/EDM_27_Levi.png",
+      "sourcePlayerId": 2626,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2626/EDM_35_Jarry.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Tristan Jarry",
-      "number": 35,
+      "name": "Devon Levi",
+      "number": 27,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2626,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2626/EDM_35_Jarry.png",
+      "sourcePlayerId": 33010,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33010/EDM_27_Levi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

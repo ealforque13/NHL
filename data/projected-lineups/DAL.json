@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T00:37:36.501Z",
   "sourceDescription": "Robert Tiffin",
-  "cachedAtUTC": "2026-11-15T11:43:25.288586+00:00",
+  "cachedAtUTC": "2026-11-15T12:54:09.637792+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jake Oettinger",
-      "number": 29,
+      "name": "Casey DeSmith",
+      "number": 1,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2813,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2813/DAL_29_Oettinger.png",
+      "sourcePlayerId": 2572,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2572/DAL_1_DeSmith.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Casey DeSmith",
-      "number": 1,
+      "name": "Jake Oettinger",
+      "number": 29,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2572,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2572/DAL_1_DeSmith.png",
+      "sourcePlayerId": 2813,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2813/DAL_29_Oettinger.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
