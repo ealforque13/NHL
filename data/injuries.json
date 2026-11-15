@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T18:39:58.734778+00:00",
+  "updatedAt": "2026-11-15T00:57:51.976826+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -70,14 +70,14 @@
     },
     "8476853": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "TOR"
     },
     "8476875": {
       "injured": true,
-      "description": "Matheson (undisclosed) is considered a game-time decision for Saturday's home clash against the Avalanche, per Renaud Lavoie of TVA Sports.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "MTL"
     },
     "8476891": {
@@ -94,8 +94,8 @@
     },
     "8476979": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "LAK"
     },
     "8477220": {
@@ -122,6 +122,12 @@
       "status": "Injured Reserve",
       "team": "OTT"
     },
+    "8477479": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CHI"
+    },
     "8477488": {
       "injured": true,
       "description": "Pesce (illness) won't play against Washington on Saturday, Amanda Stein of the Devils' official site reports.",
@@ -142,8 +148,8 @@
     },
     "8477505": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "SJS"
     },
     "8477511": {
@@ -152,16 +158,10 @@
       "status": "Injured Reserve",
       "team": "NJD"
     },
-    "8477845": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "PIT"
-    },
     "8477951": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Schmaltz (lower body) isn't expected to play against San Jose on Saturday, and it's unclear when he will be ready to return, Brogan Houston of the Deseret News reports.",
+      "status": "Out",
       "team": "UTA"
     },
     "8477955": {
@@ -190,8 +190,8 @@
     },
     "8478416": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Cernak (upper body) won't play against Detroit on Saturday, per Diandra Loux of The Hockey News.",
+      "status": "Out",
       "team": "TBL"
     },
     "8478421": {
@@ -220,15 +220,15 @@
     },
     "8478519": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Cirelli (lower body) is set to miss Saturday's game against Detroit, per Diandra Loux of The Hockey News.",
+      "status": "Out",
       "team": "TBL"
     },
-    "8478569": {
+    "8478550": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "PHI"
+      "description": "out",
+      "status": "Out",
+      "team": "LAK"
     },
     "8479346": {
       "injured": true,
