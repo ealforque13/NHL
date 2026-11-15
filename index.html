@@ -5439,6 +5439,36 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #games .hoist-picks-empty {font-size:15px;padding:23px 8px;}
 }
 </style>
+<style>
+
+/* MOBILE STANDINGS: white sortable headings, blue selected heading and playoff line. */
+@media (max-width:650px) {
+  #standings .hoist-mobile-unified th[data-standings-sort],
+  #standings .hoist-mobile-unified .hoist-division-divider th[data-standings-sort],
+  #standings #hoist-standings-table th[data-standings-sort] {
+    color:#ffffff !important;
+    -webkit-text-fill-color:#ffffff !important;
+  }
+  #standings .hoist-mobile-unified th[data-standings-sort].hoist-active-stat,
+  #standings .hoist-mobile-unified th[data-standings-sort][aria-sort="ascending"],
+  #standings .hoist-mobile-unified th[data-standings-sort][aria-sort="descending"],
+  #standings #hoist-standings-table th[data-standings-sort].hoist-active-stat,
+  #standings #hoist-standings-table th[data-standings-sort][aria-sort="ascending"],
+  #standings #hoist-standings-table th[data-standings-sort][aria-sort="descending"] {
+    color:#49B5FF !important;
+    -webkit-text-fill-color:#49B5FF !important;
+  }
+  #standings .hoist-mobile-unified .hoist-playoff-cutoff td,
+  #standings .hoist-mobile-unified .hoist-conference-table .hoist-playoff-cutoff td {
+    border-top-color:#49B5FF !important;
+  }
+  #standings .hoist-mobile-unified .hoist-mobile-cutoff-rail-line,
+  #standings .hoist-mobile-unified .hoist-mobile-cutoff-stats-line,
+  #standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-after-cutoff::after {
+    background:#49B5FF !important;
+  }
+}
+</style>
 </head>
 
 <body>
