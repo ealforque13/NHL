@@ -2,18 +2,18 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T19:22:48.287Z",
-  "sourceDescription": "Seth Rorabaugh",
-  "cachedAtUTC": "2026-11-14T23:39:07.110755+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:45:18.829Z",
+  "sourceDescription": "@penguins",
+  "cachedAtUTC": "2026-11-15T02:14:19.331008+00:00",
   "forwards": [
     [
       {
-        "name": "Rickard Rakell",
-        "number": 67,
+        "name": "Evgeni Malkin",
+        "number": 71,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1682,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1682/PIT_67_Rakell.png",
+        "sourcePlayerId": 1236,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Evgeni Malkin",
-        "number": 71,
+        "name": "Rickard Rakell",
+        "number": 67,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1236,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
+        "sourcePlayerId": 1682,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1682/PIT_67_Rakell.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Connor Dewar",
-        "number": 19,
+        "name": "Rutger McGroarty",
+        "number": 2,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 25396,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25396/PIT_19_Dewar.png",
+        "sourcePlayerId": 33262,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Rutger McGroarty",
-        "number": 2,
+        "name": "Connor Dewar",
+        "number": 19,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33262,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
+        "sourcePlayerId": 25396,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25396/PIT_19_Dewar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,9 +2,9 @@
   "team": "BUF",
   "teamName": "Buffalo Sabres",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T19:36:36.923Z",
-  "sourceDescription": "Paul Hamilton",
-  "cachedAtUTC": "2026-11-14T23:38:27.532728+00:00",
+  "sourceUpdatedAt": "2026-11-15T00:40:24.231Z",
+  "sourceDescription": "Mike Harrington",
+  "cachedAtUTC": "2026-11-15T02:10:29.317078+00:00",
   "forwards": [
     [
       {
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Metsa",
-        "number": 73,
+        "name": "Louis Crevier",
+        "number": 46,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 28387,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28387/BUF_73__Metsa.png",
+        "sourcePlayerId": 29897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29897/BUF_46_Crevier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

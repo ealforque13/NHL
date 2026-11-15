@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T19:21:44.346Z",
+  "sourceUpdatedAt": "2026-11-14T23:42:06.635Z",
   "sourceDescription": "Mark Scheig",
-  "cachedAtUTC": "2026-11-14T23:38:31.739245+00:00",
+  "cachedAtUTC": "2026-11-15T02:11:03.635931+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Cam Talbot",
-      "number": 33,
+      "name": "Jet Greaves",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1059,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1059/CBJ_33__Talbot.png",
+      "sourcePlayerId": 29751,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29751/CBJ_73__Greaves.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jet Greaves",
-      "number": null,
+      "name": "Cam Talbot",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29751,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29751/CBJ_73__Greaves.png",
+      "sourcePlayerId": 1059,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1059/CBJ_33__Talbot.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

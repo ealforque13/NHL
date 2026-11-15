@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T16:17:09.315Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T23:38:52.528609+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:48:32.222Z",
+  "sourceDescription": "Patrick Friolet",
+  "cachedAtUTC": "2026-11-15T02:13:14.567072+00:00",
   "forwards": [
     [
       {
@@ -170,14 +170,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mike Matheson",
-        "number": 8,
+        "name": "Alexandre Carrier",
+        "number": 45,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2583,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
+        "sourcePlayerId": 2732,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2732/MTL_45_Carrier.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexandre Carrier",
-        "number": 45,
+        "name": "Adam Engstrom",
+        "number": 42,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2732,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2732/MTL_45_Carrier.png",
+        "sourcePlayerId": 36434,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36434/MTL_42__Engstrom.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

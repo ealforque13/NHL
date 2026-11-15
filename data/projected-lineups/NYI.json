@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:47:44.852Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T23:38:58.747373+00:00",
+  "sourceUpdatedAt": "2026-11-15T01:57:38.938Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-15T02:13:20.965701+00:00",
   "forwards": [
     [
       {
@@ -50,12 +50,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brayden Schenn",
-        "number": 10,
+        "name": "Mathew Barzal",
+        "number": 13,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/773/NYI_10_Schenn.png",
+        "sourcePlayerId": 2482,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2482/NYI_13_Barzal.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -82,12 +82,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Casey Cizikas",
-        "number": 53,
+        "name": "Brayden Schenn",
+        "number": 10,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 1807,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1807/NYI_53_Cizikas.png",
+        "sourcePlayerId": 773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/773/NYI_10_Schenn.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -110,6 +110,16 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 32923,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32923/NYI_26__Chaffee.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Casey Cizikas",
+        "number": 53,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 1807,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1807/NYI_53_Cizikas.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,22 +278,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anthony Duclair",
-        "number": 11,
+        "name": "Emil Heineman",
+        "number": 51,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2380,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2380/NYI_11_Duclair.png",
+        "sourcePlayerId": 33094,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33094/NYI_51_Heineman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Emil Heineman",
-        "number": 51,
+        "name": "Mathew Barzal",
+        "number": 13,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 33094,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33094/NYI_51_Heineman.png",
+        "sourcePlayerId": 2482,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2482/NYI_13_Barzal.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -408,16 +418,6 @@
     }
   ],
   "injuries": [
-    {
-      "name": "Mathew Barzal",
-      "number": 13,
-      "position": "IR1",
-      "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 2482,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2482/NYI_13_Barzal.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
     {
       "name": "Alexander Romanov",
       "number": 28,

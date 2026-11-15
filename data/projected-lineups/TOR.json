@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T14:25:21.770Z",
-  "sourceDescription": "Last Game (2026-11-12)",
-  "cachedAtUTC": "2026-11-14T23:39:17.535709+00:00",
+  "sourceUpdatedAt": "2026-11-14T23:49:04.677Z",
+  "sourceDescription": "Terry Koshan",
+  "cachedAtUTC": "2026-11-15T02:14:30.040877+00:00",
   "forwards": [
     [
       {
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Stecher",
-        "number": 28,
+        "name": "Chris Tanev",
+        "number": 8,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2702,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
+        "sourcePlayerId": 1494,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1494/TOR_8_Tanev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cole McWard",
-        "number": null,
+        "name": "Troy Stecher",
+        "number": 28,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30512,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30512/TOR_Frnt.png",
+        "sourcePlayerId": 2702,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -342,12 +342,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Stecher",
-        "number": 28,
+        "name": "Chris Tanev",
+        "number": 8,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2702,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
+        "sourcePlayerId": 1494,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1494/TOR_8_Tanev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dakota Mermis",
-        "number": 36,
+        "name": "Troy Stecher",
+        "number": 28,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2914,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2914/TOR_36_Mermis.png",
+        "sourcePlayerId": 2702,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -465,16 +465,6 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 1935,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Chris Tanev",
-      "number": 8,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
-      "sourcePlayerId": 1494,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1494/TOR_8_Tanev.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

@@ -2,18 +2,18 @@
   "team": "VGK",
   "teamName": "Vegas Golden Knights",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T02:38:15.679Z",
-  "sourceDescription": "Jesse Granger",
-  "cachedAtUTC": "2026-11-14T23:39:23.771264+00:00",
+  "sourceUpdatedAt": "2026-11-15T01:35:58.617Z",
+  "sourceDescription": "Danny Webster",
+  "cachedAtUTC": "2026-11-15T02:14:36.562191+00:00",
   "forwards": [
     [
       {
-        "name": "Trevor Connelly",
-        "number": 24,
+        "name": "Ivan Barbashev",
+        "number": 49,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 36773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36773/VGK_24_Connelly.png",
+        "sourcePlayerId": 2737,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2737/VGK_49_Barbashev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Ivan Barbashev",
-        "number": 49,
+        "name": "Trevor Connelly",
+        "number": 24,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2737,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2737/VGK_49_Barbashev.png",
+        "sourcePlayerId": 36773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36773/VGK_24_Connelly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Braeden Bowman",
-        "number": 42,
+        "name": "Raphael Lavoie",
+        "number": 36,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30925,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30925/VGK_42__Bowman.png",
+        "sourcePlayerId": 27948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27948/VGK_36__Lavoie.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Marc Gatcomb",
-        "number": 17,
+        "name": "Braeden Bowman",
+        "number": 42,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 37866,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37866/VGK_17__Gatcomb.png",
+        "sourcePlayerId": 30925,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30925/VGK_42__Bowman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
