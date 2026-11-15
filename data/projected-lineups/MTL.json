@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T13:54:28.416Z",
   "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-15T17:40:26.515460+00:00",
+  "cachedAtUTC": "2026-11-15T18:48:11.921525+00:00",
   "forwards": [
     [
       {
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Josh Anderson",
-        "number": 17,
+        "name": "Owen Beck",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 21932,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/21932/MTL_17_Anderson.png",
+        "sourcePlayerId": 33212,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/Beck-Owen_MTL-62_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Josh Anderson",
-        "number": 17,
+        "name": "Alexandre Texier",
+        "number": 85,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 21932,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/21932/MTL_17_Anderson.png",
+        "sourcePlayerId": 4759,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -439,13 +439,13 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Chris Kreider",
-      "number": 22,
+      "name": "Josh Anderson",
+      "number": 17,
       "position": "IR3",
       "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 1926,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
-      "injuryStatus": "out",
+      "sourcePlayerId": 21932,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/21932/MTL_17_Anderson.png",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
@@ -456,6 +456,16 @@
       "sourcePlayerId": 2583,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
       "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Chris Kreider",
+      "number": 22,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 1926,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

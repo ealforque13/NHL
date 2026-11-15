@@ -2,9 +2,9 @@
   "team": "VAN",
   "teamName": "Vancouver Canucks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:28:35.093Z",
-  "sourceDescription": "Last Game (11-13-26)",
-  "cachedAtUTC": "2026-11-15T17:40:55.880783+00:00",
+  "sourceUpdatedAt": "2026-11-15T18:10:14.215Z",
+  "sourceDescription": "Dan Murphy",
+  "cachedAtUTC": "2026-11-15T18:48:41.555638+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Boeser",
-        "number": 6,
+        "name": "Jonathan Lekkerimaki",
+        "number": 88,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2497,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2497/VAN_6_Boeser.png",
+        "sourcePlayerId": 36365,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36365/VAN_88__Lekkerimaki.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jonathan Lekkerimaki",
-        "number": 88,
+        "name": "Brock Boeser",
+        "number": 6,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 36365,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36365/VAN_88__Lekkerimaki.png",
+        "sourcePlayerId": 2497,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2497/VAN_6_Boeser.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Kevin Lankinen",
-      "number": 32,
+      "name": "Leevi Merilainen",
+      "number": 31,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 4757,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4757/VAN_32_Lankinen.png",
+      "sourcePlayerId": 34600,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34600/VAN_31__Merilainen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Leevi Merilainen",
-      "number": 31,
+      "name": "Kevin Lankinen",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 34600,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34600/VAN_31__Merilainen.png",
+      "sourcePlayerId": 4757,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4757/VAN_32_Lankinen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
