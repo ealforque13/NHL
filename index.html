@@ -6704,23 +6704,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const logo = item.querySelector('img');
         if (logo && code === 'TBL') logo.setAttribute('data-hoist-team', 'TBL');
       });
-      // Prevent horizontal scrolling into empty space beyond the STRK column.
-      // The cutoff overlay must not extend the usable scroll range.
-      if (!scroller.dataset.hoistStrkBound) {
-        scroller.dataset.hoistStrkBound = '1';
-        scroller.addEventListener('scroll', () => {
-          if (window.innerWidth > 650) return;
-          const endCell = table.querySelector('thead tr:last-child th:last-child') || table.querySelector('thead th:last-child');
-          if (!endCell) return;
-          const maxLeft = Math.max(0, scroller.scrollLeft + endCell.getBoundingClientRect().right - scroller.getBoundingClientRect().right);
-          if (scroller.scrollLeft > maxLeft + 1) scroller.scrollLeft = maxLeft;
-        }, {passive:true});
-      }
-      const endCell = table.querySelector('thead tr:last-child th:last-child') || table.querySelector('thead th:last-child');
-      if (endCell) {
-        const maxLeft = Math.max(0, scroller.scrollLeft + endCell.getBoundingClientRect().right - scroller.getBoundingClientRect().right);
-        if (scroller.scrollLeft > maxLeft) scroller.scrollLeft = maxLeft;
-      }
+      // Allow native momentum scrolling. Do not write scrollLeft from a scroll
+      // listener: that fights touch gestures and causes the reported jitter.
       rail.dataset.signature = signature;
       rail.classList.add('hoist-rail-ready');
     });
