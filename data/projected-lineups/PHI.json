@@ -2,42 +2,10 @@
   "team": "PHI",
   "teamName": "Philadelphia Flyers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T17:06:28.250Z",
+  "sourceUpdatedAt": "2026-11-14T23:44:49.279Z",
   "sourceDescription": "Jackie Spiegel",
-  "cachedAtUTC": "2026-11-14T23:39:04.998414+00:00",
+  "cachedAtUTC": "2026-11-15T03:26:48.003907+00:00",
   "forwards": [
-    [
-      {
-        "name": "Michael Bunting",
-        "number": 58,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 3778,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3778/PHI_58__Bunting.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Christian Dvorak",
-        "number": 22,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2682,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Owen Tippett",
-        "number": 74,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2786,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Tyson Foerster",
@@ -66,6 +34,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 2498,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2498/PHI_11_Konecny.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Bunting",
+        "number": 58,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3778,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3778/PHI_58__Bunting.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Christian Dvorak",
+        "number": 22,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2682,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Owen Tippett",
+        "number": 74,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2786,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

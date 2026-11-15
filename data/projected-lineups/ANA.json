@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T19:25:33.579Z",
-  "sourceDescription": "Patrick Present",
-  "cachedAtUTC": "2026-11-15T02:10:05.554599+00:00",
+  "sourceUpdatedAt": "2026-11-15T02:42:45.157Z",
+  "sourceDescription": "Derek Lee",
+  "cachedAtUTC": "2026-11-15T03:26:04.417470+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Alex Killorn",
-        "number": 17,
+        "name": "Jeff Malott",
+        "number": 39,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
+        "sourcePlayerId": 34555,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jeff Malott",
-        "number": 39,
+        "name": "Alex Killorn",
+        "number": 17,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 34555,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Frank Vatrano",
-        "number": 77,
+        "name": "Nikita Nesterenko",
+        "number": 13,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2545,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
+        "sourcePlayerId": 30726,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30726/ANA_13_Nesterenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

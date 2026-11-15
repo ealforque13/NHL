@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T19:23:46.375Z",
-  "sourceDescription": "Pat Steinberg",
-  "cachedAtUTC": "2026-11-15T02:11:05.772524+00:00",
+  "sourceUpdatedAt": "2026-11-15T02:45:15.278Z",
+  "sourceDescription": "Derek Wills",
+  "cachedAtUTC": "2026-11-15T03:26:15.373074+00:00",
   "forwards": [
     [
       {
@@ -138,6 +138,28 @@
   "defense": [
     [
       {
+        "name": "Yan Kuznetsov",
+        "number": 37,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 30745,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30745/CGY_37__Kuznetsov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zayne Parekh",
+        "number": 19,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 36725,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36725/CGY_19__Parekh.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Joel Hanley",
         "number": 44,
         "position": "LD",
@@ -176,28 +198,6 @@
         "positionName": "Right Defense",
         "sourcePlayerId": 4658,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4658/CGY_28__Whitecloud.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Yan Kuznetsov",
-        "number": 37,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 30745,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30745/CGY_37__Kuznetsov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Zayne Parekh",
-        "number": 19,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 36725,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36725/CGY_19__Parekh.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Devin Cooley",
-      "number": null,
+      "name": "Dustin Wolf",
+      "number": 32,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 32944,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
+      "sourcePlayerId": 29507,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Dustin Wolf",
-      "number": 32,
+      "name": "Devin Cooley",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29507,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
+      "sourcePlayerId": 32944,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

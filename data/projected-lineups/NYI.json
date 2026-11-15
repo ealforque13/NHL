@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T01:57:38.938Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-15T02:13:20.965701+00:00",
+  "sourceUpdatedAt": "2026-11-15T02:38:41.844Z",
+  "sourceDescription": "Andrew Gross",
+  "cachedAtUTC": "2026-11-15T03:26:41.511575+00:00",
   "forwards": [
     [
       {
@@ -50,12 +50,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mathew Barzal",
-        "number": 13,
+        "name": "Brayden Schenn",
+        "number": 10,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2482,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2482/NYI_13_Barzal.png",
+        "sourcePlayerId": 773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/773/NYI_10_Schenn.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -82,12 +82,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brayden Schenn",
-        "number": 10,
+        "name": "Mathew Barzal",
+        "number": 13,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/773/NYI_10_Schenn.png",
+        "sourcePlayerId": 2482,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2482/NYI_13_Barzal.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Mitchell Chaffee",
-        "number": 41,
+        "name": "Matias Maccelli",
+        "number": 63,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 32923,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32923/NYI_26__Chaffee.png",
+        "sourcePlayerId": 30063,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30063/NYI_63__Maccelli.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Matias Maccelli",
-        "number": 63,
+        "name": "Mitchell Chaffee",
+        "number": 41,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30063,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30063/NYI_63__Maccelli.png",
+        "sourcePlayerId": 32923,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32923/NYI_26__Chaffee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Ilya Sorokin",
-      "number": 30,
+      "name": "Semyon Varlamov",
+      "number": 40,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 25264,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25264/NYI_30_Sorokin.png",
+      "sourcePlayerId": 1545,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1545/NYI_40_Varlamov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Semyon Varlamov",
-      "number": 40,
+      "name": "Ilya Sorokin",
+      "number": 30,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1545,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1545/NYI_40_Varlamov.png",
+      "sourcePlayerId": 25264,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25264/NYI_30_Sorokin.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
