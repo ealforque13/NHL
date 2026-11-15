@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T02:38:41.844Z",
+  "sourceUpdatedAt": "2026-11-15T06:08:55.353Z",
   "sourceDescription": "Andrew Gross",
-  "cachedAtUTC": "2026-11-15T05:29:27.650184+00:00",
+  "cachedAtUTC": "2026-11-15T06:29:16.991222+00:00",
   "forwards": [
     [
       {
@@ -25,7 +25,7 @@
         "sourcePlayerId": 2141,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Kyle Palmieri",
@@ -145,7 +145,7 @@
         "sourcePlayerId": 2652,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Matthew Schaefer",
@@ -223,7 +223,7 @@
         "sourcePlayerId": 2141,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Brayden Schenn",
@@ -349,7 +349,7 @@
         "sourcePlayerId": 2652,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -445,6 +445,26 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 2057,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2057/NYI_44_Pageau.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Logan Stanley",
+      "number": 8,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 2652,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Bo Horvat",
+      "number": 14,
+      "position": "IR7",
+      "positionName": "Injured Reserve 7",
+      "sourcePlayerId": 2141,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
