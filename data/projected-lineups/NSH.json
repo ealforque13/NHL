@@ -2,9 +2,9 @@
   "team": "NSH",
   "teamName": "Nashville Predators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-12T14:40:59.242Z",
-  "sourceDescription": "Last Game (2026-11-11)",
-  "cachedAtUTC": "2026-11-15T12:54:26.173135+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:28:45.748Z",
+  "sourceDescription": "Last Game (11-13-26)",
+  "cachedAtUTC": "2026-11-15T13:55:56.906501+00:00",
   "forwards": [
     [
       {
@@ -288,70 +288,28 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Vitali Pinchuk",
-        "number": 51,
+        "name": "Brady Skjei",
+        "number": 76,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 31775,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31775/NSH_51__Pinchuk.png",
+        "sourcePlayerId": 2425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2425/NSH_76_Skjei.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Brady Skjei",
-        "number": 76,
+        "name": "Vitali Pinchuk",
+        "number": 51,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2425/NSH_76_Skjei.png",
+        "sourcePlayerId": 31775,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31775/NSH_51__Pinchuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ]
   ],
   "penaltyKill": [
-    [
-      {
-        "name": "Jack Drury",
-        "number": 18,
-        "position": "SK1",
-        "positionName": "Skater 1",
-        "sourcePlayerId": 27584,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27584/NSH_18__Drury.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Alex Kerfoot",
-        "number": 14,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 2833,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2833/NSH_14__Kerfoot.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Brady Skjei",
-        "number": 76,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 2425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2425/NSH_76_Skjei.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Nick Perbix",
-        "number": 48,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 28161,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28161/NSH_48_Perbix.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Ryan O'Reilly",
@@ -374,22 +332,64 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Daemon Hunt",
-        "number": 52,
+        "name": "Brady Skjei",
+        "number": 76,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29543,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29543/NSH_52_Hunt.png",
+        "sourcePlayerId": 2425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2425/NSH_76_Skjei.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Roman Josi",
+        "number": 59,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/897/NSH_59_Josi.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jack Drury",
+        "number": 18,
+        "position": "SK1",
+        "positionName": "Skater 1",
+        "sourcePlayerId": 27584,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27584/NSH_18__Drury.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Kerfoot",
+        "number": 14,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 2833,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2833/NSH_14__Kerfoot.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "Adam Wilsby",
         "number": 2,
-        "position": "SK4",
-        "positionName": "Skater 4",
+        "position": "SK3",
+        "positionName": "Skater 3",
         "sourcePlayerId": 36308,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36308/NSH_2_Wilsby.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Perbix",
+        "number": 48,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 28161,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28161/NSH_48_Perbix.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

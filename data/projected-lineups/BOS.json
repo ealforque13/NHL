@@ -2,9 +2,9 @@
   "team": "BOS",
   "teamName": "Boston Bruins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T23:37:13.685Z",
-  "sourceDescription": "Scott McLaughlin",
-  "cachedAtUTC": "2026-11-15T12:53:55.089748+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:52:10.290Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T13:55:25.255716+00:00",
   "forwards": [
     [
       {
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Hampus Lindholm",
-        "number": 27,
+        "name": "Frederic Brunet",
+        "number": 42,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 1947,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1947/BOS_27_Lindholm.png",
+        "sourcePlayerId": 31316,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31316/BOS_42__Brunet.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

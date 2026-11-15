@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T23:58:46.468Z",
-  "sourceDescription": "Edmonton Oilers",
-  "cachedAtUTC": "2026-11-15T12:54:13.751530+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:17:27.009Z",
+  "sourceDescription": "Last Game (11-14-26)",
+  "cachedAtUTC": "2026-11-15T13:55:44.343437+00:00",
   "forwards": [
     [
       {
@@ -312,12 +312,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Connor McDavid",
-        "number": 97,
+        "name": "Jason Dickinson",
+        "number": 16,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2471,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2471/EDM_97_McDavid.png",
+        "sourcePlayerId": 2160,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2160/EDM_16_Dickinson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,12 +354,12 @@
     ],
     [
       {
-        "name": "Jason Dickinson",
-        "number": 16,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2160,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2160/EDM_16_Dickinson.png",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

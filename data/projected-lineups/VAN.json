@@ -2,9 +2,9 @@
   "team": "VAN",
   "teamName": "Vancouver Canucks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T01:43:03.219Z",
-  "sourceDescription": "Brendan Batchelor",
-  "cachedAtUTC": "2026-11-15T12:54:51.152286+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:28:35.093Z",
+  "sourceDescription": "Last Game (11-13-26)",
+  "cachedAtUTC": "2026-11-15T13:56:21.990032+00:00",
   "forwards": [
     [
       {
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Liam Ohgren",
-        "number": 92,
+        "name": "Linus Karlsson",
+        "number": 94,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 36367,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36367/VAN_92__Ohgren.png",
+        "sourcePlayerId": 29135,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,22 +354,22 @@
     ],
     [
       {
-        "name": "Max Sasson",
-        "number": null,
+        "name": "Filip Chytil",
+        "number": 77,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 30007,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/VAN_63__Sasson.png",
+        "sourcePlayerId": 2811,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2811/VAN_77__Chytil.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Drew O'Connor",
-        "number": 18,
+        "name": "Max Sasson",
+        "number": null,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 32925,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32925/VAN_18_O_Connor.png",
+        "sourcePlayerId": 30007,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/VAN_63__Sasson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tom Willander",
+        "name": "Cameron Crotty",
         "number": 5,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 38455,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38455/VAN_5__Willander.png",
+        "sourcePlayerId": 28075,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28075/VAN_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

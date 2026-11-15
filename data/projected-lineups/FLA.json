@@ -2,9 +2,9 @@
   "team": "FLA",
   "teamName": "Florida Panthers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T23:37:56.585Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-15T12:54:15.813195+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:23:15.675Z",
+  "sourceDescription": "Last Game (11-14-26)",
+  "cachedAtUTC": "2026-11-15T13:55:46.411411+00:00",
   "forwards": [
     [
       {
@@ -332,22 +332,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Niko Mikkola",
-        "number": 77,
+        "name": "Gustav Forsling",
+        "number": 42,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4770,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4770/FLA_77_Mikkola_2_.png",
+        "sourcePlayerId": 2431,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2431/FLA_42_Forsling_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Seth Jones",
-        "number": 3,
+        "name": "Aaron Ekblad",
+        "number": 5,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2137,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2137/FLA_3_Jones_2_.png",
+        "sourcePlayerId": 2363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -374,22 +374,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gustav Forsling",
-        "number": 42,
+        "name": "Niko Mikkola",
+        "number": 77,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2431,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2431/FLA_42_Forsling_2_.png",
+        "sourcePlayerId": 4770,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4770/FLA_77_Mikkola_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Aaron Ekblad",
-        "number": 5,
+        "name": "Dmitry Kulikov",
+        "number": 7,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2363,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
+        "sourcePlayerId": 593,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/593/FLA_7_Kulikov_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

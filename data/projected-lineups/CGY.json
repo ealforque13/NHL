@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T02:45:15.278Z",
-  "sourceDescription": "Derek Wills",
-  "cachedAtUTC": "2026-11-15T12:54:03.420791+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:20:16.317Z",
+  "sourceDescription": "Last Game (11-14-26)",
+  "cachedAtUTC": "2026-11-15T13:55:33.888843+00:00",
   "forwards": [
     [
       {
@@ -312,22 +312,22 @@
   "penaltyKill": [
     [
       {
-        "name": "Mikael Backlund",
-        "number": 11,
+        "name": "Martin Pospisil",
+        "number": 76,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 193,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/193/CGY_11_Backlund.png",
+        "sourcePlayerId": 28414,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28414/CGY_76_Pospisil.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Yegor Sharangovich",
-        "number": 17,
+        "name": "Joel Farabee",
+        "number": 86,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 29637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
+        "sourcePlayerId": 4799,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4799/CGY_86_Farabee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,22 +354,22 @@
     ],
     [
       {
-        "name": "Joel Farabee",
-        "number": 86,
+        "name": "Jonathan Castagna",
+        "number": 38,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 4799,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4799/CGY_86_Farabee.png",
+        "sourcePlayerId": 35221,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35221/CGY_38__Castagna.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jonathan Castagna",
-        "number": 38,
+        "name": "Yegor Sharangovich",
+        "number": 17,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 35221,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35221/CGY_38__Castagna.png",
+        "sourcePlayerId": 29637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

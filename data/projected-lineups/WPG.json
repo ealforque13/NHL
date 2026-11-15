@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-13T19:24:43.855Z",
-  "sourceDescription": "Mitchell Clinton",
-  "cachedAtUTC": "2026-11-15T12:54:55.275164+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:49:17.701Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T13:56:26.142545+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gabriel Vilardi",
-        "number": 13,
+        "name": "Viggo Björck",
+        "number": 61,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2783,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2783/WPG_13_Vilardi.png",
+        "sourcePlayerId": 38960,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38960/WPG_61__Bjorck.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -50,22 +50,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brayden Yager",
-        "number": 29,
+        "name": "Dawson Mercer",
+        "number": 19,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 33533,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33533/WPG_29_Yager.png",
+        "sourcePlayerId": 29327,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29327/WPG_19__Mercer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Dawson Mercer",
-        "number": 19,
+        "name": "Morgan Barron",
+        "number": 36,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29327,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29327/WPG_19__Mercer.png",
+        "sourcePlayerId": 26531,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26531/WPG_36_Barron.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Viggo Björck",
-        "number": 61,
+        "name": "Gabriel Vilardi",
+        "number": 13,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38960,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38960/WPG_61__Bjorck.png",
+        "sourcePlayerId": 2783,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2783/WPG_13_Vilardi.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Morgan Barron",
-        "number": 36,
+        "name": "Brayden Yager",
+        "number": 29,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 26531,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26531/WPG_36_Barron.png",
+        "sourcePlayerId": 33533,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33533/WPG_29_Yager.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

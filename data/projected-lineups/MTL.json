@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T23:48:32.222Z",
-  "sourceDescription": "Patrick Friolet",
-  "cachedAtUTC": "2026-11-15T12:54:21.995237+00:00",
+  "sourceUpdatedAt": "2026-11-15T13:54:28.416Z",
+  "sourceDescription": "Last Game (2026-11-14)",
+  "cachedAtUTC": "2026-11-15T13:55:52.738450+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jakub Dobes",
-      "number": 75,
+      "name": "Jacob Fowler",
+      "number": 32,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 31895,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
+      "sourcePlayerId": 38444,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jacob Fowler",
-      "number": 32,
+      "name": "Jakub Dobes",
+      "number": 75,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 38444,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
+      "sourcePlayerId": 31895,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
