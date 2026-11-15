@@ -5469,6 +5469,51 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   }
 }
 </style>
+<style>
+/* Desktop Games: display Goals, Assists and Points leaders together in one
+   expanded Last 5 Games panel. Mobile keeps the three-page swipe carousel. */
+@media (min-width:901px) {
+  #games .hoist-game-hot-feature .hoist-game-feature-stage,
+  #games .hoist-game-hot-feature .hoist-card-slides {
+    width:100%!important;
+    max-width:none!important;
+    margin-left:0!important;
+    margin-right:0!important;
+  }
+  #games .hoist-game-hot-feature .hoist-card-slides {
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    align-items:start;
+  }
+  #games .hoist-game-hot-feature .hoist-card-slide,
+  #games .hoist-game-hot-feature .hoist-card-slide[hidden] {
+    display:block!important;
+    min-width:0;
+  }
+  #games .hoist-game-hot-feature .hoist-card-slide-title {
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:12px;
+  }
+  #games .hoist-game-hot-feature .hoist-card-slide-players {
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr)!important;
+    gap:9px;
+  }
+  #games .hoist-game-hot-feature .hoist-card-feature-player {
+    padding:10px 9px;
+    gap:8px;
+  }
+  #games .hoist-game-hot-feature .hoist-card-feature-number,
+  #games .hoist-game-hot-feature .hoist-card-feature-number small {
+    font-size:18px;
+  }
+  #games .hoist-game-hot-feature .hoist-card-slide-dots {
+    display:none!important;
+  }
+}
+</style>
 </head>
 
 <body>
