@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T12:46:00.881374+00:00",
+  "updatedAt": "2026-11-15T18:41:19.133197+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -16,8 +16,8 @@
     },
     "8475184": {
       "injured": true,
-      "description": "Kreider (lower body) will be out for approximately 6-8 weeks, the Canadiens announced Saturday.",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "MTL"
     },
     "8475810": {
@@ -46,8 +46,8 @@
     },
     "8476419": {
       "injured": true,
-      "description": "Pageau (lower body) won't play Saturday versus the Ducks, Andrew Gross of Newsday reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8476456": {
@@ -70,14 +70,14 @@
     },
     "8476853": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TOR"
     },
     "8476875": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "MTL"
     },
     "8476891": {
@@ -94,9 +94,15 @@
     },
     "8476979": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
+    },
+    "8476981": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "MTL"
     },
     "8477220": {
       "injured": true,
@@ -130,8 +136,8 @@
     },
     "8477488": {
       "injured": true,
-      "description": "Pesce (illness) won't play against Washington on Saturday, Amanda Stein of the Devils' official site reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NJD"
     },
     "8477492": {
@@ -146,6 +152,12 @@
       "status": "Injured Reserve",
       "team": "FLA"
     },
+    "8477497": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CBJ"
+    },
     "8477500": {
       "injured": true,
       "description": "day-to-day",
@@ -154,8 +166,8 @@
     },
     "8477505": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "SJS"
     },
     "8477511": {
@@ -202,8 +214,8 @@
     },
     "8478416": {
       "injured": true,
-      "description": "Cernak (upper body) won't play against Detroit on Saturday, per Diandra Loux of The Hockey News.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8478421": {
@@ -232,14 +244,14 @@
     },
     "8478519": {
       "injured": true,
-      "description": "Cirelli (lower body) is set to miss Saturday's game against Detroit, per Diandra Loux of The Hockey News.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8478550": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8479346": {
@@ -358,7 +370,7 @@
     },
     "8481598": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Broberg (lower body) is day-to-day, according to Lou Korac of NHL.com on Sunday.",
       "status": "Day-To-Day",
       "team": "STL"
     },
@@ -373,6 +385,12 @@
       "description": "Soderblom (upper body) is week-to-week, per Penguins PR on Monday.",
       "status": "Injured Reserve",
       "team": "PIT"
+    },
+    "8482089": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "STL"
     },
     "8482178": {
       "injured": true,
@@ -400,8 +418,8 @@
     },
     "8482765": {
       "injured": true,
-      "description": "Rosen (undisclosed) has been ruled out for Saturday's game against the Blackhawks, Ken Wiebe of The Winnipeg Free Press reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "WPG"
     },
     "8482874": {
@@ -418,8 +436,8 @@
     },
     "8483431": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "UTA"
     },
     "8483455": {
