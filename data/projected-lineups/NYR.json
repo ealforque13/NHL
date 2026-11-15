@@ -2,9 +2,9 @@
   "team": "NYR",
   "teamName": "New York Rangers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-14T01:39:42.433Z",
-  "sourceDescription": "Mollie Walker",
-  "cachedAtUTC": "2026-11-15T16:46:02.954573+00:00",
+  "sourceUpdatedAt": "2026-11-15T17:33:13.662Z",
+  "sourceDescription": "Peter Baugh",
+  "cachedAtUTC": "2026-11-15T17:40:34.911938+00:00",
   "forwards": [
     [
       {
@@ -246,12 +246,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Fox",
-        "number": 23,
+        "name": "Scott Morrow",
+        "number": 60,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 27251,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27251/NYR_23_Fox.png",
+        "sourcePlayerId": 34620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34620/NYR_60__Morrow.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
