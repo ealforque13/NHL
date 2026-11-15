@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T13:16:27.583Z",
   "sourceDescription": "Last Game (11-14-26)",
-  "cachedAtUTC": "2026-11-15T21:42:12.184483+00:00",
+  "cachedAtUTC": "2026-11-15T22:43:50.099125+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Denver Barkey",
-        "number": 86,
+        "name": "Cole Knuble",
+        "number": 54,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 35098,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
+        "sourcePlayerId": 33787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Bonk",
-        "number": 59,
+        "name": "Simon Benoit",
+        "number": 44,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 35107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35107/PHI_59__Bonk.png",
+        "sourcePlayerId": 26550,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26550/PHI_44__Benoit.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denver Barkey",
-        "number": 86,
+        "name": "Christian Dvorak",
+        "number": 22,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 35098,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
+        "sourcePlayerId": 2682,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Christian Dvorak",
-        "number": 22,
+        "name": "Sean Couturier",
+        "number": 14,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2682,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
+        "sourcePlayerId": 1777,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1777/PHI_14_Couturier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Bonk",
-        "number": 59,
+        "name": "Cam York",
+        "number": 8,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 35107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35107/PHI_59__Bonk.png",
+        "sourcePlayerId": 30422,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30422/PHI_8_York.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -426,6 +426,16 @@
       "sourcePlayerId": 34689,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34689/PHI_17__Grebenkin.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Denver Barkey",
+      "number": 86,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 35098,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]
