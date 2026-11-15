@@ -6691,7 +6691,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const scrollRect = scroller.getBoundingClientRect();
         statsLine.style.left = (table.getBoundingClientRect().left - scrollRect.left + scroller.scrollLeft) + 'px';
         statsLine.style.top = (cutoffRow.getBoundingClientRect().top - scrollRect.top + scroller.scrollTop) + 'px';
-        statsLine.style.width = table.offsetWidth + 'px';
+        // End precisely at STRK's right border, not at an oversized table/overlay box.
+        const lastHeading = table.querySelector('thead tr:last-child th:last-child') || table.querySelector('thead th:last-child');
+        const tableRight = lastHeading ? lastHeading.getBoundingClientRect().right : table.getBoundingClientRect().right;
+        const tableLeft = table.getBoundingClientRect().left;
+        statsLine.style.width = Math.max(0, tableRight - tableLeft) + 'px';
       } else if (statsLine) {
         statsLine.remove();
       }
@@ -6700,6 +6704,23 @@ document.addEventListener('DOMContentLoaded', function () {
         const logo = item.querySelector('img');
         if (logo && code === 'TBL') logo.setAttribute('data-hoist-team', 'TBL');
       });
+      // Prevent horizontal scrolling into empty space beyond the STRK column.
+      // The cutoff overlay must not extend the usable scroll range.
+      if (!scroller.dataset.hoistStrkBound) {
+        scroller.dataset.hoistStrkBound = '1';
+        scroller.addEventListener('scroll', () => {
+          if (window.innerWidth > 650) return;
+          const endCell = table.querySelector('thead tr:last-child th:last-child') || table.querySelector('thead th:last-child');
+          if (!endCell) return;
+          const maxLeft = Math.max(0, scroller.scrollLeft + endCell.getBoundingClientRect().right - scroller.getBoundingClientRect().right);
+          if (scroller.scrollLeft > maxLeft + 1) scroller.scrollLeft = maxLeft;
+        }, {passive:true});
+      }
+      const endCell = table.querySelector('thead tr:last-child th:last-child') || table.querySelector('thead th:last-child');
+      if (endCell) {
+        const maxLeft = Math.max(0, scroller.scrollLeft + endCell.getBoundingClientRect().right - scroller.getBoundingClientRect().right);
+        if (scroller.scrollLeft > maxLeft) scroller.scrollLeft = maxLeft;
+      }
       rail.dataset.signature = signature;
       rail.classList.add('hoist-rail-ready');
     });
