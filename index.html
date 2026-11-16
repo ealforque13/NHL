@@ -8494,6 +8494,31 @@ document.addEventListener('DOMContentLoaded', function () {
  const num=v=>v===null||v===undefined||v===''||!Number.isFinite(Number(v))?null:Number(v);
  const dateOf=g=>String(g.gameDate||g.date||g.game_date||g.startDate||'').slice(0,10);
  const load=code=>{if(!cache.has(code))cache.set(code,fetch('./data/matchups/'+code+'.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('No matchup file');return r.json()}).catch(()=>({players:[]})));return cache.get(code)};
+ // Use the same verified injury feed and red + indicator as the Games matchup lists.
+ let propInjuries={};
+ let propInjuriesPromise;
+ const normalizePlayerName=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+ function loadPropInjuries(){
+   if(!propInjuriesPromise)propInjuriesPromise=fetch('./data/injuries.json',{cache:'no-cache'})
+     .then(r=>r.ok?r.json():null)
+     .then(data=>{propInjuries=data?.players&&typeof data.players==='object'&&!Array.isArray(data.players)?data.players:{};})
+     .catch(()=>{propInjuries={};});
+   return propInjuriesPromise;
+ }
+ function propInjuryMark(player){
+   const id=String(player?.id??player?.playerId??player?.playerID??'');
+   const full=normalizePlayerName(player?.name||player?.playerName);
+   let verified=id?propInjuries[id]:null;
+   if(!verified&&full){
+     verified=Object.values(propInjuries).find(entry=>entry&&normalizePlayerName(entry.name||entry.playerName||entry.fullName)===full);
+   }
+   const status=String(player?.injuryStatus??player?.injury_status??player?.availabilityStatus??player?.availability??player?.status??player?.playerStatus??'').toLowerCase().trim();
+   const flagged=[player,verified].some(entry=>entry&&(entry.injured===true||entry.isInjured===true||entry.is_injured===true||entry.isOut===true||entry.out===true||entry.unavailable===true||entry.isUnavailable===true));
+   const hasStatus=/^(injured|injury|out|day[ -]?to[ -]?day|dtd|ir|ltir|injured reserve|inactive|unavailable|scratched|healthy scratch|not playing|suspended)(\b|$)/.test(status);
+   if(!flagged&&!hasStatus)return '';
+   const label=safe(verified?.description||player?.injuryStatus||'Injured or unavailable');
+   return `<span class="hoist-injury-plus" title="${label}" aria-label="${label}">+</span>`;
+ }
  const metric=(g,m)=>{
    const aliases={points:['points','pts','p'],goals:['goals','g'],assists:['assists','a'],shots:['shots','shotsOnGoal','sog','shots_on_goal']};
    for(const k of aliases[m])if(Object.prototype.hasOwnProperty.call(g,k)){const v=num(g[k]);if(v!==null)return v;}
@@ -8530,7 +8555,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const score=h2hOnly
      ?(h2hHits/h2h.length)*65+(hit5/last5.length)*20+Math.min(h2h.length,10)*1.2+Math.min(h2hAvg/line,3)*4
      :(hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5/line,3)*4+(h2h.length?Math.min(h2h.length,5)/5*(h2hHits/h2h.length-.5)*12:0));
-   return {name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly,market:selectedMarket,line};
+   return {sourcePlayer:p,name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly,market:selectedMarket,line};
  }
  async function update(){
    if(body.hidden)return;
@@ -8563,7 +8588,7 @@ document.addEventListener('DOMContentLoaded', function () {
    if(!games.length){describeResults(0);list.innerHTML='<p class="hoist-picks-empty">No NHL matchups available for this date.</p>';byId('hoist-picks-total').textContent='';return;}
    list.innerHTML='<p class="hoist-picks-empty">Analyzing scheduled matchups…</p>';
    const teams=scheduledTeams.filter(team=>selectedTeam==='all'||team===selectedTeam);
-   const data=await Promise.all(teams.map(async team=>[team,await load(team)]));
+   const [data]=await Promise.all([Promise.all(teams.map(async team=>[team,await load(team)])),loadPropInjuries()]);
    if(ticket!==generation)return;
    const opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
    const candidates=[];
@@ -8597,7 +8622,7 @@ document.addEventListener('DOMContentLoaded', function () {
    byId('hoist-picks-total').textContent=top.length+(suggestions?' Players Props':' players');
    describeResults(top.length);
    if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No players meet these criteria with verified recent and opponent game-log data. Try another date, team, or prop category.</p>';return;}
-   list.innerHTML=top.map((p,i)=>{const market=p.market,line=p.line;return `<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}.</li><li>${p.h2hOnly?'Last 10 games vs '+safe(p.opponent):'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line. ${Math.round((p.h2hHits/p.h2hN)*100)}%.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`;}).join('');
+   list.innerHTML=top.map((p,i)=>{const market=p.market,line=p.line;return `<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)}${propInjuryMark(p.sourcePlayer)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}.</li><li>${p.h2hOnly?'Last 10 games vs '+safe(p.opponent):'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line. ${Math.round((p.h2hHits/p.h2hN)*100)}%.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`;}).join('');
  }
  function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
  byId('hoist-prop-team')?.addEventListener('change',()=>{lastKey='';schedule()});
