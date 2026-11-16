@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T00:40:21.403Z",
+  "sourceUpdatedAt": "2026-11-16T01:50:37.512Z",
   "sourceDescription": "Derek Lee",
-  "cachedAtUTC": "2026-11-16T01:25:46.191693+00:00",
+  "cachedAtUTC": "2026-11-16T02:39:43.073329+00:00",
   "forwards": [
     [
       {
@@ -71,16 +71,6 @@
       }
     ],
     [
-      {
-        "name": "Ian Moore",
-        "number": null,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 31897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
       {
         "name": "Tim Washe",
         "number": null,
