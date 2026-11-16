@@ -3636,6 +3636,12 @@ body[data-theme="light"] #games .hoist-game-card {
   align-items:center;
   justify-content:center;
 }
+/* Keep the unbordered S heading centered over the bordered shot values. */
+#games .hoist-game-overview-history .hoist-game-history-head > span:nth-child(2),
+#games .hoist-game-player-history .hoist-game-history-head > span:nth-child(2){
+  text-align:center!important;
+  justify-self:stretch;
+}
 /* Compact and right-align the PTS, G and A stats inside each player's expanded history. */
 #games .hoist-game-overview-history .hoist-game-history-head,
 #games .hoist-game-overview-history .hoist-game-history-row{
