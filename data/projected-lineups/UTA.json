@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T18:10:08.468Z",
+  "sourceUpdatedAt": "2026-11-16T19:27:38.549Z",
   "sourceDescription": "Brogan Houston",
-  "cachedAtUTC": "2026-11-16T18:28:22.911346+00:00",
+  "cachedAtUTC": "2026-11-16T19:37:07.751305+00:00",
   "forwards": [
     [
       {
@@ -155,7 +155,7 @@
         "sourcePlayerId": 36382,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -465,6 +465,16 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 2678,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2678/UTH_8_Schmaltz.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Artem Duda",
+      "number": null,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 36382,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
