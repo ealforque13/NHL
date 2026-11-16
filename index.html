@@ -5561,6 +5561,32 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #games .hoist-picks-options .hoist-prop-team-filter{margin-left:auto;flex:0 0 auto}
 @media(min-width:901px){#games .hoist-prop-category-tabs button{font-size:15px;padding:13px 19px;border-bottom-width:3px}}
 @media(max-width:650px){#games .hoist-picks-options{gap:5px!important}#games .hoist-prop-category-tabs{gap:0;flex:1 1 auto}#games .hoist-prop-category-tabs button{font-size:11px;padding:9px 6px}#games .hoist-picks-options .hoist-prop-team-filter{gap:4px;font-size:11px}#games .hoist-picks-options #hoist-prop-team{min-width:58px!important}}
+/* Daily Player Props category filters: match Active Streaks selected state. */
+#games .hoist-picks-options .hoist-prop-category-tabs{
+  flex:1 1 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:5px;min-width:0;padding:3px;background:rgba(130,151,185,.08);
+  border:1px solid var(--border,rgba(145,166,195,.18));border-radius:9px;
+}
+#games .hoist-picks-options .hoist-prop-category-tabs button{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  min-width:0;width:100%;padding:12px 8px 14px;
+  border:0!important;border-radius:0!important;background:transparent!important;
+  color:#fff!important;opacity:1!important;font-weight:750;
+  transition:background .15s;
+}
+#games .hoist-picks-options .hoist-prop-category-tabs button.is-active{
+  color:#fff!important;
+  background:linear-gradient(to bottom,rgba(110,145,195,.10) 0,
+    rgba(110,145,195,.10) calc(100% - 3px),transparent calc(100% - 3px))!important;
+}
+#games .hoist-picks-options .hoist-prop-category-tabs button.is-active::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:#348bff;
+}
+#games .hoist-picks-options .hoist-prop-team-filter{flex:0 0 auto;margin-left:0}
+@media(max-width:650px){
+  #games .hoist-picks-options .hoist-prop-category-tabs{gap:0;padding:2px}
+  #games .hoist-picks-options .hoist-prop-category-tabs button{font-size:11px;padding:10px 2px 12px}
+}
 </style>
 </head>
 
