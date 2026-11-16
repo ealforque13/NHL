@@ -8507,7 +8507,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const selectedTeam=teamSelect.value;
    const description=byId('hoist-picks-description');
    const describeResults=count=>{
-     if(suggestions){description.textContent=`Results: ${count} ${count===1?'player prop suggestion':'player prop suggestions'}${selectedTeam==='all'?'':' for '+selectedTeam} meeting either the recent-form + opponent H2H criteria (Points 5/5 & 60%+, Goals 3/5 & 40%+, Assists 4/5 & 50%+) or an 80%+ opponent H2H hit rate in Points, Goals, or Assists.`;return;}
+     if(suggestions){description.textContent=`Results: ${count} ${count===1?'player prop suggestion':'player prop suggestions'}${selectedTeam==='all'?'':' for '+selectedTeam} meeting either the recent-form + opponent H2H criteria (Points 5/5 & 60%+, Goals 3/5 & 40%+, Assists 4/5 & 50%+) or an 80%+ opponent H2H hit rate in Points, Goals, or Assists. All suggestions require at least 3 recorded H2H games.`;return;}
      const what=line+'+ '+plural(line,labels[market]);
      const gamesLabel=h2hOnly?'head-to-head matchups':'games';
      const hitsLabel=minHits===0
@@ -8537,7 +8537,7 @@ document.addEventListener('DOMContentLoaded', function () {
            // 1+ point/goal/assist line hitting in at least 80% of recorded
            // meetings with tonight's opponent (regardless of recent form).
            const result=analyze(player,team,match.opponent,match.venue,date,1,0,false,rule.market);
-           if(!result||!result.h2hN)continue;
+           if(!result||result.h2hN<3)continue;
            const h2hRate=result.h2hHits/result.h2hN;
            const qualifiesRecent=result.n5===5&&result.hit5>=rule.hits&&h2hRate+1e-10>=rule.h2hRate;
            const qualifiesEliteH2H=h2hRate+1e-10>=.80;
