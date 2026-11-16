@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T08:39:27.890012+00:00",
+  "updatedAt": "2026-11-16T14:59:48.320563+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -10,8 +10,8 @@
     },
     "8474574": {
       "injured": true,
-      "description": "Myers (upper body) will be evaluated Monday, Robert Tiffin of NHL.com reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DAL"
     },
     "8475168": {
@@ -58,8 +58,8 @@
     },
     "8476454": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "EDM"
     },
     "8476456": {
@@ -76,8 +76,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NSH"
     },
     "8476853": {
@@ -178,8 +178,8 @@
     },
     "8477505": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "SJS"
     },
     "8477511": {
@@ -298,8 +298,8 @@
     },
     "8480036": {
       "injured": true,
-      "description": "Heiskanen (upper body) is doubtful for Sunday's matchup against Florida, per Mike Heika of the Stars' official site.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DAL"
     },
     "8480068": {
@@ -502,8 +502,8 @@
     },
     "8484142": {
       "injured": true,
-      "description": "Barkey (illness) won't play against Edmonton on Sunday, per Adam Kimelman of NHL.com.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "PHI"
     },
     "8484221": {
