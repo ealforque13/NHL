@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:11:47.385Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T15:39:38.638484+00:00",
+  "sourceUpdatedAt": "2026-11-16T16:08:22.808Z",
+  "sourceDescription": "Stefen Rosner",
+  "cachedAtUTC": "2026-11-16T17:17:08.126756+00:00",
   "forwards": [
     [
       {
@@ -25,7 +25,7 @@
         "sourcePlayerId": 2141,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Kyle Palmieri",
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anthony Duclair",
-        "number": 11,
+        "name": "Matias Maccelli",
+        "number": 63,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2380,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2380/NYI_11_Duclair.png",
+        "sourcePlayerId": 30063,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30063/NYI_63__Maccelli.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Matias Maccelli",
-        "number": 63,
+        "name": "Anthony Duclair",
+        "number": 11,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30063,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30063/NYI_63__Maccelli.png",
+        "sourcePlayerId": 2380,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2380/NYI_11_Duclair.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -138,34 +138,12 @@
   "defense": [
     [
       {
-        "name": "Logan Stanley",
-        "number": 8,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 2652,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      },
-      {
         "name": "Matthew Schaefer",
         "number": 48,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 38474,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38474/NYI_48_Schaefer.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Adam Pelech",
-        "number": 3,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2449,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
+        "sourcePlayerId": 38474,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38474/NYI_48_Schaefer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +160,12 @@
     ],
     [
       {
-        "name": "Ben Hutton",
-        "number": 17,
+        "name": "Adam Pelech",
+        "number": 3,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2508,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2508/NYI_71__Hutton.png",
+        "sourcePlayerId": 2449,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -198,6 +176,28 @@
         "positionName": "Right Defense",
         "sourcePlayerId": 2664,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2664/NYI_77_DeAngelo.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Ben Hutton",
+        "number": 17,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 2508,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2508/NYI_71__Hutton.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Kessel",
+        "number": 4,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 30737,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30737/NYI_4__Kessel.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -223,7 +223,7 @@
         "sourcePlayerId": 2141,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Brayden Schenn",
@@ -319,7 +319,7 @@
         "sourcePlayerId": 2141,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Simon Holmstrom",
@@ -342,14 +342,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Logan Stanley",
-        "number": 8,
+        "name": "Ryan Pulock",
+        "number": 6,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2652,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
+        "sourcePlayerId": 2146,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2146/NYI_6_Pulock.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Semyon Varlamov",
-      "number": 40,
+      "name": "Ilya Sorokin",
+      "number": 30,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1545,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1545/NYI_40_Varlamov.png",
+      "sourcePlayerId": 25264,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25264/NYI_30_Sorokin.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Ilya Sorokin",
-      "number": 30,
+      "name": "Semyon Varlamov",
+      "number": 40,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 25264,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25264/NYI_30_Sorokin.png",
+      "sourcePlayerId": 1545,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1545/NYI_40_Varlamov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -455,16 +455,6 @@
       "positionName": "Injured Reserve 6",
       "sourcePlayerId": 2652,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Bo Horvat",
-      "number": 14,
-      "position": "IR7",
-      "positionName": "Injured Reserve 7",
-      "sourcePlayerId": 2141,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2141/NYI_14_Horvat.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

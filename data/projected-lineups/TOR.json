@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:53:02.701Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T15:39:58.113244+00:00",
+  "sourceUpdatedAt": "2026-11-16T17:02:02.414Z",
+  "sourceDescription": "David Alter",
+  "cachedAtUTC": "2026-11-16T17:17:27.662089+00:00",
   "forwards": [
     [
       {
@@ -182,14 +182,14 @@
     ],
     [
       {
-        "name": "Dakota Mermis",
-        "number": 36,
+        "name": "Morgan Rielly",
+        "number": 44,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2914,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2914/TOR_36_Mermis.png",
+        "sourcePlayerId": 1935,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Troy Stecher",
@@ -288,14 +288,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Ekman-Larsson",
-        "number": 95,
+        "name": "Morgan Rielly",
+        "number": 44,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 1172,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+        "sourcePlayerId": 1935,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Gavin McKenna",

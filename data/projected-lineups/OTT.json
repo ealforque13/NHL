@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:01:03.927Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T15:39:42.983815+00:00",
+  "sourceUpdatedAt": "2026-11-16T16:06:30.660Z",
+  "sourceDescription": "Andrew Wilimek",
+  "cachedAtUTC": "2026-11-16T17:17:12.470737+00:00",
   "forwards": [
     [
       {
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Hayden Hodgson",
-        "number": 42,
+        "name": "Tyler Boucher",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 23173,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23173/OTT_42_Hodgson.png",
+        "sourcePlayerId": 30972,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30972/OTT_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Carter Yakemchuk",
-        "number": 26,
+        "name": "Nikolas Matinpalo",
+        "number": 33,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 33595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33595/OTT_26__Yakemchuk.png",
+        "sourcePlayerId": 37937,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37937/OTT_33_Matinpalo.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Drake Batherson",
-        "number": 19,
+        "name": "Stephen Halliday",
+        "number": 34,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 4831,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4831/OTT_19_Batherson.png",
+        "sourcePlayerId": 30030,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30030/OTT_34__Halliday.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -226,22 +226,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Stephen Halliday",
-        "number": 34,
+        "name": "Tim Stützle",
+        "number": 18,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30030,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30030/OTT_34__Halliday.png",
+        "sourcePlayerId": 31746,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31746/OTT_18_Stutzle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Tim Stützle",
-        "number": 18,
+        "name": "Drake Batherson",
+        "number": 19,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 31746,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31746/OTT_18_Stutzle.png",
+        "sourcePlayerId": 4831,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4831/OTT_19_Batherson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,22 +288,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Carter Yakemchuk",
-        "number": 26,
+        "name": "Thomas Chabot",
+        "number": 72,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 33595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33595/OTT_26__Yakemchuk.png",
+        "sourcePlayerId": 2492,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2492/OTT_72_Chabot.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Thomas Chabot",
-        "number": 72,
+        "name": "Jordan Spence",
+        "number": 21,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2492,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2492/OTT_72_Chabot.png",
+        "sourcePlayerId": 29922,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29922/OTT_10_Spence.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,9 +2,9 @@
   "team": "BOS",
   "teamName": "Boston Bruins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:52:10.290Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T15:39:03.966452+00:00",
+  "sourceUpdatedAt": "2026-11-16T16:47:13.743Z",
+  "sourceDescription": "Belle Fraser",
+  "cachedAtUTC": "2026-11-16T17:16:33.311538+00:00",
   "forwards": [
     [
       {
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Matthew Poitras",
-        "number": 51,
+        "name": "Sean Kuraly",
+        "number": 7,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 33196,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33196/BOS_51_Poitras.png",
+        "sourcePlayerId": 2585,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2585/BOS_52_Kuraly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Frederic Brunet",
-        "number": 42,
+        "name": "Mason Lohrei",
+        "number": 6,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 31316,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31316/BOS_42__Brunet.png",
+        "sourcePlayerId": 37934,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37934/BOS_6_Lohrei.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Matthew Poitras",
-        "number": 51,
+        "name": "Marat Khusnutdinov",
+        "number": 92,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 33196,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33196/BOS_51_Poitras.png",
+        "sourcePlayerId": 31738,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,22 +288,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Frederic Brunet",
-        "number": 42,
+        "name": "JJ Peterka",
+        "number": 10,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 31316,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31316/BOS_42__Brunet.png",
+        "sourcePlayerId": 31777,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31777/BOS_10_Peterka.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "JJ Peterka",
-        "number": 10,
+        "name": "Mason Lohrei",
+        "number": 6,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 31777,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31777/BOS_10_Peterka.png",
+        "sourcePlayerId": 37934,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37934/BOS_6_Lohrei.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
