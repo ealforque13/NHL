@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T00:42:17.342Z",
-  "sourceDescription": "Derek Wills",
-  "cachedAtUTC": "2026-11-16T12:13:37.919648+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:09:18.993Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:12.617358+00:00",
   "forwards": [
     [
       {
@@ -312,22 +312,22 @@
   "penaltyKill": [
     [
       {
-        "name": "Martin Pospisil",
-        "number": 76,
+        "name": "Mikael Backlund",
+        "number": 11,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28414,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28414/CGY_76_Pospisil.png",
+        "sourcePlayerId": 193,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/193/CGY_11_Backlund.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Joel Farabee",
-        "number": 86,
+        "name": "Yegor Sharangovich",
+        "number": 17,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 4799,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4799/CGY_86_Farabee.png",
+        "sourcePlayerId": 29637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Yegor Sharangovich",
-        "number": 17,
+        "name": "Joel Farabee",
+        "number": 86,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 29637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
+        "sourcePlayerId": 4799,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4799/CGY_86_Farabee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Joel Hanley",
-        "number": 44,
+        "name": "Simon Nemec",
+        "number": 71,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2605,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2605/CGY_44_Hanley.png",
+        "sourcePlayerId": 35669,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35669/CGY_71_Nemec.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

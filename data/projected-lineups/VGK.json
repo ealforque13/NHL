@@ -2,18 +2,18 @@
   "team": "VGK",
   "teamName": "Vegas Golden Knights",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T01:40:42.415Z",
-  "sourceDescription": "Sin Bin Vegas",
-  "cachedAtUTC": "2026-11-16T12:14:27.961599+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:13:32.468Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:40:04.541095+00:00",
   "forwards": [
     [
       {
-        "name": "Ivan Barbashev",
-        "number": 49,
+        "name": "Trevor Connelly",
+        "number": 24,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2737,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2737/VGK_49_Barbashev.png",
+        "sourcePlayerId": 36773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36773/VGK_24_Connelly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Brett Howden",
-        "number": 21,
+        "name": "Braeden Bowman",
+        "number": 42,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2660,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2660/VGK_21_Howden.png",
+        "sourcePlayerId": 30925,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30925/VGK_42__Bowman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Trevor Connelly",
-        "number": 24,
+        "name": "Ivan Barbashev",
+        "number": 49,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 36773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36773/VGK_24_Connelly.png",
+        "sourcePlayerId": 2737,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2737/VGK_49_Barbashev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Braeden Bowman",
-        "number": 42,
+        "name": "Brett Howden",
+        "number": 21,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30925,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30925/VGK_42__Bowman.png",
+        "sourcePlayerId": 2660,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2660/VGK_21_Howden.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Shea Theodore",
-        "number": 27,
+        "name": "Parker Wotherspoon",
+        "number": 29,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2157,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2157/VGK_27_Theodore.png",
+        "sourcePlayerId": 3836,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3836/VGK_29__Wotherspoon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

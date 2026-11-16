@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T01:50:37.512Z",
-  "sourceDescription": "Derek Lee",
-  "cachedAtUTC": "2026-11-16T12:13:27.472345+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:10:53.912Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:01.831631+00:00",
   "forwards": [
     [
       {
@@ -138,12 +138,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Drew Helleson",
-        "number": 14,
+        "name": "Ian Moore",
+        "number": null,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30429,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
+        "sourcePlayerId": 31897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -322,22 +322,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Mintyukov",
-        "number": 34,
+        "name": "Jackson Lacombe",
+        "number": 2,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 34372,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34372/ANA_98_Mintyukov_2_.png",
+        "sourcePlayerId": 30438,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30438/ANA_2_Lacombe_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Drew Helleson",
-        "number": 14,
+        "name": "Ian Moore",
+        "number": null,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 30429,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
+        "sourcePlayerId": 31897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -387,22 +387,22 @@
   ],
   "goalies": [
     {
-      "name": "Ville Husso",
-      "number": 33,
+      "name": "Lukas Dostal",
+      "number": 1,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 3837,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3837/ANA_33_Husso.png",
+      "sourcePlayerId": 29143,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29143/ANA_1_Dostal_2_.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Lukas Dostal",
-      "number": 1,
+      "name": "Ville Husso",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29143,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29143/ANA_1_Dostal_2_.png",
+      "sourcePlayerId": 3837,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3837/ANA_33_Husso.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

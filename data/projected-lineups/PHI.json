@@ -2,9 +2,9 @@
   "team": "PHI",
   "teamName": "Philadelphia Flyers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T00:07:30.477Z",
-  "sourceDescription": "Siobhan Nolan",
-  "cachedAtUTC": "2026-11-16T12:14:09.238919+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:03:48.838Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:45.159477+00:00",
   "forwards": [
     [
       {
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jamie Drysdale",
-        "number": 9,
+        "name": "Rasmus Ristolainen",
+        "number": 55,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29756,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29756/PHI_9_Drysdale.png",
+        "sourcePlayerId": 2140,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Rasmus Ristolainen",
-        "number": 55,
+        "name": "Jamie Drysdale",
+        "number": 9,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2140,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
+        "sourcePlayerId": 29756,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29756/PHI_9_Drysdale.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Travis Sanheim",
-        "number": 6,
+        "name": "Owen Tippett",
+        "number": 74,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2827,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2827/PHI_6_Sanheim.png",
+        "sourcePlayerId": 2786,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -342,12 +342,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Rasmus Ristolainen",
-        "number": 55,
+        "name": "Cam York",
+        "number": 8,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2140,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
+        "sourcePlayerId": 30422,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30422/PHI_8_York.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cam York",
-        "number": 8,
+        "name": "Simon Benoit",
+        "number": 44,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 30422,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30422/PHI_8_York.png",
+        "sourcePlayerId": 26550,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26550/PHI_44__Benoit.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

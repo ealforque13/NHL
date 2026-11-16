@@ -2,9 +2,9 @@
   "team": "FLA",
   "teamName": "Florida Panthers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T00:41:26.456Z",
-  "sourceDescription": "Rob Darragh",
-  "cachedAtUTC": "2026-11-16T12:13:50.462460+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:05:09.436Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:25.619389+00:00",
   "forwards": [
     [
       {
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anton Lundell",
-        "number": 15,
+        "name": "Lars Eller",
+        "number": 20,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 33026,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
+        "sourcePlayerId": 840,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gustav Forsling",
-        "number": 42,
+        "name": "Anton Lundell",
+        "number": 15,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2431,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2431/FLA_42_Forsling_2_.png",
+        "sourcePlayerId": 33026,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -354,12 +354,12 @@
     ],
     [
       {
-        "name": "Lars Eller",
-        "number": 20,
+        "name": "Sam Reinhart",
+        "number": 13,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 840,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
+        "sourcePlayerId": 2364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2364/FLA_13_Reinhart_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Akira Schmid",
-      "number": 40,
+      "name": "Jacob Markstrom",
+      "number": 25,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29148,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29148/FLA_40_Schmid.png",
+      "sourcePlayerId": 594,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/594/FLA_25_Markstrom.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jacob Markstrom",
-      "number": 25,
+      "name": "Akira Schmid",
+      "number": 40,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 594,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/594/FLA_25_Markstrom.png",
+      "sourcePlayerId": 29148,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29148/FLA_40_Schmid.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

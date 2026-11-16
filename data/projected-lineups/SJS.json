@@ -2,9 +2,9 @@
   "team": "SJS",
   "teamName": "San Jose Sharks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T05:50:39.685Z",
-  "sourceDescription": "Sheng Peng",
-  "cachedAtUTC": "2026-11-16T12:14:15.500318+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:16:02.601Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:51.645800+00:00",
   "forwards": [
     [
       {
@@ -206,42 +206,42 @@
   "powerPlay": [
     [
       {
-        "name": "Kiefer Sherwood",
-        "number": 44,
-        "position": "SK1",
-        "positionName": "Skater 1",
-        "sourcePlayerId": 4675,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4675/SJS_44__Sherwood.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      },
-      {
         "name": "Ivar Stenberg",
         "number": 41,
-        "position": "SK2",
-        "positionName": "Skater 2",
+        "position": "SK1",
+        "positionName": "Skater 1",
         "sourcePlayerId": 38939,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38939/SJS_41__Stenberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Mason Marchment",
-        "number": 27,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 2855,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2855/SJS_27__Marchment.png",
+        "name": "Macklin Celebrini",
+        "number": 71,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 37106,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37106/SJS_71_Celebrini.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Macklin Celebrini",
-        "number": 71,
+        "name": "Will Smith",
+        "number": 2,
+        "position": "SK3",
+        "positionName": "Skater 3",
+        "sourcePlayerId": 38126,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38126/SJS_2_Smith.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Trouba",
+        "number": 65,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 37106,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37106/SJS_71_Celebrini.png",
+        "sourcePlayerId": 2099,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2099/SJS_65__Trouba.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Gaudette",
-        "number": 81,
+        "name": "Mason Marchment",
+        "number": 27,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4646,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4646/SJS_81_Gaudette.png",
+        "sourcePlayerId": 2855,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2855/SJS_27__Marchment.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Will Smith",
-        "number": 2,
+        "name": "Eric Pohlkamp",
+        "number": null,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 38126,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38126/SJS_2_Smith.png",
+        "sourcePlayerId": 33798,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -322,12 +322,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Collin Graf",
-        "number": 51,
+        "name": "Barclay Goodrow",
+        "number": 23,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 38105,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
+        "sourcePlayerId": 2395,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2395/SJS_23_Goodrow.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Barclay Goodrow",
-        "number": 23,
+        "name": "Collin Graf",
+        "number": 51,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2395,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2395/SJS_23_Goodrow.png",
+        "sourcePlayerId": 38105,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

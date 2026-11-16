@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T23:33:55.964Z",
-  "sourceDescription": "Edmonton Oilers",
-  "cachedAtUTC": "2026-11-16T12:13:48.393006+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:02:15.209Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:23.436094+00:00",
   "forwards": [
     [
       {
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Vasily Podkolzin",
-        "number": 92,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
+        "name": "Vasily Podkolzin",
+        "number": 92,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
+        "sourcePlayerId": 30606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -312,22 +312,22 @@
   "penaltyKill": [
     [
       {
-        "name": "Jason Dickinson",
-        "number": 16,
+        "name": "Alex Formenton",
+        "number": 26,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2160,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2160/EDM_16_Dickinson.png",
+        "sourcePlayerId": 2897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2897/EDM_26_Formenton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Formenton",
-        "number": 26,
+        "name": "Connor McDavid",
+        "number": 97,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2897/EDM_26_Formenton.png",
+        "sourcePlayerId": 2471,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2471/EDM_97_McDavid.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Tristan Jarry",
-      "number": 35,
+      "name": "Devon Levi",
+      "number": 27,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2626,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2626/EDM_35_Jarry.png",
+      "sourcePlayerId": 33010,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33010/EDM_27_Levi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Devon Levi",
-      "number": 27,
+      "name": "Tristan Jarry",
+      "number": 35,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 33010,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33010/EDM_27_Levi.png",
+      "sourcePlayerId": 2626,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2626/EDM_35_Jarry.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

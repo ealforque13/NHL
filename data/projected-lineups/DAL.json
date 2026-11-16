@@ -2,9 +2,9 @@
   "team": "DAL",
   "teamName": "Dallas Stars",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T00:38:45.019Z",
-  "sourceDescription": "Robert Tiffin",
-  "cachedAtUTC": "2026-11-16T12:13:44.171541+00:00",
+  "sourceUpdatedAt": "2026-11-16T15:08:02.460Z",
+  "sourceDescription": "Last Game (2026-11-15)",
+  "cachedAtUTC": "2026-11-16T15:39:19.091616+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Arttu Hyry",
-        "number": 25,
+        "name": "Jamie Benn",
+        "number": 14,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 38114,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38114/DAL_25__Hyry.png",
+        "sourcePlayerId": 425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tyler Seguin",
-        "number": 91,
+        "name": "Arttu Hyry",
+        "number": 25,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 139,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/139/DAL_91_Seguin.png",
+        "sourcePlayerId": 38114,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38114/DAL_25__Hyry.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jamie Benn",
-        "number": 14,
+        "name": "Tyler Seguin",
+        "number": 91,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
+        "sourcePlayerId": 139,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/139/DAL_91_Seguin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -177,7 +177,7 @@
         "sourcePlayerId": 176,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Colin Blackwell",
-        "number": 15,
+        "name": "Justin Hryckowian",
+        "number": 49,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 4822,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4822/DAL_15_Blackwell.png",
+        "sourcePlayerId": 31798,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31798/DAL_49_Hryckowian.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -391,28 +391,28 @@
         "sourcePlayerId": 176,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
   "goalies": [
     {
-      "name": "Casey DeSmith",
-      "number": 1,
+      "name": "Jake Oettinger",
+      "number": 29,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2572,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2572/DAL_1_DeSmith.png",
+      "sourcePlayerId": 2813,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2813/DAL_29_Oettinger.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jake Oettinger",
-      "number": 29,
+      "name": "Casey DeSmith",
+      "number": 1,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2813,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2813/DAL_29_Oettinger.png",
+      "sourcePlayerId": 2572,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2572/DAL_1_DeSmith.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -466,6 +466,16 @@
       "sourcePlayerId": 36369,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36369/DAL_6_Bichsel.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Tyler Myers",
+      "number": 57,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 176,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
