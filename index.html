@@ -8507,7 +8507,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const selectedTeam=teamSelect.value;
    const description=byId('hoist-picks-description');
    const describeResults=count=>{
-     if(suggestions){description.textContent=`Results: ${count} ${count===1?'player prop suggestion':'player prop suggestions'}${selectedTeam==='all'?'':' for '+selectedTeam} meeting the recent-form and opponent H2H criteria (Points 5/5 & 60%+, Goals 3/5 & 40%+, Assists 4/5 & 50%+).`;return;}
+     if(suggestions){description.textContent=`Results: ${count} ${count===1?'player prop suggestion':'player prop suggestions'}${selectedTeam==='all'?'':' for '+selectedTeam} meeting either the recent-form + opponent H2H criteria (Points 5/5 & 60%+, Goals 3/5 & 40%+, Assists 4/5 & 50%+) or an 80%+ opponent H2H hit rate in Points, Goals, or Assists.`;return;}
      const what=line+'+ '+plural(line,labels[market]);
      const gamesLabel=h2hOnly?'head-to-head matchups':'games';
      const hitsLabel=minHits===0
@@ -8533,10 +8533,16 @@ document.addEventListener('DOMContentLoaded', function () {
      for(const player of payload.players||[]){
        if(suggestions){
          for(const rule of [{market:'points',hits:5,h2hRate:.60},{market:'goals',hits:3,h2hRate:.40},{market:'assists',hits:4,h2hRate:.50}]){
-           const result=analyze(player,team,match.opponent,match.venue,date,1,rule.hits,false,rule.market);
-           // Require five recorded recent games, verified opponent data, and a qualifying career H2H hit rate.
-           if(!result||result.n5!==5||!result.h2hN||result.h2hHits/result.h2hN+1e-10<rule.h2hRate)continue;
-           result.score=(result.hit5/5)*50+(result.h2hHits/result.h2hN)*40+Math.min(result.h2hN,10)*.5+Math.min(result.streak,5);
+           // Include either the existing recent-form + H2H rule, OR any
+           // 1+ point/goal/assist line hitting in at least 80% of recorded
+           // meetings with tonight's opponent (regardless of recent form).
+           const result=analyze(player,team,match.opponent,match.venue,date,1,0,false,rule.market);
+           if(!result||!result.h2hN)continue;
+           const h2hRate=result.h2hHits/result.h2hN;
+           const qualifiesRecent=result.n5===5&&result.hit5>=rule.hits&&h2hRate+1e-10>=rule.h2hRate;
+           const qualifiesEliteH2H=h2hRate+1e-10>=.80;
+           if(!qualifiesRecent&&!qualifiesEliteH2H)continue;
+           result.score=(result.hit5/result.n5)*50+h2hRate*40+Math.min(result.h2hN,10)*.5+Math.min(result.streak,5);
            candidates.push(result);
          }
        }else{
