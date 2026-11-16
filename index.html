@@ -6215,7 +6215,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
           </div>
         </div>
         <div class="hoist-picks-topline"><span id="hoist-picks-market-label">POINTS · 1+ POINT</span><span id="hoist-picks-total"></span></div>
-        <p class="hoist-picks-note" id="hoist-picks-description" aria-live="polite">Results will describe the selected player prop filters.</p>
+        <p class="hoist-picks-note" id="hoist-picks-description" hidden></p>
         <div id="hoist-picks-list" aria-live="polite">Open to load today's matchup research.</div>
       </div>
     </section>
@@ -8511,7 +8511,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const selectedTeam=teamSelect.value;
    const description=byId('hoist-picks-description');
    const describeResults=count=>{
-     if(suggestions){description.textContent=`Results: ${count} ${count===1?'player prop suggestion':'player prop suggestions'}${category==='all'?'':' for '+category}${selectedTeam==='all'?'':' on '+selectedTeam} meeting the Suggestions criteria (Points: 5/5 recent & 50%+ H2H; Goals: 3/5 recent & 40%+ H2H, or 50%+ H2H alone; Assists: 4/5 recent & 70%+ H2H), or an 80%+ H2H hit rate in the selected category. All suggestions require at least 3 recorded H2H games.`;return;}
+     if(suggestions){description.textContent='';return;}
      const what=line+'+ '+plural(line,labels[market]);
      const gamesLabel=h2hOnly?'head-to-head matchups':'games';
      const hitsLabel=minHits===0
@@ -8558,7 +8558,7 @@ document.addEventListener('DOMContentLoaded', function () {
    }
    candidates.sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));
    const top=candidates;
-   byId('hoist-picks-total').textContent=top.length+(suggestions?' suggestions':' players');
+   byId('hoist-picks-total').textContent=top.length+(suggestions?' suggested props':' players');
    describeResults(top.length);
    if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No players meet these criteria with verified recent and opponent game-log data. Try another date, team, or prop category.</p>';return;}
    list.innerHTML=top.map((p,i)=>{const market=p.market,line=p.line;return `<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}.</li><li>${p.h2hOnly?'Last 10 games vs '+safe(p.opponent):'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line. ${Math.round((p.h2hHits/p.h2hN)*100)}%.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`;}).join('');
