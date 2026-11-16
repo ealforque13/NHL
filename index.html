@@ -5527,6 +5527,26 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #games .hoist-streak-stats > small {font-size:9px;white-space:normal;}
 }
 </style>
+
+<style>
+/* Desktop only: enlarge the expanded Games head-to-head five-player tables.
+   Keep both team tables side by side and preserve all existing behavior. */
+@media (min-width:901px){
+  #games .hoist-game-h2h-teams{gap:24px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-format h4{font-size:22px!important;line-height:1.3!important;margin-bottom:18px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-table{font-size:15px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-table thead th{font-size:13px!important;padding-top:12px!important;padding-bottom:12px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-table .hoist-sort-button{font-size:13px!important;height:52px!important;min-height:52px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-table tr.hoist-game-overview-player-row,
+  #games .hoist-game-h2h-teams .hoist-game-overview-table tr.hoist-game-overview-player-row>td{height:78px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-table tr.hoist-game-overview-player-row>td{padding-top:12px!important;padding-bottom:12px!important;font-size:15px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-player{gap:12px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-player img.hoist-game-player-headshot{width:50px!important;height:50px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-player-name strong{font-size:15px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-player .hoist-game-streak-label{font-size:11px!important;}
+  #games .hoist-game-h2h-teams .hoist-game-overview-history{font-size:14px!important;}
+}
+</style>
 </head>
 
 <body>
