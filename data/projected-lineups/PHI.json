@@ -2,9 +2,9 @@
   "team": "PHI",
   "teamName": "Philadelphia Flyers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:16:27.583Z",
-  "sourceDescription": "Last Game (11-14-26)",
-  "cachedAtUTC": "2026-11-15T22:43:50.099125+00:00",
+  "sourceUpdatedAt": "2026-11-16T00:07:30.477Z",
+  "sourceDescription": "Siobhan Nolan",
+  "cachedAtUTC": "2026-11-16T01:26:29.494984+00:00",
   "forwards": [
     [
       {
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Christian Dvorak",
-        "number": 22,
+        "name": "Noah Cates",
+        "number": 27,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2682,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
+        "sourcePlayerId": 28087,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28087/PHI_27_Cates.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sean Couturier",
-        "number": 14,
+        "name": "Christian Dvorak",
+        "number": 22,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 1777,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1777/PHI_14_Couturier.png",
+        "sourcePlayerId": 2682,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

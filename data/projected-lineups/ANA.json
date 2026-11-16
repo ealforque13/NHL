@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:19:13.854Z",
-  "sourceDescription": "Last Game (11-14-26)",
-  "cachedAtUTC": "2026-11-15T22:43:08.717590+00:00",
+  "sourceUpdatedAt": "2026-11-16T00:40:21.403Z",
+  "sourceDescription": "Derek Lee",
+  "cachedAtUTC": "2026-11-16T01:25:46.191693+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Beckett Sennecke",
-        "number": 45,
+        "name": "Jeff Malott",
+        "number": 39,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 36637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
+        "sourcePlayerId": 34555,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,24 +60,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Terry",
-        "number": 19,
+        "name": "Beckett Sennecke",
+        "number": 45,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
+        "sourcePlayerId": 36637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Jeff Malott",
-        "number": 39,
+        "name": "Ian Moore",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 34555,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
+        "sourcePlayerId": 31897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Colangelo",
-        "number": 12,
+        "name": "Troy Terry",
+        "number": 19,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32857,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32857/ANA_12_Colangelo.png",
+        "sourcePlayerId": 4645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -418,16 +418,6 @@
     }
   ],
   "injuries": [
-    {
-      "name": "Ian Moore",
-      "number": null,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 31897,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
     {
       "name": "Ryan Poehling",
       "number": 25,

@@ -2,9 +2,9 @@
   "team": "DAL",
   "teamName": "Dallas Stars",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:21:52.619Z",
-  "sourceDescription": "Last Game (11-14-26)",
-  "cachedAtUTC": "2026-11-15T22:43:25.307590+00:00",
+  "sourceUpdatedAt": "2026-11-16T00:38:45.019Z",
+  "sourceDescription": "Robert Tiffin",
+  "cachedAtUTC": "2026-11-16T01:26:03.465800+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Joel Kiviranta",
-        "number": 94,
+        "name": "Colin Blackwell",
+        "number": 15,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 31187,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31187/DAL_22_Kiviranta.png",
+        "sourcePlayerId": 4822,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4822/DAL_15_Blackwell.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Joel Kiviranta",
-        "number": 94,
+        "name": "Colin Blackwell",
+        "number": 15,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 31187,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31187/DAL_22_Kiviranta.png",
+        "sourcePlayerId": 4822,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4822/DAL_15_Blackwell.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

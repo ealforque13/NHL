@@ -2,9 +2,9 @@
   "team": "FLA",
   "teamName": "Florida Panthers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:23:15.675Z",
-  "sourceDescription": "Last Game (11-14-26)",
-  "cachedAtUTC": "2026-11-15T22:43:31.494234+00:00",
+  "sourceUpdatedAt": "2026-11-16T00:41:26.456Z",
+  "sourceDescription": "Rob Darragh",
+  "cachedAtUTC": "2026-11-16T01:26:09.888862+00:00",
   "forwards": [
     [
       {
@@ -182,22 +182,22 @@
     ],
     [
       {
-        "name": "Dmitry Kulikov",
-        "number": 7,
+        "name": "Uvis Balinskis",
+        "number": 26,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 593,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/593/FLA_7_Kulikov_2_.png",
+        "sourcePlayerId": 37929,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37929/FLA_26_Balinskis_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Radko Gudas",
-        "number": 6,
+        "name": "Dmitry Kulikov",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1366,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1366/FLA_6_Gudas.png",
+        "sourcePlayerId": 593,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/593/FLA_7_Kulikov_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
