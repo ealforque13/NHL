@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T18:41:19.133197+00:00",
+  "updatedAt": "2026-11-16T01:16:55.878000+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -50,6 +50,12 @@
       "status": "Day-To-Day",
       "team": "NYI"
     },
+    "8476454": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "EDM"
+    },
     "8476456": {
       "injured": true,
       "description": "Huberdeau (hip) won't travel with the Flames during their upcoming three-game road trip, Pat Steinberg of QR Calgary 770 AM reports Friday.",
@@ -76,8 +82,8 @@
     },
     "8476875": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Matheson (lower body) will miss approximately 2-3 weeks, the Canadiens announced Sunday.",
+      "status": "Out",
       "team": "MTL"
     },
     "8476891": {
@@ -100,7 +106,7 @@
     },
     "8476981": {
       "injured": true,
-      "description": "ir",
+      "description": "Anderson (lower body) will be out for approximately 3-4 weeks, per Renaud Lavoie of TVA Sports on Sunday.",
       "status": "Injured Reserve",
       "team": "MTL"
     },
@@ -166,8 +172,8 @@
     },
     "8477505": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "SJS"
     },
     "8477511": {
@@ -388,15 +394,9 @@
     },
     "8482089": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Neighbours (upper body) is day-to-day, per Lou Korac of NHL.com on Sunday.",
       "status": "Day-To-Day",
       "team": "STL"
-    },
-    "8482178": {
-      "injured": true,
-      "description": "Moore (lower body) might be an option to play by the end of the week, Derek Lee of The Hockey News reports Wednesday.",
-      "status": "Injured Reserve",
-      "team": "ANA"
     },
     "8482667": {
       "injured": true,
@@ -488,6 +488,12 @@
       "status": "Injured Reserve",
       "team": "PHI"
     },
+    "8484142": {
+      "injured": true,
+      "description": "Barkey (illness) won't play against Edmonton on Sunday, per Adam Kimelman of NHL.com.",
+      "status": "Out",
+      "team": "PHI"
+    },
     "8484221": {
       "injured": true,
       "description": "ir",
@@ -508,7 +514,7 @@
     },
     "8484994": {
       "injured": true,
-      "description": "ir",
+      "description": "Head coach Ryan Warsofsky said Sunday that Chernyshov (upper body) is not close to returning to game action, per Curtis Pashelka of The San Jose Mercury News.",
       "status": "Injured Reserve",
       "team": "SJS"
     },
