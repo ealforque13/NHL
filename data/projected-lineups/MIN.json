@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T13:51:19.923Z",
   "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T21:26:52.243574+00:00",
+  "cachedAtUTC": "2026-11-16T22:25:52.318686+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Olli Maatta",
-        "number": 3,
+        "name": "Matt Kiersted",
+        "number": 26,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1792/MIN_3_Maatta.png",
+        "sourcePlayerId": 34534,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34534/MIN_26__Kiersted.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -332,22 +332,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Olli Maatta",
-        "number": 3,
+        "name": "Jonas Brodin",
+        "number": 25,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1792/MIN_3_Maatta.png",
+        "sourcePlayerId": 1740,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1740/MIN_25_Brodin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jonas Brodin",
-        "number": 25,
+        "name": "Zach Bogosian",
+        "number": 24,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 1740,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1740/MIN_25_Brodin.png",
+        "sourcePlayerId": 53,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/53/MIN_24_Bogosian.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -418,6 +418,16 @@
     }
   ],
   "injuries": [
+    {
+      "name": "Olli Maatta",
+      "number": 3,
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
+      "sourcePlayerId": 1792,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1792/MIN_3_Maatta.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
     {
       "name": "Filip Gustavsson",
       "number": 32,
