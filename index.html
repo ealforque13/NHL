@@ -5586,6 +5586,14 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #games .hoist-picks-options .hoist-prop-category-tabs{gap:0;padding:2px}
   #games .hoist-picks-options .hoist-prop-category-tabs button{font-size:11px;padding:10px 2px 12px}
 }
+/* Desktop only: keep Daily Props category tabs compact rather than full-width. */
+@media (min-width:901px){
+  #games .hoist-picks-options .hoist-prop-category-tabs{
+    flex:0 0 auto;
+    width:min(100%, 580px);
+    max-width:580px;
+  }
+}
 </style>
 </head>
 
