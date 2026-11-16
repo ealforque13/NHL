@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T01:16:55.878000+00:00",
+  "updatedAt": "2026-11-16T08:39:27.890012+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -7,6 +7,12 @@
       "description": "Head coach Paul Maurice said Friday that Marchand (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
       "status": "Injured Reserve",
       "team": "FLA"
+    },
+    "8474574": {
+      "injured": true,
+      "description": "Myers (upper body) will be evaluated Monday, Robert Tiffin of NHL.com reports.",
+      "status": "Out",
+      "team": "DAL"
     },
     "8475168": {
       "injured": true,
@@ -70,8 +76,8 @@
     },
     "8476539": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NSH"
     },
     "8476853": {
@@ -319,6 +325,12 @@
       "description": "Durzi (undisclosed) was put on injured reserve Thursday, per Mollie Walker of the New York Post.",
       "status": "Injured Reserve",
       "team": "NYR"
+    },
+    "8480748": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "SJS"
     },
     "8480831": {
       "injured": true,
