@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:10:11.060Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T17:17:29.842108+00:00",
+  "sourceUpdatedAt": "2026-11-16T18:10:08.468Z",
+  "sourceDescription": "Brogan Houston",
+  "cachedAtUTC": "2026-11-16T18:28:22.911346+00:00",
   "forwards": [
     [
       {
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Kailer Yamamoto",
-        "number": 56,
+        "name": "Barrett Hayton",
+        "number": 27,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
+        "sourcePlayerId": 4796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4796/UTH_27_Hayton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Barrett Hayton",
-        "number": 27,
+        "name": "Kailer Yamamoto",
+        "number": 56,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4796/UTH_27_Hayton.png",
+        "sourcePlayerId": 2796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Daniil But",
-        "number": 50,
+        "name": "Zac Jones",
+        "number": 15,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 38459,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
+        "sourcePlayerId": 30457,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30457/UTA_15__Jones.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
