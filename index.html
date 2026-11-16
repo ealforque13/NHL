@@ -5514,6 +5514,19 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   }
 }
 </style>
+<style>
+/* Desktop only: show three Active Streaks player cards per carousel page. */
+@media (min-width:901px) {
+  #games .hoist-streak-track {grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;}
+  #games .hoist-streak-player {gap:8px;padding:9px 8px;}
+  #games .hoist-streak-avatar {width:45px!important;height:45px!important;min-width:45px!important;flex-basis:45px!important;}
+  #games .hoist-streak-person strong {font-size:12px;}
+  #games .hoist-streak-person small {font-size:9px;}
+  #games .hoist-streak-stats {gap:4px!important;min-width:0;}
+  #games .hoist-streak-stats > .hoist-streak-number {font-size:24px;}
+  #games .hoist-streak-stats > small {font-size:9px;white-space:normal;}
+}
+</style>
 </head>
 
 <body>
@@ -8182,8 +8195,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function draw(){
     // Point streaks are selected by default and require 4+ games; goal streaks require 3+ games.
     const filtered=items.filter(x=>x.type===activeFilter);
-    const pages=Math.max(1,Math.ceil(filtered.length/2));page=(page+pages)%pages;
-    const visible=filtered.slice(page*2,page*2+2);
+    const perPage=window.innerWidth>900?3:2;
+    const pages=Math.max(1,Math.ceil(filtered.length/perPage));page=(page+pages)%pages;
+    const visible=filtered.slice(page*perPage,page*perPage+perPage);
     root.hidden=false;
     root.innerHTML=`<div class="hoist-streak-head"><div class="hoist-streak-heading"><span class="hoist-streak-title">🔥 ACTIVE STREAKS</span><div class="hoist-streak-filters" role="group" aria-label="Streak type"><button type="button" data-filter="point" aria-pressed="${activeFilter==='point'}" class="${activeFilter==='point'?'is-active':''}">Points</button><button type="button" data-filter="goal" aria-pressed="${activeFilter==='goal'}" class="${activeFilter==='goal'?'is-active':''}">Goals</button></div></div></div>${visible.length?`<div class="hoist-streak-track">${visible.map(x=>`<div class="hoist-streak-player ${x.type==='goal'?'is-goal':''}" style="--streak-team-color:${colors[x.team]||'#263f60'}"><span class="hoist-streak-avatar"><img src="${escapeHTML(x.image)}" alt="" loading="lazy" onerror="this.style.visibility='hidden'"></span><div class="hoist-streak-person"><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.team)} · ${escapeHTML(x.matchup)}</small></div><span class="hoist-streak-stats"><strong class="hoist-streak-number">${x.count}</strong><small>GAME ${x.type==='goal'?'GOAL':'POINT'} STREAK</small></span></div>`).join('')}</div>`:`<div class="hoist-streak-empty">No ${activeFilter==='goal'?'3+ game goal':'4+ game point'} streaks for today's matchups.</div>`}<nav class="hoist-streak-controls" aria-label="Active streak slides"><button type="button" data-move="-1" aria-label="Previous streaks" ${pages<2?'disabled':''}>‹</button><div class="hoist-streak-pagination"><span class="hoist-streak-count" aria-live="polite">${page+1} / ${pages}</span><div class="hoist-streak-dots" aria-label="Select streak page">${Array.from({length:pages},(_,i)=>`<button type="button" class="hoist-streak-dot ${i===page?'is-active':''}" data-page="${i}" aria-label="Page ${i+1} of ${pages}" ${i===page?'aria-current="page"':''}></button>`).join('')}</div></div><button type="button" data-move="1" aria-label="Next streaks" ${pages<2?'disabled':''}>›</button></nav>`;
   }
@@ -8194,6 +8208,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const btn=e.target.closest('button[data-move]');if(!btn)return;
     page+=Number(btn.dataset.move);draw();
   });
+  // Recalculate pagination when switching between desktop and mobile widths.
+  let streakLayoutIsDesktop=window.innerWidth>900;
+  window.addEventListener('resize',()=>{
+    const next=window.innerWidth>900;
+    if(next!==streakLayoutIsDesktop){streakLayoutIsDesktop=next;page=0;if(!root.hidden)draw();}
+  },{passive:true});
   // Swipe across the streak cards on touchscreens; vertical page scrolling remains natural.
   let swipeStart=null;
   root.addEventListener('touchstart',e=>{
@@ -8209,7 +8229,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Ignore taps and primarily vertical gestures.
     if(Math.abs(dx)<45||Math.abs(dx)<Math.abs(dy)*1.3)return;
     const filteredCount=items.filter(x=>x.type===activeFilter).length;
-    if(filteredCount<=2)return;
+    if(filteredCount<=(window.innerWidth>900?3:2))return;
     page+=dx<0?1:-1;
     draw();
   },{passive:true});
