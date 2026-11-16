@@ -5547,6 +5547,10 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   #games .hoist-game-h2h-teams .hoist-game-overview-history{font-size:14px!important;}
 }
 </style>
+<style>
+/* Suggestions keeps team selection visible while using its own fixed eligibility rules. */
+#games .hoist-picks-options > label[hidden]{display:none!important}
+</style>
 </head>
 
 <body>
@@ -6198,6 +6202,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
             <button type="button" class="is-active" data-prop-market="points" aria-pressed="true">Points</button>
             <button type="button" data-prop-market="goals" aria-pressed="false">Goals</button>
             <button type="button" data-prop-market="assists" aria-pressed="false">Assists</button>
+            <button type="button" data-prop-market="suggestions" aria-pressed="false">Suggestions</button>
           </div>
           <div class="hoist-picks-options">
             <label>Prop <select id="hoist-prop-line" aria-label="Prop threshold"><option value="1">1+</option></select></label>
@@ -8465,32 +8470,32 @@ document.addEventListener('DOMContentLoaded', function () {
  function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2]});}return found;}
  const labels={points:'point',goals:'goal',assists:'assist',shots:'shot on goal'};
  const plural=(n,label)=>n===1?label:label==='shot on goal'?'shots on goal':label+'s';
- function analyze(p,team,opponent,venue,date,line,minHits,h2hOnly){
+ function analyze(p,team,opponent,venue,date,line,minHits,h2hOnly,selectedMarket=market){
    const played=[...(p.games||[])].filter(g=>dateOf(g)&&dateOf(g)<date).sort((a,b)=>dateOf(b).localeCompare(dateOf(a)));
-   const valid=played.filter(g=>metric(g,market)!==null);
+   const valid=played.filter(g=>metric(g,selectedMarket)!==null);
    // H2H mode uses ONLY games against today's opponent for filtering, ranking and explanations.
    const h2h=valid.filter(g=>opponentOf(g)===opponent);
    const sample=h2hOnly?h2h:valid;
    if(!sample.length||(!h2hOnly&&sample.length<3))return null;
    const last5=sample.slice(0,5),last10=sample.slice(0,10);
-   const hit5=last5.filter(g=>metric(g,market)>=line).length;
+   const hit5=last5.filter(g=>metric(g,selectedMarket)>=line).length;
    // A 3/5 filter requires at least 3 recorded games, and likewise for 4/5 and 5/5.
    if(last5.length<minHits||hit5<minHits)return null;
-   const hit10=last10.filter(g=>metric(g,market)>=line).length;
-   let streak=0;for(const g of sample){if(metric(g,market)<line)break;streak++;}
-   const avg5=last5.reduce((sum,g)=>sum+metric(g,market),0)/last5.length;
-   const h2hHits=h2h.filter(g=>metric(g,market)>=line).length;
-   const h2hAvg=h2h.length?h2h.reduce((sum,g)=>sum+metric(g,market),0)/h2h.length:null;
+   const hit10=last10.filter(g=>metric(g,selectedMarket)>=line).length;
+   let streak=0;for(const g of sample){if(metric(g,selectedMarket)<line)break;streak++;}
+   const avg5=last5.reduce((sum,g)=>sum+metric(g,selectedMarket),0)/last5.length;
+   const h2hHits=h2h.filter(g=>metric(g,selectedMarket)>=line).length;
+   const h2hAvg=h2h.length?h2h.reduce((sum,g)=>sum+metric(g,selectedMarket),0)/h2h.length:null;
    const season=valid.filter(g=>String(g.season)==='20262027');
-   const seasonAvg=!h2hOnly&&season.length?season.reduce((sum,g)=>sum+metric(g,market),0)/season.length:null;
+   const seasonAvg=!h2hOnly&&season.length?season.reduce((sum,g)=>sum+metric(g,selectedMarket),0)/season.length:null;
    const score=h2hOnly
      ?(h2hHits/h2h.length)*65+(hit5/last5.length)*20+Math.min(h2h.length,10)*1.2+Math.min(h2hAvg/line,3)*4
      :(hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5/line,3)*4+(h2h.length?Math.min(h2h.length,5)/5*(h2hHits/h2h.length-.5)*12:0));
-   return {name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly};
+   return {name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly,market:selectedMarket,line};
  }
  async function update(){
    if(body.hidden)return;
-   const games=matchups(),date=dateInput?.value||'',line=Number(byId('hoist-prop-line').value)||1,minHits=Number(byId('hoist-prop-hit').value)||0,h2hOnly=byId('hoist-prop-h2h').checked;
+   const games=matchups(),date=dateInput?.value||'',suggestions=market==='suggestions',line=suggestions?1:(Number(byId('hoist-prop-line').value)||1),minHits=suggestions?0:(Number(byId('hoist-prop-hit').value)||0),h2hOnly=!suggestions&&byId('hoist-prop-h2h').checked;
    const teamSelect=byId('hoist-prop-team');
    const scheduledTeams=[...new Set(games.flatMap(g=>[g.away,g.home]))].sort();
    const previousTeam=teamSelect.value;
@@ -8502,6 +8507,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const selectedTeam=teamSelect.value;
    const description=byId('hoist-picks-description');
    const describeResults=count=>{
+     if(suggestions){description.textContent=`Results: ${count} ${count===1?'player prop suggestion':'player prop suggestions'}${selectedTeam==='all'?'':' for '+selectedTeam} meeting the recent-form and opponent H2H criteria (Points 5/5 & 60%+, Goals 3/5 & 40%+, Assists 4/5 & 50%+).`;return;}
      const what=line+'+ '+plural(line,labels[market]);
      const gamesLabel=h2hOnly?'head-to-head matchups':'games';
      const hitsLabel=minHits===0
@@ -8514,7 +8520,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const key=[date,market,line,minHits,h2hOnly,selectedTeam,games.map(g=>g.away+g.home).join(',')].join('|');
    if(key===lastKey)return;lastKey=key;
    const ticket=++generation;
-   byId('hoist-picks-market-label').textContent=market.toUpperCase()+' · '+line+'+ '+plural(line,labels[market]).toUpperCase();
+   byId('hoist-picks-market-label').textContent=suggestions?'SUGGESTIONS · POINTS / GOALS / ASSISTS':market.toUpperCase()+' · '+line+'+ '+plural(line,labels[market]).toUpperCase();
    if(!games.length){describeResults(0);list.innerHTML='<p class="hoist-picks-empty">No NHL matchups available for this date.</p>';byId('hoist-picks-total').textContent='';return;}
    list.innerHTML='<p class="hoist-picks-empty">Analyzing scheduled matchups…</p>';
    const teams=scheduledTeams.filter(team=>selectedTeam==='all'||team===selectedTeam);
@@ -8522,16 +8528,32 @@ document.addEventListener('DOMContentLoaded', function () {
    if(ticket!==generation)return;
    const opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
    const candidates=[];
-   for(const [team,payload] of data){const match=opponents.get(team);if(!match)continue;for(const player of payload.players||[]){const result=analyze(player,team,match.opponent,match.venue,date,line,minHits,h2hOnly);if(result)candidates.push(result);}}
+   for(const [team,payload] of data){
+     const match=opponents.get(team);if(!match)continue;
+     for(const player of payload.players||[]){
+       if(suggestions){
+         for(const rule of [{market:'points',hits:5,h2hRate:.60},{market:'goals',hits:3,h2hRate:.40},{market:'assists',hits:4,h2hRate:.50}]){
+           const result=analyze(player,team,match.opponent,match.venue,date,1,rule.hits,false,rule.market);
+           // Require five recorded recent games, verified opponent data, and a qualifying career H2H hit rate.
+           if(!result||result.n5!==5||!result.h2hN||result.h2hHits/result.h2hN+1e-10<rule.h2hRate)continue;
+           result.score=(result.hit5/5)*50+(result.h2hHits/result.h2hN)*40+Math.min(result.h2hN,10)*.5+Math.min(result.streak,5);
+           candidates.push(result);
+         }
+       }else{
+         const result=analyze(player,team,match.opponent,match.venue,date,line,minHits,h2hOnly);
+         if(result)candidates.push(result);
+       }
+     }
+   }
    candidates.sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name));
    const top=candidates;
-   byId('hoist-picks-total').textContent=top.length+' players';
+   byId('hoist-picks-total').textContent=top.length+(suggestions?' suggestions':' players');
    describeResults(top.length);
-   if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No players meet these filters with the available game-log data. Try another market, a lower recent-hit threshold, or turn off H2H-only.</p>';return;}
-   list.innerHTML=top.map((p,i)=>`<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}.</li><li>${p.h2hOnly?'Last 10 games vs '+safe(p.opponent):'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line. ${Math.round((p.h2hHits/p.h2hN)*100)}%.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`).join('');
+   if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No players meet these criteria with verified recent and opponent game-log data. Try another date or team, or select an individual prop market.</p>';return;}
+   list.innerHTML=top.map((p,i)=>{const market=p.market,line=p.line;return `<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}.</li><li>${p.h2hOnly?'Last 10 games vs '+safe(p.opponent):'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line. ${Math.round((p.h2hHits/p.h2hN)*100)}%.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`;}).join('');
  }
  function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
- function setMarket(next){market=next;box.querySelectorAll('[data-prop-market]').forEach(b=>{const active=b.dataset.propMarket===market;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active))});const line=byId('hoist-prop-line');const choices=[1,2,3];line.innerHTML=choices.map(n=>`<option value="${n}">${n}+</option>`).join('');lastKey='';schedule();}
+ function setMarket(next){market=next;box.querySelectorAll('[data-prop-market]').forEach(b=>{const active=b.dataset.propMarket===market;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active))});const isSuggestions=market==='suggestions';box.querySelectorAll('.hoist-picks-options > label:not(.hoist-prop-team-filter)').forEach(el=>el.hidden=isSuggestions);const line=byId('hoist-prop-line');const choices=[1,2,3];line.innerHTML=choices.map(n=>`<option value="${n}">${n}+</option>`).join('');lastKey='';schedule();}
  box.querySelectorAll('[data-prop-market]').forEach(b=>b.addEventListener('click',()=>setMarket(b.dataset.propMarket)));
  ['hoist-prop-line','hoist-prop-hit','hoist-prop-h2h','hoist-prop-team'].forEach(id=>byId(id)?.addEventListener('change',()=>{lastKey='';schedule()}));
  toggle.addEventListener('click',()=>{const open=body.hidden;body.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){lastKey='';update();}});
