@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T17:40:33.127Z",
   "sourceDescription": "Peter Baugh",
-  "cachedAtUTC": "2026-11-16T10:42:38.506684+00:00",
+  "cachedAtUTC": "2026-11-16T12:14:05.084023+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Dylan Garand",
-      "number": null,
+      "name": "Joonas Korpisalo",
+      "number": 70,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 32794,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
+      "sourcePlayerId": 2556,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Joonas Korpisalo",
-      "number": 70,
+      "name": "Dylan Garand",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2556,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
+      "sourcePlayerId": 32794,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

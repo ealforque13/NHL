@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T14:10:11.060Z",
   "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T10:42:57.892846+00:00",
+  "cachedAtUTC": "2026-11-16T12:14:23.805686+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Karel Vejmelka",
-      "number": 70,
+      "name": "Sebastian Cossa",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 26614,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26614/UTH_70_Vejmelka.png",
+      "sourcePlayerId": 34654,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34654/UTA_33__Cossa.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Sebastian Cossa",
-      "number": 33,
+      "name": "Karel Vejmelka",
+      "number": 70,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 34654,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34654/UTA_33__Cossa.png",
+      "sourcePlayerId": 26614,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26614/UTH_70_Vejmelka.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
