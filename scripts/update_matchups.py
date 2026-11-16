@@ -43,6 +43,8 @@ TEAMS = (
 ).split()
 
 PLAYER_CACHE = DATA / 'matchup-player-seasons'
+SCORESHEET_DIR = DATA / 'head-to-head-scoresheets'
+OLD_SCORESHEET = DATA / 'head-to-head-scoresheets.json'
 
 
 def fetch(path):
@@ -304,6 +306,107 @@ def player_logs(player):
     }
 
 
+def load_shots_from_scoresheets():
+    """Index real player SOG from cached NHL box scores by (game ID, player ID).
+
+    Reads one season shard at a time. Missing/invalid SOG is never treated as zero.
+    """
+    sources = []
+    if OLD_SCORESHEET.exists():
+        sources.append(OLD_SCORESHEET)
+    if SCORESHEET_DIR.is_dir():
+        sources.extend(sorted(SCORESHEET_DIR.glob('*.json')))
+
+    shots = {}
+    for source in sources:
+        try:
+            with source.open(encoding='utf-8') as handle:
+                payload = json.load(handle)
+            games = payload.get('games', {})
+            if not isinstance(games, dict):
+                raise ValueError('Missing games object')
+            matched = 0
+            for gid, record in games.items():
+                box = (record or {}).get('boxscore') or {}
+                by_game = box.get('playerByGameStats') or {}
+                for side in ('homeTeam', 'awayTeam'):
+                    groups = by_game.get(side) or {}
+                    for group in ('forwards', 'defense'):
+                        for player in groups.get(group) or []:
+                            if not isinstance(player, dict):
+                                continue
+                            pid = player.get('playerId')
+                            sog = player.get('sog')
+                            if pid is None or sog is None or isinstance(sog, bool):
+                                continue
+                            try:
+                                value = int(sog)
+                            except (ValueError, TypeError):
+                                continue
+                            if value < 0:
+                                continue
+                            shots[(str(gid), str(pid))] = value
+                            matched += 1
+            print(f'Loaded {matched} player shot entries from {source.name}', flush=True)
+        except (OSError, ValueError, TypeError) as exc:
+            print(f'WARNING cannot read scoresheets {source}: {exc}', flush=True)
+    print(f'Scoresheet shots index: {len(shots)} unique player-games', flush=True)
+    return shots
+
+
+def prior_shots_for_team(code):
+    """Preserve shots already merged into a team's previous matchup JSON."""
+    path = DATA / 'matchups' / f'{code}.json'
+    if not path.exists():
+        return {}
+    try:
+        with path.open(encoding='utf-8') as handle:
+            payload = json.load(handle)
+        result = {}
+        for player in payload.get('players', []):
+            pid = player.get('id')
+            if pid is None:
+                continue
+            for game in player.get('games', []):
+                gid = game.get('gameId')
+                if gid is None:
+                    continue
+                value = next((game[k] for k in ('shots', 'sog', 'shotsOnGoal')
+                              if game.get(k) is not None), None)
+                if value is None or isinstance(value, bool):
+                    continue
+                try:
+                    value = int(value)
+                except (ValueError, TypeError):
+                    continue
+                if value >= 0:
+                    result[(str(gid), str(pid))] = value
+        return result
+    except (OSError, ValueError, TypeError) as exc:
+        print(f'WARNING could not preserve prior shots for {code}: {exc}', flush=True)
+        return {}
+
+
+def enrich_team_shots(code, players, scoresheet_shots):
+    """Apply cached SOG and preserve previous shot values when no cache match exists."""
+    previous = prior_shots_for_team(code)
+    matched = preserved = 0
+    for player in players:
+        pid = str(player['id'])
+        for game in player['games']:
+            gid = game.get('gameId')
+            if gid is None:
+                continue
+            key = (str(gid), pid)
+            if key in scoresheet_shots:
+                game['shots'] = scoresheet_shots[key]
+                matched += 1
+            elif key in previous:
+                game['shots'] = previous[key]
+                preserved += 1
+    return matched, preserved
+
+
 def main():
     roster_players = {}
 
@@ -410,6 +513,8 @@ def main():
                     flush=True
                 )
 
+    scoresheet_shots = load_shots_from_scoresheets()
+
     count = 0
 
     for code, players in roster_players.items():
@@ -427,6 +532,12 @@ def main():
                 flush=True
             )
             continue
+
+        matched_shots, preserved_shots = enrich_team_shots(
+            code, included, scoresheet_shots
+        )
+        print(f'{code}: {matched_shots} shots from scoresheets, '
+              f'{preserved_shots} prior shots preserved', flush=True)
 
         write(
             f'matchups/{code}.json',
