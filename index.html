@@ -5564,8 +5564,8 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 /* Daily Player Props category filters: match Active Streaks selected state. */
 #games .hoist-picks-options .hoist-prop-category-tabs{
   flex:1 1 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:5px;min-width:0;padding:3px;background:rgba(130,151,185,.08);
-  border:1px solid var(--border,rgba(145,166,195,.18));border-radius:9px;
+  gap:5px;min-width:0;padding:3px;background:transparent;
+  border:0;border-radius:0;
 }
 #games .hoist-picks-options .hoist-prop-category-tabs button{
   position:relative;display:flex;align-items:center;justify-content:center;
@@ -5576,8 +5576,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 }
 #games .hoist-picks-options .hoist-prop-category-tabs button.is-active{
   color:#fff!important;
-  background:linear-gradient(to bottom,rgba(110,145,195,.10) 0,
-    rgba(110,145,195,.10) calc(100% - 3px),transparent calc(100% - 3px))!important;
+  background:rgba(130,151,185,.22)!important;
 }
 #games .hoist-picks-options .hoist-prop-category-tabs button.is-active::after{
   content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:#348bff;
