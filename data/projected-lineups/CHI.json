@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:49:56.564Z",
+  "sourceUpdatedAt": "2026-11-16T18:45:10.351Z",
   "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-16T19:36:23.894555+00:00",
+  "cachedAtUTC": "2026-11-16T20:28:37.998031+00:00",
   "forwards": [
     [
       {
@@ -35,7 +35,7 @@
         "sourcePlayerId": 2392,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2392/CHI_59_Bertuzzi.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -111,7 +111,7 @@
         "sourcePlayerId": 32926,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32926/CHI_22__Smith.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Ryan Greene",
@@ -426,6 +426,26 @@
       "sourcePlayerId": 28523,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28523/CHI_24__Byram.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Cole Smith",
+      "number": 22,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 32926,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32926/CHI_22__Smith.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Tyler Bertuzzi",
+      "number": 59,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 2392,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2392/CHI_59_Bertuzzi.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
