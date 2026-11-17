@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-16T15:16:02.601Z",
   "sourceDescription": "Last Game (2026-11-15)",
-  "cachedAtUTC": "2026-11-17T00:21:11.776326+00:00",
+  "cachedAtUTC": "2026-11-17T01:53:32.235516+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Alex Nedeljkovic",
-      "number": 33,
+      "name": "Yaroslav Askarov",
+      "number": 30,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2727,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2727/SJS_33_Nedeljkovic.png",
+      "sourcePlayerId": 33018,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33018/SJS_30__Askarov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Yaroslav Askarov",
-      "number": 30,
+      "name": "Alex Nedeljkovic",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 33018,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33018/SJS_30__Askarov.png",
+      "sourcePlayerId": 2727,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2727/SJS_33_Nedeljkovic.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T14:04:36.110Z",
   "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-17T00:20:31.185194+00:00",
+  "cachedAtUTC": "2026-11-17T01:52:52.475965+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jet Greaves",
-      "number": null,
+      "name": "Cam Talbot",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29751,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29751/CBJ_73__Greaves.png",
+      "sourcePlayerId": 1059,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1059/CBJ_33__Talbot.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Cam Talbot",
-      "number": 33,
+      "name": "Jet Greaves",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1059,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1059/CBJ_33__Talbot.png",
+      "sourcePlayerId": 29751,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29751/CBJ_73__Greaves.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

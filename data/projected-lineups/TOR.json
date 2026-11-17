@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-16T17:02:02.414Z",
   "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-17T00:21:18.152451+00:00",
+  "cachedAtUTC": "2026-11-17T01:53:38.465037+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Anthony Stolarz",
-      "number": 41,
+      "name": "Sergei Bobrovsky",
+      "number": 72,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2432,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
+      "sourcePlayerId": 1117,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Sergei Bobrovsky",
-      "number": 72,
+      "name": "Anthony Stolarz",
+      "number": 41,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1117,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
+      "sourcePlayerId": 2432,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T15:09:18.993Z",
-  "sourceDescription": "Last Game (2026-11-15)",
-  "cachedAtUTC": "2026-11-17T00:20:33.342410+00:00",
+  "sourceUpdatedAt": "2026-11-17T01:32:12.002Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-17T01:52:54.560472+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "William Stromgren",
-        "number": 65,
+        "name": "Brennan Othmann",
+        "number": 78,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 38696,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38696/CGY_65_Stromgren.png",
+        "sourcePlayerId": 30831,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30831/CGY_78_Othmann.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Devin Cooley",
-      "number": null,
+      "name": "Dustin Wolf",
+      "number": 32,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 32944,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
+      "sourcePlayerId": 29507,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Dustin Wolf",
-      "number": 32,
+      "name": "Devin Cooley",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29507,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
+      "sourcePlayerId": 32944,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

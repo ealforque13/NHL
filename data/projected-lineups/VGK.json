@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-16T15:13:32.468Z",
   "sourceDescription": "Last Game (2026-11-15)",
-  "cachedAtUTC": "2026-11-17T00:21:24.585662+00:00",
+  "cachedAtUTC": "2026-11-17T01:53:44.702524+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Carter Hart",
-      "number": 79,
+      "name": "Adin Hill",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 3874,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3874/VGK_79_Hart.png",
+      "sourcePlayerId": 2906,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2906/VGK_33_Hill.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Adin Hill",
-      "number": 33,
+      "name": "Carter Hart",
+      "number": 79,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2906,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2906/VGK_33_Hill.png",
+      "sourcePlayerId": 3874,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3874/VGK_79_Hart.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
