@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T13:00:17.743765+00:00",
+  "updatedAt": "2026-11-17T18:57:17.493207+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -52,19 +52,19 @@
     },
     "8476419": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Pageau (lower body) will be a game-time decision ahead of Tuesday's matchup with Columbus, Stefen Rosner of NHL.com reports.",
       "status": "Day-To-Day",
       "team": "NYI"
     },
     "8476454": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Nugent-Hopkins (undisclosed) isn't expected to play against Florida on Tuesday, per Oilers play-by-play announcer Jack Michaels.",
+      "status": "Out",
       "team": "EDM"
     },
     "8476456": {
       "injured": true,
-      "description": "Huberdeau (hip) won't travel with the Flames during their upcoming three-game road trip, Pat Steinberg of QR Calgary 770 AM reports Friday.",
+      "description": "Huberdeau (hip) was assigned to AHL Calgary on Tuesday on a conditioning loan.",
       "status": "Injured Reserve",
       "team": "CGY"
     },
@@ -73,18 +73,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "WPG"
-    },
-    "8476539": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "NSH"
-    },
-    "8476853": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "TOR"
     },
     "8476874": {
       "injured": true,
@@ -109,12 +97,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "TOR"
-    },
-    "8476979": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "LAK"
     },
     "8476981": {
       "injured": true,
@@ -146,12 +128,6 @@
       "status": "Injured Reserve",
       "team": "OTT"
     },
-    "8477488": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "NJD"
-    },
     "8477492": {
       "injured": true,
       "description": "MacKinnon (lower body) will miss at least one month, per Corey Masisak of The Denver Post on Saturday.",
@@ -178,14 +154,14 @@
     },
     "8477511": {
       "injured": true,
-      "description": "Mantha (throat) was placed on long-term injured reserve by the Devils on Wednesday, retroactive to Nov. 7.",
+      "description": "Mantha (neck) is expected to miss about one month after undergoing surgery, per Kristy Flannery of The Hockey News.",
       "status": "Injured Reserve",
       "team": "NJD"
     },
     "8477527": {
       "injured": true,
-      "description": "Johnston didn't practice Monday due to personal reasons, and his status for Tuesday's game against the Ducks is uncertain, Lou Korac of NHL.com reports.",
-      "status": "Day-To-Day",
+      "description": "Johnston (upper body) won't play against Anaheim on Tuesday, Lou Korac of NHL.com reports.",
+      "status": "Out",
       "team": "STL"
     },
     "8477951": {
@@ -205,12 +181,6 @@
       "description": "Head coach Travis Green said Monday that Foegele (knee) hasn't yet resumed skating, Bruce Garrioch of Postmedia reports.",
       "status": "Injured Reserve",
       "team": "OTT"
-    },
-    "8478010": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "TBL"
     },
     "8478173": {
       "injured": true,
@@ -314,9 +284,15 @@
       "status": "Out",
       "team": "COL"
     },
+    "8480074": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "MTL"
+    },
     "8480192": {
       "injured": true,
-      "description": "The Devils placed Kovacevic (ankle) on injured reserve Friday, retroactive to Nov. 10.",
+      "description": "Kovacevic (ankle) is expected to be sidelined for 4-6 weeks, per Kristy Flannery of The Hockey News.",
       "status": "Injured Reserve",
       "team": "NJD"
     },
@@ -382,19 +358,19 @@
     },
     "8481524": {
       "injured": true,
-      "description": "Byram (upper body) has been ruled out for Tuesday's game against the Maple Leafs, CHGO Blackhawks reports.",
+      "description": "Byram (upper body) will not play in the Blackhawks' next two games, per CHGO Blackhawks.",
       "status": "Injured Reserve",
       "team": "CHI"
     },
     "8481604": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYR"
     },
     "8481607": {
       "injured": true,
-      "description": "Johansson (undisclosed) will be with the Red Wings for their upcoming four-game road trip, Ansar Khan of MLive.com reports Friday.",
+      "description": "Johansson (undisclosed) is expected to return to the lineup either Wednesday or Saturday, per Ansar Khan of MLive.com.",
       "status": "Injured Reserve",
       "team": "DET"
     },
@@ -403,6 +379,12 @@
       "description": "Soderblom (upper body) is week-to-week, per Penguins PR on Monday.",
       "status": "Injured Reserve",
       "team": "PIT"
+    },
+    "8482171": {
+      "injured": true,
+      "description": "Wallinder (upper body) is day-to-day, per Ansar Khan of MLive.com on Tuesday.",
+      "status": "Day-To-Day",
+      "team": "DET"
     },
     "8482667": {
       "injured": true,
@@ -424,8 +406,8 @@
     },
     "8482765": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "WPG"
     },
     "8482874": {
@@ -439,6 +421,12 @@
       "description": "Bichsel (lower body) was placed on injured reserve Saturday.",
       "status": "Injured Reserve",
       "team": "DAL"
+    },
+    "8483447": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "TBL"
     },
     "8483463": {
       "injured": true,
@@ -480,12 +468,6 @@
       "injured": true,
       "description": "Grebenkin (back) underwent successful surgery and is expected to miss at least four months.",
       "status": "Injured Reserve",
-      "team": "PHI"
-    },
-    "8484142": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
       "team": "PHI"
     },
     "8484221": {
