@@ -2,9 +2,9 @@
   "team": "COL",
   "teamName": "Colorado Avalanche",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:53:38.413Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-17T18:06:30.431265+00:00",
+  "sourceUpdatedAt": "2026-11-17T18:49:19.677Z",
+  "sourceDescription": "@HockeyMtnHighCO",
+  "cachedAtUTC": "2026-11-17T19:06:39.879258+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Alex Gagne",
-        "number": null,
+        "name": "Mike Reilly",
+        "number": 6,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 32036,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32036/COL_Frnt.png",
+        "sourcePlayerId": 2469,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2469/COL_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Gabriel Landeskog",
-        "number": 92,
+        "name": "Jaden Schwartz",
+        "number": 71,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1763,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1763/COL_92_Landeskog.png",
+        "sourcePlayerId": 1864,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1864/COL_71__Schwartz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jaden Schwartz",
-        "number": 71,
+        "name": "Brock Nelson",
+        "number": 11,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1864,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1864/COL_71__Schwartz.png",
+        "sourcePlayerId": 1921,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1921/COL_11_Nelson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Nelson",
-        "number": 11,
+        "name": "Gabriel Landeskog",
+        "number": 92,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 1921,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1921/COL_11_Nelson.png",
+        "sourcePlayerId": 1763,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1763/COL_92_Landeskog.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

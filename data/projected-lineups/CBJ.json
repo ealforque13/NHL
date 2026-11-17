@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:04:36.110Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-17T18:06:24.222974+00:00",
+  "sourceUpdatedAt": "2026-11-17T17:59:23.315Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-17T19:06:32.931515+00:00",
   "forwards": [
     [
       {
@@ -182,22 +182,22 @@
     ],
     [
       {
-        "name": "Jake Christiansen",
-        "number": 2,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 25394,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25394/CBJ_2_Christiansen.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Dante Fabbro",
-        "number": 15,
+        "name": "Erik Gudbranson",
+        "number": 44,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
+        "sourcePlayerId": 1710,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1710/CBJ_44_Gudbranson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-17T17:49:16.031Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-17T18:06:49.165730+00:00",
+  "cachedAtUTC": "2026-11-17T19:07:00.173552+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Vitali Pinchuk",
-        "number": 51,
+        "name": "Reid Schaefer",
+        "number": 49,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 31775,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31775/NSH_51__Pinchuk.png",
+        "sourcePlayerId": 32867,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32867/NSH_49__Schaefer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mavrik Bourque",
-        "number": 22,
+        "name": "Nils Hoglander",
+        "number": 21,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29958,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29958/NSH_22_Bourque_.png",
+        "sourcePlayerId": 30614,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30614/NSH_21__Hoglander.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Vitali Pinchuk",
-        "number": 51,
+        "name": "Mavrik Bourque",
+        "number": 22,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 31775,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31775/NSH_51__Pinchuk.png",
+        "sourcePlayerId": 29958,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29958/NSH_22_Bourque_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
