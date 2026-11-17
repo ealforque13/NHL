@@ -2,18 +2,18 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T19:27:38.549Z",
-  "sourceDescription": "Brogan Houston",
-  "cachedAtUTC": "2026-11-17T01:53:40.540041+00:00",
+  "sourceUpdatedAt": "2026-11-17T02:17:49.082Z",
+  "sourceDescription": "Utah Mammoth",
+  "cachedAtUTC": "2026-11-17T03:57:03.250659+00:00",
   "forwards": [
     [
       {
-        "name": "Anders Lee",
-        "number": 72,
+        "name": "Logan Cooley",
+        "number": 92,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2071,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2071/UTA_72__Lee.png",
+        "sourcePlayerId": 33387,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Kailer Yamamoto",
-        "number": 56,
+        "name": "Anders Lee",
+        "number": 72,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
+        "sourcePlayerId": 2071,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2071/UTA_72__Lee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Daniil But",
-        "number": 50,
+        "name": "Kailer Yamamoto",
+        "number": 56,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38459,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
+        "sourcePlayerId": 2796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Ben McCartney",
-        "number": null,
+        "name": "Liam O'Brien",
+        "number": 38,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 28455,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28455/UTH_Frnt.png",
+        "sourcePlayerId": 2377,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2377/UTH_38_O_Brien.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Liam O'Brien",
-        "number": 38,
+        "name": "Daniil But",
+        "number": 50,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2377,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2377/UTH_38_O_Brien.png",
+        "sourcePlayerId": 38459,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -148,14 +148,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Artem Duda",
-        "number": null,
+        "name": "Andrew Peeke",
+        "number": 20,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 36382,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
+        "sourcePlayerId": 27242,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27242/UTA_20__Peeke.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Andrew Peeke",
-        "number": 20,
+        "name": "Nick DeSimone",
+        "number": 57,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 27242,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27242/UTA_20__Peeke.png",
+        "sourcePlayerId": 2886,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2886/UTH_57_DeSimone.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kailer Yamamoto",
-        "number": 56,
+        "name": "Logan Cooley",
+        "number": 92,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
+        "sourcePlayerId": 33387,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,32 +278,32 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Carcone",
-        "number": 53,
+        "name": "Kailer Yamamoto",
+        "number": 56,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 3864,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3864/UTA_53_Carcone.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Zac Jones",
-        "number": 15,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 30457,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30457/UTA_15__Jones.png",
+        "sourcePlayerId": 2796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2796/UTA_56_Yamamoto.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "MacKenzie Weegar",
         "number": 52,
-        "position": "SK5",
-        "positionName": "Skater 5",
+        "position": "SK4",
+        "positionName": "Skater 4",
         "sourcePlayerId": 2777,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2777/UTA_52__Weegar.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Michael Carcone",
+        "number": 53,
+        "position": "SK5",
+        "positionName": "Skater 5",
+        "sourcePlayerId": 3864,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3864/UTA_53_Carcone.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Sebastian Cossa",
-      "number": 33,
+      "name": "Karel Vejmelka",
+      "number": 70,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 34654,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34654/UTA_33__Cossa.png",
+      "sourcePlayerId": 26614,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26614/UTH_70_Vejmelka.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Karel Vejmelka",
-      "number": 70,
+      "name": "Sebastian Cossa",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 26614,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26614/UTH_70_Vejmelka.png",
+      "sourcePlayerId": 34654,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34654/UTA_33__Cossa.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -446,16 +446,6 @@
       "sourcePlayerId": 34613,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34613/UTH_11_Guenther.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Logan Cooley",
-      "number": 92,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 33387,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {
