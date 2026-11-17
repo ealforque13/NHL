@@ -2,9 +2,9 @@
   "team": "DAL",
   "teamName": "Dallas Stars",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T15:08:02.460Z",
-  "sourceDescription": "Last Game (2026-11-15)",
-  "cachedAtUTC": "2026-11-17T19:06:42.294720+00:00",
+  "sourceUpdatedAt": "2026-11-17T20:08:12.089Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-17T20:11:52.426099+00:00",
   "forwards": [
     [
       {
@@ -138,6 +138,28 @@
   "defense": [
     [
       {
+        "name": "Esa Lindell",
+        "number": 23,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 2517,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2517/DAL_23_Lindell.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Miro Heiskanen",
+        "number": 4,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 2803,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2803/DAL_4_Heiskanen.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Thomas Harley",
         "number": 55,
         "position": "LD",
@@ -156,28 +178,6 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4821/DAL_5_Lundkvist.png",
         "injuryStatus": null,
         "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Esa Lindell",
-        "number": 23,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 2517,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2517/DAL_23_Lindell.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Tyler Myers",
-        "number": 57,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 176,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
       }
     ],
     [
@@ -236,12 +236,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Thomas Harley",
-        "number": 55,
+        "name": "Miro Heiskanen",
+        "number": 4,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 29213,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29213/DAL_55_Harley.png",
+        "sourcePlayerId": 2803,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2803/DAL_4_Heiskanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Esa Lindell",
-        "number": 23,
+        "name": "Thomas Harley",
+        "number": 55,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2517,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2517/DAL_23_Lindell.png",
+        "sourcePlayerId": 29213,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29213/DAL_55_Harley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -342,12 +342,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Thomas Harley",
-        "number": 55,
+        "name": "Miro Heiskanen",
+        "number": 4,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 29213,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29213/DAL_55_Harley.png",
+        "sourcePlayerId": 2803,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2803/DAL_4_Heiskanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -374,24 +374,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nils Lundkvist",
-        "number": 5,
+        "name": "Thomas Harley",
+        "number": 55,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4821,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4821/DAL_5_Lundkvist.png",
+        "sourcePlayerId": 29213,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29213/DAL_55_Harley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Tyler Myers",
-        "number": 57,
+        "name": "Nils Lundkvist",
+        "number": 5,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 176,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
+        "sourcePlayerId": 4821,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4821/DAL_5_Lundkvist.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -446,16 +446,6 @@
       "sourcePlayerId": 2921,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2921/DAL_20__Capobianco.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Miro Heiskanen",
-      "number": 4,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2803,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2803/DAL_4_Heiskanen.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {

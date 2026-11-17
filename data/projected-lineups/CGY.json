@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T01:32:12.002Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-17T19:06:35.355378+00:00",
+  "sourceUpdatedAt": "2026-11-17T19:41:46.818Z",
+  "sourceDescription": "Derek Wills",
+  "cachedAtUTC": "2026-11-17T20:11:46.076936+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Brennan Othmann",
-        "number": 78,
+        "name": "Maxim Tsyplakov",
+        "number": 72,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30831,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30831/CGY_78_Othmann.png",
+        "sourcePlayerId": 38122,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38122/CGY_72_Tsyplakov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -418,16 +418,6 @@
     }
   ],
   "injuries": [
-    {
-      "name": "Jonathan Huberdeau",
-      "number": 10,
-      "position": "IR1",
-      "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 1798,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1798/CGY_10_Huberdeau.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
     {
       "name": "Kevin Bahl",
       "number": 7,
