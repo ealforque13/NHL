@@ -2,18 +2,18 @@
   "team": "CAR",
   "teamName": "Carolina Hurricanes",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:08:12.590Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-17T15:58:27.428020+00:00",
+  "sourceUpdatedAt": "2026-11-17T16:46:34.926Z",
+  "sourceDescription": "Ryan Henkel",
+  "cachedAtUTC": "2026-11-17T17:06:23.311739+00:00",
   "forwards": [
     [
       {
-        "name": "William Carrier",
-        "number": 28,
+        "name": "Andrei Svechnikov",
+        "number": 37,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2704,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2704/CAR_28_Carrier.png",
+        "sourcePlayerId": 4787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4787/CAR_37_Svechnikov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Andrei Svechnikov",
-        "number": 37,
+        "name": "William Carrier",
+        "number": 28,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4787/CAR_37_Svechnikov.png",
+        "sourcePlayerId": 2704,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2704/CAR_28_Carrier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jesperi Kotkaniemi",
-        "number": 82,
+        "name": "Eric Robinson",
+        "number": 50,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4788,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4788/CAR_82_Kotkaniemi.png",
+        "sourcePlayerId": 4650,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4650/CAR_50_Robinson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

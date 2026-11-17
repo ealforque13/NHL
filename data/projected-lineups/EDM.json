@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T15:02:15.209Z",
-  "sourceDescription": "Last Game (2026-11-15)",
-  "cachedAtUTC": "2026-11-17T15:58:42.186464+00:00",
+  "sourceUpdatedAt": "2026-11-17T16:51:28.133Z",
+  "sourceDescription": "Bob Stauffer",
+  "cachedAtUTC": "2026-11-17T17:06:40.123470+00:00",
   "forwards": [
     [
       {
@@ -455,16 +455,6 @@
       "positionName": "Injured Reserve 4",
       "sourcePlayerId": 31504,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31504/EDM_22_Savoie.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Isaac Howard",
-      "number": 53,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 33270,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33270/EDM_53_Howard.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },

@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-16T16:48:11.423Z",
   "sourceDescription": "Paul Hamilton",
-  "cachedAtUTC": "2026-11-17T15:58:25.357664+00:00",
+  "cachedAtUTC": "2026-11-17T17:06:21.161090+00:00",
   "forwards": [
     [
       {
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Louis Crevier",
-        "number": 46,
+        "name": "Zach Metsa",
+        "number": 73,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29897/BUF_46_Crevier.png",
+        "sourcePlayerId": 28387,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28387/BUF_73__Metsa.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

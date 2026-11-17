@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T02:37:41.058Z",
+  "sourceUpdatedAt": "2026-11-17T16:46:00.644Z",
   "sourceDescription": "Jeremy Rutherford",
-  "cachedAtUTC": "2026-11-17T15:59:11.754509+00:00",
+  "cachedAtUTC": "2026-11-17T17:07:12.757677+00:00",
   "forwards": [
     [
       {
@@ -145,7 +145,7 @@
         "sourcePlayerId": 30607,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30607/STL_6_Broberg.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Logan Mailloux",
@@ -253,7 +253,7 @@
         "sourcePlayerId": 30607,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30607/STL_6_Broberg.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -339,7 +339,7 @@
         "sourcePlayerId": 30607,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30607/STL_6_Broberg.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Colton Parayko",
@@ -439,12 +439,12 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Philip Broberg",
-      "number": 6,
+      "name": "Ross Johnston",
+      "number": 49,
       "position": "IR3",
       "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 30607,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30607/STL_6_Broberg.png",
+      "sourcePlayerId": 3759,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3759/STL_49__Johnston.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
