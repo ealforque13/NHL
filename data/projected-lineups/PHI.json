@@ -2,9 +2,9 @@
   "team": "PHI",
   "teamName": "Philadelphia Flyers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T15:03:48.838Z",
-  "sourceDescription": "Last Game (2026-11-15)",
-  "cachedAtUTC": "2026-11-17T14:57:42.608456+00:00",
+  "sourceUpdatedAt": "2026-11-17T15:32:17.417Z",
+  "sourceDescription": "Siobhan Nolan",
+  "cachedAtUTC": "2026-11-17T15:59:03.308732+00:00",
   "forwards": [
     [
       {
@@ -40,14 +40,14 @@
     ],
     [
       {
-        "name": "Michael Bunting",
-        "number": 58,
+        "name": "Denver Barkey",
+        "number": 86,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3778,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3778/PHI_58__Bunting.png",
+        "sourcePlayerId": 35098,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Christian Dvorak",
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Rasmus Ristolainen",
-        "number": 55,
+        "name": "Jamie Drysdale",
+        "number": 9,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2140,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
+        "sourcePlayerId": 29756,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29756/PHI_9_Drysdale.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Simon Benoit",
-        "number": 44,
+        "name": "Rasmus Ristolainen",
+        "number": 55,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 26550,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26550/PHI_44__Benoit.png",
+        "sourcePlayerId": 2140,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jamie Drysdale",
-        "number": 9,
+        "name": "Oliver Bonk",
+        "number": 59,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29756,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29756/PHI_9_Drysdale.png",
+        "sourcePlayerId": 35107,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35107/PHI_59__Bonk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,14 +216,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Cates",
-        "number": 27,
+        "name": "Denver Barkey",
+        "number": 86,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 28087,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28087/PHI_27_Cates.png",
+        "sourcePlayerId": 35098,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Matvei Michkov",
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Simon Benoit",
-        "number": 44,
+        "name": "Rasmus Ristolainen",
+        "number": 55,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 26550,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26550/PHI_44__Benoit.png",
+        "sourcePlayerId": 2140,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
