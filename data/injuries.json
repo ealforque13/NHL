@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T00:59:16.946557+00:00",
+  "updatedAt": "2026-11-17T07:12:09.020686+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -322,7 +322,7 @@
     },
     "8480434": {
       "injured": true,
-      "description": "Durzi (undisclosed) was put on injured reserve Thursday, per Mollie Walker of the New York Post.",
+      "description": "Durzi (lower body) wore a regular jersey during Monday's morning skate and should be ready to play against the Hurricanes on Sunday, Colin Stephenson of Newsday reports.",
       "status": "Injured Reserve",
       "team": "NYR"
     },
@@ -439,12 +439,6 @@
       "description": "Bichsel (lower body) was placed on injured reserve Saturday.",
       "status": "Injured Reserve",
       "team": "DAL"
-    },
-    "8483431": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "UTA"
     },
     "8483463": {
       "injured": true,
