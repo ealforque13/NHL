@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T14:31:06.042Z",
+  "sourceUpdatedAt": "2026-11-17T23:17:51.883Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-17T22:30:29.000778+00:00",
+  "cachedAtUTC": "2026-11-17T23:28:31.418160+00:00",
   "forwards": [
     [
       {
@@ -25,7 +25,7 @@
         "sourcePlayerId": 2456,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2456/TBL_21_Point.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Nikita Kucherov",
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Brandon Hagel",
-        "number": 38,
+        "name": "Yanni Gourde",
+        "number": 37,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 27046,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
+        "sourcePlayerId": 2566,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -57,7 +57,7 @@
         "sourcePlayerId": 3842,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3842/TBL_71_Cirelli.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Gage Goncalves",
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Yanni Gourde",
-        "number": 37,
+        "name": "Jeffrey Viel",
+        "number": 28,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2566,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
+        "sourcePlayerId": 24312,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/24312/TBL_25__Viel.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -189,7 +189,7 @@
         "sourcePlayerId": 2749,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -233,7 +233,7 @@
         "sourcePlayerId": 2456,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2456/TBL_21_Point.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "John Carlson",
@@ -248,12 +248,12 @@
     ],
     [
       {
-        "name": "Brandon Hagel",
-        "number": 38,
+        "name": "Pontus Holmberg",
+        "number": 29,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 27046,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
+        "sourcePlayerId": 29640,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -309,15 +309,15 @@
         "sourcePlayerId": 3842,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3842/TBL_71_Cirelli.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
-        "name": "Brandon Hagel",
-        "number": 38,
+        "name": "Zemgus Girgensons",
+        "number": 28,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 27046,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
+        "sourcePlayerId": 1953,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1953/TBL_28_Girgensons.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -339,7 +339,7 @@
         "sourcePlayerId": 2749,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -354,12 +354,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zemgus Girgensons",
-        "number": 28,
+        "name": "Ilya Mikheyev",
+        "number": 95,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 1953,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1953/TBL_28_Girgensons.png",
+        "sourcePlayerId": 30651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30651/TBL_95__Mikheyev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -409,32 +409,12 @@
   ],
   "injuries": [
     {
-      "name": "Brayden Point",
-      "number": 21,
+      "name": "Brandon Hagel",
+      "number": 38,
       "position": "IR1",
       "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 2456,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2456/TBL_21_Point.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Anthony Cirelli",
-      "number": 71,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 3842,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3842/TBL_71_Cirelli.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Erik Cernak",
-      "number": 81,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 2749,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
+      "sourcePlayerId": 27046,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
