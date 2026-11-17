@@ -6429,6 +6429,18 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
+<!-- Franchise continuity: Arizona Coyotes -> Utah Hockey Club -> Utah Mammoth.
+     Normalize only for comparisons; retain actual historical abbreviations in game rows. -->
+<script>
+window.hoistFranchiseCode = function(value) {
+  const code = String(value ?? '').trim().toUpperCase();
+  return ['ARI','PHX','UTA','UTH','UTM'].includes(code) ? 'UTA' : code;
+};
+window.hoistSameFranchise = function(a,b) {
+  return window.hoistFranchiseCode(a) === window.hoistFranchiseCode(b);
+};
+</script>
+
 <!-- Head-to-head player row dropdowns: last five completed regular-season
      games against the opponent, from the existing cached matchup dataset. -->
 <script>
@@ -6468,7 +6480,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return month+' '+date.getUTCDate()+', '+date.getUTCFullYear();
   }
   function renderGames(player,opponent){
-    const games=(player.games||[]).filter(g=>String(g.opponent||'').toUpperCase()===opponent).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,5);
+    const games=(player.games||[]).filter(g=>window.hoistSameFranchise(g.opponent,opponent)).sort((a,b)=>String(b.date||'').localeCompare(String(a.date||''))).slice(0,5);
     if(!games.length)return '<div class="hoist-h2h-detail-empty">No previous regular-season games against '+escapeHtml(opponent)+' in the available player history.</div>';
     return '<div class="hoist-h2h-detail-title">Last '+games.length+' games vs '+escapeHtml(opponent)+'</div><table class="hoist-h2h-game-table"><thead><tr><th>DATE</th><th>G</th><th>A</th><th>PTS</th></tr></thead><tbody>'+
       games.map(g=>{
@@ -6476,7 +6488,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const place=venue==='H'||venue==='HOME'?'vs ':venue==='R'||venue==='A'||venue==='AWAY'?'at ':'';
         const playedFor=String(g.team||g.teamAbbrev||g.playerTeam||'').toUpperCase();
         const teamNote=playedFor&&playedFor!==String(player.currentTeam||'').toUpperCase()&&playedFor!==String(player.rosterTeam||'').toUpperCase()&&playedFor!==String(player._selectedTeam||'').toUpperCase()?' · With '+playedFor:'';
-        const matchup=place?place+opponent:'';
+        const historicalOpponent=String(g.opponent||opponent).toUpperCase();
+        const matchup=place?place+historicalOpponent:'';
         const subline=(matchup||teamNote)?'<span class="hoist-h2h-game-opponent">'+escapeHtml(matchup+teamNote)+'</span>':'';
         return '<tr><td><span class="hoist-h2h-game-date">'+escapeHtml(formatGameDate(g.date))+'</span>'+subline+'</td><td>'+escapeHtml(g.goals??0)+'</td><td>'+escapeHtml(g.assists??0)+'</td><td>'+escapeHtml(g.points??((Number(g.goals)||0)+(Number(g.assists)||0)))+'</td></tr>';
       }).join('')+'</tbody></table>';
@@ -7879,7 +7892,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('')}`;
   }
   function score(p,opponent) {
-    const games=(p.games||[]).filter(g=>opponentOf(g)===opponent);
+    const games=(p.games||[]).filter(g=>window.hoistSameFranchise(opponentOf(g),opponent));
     const gp=games.length;
     const points=games.reduce((n,g)=>n+(pts(g)??0),0);
     const gs=games.every(g=>goals(g)!==null)?games.reduce((n,g)=>n+goals(g),0):null;
@@ -8558,7 +8571,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const played=[...(p.games||[])].filter(g=>dateOf(g)&&dateOf(g)<date).sort((a,b)=>dateOf(b).localeCompare(dateOf(a)));
    const valid=played.filter(g=>metric(g,selectedMarket)!==null);
    // H2H mode uses ONLY games against today's opponent for filtering, ranking and explanations.
-   const h2h=valid.filter(g=>opponentOf(g)===opponent);
+   const h2h=valid.filter(g=>window.hoistSameFranchise(opponentOf(g),opponent));
    const sample=h2hOnly?h2h:valid;
    if(!sample.length||(!h2hOnly&&sample.length<3))return null;
    const last5=sample.slice(0,5),last10=sample.slice(0,10);
