@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T16:53:04.630Z",
-  "sourceDescription": "Connor Hrabchak",
-  "cachedAtUTC": "2026-11-17T12:30:21.411706+00:00",
+  "sourceUpdatedAt": "2026-11-17T12:58:41.819Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-17T13:51:20.183808+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Nino Niederreiter",
-        "number": 62,
+        "name": "Kyle Connor",
+        "number": 81,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1553,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1553/WPG_62_Niederreiter.png",
+        "sourcePlayerId": 2483,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2483/WPG_81_Connor.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -236,24 +236,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Iafallo",
-        "number": 9,
+        "name": "Kyle Connor",
+        "number": 81,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2888,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2888/WPG_9_Iafallo.png",
+        "sourcePlayerId": 2483,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2483/WPG_81_Connor.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Nino Niederreiter",
-        "number": 62,
+        "name": "Viggo Björck",
+        "number": 61,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1553,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1553/WPG_62_Niederreiter.png",
+        "sourcePlayerId": 38960,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38960/WPG_61__Bjorck.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Viggo Björck",
-        "number": 61,
+        "name": "Alex Iafallo",
+        "number": 9,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 38960,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38960/WPG_61__Bjorck.png",
+        "sourcePlayerId": 2888,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2888/WPG_9_Iafallo.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -445,16 +445,6 @@
       "positionName": "Injured Reserve 4",
       "sourcePlayerId": 36380,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Kyle Connor",
-      "number": 81,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 2483,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2483/WPG_81_Connor.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
