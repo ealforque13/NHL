@@ -2,9 +2,9 @@
   "team": "NYR",
   "teamName": "New York Rangers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T17:40:33.127Z",
+  "sourceUpdatedAt": "2026-11-17T00:09:45.315Z",
   "sourceDescription": "Peter Baugh",
-  "cachedAtUTC": "2026-11-16T23:23:19.760371+00:00",
+  "cachedAtUTC": "2026-11-17T00:21:01.318807+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Tye Kartye",
-        "number": 24,
+        "name": "Will Cuylle",
+        "number": 50,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29846,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
+        "sourcePlayerId": 29725,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29725/NYR_50_Cuylle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,24 +60,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Dorofeyev",
-        "number": 16,
+        "name": "Tye Kartye",
+        "number": 24,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30622/NYR_16__Dorofeyev.png",
+        "sourcePlayerId": 29846,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Will Cuylle",
-        "number": 50,
+        "name": "Eeli Tolvanen",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29725,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29725/NYR_50_Cuylle.png",
+        "sourcePlayerId": 2787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Eeli Tolvanen",
-        "number": 17,
+        "name": "Jaroslav Chmelar",
+        "number": 49,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
+        "sourcePlayerId": 34742,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34742/NYR_49_Chmelar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jaroslav Chmelar",
-        "number": 49,
+        "name": "Matt Rempe",
+        "number": 73,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 34742,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34742/NYR_49_Chmelar.png",
+        "sourcePlayerId": 32523,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32523/NYR_73_Rempe.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Dorofeyev",
-        "number": 16,
+        "name": "J.T. Miller",
+        "number": 10,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30622/NYR_16__Dorofeyev.png",
+        "sourcePlayerId": 1762,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1762/NYR_10__Miller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,22 +258,22 @@
     ],
     [
       {
-        "name": "Tye Kartye",
-        "number": 24,
+        "name": "Eeli Tolvanen",
+        "number": 17,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 29846,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
+        "sourcePlayerId": 2787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "J.T. Miller",
-        "number": 10,
+        "name": "Tye Kartye",
+        "number": 24,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 1762,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1762/NYR_10__Miller.png",
+        "sourcePlayerId": 29846,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -466,6 +466,16 @@
       "sourcePlayerId": 38784,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38784/NYR_12__S%CC%8Cmits.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Pavel Dorofeyev",
+      "number": 16,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 30622,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30622/NYR_16__Dorofeyev.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
