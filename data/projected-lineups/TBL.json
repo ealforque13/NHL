@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-17T14:31:06.042Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-17T17:07:14.882134+00:00",
+  "cachedAtUTC": "2026-11-17T18:07:08.027315+00:00",
   "forwards": [
     [
       {
@@ -90,16 +90,6 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36872/TBL_23_O_Reilly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
-      },
-      {
-        "name": "Conor Geekie",
-        "number": 14,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 31505,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31505/TBL_14__Geekie.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
       }
     ],
     [
@@ -258,14 +248,14 @@
     ],
     [
       {
-        "name": "Conor Geekie",
-        "number": 14,
+        "name": "Brandon Hagel",
+        "number": 38,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 31505,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31505/TBL_14__Geekie.png",
+        "sourcePlayerId": 27046,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Anthony Cirelli",
@@ -288,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brandon Hagel",
-        "number": 38,
+        "name": "Victor Hedman",
+        "number": 77,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 27046,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
+        "sourcePlayerId": 1369,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -446,6 +436,16 @@
       "sourcePlayerId": 2749,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
       "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Conor Geekie",
+      "number": 14,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 31505,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31505/TBL_14__Geekie.png",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     }
   ]

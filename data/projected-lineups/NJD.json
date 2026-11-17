@@ -2,9 +2,9 @@
   "team": "NJD",
   "teamName": "New Jersey Devils",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:02:39.761Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-17T17:06:51.707122+00:00",
+  "sourceUpdatedAt": "2026-11-17T17:43:53.464Z",
+  "sourceDescription": "Amanda Stein",
+  "cachedAtUTC": "2026-11-17T18:06:47.079355+00:00",
   "forwards": [
     [
       {
@@ -138,34 +138,34 @@
   "defense": [
     [
       {
-        "name": "Jonas Siegenthaler",
-        "number": 71,
+        "name": "Luke Hughes",
+        "number": 43,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 3782,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3782/NJD_71_Siegenthaler.png",
+        "sourcePlayerId": 31110,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31110/NJD_43_Hughes.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Luke Hughes",
-        "number": 43,
+        "name": "Brett Pesce",
+        "number": 22,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31110,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31110/NJD_43_Hughes.png",
+        "sourcePlayerId": 2541,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2541/NJD_22_Pesce.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Declan Chisholm",
-        "number": 47,
+        "name": "Jonas Siegenthaler",
+        "number": 71,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 28803,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28803/NJD_47__Chisholm.png",
+        "sourcePlayerId": 3782,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3782/NJD_71_Siegenthaler.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Anton Silayev",
-        "number": null,
+        "name": "Declan Chisholm",
+        "number": 47,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 38914,
-        "jerseyUrl": null,
+        "sourcePlayerId": 28803,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28803/NJD_47__Chisholm.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Jesper Bratt",
-        "number": 63,
+        "name": "Arseny Gritsyuk",
+        "number": 81,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2845,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2845/NJD_63_Bratt.png",
+        "sourcePlayerId": 30695,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Arseny Gritsyuk",
-        "number": 81,
+        "name": "Jesper Bratt",
+        "number": 63,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 30695,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
+        "sourcePlayerId": 2845,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2845/NJD_63_Bratt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Declan Chisholm",
-        "number": 47,
+        "name": "Brett Pesce",
+        "number": 22,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 28803,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28803/NJD_47__Chisholm.png",
+        "sourcePlayerId": 2541,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2541/NJD_22_Pesce.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -446,16 +446,6 @@
       "sourcePlayerId": 28131,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28131/NJD_8_Kovacevic.png",
       "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Brett Pesce",
-      "number": 22,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2541,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2541/NJD_22_Pesce.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
