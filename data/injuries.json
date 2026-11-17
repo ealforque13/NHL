@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T18:52:18.455465+00:00",
+  "updatedAt": "2026-11-17T00:59:16.946557+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -88,8 +88,8 @@
     },
     "8476874": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "MIN"
     },
     "8476875": {
@@ -146,12 +146,6 @@
       "status": "Injured Reserve",
       "team": "OTT"
     },
-    "8477479": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "CHI"
-    },
     "8477488": {
       "injured": true,
       "description": "day-to-day",
@@ -187,6 +181,12 @@
       "description": "Mantha (throat) was placed on long-term injured reserve by the Devils on Wednesday, retroactive to Nov. 7.",
       "status": "Injured Reserve",
       "team": "NJD"
+    },
+    "8477527": {
+      "injured": true,
+      "description": "Johnston didn't practice Monday due to personal reasons, and his status for Tuesday's game against the Ducks is uncertain, Lou Korac of NHL.com reports.",
+      "status": "Day-To-Day",
+      "team": "STL"
     },
     "8477951": {
       "injured": true,
@@ -262,8 +262,8 @@
     },
     "8478550": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "LAK"
     },
     "8479346": {
@@ -382,15 +382,15 @@
     },
     "8481524": {
       "injured": true,
-      "description": "Byram (upper body) was placed on injured reserve Tuesday.",
+      "description": "Byram (upper body) has been ruled out for Tuesday's game against the Maple Leafs, CHGO Blackhawks reports.",
       "status": "Injured Reserve",
       "team": "CHI"
     },
-    "8481598": {
+    "8481604": {
       "injured": true,
-      "description": "Broberg (lower body) is day-to-day, according to Lou Korac of NHL.com on Sunday.",
-      "status": "Day-To-Day",
-      "team": "STL"
+      "description": "out",
+      "status": "Out",
+      "team": "NYR"
     },
     "8481607": {
       "injured": true,
@@ -403,12 +403,6 @@
       "description": "Soderblom (upper body) is week-to-week, per Penguins PR on Monday.",
       "status": "Injured Reserve",
       "team": "PIT"
-    },
-    "8482089": {
-      "injured": true,
-      "description": "Neighbours (upper body) is day-to-day, per Lou Korac of NHL.com on Sunday.",
-      "status": "Day-To-Day",
-      "team": "STL"
     },
     "8482667": {
       "injured": true,
