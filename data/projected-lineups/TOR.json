@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T12:26:46.089Z",
-  "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-18T13:53:13.475785+00:00",
+  "sourceUpdatedAt": "2026-11-18T14:55:42.637Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T14:58:53.828188+00:00",
   "forwards": [
     [
       {
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Ryan Tverberg",
-        "number": null,
+        "name": "Gavin McKenna",
+        "number": 92,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 32967,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32967/TOR_Frnt.png",
+        "sourcePlayerId": 37717,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37717/TOR_92_McKenna.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gavin McKenna",
-        "number": 92,
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 37717,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37717/TOR_92_McKenna.png",
+        "sourcePlayerId": 1172,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Sergei Bobrovsky",
-      "number": 72,
+      "name": "Anthony Stolarz",
+      "number": 41,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1117,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
+      "sourcePlayerId": 2432,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Anthony Stolarz",
-      "number": 41,
+      "name": "Sergei Bobrovsky",
+      "number": 72,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2432,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
+      "sourcePlayerId": 1117,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

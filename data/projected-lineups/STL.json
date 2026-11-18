@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T00:38:51.558Z",
-  "sourceDescription": "Lou Korac",
-  "cachedAtUTC": "2026-11-18T13:53:09.326227+00:00",
+  "sourceUpdatedAt": "2026-11-18T14:58:26.036Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T14:58:49.626976+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jordan Binnington",
-      "number": 50,
+      "name": "Joel Hofer",
+      "number": 30,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1984,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1984/STL_50_Binnington.png",
+      "sourcePlayerId": 28910,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28910/STL_30_Hofer.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Joel Hofer",
-      "number": 30,
+      "name": "Jordan Binnington",
+      "number": 50,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 28910,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28910/STL_30_Hofer.png",
+      "sourcePlayerId": 1984,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1984/STL_50_Binnington.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

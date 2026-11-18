@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T00:15:54.073Z",
-  "sourceDescription": "Jason Gregor",
-  "cachedAtUTC": "2026-11-18T13:52:40.300341+00:00",
+  "sourceUpdatedAt": "2026-11-18T14:52:13.491Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T14:58:19.744124+00:00",
   "forwards": [
     [
       {
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
+        "name": "Vasily Podkolzin",
+        "number": 92,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
+        "sourcePlayerId": 30606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Vasily Podkolzin",
-        "number": 92,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
