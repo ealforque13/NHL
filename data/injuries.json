@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T18:57:17.493207+00:00",
+  "updatedAt": "2026-11-18T01:06:43.552006+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -10,8 +10,8 @@
     },
     "8474574": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "DAL"
     },
     "8475168": {
@@ -52,8 +52,8 @@
     },
     "8476419": {
       "injured": true,
-      "description": "Pageau (lower body) will be a game-time decision ahead of Tuesday's matchup with Columbus, Stefen Rosner of NHL.com reports.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NYI"
     },
     "8476454": {
@@ -146,12 +146,6 @@
       "status": "Out",
       "team": "CBJ"
     },
-    "8477505": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "SJS"
-    },
     "8477511": {
       "injured": true,
       "description": "Mantha (neck) is expected to miss about one month after undergoing surgery, per Kristy Flannery of The Hockey News.",
@@ -166,8 +160,8 @@
     },
     "8477951": {
       "injured": true,
-      "description": "Schmaltz (lower body) isn't expected to play against San Jose on Saturday, and it's unclear when he will be ready to return, Brogan Houston of the Deseret News reports.",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "UTA"
     },
     "8477955": {
@@ -194,12 +188,6 @@
       "status": "Out",
       "team": "VGK"
     },
-    "8478416": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "TBL"
-    },
     "8478421": {
       "injured": true,
       "description": "Greer (upper body) was placed on injured reserve Monday.",
@@ -224,12 +212,6 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
-    "8478519": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "TBL"
-    },
     "8478550": {
       "injured": true,
       "description": "out",
@@ -244,9 +226,15 @@
     },
     "8479378": {
       "injured": true,
-      "description": "Stanley (lower body) is considered day-to-day ahead of Tuesday's clash with the Blue Jackets, Andrew Gross of Newsday reports.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NYI"
+    },
+    "8479542": {
+      "injured": true,
+      "description": "Hagel (undisclosed) won't play against Washington on Tuesday, Benjamin Pierce of the Lightning's official site reports.",
+      "status": "Out",
+      "team": "TBL"
     },
     "8479576": {
       "injured": true,
@@ -265,12 +253,6 @@
       "description": "Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
       "status": "Injured Reserve",
       "team": "FLA"
-    },
-    "8480036": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "DAL"
     },
     "8480068": {
       "injured": true,
@@ -304,8 +286,8 @@
     },
     "8480748": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "SJS"
     },
     "8480831": {
@@ -427,12 +409,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "TBL"
-    },
-    "8483463": {
-      "injured": true,
-      "description": "Kaskimaki sustained an undisclosed injury near the end of Saturday's game versus the Panthers, Lou Korac of NHL.com reports.",
-      "status": "Day-To-Day",
-      "team": "STL"
     },
     "8483472": {
       "injured": true,
