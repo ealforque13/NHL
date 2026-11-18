@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T01:06:43.552006+00:00",
+  "updatedAt": "2026-11-18T07:11:16.021980+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -85,6 +85,12 @@
       "description": "Matheson (lower body) will miss approximately 2-3 weeks, the Canadiens announced Sunday.",
       "status": "Out",
       "team": "MTL"
+    },
+    "8476878": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "TBL"
     },
     "8476891": {
       "injured": true,
@@ -199,6 +205,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "VAN"
+    },
+    "8478469": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "OTT"
     },
     "8478476": {
       "injured": true,
@@ -446,11 +458,23 @@
       "status": "Injured Reserve",
       "team": "PHI"
     },
+    "8484144": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CHI"
+    },
     "8484221": {
       "injured": true,
       "description": "ir",
       "status": "Injured Reserve",
       "team": "NYI"
+    },
+    "8484762": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "ANA"
     },
     "8484797": {
       "injured": true,
