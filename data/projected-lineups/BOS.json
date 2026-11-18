@@ -2,9 +2,9 @@
   "team": "BOS",
   "teamName": "Boston Bruins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T16:47:13.743Z",
-  "sourceDescription": "Belle Fraser",
-  "cachedAtUTC": "2026-11-18T11:31:43.313995+00:00",
+  "sourceUpdatedAt": "2026-11-18T11:51:24.206Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T12:32:39.680811+00:00",
   "forwards": [
     [
       {
@@ -312,32 +312,32 @@
   "penaltyKill": [
     [
       {
-        "name": "Fraser Minten",
-        "number": 93,
+        "name": "Elias Lindholm",
+        "number": 28,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 31575,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31575/BOS_93__Minten.png",
+        "sourcePlayerId": 2133,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2133/BOS_28_Lindholm.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Marat Khusnutdinov",
-        "number": 92,
+        "name": "Mark Kastelic",
+        "number": 47,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 31738,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
+        "sourcePlayerId": 2904,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2904/BOS_47_Kastelic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Nikita Zadorov",
-        "number": 91,
+        "name": "Connor Clifton",
+        "number": 75,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2147,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2147/BOS_91_Zadorov.png",
+        "sourcePlayerId": 4833,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4833/BOS_75_Clifton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,22 +354,22 @@
     ],
     [
       {
-        "name": "Pavel Zacha",
-        "number": 18,
+        "name": "Fraser Minten",
+        "number": 93,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2481,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2481/BOS_18_Zacha.png",
+        "sourcePlayerId": 31575,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31575/BOS_93__Minten.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Mark Kastelic",
-        "number": 47,
+        "name": "Marat Khusnutdinov",
+        "number": 92,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2904,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2904/BOS_47_Kastelic.png",
+        "sourcePlayerId": 31738,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

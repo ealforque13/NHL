@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-17T17:43:53.464Z",
   "sourceDescription": "Amanda Stein",
-  "cachedAtUTC": "2026-11-18T11:32:14.374425+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:09.224011+00:00",
   "forwards": [
     [
       {
@@ -435,7 +435,7 @@
       "positionName": "Injured Reserve 2",
       "sourcePlayerId": 2151,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2151/NJD_39__Mantha.png",
-      "injuryStatus": "out",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
@@ -445,7 +445,7 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 28131,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28131/NJD_8_Kovacevic.png",
-      "injuryStatus": "out",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     }
   ]

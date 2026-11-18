@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-16T16:08:22.808Z",
   "sourceDescription": "Stefen Rosner",
-  "cachedAtUTC": "2026-11-18T11:32:18.735207+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:13.435030+00:00",
   "forwards": [
     [
       {
@@ -421,8 +421,8 @@
     {
       "name": "Alexander Romanov",
       "number": 28,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
       "sourcePlayerId": 29623,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29623/NYI_28_Romanov.png",
       "injuryStatus": "ir",
@@ -431,8 +431,8 @@
     {
       "name": "Calum Ritchie",
       "number": 64,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 35084,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35084/NYI_64_Ritchie.png",
       "injuryStatus": "ir",
@@ -441,8 +441,8 @@
     {
       "name": "Jean-Gabriel Pageau",
       "number": 44,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
       "sourcePlayerId": 2057,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2057/NYI_44_Pageau.png",
       "injuryStatus": "dtd",
@@ -451,8 +451,8 @@
     {
       "name": "Logan Stanley",
       "number": 8,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
       "sourcePlayerId": 2652,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
       "injuryStatus": "dtd",

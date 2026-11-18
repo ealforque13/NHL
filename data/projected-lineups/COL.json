@@ -2,9 +2,9 @@
   "team": "COL",
   "teamName": "Colorado Avalanche",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T18:49:19.677Z",
+  "sourceUpdatedAt": "2026-11-18T12:10:42.916Z",
   "sourceDescription": "@HockeyMtnHighCO",
-  "cachedAtUTC": "2026-11-18T11:31:56.543992+00:00",
+  "cachedAtUTC": "2026-11-18T12:32:52.363518+00:00",
   "forwards": [
     [
       {
@@ -414,7 +414,7 @@
       "sourcePlayerId": 1873,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
       "injuryStatus": null,
-      "gameTimeDecision": false
+      "gameTimeDecision": true
     }
   ],
   "injuries": [
@@ -431,18 +431,18 @@
     {
       "name": "Zachary L'Heureux",
       "number": 68,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 31229,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31229/COL_68_L_Heureux_.png",
-      "injuryStatus": "out",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
       "name": "Nathan MacKinnon",
       "number": 29,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
       "sourcePlayerId": 2130,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2130/COL_29_MacKinnon.png",
       "injuryStatus": "out",
@@ -451,11 +451,21 @@
     {
       "name": "Cale Makar",
       "number": 8,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
       "sourcePlayerId": 2788,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Scott Wedgewood",
+      "number": 41,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 1873,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

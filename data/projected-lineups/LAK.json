@@ -2,9 +2,9 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T18:08:59.150Z",
-  "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-18T11:32:07.830465+00:00",
+  "sourceUpdatedAt": "2026-11-18T11:50:03.778Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T12:33:02.895055+00:00",
   "forwards": [
     [
       {
@@ -312,12 +312,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Quinton Byfield",
-        "number": 55,
+        "name": "Erik Haula",
+        "number": 56,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 29855,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29855/LAK_55_Byfield.png",
+        "sourcePlayerId": 2135,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2135/LAK_56__Haula.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,12 +354,12 @@
     ],
     [
       {
-        "name": "Erik Haula",
-        "number": 56,
+        "name": "Quinton Byfield",
+        "number": 55,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2135,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2135/LAK_56__Haula.png",
+        "sourcePlayerId": 29855,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29855/LAK_55_Byfield.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Anton Forsberg",
-      "number": 31,
+      "name": "Darcy Kuemper",
+      "number": 35,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2394,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2394/LAK_31_Forsberg.png",
+      "sourcePlayerId": 1692,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1692/LAK_35_Kuemper.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Darcy Kuemper",
-      "number": 35,
+      "name": "Anton Forsberg",
+      "number": 31,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1692,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1692/LAK_35_Kuemper.png",
+      "sourcePlayerId": 2394,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2394/LAK_31_Forsberg.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -425,7 +425,7 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 2519,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T17:59:44.808Z",
   "sourceDescription": "Pens Inside Scoop",
-  "cachedAtUTC": "2026-11-18T11:32:27.460763+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:21.884640+00:00",
   "forwards": [
     [
       {
@@ -419,20 +419,10 @@
   ],
   "injuries": [
     {
-      "name": "Trevor van Riemsdyk",
-      "number": 57,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 2383,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Ryan Graves",
       "number": 27,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
       "sourcePlayerId": 3689,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3689/PIT_27_Graves.png",
       "injuryStatus": "ir",
@@ -441,10 +431,20 @@
     {
       "name": "Bryan Rust",
       "number": 17,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 2407,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2407/PIT_17_Rust.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Elmer Soderblom",
+      "number": null,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 30683,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30683/PIT_25__Soderblom.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }

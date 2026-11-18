@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-15T14:07:37.758Z",
   "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-18T11:32:29.588878+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:23.993403+00:00",
   "forwards": [
     [
       {
@@ -435,6 +435,16 @@
       "positionName": "Injured Reserve 2",
       "sourcePlayerId": 31241,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31241/SEA_63_Melanson.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Curtis Douglas",
+      "number": 42,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 27811,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27811/SEA_42_Douglas.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }

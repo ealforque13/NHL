@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-18T00:57:50.337Z",
   "sourceDescription": "@AnaheimDucks",
-  "cachedAtUTC": "2026-11-18T11:31:40.991263+00:00",
+  "cachedAtUTC": "2026-11-18T12:32:37.536323+00:00",
   "forwards": [
     [
       {
@@ -411,8 +411,8 @@
     {
       "name": "Ryan Poehling",
       "number": 25,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
       "sourcePlayerId": 2792,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2792/ANA_25_Poehling_2_.png",
       "injuryStatus": "ir",
@@ -421,8 +421,8 @@
     {
       "name": "A.J. Greer",
       "number": 18,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 2706,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2706/ANA_18_Greer.png",
       "injuryStatus": "ir",
@@ -431,8 +431,8 @@
     {
       "name": "Beckett Sennecke",
       "number": 45,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
       "sourcePlayerId": 36637,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
       "injuryStatus": "dtd",

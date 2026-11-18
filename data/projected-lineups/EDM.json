@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-18T00:15:54.073Z",
   "sourceDescription": "Jason Gregor",
-  "cachedAtUTC": "2026-11-18T11:32:03.453195+00:00",
+  "cachedAtUTC": "2026-11-18T12:32:58.692274+00:00",
   "forwards": [
     [
       {
@@ -461,11 +461,11 @@
     {
       "name": "Ryan Nugent-Hopkins",
       "number": 93,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
       "sourcePlayerId": 1733,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1733/EDM_93_Nugent-Hopkins.png",
-      "injuryStatus": "out",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

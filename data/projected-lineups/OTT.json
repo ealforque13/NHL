@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-16T16:06:30.660Z",
   "sourceDescription": "Andrew Wilimek",
-  "cachedAtUTC": "2026-11-18T11:32:23.113154+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:17.661264+00:00",
   "forwards": [
     [
       {
@@ -455,7 +455,17 @@
       "positionName": "Injured Reserve 4",
       "sourcePlayerId": 1893,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1893/OTT_21_Cousins.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Hayden Hodgson",
+      "number": 42,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 23173,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23173/OTT_42_Hodgson.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

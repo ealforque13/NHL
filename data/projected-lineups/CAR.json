@@ -2,9 +2,9 @@
   "team": "CAR",
   "teamName": "Carolina Hurricanes",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T16:46:34.926Z",
+  "sourceUpdatedAt": "2026-11-18T12:01:58.071Z",
   "sourceDescription": "Ryan Henkel",
-  "cachedAtUTC": "2026-11-18T11:31:47.683230+00:00",
+  "cachedAtUTC": "2026-11-18T12:32:43.938803+00:00",
   "forwards": [
     [
       {
@@ -397,25 +397,36 @@
   ],
   "goalies": [
     {
-      "name": "Pyotr Kochetkov",
-      "number": 52,
-      "position": "G1",
-      "positionName": "Starting Goalie",
-      "sourcePlayerId": 30486,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
-      "injuryStatus": null,
-      "gameTimeDecision": false
-    },
-    {
       "name": "Brandon Bussi",
       "number": 32,
-      "position": "G2",
-      "positionName": "Backup Goalie",
+      "position": "G1",
+      "positionName": "Starting Goalie",
       "sourcePlayerId": 30153,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
+    },
+    {
+      "name": "Pyotr Kochetkov",
+      "number": 52,
+      "position": "G2",
+      "positionName": "Backup Goalie",
+      "sourcePlayerId": 30486,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
+      "injuryStatus": null,
+      "gameTimeDecision": true
     }
   ],
-  "injuries": []
+  "injuries": [
+    {
+      "name": "Pyotr Kochetkov",
+      "number": 52,
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
+      "sourcePlayerId": 30486,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    }
+  ]
 }

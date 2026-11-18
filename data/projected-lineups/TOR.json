@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T17:02:02.414Z",
+  "sourceUpdatedAt": "2026-11-18T12:26:46.089Z",
   "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-18T11:32:38.257007+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:32.428558+00:00",
   "forwards": [
     [
       {
@@ -189,7 +189,7 @@
         "sourcePlayerId": 1935,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Troy Stecher",
@@ -295,7 +295,7 @@
         "sourcePlayerId": 1935,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Gavin McKenna",
@@ -429,43 +429,63 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Max Domi",
-      "number": 11,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 2131,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2131/TOR_11_Domi.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Kirill Marchenko",
       "number": 86,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 29119,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29119/TOR_86__Marchenko.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
-      "name": "Marshall Rifai",
-      "number": null,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 25666,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25666/TOR_83__Rifai.png",
-      "injuryStatus": "out",
+      "name": "Colton Sissons",
+      "number": 10,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 2030,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2030/TOR_15_Sissons.png",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
-      "name": "Morgan Rielly",
-      "number": 44,
+      "name": "Nick Blankenburg",
+      "number": 3,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 36299,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36299/TOR_3__Blankenburg.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Miles Wood",
+      "number": 28,
       "position": "IR5",
       "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 1935,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
-      "injuryStatus": "dtd",
+      "sourcePlayerId": 2623,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2623/TOR_Frnt.webp",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Marshall Rifai",
+      "number": null,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 25666,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25666/TOR_83__Rifai.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Max Domi",
+      "number": 11,
+      "position": "IR7",
+      "positionName": "Injured Reserve 7",
+      "sourcePlayerId": 2131,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2131/TOR_11_Domi.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

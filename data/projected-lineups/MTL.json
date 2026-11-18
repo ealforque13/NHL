@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T00:10:50.579Z",
+  "sourceUpdatedAt": "2026-11-18T12:16:41.673Z",
   "sourceDescription": "Patrick Friolet",
-  "cachedAtUTC": "2026-11-18T11:32:12.222944+00:00",
+  "cachedAtUTC": "2026-11-18T12:33:07.111168+00:00",
   "forwards": [
     [
       {
@@ -67,7 +67,7 @@
         "sourcePlayerId": 4759,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -285,7 +285,7 @@
         "sourcePlayerId": 4759,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Noah Dobson",
@@ -371,7 +371,7 @@
         "sourcePlayerId": 4759,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Arber Xhekaj",
@@ -449,23 +449,33 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Mike Matheson",
-      "number": 8,
+      "name": "Chris Kreider",
+      "number": 22,
       "position": "IR4",
       "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2583,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
-      "injuryStatus": "dtd",
+      "sourcePlayerId": 1926,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
-      "name": "Chris Kreider",
-      "number": 22,
+      "name": "Mike Matheson",
+      "number": 8,
       "position": "IR5",
       "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 1926,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1926/MTL_22_Kreider.png",
+      "sourcePlayerId": 2583,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Alexandre Texier",
+      "number": 85,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 4759,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

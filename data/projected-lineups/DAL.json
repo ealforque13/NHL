@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-17T20:28:24.577Z",
   "sourceDescription": "Owen Newkirk",
-  "cachedAtUTC": "2026-11-18T11:31:58.862758+00:00",
+  "cachedAtUTC": "2026-11-18T12:32:54.476002+00:00",
   "forwards": [
     [
       {
@@ -451,8 +451,8 @@
     {
       "name": "Lian Bichsel",
       "number": 6,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
       "sourcePlayerId": 36369,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36369/DAL_6_Bichsel.png",
       "injuryStatus": "ir",
@@ -461,8 +461,8 @@
     {
       "name": "Tyler Myers",
       "number": 57,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
       "sourcePlayerId": 176,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
       "injuryStatus": "dtd",

@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-17T16:48:53.542Z",
   "sourceDescription": "Ansar Khan",
-  "cachedAtUTC": "2026-11-18T11:32:01.221241+00:00",
+  "cachedAtUTC": "2026-11-18T12:32:56.585983+00:00",
   "forwards": [
     [
       {
@@ -419,33 +419,43 @@
   ],
   "injuries": [
     {
-      "name": "Albert Johansson",
-      "number": 20,
+      "name": "Dylan Larkin",
+      "number": 71,
       "position": "IR1",
       "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 30661,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30661/DET_20_Johansson.png",
-      "injuryStatus": "ir",
+      "sourcePlayerId": 2522,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2522/DET_71_Larkin.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     },
     {
       "name": "Simon Edvinsson",
       "number": 77,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 34667,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34667/DET_77_Edvinsson.png",
       "injuryStatus": "out",
       "gameTimeDecision": false
     },
     {
-      "name": "Dylan Larkin",
-      "number": 71,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 2522,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2522/DET_71_Larkin.png",
-      "injuryStatus": "out",
+      "name": "Albert Johansson",
+      "number": 20,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 30661,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30661/DET_20_Johansson.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "William Wallinder",
+      "number": 54,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 33029,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33029/DET_54__Wallinder.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
