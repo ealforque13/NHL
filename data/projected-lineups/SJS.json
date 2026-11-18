@@ -2,9 +2,9 @@
   "team": "SJS",
   "teamName": "San Jose Sharks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T19:40:48.202Z",
-  "sourceDescription": "Sheng Peng",
-  "cachedAtUTC": "2026-11-18T01:56:39.055754+00:00",
+  "sourceUpdatedAt": "2026-11-18T02:40:21.700Z",
+  "sourceDescription": "Curtis Pashelka",
+  "cachedAtUTC": "2026-11-18T02:55:38.013755+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Michael Misa",
-        "number": 77,
+        "name": "Mason Marchment",
+        "number": 27,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 37508,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37508/SJS_77_Misa.png",
+        "sourcePlayerId": 2855,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2855/SJS_27__Marchment.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -57,15 +57,15 @@
         "sourcePlayerId": 2145,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2145/SJS_21_Wennberg.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
-        "name": "Mason Marchment",
-        "number": 27,
+        "name": "Michael Misa",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2855,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2855/SJS_27__Marchment.png",
+        "sourcePlayerId": 37508,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37508/SJS_77_Misa.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -223,7 +223,7 @@
         "sourcePlayerId": 2145,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2145/SJS_21_Wennberg.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Tyler Toffoli",
