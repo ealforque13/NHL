@@ -2,9 +2,9 @@
   "team": "WSH",
   "teamName": "Washington Capitals",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:03:19.710Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-17T23:28:44.300380+00:00",
+  "sourceUpdatedAt": "2026-11-18T00:14:09.344Z",
+  "sourceDescription": "Mike Vogel",
+  "cachedAtUTC": "2026-11-18T00:27:49.473906+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Jordan Kyrou",
-        "number": 25,
+        "name": "Anthony Beauvillier",
+        "number": 72,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3867,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
+        "sourcePlayerId": 2487,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2487/WSH_72_Beauvillier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anthony Beauvillier",
-        "number": 72,
+        "name": "Jordan Kyrou",
+        "number": 25,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2487,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2487/WSH_72_Beauvillier.png",
+        "sourcePlayerId": 3867,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

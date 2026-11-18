@@ -2,9 +2,9 @@
   "team": "BUF",
   "teamName": "Buffalo Sabres",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T16:48:11.423Z",
-  "sourceDescription": "Paul Hamilton",
-  "cachedAtUTC": "2026-11-17T23:27:41.989690+00:00",
+  "sourceUpdatedAt": "2026-11-17T23:44:04.629Z",
+  "sourceDescription": "Rachel Lenzi",
+  "cachedAtUTC": "2026-11-18T00:26:45.334203+00:00",
   "forwards": [
     [
       {
@@ -40,38 +40,6 @@
     ],
     [
       {
-        "name": "Josh Norris",
-        "number": 9,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 28056,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Peyton Krebs",
-        "number": 19,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 28684,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28684/BUF_19_Krebs.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Josh Doan",
-        "number": 91,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 32990,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32990/BUF_91_Doan.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Ryan McLeod",
         "number": 71,
         "position": "LW",
@@ -98,6 +66,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 29241,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29241/BUF_22_Quinn.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Peyton Krebs",
+        "number": 19,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 28684,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28684/BUF_19_Krebs.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Norris",
+        "number": 9,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 28056,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Josh Doan",
+        "number": 91,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 32990,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32990/BUF_91_Doan.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

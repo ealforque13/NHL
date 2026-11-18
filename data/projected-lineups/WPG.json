@@ -2,18 +2,18 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T12:58:41.819Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-17T23:28:42.143399+00:00",
+  "sourceUpdatedAt": "2026-11-17T23:37:44.541Z",
+  "sourceDescription": "Mitchell Clinton",
+  "cachedAtUTC": "2026-11-18T00:27:47.292600+00:00",
   "forwards": [
     [
       {
-        "name": "Cole Perfetti",
-        "number": 91,
+        "name": "Kyle Connor",
+        "number": 81,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29837,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29837/WPG_91__Perfetti.png",
+        "sourcePlayerId": 2483,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2483/WPG_81_Connor.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Kyle Connor",
-        "number": 81,
+        "name": "Cole Perfetti",
+        "number": 91,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2483,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2483/WPG_81_Connor.png",
+        "sourcePlayerId": 29837,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29837/WPG_91__Perfetti.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -122,6 +122,16 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26531/WPG_36_Barron.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      },
+      {
+        "name": "Danny Zhilkin",
+        "number": null,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 30843,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30843/WPG_Frnt.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -172,14 +182,14 @@
     ],
     [
       {
-        "name": "Elias Salomonsson",
-        "number": 57,
+        "name": "Henry Thrun",
+        "number": 8,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 36380,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
+        "sourcePlayerId": 30428,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30428/WPG_8_Thrun.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Tyrel Bauer",
