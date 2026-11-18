@@ -2,9 +2,9 @@
   "team": "BUF",
   "teamName": "Buffalo Sabres",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T14:53:34.379Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-18T19:38:02.341779+00:00",
+  "sourceUpdatedAt": "2026-11-18T20:33:32.137Z",
+  "sourceDescription": "Paul Hamilton",
+  "cachedAtUTC": "2026-11-18T20:56:50.612029+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Ryan McLeod",
-        "number": 71,
+        "name": "Peyton Krebs",
+        "number": 19,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
+        "sourcePlayerId": 28684,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28684/BUF_19_Krebs.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Peyton Krebs",
-        "number": 19,
+        "name": "Jason Zucker",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 28684,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28684/BUF_19_Krebs.png",
+        "sourcePlayerId": 1898,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1898/BUF_17_Zucker.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jason Zucker",
-        "number": 17,
+        "name": "Sam Carrick",
+        "number": 39,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1898,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1898/BUF_17_Zucker.png",
+        "sourcePlayerId": 1914,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1914/BUF_10_Carrick.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -145,7 +145,7 @@
         "sourcePlayerId": 28792,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Rasmus Dahlin",
@@ -339,7 +339,7 @@
         "sourcePlayerId": 28792,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Conor Timmins",
@@ -446,6 +446,16 @@
       "sourcePlayerId": 38139,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38139/BUF_94__Helenius.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Mattias Samuelsson",
+      "number": 23,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 28792,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
