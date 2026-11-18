@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T02:17:49.082Z",
+  "sourceUpdatedAt": "2026-11-18T18:57:47.595Z",
   "sourceDescription": "Utah Mammoth",
-  "cachedAtUTC": "2026-11-18T18:26:07.378158+00:00",
+  "cachedAtUTC": "2026-11-18T19:38:56.942629+00:00",
   "forwards": [
     [
       {
@@ -145,7 +145,7 @@
         "sourcePlayerId": 2639,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2639/UTH_98_Sergachev.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Andrew Peeke",
@@ -243,7 +243,7 @@
         "sourcePlayerId": 2639,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2639/UTH_98_Sergachev.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Clayton Keller",
@@ -339,7 +339,7 @@
         "sourcePlayerId": 2639,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2639/UTH_98_Sergachev.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "MacKenzie Weegar",
@@ -446,6 +446,16 @@
       "sourcePlayerId": 34613,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34613/UTH_11_Guenther.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Mikhail Sergachev",
+      "number": 98,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 2639,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2639/UTH_98_Sergachev.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {
