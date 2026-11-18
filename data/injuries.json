@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T13:05:48.725423+00:00",
+  "updatedAt": "2026-11-18T18:53:48.606102+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -10,8 +10,8 @@
     },
     "8474574": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DAL"
     },
     "8475168": {
@@ -46,20 +46,20 @@
     },
     "8476393": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "OTT"
     },
     "8476419": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8476454": {
       "injured": true,
-      "description": "Nugent-Hopkins (undisclosed) isn't expected to play against Florida on Tuesday, per Oilers play-by-play announcer Jack Michaels.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "EDM"
     },
     "8476456": {
@@ -88,7 +88,7 @@
     },
     "8476878": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Girgensons is considered day-to-day due to an upper-body injury, Lightning reporter Gabby Shirley reports Wednesday.",
       "status": "Day-To-Day",
       "team": "TBL"
     },
@@ -160,8 +160,8 @@
     },
     "8477527": {
       "injured": true,
-      "description": "Johnston (upper body) won't play against Anaheim on Tuesday, Lou Korac of NHL.com reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "STL"
     },
     "8477951": {
@@ -184,8 +184,8 @@
     },
     "8478173": {
       "injured": true,
-      "description": "Hodgson (groin) isn't expected to play against Winnipeg on Tuesday, per TSN 1200 Ottawa.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "OTT"
     },
     "8478396": {
@@ -193,6 +193,12 @@
       "description": "out",
       "status": "Out",
       "team": "VGK"
+    },
+    "8478399": {
+      "injured": true,
+      "description": "Siegenthaler is dealing with an illness that could put his availability against the Habs on Wednesday in doubt, Amanda Stein of the Devils' official site reports.",
+      "status": "Day-To-Day",
+      "team": "NJD"
     },
     "8478421": {
       "injured": true,
@@ -220,14 +226,14 @@
     },
     "8478507": {
       "injured": true,
-      "description": "ir",
+      "description": "Marino (upper body) took the ice Wednesday in a regular jersey, Chase Beardsley of The Hockey Writers reports, indicating he's been cleared for contact.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
     "8478550": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8479346": {
@@ -238,14 +244,14 @@
     },
     "8479378": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8479542": {
       "injured": true,
-      "description": "Hagel (undisclosed) won't play against Washington on Tuesday, Benjamin Pierce of the Lightning's official site reports.",
-      "status": "Out",
+      "description": "Hagel is considered day-to-day due to his lower-body injury, Eduardo A. Encina of the Tampa Bay Times reports Wednesday.",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8479576": {
@@ -364,7 +370,7 @@
     },
     "8481607": {
       "injured": true,
-      "description": "Johansson (undisclosed) is expected to return to the lineup either Wednesday or Saturday, per Ansar Khan of MLive.com.",
+      "description": "Johansson (undisclosed) has been ruled out for Wednesday's game against the Bruins, Ansar Khan of MLive.com reports.",
       "status": "Injured Reserve",
       "team": "DET"
     },
@@ -376,8 +382,8 @@
     },
     "8482171": {
       "injured": true,
-      "description": "Wallinder (upper body) is day-to-day, per Ansar Khan of MLive.com on Tuesday.",
-      "status": "Day-To-Day",
+      "description": "Wallinder (upper body) will not be in the lineup versus Boston on Wednesday, Ansar Khan of MLive.com reports.",
+      "status": "Out",
       "team": "DET"
     },
     "8482667": {
@@ -388,7 +394,7 @@
     },
     "8482699": {
       "injured": true,
-      "description": "ir",
+      "description": "Guenther (upper body) was on the ice for Wednesday's optional morning skate in a non-contact sweater, Brogan Houston of the Deseret News reports.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
@@ -460,20 +466,14 @@
     },
     "8484144": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Bedard is being evaluated for a shoulder injury, Emily Kaplan reports Wednesday.",
       "status": "Day-To-Day",
       "team": "CHI"
     },
-    "8484221": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "NYI"
-    },
     "8484762": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "ANA"
     },
     "8484797": {
