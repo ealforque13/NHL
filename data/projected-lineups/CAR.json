@@ -2,18 +2,18 @@
   "team": "CAR",
   "teamName": "Carolina Hurricanes",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T12:01:58.071Z",
-  "sourceDescription": "Ryan Henkel",
-  "cachedAtUTC": "2026-11-18T17:09:14.413149+00:00",
+  "sourceUpdatedAt": "2026-11-18T17:38:30.978Z",
+  "sourceDescription": "Walt Ruff",
+  "cachedAtUTC": "2026-11-18T18:25:12.098533+00:00",
   "forwards": [
     [
       {
-        "name": "Andrei Svechnikov",
-        "number": 37,
+        "name": "William Carrier",
+        "number": 28,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4787/CAR_37_Svechnikov.png",
+        "sourcePlayerId": 2704,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2704/CAR_28_Carrier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "William Carrier",
-        "number": 28,
+        "name": "Andrei Svechnikov",
+        "number": 37,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2704,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2704/CAR_28_Carrier.png",
+        "sourcePlayerId": 4787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4787/CAR_37_Svechnikov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

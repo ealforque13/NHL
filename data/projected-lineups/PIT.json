@@ -2,9 +2,9 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T17:59:44.808Z",
-  "sourceDescription": "Pens Inside Scoop",
-  "cachedAtUTC": "2026-11-18T17:09:52.408017+00:00",
+  "sourceUpdatedAt": "2026-11-18T17:37:30.383Z",
+  "sourceDescription": "Josh Getzoff",
+  "cachedAtUTC": "2026-11-18T18:25:53.238209+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Nicholas Robertson",
-        "number": 14,
+        "name": "Rutger McGroarty",
+        "number": 2,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29254,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29254/PIT_14__Robertson.png",
+        "sourcePlayerId": 33262,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Brazeau",
-        "number": 15,
+        "name": "Ville Koivunen",
+        "number": 41,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 28622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
+        "sourcePlayerId": 34677,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Rutger McGroarty",
-        "number": 2,
+        "name": "Connor Dewar",
+        "number": 19,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33262,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
+        "sourcePlayerId": 25396,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25396/PIT_19_Dewar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Connor Dewar",
-        "number": 19,
+        "name": "Nicholas Robertson",
+        "number": 14,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 25396,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25396/PIT_19_Dewar.png",
+        "sourcePlayerId": 29254,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29254/PIT_14__Robertson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Declan Carlile",
-        "number": 72,
+        "name": "Trevor van Riemsdyk",
+        "number": 57,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 30124,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
+        "sourcePlayerId": 2383,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -206,10 +206,20 @@
   "powerPlay": [
     [
       {
-        "name": "Ben Kindel",
-        "number": 81,
+        "name": "Rickard Rakell",
+        "number": 67,
         "position": "SK1",
         "positionName": "Skater 1",
+        "sourcePlayerId": 1682,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1682/PIT_67_Rakell.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Kindel",
+        "number": 81,
+        "position": "SK2",
+        "positionName": "Skater 2",
         "sourcePlayerId": 37573,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37573/PIT_81__Kindel.png",
         "injuryStatus": null,
@@ -218,20 +228,10 @@
       {
         "name": "Tommy Novak",
         "number": 18,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 26595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26595/PIT_18_Novak.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Rickard Rakell",
-        "number": 67,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1682,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1682/PIT_67_Rakell.png",
+        "sourcePlayerId": 26595,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26595/PIT_18_Novak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Justin Brazeau",
-        "number": 15,
+        "name": "Ville Koivunen",
+        "number": 41,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
+        "sourcePlayerId": 34677,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -332,12 +332,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Declan Carlile",
-        "number": 72,
+        "name": "Kris Letang",
+        "number": 58,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30124,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
+        "sourcePlayerId": 1233,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1233/PIT_58_Letang.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Sergei Murashov",
-      "number": 1,
+      "name": "Arturs Silovs",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 36361,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36361/PIT_1__Murashov.png",
+      "sourcePlayerId": 31270,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31270/PIT_37_Silovs.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Arturs Silovs",
-      "number": null,
+      "name": "Sergei Murashov",
+      "number": 1,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 31270,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31270/PIT_37_Silovs.png",
+      "sourcePlayerId": 36361,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36361/PIT_1__Murashov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
