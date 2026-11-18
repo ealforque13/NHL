@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T13:51:19.923Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-18T00:27:09.532253+00:00",
+  "sourceUpdatedAt": "2026-11-18T01:00:26.377Z",
+  "sourceDescription": "Anthony LaPanta",
+  "cachedAtUTC": "2026-11-18T01:56:18.162428+00:00",
   "forwards": [
     [
       {
@@ -40,6 +40,38 @@
     ],
     [
       {
+        "name": "Yakov Trenin",
+        "number": 13,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3775,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Danila Yurov",
+        "number": 22,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 36363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36363/MIN_22__Yurov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Maxim Shabanov",
+        "number": 49,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 38466,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38466/MIN_49_Shabanov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Blake Coleman",
         "number": 20,
         "position": "LW",
@@ -66,38 +98,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 30223,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30223/MIN_10_Brink.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Maxim Shabanov",
-        "number": 49,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 38466,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38466/MIN_49_Shabanov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Danila Yurov",
-        "number": 22,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 36363,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36363/MIN_22__Yurov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Yakov Trenin",
-        "number": 13,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 3775,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Faber",
-        "number": 7,
+        "name": "Jared Spurgeon",
+        "number": 46,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
+        "sourcePlayerId": 1557,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jared Spurgeon",
-        "number": 46,
+        "name": "Brock Faber",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1557,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
+        "sourcePlayerId": 30792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,18 +2,18 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T18:48:03.102Z",
+  "sourceUpdatedAt": "2026-11-18T00:38:51.558Z",
   "sourceDescription": "Lou Korac",
-  "cachedAtUTC": "2026-11-18T00:27:34.063449+00:00",
+  "cachedAtUTC": "2026-11-18T01:56:41.125322+00:00",
   "forwards": [
     [
       {
-        "name": "Dylan Holloway",
-        "number": 81,
+        "name": "Jake Neighbours",
+        "number": 63,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 32948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32948/STL_81_Holloway.png",
+        "sourcePlayerId": 29498,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29498/STL_63_Neighbours.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Jake Neighbours",
-        "number": 63,
+        "name": "Dylan Holloway",
+        "number": 81,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29498,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29498/STL_63_Neighbours.png",
+        "sourcePlayerId": 32948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32948/STL_81_Holloway.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Aleksanteri Kaskimaki",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 36379,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36379/STL_41__Kaskimaki.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Alexey Toropchenko",
-        "number": 13,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 28113,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28113/STL_13_Toropchenko.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Aleksanteri Kaskimaki",
-        "number": null,
+        "name": "Alexey Toropchenko",
+        "number": 13,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 36379,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36379/STL_41__Kaskimaki.png",
+        "sourcePlayerId": 28113,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28113/STL_13_Toropchenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
