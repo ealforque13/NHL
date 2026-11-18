@@ -1,1 +1,1 @@
-{"lastAttemptUTC":"2026-11-18T01:59:38.659486+00:00","successfulRequests":98,"totalRequests":99,"errors":[]}
+{"lastAttemptUTC":"2026-11-18T02:53:12.051542+00:00","successfulRequests":98,"totalRequests":99,"errors":["skater/summary EVP/PPP: Unable to fetch https://api.nhle.com/stats/rest/en/skater/summary?isAggregate=false&isGame=false&cayenneExp=seasonId%3D20262027+and+gameTypeId%3D2&limit=-1&start=0: The read operation timed out"]}
