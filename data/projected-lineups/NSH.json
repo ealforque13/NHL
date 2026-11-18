@@ -2,9 +2,9 @@
   "team": "NSH",
   "teamName": "Nashville Predators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T00:39:21.931Z",
-  "sourceDescription": "Brooks Bratten",
-  "cachedAtUTC": "2026-11-18T14:58:32.586618+00:00",
+  "sourceUpdatedAt": "2026-11-18T15:01:56.750Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T16:02:41.526452+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Justus Annunen",
-      "number": 29,
+      "name": "Juuse Saros",
+      "number": 74,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29146,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29146/NSH_29_Annunen.png",
+      "sourcePlayerId": 2557,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2557/NSH_74_Saros.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Juuse Saros",
-      "number": 74,
+      "name": "Justus Annunen",
+      "number": 29,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2557,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2557/NSH_74_Saros.png",
+      "sourcePlayerId": 29146,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29146/NSH_29_Annunen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

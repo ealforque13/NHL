@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-16T16:06:30.660Z",
-  "sourceDescription": "Andrew Wilimek",
-  "cachedAtUTC": "2026-11-18T14:58:38.974497+00:00",
+  "sourceUpdatedAt": "2026-11-18T15:03:45.740Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T16:02:48.285044+00:00",
   "forwards": [
     [
       {
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Fabian Zetterlund",
-        "number": 20,
+        "name": "Ridly Greig",
+        "number": 71,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28130,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28130/OTT_20_Zetterlund.png",
+        "sourcePlayerId": 30383,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30383/OTT_71_Greig.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

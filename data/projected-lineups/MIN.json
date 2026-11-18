@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T01:00:26.377Z",
-  "sourceDescription": "Anthony LaPanta",
-  "cachedAtUTC": "2026-11-18T14:58:26.093425+00:00",
+  "sourceUpdatedAt": "2026-11-18T15:02:46.911Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T16:02:34.713693+00:00",
   "forwards": [
     [
       {
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Quinn Hughes",
-        "number": 43,
+        "name": "Danila Yurov",
+        "number": 22,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 4794,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4794/MIN_43__Hughes.png",
+        "sourcePlayerId": 36363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36363/MIN_22__Yurov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

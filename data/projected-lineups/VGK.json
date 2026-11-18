@@ -2,9 +2,9 @@
   "team": "VGK",
   "teamName": "Vegas Golden Knights",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-17T19:19:55.343Z",
-  "sourceDescription": "@SinBinVegas",
-  "cachedAtUTC": "2026-11-18T14:59:00.147108+00:00",
+  "sourceUpdatedAt": "2026-11-18T15:05:41.850Z",
+  "sourceDescription": "Last Game (2026-11-17)",
+  "cachedAtUTC": "2026-11-18T16:03:10.898732+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Adin Hill",
-      "number": 33,
+      "name": "Carter Hart",
+      "number": 79,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2906,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2906/VGK_33_Hill.png",
+      "sourcePlayerId": 3874,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3874/VGK_79_Hart.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Carter Hart",
-      "number": 79,
+      "name": "Adin Hill",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 3874,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3874/VGK_79_Hart.png",
+      "sourcePlayerId": 2906,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2906/VGK_33_Hill.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
