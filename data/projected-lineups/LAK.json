@@ -2,9 +2,9 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T11:50:03.778Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T18:30:38.117366+00:00",
+  "sourceUpdatedAt": "2026-11-19T19:21:26.365Z",
+  "sourceDescription": "Zach Dooley",
+  "cachedAtUTC": "2026-11-19T19:40:19.980135+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Trevor Moore",
-        "number": 12,
+        "name": "Scott Laughton",
+        "number": 21,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2878,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2878/LAK_12_Moore.png",
+        "sourcePlayerId": 2018,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2018/LAK_21_Laughton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Scott Laughton",
-        "number": 21,
+        "name": "Samuel Helenius",
+        "number": null,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2018,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2018/LAK_21_Laughton.png",
+        "sourcePlayerId": 34674,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34674/LAK_79_Helenius.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -322,12 +322,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trevor Moore",
-        "number": 12,
+        "name": "Joel Armia",
+        "number": 40,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2878,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2878/LAK_12_Moore.png",
+        "sourcePlayerId": 1952,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1952/LAK_40_Armia.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -426,6 +426,16 @@
       "sourcePlayerId": 2519,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Trevor Moore",
+      "number": 12,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 2878,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2878/LAK_12_Moore.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

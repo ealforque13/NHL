@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T14:57:15.531Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T18:30:04.717466+00:00",
+  "sourceUpdatedAt": "2026-11-19T19:20:49.200Z",
+  "sourceDescription": "Zach Cavanagh",
+  "cachedAtUTC": "2026-11-19T19:39:54.684168+00:00",
   "forwards": [
     [
       {
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Terry",
-        "number": 19,
+        "name": "Beckett Sennecke",
+        "number": 45,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
+        "sourcePlayerId": 36637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -88,6 +88,16 @@
         "positionName": "Center",
         "sourcePlayerId": 32021,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32021/ANA_42_Washe_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Troy Terry",
+        "number": 19,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 4645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -114,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Colangelo",
-        "number": 12,
+        "name": "Frank Vatrano",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32857,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32857/ANA_12_Colangelo.png",
+        "sourcePlayerId": 2545,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -160,28 +170,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tristan Luneau",
-        "number": 67,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 34070,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34070/ANA_67__Luneau_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Drew Helleson",
-        "number": 14,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 30429,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Noah Warren",
         "number": 47,
         "position": "RD",
@@ -191,17 +179,39 @@
         "injuryStatus": null,
         "gameTimeDecision": false
       }
+    ],
+    [
+      {
+        "name": "Tyson Hinds",
+        "number": 55,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 31256,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31256/ANA_55_Hinds.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tristan Luneau",
+        "number": 67,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 34070,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34070/ANA_67__Luneau_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
     ]
   ],
   "powerPlay": [
     [
       {
-        "name": "Judd Caulfield",
-        "number": 28,
+        "name": "Beckett Sennecke",
+        "number": 45,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 30440,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
+        "sourcePlayerId": 36637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -248,12 +258,12 @@
     ],
     [
       {
-        "name": "Alex Killorn",
-        "number": 17,
+        "name": "Judd Caulfield",
+        "number": 28,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
+        "sourcePlayerId": 30440,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Roger McQueen",
-        "number": 95,
+        "name": "Alex Killorn",
+        "number": 17,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 37324,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37324/ANA_95__McQueen.png",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -426,16 +436,6 @@
       "sourcePlayerId": 2706,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2706/ANA_18_Greer.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Beckett Sennecke",
-      "number": 45,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 36637,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

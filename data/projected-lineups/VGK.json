@@ -2,9 +2,9 @@
   "team": "VGK",
   "teamName": "Vegas Golden Knights",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T15:05:41.850Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T18:31:17.927874+00:00",
+  "sourceUpdatedAt": "2026-11-19T19:22:07.315Z",
+  "sourceDescription": "@SinBinVegas",
+  "cachedAtUTC": "2026-11-19T19:40:55.564978+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Raphael Lavoie",
-        "number": 36,
+        "name": "Braeden Bowman",
+        "number": 42,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 27948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27948/VGK_36__Lavoie.png",
+        "sourcePlayerId": 30925,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30925/VGK_42__Bowman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Braeden Bowman",
-        "number": 42,
+        "name": "Marc Gatcomb",
+        "number": 17,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30925,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30925/VGK_42__Bowman.png",
+        "sourcePlayerId": 37866,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37866/VGK_17__Gatcomb.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
