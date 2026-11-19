@@ -2,9 +2,9 @@
   "team": "DET",
   "teamName": "Detroit Red Wings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T15:05:40.375Z",
-  "sourceDescription": "Last Game (2026-11-18)",
-  "cachedAtUTC": "2026-11-19T17:09:58.307033+00:00",
+  "sourceUpdatedAt": "2026-11-19T17:45:24.567Z",
+  "sourceDescription": "Ansar Khan",
+  "cachedAtUTC": "2026-11-19T18:30:28.294252+00:00",
   "forwards": [
     [
       {
@@ -28,24 +28,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Marco Kasper",
-        "number": null,
+        "name": "Lucas Raymond",
+        "number": 23,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 36364,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36364/DET_92_Kasper.png",
+        "sourcePlayerId": 31783,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31783/DET_23_Raymond.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Michael Brandsegg-Nygård",
+        "name": "Marco Kasper",
         "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 38141,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38141/DET_28_Brandsegg_Nygard.png",
+        "sourcePlayerId": 36364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36364/DET_92_Kasper.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Lucas Raymond",
-        "number": 23,
+        "name": "Viktor Arvidsson",
+        "number": 33,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 31783,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31783/DET_23_Raymond.png",
+        "sourcePlayerId": 2453,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2453/DET_33_Arvidsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Viktor Arvidsson",
-        "number": 33,
+        "name": "Michael Brandsegg-Nygård",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2453,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2453/DET_33_Arvidsson.png",
+        "sourcePlayerId": 38141,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38141/DET_28_Brandsegg_Nygard.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

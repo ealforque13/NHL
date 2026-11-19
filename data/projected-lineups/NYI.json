@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T14:53:01.724Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T17:10:15.581560+00:00",
+  "sourceUpdatedAt": "2026-11-19T18:09:04.284Z",
+  "sourceDescription": "Andrew Gross",
+  "cachedAtUTC": "2026-11-19T18:30:49.873532+00:00",
   "forwards": [
     [
       {
@@ -34,38 +34,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 34,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34/NYI_21_Palmieri.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Emil Heineman",
-        "number": 51,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 33094,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33094/NYI_51_Heineman.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Brayden Schenn",
-        "number": 10,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/773/NYI_10_Schenn.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Victor Eklund",
-        "number": 73,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 38469,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38469/NYI_73_Eklund.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -104,6 +72,38 @@
     ],
     [
       {
+        "name": "Emil Heineman",
+        "number": 51,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 33094,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33094/NYI_51_Heineman.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brayden Schenn",
+        "number": 10,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/773/NYI_10_Schenn.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Victor Eklund",
+        "number": 73,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 38469,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38469/NYI_73_Eklund.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Anthony Duclair",
         "number": 11,
         "position": "LW",
@@ -114,22 +114,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Casey Cizikas",
-        "number": 53,
+        "name": "Jean-Gabriel Pageau",
+        "number": 44,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 1807,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1807/NYI_53_Cizikas.png",
+        "sourcePlayerId": 2057,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2057/NYI_44_Pageau.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
-        "name": "Mitchell Chaffee",
-        "number": 41,
+        "name": "Casey Cizikas",
+        "number": 53,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32923,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32923/NYI_26__Chaffee.png",
+        "sourcePlayerId": 1807,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1807/NYI_53_Cizikas.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -425,16 +425,6 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 29623,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29623/NYI_28_Romanov.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Calum Ritchie",
-      "number": 64,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 35084,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35084/NYI_64_Ritchie.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
