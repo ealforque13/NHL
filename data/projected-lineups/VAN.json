@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-17T02:23:05.410Z",
   "sourceDescription": "Brendan Batchelor",
-  "cachedAtUTC": "2026-11-18T23:54:35.314786+00:00",
+  "cachedAtUTC": "2026-11-19T01:14:16.460493+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Nikita Tolopilo",
-      "number": 60,
+      "name": "Leevi Merilainen",
+      "number": 31,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 38115,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38115/Tolopilo-Nikita_VAN-60_.png",
+      "sourcePlayerId": 34600,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34600/VAN_31__Merilainen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Leevi Merilainen",
-      "number": 31,
+      "name": "Kevin Lankinen",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 34600,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34600/VAN_31__Merilainen.png",
+      "sourcePlayerId": 4757,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4757/VAN_32_Lankinen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

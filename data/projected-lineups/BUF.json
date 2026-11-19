@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-18T20:33:32.137Z",
   "sourceDescription": "Paul Hamilton",
-  "cachedAtUTC": "2026-11-18T23:53:39.559965+00:00",
+  "cachedAtUTC": "2026-11-19T01:13:20.163993+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Alex Lyon",
-      "number": 34,
+      "name": "Ukko-Pekka Luukkonen",
+      "number": 1,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2873,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2873/BUF_34_Lyon.png",
+      "sourcePlayerId": 4783,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4783/BUF_1_Luukkonen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Colten Ellis",
-      "number": 92,
+      "name": "Alex Lyon",
+      "number": 34,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 28686,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28686/BUF_92__Ellis.png",
+      "sourcePlayerId": 2873,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2873/BUF_34_Lyon.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

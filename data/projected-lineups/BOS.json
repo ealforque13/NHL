@@ -2,28 +2,28 @@
   "team": "BOS",
   "teamName": "Boston Bruins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T11:51:24.206Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-18T23:53:37.362125+00:00",
+  "sourceUpdatedAt": "2026-11-19T00:09:13.660Z",
+  "sourceDescription": "Jim McBride",
+  "cachedAtUTC": "2026-11-19T01:13:18.017111+00:00",
   "forwards": [
     [
       {
-        "name": "JJ Peterka",
-        "number": 10,
+        "name": "Morgan Geekie",
+        "number": 39,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 31777,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31777/BOS_10_Peterka.png",
+        "sourcePlayerId": 28001,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28001/BOS_39_Geekie.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Zacha",
-        "number": 18,
+        "name": "Elias Lindholm",
+        "number": 28,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2481,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2481/BOS_18_Zacha.png",
+        "sourcePlayerId": 2133,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2133/BOS_28_Lindholm.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,44 @@
     ],
     [
       {
-        "name": "Michael Eyssimont",
-        "number": 81,
+        "name": "Casey Mittelstadt",
+        "number": 11,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4693,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4693/BOS_81_Eyssimont.png",
+        "sourcePlayerId": 2782,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2782/BOS_11_Mittelstadt.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pavel Zacha",
+        "number": 18,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2481,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2481/BOS_18_Zacha.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "JJ Peterka",
+        "number": 10,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 31777,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31777/BOS_10_Peterka.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Marat Khusnutdinov",
+        "number": 92,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 31738,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,44 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Morgan Geekie",
-        "number": 39,
+        "name": "Matthew Poitras",
+        "number": 51,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 28001,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28001/BOS_39_Geekie.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Casey Mittelstadt",
-        "number": 11,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 2782,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2782/BOS_11_Mittelstadt.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Elias Lindholm",
-        "number": 28,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2133,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2133/BOS_28_Lindholm.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Marat Khusnutdinov",
-        "number": 92,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 31738,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
+        "sourcePlayerId": 33196,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33196/BOS_51_Poitras.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T12:16:41.673Z",
-  "sourceDescription": "Patrick Friolet",
-  "cachedAtUTC": "2026-11-18T23:54:05.146303+00:00",
+  "sourceUpdatedAt": "2026-11-19T00:16:29.073Z",
+  "sourceDescription": "Eric Engels",
+  "cachedAtUTC": "2026-11-19T01:13:46.160843+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,44 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Juraj Slafkovsky",
-        "number": 20,
+        "name": "Alexandre Texier",
+        "number": 85,
         "position": "RW",
         "positionName": "Right Wing",
+        "sourcePlayerId": 4759,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Juraj Slafkovsky",
+        "number": 20,
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 35721,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35721/MTL_20_Slafkovsky.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jake Evans",
+        "number": 71,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 4708,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4708/MTL_71_Evans.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Alex Newhook",
+        "number": 15,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 30425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -60,38 +92,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexandre Texier",
-        "number": 85,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 4759,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      }
-    ],
-    [
-      {
-        "name": "Alex Newhook",
-        "number": 15,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 30425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Oliver Kapanen",
-        "number": null,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 34678,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34678/MTL_91__Kapanen.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Kirby Dach",
         "number": 77,
         "position": "RW",
@@ -104,22 +104,22 @@
     ],
     [
       {
-        "name": "Florian Xhekaj",
-        "number": 63,
+        "name": "Brett Berard",
+        "number": 65,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 37772,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37772/MTL_63__Xhekaj.png",
+        "sourcePlayerId": 30810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jake Evans",
-        "number": 71,
+        "name": "Oliver Kapanen",
+        "number": null,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 4708,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4708/MTL_71_Evans.png",
+        "sourcePlayerId": 34678,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34678/MTL_91__Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -138,12 +138,12 @@
   "defense": [
     [
       {
-        "name": "Lane Hutson",
-        "number": 48,
+        "name": "Kaiden Guhle",
+        "number": 21,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 33307,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33307/MTL_48_Hutson.png",
+        "sourcePlayerId": 32947,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32947/MTL_21_Guhle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -160,12 +160,12 @@
     ],
     [
       {
-        "name": "Kaiden Guhle",
-        "number": 21,
+        "name": "Lane Hutson",
+        "number": 48,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 32947,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32947/MTL_21_Guhle.png",
+        "sourcePlayerId": 33307,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33307/MTL_48_Hutson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -285,7 +285,7 @@
         "sourcePlayerId": 4759,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Noah Dobson",
@@ -371,7 +371,7 @@
         "sourcePlayerId": 4759,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Arber Xhekaj",
@@ -466,16 +466,6 @@
       "sourcePlayerId": 2583,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
       "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Alexandre Texier",
-      "number": 85,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
-      "sourcePlayerId": 4759,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
