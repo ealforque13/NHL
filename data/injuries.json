@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T13:09:21.354188+00:00",
+  "updatedAt": "2026-11-19T18:57:17.269168+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -40,7 +40,7 @@
     },
     "8476331": {
       "injured": true,
-      "description": "DeMelo (lower body) was placed on injured reserve Friday.",
+      "description": "DeMelo (lower body) is expected to be out of action for 4-6 weeks, Mitchell Clinton of the Jets' official site reports Thursday.",
       "status": "Injured Reserve",
       "team": "WPG"
     },
@@ -52,7 +52,7 @@
     },
     "8476419": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Pageau (lower body) will be a game-time call against the Jets on Thursday, Andrew Gross of Newsday reports.",
       "status": "Day-To-Day",
       "team": "NYI"
     },
@@ -224,9 +224,15 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
-    "8478550": {
+    "8478508": {
       "injured": true,
       "description": "out",
+      "status": "Out",
+      "team": "MIN"
+    },
+    "8478550": {
+      "injured": true,
+      "description": "Panarin (personal), who has been ruled out for Thursday's game against the Maple Leafs, is expected to return Saturday against the Senators, John Hoven of SiriusXM NHL Network Radio reports.",
       "status": "Out",
       "team": "LAK"
     },
@@ -244,8 +250,8 @@
     },
     "8479542": {
       "injured": true,
-      "description": "Hagel is considered day-to-day due to his lower-body injury, Eduardo A. Encina of the Tampa Bay Times reports Wednesday.",
-      "status": "Day-To-Day",
+      "description": "Hagel (lower body) was placed on injured reserve by the Lightning on Thursday, retroactive to Nov. 15, Eduardo A. Encina of the Tampa Bay Times reports.",
+      "status": "Injured Reserve",
       "team": "TBL"
     },
     "8479576": {
@@ -253,6 +259,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "WSH"
+    },
+    "8479675": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "LAK"
     },
     "8479941": {
       "injured": true,
@@ -262,7 +274,7 @@
     },
     "8479981": {
       "injured": true,
-      "description": "Gadjovich (upper body) is out indefinitely, the team announced Thursday.",
+      "description": "Gadjovich (neck) took the ice Thursday in a non-contact sweater, George Richards of Florida Hockey Now reports.",
       "status": "Injured Reserve",
       "team": "FLA"
     },
@@ -295,6 +307,12 @@
       "description": "out",
       "status": "Out",
       "team": "SJS"
+    },
+    "8480807": {
+      "injured": true,
+      "description": "Samuelsson (undisclosed) is considered a game-time decision for Thursday's road clash against the Capitals, per Paul Hamilton of WGR Sports Radio 550.",
+      "status": "Day-To-Day",
+      "team": "BUF"
     },
     "8480831": {
       "injured": true,
@@ -350,6 +368,12 @@
       "status": "Injured Reserve",
       "team": "CHI"
     },
+    "8481582": {
+      "injured": true,
+      "description": "Robertson left Thursday's morning skate early, raising doubts regarding his availability against St. Louis, Seth Rorabaugh of Tribune-Review Sports reports.",
+      "status": "Day-To-Day",
+      "team": "PIT"
+    },
     "8481604": {
       "injured": true,
       "description": "day-to-day",
@@ -370,8 +394,8 @@
     },
     "8482171": {
       "injured": true,
-      "description": "Wallinder (upper body) will not be in the lineup versus Boston on Wednesday, Ansar Khan of MLive.com reports.",
-      "status": "Out",
+      "description": "Head coach Todd McLellan said Thursday that Wallinder (upper body) is questionable for Saturday's game against the Islanders, Helene St. James of the Detroit Free Press reports.",
+      "status": "Day-To-Day",
       "team": "DET"
     },
     "8482667": {
@@ -454,8 +478,8 @@
     },
     "8484144": {
       "injured": true,
-      "description": "Bedard is being evaluated for a shoulder injury, Emily Kaplan reports Wednesday.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "CHI"
     },
     "8484149": {
