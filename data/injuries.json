@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T01:04:54.959857+00:00",
+  "updatedAt": "2026-11-19T07:11:04.968312+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -64,7 +64,7 @@
     },
     "8476456": {
       "injured": true,
-      "description": "Huberdeau (hip) was assigned to AHL Calgary on Tuesday on a conditioning loan.",
+      "description": "Huberdeau (hip) had three assists in AHL Calgary's 4-3 win over Coachella Valley on Wednesday.",
       "status": "Injured Reserve",
       "team": "CGY"
     },
@@ -457,6 +457,12 @@
       "description": "Bedard is being evaluated for a shoulder injury, Emily Kaplan reports Wednesday.",
       "status": "Day-To-Day",
       "team": "CHI"
+    },
+    "8484149": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "COL"
     },
     "8484762": {
       "injured": true,
