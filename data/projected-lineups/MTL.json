@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T15:06:24.956Z",
-  "sourceDescription": "Last Game (2026-11-18)",
-  "cachedAtUTC": "2026-11-19T20:57:09.387328+00:00",
+  "sourceUpdatedAt": "2026-11-19T21:52:14.045Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-19T21:54:50.272109+00:00",
   "forwards": [
     [
       {
@@ -72,14 +72,14 @@
     ],
     [
       {
-        "name": "Zack Bolduc",
-        "number": 76,
+        "name": "Brett Berard",
+        "number": 65,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 31240,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
+        "sourcePlayerId": 30810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Phillip Danault",
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Brett Berard",
-        "number": 65,
+        "name": "Florian Xhekaj",
+        "number": 63,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.webp",
+        "sourcePlayerId": 37772,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37772/MTL_63__Xhekaj.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -226,14 +226,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zack Bolduc",
-        "number": 76,
+        "name": "Alexandre Texier",
+        "number": 85,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 31240,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
+        "sourcePlayerId": 4759,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Cole Caufield",
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexandre Texier",
-        "number": 85,
+        "name": "Brett Berard",
+        "number": 65,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4759,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
+        "sourcePlayerId": 30810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

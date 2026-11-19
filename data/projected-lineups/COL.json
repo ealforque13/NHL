@@ -2,9 +2,9 @@
   "team": "COL",
   "teamName": "Colorado Avalanche",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T15:08:04.586Z",
-  "sourceDescription": "Last Game (2026-11-18)",
-  "cachedAtUTC": "2026-11-19T20:56:54.787629+00:00",
+  "sourceUpdatedAt": "2026-11-19T21:36:35.130Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-19T21:54:35.299248+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Gabriel Landeskog",
-        "number": 92,
+        "name": "Adam Beckman",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1763,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1763/COL_92_Landeskog.png",
+        "sourcePlayerId": 30436,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30436/COL_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,14 +92,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gavin Brindley",
-        "number": 54,
+        "name": "Gabriel Landeskog",
+        "number": 92,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33176,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33176/COL_54__Brindley.png",
+        "sourcePlayerId": 1763,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1763/COL_92_Landeskog.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
