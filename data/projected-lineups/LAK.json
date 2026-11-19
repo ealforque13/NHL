@@ -2,18 +2,18 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T19:21:26.365Z",
+  "sourceUpdatedAt": "2026-11-19T23:40:46.911Z",
   "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-19T22:53:17.537336+00:00",
+  "cachedAtUTC": "2026-11-19T23:47:01.185193+00:00",
   "forwards": [
     [
       {
-        "name": "Alex Turcotte",
-        "number": 15,
+        "name": "Andre Lee",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30420,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30420/LAK_15_Turcotte.png",
+        "sourcePlayerId": 30215,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Scott Laughton",
-        "number": 21,
+        "name": "Alex Turcotte",
+        "number": 15,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2018,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2018/LAK_21_Laughton.png",
+        "sourcePlayerId": 30420,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30420/LAK_15_Turcotte.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Andre Lee",
-        "number": null,
+        "name": "Scott Laughton",
+        "number": 21,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30215,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
+        "sourcePlayerId": 2018,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2018/LAK_21_Laughton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

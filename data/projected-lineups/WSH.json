@@ -2,9 +2,9 @@
   "team": "WSH",
   "teamName": "Washington Capitals",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T11:53:52.406Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T22:53:58.197064+00:00",
+  "sourceUpdatedAt": "2026-11-19T23:38:38.398Z",
+  "sourceDescription": "Sammi Silber",
+  "cachedAtUTC": "2026-11-19T23:47:41.343114+00:00",
   "forwards": [
     [
       {
@@ -50,12 +50,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dylan Strome",
-        "number": 17,
+        "name": "Boone Jenner",
+        "number": 22,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2474,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2474/WSH_17_Strome.png",
+        "sourcePlayerId": 1902,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1902/WSH_22_Jenner.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,44 @@
     ],
     [
       {
-        "name": "Justin Sourdif",
-        "number": 34,
+        "name": "Alex Ovechkin",
+        "number": 8,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29606/WSH_34_Sourdif.png",
+        "sourcePlayerId": 1534,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1534/WSH_8_Ovechkin.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Strome",
+        "number": 17,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2474,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2474/WSH_17_Strome.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Anthony Beauvillier",
+        "number": 72,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2487,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2487/WSH_72_Beauvillier.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jordan Kyrou",
+        "number": 25,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3867,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,44 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jordan Kyrou",
-        "number": 25,
+        "name": "Justin Sourdif",
+        "number": 34,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3867,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Alex Ovechkin",
-        "number": 8,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 1534,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1534/WSH_8_Ovechkin.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Boone Jenner",
-        "number": 22,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 1902,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1902/WSH_22_Jenner.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Anthony Beauvillier",
-        "number": 72,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2487,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2487/WSH_72_Beauvillier.png",
+        "sourcePlayerId": 29606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29606/WSH_34_Sourdif.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

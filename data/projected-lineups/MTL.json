@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T21:52:14.045Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-19T22:53:21.809013+00:00",
+  "sourceUpdatedAt": "2026-11-19T23:46:02.526Z",
+  "sourceDescription": "Patrick Friolet",
+  "cachedAtUTC": "2026-11-19T23:47:05.421156+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Juraj Slafkovsky",
-        "number": 20,
+        "name": "Alex Newhook",
+        "number": 15,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 35721,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35721/MTL_20_Slafkovsky.png",
+        "sourcePlayerId": 30425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,24 +60,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Newhook",
-        "number": 15,
+        "name": "Juraj Slafkovsky",
+        "number": 20,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
+        "sourcePlayerId": 35721,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35721/MTL_20_Slafkovsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Brett Berard",
-        "number": 65,
+        "name": "Kirby Dach",
+        "number": 77,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
+        "sourcePlayerId": 29585,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kirby Dach",
-        "number": 77,
+        "name": "Owen Beck",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29585,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
+        "sourcePlayerId": 33212,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/Beck-Owen_MTL-62_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Owen Beck",
-        "number": null,
+        "name": "Brett Berard",
+        "number": 65,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33212,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/Beck-Owen_MTL-62_.png",
+        "sourcePlayerId": 30810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jacob Fowler",
-      "number": 32,
+      "name": "Jakub Dobes",
+      "number": 75,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 38444,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
+      "sourcePlayerId": 31895,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jakub Dobes",
-      "number": 75,
+      "name": "Jacob Fowler",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 31895,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
+      "sourcePlayerId": 38444,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
