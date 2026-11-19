@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T07:11:04.968312+00:00",
+  "updatedAt": "2026-11-19T13:09:21.354188+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -226,8 +226,8 @@
     },
     "8478550": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "LAK"
     },
     "8479346": {
