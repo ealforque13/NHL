@@ -2,9 +2,9 @@
   "team": "COL",
   "teamName": "Colorado Avalanche",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T04:45:17.093Z",
-  "sourceDescription": "@Avalanche",
-  "cachedAtUTC": "2026-11-19T14:58:46.724758+00:00",
+  "sourceUpdatedAt": "2026-11-19T15:08:04.586Z",
+  "sourceDescription": "Last Game (2026-11-18)",
+  "cachedAtUTC": "2026-11-19T16:02:15.400580+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Mackenzie Blackwood",
-      "number": 39,
+      "name": "Scott Wedgewood",
+      "number": 41,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 3792,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3792/COL_39_Blackwood.png",
+      "sourcePlayerId": 1873,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Scott Wedgewood",
-      "number": 41,
+      "name": "Mackenzie Blackwood",
+      "number": 39,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1873,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
+      "sourcePlayerId": 3792,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3792/COL_39_Blackwood.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

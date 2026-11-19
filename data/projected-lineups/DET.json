@@ -2,9 +2,9 @@
   "team": "DET",
   "teamName": "Detroit Red Wings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T00:07:44.414Z",
-  "sourceDescription": "Ansar Khan",
-  "cachedAtUTC": "2026-11-19T14:58:50.881596+00:00",
+  "sourceUpdatedAt": "2026-11-19T15:05:40.375Z",
+  "sourceDescription": "Last Game (2026-11-18)",
+  "cachedAtUTC": "2026-11-19T16:02:19.923428+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Daniil Tarasov",
-      "number": 80,
+      "name": "John Gibson",
+      "number": 36,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 28133,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28133/DET_80__Tarasov.png",
+      "sourcePlayerId": 1870,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1870/DET_36_Gibson.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "John Gibson",
-      "number": 36,
+      "name": "Daniil Tarasov",
+      "number": 80,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1870,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1870/DET_36_Gibson.png",
+      "sourcePlayerId": 28133,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28133/DET_80__Tarasov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

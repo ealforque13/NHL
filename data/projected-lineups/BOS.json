@@ -2,9 +2,9 @@
   "team": "BOS",
   "teamName": "Boston Bruins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T00:09:13.660Z",
-  "sourceDescription": "Jim McBride",
-  "cachedAtUTC": "2026-11-19T14:58:34.179194+00:00",
+  "sourceUpdatedAt": "2026-11-19T15:04:58.171Z",
+  "sourceDescription": "Last Game (2026-11-18)",
+  "cachedAtUTC": "2026-11-19T16:02:01.616455+00:00",
   "forwards": [
     [
       {
@@ -322,12 +322,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mark Kastelic",
-        "number": 47,
+        "name": "Pavel Zacha",
+        "number": 18,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2904,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2904/BOS_47_Kastelic.png",
+        "sourcePlayerId": 2481,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2481/BOS_18_Zacha.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Marat Khusnutdinov",
-        "number": 92,
+        "name": "Mark Kastelic",
+        "number": 47,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 31738,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
+        "sourcePlayerId": 2904,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2904/BOS_47_Kastelic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Charlie McAvoy",
-        "number": 73,
+        "name": "Nikita Zadorov",
+        "number": 91,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2645/BOS_73_McAvoy.png",
+        "sourcePlayerId": 2147,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2147/BOS_91_Zadorov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T15:03:45.740Z",
-  "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T14:59:11.968457+00:00",
+  "sourceUpdatedAt": "2026-11-19T15:43:07.534Z",
+  "sourceDescription": "Andrew Wilimek",
+  "cachedAtUTC": "2026-11-19T16:02:42.421872+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Linus Ullmark",
-      "number": 35,
+      "name": "Samuel Ersson",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2534,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2534/OTT_35_Ullmark.png",
+      "sourcePlayerId": 29149,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29149/OTT_30__Ersson.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Samuel Ersson",
-      "number": 33,
+      "name": "Linus Ullmark",
+      "number": 35,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29149,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29149/OTT_30__Ersson.png",
+      "sourcePlayerId": 2534,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2534/OTT_35_Ullmark.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
