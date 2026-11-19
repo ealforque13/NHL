@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T18:53:48.606102+00:00",
+  "updatedAt": "2026-11-19T01:04:54.959857+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -10,8 +10,8 @@
     },
     "8474574": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "DAL"
     },
     "8475168": {
@@ -194,12 +194,6 @@
       "status": "Out",
       "team": "VGK"
     },
-    "8478399": {
-      "injured": true,
-      "description": "Siegenthaler is dealing with an illness that could put his availability against the Habs on Wednesday in doubt, Amanda Stein of the Devils' official site reports.",
-      "status": "Day-To-Day",
-      "team": "NJD"
-    },
     "8478421": {
       "injured": true,
       "description": "Greer (upper body) was placed on injured reserve Monday.",
@@ -283,12 +277,6 @@
       "description": "out",
       "status": "Out",
       "team": "COL"
-    },
-    "8480074": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "MTL"
     },
     "8480192": {
       "injured": true,
