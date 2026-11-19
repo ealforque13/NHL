@@ -2,9 +2,9 @@
   "team": "SEA",
   "teamName": "Seattle Kraken",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-15T14:07:37.758Z",
-  "sourceDescription": "Last Game (2026-11-14)",
-  "cachedAtUTC": "2026-11-19T21:55:07.278726+00:00",
+  "sourceUpdatedAt": "2026-11-19T22:01:44.168Z",
+  "sourceDescription": "Mike Benton",
+  "cachedAtUTC": "2026-11-19T22:53:38.926948+00:00",
   "forwards": [
     [
       {
@@ -18,12 +18,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Matty Beniers",
-        "number": 10,
+        "name": "Berkly Catton",
+        "number": 27,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 30804,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30804/SEA_10_Beniers.png",
+        "sourcePlayerId": 36542,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36542/SEA_27__Catton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -50,12 +50,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Berkly Catton",
-        "number": 27,
+        "name": "Matty Beniers",
+        "number": 10,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 36542,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36542/SEA_27__Catton.png",
+        "sourcePlayerId": 30804,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30804/SEA_10_Beniers.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -66,38 +66,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 31226,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31226/SEA_11__Samoskevich.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Frederick Gaudreau",
-        "number": 89,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 2701,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2701/SEA_89_Gaudreau.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Ben Meyers",
-        "number": 59,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 30084,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30084/SEA_59_Meyers.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Matthew Wood",
-        "number": 71,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 33571,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33571/SEA_71__Wood.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,14 +92,46 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jagger Firkus",
-        "number": null,
+        "name": "Frederick Gaudreau",
+        "number": 89,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 31585,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31585/SEA_Frnt.png",
+        "sourcePlayerId": 2701,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2701/SEA_89_Gaudreau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Matthew Wood",
+        "number": 71,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 33571,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33571/SEA_71__Wood.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Meyers",
+        "number": 59,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 30084,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30084/SEA_59_Meyers.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Melanson",
+        "number": 63,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 31241,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31241/SEA_63_Melanson.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cale Fleury",
-        "number": 8,
+        "name": "Joshua Mahura",
+        "number": 28,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 26737,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26737/SEA_8__Fleury.png",
+        "sourcePlayerId": 3924,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3924/SEA_28_Mahura.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -425,16 +425,6 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 2488,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2488/SEA_19_McCann.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Jacob Melanson",
-      "number": 63,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 31241,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31241/SEA_63_Melanson.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },

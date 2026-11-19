@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-18T15:04:59.046Z",
   "sourceDescription": "Last Game (2026-11-17)",
-  "cachedAtUTC": "2026-11-19T21:54:37.409505+00:00",
+  "cachedAtUTC": "2026-11-19T22:53:08.964603+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "David Perron",
-        "number": 16,
+        "name": "Joel Kiviranta",
+        "number": 94,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1338,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1338/DAL_16__Perron.png",
+        "sourcePlayerId": 31187,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31187/DAL_22_Kiviranta.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Colin Blackwell",
-        "number": 15,
+        "name": "David Perron",
+        "number": 16,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4822,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4822/DAL_15_Blackwell.png",
+        "sourcePlayerId": 1338,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1338/DAL_16__Perron.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
