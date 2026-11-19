@@ -2,9 +2,9 @@
   "team": "COL",
   "teamName": "Colorado Avalanche",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T20:45:29.098Z",
-  "sourceDescription": "Aarif Deen",
-  "cachedAtUTC": "2026-11-19T02:33:00.151518+00:00",
+  "sourceUpdatedAt": "2026-11-19T02:55:38.029Z",
+  "sourceDescription": "@Avalanche",
+  "cachedAtUTC": "2026-11-19T03:30:31.271473+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Mike Reilly",
-        "number": 6,
+        "name": "Alex Gagne",
+        "number": null,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2469,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2469/COL_Frnt.webp",
+        "sourcePlayerId": 32036,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32036/COL_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -414,7 +414,7 @@
       "sourcePlayerId": 1873,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
       "injuryStatus": null,
-      "gameTimeDecision": true
+      "gameTimeDecision": false
     }
   ],
   "injuries": [
@@ -456,16 +456,6 @@
       "sourcePlayerId": 2788,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
       "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Scott Wedgewood",
-      "number": 41,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 1873,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1873/COL_41_Wedgewood.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

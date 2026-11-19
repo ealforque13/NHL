@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T00:16:29.073Z",
+  "sourceUpdatedAt": "2026-11-19T03:27:52.040Z",
   "sourceDescription": "Eric Engels",
-  "cachedAtUTC": "2026-11-19T02:33:14.716922+00:00",
+  "cachedAtUTC": "2026-11-19T03:30:46.310064+00:00",
   "forwards": [
     [
       {
@@ -79,7 +79,7 @@
         "sourcePlayerId": 31240,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Phillip Danault",
@@ -233,7 +233,7 @@
         "sourcePlayerId": 31240,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Cole Caufield",
@@ -466,6 +466,16 @@
       "sourcePlayerId": 2583,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Zack Bolduc",
+      "number": 76,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 31240,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
