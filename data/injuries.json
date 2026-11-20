@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T00:58:35.480261+00:00",
+  "updatedAt": "2026-11-20T07:10:44.369525+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -31,6 +31,12 @@
       "description": "Rust (lower body) will be re-evaluated in six weeks, Michelle Crechiolo of the Penguins' official site reports Thursday.",
       "status": "Injured Reserve",
       "team": "PIT"
+    },
+    "8475848": {
+      "injured": true,
+      "description": "Gallagher (lower body) won't return to Thursday's game versus the Kraken.",
+      "status": "Day-To-Day",
+      "team": "VAN"
     },
     "8476312": {
       "injured": true,
@@ -146,6 +152,12 @@
       "status": "Out",
       "team": "CBJ"
     },
+    "8477506": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "NYI"
+    },
     "8477511": {
       "injured": true,
       "description": "Mantha (neck) is expected to miss about one month after undergoing surgery, per Kristy Flannery of The Hockey News.",
@@ -248,6 +260,12 @@
       "status": "Injured Reserve",
       "team": "WSH"
     },
+    "8479671": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CBJ"
+    },
     "8479675": {
       "injured": true,
       "description": "out",
@@ -268,7 +286,7 @@
     },
     "8480068": {
       "injured": true,
-      "description": "Poehling (lower body) was placed on long-term injured reserve by the Ducks on Wednesday.",
+      "description": "Poehling (knee) is on the Ducks' current road trip and has resumed skating, Derek Lee of The Hockey News reports Thursday.",
       "status": "Injured Reserve",
       "team": "ANA"
     },
@@ -295,6 +313,12 @@
       "description": "out",
       "status": "Out",
       "team": "SJS"
+    },
+    "8480800": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "MIN"
     },
     "8480831": {
       "injured": true,
@@ -460,7 +484,7 @@
     },
     "8484149": {
       "injured": true,
-      "description": "Brindley (upper body) is slated to be unavailable for Thursday's game against the Ducks, AJ Haefele of DNVR Avalanche reports.",
+      "description": "Brindley is in concussion protocol and is considered out indefinitely, Bailey Curtis of DNVR Sports reports.",
       "status": "Out",
       "team": "COL"
     },
