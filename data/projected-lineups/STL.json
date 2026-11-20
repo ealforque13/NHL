@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:02:38.010Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-20T18:00:01.562848+00:00",
+  "sourceUpdatedAt": "2026-11-20T18:26:10.085Z",
+  "sourceDescription": "DFO Projections",
+  "cachedAtUTC": "2026-11-20T20:55:11.062322+00:00",
   "forwards": [
     [
       {
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Connor McMichael",
-        "number": 77,
+        "name": "Jonatan Berggren",
+        "number": 29,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29203,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29203/STL_77__McMichael.png",
+        "sourcePlayerId": 29107,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jonatan Berggren",
-        "number": 29,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Nathan Walker",
+        "number": 26,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 2831,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2831/STL_26_Walker.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,22 +268,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Connor McMichael",
-        "number": 77,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 29203,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29203/STL_77__McMichael.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Jonatan Berggren",
+        "number": 29,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 29107,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -445,6 +445,16 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 3759,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3759/STL_49__Johnston.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Connor McMichael",
+      "number": 77,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 29203,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29203/STL_77__McMichael.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

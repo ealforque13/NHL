@@ -2,9 +2,9 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T16:36:17.433Z",
-  "sourceDescription": "DFO Projections",
-  "cachedAtUTC": "2026-11-20T17:59:55.310868+00:00",
+  "sourceUpdatedAt": "2026-11-20T19:21:59.981Z",
+  "sourceDescription": "Pens Inside Scoop",
+  "cachedAtUTC": "2026-11-20T20:55:04.799935+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Rutger McGroarty",
-        "number": 2,
+        "name": "Andrei Kuzmenko",
+        "number": 10,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33262,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
+        "sourcePlayerId": 25254,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25254/PIT_10__Kuzmenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Andrei Kuzmenko",
-        "number": 10,
+        "name": "Rutger McGroarty",
+        "number": 2,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 25254,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25254/PIT_10__Kuzmenko.png",
+        "sourcePlayerId": 33262,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -138,34 +138,12 @@
   "defense": [
     [
       {
-        "name": "Spencer Stastney",
-        "number": 24,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 28862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Erik Karlsson",
         "number": 65,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 1087,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1087/PIT_65_Karlsson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Samuel Girard",
-        "number": 49,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2773/PIT_49_Girard.png",
+        "sourcePlayerId": 1087,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1087/PIT_65_Karlsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +160,34 @@
     ],
     [
       {
-        "name": "Trevor van Riemsdyk",
-        "number": 57,
+        "name": "Samuel Girard",
+        "number": 49,
         "position": "LD",
         "positionName": "Left Defense",
+        "sourcePlayerId": 2773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2773/PIT_49_Girard.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Trevor van Riemsdyk",
+        "number": 57,
+        "position": "RD",
+        "positionName": "Right Defense",
         "sourcePlayerId": 2383,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Spencer Stastney",
+        "number": 24,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 28862,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
