@@ -2,18 +2,18 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T17:37:30.383Z",
-  "sourceDescription": "Josh Getzoff",
-  "cachedAtUTC": "2026-11-20T15:59:32.839609+00:00",
+  "sourceUpdatedAt": "2026-11-20T16:36:17.433Z",
+  "sourceDescription": "DFO Projections",
+  "cachedAtUTC": "2026-11-20T17:01:02.098728+00:00",
   "forwards": [
     [
       {
-        "name": "Evgeni Malkin",
-        "number": 71,
+        "name": "Tommy Novak",
+        "number": 18,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1236,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
+        "sourcePlayerId": 26595,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26595/PIT_18_Novak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Tommy Novak",
-        "number": 18,
+        "name": "Rutger McGroarty",
+        "number": 2,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 26595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26595/PIT_18_Novak.png",
+        "sourcePlayerId": 33262,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Rutger McGroarty",
-        "number": 2,
+        "name": "Andrei Kuzmenko",
+        "number": 10,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33262,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33262/PIT_2_McGroarty.png",
+        "sourcePlayerId": 25254,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25254/PIT_10__Kuzmenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nicholas Robertson",
-        "number": 14,
+        "name": "Avery Hayes",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29254,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29254/PIT_14__Robertson.png",
+        "sourcePlayerId": 29767,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29767/PIT_85_Hayes.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Evgeni Malkin",
-        "number": 71,
+        "name": "Andrei Kuzmenko",
+        "number": 10,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 1236,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
+        "sourcePlayerId": 25254,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25254/PIT_10__Kuzmenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nicholas Robertson",
-        "number": 14,
+        "name": "Ville Koivunen",
+        "number": 41,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 29254,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29254/PIT_14__Robertson.png",
+        "sourcePlayerId": 34677,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -446,6 +446,26 @@
       "sourcePlayerId": 30683,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30683/PIT_25__Soderblom.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Nicholas Robertson",
+      "number": 14,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 29254,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29254/PIT_14__Robertson.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Evgeni Malkin",
+      "number": 71,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 1236,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
