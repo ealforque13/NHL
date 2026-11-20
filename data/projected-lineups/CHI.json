@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-18T17:33:51.733Z",
-  "sourceDescription": "Charlie Roumeliotis",
-  "cachedAtUTC": "2026-11-19T23:46:48.523784+00:00",
+  "sourceUpdatedAt": "2026-11-20T00:37:57.813Z",
+  "sourceDescription": "Ben Pope",
+  "cachedAtUTC": "2026-11-20T01:06:40.094345+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Jordan Greenway",
-        "number": 12,
+        "name": "Cole Smith",
+        "number": 22,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4644,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4644/CHI_12__Greenway.png",
+        "sourcePlayerId": 32926,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32926/CHI_22__Smith.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Smith",
-        "number": 22,
+        "name": "Dillon Boucher",
+        "number": 36,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32926,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32926/CHI_22__Smith.png",
+        "sourcePlayerId": 23668,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23668/CHI_36__Boucher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

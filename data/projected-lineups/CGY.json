@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T18:06:48.137Z",
-  "sourceDescription": "Pat Steinberg",
-  "cachedAtUTC": "2026-11-19T23:46:46.416975+00:00",
+  "sourceUpdatedAt": "2026-11-20T00:38:56.308Z",
+  "sourceDescription": "Ryan Pike",
+  "cachedAtUTC": "2026-11-20T01:06:38.012359+00:00",
   "forwards": [
     [
       {
@@ -138,22 +138,22 @@
   "defense": [
     [
       {
-        "name": "Yan Kuznetsov",
-        "number": 37,
+        "name": "Jacob Middleton",
+        "number": 5,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 30745,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30745/CGY_37__Kuznetsov.png",
+        "sourcePlayerId": 22822,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/22822/CGY_55_Middleton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Zayne Parekh",
-        "number": 19,
+        "name": "Zach Whitecloud",
+        "number": 28,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 36725,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36725/CGY_19__Parekh.png",
+        "sourcePlayerId": 4658,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4658/CGY_28__Whitecloud.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -182,22 +182,22 @@
     ],
     [
       {
-        "name": "Jacob Middleton",
-        "number": 5,
+        "name": "Yan Kuznetsov",
+        "number": 37,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 22822,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/22822/CGY_55_Middleton.png",
+        "sourcePlayerId": 30745,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30745/CGY_37__Kuznetsov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Whitecloud",
-        "number": 28,
+        "name": "Zayne Parekh",
+        "number": 19,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 4658,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4658/CGY_28__Whitecloud.png",
+        "sourcePlayerId": 36725,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36725/CGY_19__Parekh.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
