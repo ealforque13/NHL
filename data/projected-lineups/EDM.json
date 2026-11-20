@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T18:07:10.660Z",
-  "sourceDescription": "Bob Stauffer",
-  "cachedAtUTC": "2026-11-20T17:00:38.650005+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:00:40.305Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:32.375865+00:00",
   "forwards": [
     [
       {
@@ -288,22 +288,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Shea",
-        "number": 6,
+        "name": "Filip Hallander",
+        "number": 19,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 26606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26606/EDM_6_Shea.png",
+        "sourcePlayerId": 29096,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Mattias Ekholm",
-        "number": 14,
+        "name": "Ryan Shea",
+        "number": 6,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 1675,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1675/EDM_14_Ekholm.png",
+        "sourcePlayerId": 26606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26606/EDM_6_Shea.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

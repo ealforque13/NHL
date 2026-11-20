@@ -2,9 +2,9 @@
   "team": "SEA",
   "teamName": "Seattle Kraken",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T22:01:44.168Z",
-  "sourceDescription": "Mike Benton",
-  "cachedAtUTC": "2026-11-20T17:01:04.316669+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:19:44.550Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:57.391176+00:00",
   "forwards": [
     [
       {
@@ -131,7 +131,7 @@
         "sourcePlayerId": 31241,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31241/SEA_63_Melanson.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],

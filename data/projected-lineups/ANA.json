@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T01:41:36.258Z",
-  "sourceDescription": "Zach Cavanagh",
-  "cachedAtUTC": "2026-11-20T17:00:17.042691+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:17:26.139Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:11.560902+00:00",
   "forwards": [
     [
       {
@@ -268,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikita Nesterenko",
-        "number": 13,
+        "name": "Roger McQueen",
+        "number": 95,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 30726,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30726/ANA_13_Nesterenko.png",
+        "sourcePlayerId": 37324,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37324/ANA_95__McQueen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

@@ -2,9 +2,9 @@
   "team": "VGK",
   "teamName": "Vegas Golden Knights",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T19:22:07.315Z",
-  "sourceDescription": "@SinBinVegas",
-  "cachedAtUTC": "2026-11-20T17:01:18.969092+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:21:00.632Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T18:00:12.044424+00:00",
   "forwards": [
     [
       {
@@ -160,12 +160,12 @@
     ],
     [
       {
-        "name": "Jeremy Lauzon",
-        "number": 3,
+        "name": "Parker Wotherspoon",
+        "number": 29,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 3787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3787/VGK_5_Lauzon.png",
+        "sourcePlayerId": 3836,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3836/VGK_29__Wotherspoon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Parker Wotherspoon",
-        "number": 29,
+        "name": "Jeremy Lauzon",
+        "number": 3,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 3836,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3836/VGK_29__Wotherspoon.png",
+        "sourcePlayerId": 3787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3787/VGK_5_Lauzon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

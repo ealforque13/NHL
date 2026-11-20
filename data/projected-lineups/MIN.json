@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T18:10:18.002Z",
-  "sourceDescription": "Joe Smith",
-  "cachedAtUTC": "2026-11-20T17:00:45.198378+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:15:56.680Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:38.589252+00:00",
   "forwards": [
     [
       {
@@ -425,16 +425,6 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 1792,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1792/MIN_3_Maatta.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Filip Gustavsson",
-      "number": 32,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 4565,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4565/MIN_32_Gustavsson.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },

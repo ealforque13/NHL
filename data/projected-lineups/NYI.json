@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T23:38:05.665Z",
-  "sourceDescription": "Andrew Gross",
-  "cachedAtUTC": "2026-11-20T17:00:53.659198+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:14:29.820Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:46.994631+00:00",
   "forwards": [
     [
       {
@@ -148,24 +148,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Pulock",
-        "number": 6,
+        "name": "Adam Pelech",
+        "number": 3,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2146,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2146/NYI_6_Pulock.png",
+        "sourcePlayerId": 2449,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Adam Pelech",
-        "number": 3,
+        "name": "Ryan Pulock",
+        "number": 6,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2449,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
+        "sourcePlayerId": 2146,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2146/NYI_6_Pulock.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

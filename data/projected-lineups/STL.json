@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T18:07:40.381Z",
-  "sourceDescription": "St. Louis Blues",
-  "cachedAtUTC": "2026-11-20T17:01:08.491284+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:02:38.010Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T18:00:01.562848+00:00",
   "forwards": [
     [
       {
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mason McTavish",
-        "number": 83,
+        "name": "Pavel Buchnevich",
+        "number": 89,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 30834,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30834/STL_83__McTavish.png",
+        "sourcePlayerId": 2673,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Pavel Buchnevich",
-        "number": 89,
+        "name": "Dylan Holloway",
+        "number": 81,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2673,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
+        "sourcePlayerId": 32948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32948/STL_81_Holloway.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dylan Holloway",
-        "number": 81,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 32948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32948/STL_81_Holloway.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Cam Fowler",
+        "number": 17,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 16,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/16/STL_17_Fowler.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

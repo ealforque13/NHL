@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T21:59:55.811Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-20T17:00:25.824619+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:11:13.145Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:19.893639+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Ryan Lomberg",
-        "number": 94,
+        "name": "Charlie Coyle",
+        "number": 3,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3905,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
+        "sourcePlayerId": 1856,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1856/CBJ_3_Coyle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,22 +72,22 @@
     ],
     [
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Jack Williams",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 34454,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
+        "sourcePlayerId": 38425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38425/CBJ_92__Williams.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Charlie Coyle",
-        "number": 3,
+        "name": "Cole Sillinger",
+        "number": 4,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 1856,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1856/CBJ_3_Coyle.png",
+        "sourcePlayerId": 34454,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -114,22 +114,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jack Williams",
-        "number": null,
+        "name": "Steven Lorentz",
+        "number": 18,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 38425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38425/CBJ_92__Williams.png",
+        "sourcePlayerId": 3916,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3916/CBJ_18__Lorentz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Steven Lorentz",
-        "number": 18,
+        "name": "Ryan Lomberg",
+        "number": 94,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3916,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3916/CBJ_18__Lorentz.png",
+        "sourcePlayerId": 3905,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Luca Del Bel Belluz",
-        "number": 93,
+        "name": "Adam Fantilli",
+        "number": 19,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 30880,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
+        "sourcePlayerId": 33179,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33179/CBJ_19_Fantilli.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,22 +268,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Fantilli",
-        "number": 19,
+        "name": "Cole Sillinger",
+        "number": 4,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 33179,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33179/CBJ_19_Fantilli.png",
+        "sourcePlayerId": 34454,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Luca Del Bel Belluz",
+        "number": 93,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 34454,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
+        "sourcePlayerId": 30880,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

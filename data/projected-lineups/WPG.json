@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T15:56:05.629Z",
-  "sourceDescription": "Mitchell Clinton",
-  "cachedAtUTC": "2026-11-20T17:01:21.051495+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:15:15.816Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T18:00:14.141127+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Nico Daws",
-      "number": 50,
+      "name": "Stuart Skinner",
+      "number": 74,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29186,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29186/WPG_Frnt.png",
+      "sourcePlayerId": 4741,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4741/WPG_74__Skinner.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Stuart Skinner",
-      "number": 74,
+      "name": "Nico Daws",
+      "number": 50,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 4741,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4741/WPG_74__Skinner.png",
+      "sourcePlayerId": 29186,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29186/WPG_Frnt.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

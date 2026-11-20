@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T23:46:02.526Z",
-  "sourceDescription": "Patrick Friolet",
-  "cachedAtUTC": "2026-11-20T17:00:47.358442+00:00",
+  "sourceUpdatedAt": "2026-11-20T17:08:34.716Z",
+  "sourceDescription": "Last Game (2026-11-19)",
+  "cachedAtUTC": "2026-11-20T17:59:40.744564+00:00",
   "forwards": [
     [
       {
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brett Berard",
-        "number": 65,
+        "name": "Alex Newhook",
+        "number": 15,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
+        "sourcePlayerId": 30425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Newhook",
-        "number": 15,
+        "name": "Adam Engstrom",
+        "number": 42,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 30425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
+        "sourcePlayerId": 36434,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36434/MTL_42__Engstrom.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
