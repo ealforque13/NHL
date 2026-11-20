@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-11-20T13:04:26.791042+00:00",
+  "updatedAt": "2026-11-20T18:56:46.416988+00:00",
   "source": "Realtime Sports API",
   "players": {
+    "8471215": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "PIT"
+    },
     "8473419": {
       "injured": true,
       "description": "Head coach Paul Maurice said Friday that Marchand (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
@@ -10,8 +16,8 @@
     },
     "8474574": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DAL"
     },
     "8475168": {
@@ -28,7 +34,7 @@
     },
     "8475810": {
       "injured": true,
-      "description": "Rust (lower body) will be re-evaluated in six weeks, Michelle Crechiolo of the Penguins' official site reports Thursday.",
+      "description": "Rust (lower body) is skating in a non-contact sweater Friday, Seth Rorabaugh of Tribune-Review Sports reports.",
       "status": "Injured Reserve",
       "team": "PIT"
     },
@@ -52,14 +58,14 @@
     },
     "8476393": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "OTT"
     },
     "8476454": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "EDM"
     },
     "8476456": {
@@ -88,8 +94,8 @@
     },
     "8476878": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8476891": {
@@ -122,6 +128,12 @@
       "status": "Injured Reserve",
       "team": "EDM"
     },
+    "8477416": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "NYR"
+    },
     "8477425": {
       "injured": true,
       "description": "Wood (undisclosed) was transferred to long-term injured reserve Wednesday, David Alter of The Hockey News reports.",
@@ -130,7 +142,7 @@
     },
     "8477444": {
       "injured": true,
-      "description": "ir",
+      "description": "Burakovsky (lower body) was on the ice Friday doing some individual drills, Bruce Garrioch of Postmedia reports.",
       "status": "Injured Reserve",
       "team": "OTT"
     },
@@ -166,8 +178,8 @@
     },
     "8477527": {
       "injured": true,
-      "description": "Johnston (upper body) will miss Thursday's game against Pittsburgh, per the NHL media site.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "STL"
     },
     "8477951": {
@@ -190,8 +202,8 @@
     },
     "8478173": {
       "injured": true,
-      "description": "Hodgson (groin) is slated to miss Thursday's game against Philadelphia.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "OTT"
     },
     "8478396": {
@@ -226,14 +238,14 @@
     },
     "8478508": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "MIN"
     },
     "8478550": {
       "injured": true,
-      "description": "Panarin (personal), who has been ruled out for Thursday's game against the Maple Leafs, is expected to return Saturday against the Senators, John Hoven of SiriusXM NHL Network Radio reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8479346": {
@@ -244,8 +256,8 @@
     },
     "8479378": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8479542": {
@@ -256,7 +268,7 @@
     },
     "8479576": {
       "injured": true,
-      "description": "ir",
+      "description": "Desharnais (abdomen) has been cleared for contact, Sammi Silber of The District Standard reports Friday.",
       "status": "Injured Reserve",
       "team": "WSH"
     },
@@ -268,8 +280,8 @@
     },
     "8479675": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8479941": {
@@ -352,7 +364,7 @@
     },
     "8480893": {
       "injured": true,
-      "description": "ir",
+      "description": "Marchenko (lower body) was on the ice with his teammates for Friday's optional skate, Lance Hornby of The Toronto Sun reports.",
       "status": "Injured Reserve",
       "team": "TOR"
     },
@@ -374,10 +386,16 @@
       "status": "Injured Reserve",
       "team": "CHI"
     },
-    "8481582": {
+    "8481580": {
       "injured": true,
       "description": "out",
       "status": "Out",
+      "team": "STL"
+    },
+    "8481582": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "PIT"
     },
     "8481604": {
@@ -385,12 +403,6 @@
       "description": "day-to-day",
       "status": "Day-To-Day",
       "team": "NYR"
-    },
-    "8481607": {
-      "injured": true,
-      "description": "Johansson (undisclosed) has been ruled out for Wednesday's game against the Bruins, Ansar Khan of MLive.com reports.",
-      "status": "Injured Reserve",
-      "team": "DET"
     },
     "8481725": {
       "injured": true,
@@ -412,7 +424,7 @@
     },
     "8482699": {
       "injured": true,
-      "description": "Guenther (upper body) was on the ice for Wednesday's optional morning skate in a non-contact sweater, Brogan Houston of the Deseret News reports.",
+      "description": "Guenther (upper body) skated in a regular sweater during Friday's practice session, Brogan Houston of the Deseret News reports.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
@@ -484,8 +496,8 @@
     },
     "8484149": {
       "injured": true,
-      "description": "Brindley is in concussion protocol and is considered out indefinitely, Bailey Curtis of DNVR Sports reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "COL"
     },
     "8484797": {
