@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T18:57:17.269168+00:00",
+  "updatedAt": "2026-11-20T00:58:35.480261+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8473419": {
@@ -46,20 +46,14 @@
     },
     "8476393": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "OTT"
-    },
-    "8476419": {
-      "injured": true,
-      "description": "Pageau (lower body) will be a game-time call against the Jets on Thursday, Andrew Gross of Newsday reports.",
-      "status": "Day-To-Day",
-      "team": "NYI"
     },
     "8476454": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "EDM"
     },
     "8476456": {
@@ -88,8 +82,8 @@
     },
     "8476878": {
       "injured": true,
-      "description": "Girgensons is considered day-to-day due to an upper-body injury, Lightning reporter Gabby Shirley reports Wednesday.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "TBL"
     },
     "8476891": {
@@ -160,8 +154,8 @@
     },
     "8477527": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Johnston (upper body) will miss Thursday's game against Pittsburgh, per the NHL media site.",
+      "status": "Out",
       "team": "STL"
     },
     "8477951": {
@@ -184,8 +178,8 @@
     },
     "8478173": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Hodgson (groin) is slated to miss Thursday's game against Philadelphia.",
+      "status": "Out",
       "team": "OTT"
     },
     "8478396": {
@@ -205,12 +199,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "VAN"
-    },
-    "8478469": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "OTT"
     },
     "8478476": {
       "injured": true,
@@ -244,8 +232,8 @@
     },
     "8479378": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NYI"
     },
     "8479542": {
@@ -286,8 +274,8 @@
     },
     "8480069": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "COL"
     },
     "8480192": {
@@ -308,12 +296,6 @@
       "status": "Out",
       "team": "SJS"
     },
-    "8480807": {
-      "injured": true,
-      "description": "Samuelsson (undisclosed) is considered a game-time decision for Thursday's road clash against the Capitals, per Paul Hamilton of WGR Sports Radio 550.",
-      "status": "Day-To-Day",
-      "team": "BUF"
-    },
     "8480831": {
       "injured": true,
       "description": "Regula (undisclosed) was designated for long-term injured reserve Thursday.",
@@ -322,7 +304,7 @@
     },
     "8480840": {
       "injured": true,
-      "description": "Back was placed on long-term injured reserve on Saturday.",
+      "description": "Back (finger) is expected to return within the next week, Robert Tiffin of NHL.com reports Thursday.",
       "status": "Injured Reserve",
       "team": "DAL"
     },
@@ -370,8 +352,8 @@
     },
     "8481582": {
       "injured": true,
-      "description": "Robertson left Thursday's morning skate early, raising doubts regarding his availability against St. Louis, Seth Rorabaugh of Tribune-Review Sports reports.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "PIT"
     },
     "8481604": {
@@ -421,12 +403,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "WPG"
-    },
-    "8482874": {
-      "injured": true,
-      "description": "Melanson (chest) will be a game-time call for Saturday's clash with the Hurricanes, Tom Gulitti of NHL.com reports.",
-      "status": "Injured Reserve",
-      "team": "SEA"
     },
     "8483425": {
       "injured": true,
@@ -484,15 +460,9 @@
     },
     "8484149": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Brindley (upper body) is slated to be unavailable for Thursday's game against the Ducks, AJ Haefele of DNVR Avalanche reports.",
+      "status": "Out",
       "team": "COL"
-    },
-    "8484762": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "ANA"
     },
     "8484797": {
       "injured": true,
@@ -514,7 +484,7 @@
     },
     "8485383": {
       "injured": true,
-      "description": "O'Brien (lower body) was placed on non-roster injured reserve Wednesday.",
+      "description": "The Kraken indicated Thursday that O'Brien (lower body) remains week-to-week, Mike Benton of the Kraken Audio Network reports.",
       "status": "Injured Reserve",
       "team": "SEA"
     },
