@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T18:01:51.166Z",
-  "sourceDescription": "St. Louis Blues",
-  "cachedAtUTC": "2026-11-21T22:46:02.700758+00:00",
+  "sourceUpdatedAt": "2026-11-21T23:41:15.043Z",
+  "sourceDescription": "Matthew DeFranks",
+  "cachedAtUTC": "2026-11-21T23:43:06.196976+00:00",
   "forwards": [
     [
       {
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jonatan Berggren",
-        "number": 29,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -82,22 +82,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Pavel Buchnevich",
+        "number": 89,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 2673,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Buchnevich",
-        "number": 89,
+        "name": "Jonatan Berggren",
+        "number": 29,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2673,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
+        "sourcePlayerId": 29107,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Joel Hofer",
-      "number": 30,
+      "name": "Jordan Binnington",
+      "number": 50,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 28910,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28910/STL_30_Hofer.png",
+      "sourcePlayerId": 1984,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1984/STL_50_Binnington.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jordan Binnington",
-      "number": 50,
+      "name": "Joel Hofer",
+      "number": 30,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1984,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1984/STL_50_Binnington.png",
+      "sourcePlayerId": 28910,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28910/STL_30_Hofer.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
