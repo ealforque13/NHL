@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T16:58:24.744Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T15:50:07.962261+00:00",
+  "sourceUpdatedAt": "2026-11-21T15:55:40.396Z",
+  "sourceDescription": "David Alter",
+  "cachedAtUTC": "2026-11-21T16:49:54.501926+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Oliver Ekman-Larsson",
-        "number": 95,
+        "name": "Dakota Mermis",
+        "number": 36,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1172,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+        "sourcePlayerId": 2914,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2914/TOR_36_Mermis.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Jack Roslovic",
-        "number": 96,
+        "name": "Easton Cowan",
+        "number": 53,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2499,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
+        "sourcePlayerId": 35106,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35106/TOR_53__Cowan.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Easton Cowan",
-        "number": 53,
+        "name": "Dakota Joshua",
+        "number": 81,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 35106,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35106/TOR_53__Cowan.png",
+        "sourcePlayerId": 25020,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25020/TOR_81_Joshua.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Ekman-Larsson",
-        "number": 95,
+        "name": "Jack Roslovic",
+        "number": 96,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 1172,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+        "sourcePlayerId": 2499,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -374,12 +374,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Ekman-Larsson",
-        "number": 95,
+        "name": "Morgan Rielly",
+        "number": 44,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1172,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+        "sourcePlayerId": 1935,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Sergei Bobrovsky",
-      "number": 72,
+      "name": "Anthony Stolarz",
+      "number": 41,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1117,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
+      "sourcePlayerId": 2432,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Anthony Stolarz",
-      "number": 41,
+      "name": "Sergei Bobrovsky",
+      "number": 72,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2432,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
+      "sourcePlayerId": 1117,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -486,6 +486,16 @@
       "sourcePlayerId": 2131,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2131/TOR_11_Domi.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Oliver Ekman-Larsson",
+      "number": 95,
+      "position": "IR8",
+      "positionName": "Injured Reserve 8",
+      "sourcePlayerId": 1172,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

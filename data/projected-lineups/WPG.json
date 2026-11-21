@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T15:48:29.569Z",
+  "sourceUpdatedAt": "2026-11-21T16:42:14.721Z",
   "sourceDescription": "Connor Hrabchak",
-  "cachedAtUTC": "2026-11-21T15:50:16.277760+00:00",
+  "cachedAtUTC": "2026-11-21T16:50:02.761351+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Cole Koepke",
-        "number": 45,
+        "name": "Tyrel Bauer",
+        "number": 77,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29652,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29652/WPG_45_Koepke.png",
+        "sourcePlayerId": 29948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
