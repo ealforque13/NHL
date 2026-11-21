@@ -2,9 +2,9 @@
   "team": "NSH",
   "teamName": "Nashville Predators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T18:09:25.509Z",
+  "sourceUpdatedAt": "2026-11-21T21:17:16.703Z",
   "sourceDescription": "Alex Daugherty",
-  "cachedAtUTC": "2026-11-21T20:45:26.176080+00:00",
+  "cachedAtUTC": "2026-11-21T21:44:09.766547+00:00",
   "forwards": [
     [
       {
@@ -25,7 +25,7 @@
         "sourcePlayerId": 362,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/362/NSH_90_O_Reilly.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Mavrik Bourque",
@@ -223,7 +223,7 @@
         "sourcePlayerId": 362,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/362/NSH_90_O_Reilly.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Jonathan Marchessault",
@@ -319,7 +319,7 @@
         "sourcePlayerId": 362,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/362/NSH_90_O_Reilly.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Adam Edstrom",
@@ -426,6 +426,16 @@
       "sourcePlayerId": 32461,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32461/NSH_85__Trudeau.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Ryan O'Reilly",
+      "number": 90,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 362,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/362/NSH_90_O_Reilly.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

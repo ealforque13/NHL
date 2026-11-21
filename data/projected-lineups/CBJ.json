@@ -2,42 +2,10 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T19:13:47.344Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-21T20:45:00.647871+00:00",
+  "sourceUpdatedAt": "2026-11-21T20:47:02.481Z",
+  "sourceDescription": "@BlueJacketsNHL",
+  "cachedAtUTC": "2026-11-21T21:43:44.811406+00:00",
   "forwards": [
-    [
-      {
-        "name": "Matthew Knies",
-        "number": 89,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 34619,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34619/CBJ_89_Knies.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Luca Del Bel Belluz",
-        "number": 93,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 30880,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Kent Johnson",
-        "number": 91,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 34612,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34612/CBJ_91_Johnson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
     [
       {
         "name": "Charlie Coyle",
@@ -72,22 +40,54 @@
     ],
     [
       {
-        "name": "Jack Williams",
-        "number": null,
+        "name": "Matthew Knies",
+        "number": 89,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 38425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38425/CBJ_92__Williams.png",
+        "sourcePlayerId": 34619,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34619/CBJ_89_Knies.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Luca Del Bel Belluz",
+        "number": 93,
         "position": "C",
         "positionName": "Center",
+        "sourcePlayerId": 30880,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kent Johnson",
+        "number": 91,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 34612,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34612/CBJ_91_Johnson.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Cole Sillinger",
+        "number": 4,
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 34454,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jack Williams",
+        "number": null,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 38425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38425/CBJ_92__Williams.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,22 +104,22 @@
     ],
     [
       {
-        "name": "Isac Lundestrom",
-        "number": 21,
+        "name": "Steven Lorentz",
+        "number": 18,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4804,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4804/CBJ_21_Lundestrom.png",
+        "sourcePlayerId": 3916,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3916/CBJ_18__Lorentz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Steven Lorentz",
-        "number": 18,
+        "name": "Isac Lundestrom",
+        "number": 21,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 3916,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3916/CBJ_18__Lorentz.png",
+        "sourcePlayerId": 4804,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4804/CBJ_21_Lundestrom.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
