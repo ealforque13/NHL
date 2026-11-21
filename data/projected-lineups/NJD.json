@@ -2,9 +2,9 @@
   "team": "NJD",
   "teamName": "New Jersey Devils",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T15:07:12.723Z",
-  "sourceDescription": "Last Game (2026-11-18)",
-  "cachedAtUTC": "2026-11-21T03:26:38.518752+00:00",
+  "sourceUpdatedAt": "2026-11-21T04:08:07.187Z",
+  "sourceDescription": "Amanda Stein",
+  "cachedAtUTC": "2026-11-21T04:33:37.049720+00:00",
   "forwards": [
     [
       {
@@ -72,22 +72,22 @@
     ],
     [
       {
-        "name": "Stefan Noesen",
-        "number": 11,
+        "name": "Evan Rodrigues",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1842,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1842/NJD_11_Noesen.png",
+        "sourcePlayerId": 2620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2620/NJD_17__Rodrigues.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Evan Rodrigues",
-        "number": 17,
+        "name": "Amadeus Lombardi",
+        "number": 93,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2620/NJD_17__Rodrigues.png",
+        "sourcePlayerId": 31074,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31074/NJD_93__Lombardi.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

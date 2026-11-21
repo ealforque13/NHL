@@ -2,9 +2,9 @@
   "team": "SEA",
   "teamName": "Seattle Kraken",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:19:44.550Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T03:26:53.177974+00:00",
+  "sourceUpdatedAt": "2026-11-21T04:00:11.673Z",
+  "sourceDescription": "@sound_hockey",
+  "cachedAtUTC": "2026-11-21T04:33:52.018505+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Ryan Winterton",
-        "number": 26,
+        "name": "Frederick Gaudreau",
+        "number": 89,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30837,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30837/SEA_26__Winterton.png",
+        "sourcePlayerId": 2701,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2701/SEA_89_Gaudreau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Frederick Gaudreau",
-        "number": 89,
+        "name": "Ryan Winterton",
+        "number": 26,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2701,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2701/SEA_89_Gaudreau.png",
+        "sourcePlayerId": 30837,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30837/SEA_26__Winterton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

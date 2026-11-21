@@ -2,18 +2,18 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:00:40.305Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T03:26:28.083757+00:00",
+  "sourceUpdatedAt": "2026-11-21T04:05:56.868Z",
+  "sourceDescription": "Bob Stauffer",
+  "cachedAtUTC": "2026-11-21T04:33:26.302024+00:00",
   "forwards": [
     [
       {
-        "name": "Colton Dach",
-        "number": 34,
+        "name": "Filip Hallander",
+        "number": 19,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 32903,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32903/EDM_34_Dach.png",
+        "sourcePlayerId": 29096,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Hyman",
-        "number": 18,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2468,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -60,24 +60,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
+        "name": "Mathieu Joseph",
+        "number": 21,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
+        "sourcePlayerId": 3891,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Filip Hallander",
-        "number": 19,
+        "name": "Colton Dach",
+        "number": 34,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29096,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
+        "sourcePlayerId": 32903,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32903/EDM_34_Dach.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trent Frederic",
-        "number": 10,
+        "name": "Zach Hyman",
+        "number": 18,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2662,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2662/EDM_10_Frederic.png",
+        "sourcePlayerId": 2468,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mathieu Joseph",
-        "number": 21,
+        "name": "Trent Frederic",
+        "number": 10,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3891,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
+        "sourcePlayerId": 2662,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2662/EDM_10_Frederic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Devon Levi",
-      "number": 27,
+      "name": "Tristan Jarry",
+      "number": 35,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 33010,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33010/EDM_27_Levi.png",
+      "sourcePlayerId": 2626,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2626/EDM_35_Jarry.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Tristan Jarry",
-      "number": 35,
+      "name": "Devon Levi",
+      "number": 27,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2626,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2626/EDM_35_Jarry.png",
+      "sourcePlayerId": 33010,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33010/EDM_27_Levi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
