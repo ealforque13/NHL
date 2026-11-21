@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T12:51:07.518836+00:00",
+  "updatedAt": "2026-11-21T18:43:15.737189+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -10,7 +10,7 @@
     },
     "8473419": {
       "injured": true,
-      "description": "Head coach Paul Maurice said Friday that Marchand (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
+      "description": "Marchand (knee) is close to returning to the lineup, but he won't play against Buffalo on Saturday, per Jameson Olive of the Panthers' official site.",
       "status": "Injured Reserve",
       "team": "FLA"
     },
@@ -40,8 +40,8 @@
     },
     "8475848": {
       "injured": true,
-      "description": "Gallagher (lower body) won't return to Thursday's game versus the Kraken.",
-      "status": "Day-To-Day",
+      "description": "Gallagher (lower body) was placed on injured reserve Saturday.",
+      "status": "Injured Reserve",
       "team": "VAN"
     },
     "8476312": {
@@ -56,16 +56,10 @@
       "status": "Injured Reserve",
       "team": "WPG"
     },
-    "8476393": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "OTT"
-    },
     "8476454": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "EDM"
     },
     "8476456": {
@@ -130,7 +124,7 @@
     },
     "8477416": {
       "injured": true,
-      "description": "ir",
+      "description": "Bjorkstrand (upper body) is expected to be sidelined for 2-3 months, Peter Baugh of The Athletic reports Saturday.",
       "status": "Injured Reserve",
       "team": "NYR"
     },
@@ -154,7 +148,7 @@
     },
     "8477493": {
       "injured": true,
-      "description": "Head coach Paul Maurice said Friday that Barkov (knee) will travel with the Panthers during their upcoming three-game road trip, Jameson Olive of the Panthers' official site reports.",
+      "description": "Barkov (knee) won't play against Buffalo on Saturday, but he could return within Florida's next three games, Jameson Olive of the Panthers' official site reports.",
       "status": "Injured Reserve",
       "team": "FLA"
     },
@@ -166,8 +160,8 @@
     },
     "8477506": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NYI"
     },
     "8477511": {
@@ -175,12 +169,6 @@
       "description": "Mantha (neck) is expected to miss about one month after undergoing surgery, per Kristy Flannery of The Hockey News.",
       "status": "Injured Reserve",
       "team": "NJD"
-    },
-    "8477527": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "STL"
     },
     "8477951": {
       "injured": true,
@@ -238,8 +226,8 @@
     },
     "8478550": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "LAK"
     },
     "8479346": {
@@ -274,8 +262,8 @@
     },
     "8479675": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Moore (undisclosed) isn't expected to play against Ottawa on Saturday, according to Zach Dooley of LA Kings Insider.",
+      "status": "Out",
       "team": "LAK"
     },
     "8479941": {
@@ -322,8 +310,8 @@
     },
     "8480800": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "MIN"
     },
     "8480831": {
@@ -358,7 +346,7 @@
     },
     "8480893": {
       "injured": true,
-      "description": "Marchenko (lower body) was on the ice with his teammates for Friday's optional skate, Lance Hornby of The Toronto Sun reports.",
+      "description": "Marchenko (lower body) is day-to-day, according to David Alter of The Hockey News on Saturday.",
       "status": "Injured Reserve",
       "team": "TOR"
     },
@@ -394,8 +382,8 @@
     },
     "8481604": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "NYR"
     },
     "8481725": {
@@ -466,7 +454,7 @@
     },
     "8483565": {
       "injured": true,
-      "description": "Blankenburg (undisclosed) was placed on injured reserve by the Maple Leafs on Friday, David Alter of The Hockey News reports.",
+      "description": "Blankenburg (upper body) is day-to-day, according to David Alter of The Hockey News on Saturday.",
       "status": "Injured Reserve",
       "team": "TOR"
     },
@@ -496,9 +484,15 @@
     },
     "8484287": {
       "injured": true,
-      "description": "ir",
+      "description": "McWard (lower body) is considered day-to-day, per David Alter of The Hockey News on Saturday.",
       "status": "Injured Reserve",
       "team": "TOR"
+    },
+    "8484762": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "ANA"
     },
     "8484797": {
       "injured": true,
@@ -532,7 +526,7 @@
     },
     "8485957": {
       "injured": true,
-      "description": "ir",
+      "description": "Smits (upper body) is expected to miss 2-3 months, Peter Baugh of The Athletic reported Saturday.",
       "status": "Injured Reserve",
       "team": "NYR"
     }
