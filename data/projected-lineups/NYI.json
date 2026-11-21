@@ -2,9 +2,9 @@
   "team": "NYI",
   "teamName": "New York Islanders",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:14:29.820Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T17:45:50.896222+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:49:39.715Z",
+  "sourceDescription": "Andrew Gross",
+  "cachedAtUTC": "2026-11-21T18:49:59.893099+00:00",
   "forwards": [
     [
       {
@@ -138,34 +138,34 @@
   "defense": [
     [
       {
-        "name": "Matthew Schaefer",
-        "number": 48,
+        "name": "Logan Stanley",
+        "number": 8,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 38474,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38474/NYI_48_Schaefer.png",
+        "sourcePlayerId": 2652,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Pelech",
-        "number": 3,
+        "name": "Matthew Schaefer",
+        "number": 48,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2449,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
+        "sourcePlayerId": 38474,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38474/NYI_48_Schaefer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Ryan Pulock",
-        "number": 6,
+        "name": "Adam Pelech",
+        "number": 3,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2146,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2146/NYI_6_Pulock.png",
+        "sourcePlayerId": 2449,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -332,22 +332,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Pelech",
-        "number": 3,
+        "name": "Logan Stanley",
+        "number": 8,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2449,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
+        "sourcePlayerId": 2652,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Pulock",
-        "number": 6,
+        "name": "Adam Pelech",
+        "number": 3,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2146,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2146/NYI_6_Pulock.png",
+        "sourcePlayerId": 2449,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2449/NYI_3_Pelech.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -429,12 +429,12 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Logan Stanley",
-      "number": 8,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2652,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
+      "name": "Ryan Pulock",
+      "number": 6,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 2146,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2146/NYI_6_Pulock.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

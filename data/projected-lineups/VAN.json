@@ -2,9 +2,9 @@
   "team": "VAN",
   "teamName": "Vancouver Canucks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:18:58.990Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T17:46:14.227388+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:57:19.747Z",
+  "sourceDescription": "Brendan Batchelor",
+  "cachedAtUTC": "2026-11-21T18:50:22.960303+00:00",
   "forwards": [
     [
       {
@@ -14,38 +14,6 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 2490,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2490/VAN_74_DeBrusk.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Elias Pettersson",
-        "number": 40,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2801,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2801/VAN_40_Pettersson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jonathan Lekkerimaki",
-        "number": 88,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 36365,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36365/VAN_88__Lekkerimaki.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Paul Cotter",
-        "number": 47,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 27620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Linus Karlsson",
-        "number": 94,
+        "name": "Jonathan Lekkerimaki",
+        "number": 88,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29135,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
+        "sourcePlayerId": 36365,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36365/VAN_88__Lekkerimaki.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -114,22 +82,54 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Max Sasson",
-        "number": null,
+        "name": "Ty Mueller",
+        "number": 39,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 30007,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/VAN_63__Sasson.png",
+        "sourcePlayerId": 31913,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31913/Mueller-Ty_VAN-39_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Brendan Gallagher",
-        "number": 11,
+        "name": "Linus Karlsson",
+        "number": 94,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1791,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1791/VAN_7__Gallagher.png",
+        "sourcePlayerId": 29135,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Paul Cotter",
+        "number": 47,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 27620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jacob Quillan",
+        "number": 62,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 32458,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32458/VAN_62__Quillan.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Arshdeep Bains",
+        "number": null,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 28969,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28969/VAN_13__Bains.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Elias Pettersson",
-        "number": 40,
+        "name": "Marco Rossi",
+        "number": 23,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2801,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2801/VAN_40_Pettersson.png",
+        "sourcePlayerId": 29821,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29821/VAN_23__Rossi.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Marco Rossi",
-        "number": 23,
+        "name": "Linus Karlsson",
+        "number": 94,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 29821,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29821/VAN_23__Rossi.png",
+        "sourcePlayerId": 29135,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Linus Karlsson",
-        "number": 94,
+        "name": "Liam Ohgren",
+        "number": 92,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29135,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
+        "sourcePlayerId": 36367,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36367/VAN_92__Ohgren.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tom Willander",
-        "number": 5,
+        "name": "Paul Cotter",
+        "number": 47,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 38455,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38455/VAN_5__Willander.png",
+        "sourcePlayerId": 27620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -312,12 +312,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Elias Pettersson",
-        "number": 40,
+        "name": "Filip Chytil",
+        "number": 77,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2801,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2801/VAN_40_Pettersson.png",
+        "sourcePlayerId": 2811,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2811/VAN_77__Chytil.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,22 +354,22 @@
     ],
     [
       {
-        "name": "Filip Chytil",
-        "number": 77,
+        "name": "Linus Karlsson",
+        "number": 94,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2811,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2811/VAN_77__Chytil.png",
+        "sourcePlayerId": 29135,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Linus Karlsson",
-        "number": 94,
+        "name": "Paul Cotter",
+        "number": 47,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 29135,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29135/VAN_94_Karlsson.png",
+        "sourcePlayerId": 27620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -426,6 +426,16 @@
       "sourcePlayerId": 2722,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2722/VAN_35_Demko.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Elias Pettersson",
+      "number": 40,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 2801,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2801/VAN_40_Pettersson.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

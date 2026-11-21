@@ -2,18 +2,18 @@
   "team": "DAL",
   "teamName": "Dallas Stars",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:20:17.226Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T17:45:31.711399+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:57:55.805Z",
+  "sourceDescription": "Robert Tiffin",
+  "cachedAtUTC": "2026-11-21T18:49:40.937890+00:00",
   "forwards": [
     [
       {
-        "name": "Jason Robertson",
-        "number": 21,
+        "name": "Jamie Benn",
+        "number": 14,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2793,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2793/DAL_21_Robertson.png",
+        "sourcePlayerId": 425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Jamie Benn",
-        "number": 14,
+        "name": "Jason Robertson",
+        "number": 21,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
+        "sourcePlayerId": 2793,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2793/DAL_21_Robertson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

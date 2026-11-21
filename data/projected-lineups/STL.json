@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T18:26:10.085Z",
-  "sourceDescription": "DFO Projections",
-  "cachedAtUTC": "2026-11-21T17:46:05.691042+00:00",
+  "sourceUpdatedAt": "2026-11-21T18:01:51.166Z",
+  "sourceDescription": "St. Louis Blues",
+  "cachedAtUTC": "2026-11-21T18:50:14.587644+00:00",
   "forwards": [
     [
       {
@@ -82,34 +82,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Buchnevich",
-        "number": 89,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2673,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Pavel Buchnevich",
+        "number": 89,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 2673,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Nathan Walker",
-        "number": 26,
+        "name": "Alexey Toropchenko",
+        "number": 13,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2831,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2831/STL_26_Walker.png",
+        "sourcePlayerId": 28113,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28113/STL_13_Toropchenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexey Toropchenko",
-        "number": 13,
+        "name": "Ross Johnston",
+        "number": 49,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 28113,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28113/STL_13_Toropchenko.png",
+        "sourcePlayerId": 3759,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3759/STL_49__Johnston.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -436,16 +436,6 @@
       "sourcePlayerId": 27631,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27631/STL_75_Tucker.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Ross Johnston",
-      "number": 49,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 3759,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3759/STL_49__Johnston.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {
