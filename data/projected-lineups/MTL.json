@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-20T17:08:34.716Z",
   "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T11:48:45.247636+00:00",
+  "cachedAtUTC": "2026-11-21T12:57:05.620541+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Jakub Dobes",
-      "number": 75,
+      "name": "Jacob Fowler",
+      "number": 32,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 31895,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
+      "sourcePlayerId": 38444,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jacob Fowler",
-      "number": 32,
+      "name": "Jakub Dobes",
+      "number": 75,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 38444,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38444/MTL_32__Fowler.png",
+      "sourcePlayerId": 31895,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31895/MTL_75_Dobes.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
