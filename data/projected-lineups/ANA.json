@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:17:26.139Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T18:49:24.110477+00:00",
+  "sourceUpdatedAt": "2026-11-21T18:50:36.768Z",
+  "sourceDescription": "Zach Cavanagh",
+  "cachedAtUTC": "2026-11-21T19:50:23.599584+00:00",
   "forwards": [
     [
       {
@@ -28,6 +28,38 @@
         "gameTimeDecision": false
       },
       {
+        "name": "Sam Colangelo",
+        "number": 12,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 32857,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32857/ANA_12_Colangelo.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Alex Killorn",
+        "number": 17,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mikael Granlund",
+        "number": 64,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 1934,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1934/ANA_64_Granlund_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
         "name": "Judd Caulfield",
         "number": 28,
         "position": "RW",
@@ -46,38 +78,6 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 34555,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Mikael Granlund",
-        "number": 64,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 1934,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1934/ANA_64_Granlund_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Beckett Sennecke",
-        "number": 45,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 36637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Alex Killorn",
-        "number": 17,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Warren",
-        "number": 47,
+        "name": "Drew Helleson",
+        "number": 14,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 34076,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34076/ANA_47__Warren.png",
+        "sourcePlayerId": 30429,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Beckett Sennecke",
-        "number": 45,
+        "name": "Judd Caulfield",
+        "number": 28,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 36637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
+        "sourcePlayerId": 30440,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Judd Caulfield",
-        "number": 28,
+        "name": "Alex Killorn",
+        "number": 17,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 30440,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Killorn",
-        "number": 17,
+        "name": "Frank Vatrano",
+        "number": 77,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
+        "sourcePlayerId": 2545,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Warren",
-        "number": 47,
+        "name": "Drew Helleson",
+        "number": 14,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 34076,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34076/ANA_47__Warren.png",
+        "sourcePlayerId": 30429,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Lukas Dostal",
-      "number": 1,
+      "name": "Ville Husso",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29143,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29143/ANA_1_Dostal_2_.png",
+      "sourcePlayerId": 3837,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3837/ANA_33_Husso.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Ville Husso",
-      "number": 33,
+      "name": "Lukas Dostal",
+      "number": 1,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 3837,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3837/ANA_33_Husso.png",
+      "sourcePlayerId": 29143,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29143/ANA_1_Dostal_2_.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -435,6 +435,16 @@
       "positionName": "Injured Reserve 2",
       "sourcePlayerId": 2706,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2706/ANA_18_Greer.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Beckett Sennecke",
+      "number": 45,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 36637,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36637/ANA_45__Sennecke.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }

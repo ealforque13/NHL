@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:15:56.680Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T18:49:51.435131+00:00",
+  "sourceUpdatedAt": "2026-11-21T19:43:08.843Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-21T19:50:50.655867+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Nico Sturm",
-        "number": 78,
+        "name": "Yakov Trenin",
+        "number": 13,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 27037,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27037/MIN_78_Sturm.png",
+        "sourcePlayerId": 3775,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -138,12 +138,12 @@
   "defense": [
     [
       {
-        "name": "Quinn Hughes",
-        "number": 43,
+        "name": "Jonas Brodin",
+        "number": 25,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 4794,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4794/MIN_43__Hughes.png",
+        "sourcePlayerId": 1740,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1740/MIN_25_Brodin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -160,12 +160,12 @@
     ],
     [
       {
-        "name": "Jonas Brodin",
-        "number": 25,
+        "name": "Matt Kiersted",
+        "number": 26,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1740,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1740/MIN_25_Brodin.png",
+        "sourcePlayerId": 34534,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34534/MIN_26__Kiersted.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,22 +182,22 @@
     ],
     [
       {
-        "name": "Matt Kiersted",
-        "number": 26,
+        "name": "Zach Bogosian",
+        "number": 24,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 34534,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34534/MIN_26__Kiersted.png",
+        "sourcePlayerId": 53,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/53/MIN_24_Bogosian.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Bogosian",
-        "number": 24,
+        "name": "David Spacek",
+        "number": 82,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 53,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/53/MIN_24_Bogosian.png",
+        "sourcePlayerId": 34724,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34724/MIN_82__Spacek.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -236,12 +236,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Quinn Hughes",
-        "number": 43,
+        "name": "Brock Faber",
+        "number": 7,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 4794,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4794/MIN_43__Hughes.png",
+        "sourcePlayerId": 30792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Faber",
-        "number": 7,
+        "name": "David Spacek",
+        "number": 82,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 30792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
+        "sourcePlayerId": 34724,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34724/MIN_82__Spacek.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -364,12 +364,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nico Sturm",
-        "number": 78,
+        "name": "Yakov Trenin",
+        "number": 13,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 27037,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27037/MIN_78_Sturm.png",
+        "sourcePlayerId": 3775,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -429,12 +429,12 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Yakov Trenin",
-      "number": 13,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 3775,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
+      "name": "Quinn Hughes",
+      "number": 43,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 4794,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4794/MIN_43__Hughes.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
