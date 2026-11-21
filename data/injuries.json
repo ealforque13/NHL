@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T18:56:46.416988+00:00",
+  "updatedAt": "2026-11-21T01:02:19.146518+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -130,8 +130,8 @@
     },
     "8477416": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "NYR"
     },
     "8477425": {
@@ -206,12 +206,6 @@
       "status": "Day-To-Day",
       "team": "OTT"
     },
-    "8478396": {
-      "injured": true,
-      "description": "out",
-      "status": "Out",
-      "team": "VGK"
-    },
     "8478421": {
       "injured": true,
       "description": "Greer (upper body) was placed on injured reserve Monday.",
@@ -232,13 +226,13 @@
     },
     "8478507": {
       "injured": true,
-      "description": "Marino (upper body) took the ice Wednesday in a regular jersey, Chase Beardsley of The Hockey Writers reports, indicating he's been cleared for contact.",
+      "description": "Marino (upper body) is day-to-day and close to returning, per Cole Bagley of KSL Sports on Friday.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
     "8478508": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Trenin (personal) is expected to meet up with the Wild in Vancouver ahead of Saturday's game versus the Canucks, per Michael Russo of The Athletic.",
       "status": "Day-To-Day",
       "team": "MIN"
     },
@@ -316,7 +310,7 @@
     },
     "8480434": {
       "injured": true,
-      "description": "Durzi (lower body) wore a regular jersey during Monday's morning skate and should be ready to play against the Hurricanes on Sunday, Colin Stephenson of Newsday reports.",
+      "description": "Durzi (lower body) will likely be a game-time decision for Sunday's matchup against the Hurricanes, Jim Cerny of NHL.com reports.",
       "status": "Injured Reserve",
       "team": "NYR"
     },
@@ -424,7 +418,7 @@
     },
     "8482699": {
       "injured": true,
-      "description": "Guenther (upper body) skated in a regular sweater during Friday's practice session, Brogan Houston of the Deseret News reports.",
+      "description": "Guenther (upper body) was upgraded to day-to-day ahead of Saturday's matchup with Anaheim, Cole Bagley of KSL Sports reports.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
@@ -499,6 +493,12 @@
       "description": "day-to-day",
       "status": "Day-To-Day",
       "team": "COL"
+    },
+    "8484287": {
+      "injured": true,
+      "description": "ir",
+      "status": "Injured Reserve",
+      "team": "TOR"
     },
     "8484797": {
       "injured": true,
