@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:15:15.816Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T14:54:59.275244+00:00",
+  "sourceUpdatedAt": "2026-11-21T15:48:29.569Z",
+  "sourceDescription": "Connor Hrabchak",
+  "cachedAtUTC": "2026-11-21T15:50:16.277760+00:00",
   "forwards": [
     [
       {
@@ -170,34 +170,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mario Ferraro",
-        "number": 38,
+        "name": "Elias Salomonsson",
+        "number": 57,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 27666,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27666/WPG_38__Ferraro.png",
+        "sourcePlayerId": 36380,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
       {
-        "name": "Henry Thrun",
-        "number": 8,
+        "name": "Mario Ferraro",
+        "number": 38,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 30428,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30428/WPG_8_Thrun.png",
+        "sourcePlayerId": 27666,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27666/WPG_38__Ferraro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Tyrel Bauer",
-        "number": 77,
+        "name": "Henry Thrun",
+        "number": 8,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
+        "sourcePlayerId": 30428,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30428/WPG_8_Thrun.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -384,14 +384,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tyrel Bauer",
-        "number": 77,
+        "name": "Elias Salomonsson",
+        "number": 57,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 29948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
+        "sourcePlayerId": 36380,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -446,16 +446,6 @@
       "sourcePlayerId": 2033,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2033/WPG_2_DeMelo.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Elias Salomonsson",
-      "number": 57,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 36380,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

@@ -2,9 +2,9 @@
   "team": "OTT",
   "teamName": "Ottawa Senators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T16:59:45.897Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T14:54:36.508828+00:00",
+  "sourceUpdatedAt": "2026-11-21T15:47:34.970Z",
+  "sourceDescription": "Andrew Wilimek",
+  "cachedAtUTC": "2026-11-21T15:49:53.263728+00:00",
   "forwards": [
     [
       {
@@ -124,14 +124,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tyler Boucher",
-        "number": null,
+        "name": "Nick Cousins",
+        "number": 21,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30972,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30972/OTT_Frnt.png",
+        "sourcePlayerId": 1893,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1893/OTT_21_Cousins.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
