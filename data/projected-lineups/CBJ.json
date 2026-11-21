@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:11:13.145Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T19:50:31.922284+00:00",
+  "sourceUpdatedAt": "2026-11-21T19:13:47.344Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-21T20:45:00.647871+00:00",
   "forwards": [
     [
       {
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Lomberg",
-        "number": 94,
+        "name": "Dmitri Voronkov",
+        "number": 10,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3905,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
+        "sourcePlayerId": 31266,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31266/CBJ_10_Voronkov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,32 +278,32 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Luca Del Bel Belluz",
-        "number": 93,
+        "name": "Dmitri Voronkov",
+        "number": 10,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30880,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Denton Mateychuk",
-        "number": 5,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 31266,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31266/CBJ_10_Voronkov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "Ivan Provorov",
         "number": 9,
-        "position": "SK5",
-        "positionName": "Skater 5",
+        "position": "SK4",
+        "positionName": "Skater 4",
         "sourcePlayerId": 2478,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2478/CBJ_9_Provorov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Luca Del Bel Belluz",
+        "number": 93,
+        "position": "SK5",
+        "positionName": "Skater 5",
+        "sourcePlayerId": 30880,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
