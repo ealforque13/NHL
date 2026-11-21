@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:01:18.173Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T16:49:52.438362+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:25:14.113Z",
+  "sourceDescription": "Benjamin Pierce",
+  "cachedAtUTC": "2026-11-21T17:46:07.821872+00:00",
   "forwards": [
     [
       {
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Gage Goncalves",
-        "number": 93,
+        "name": "Ilya Mikheyev",
+        "number": 95,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 32521,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32521/TBL_93_Goncalves.png",
+        "sourcePlayerId": 30651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30651/TBL_95__Mikheyev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

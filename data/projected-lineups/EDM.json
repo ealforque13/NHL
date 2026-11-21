@@ -2,18 +2,18 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T04:05:56.868Z",
-  "sourceDescription": "Bob Stauffer",
-  "cachedAtUTC": "2026-11-21T16:49:21.427033+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:39:44.056Z",
+  "sourceDescription": "Jack Michaels",
+  "cachedAtUTC": "2026-11-21T17:45:35.937611+00:00",
   "forwards": [
     [
       {
-        "name": "Filip Hallander",
-        "number": 19,
+        "name": "Vasily Podkolzin",
+        "number": 92,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29096,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
+        "sourcePlayerId": 30606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,56 +28,56 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Vasily Podkolzin",
-        "number": 92,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 30606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Leon Draisaitl",
         "number": 29,
-        "position": "C",
-        "positionName": "Center",
+        "position": "RW",
+        "positionName": "Right Wing",
         "sourcePlayerId": 2365,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2365/EDM_29_Draisaitl.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Kasperi Kapanen",
+        "number": 42,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
       },
       {
-        "name": "Mathieu Joseph",
-        "number": 21,
+        "name": "Colton Dach",
+        "number": 34,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 32903,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32903/EDM_34_Dach.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Hyman",
+        "number": 18,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3891,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
+        "sourcePlayerId": 2468,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Colton Dach",
-        "number": 34,
+        "name": "Filip Hallander",
+        "number": 19,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 32903,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32903/EDM_34_Dach.png",
+        "sourcePlayerId": 29096,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Hyman",
-        "number": 18,
+        "name": "Mathieu Joseph",
+        "number": 21,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2468,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
+        "sourcePlayerId": 3891,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -2,9 +2,9 @@
   "team": "NYR",
   "teamName": "New York Rangers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-19T18:06:24.919Z",
-  "sourceDescription": "Mollie Walker",
-  "cachedAtUTC": "2026-11-21T16:49:37.984390+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:24:05.460Z",
+  "sourceDescription": "Andrew Crane",
+  "cachedAtUTC": "2026-11-21T17:45:53.027168+00:00",
   "forwards": [
     [
       {
@@ -92,44 +92,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Bjorkstrand",
-        "number": 28,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2603,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2603/NYR_28__Bjorkstrand.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      }
-    ],
-    [
-      {
         "name": "Jaroslav Chmelar",
         "number": 49,
-        "position": "LW",
-        "positionName": "Left Wing",
+        "position": "RW",
+        "positionName": "Right Wing",
         "sourcePlayerId": 34742,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34742/NYR_49_Chmelar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
-      },
+      }
+    ],
+    [
       {
-        "name": "Luke Glendening",
-        "number": 41,
+        "name": "Glenn Gawdin",
+        "number": null,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2174,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2174/NYR-Front_2024___1_.webp",
+        "sourcePlayerId": 3934,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Matt Rempe",
-        "number": 73,
+        "name": "Taylor Raddysh",
+        "number": 14,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32523,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32523/NYR_73_Rempe.png",
+        "sourcePlayerId": 3922,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3922/NYR_14_Raddysh.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,14 +160,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Braden Schneider",
-        "number": 4,
+        "name": "Sean Durzi",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29483,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29483/NYR_4_Schneider.png",
+        "sourcePlayerId": 27104,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27104/NYR_5__Durzi.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -192,12 +182,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Scott Morrow",
-        "number": 60,
+        "name": "Braden Schneider",
+        "number": 4,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 34620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34620/NYR_60__Morrow.png",
+        "sourcePlayerId": 29483,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29483/NYR_4_Schneider.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,22 +206,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gabriel Perreault",
-        "number": 94,
+        "name": "J.T. Miller",
+        "number": 10,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 35165,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
+        "sourcePlayerId": 1762,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1762/NYR_10__Miller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "J.T. Miller",
-        "number": 10,
+        "name": "Gabriel Perreault",
+        "number": 94,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1762,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1762/NYR_10__Miller.png",
+        "sourcePlayerId": 35165,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,22 +278,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Bjorkstrand",
-        "number": 28,
+        "name": "Sean Durzi",
+        "number": 5,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2603,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2603/NYR_28__Bjorkstrand.png",
+        "sourcePlayerId": 27104,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27104/NYR_5__Durzi.png",
         "injuryStatus": null,
         "gameTimeDecision": true
       },
       {
-        "name": "Adam Fox",
-        "number": 23,
+        "name": "Scott Morrow",
+        "number": 60,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 27251,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27251/NYR_23_Fox.png",
+        "sourcePlayerId": 34620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34620/NYR_60__Morrow.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +387,22 @@
   ],
   "goalies": [
     {
-      "name": "Joonas Korpisalo",
-      "number": 70,
+      "name": "Dylan Garand",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2556,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
+      "sourcePlayerId": 32794,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Dylan Garand",
-      "number": null,
+      "name": "Joonas Korpisalo",
+      "number": 70,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 32794,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
+      "sourcePlayerId": 2556,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -475,7 +465,7 @@
       "positionName": "Injured Reserve 6",
       "sourcePlayerId": 30622,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30622/NYR_16__Dorofeyev.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
@@ -485,7 +475,7 @@
       "positionName": "Injured Reserve 7",
       "sourcePlayerId": 2603,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2603/NYR_28__Bjorkstrand.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

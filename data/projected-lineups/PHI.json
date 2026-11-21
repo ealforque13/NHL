@@ -2,9 +2,9 @@
   "team": "PHI",
   "teamName": "Philadelphia Flyers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T16:59:11.614Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T16:49:42.117917+00:00",
+  "sourceUpdatedAt": "2026-11-21T17:17:23.324Z",
+  "sourceDescription": "Jackie Spiegel",
+  "cachedAtUTC": "2026-11-21T17:45:57.228098+00:00",
   "forwards": [
     [
       {
@@ -18,12 +18,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trevor Zegras",
-        "number": 46,
+        "name": "Christian Dvorak",
+        "number": 22,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 30202,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30202/PHI_46_Zegras.png",
+        "sourcePlayerId": 2682,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,22 +40,22 @@
     ],
     [
       {
-        "name": "Cole Knuble",
-        "number": 54,
+        "name": "Porter Martone",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
+        "sourcePlayerId": 37366,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37366/PHI_94__Martone.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Christian Dvorak",
-        "number": 22,
+        "name": "Denver Barkey",
+        "number": 86,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2682,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2682/PHI_22_Dvorak.png",
+        "sourcePlayerId": 35098,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Porter Martone",
-        "number": null,
+        "name": "Cole Knuble",
+        "number": 54,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 37366,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37366/PHI_94__Martone.png",
+        "sourcePlayerId": 33787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Denver Barkey",
-        "number": 86,
+        "name": "Trevor Zegras",
+        "number": 46,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 35098,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
+        "sourcePlayerId": 30202,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30202/PHI_46_Zegras.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jamie Drysdale",
-        "number": 9,
+        "name": "Rasmus Ristolainen",
+        "number": 55,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29756,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29756/PHI_9_Drysdale.png",
+        "sourcePlayerId": 2140,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Rasmus Ristolainen",
-        "number": 55,
+        "name": "Jamie Drysdale",
+        "number": 9,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2140,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2140/PHI_55_Ristolainen.png",
+        "sourcePlayerId": 29756,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29756/PHI_9_Drysdale.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
