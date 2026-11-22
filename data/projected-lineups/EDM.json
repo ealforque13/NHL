@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T20:25:56.843Z",
-  "sourceDescription": "Edmonton Oilers",
-  "cachedAtUTC": "2026-11-22T21:45:57.863602+00:00",
+  "sourceUpdatedAt": "2026-11-22T22:43:33.610Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-22T22:47:03.234361+00:00",
   "forwards": [
     [
       {
@@ -28,14 +28,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Hyman",
-        "number": 18,
+        "name": "Filip Hallander",
+        "number": 19,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2468,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
+        "sourcePlayerId": 29096,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Filip Hallander",
-        "number": 19,
+        "name": "Trent Frederic",
+        "number": 10,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29096,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
+        "sourcePlayerId": 2662,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2662/EDM_10_Frederic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trent Frederic",
-        "number": 10,
+        "name": "Mathieu Joseph",
+        "number": 21,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2662,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2662/EDM_10_Frederic.png",
+        "sourcePlayerId": 3891,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mathieu Joseph",
-        "number": 21,
+        "name": "Max Jones",
+        "number": 46,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3891,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
+        "sourcePlayerId": 2657,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2657/EDM_46_Jones.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -206,14 +206,14 @@
   "powerPlay": [
     [
       {
-        "name": "Zach Hyman",
-        "number": 18,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2468,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Vasily Podkolzin",
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
+        "name": "Filip Hallander",
+        "number": 19,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
+        "sourcePlayerId": 29096,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

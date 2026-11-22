@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-22T18:33:14.477Z",
   "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-22T21:46:20.790584+00:00",
+  "cachedAtUTC": "2026-11-22T22:47:26.571818+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Declan Carlile",
-        "number": 72,
+        "name": "Spencer Stastney",
+        "number": 24,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 30124,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
+        "sourcePlayerId": 28862,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -332,12 +332,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Declan Carlile",
-        "number": 72,
+        "name": "Trevor van Riemsdyk",
+        "number": 57,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30124,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
+        "sourcePlayerId": 2383,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -374,12 +374,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trevor van Riemsdyk",
-        "number": 57,
+        "name": "Spencer Stastney",
+        "number": 24,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2383,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
+        "sourcePlayerId": 28862,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -465,6 +465,16 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 1236,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Declan Carlile",
+      "number": 72,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 30124,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
