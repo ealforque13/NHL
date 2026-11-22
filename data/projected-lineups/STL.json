@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:41:15.043Z",
-  "sourceDescription": "Matthew DeFranks",
-  "cachedAtUTC": "2026-11-22T17:45:49.618160+00:00",
+  "sourceUpdatedAt": "2026-11-22T18:39:52.031Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-22T18:51:39.607080+00:00",
   "forwards": [
     [
       {
@@ -216,12 +216,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Buchnevich",
-        "number": 89,
+        "name": "Mason McTavish",
+        "number": 83,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2673,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
+        "sourcePlayerId": 30834,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30834/STL_83__McTavish.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,22 +268,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Pavel Buchnevich",
+        "number": 89,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
+        "sourcePlayerId": 2673,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jonatan Berggren",
-        "number": 29,
+        "name": "Dalibor Dvorsky",
+        "number": 15,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -322,48 +322,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jake Neighbours",
-        "number": 63,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 29498,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29498/STL_63_Neighbours.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Philip Broberg",
-        "number": 6,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 30607,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30607/STL_6_Broberg.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Colton Parayko",
-        "number": 55,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 2531,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2531/STL_55_Parayko.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Robert Thomas",
-        "number": 18,
-        "position": "SK1",
-        "positionName": "Skater 1",
-        "sourcePlayerId": 2810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2810/STL_18_Thomas.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Alexey Toropchenko",
         "number": 13,
         "position": "SK2",
@@ -390,6 +348,48 @@
         "positionName": "Skater 4",
         "sourcePlayerId": 2692,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2692/STL_25__Carlo.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Robert Thomas",
+        "number": 18,
+        "position": "SK1",
+        "positionName": "Skater 1",
+        "sourcePlayerId": 2810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2810/STL_18_Thomas.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Pavel Buchnevich",
+        "number": 89,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 2673,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2673/STL_89_Buchnevich.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Philip Broberg",
+        "number": 6,
+        "position": "SK3",
+        "positionName": "Skater 3",
+        "sourcePlayerId": 30607,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30607/STL_6_Broberg.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Colton Parayko",
+        "number": 55,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 2531,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2531/STL_55_Parayko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

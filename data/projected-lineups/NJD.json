@@ -2,9 +2,9 @@
   "team": "NJD",
   "teamName": "New Jersey Devils",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:47:50.586Z",
-  "sourceDescription": "New Jersey Devils",
-  "cachedAtUTC": "2026-11-22T17:45:30.670418+00:00",
+  "sourceUpdatedAt": "2026-11-22T18:41:15.483Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-22T18:51:21.001105+00:00",
   "forwards": [
     [
       {
@@ -312,6 +312,48 @@
   "penaltyKill": [
     [
       {
+        "name": "Cody Glass",
+        "number": 12,
+        "position": "SK1",
+        "positionName": "Skater 1",
+        "sourcePlayerId": 2785,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2785/NJD_12_Glass.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Connor Brown",
+        "number": 16,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 2181,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2181/NJD_16_Brown.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonas Siegenthaler",
+        "number": 71,
+        "position": "SK3",
+        "positionName": "Skater 3",
+        "sourcePlayerId": 3782,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3782/NJD_71_Siegenthaler.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brett Pesce",
+        "number": 22,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 2541,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2541/NJD_22_Pesce.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Nico Hischier",
         "number": 13,
         "position": "SK1",
@@ -332,48 +374,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jonas Siegenthaler",
-        "number": 71,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 3782,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3782/NJD_71_Siegenthaler.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Dougie Hamilton",
-        "number": 7,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 1821,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1821/NJD_7_Hamilton.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Timo Meier",
-        "number": 28,
-        "position": "SK1",
-        "positionName": "Skater 1",
-        "sourcePlayerId": 2480,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2480/NJD_28_Meier.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Arseny Gritsyuk",
-        "number": 81,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 30695,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Brenden Dillon",
         "number": 5,
         "position": "SK3",
@@ -384,12 +384,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brett Pesce",
-        "number": 22,
+        "name": "Dougie Hamilton",
+        "number": 7,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2541,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2541/NJD_22_Pesce.png",
+        "sourcePlayerId": 1821,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1821/NJD_7_Hamilton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

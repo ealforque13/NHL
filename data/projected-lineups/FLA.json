@@ -2,10 +2,42 @@
   "team": "FLA",
   "teamName": "Florida Panthers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T22:38:10.650Z",
+  "sourceUpdatedAt": "2026-11-22T18:30:08.441Z",
   "sourceDescription": "Jameson Olive",
-  "cachedAtUTC": "2026-11-22T17:45:22.354132+00:00",
+  "cachedAtUTC": "2026-11-22T18:51:12.734119+00:00",
   "forwards": [
+    [
+      {
+        "name": "Carter Verhaeghe",
+        "number": 23,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 2818,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2818/FLA_23_Verhaeghe_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aleksander Barkov",
+        "number": 16,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2132,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Sam Reinhart",
+        "number": 13,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2364/FLA_13_Reinhart_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
     [
       {
         "name": "Brady Tkachuk",
@@ -34,38 +66,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 2635,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2635/FLA_19_Tkachuk_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Carter Verhaeghe",
-        "number": 23,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 2818,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2818/FLA_23_Verhaeghe_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Sam Reinhart",
-        "number": 13,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2364,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2364/FLA_13_Reinhart_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Lars Eller",
-        "number": 20,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 840,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Schwindt",
-        "number": 79,
+        "name": "Lars Eller",
+        "number": 20,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 29210,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29210/FLA_79_Schwindt.png",
+        "sourcePlayerId": 840,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -216,42 +216,42 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Reinhart",
-        "number": 13,
+        "name": "Aleksander Barkov",
+        "number": 16,
         "position": "SK2",
         "positionName": "Skater 2",
+        "sourcePlayerId": 2132,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Sam Reinhart",
+        "number": 13,
+        "position": "SK3",
+        "positionName": "Skater 3",
         "sourcePlayerId": 2364,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2364/FLA_13_Reinhart_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Matthew Tkachuk",
-        "number": 19,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 2635,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2635/FLA_19_Tkachuk_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Carter Verhaeghe",
-        "number": 23,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 2818,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2818/FLA_23_Verhaeghe_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Seth Jones",
         "number": 3,
-        "position": "SK5",
-        "positionName": "Skater 5",
+        "position": "SK4",
+        "positionName": "Skater 4",
         "sourcePlayerId": 2137,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2137/FLA_3_Jones_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Matthew Tkachuk",
+        "number": 19,
+        "position": "SK5",
+        "positionName": "Skater 5",
+        "sourcePlayerId": 2635,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2635/FLA_19_Tkachuk_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,32 +278,32 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Lars Eller",
-        "number": 20,
+        "name": "Anton Lundell",
+        "number": 15,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 840,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
+        "sourcePlayerId": 33026,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Carter Verhaeghe",
+        "number": 23,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 2818,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2818/FLA_23_Verhaeghe_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "Aaron Ekblad",
         "number": 5,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 2363,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Anton Lundell",
-        "number": 15,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 33026,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33026/FLA_15_Lundell_2_.png",
+        "sourcePlayerId": 2363,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2363/FLA_5_Ekblad_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -354,14 +354,14 @@
     ],
     [
       {
-        "name": "Lars Eller",
-        "number": 20,
+        "name": "Aleksander Barkov",
+        "number": 16,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 840,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/840/FLA_20_Eller.png",
+        "sourcePlayerId": 2132,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Sam Reinhart",

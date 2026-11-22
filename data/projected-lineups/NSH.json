@@ -2,9 +2,9 @@
   "team": "NSH",
   "teamName": "Nashville Predators",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T22:36:36.881Z",
-  "sourceDescription": "Nick Kieser",
-  "cachedAtUTC": "2026-11-22T17:45:32.811101+00:00",
+  "sourceUpdatedAt": "2026-11-22T18:37:09.167Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-22T18:51:23.056632+00:00",
   "forwards": [
     [
       {
@@ -312,22 +312,22 @@
   "penaltyKill": [
     [
       {
-        "name": "Ryan O'Reilly",
-        "number": 90,
+        "name": "Jack Drury",
+        "number": 18,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 362,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/362/NSH_90_O_Reilly.png",
+        "sourcePlayerId": 27584,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27584/NSH_18__Drury.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Edstrom",
-        "number": 84,
+        "name": "Alex Kerfoot",
+        "number": 14,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 30691,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30691/NSH_84_Edstrom.png",
+        "sourcePlayerId": 2833,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2833/NSH_14__Kerfoot.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,22 +354,22 @@
     ],
     [
       {
-        "name": "Jack Drury",
-        "number": 18,
+        "name": "Ryan O'Reilly",
+        "number": 90,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 27584,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27584/NSH_18__Drury.png",
+        "sourcePlayerId": 362,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/362/NSH_90_O_Reilly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Kerfoot",
-        "number": 14,
+        "name": "Adam Edstrom",
+        "number": 84,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2833,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2833/NSH_14__Kerfoot.png",
+        "sourcePlayerId": 30691,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30691/NSH_84_Edstrom.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

@@ -2,9 +2,9 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T22:35:56.610Z",
-  "sourceDescription": "@penguins",
-  "cachedAtUTC": "2026-11-22T17:45:43.350347+00:00",
+  "sourceUpdatedAt": "2026-11-22T18:33:14.477Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-22T18:51:33.403211+00:00",
   "forwards": [
     [
       {
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Spencer Stastney",
-        "number": 24,
+        "name": "Declan Carlile",
+        "number": 72,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 28862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
+        "sourcePlayerId": 30124,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ville Koivunen",
-        "number": 41,
+        "name": "Egor Chinakhov",
+        "number": 59,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 34677,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
+        "sourcePlayerId": 30655,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30655/PIT_59__Chinakhov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Egor Chinakhov",
-        "number": 59,
+        "name": "Samuel Girard",
+        "number": 49,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 30655,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30655/PIT_59__Chinakhov.png",
+        "sourcePlayerId": 2773,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2773/PIT_49_Girard.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -332,12 +332,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kris Letang",
-        "number": 58,
+        "name": "Declan Carlile",
+        "number": 72,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1233,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1233/PIT_58_Letang.png",
+        "sourcePlayerId": 30124,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -374,12 +374,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Spencer Stastney",
-        "number": 24,
+        "name": "Trevor van Riemsdyk",
+        "number": 57,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 28862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
+        "sourcePlayerId": 2383,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
