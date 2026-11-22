@@ -2,9 +2,9 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:57:47.052Z",
+  "sourceUpdatedAt": "2026-11-22T20:21:41.732Z",
   "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-22T19:52:41.715697+00:00",
+  "cachedAtUTC": "2026-11-22T20:48:40.263554+00:00",
   "forwards": [
     [
       {
@@ -145,7 +145,7 @@
         "sourcePlayerId": 2550,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2550/LAK_64__Gustafsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Brandt Clarke",
@@ -253,7 +253,7 @@
         "sourcePlayerId": 2550,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2550/LAK_64__Gustafsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -435,6 +435,16 @@
       "positionName": "Injured Reserve 2",
       "sourcePlayerId": 2878,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2878/LAK_12_Moore.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Erik Gustafsson",
+      "number": 64,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 2550,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2550/LAK_64__Gustafsson.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
