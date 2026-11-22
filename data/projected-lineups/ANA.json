@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T18:50:36.768Z",
+  "sourceUpdatedAt": "2026-11-22T01:37:52.058Z",
   "sourceDescription": "Zach Cavanagh",
-  "cachedAtUTC": "2026-11-22T01:06:40.893008+00:00",
+  "cachedAtUTC": "2026-11-22T03:27:08.754617+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Colangelo",
-        "number": 12,
+        "name": "Nico Myatovic",
+        "number": 48,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32857,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32857/ANA_12_Colangelo.png",
+        "sourcePlayerId": 31622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31622/ANA_48_Myatovic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Frank Vatrano",
-        "number": 77,
+        "name": "Nico Myatovic",
+        "number": 48,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2545,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
+        "sourcePlayerId": 31622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31622/ANA_48_Myatovic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

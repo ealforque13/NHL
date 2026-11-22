@@ -2,9 +2,9 @@
   "team": "SJS",
   "teamName": "San Jose Sharks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T04:01:23.249Z",
-  "sourceDescription": "Sheng Peng",
-  "cachedAtUTC": "2026-11-22T01:07:28.880453+00:00",
+  "sourceUpdatedAt": "2026-11-22T02:47:18.322Z",
+  "sourceDescription": "Curtis Pashelka",
+  "cachedAtUTC": "2026-11-22T03:28:05.136043+00:00",
   "forwards": [
     [
       {
@@ -160,28 +160,6 @@
     ],
     [
       {
-        "name": "Nolan Allan",
-        "number": 5,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 32541,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32541/SJS_5__Allan.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Sam Dickinson",
-        "number": null,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 37090,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37090/SJS_6__Dickinson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Dmitry Orlov",
         "number": 9,
         "position": "LD",
@@ -198,6 +176,28 @@
         "positionName": "Right Defense",
         "sourcePlayerId": 2099,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2099/SJS_65__Trouba.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Nolan Allan",
+        "number": 5,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 32541,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32541/SJS_5__Allan.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Sam Dickinson",
+        "number": null,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 37090,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37090/SJS_6__Dickinson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

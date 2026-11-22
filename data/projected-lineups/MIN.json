@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T19:43:08.843Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-22T01:07:08.106543+00:00",
+  "sourceUpdatedAt": "2026-11-22T02:50:00.514Z",
+  "sourceDescription": "Joe Smith",
+  "cachedAtUTC": "2026-11-22T03:27:35.687050+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Yakov Trenin",
-        "number": 13,
+        "name": "Maxim Shabanov",
+        "number": 49,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3775,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
+        "sourcePlayerId": 38466,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38466/MIN_49_Shabanov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Maxim Shabanov",
-        "number": 49,
+        "name": "Yakov Trenin",
+        "number": 13,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38466,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38466/MIN_49_Shabanov.png",
+        "sourcePlayerId": 3775,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3775/MIN_13_Trenin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Marcus Foligno",
+        "name": "Nick Foligno",
         "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1689,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1689/MIN_17_Foligno.png",
+        "sourcePlayerId": 1081,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1081/MIN_71_Foligno.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nick Foligno",
+        "name": "Marcus Foligno",
         "number": 17,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1081,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1081/MIN_71_Foligno.png",
+        "sourcePlayerId": 1689,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1689/MIN_17_Foligno.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -148,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jared Spurgeon",
-        "number": 46,
+        "name": "Brock Faber",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1557,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
+        "sourcePlayerId": 30792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Faber",
-        "number": 7,
+        "name": "Jared Spurgeon",
+        "number": 46,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30792/MIN_7_Faber.png",
+        "sourcePlayerId": 1557,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

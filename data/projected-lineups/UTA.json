@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T04:05:12.668Z",
-  "sourceDescription": "Brogan Houston",
-  "cachedAtUTC": "2026-11-22T01:07:37.189099+00:00",
+  "sourceUpdatedAt": "2026-11-22T01:35:12.622Z",
+  "sourceDescription": "Utah Mammoth",
+  "cachedAtUTC": "2026-11-22T03:28:16.286360+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Clayton Keller",
-        "number": 9,
+        "name": "Daniil But",
+        "number": 50,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2642,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
+        "sourcePlayerId": 38459,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Liam O'Brien",
-        "number": 38,
+        "name": "Ben McCartney",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2377,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2377/UTH_38_O_Brien.png",
+        "sourcePlayerId": 28455,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28455/UTH_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Daniil But",
-        "number": 50,
+        "name": "Liam O'Brien",
+        "number": 38,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38459,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
+        "sourcePlayerId": 2377,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2377/UTH_38_O_Brien.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Logan Cooley",
-        "number": 92,
+        "name": "Barrett Hayton",
+        "number": 27,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 33387,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
+        "sourcePlayerId": 4796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4796/UTH_27_Hayton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -246,12 +246,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Clayton Keller",
-        "number": 9,
+        "name": "Logan Cooley",
+        "number": 92,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2642,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
+        "sourcePlayerId": 33387,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Barrett Hayton",
-        "number": 27,
+        "name": "Daniil But",
+        "number": 50,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4796/UTH_27_Hayton.png",
+        "sourcePlayerId": 38459,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -465,6 +465,16 @@
       "positionName": "Injured Reserve 6",
       "sourcePlayerId": 36382,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Clayton Keller",
+      "number": 9,
+      "position": "IR7",
+      "positionName": "Injured Reserve 7",
+      "sourcePlayerId": 2642,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
