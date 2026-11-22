@@ -2,9 +2,9 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T18:33:14.477Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-22T22:47:26.571818+00:00",
+  "sourceUpdatedAt": "2026-11-22T23:39:58.678Z",
+  "sourceDescription": "@penguins",
+  "cachedAtUTC": "2026-11-22T23:46:31.684025+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Andrei Kuzmenko",
-        "number": 10,
+        "name": "Egor Chinakhov",
+        "number": 59,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 25254,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25254/PIT_10__Kuzmenko.png",
+        "sourcePlayerId": 30655,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30655/PIT_59__Chinakhov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Egor Chinakhov",
-        "number": 59,
+        "name": "Avery Hayes",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30655,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30655/PIT_59__Chinakhov.png",
+        "sourcePlayerId": 29767,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29767/PIT_85_Hayes.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Avery Hayes",
-        "number": null,
+        "name": "Justin Brazeau",
+        "number": 15,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29767,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29767/PIT_85_Hayes.png",
+        "sourcePlayerId": 28622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -138,22 +138,22 @@
   "defense": [
     [
       {
-        "name": "Erik Karlsson",
-        "number": 65,
+        "name": "Spencer Stastney",
+        "number": 24,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1087,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1087/PIT_65_Karlsson.png",
+        "sourcePlayerId": 28862,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Kaedan Korczak",
-        "number": 6,
+        "name": "Erik Karlsson",
+        "number": 65,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 28524,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28524/PIT_6__Korczak.png",
+        "sourcePlayerId": 1087,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1087/PIT_65_Karlsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,24 +170,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trevor van Riemsdyk",
-        "number": 57,
+        "name": "Kaedan Korczak",
+        "number": 6,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2383,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
+        "sourcePlayerId": 28524,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28524/PIT_6__Korczak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Spencer Stastney",
-        "number": 24,
+        "name": "Trevor van Riemsdyk",
+        "number": 57,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 28862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
+        "sourcePlayerId": 2383,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Andrei Kuzmenko",
-        "number": 10,
+        "name": "Ville Koivunen",
+        "number": 41,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 25254,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25254/PIT_10__Kuzmenko.png",
+        "sourcePlayerId": 34677,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

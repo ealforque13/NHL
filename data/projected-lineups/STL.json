@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T18:39:52.031Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-22T22:47:33.017253+00:00",
+  "sourceUpdatedAt": "2026-11-22T23:41:54.302Z",
+  "sourceDescription": "Jeremy Rutherford",
+  "cachedAtUTC": "2026-11-22T23:46:37.868047+00:00",
   "forwards": [
     [
       {
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ross Johnston",
-        "number": 49,
+        "name": "Nathan Walker",
+        "number": 26,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3759,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3759/STL_49__Johnston.png",
+        "sourcePlayerId": 2831,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2831/STL_26_Walker.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

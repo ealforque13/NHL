@@ -2,9 +2,9 @@
   "team": "PHI",
   "teamName": "Philadelphia Flyers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:48:23.357Z",
-  "sourceDescription": "Charlie O'Connor",
-  "cachedAtUTC": "2026-11-22T22:47:24.452115+00:00",
+  "sourceUpdatedAt": "2026-11-22T23:25:38.281Z",
+  "sourceDescription": "Jordan Hall",
+  "cachedAtUTC": "2026-11-22T23:46:29.626684+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Porter Martone",
-        "number": null,
+        "name": "Owen Tippett",
+        "number": 74,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 37366,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37366/PHI_94__Martone.png",
+        "sourcePlayerId": 2786,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Owen Tippett",
-        "number": 74,
+        "name": "Porter Martone",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2786,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
+        "sourcePlayerId": 37366,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37366/PHI_94__Martone.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
