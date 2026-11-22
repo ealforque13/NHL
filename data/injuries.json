@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T00:59:10.662160+00:00",
+  "updatedAt": "2026-11-22T07:03:50.110464+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -109,6 +109,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "TOR"
+    },
+    "8476979": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "LAK"
     },
     "8476981": {
       "injured": true,
@@ -235,6 +241,12 @@
       "description": "out",
       "status": "Out",
       "team": "LAK"
+    },
+    "8479343": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "UTA"
     },
     "8479346": {
       "injured": true,
@@ -475,6 +487,12 @@
       "description": "out",
       "status": "Out",
       "team": "COL"
+    },
+    "8484153": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "ANA"
     },
     "8484287": {
       "injured": true,
