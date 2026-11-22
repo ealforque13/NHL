@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T12:49:39.301605+00:00",
+  "updatedAt": "2026-11-22T18:44:00.364292+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -106,7 +106,7 @@
     },
     "8476925": {
       "injured": true,
-      "description": "ir",
+      "description": "Sissons (lower body) is day-to-day, per David Alter of The Hockey News on Sunday.",
       "status": "Injured Reserve",
       "team": "TOR"
     },
@@ -172,8 +172,8 @@
     },
     "8477506": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8477511": {
@@ -208,8 +208,8 @@
     },
     "8478173": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "OTT"
     },
     "8478421": {
@@ -217,6 +217,12 @@
       "description": "Greer (upper body) was placed on injured reserve Monday.",
       "status": "Injured Reserve",
       "team": "ANA"
+    },
+    "8478458": {
+      "injured": true,
+      "description": "Roslovic (upper body) is day-to-day, per David Alter of The Hockey News on Sunday.",
+      "status": "Day-To-Day",
+      "team": "TOR"
     },
     "8478465": {
       "injured": true,
@@ -238,14 +244,14 @@
     },
     "8478550": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8479343": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "UTA"
     },
     "8479346": {
@@ -268,8 +274,8 @@
     },
     "8479675": {
       "injured": true,
-      "description": "Moore (undisclosed) isn't expected to play against Ottawa on Saturday, according to Zach Dooley of LA Kings Insider.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "LAK"
     },
     "8479941": {
@@ -301,12 +307,6 @@
       "description": "Kovacevic (ankle) is expected to be sidelined for 4-6 weeks, per Kristy Flannery of The Hockey News.",
       "status": "Injured Reserve",
       "team": "NJD"
-    },
-    "8480434": {
-      "injured": true,
-      "description": "Durzi (lower body) will likely be a game-time decision for Sunday's matchup against the Hurricanes, Jim Cerny of NHL.com reports.",
-      "status": "Injured Reserve",
-      "team": "NYR"
     },
     "8480748": {
       "injured": true,
@@ -376,8 +376,8 @@
     },
     "8481580": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "STL"
     },
     "8481582": {
@@ -400,8 +400,8 @@
     },
     "8482171": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DET"
     },
     "8482667": {
@@ -478,8 +478,8 @@
     },
     "8484144": {
       "injured": true,
-      "description": "Bedard will undergo surgery on his injured right shoulder in the coming week, Ben Pope of the Chicago Sun-Times reports.",
-      "status": "Out",
+      "description": "Bedard (shoulder) was placed on injured reserve Sunday.",
+      "status": "Injured Reserve",
       "team": "CHI"
     },
     "8484149": {
