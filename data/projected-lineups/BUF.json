@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-21T22:39:00.410Z",
   "sourceDescription": "Rachel Lenzi",
-  "cachedAtUTC": "2026-11-22T11:46:09.389137+00:00",
+  "cachedAtUTC": "2026-11-22T12:55:56.964077+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Alex Lyon",
-      "number": 34,
+      "name": "Ukko-Pekka Luukkonen",
+      "number": 1,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2873,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2873/BUF_34_Lyon.png",
+      "sourcePlayerId": 4783,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4783/BUF_1_Luukkonen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Ukko-Pekka Luukkonen",
-      "number": 1,
+      "name": "Alex Lyon",
+      "number": 34,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 4783,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4783/BUF_1_Luukkonen.png",
+      "sourcePlayerId": 2873,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2873/BUF_34_Lyon.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

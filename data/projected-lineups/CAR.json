@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-21T17:39:12.041Z",
   "sourceDescription": "Walt Ruff",
-  "cachedAtUTC": "2026-11-22T11:46:11.495287+00:00",
+  "cachedAtUTC": "2026-11-22T12:55:59.056940+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Pyotr Kochetkov",
-      "number": 52,
+      "name": "Brandon Bussi",
+      "number": 32,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 30486,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
+      "sourcePlayerId": 30153,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Brandon Bussi",
-      "number": 32,
+      "name": "Pyotr Kochetkov",
+      "number": 52,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 30153,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
+      "sourcePlayerId": 30486,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
