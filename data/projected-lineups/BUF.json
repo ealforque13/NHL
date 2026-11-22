@@ -2,9 +2,9 @@
   "team": "BUF",
   "teamName": "Buffalo Sabres",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T18:27:06.792Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-22T20:48:19.226611+00:00",
+  "sourceUpdatedAt": "2026-11-22T21:38:04.316Z",
+  "sourceDescription": "Rachel Lenzi",
+  "cachedAtUTC": "2026-11-22T21:45:41.199783+00:00",
   "forwards": [
     [
       {
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tyson Kozak",
-        "number": 48,
+        "name": "Ryan McLeod",
+        "number": 71,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 32822,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32822/BUF_48_Kozak_2_.png",
+        "sourcePlayerId": 4810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Metsa",
-        "number": 73,
+        "name": "Louis Crevier",
+        "number": 46,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 28387,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28387/BUF_73__Metsa.png",
+        "sourcePlayerId": 29897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29897/BUF_46_Crevier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -312,12 +312,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Tyson Kozak",
-        "number": 48,
+        "name": "Sam Carrick",
+        "number": 39,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 32822,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32822/BUF_48_Kozak_2_.png",
+        "sourcePlayerId": 1914,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1914/BUF_10_Carrick.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
