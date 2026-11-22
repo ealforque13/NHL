@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:08:34.716Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-21T23:42:45.395757+00:00",
+  "sourceUpdatedAt": "2026-11-21T23:54:41.721Z",
+  "sourceDescription": "Montreal Canadiens",
+  "cachedAtUTC": "2026-11-22T01:07:10.190532+00:00",
   "forwards": [
     [
       {
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Kirby Dach",
-        "number": 77,
+        "name": "Zack Bolduc",
+        "number": 76,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29585,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
+        "sourcePlayerId": 31240,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Owen Beck",
-        "number": null,
+        "name": "Kirby Dach",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33212,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/Beck-Owen_MTL-62_.png",
+        "sourcePlayerId": 29585,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Florian Xhekaj",
-        "number": 63,
+        "name": "Brett Berard",
+        "number": 65,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 37772,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37772/MTL_63__Xhekaj.png",
+        "sourcePlayerId": 30810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brett Berard",
-        "number": 65,
+        "name": "Owen Beck",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
+        "sourcePlayerId": 33212,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/Beck-Owen_MTL-62_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Engstrom",
-        "number": 42,
+        "name": "David Reinbacher",
+        "number": 64,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 36434,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36434/MTL_42__Engstrom.png",
+        "sourcePlayerId": 37747,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37747/MTL_64__Reinbacher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexandre Texier",
-        "number": 85,
+        "name": "Zack Bolduc",
+        "number": 76,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4759,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
+        "sourcePlayerId": 31240,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Engstrom",
-        "number": 42,
+        "name": "Alexandre Texier",
+        "number": 85,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 36434,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36434/MTL_42__Engstrom.png",
+        "sourcePlayerId": 4759,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -466,16 +466,6 @@
       "sourcePlayerId": 2583,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2583/MTL_8_Matheson.png",
       "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Zack Bolduc",
-      "number": 76,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
-      "sourcePlayerId": 31240,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T16:42:14.721Z",
-  "sourceDescription": "Connor Hrabchak",
-  "cachedAtUTC": "2026-11-21T23:43:18.785056+00:00",
+  "sourceUpdatedAt": "2026-11-21T23:44:27.759Z",
+  "sourceDescription": "Mitchell Clinton",
+  "cachedAtUTC": "2026-11-22T01:07:43.392899+00:00",
   "forwards": [
     [
       {
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Tyrel Bauer",
-        "number": 77,
+        "name": "Alex Iafallo",
+        "number": 9,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
+        "sourcePlayerId": 2888,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2888/WPG_9_Iafallo.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Iafallo",
-        "number": 9,
+        "name": "Tyrel Bauer",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2888,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2888/WPG_9_Iafallo.png",
+        "sourcePlayerId": 29948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -177,7 +177,7 @@
         "sourcePlayerId": 36380,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
@@ -391,7 +391,7 @@
         "sourcePlayerId": 36380,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ]
   ],
