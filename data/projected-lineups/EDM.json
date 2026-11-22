@@ -2,9 +2,9 @@
   "team": "EDM",
   "teamName": "Edmonton Oilers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T17:39:44.056Z",
-  "sourceDescription": "Jack Michaels",
-  "cachedAtUTC": "2026-11-22T18:51:10.663824+00:00",
+  "sourceUpdatedAt": "2026-11-22T19:32:36.783Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-22T19:52:37.510722+00:00",
   "forwards": [
     [
       {
@@ -67,7 +67,7 @@
         "sourcePlayerId": 2468,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -213,25 +213,25 @@
         "sourcePlayerId": 2468,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
         "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Vasily Podkolzin",
+        "number": 92,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 30606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
+        "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "Leon Draisaitl",
         "number": 29,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 2365,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2365/EDM_29_Draisaitl.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Vasily Podkolzin",
-        "number": 92,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30606/EDM_92_Podkolzin.png",
+        "sourcePlayerId": 2365,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2365/EDM_29_Draisaitl.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Filip Hallander",
-        "number": 19,
+        "name": "Mattias Ekholm",
+        "number": 14,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 29096,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
+        "sourcePlayerId": 1675,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1675/EDM_14_Ekholm.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -312,22 +312,64 @@
   "penaltyKill": [
     [
       {
-        "name": "Alex Formenton",
-        "number": 26,
+        "name": "Jason Dickinson",
+        "number": 16,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2897/EDM_26_Formenton.png",
+        "sourcePlayerId": 2160,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2160/EDM_16_Dickinson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Connor McDavid",
-        "number": 97,
+        "name": "Mathieu Joseph",
+        "number": 21,
         "position": "SK2",
         "positionName": "Skater 2",
+        "sourcePlayerId": 3891,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Shakir Mukhamadullin",
+        "number": 85,
+        "position": "SK3",
+        "positionName": "Skater 3",
+        "sourcePlayerId": 33038,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33038/EDM_85__Mukhamadullin.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Evan Bouchard",
+        "number": 2,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 4792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4792/EDM_2_Bouchard.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Connor McDavid",
+        "number": 97,
+        "position": "SK1",
+        "positionName": "Skater 1",
         "sourcePlayerId": 2471,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2471/EDM_97_McDavid.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Kasperi Kapanen",
+        "number": 42,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -348,48 +390,6 @@
         "positionName": "Skater 4",
         "sourcePlayerId": 1772,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1772/EDM_5_Murphy.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Kasperi Kapanen",
-        "number": 42,
-        "position": "SK1",
-        "positionName": "Skater 1",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Mathieu Joseph",
-        "number": 21,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 3891,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3891/EDM_21_Joseph.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Mattias Ekholm",
-        "number": 14,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 1675,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1675/EDM_14_Ekholm.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Shakir Mukhamadullin",
-        "number": 85,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 33038,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33038/EDM_85__Mukhamadullin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -465,6 +465,16 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 1733,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1733/EDM_93_Nugent-Hopkins.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Zach Hyman",
+      "number": 18,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 2468,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

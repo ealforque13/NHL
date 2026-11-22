@@ -2,9 +2,9 @@
   "team": "TOR",
   "teamName": "Toronto Maple Leafs",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:51:00.682Z",
-  "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-22T18:51:43.754095+00:00",
+  "sourceUpdatedAt": "2026-11-22T19:16:47.352Z",
+  "sourceDescription": "Terry Koshan",
+  "cachedAtUTC": "2026-11-22T19:53:10.983627+00:00",
   "forwards": [
     [
       {
@@ -35,7 +35,7 @@
         "sourcePlayerId": 2499,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -82,12 +82,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Tverberg",
-        "number": null,
+        "name": "Teddy Blueger",
+        "number": 73,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 32967,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32967/TOR_Frnt.png",
+        "sourcePlayerId": 3798,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3798/TOR_73_Blueger.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Teddy Blueger",
-        "number": 73,
+        "name": "Aatu Raty",
+        "number": 54,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 3798,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3798/TOR_73_Blueger.png",
+        "sourcePlayerId": 34668,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34668/TOR_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -160,12 +160,12 @@
     ],
     [
       {
-        "name": "Morgan Rielly",
-        "number": 44,
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1935,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
+        "sourcePlayerId": 1172,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Dakota Mermis",
-        "number": 36,
+        "name": "Morgan Rielly",
+        "number": 44,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2914,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2914/TOR_36_Mermis.png",
+        "sourcePlayerId": 1935,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1935/TOR_44_Rielly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -305,7 +305,7 @@
         "sourcePlayerId": 2499,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -489,12 +489,12 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Oliver Ekman-Larsson",
-      "number": 95,
+      "name": "Jack Roslovic",
+      "number": 96,
       "position": "IR8",
       "positionName": "Injured Reserve 8",
-      "sourcePlayerId": 1172,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+      "sourcePlayerId": 2499,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
