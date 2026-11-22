@@ -2,9 +2,9 @@
   "team": "CAR",
   "teamName": "Carolina Hurricanes",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T17:39:12.041Z",
-  "sourceDescription": "Walt Ruff",
-  "cachedAtUTC": "2026-11-22T13:59:57.089708+00:00",
+  "sourceUpdatedAt": "2026-11-22T15:28:29.554Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-22T15:48:02.825122+00:00",
   "forwards": [
     [
       {
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Nikolaj Ehlers",
-        "number": 27,
+        "name": "Taylor Hall",
+        "number": 71,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2370,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2370/CAR_27_Ehlers.png",
+        "sourcePlayerId": 537,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/537/CAR_71_Hall.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -104,12 +104,12 @@
     ],
     [
       {
-        "name": "Taylor Hall",
-        "number": 71,
+        "name": "Jesperi Kotkaniemi",
+        "number": 82,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 537,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/537/CAR_71_Hall.png",
+        "sourcePlayerId": 4788,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4788/CAR_82_Kotkaniemi.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -236,12 +236,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikolaj Ehlers",
-        "number": 27,
+        "name": "Seth Jarvis",
+        "number": 24,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2370,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2370/CAR_27_Ehlers.png",
+        "sourcePlayerId": 29549,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29549/CAR_24_Jarvis.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,32 +268,32 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mark Jankowski",
-        "number": 77,
+        "name": "Logan Stankoven",
+        "number": 22,
         "position": "SK2",
         "positionName": "Skater 2",
+        "sourcePlayerId": 34617,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34617/CAR_22_Stankoven.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mark Jankowski",
+        "number": 77,
+        "position": "SK3",
+        "positionName": "Skater 3",
         "sourcePlayerId": 2711,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2711/CAR_77_Jankowski.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Seth Jarvis",
-        "number": 24,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 29549,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29549/CAR_24_Jarvis.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Logan Stankoven",
-        "number": 22,
+        "name": "Sean Walker",
+        "number": 26,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 34617,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34617/CAR_22_Stankoven.png",
+        "sourcePlayerId": 4829,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4829/CAR_26_Walker.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -417,5 +417,16 @@
       "gameTimeDecision": false
     }
   ],
-  "injuries": []
+  "injuries": [
+    {
+      "name": "Nikolaj Ehlers",
+      "number": 27,
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
+      "sourcePlayerId": 2370,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2370/CAR_27_Ehlers.png",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    }
+  ]
 }
