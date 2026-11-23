@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:12:08.395Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T18:06:16.627263+00:00",
+  "sourceUpdatedAt": "2026-11-23T19:03:10.928Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-23T19:07:46.876298+00:00",
   "forwards": [
     [
       {
@@ -104,6 +104,16 @@
     ],
     [
       {
+        "name": "Ryan Lomberg",
+        "number": 94,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3905,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
         "name": "Isac Lundestrom",
         "number": 21,
         "position": "C",
@@ -114,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dmitri Voronkov",
-        "number": 10,
+        "name": "Mikael Pyyhtia",
+        "number": 82,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 31266,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31266/CBJ_10_Voronkov.png",
+        "sourcePlayerId": 36330,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36330/CBJ_82_Pyyhtia.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -160,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dante Fabbro",
-        "number": 15,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -182,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Gudbranson",
-        "number": 44,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1710,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1710/CBJ_44_Gudbranson.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -288,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Damon Severson",
-        "number": 78,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2038,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2038/CBJ_78_Severson.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -364,12 +374,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Gudbranson",
-        "number": 44,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1710,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1710/CBJ_44_Gudbranson.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

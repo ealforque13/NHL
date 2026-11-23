@@ -2,9 +2,9 @@
   "team": "SJS",
   "teamName": "San Jose Sharks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:19:44.447Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T18:07:02.847359+00:00",
+  "sourceUpdatedAt": "2026-11-23T18:38:43.218Z",
+  "sourceDescription": "Curtis Pashelka",
+  "cachedAtUTC": "2026-11-23T19:08:27.483352+00:00",
   "forwards": [
     [
       {
@@ -148,34 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Eric Pohlkamp",
-        "number": null,
+        "name": "Michael Kesselring",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 33798,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Dmitry Orlov",
-        "number": 9,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 1572,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1572/SJS_9_Orlov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jacob Trouba",
-        "number": 65,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 2099,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2099/SJS_65__Trouba.png",
+        "sourcePlayerId": 29644,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29644/SJS_7__Kesselring.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -198,6 +176,28 @@
         "positionName": "Right Defense",
         "sourcePlayerId": 37090,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37090/SJS_6__Dickinson.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Dmitry Orlov",
+        "number": 9,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 1572,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1572/SJS_9_Orlov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Eric Pohlkamp",
+        "number": null,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 33798,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -342,12 +342,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jacob Trouba",
-        "number": 65,
+        "name": "Michael Kesselring",
+        "number": 7,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2099,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2099/SJS_65__Trouba.png",
+        "sourcePlayerId": 29644,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29644/SJS_7__Kesselring.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -374,22 +374,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Dickinson",
-        "number": null,
+        "name": "Nolan Allan",
+        "number": 5,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 37090,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37090/SJS_6__Dickinson.png",
+        "sourcePlayerId": 32541,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32541/SJS_5__Allan.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Nolan Allan",
-        "number": 5,
+        "name": "Sam Dickinson",
+        "number": null,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 32541,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32541/SJS_5__Allan.png",
+        "sourcePlayerId": 37090,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37090/SJS_6__Dickinson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -446,6 +446,16 @@
       "sourcePlayerId": 4675,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4675/SJS_44__Sherwood.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jacob Trouba",
+      "number": 65,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 2099,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2099/SJS_65__Trouba.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
