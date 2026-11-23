@@ -2,9 +2,9 @@
   "team": "MTL",
   "teamName": "Montreal Canadiens",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:54:41.721Z",
-  "sourceDescription": "Montreal Canadiens",
-  "cachedAtUTC": "2026-11-23T01:13:15.387139+00:00",
+  "sourceUpdatedAt": "2026-11-23T02:21:19.723Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-23T02:37:35.226630+00:00",
   "forwards": [
     [
       {
@@ -50,14 +50,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jake Evans",
+        "name": "Dylan Larkin",
         "number": 71,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 4708,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4708/MTL_71_Evans.png",
+        "sourcePlayerId": 2522,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2522/MTL_Frnt.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Juraj Slafkovsky",
@@ -92,34 +92,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kirby Dach",
-        "number": 77,
+        "name": "Oliver Kapanen",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29585,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
+        "sourcePlayerId": 34678,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34678/MTL_91__Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Brett Berard",
-        "number": 65,
+        "name": "Florian Xhekaj",
+        "number": 63,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png",
+        "sourcePlayerId": 37772,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37772/MTL_63__Xhekaj.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Kapanen",
-        "number": null,
+        "name": "Jake Evans",
+        "number": 71,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 34678,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34678/MTL_91__Kapanen.png",
+        "sourcePlayerId": 4708,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4708/MTL_71_Evans.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -129,7 +129,7 @@
         "position": "RW",
         "positionName": "Right Wing",
         "sourcePlayerId": 33212,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/Beck-Owen_MTL-62_.png",
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33212/MTL_62_Beck_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "David Reinbacher",
-        "number": 64,
+        "name": "Adam Engstrom",
+        "number": 42,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 37747,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37747/MTL_64__Reinbacher.png",
+        "sourcePlayerId": 36434,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36434/MTL_42__Engstrom.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -226,14 +226,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zack Bolduc",
-        "number": 76,
+        "name": "Dylan Larkin",
+        "number": 71,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 31240,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
+        "sourcePlayerId": 2522,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2522/MTL_Frnt.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Cole Caufield",
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Kirby Dach",
-        "number": 77,
+        "name": "Alexandre Texier",
+        "number": 85,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 29585,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/MTL_77_Dach.png",
+        "sourcePlayerId": 4759,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alexandre Texier",
-        "number": 85,
+        "name": "Zack Bolduc",
+        "number": 76,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 4759,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4759/MTL_85__Texier.png",
+        "sourcePlayerId": 31240,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -425,16 +425,6 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 38445,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38445/MTL_93_Demidov.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Sam Montembeault",
-      "number": 35,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 4479,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4479/MTL_35_Montembeault.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },

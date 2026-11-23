@@ -2,9 +2,9 @@
   "team": "DET",
   "teamName": "Detroit Red Wings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:47:05.704Z",
-  "sourceDescription": "Ansar Khan",
-  "cachedAtUTC": "2026-11-23T01:13:05.011646+00:00",
+  "sourceUpdatedAt": "2026-11-23T02:36:56.308Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-23T02:37:24.623370+00:00",
   "forwards": [
     [
       {
@@ -14,38 +14,6 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 2699,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2699/DET_93_DeBrincat.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Andrew Copp",
-        "number": 18,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 2457,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2457/DET_18_Copp.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Lucas Raymond",
-        "number": 23,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 31783,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31783/DET_23_Raymond.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Marco Kasper",
-        "number": null,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 36364,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36364/DET_92_Kasper.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,6 +40,38 @@
     ],
     [
       {
+        "name": "Michael Brandsegg-Nygård",
+        "number": null,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 38141,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38141/DET_28_Brandsegg_Nygard.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Andrew Copp",
+        "number": 18,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2457,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2457/DET_18_Copp.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Lucas Raymond",
+        "number": 23,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 31783,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31783/DET_23_Raymond.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Carter Mazur",
         "number": 43,
         "position": "LW",
@@ -82,22 +82,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "J.T. Compher",
-        "number": 37,
+        "name": "Marco Kasper",
+        "number": null,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2751,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2751/DET_37_Compher.png",
+        "sourcePlayerId": 36364,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36364/DET_92_Kasper.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Brandsegg-Nygård",
-        "number": null,
+        "name": "Kirby Dach",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38141,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38141/DET_28_Brandsegg_Nygard.png",
+        "sourcePlayerId": 29585,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -114,12 +114,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sheldon Dries",
-        "number": 15,
+        "name": "J.T. Compher",
+        "number": 37,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 4826,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4826/DET_15__Dries.png",
+        "sourcePlayerId": 2751,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2751/DET_37_Compher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -419,20 +419,10 @@
   ],
   "injuries": [
     {
-      "name": "Dylan Larkin",
-      "number": 71,
-      "position": "IR1",
-      "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 2522,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2522/DET_71_Larkin.png",
-      "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Simon Edvinsson",
       "number": 77,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
       "sourcePlayerId": 34667,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34667/DET_77_Edvinsson.png",
       "injuryStatus": "out",
@@ -441,11 +431,21 @@
     {
       "name": "William Wallinder",
       "number": 54,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 33029,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33029/DET_54__Wallinder.png",
       "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Sam Montembeault",
+      "number": 35,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 4479,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4479/DET_Frnt.png",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     }
   ]
