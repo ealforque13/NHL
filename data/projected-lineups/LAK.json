@@ -2,9 +2,9 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T16:55:38.585Z",
+  "sourceUpdatedAt": "2026-11-23T17:42:45.791Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-23T17:06:50.411900+00:00",
+  "cachedAtUTC": "2026-11-23T18:06:35.124356+00:00",
   "forwards": [
     [
       {
@@ -72,14 +72,14 @@
     ],
     [
       {
-        "name": "Andre Lee",
-        "number": null,
+        "name": "Trevor Moore",
+        "number": 12,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30215,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
+        "sourcePlayerId": 2878,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2878/LAK_12_Moore.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Erik Haula",
@@ -104,22 +104,22 @@
     ],
     [
       {
-        "name": "Scott Laughton",
-        "number": 21,
+        "name": "Andre Lee",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2018,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2018/LAK_21_Laughton.png",
+        "sourcePlayerId": 30215,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Samuel Helenius",
-        "number": null,
+        "name": "Scott Laughton",
+        "number": 21,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 34674,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34674/LAK_79_Helenius.png",
+        "sourcePlayerId": 2018,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2018/LAK_21_Laughton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,14 +364,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Andre Lee",
-        "number": null,
+        "name": "Trevor Moore",
+        "number": 12,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 30215,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
+        "sourcePlayerId": 2878,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2878/LAK_12_Moore.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Joel Edmundson",

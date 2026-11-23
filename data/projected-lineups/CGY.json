@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:15:22.689Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T17:06:35.819673+00:00",
+  "sourceUpdatedAt": "2026-11-23T17:37:22.351Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-23T18:06:19.221007+00:00",
   "forwards": [
     [
       {
@@ -50,22 +50,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Martin Pospisil",
-        "number": 76,
+        "name": "Ryan Strome",
+        "number": 16,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 28414,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28414/CGY_76_Pospisil.png",
+        "sourcePlayerId": 1825,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1825/CGY_22_Strome.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Strome",
-        "number": 16,
+        "name": "Aydar Suniev",
+        "number": 61,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1825,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1825/CGY_22_Strome.png",
+        "sourcePlayerId": 34016,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Aydar Suniev",
-        "number": 61,
+        "name": "Sam Morton",
+        "number": 45,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 34016,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
+        "sourcePlayerId": 38092,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38092/CGY_45__Morton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -436,6 +436,16 @@
       "sourcePlayerId": 1798,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1798/CGY_10_Huberdeau.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Martin Pospisil",
+      "number": 76,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 28414,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28414/CGY_76_Pospisil.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

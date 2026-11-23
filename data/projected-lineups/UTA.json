@@ -2,9 +2,9 @@
   "team": "UTA",
   "teamName": "Utah Mammoth",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:17:16.092Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T17:07:21.574755+00:00",
+  "sourceUpdatedAt": "2026-11-23T17:53:32.614Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-23T18:07:12.140511+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Daniil But",
-        "number": 50,
+        "name": "Clayton Keller",
+        "number": 9,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38459,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
+        "sourcePlayerId": 2642,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Michael Carcone",
-        "number": 53,
+        "name": "Lawson Crouse",
+        "number": 67,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3864,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3864/UTA_53_Carcone.png",
+        "sourcePlayerId": 2476,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2476/UTH_67_Crouse.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Lawson Crouse",
-        "number": 67,
+        "name": "Daniil But",
+        "number": 50,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2476,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2476/UTH_67_Crouse.png",
+        "sourcePlayerId": 38459,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Barrett Hayton",
-        "number": 27,
+        "name": "Clayton Keller",
+        "number": 9,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4796/UTH_27_Hayton.png",
+        "sourcePlayerId": 2642,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -268,22 +268,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Lawson Crouse",
-        "number": 67,
+        "name": "Barrett Hayton",
+        "number": 27,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2476,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2476/UTH_67_Crouse.png",
+        "sourcePlayerId": 4796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4796/UTH_27_Hayton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Daniil But",
-        "number": 50,
+        "name": "Lawson Crouse",
+        "number": 67,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 38459,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
+        "sourcePlayerId": 2476,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2476/UTH_67_Crouse.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Carcone",
-        "number": 53,
+        "name": "Daniil But",
+        "number": 50,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 3864,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3864/UTA_53_Carcone.png",
+        "sourcePlayerId": 38459,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38459/UTA_50_But.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -451,8 +451,8 @@
     {
       "name": "Nick Schmaltz",
       "number": 8,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
       "sourcePlayerId": 2678,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2678/UTH_8_Schmaltz.png",
       "injuryStatus": "dtd",
@@ -461,21 +461,21 @@
     {
       "name": "Artem Duda",
       "number": null,
-      "position": "IR6",
-      "positionName": "Injured Reserve 6",
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
       "sourcePlayerId": 36382,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {
-      "name": "Clayton Keller",
-      "number": 9,
-      "position": "IR7",
-      "positionName": "Injured Reserve 7",
-      "sourcePlayerId": 2642,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
-      "injuryStatus": "dtd",
+      "name": "Michael Carcone",
+      "number": 53,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 3864,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3864/UTA_53_Carcone.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]
