@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-22T20:21:41.732Z",
   "sourceDescription": "Zach Dooley",
-  "cachedAtUTC": "2026-11-23T12:38:33.394167+00:00",
+  "cachedAtUTC": "2026-11-23T14:29:47.151257+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Anton Forsberg",
-      "number": 31,
+      "name": "Darcy Kuemper",
+      "number": 35,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2394,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2394/LAK_31_Forsberg.png",
+      "sourcePlayerId": 1692,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1692/LAK_35_Kuemper.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Darcy Kuemper",
-      "number": 35,
+      "name": "Anton Forsberg",
+      "number": 31,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1692,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1692/LAK_35_Kuemper.png",
+      "sourcePlayerId": 2394,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2394/LAK_31_Forsberg.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
