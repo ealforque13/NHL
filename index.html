@@ -7095,6 +7095,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
   let customMode = false;
   let customRoster = [];
+  let customRosterPositions = new Map();
   let activeCustomSlot = null;
   const customStorageKey = team => `hoist-custom-lineup-v1-${team}`;
   const emptyCustom = () => Object.fromEntries(Object.entries(counts).map(([key,n]) => [key,Array.from({length:n},()=>Array(labels[key].length).fill(null))]));
@@ -7128,20 +7129,50 @@ document.addEventListener('DOMContentLoaded', function () {
       return true;
     }).sort((a,b) => String(a.name).localeCompare(String(b.name)));
   }
+  function rosterCategory(p, source = '') {
+    const value = String(p?.positionCode || p?.position || p?.positionAbbrev || p?.primaryPosition?.abbreviation || '').trim().toUpperCase();
+    if (['G','GK','GOALIE','GOALTENDER'].includes(value)) return 'G';
+    if (['D','LD','RD','DEFENSE','DEFENCE','DEFENSEMAN','DEFENCEMAN'].includes(value)) return 'D';
+    if (['F','C','LW','RW','L','R','CENTER','CENTRE','LEFT WING','RIGHT WING','FORWARD'].includes(value)) return 'F';
+    if (source === 'forwards') return 'F';
+    if (source === 'defense' || source === 'defensemen') return 'D';
+    if (source === 'goalies') return 'G';
+    return injuryPositions.get(normalize(p?.name)) || '';
+  }
   function flattenRoster(data) {
     if (!data) return [];
     const out = [];
-    for (const key of Object.keys(counts)) {
+    // Primary positions are authoritative; special teams can include both F and D.
+    for (const key of ['forwards','defense','defensemen','goalies','powerPlay','penaltyKill']) {
       const group = data[key];
       if (!Array.isArray(group)) continue;
       for (const entry of group) {
         for (const p of (Array.isArray(entry) ? entry : [entry])) {
-          if (p && typeof p === 'object' && p.name) out.push(p);
+          if (!p || typeof p !== 'object' || !p.name) continue;
+          const category = rosterCategory(p,key);
+          if (category && (key === 'forwards' || key === 'defense' || key === 'defensemen' || key === 'goalies' || !customRosterPositions.has(normalize(p.name)))) {
+            customRosterPositions.set(normalize(p.name),category);
+          }
+          out.push(p);
         }
       }
     }
-    if (Array.isArray(data.injuries)) out.push(...data.injuries);
+    if (Array.isArray(data.injuries)) {
+      for (const p of data.injuries) {
+        if (!p || !p.name) continue;
+        const category = rosterCategory(p);
+        if (category) customRosterPositions.set(normalize(p.name),category);
+        out.push(p);
+      }
+    }
     return out;
+  }
+  function customEligible(p) {
+    const category = customRosterPositions.get(normalize(p.name)) || rosterCategory(p);
+    if (position === 'forwards') return category === 'F';
+    if (position === 'defense') return category === 'D';
+    if (position === 'goalies') return category === 'G';
+    return category === 'F' || category === 'D';
   }
   function blankPlayerMarkup(role, i, j) {
     const slot = custom[position]?.[i]?.[j] || null;
@@ -7189,7 +7220,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (const rows of Object.values(custom)) for (const row of rows) for (const p of row) if (p) used.add(normalize(p.name));
     const active = activeCustomSlot && custom[activeCustomSlot.position]?.[activeCustomSlot.row]?.[activeCustomSlot.col];
     if (active) used.delete(normalize(active.name));
-    const available = customRoster.filter(p => !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term)));
+    const available = customRoster.filter(p => customEligible(p) && !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term)));
     const options = available.map((p,i) => {
       const pic = photoFor(p.name,p);
       const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? '';
@@ -7392,6 +7423,7 @@ document.addEventListener('DOMContentLoaded', function () {
     lineup = null;
     headshots = new Map();
     customRoster = [];
+    customRosterPositions.clear();
     injuryPositions.clear();
     custom = readCustom();
     syncCustomMode();
@@ -7425,6 +7457,23 @@ document.addEventListener('DOMContentLoaded', function () {
       if (token !== requestId) return;
       customRoster = uniqueRoster([...customRoster,...flattenRoster(rosterData)]);
     } catch (_) {}
+    try {
+      const official = await fetchJson(`./data/rosters/${encodeURIComponent(selected)}.json`);
+      if (token !== requestId) return;
+      const officialPlayers = [];
+      for (const [group,category] of [['forwards','F'],['defensemen','D'],['goalies','G']]) {
+        for (const p of official[group] || []) {
+          const first = typeof p.firstName === 'object' ? p.firstName?.default : p.firstName;
+          const last = typeof p.lastName === 'object' ? p.lastName?.default : p.lastName;
+          const name = `${first || ''} ${last || ''}`.trim();
+          if (!name) continue;
+          customRosterPositions.set(normalize(name),category);
+          officialPlayers.push({name,number:p.sweaterNumber ?? p.number ?? '',position:p.positionCode || category,id:p.id || p.playerId,headshot:p.headshot});
+        }
+      }
+      // Prefer the richer lineup entry where available, but include everyone on the official roster.
+      customRoster = uniqueRoster([...customRoster,...officialPlayers]);
+    } catch (_) { /* Fall back to cached lineups and their position information. */ }
     const isRoster = data.type === 'roster';
     el('hoist-lineup-badge').textContent = isRoster ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
     const updated = data.sourceUpdatedAt || data.updatedAt || data.cachedAtUTC || '';
