@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T20:21:01.909Z",
-  "sourceDescription": "Zach Cavanagh",
-  "cachedAtUTC": "2026-11-23T14:29:20.818992+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:16:37.916Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T15:41:50.575100+00:00",
   "forwards": [
     [
       {
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nico Myatovic",
-        "number": 48,
+        "name": "Frank Vatrano",
+        "number": 77,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 31622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31622/ANA_48_Myatovic.png",
+        "sourcePlayerId": 2545,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

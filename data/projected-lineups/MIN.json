@@ -2,9 +2,9 @@
   "team": "MIN",
   "teamName": "Minnesota Wild",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T02:50:00.514Z",
-  "sourceDescription": "Joe Smith",
-  "cachedAtUTC": "2026-11-23T14:29:49.364545+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:18:13.262Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T15:42:17.796678+00:00",
   "forwards": [
     [
       {
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "David Spacek",
-        "number": 82,
+        "name": "Jared Spurgeon",
+        "number": 46,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 34724,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34724/MIN_82__Spacek.png",
+        "sourcePlayerId": 1557,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1557/MIN_46_Spurgeon.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

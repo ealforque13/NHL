@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-22T23:25:38.281Z",
   "sourceDescription": "Jordan Hall",
-  "cachedAtUTC": "2026-11-23T14:30:04.733709+00:00",
+  "cachedAtUTC": "2026-11-23T15:42:32.380725+00:00",
   "forwards": [
     [
       {
@@ -322,12 +322,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noel Acciari",
-        "number": 52,
+        "name": "Noah Cates",
+        "number": 27,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2589,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2589/PHI_52__Acciari.png",
+        "sourcePlayerId": 28087,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28087/PHI_27_Cates.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -354,12 +354,12 @@
     ],
     [
       {
-        "name": "Noah Cates",
-        "number": 27,
+        "name": "Tyson Foerster",
+        "number": 71,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28087,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28087/PHI_27_Cates.png",
+        "sourcePlayerId": 29750,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29750/PHI_71_Foerster.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

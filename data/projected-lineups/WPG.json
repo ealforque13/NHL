@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T23:44:27.759Z",
-  "sourceDescription": "Mitchell Clinton",
-  "cachedAtUTC": "2026-11-23T14:30:26.425703+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:07:32.226Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T15:42:53.323089+00:00",
   "forwards": [
     [
       {
@@ -120,16 +120,6 @@
         "positionName": "Center",
         "sourcePlayerId": 30843,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30843/WPG_Frnt.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Tyrel Bauer",
-        "number": 77,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 29948,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

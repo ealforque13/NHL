@@ -4,7 +4,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-22T23:24:10.415Z",
   "sourceDescription": "Belle Fraser",
-  "cachedAtUTC": "2026-11-23T14:29:22.986922+00:00",
+  "cachedAtUTC": "2026-11-23T15:41:52.693886+00:00",
   "forwards": [
     [
       {
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Marat Khusnutdinov",
-        "number": 92,
+        "name": "Matthew Poitras",
+        "number": 51,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 31738,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
+        "sourcePlayerId": 33196,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33196/BOS_51_Poitras.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -312,12 +312,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Elias Lindholm",
-        "number": 28,
+        "name": "Mark Kastelic",
+        "number": 47,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2133,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2133/BOS_28_Lindholm.png",
+        "sourcePlayerId": 2904,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2904/BOS_47_Kastelic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -364,22 +364,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mark Kastelic",
-        "number": 47,
+        "name": "Marat Khusnutdinov",
+        "number": 92,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2904,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2904/BOS_47_Kastelic.png",
+        "sourcePlayerId": 31738,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Hampus Lindholm",
-        "number": 27,
+        "name": "Charlie McAvoy",
+        "number": 73,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1947,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1947/BOS_27_Lindholm.png",
+        "sourcePlayerId": 2645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2645/BOS_73_McAvoy.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

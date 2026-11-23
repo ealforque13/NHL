@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-21T20:47:02.481Z",
-  "sourceDescription": "@BlueJacketsNHL",
-  "cachedAtUTC": "2026-11-23T14:29:29.621730+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:12:08.395Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T15:41:58.947927+00:00",
   "forwards": [
     [
       {
@@ -103,16 +103,6 @@
       }
     ],
     [
-      {
-        "name": "Steven Lorentz",
-        "number": 18,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 3916,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3916/CBJ_18__Lorentz.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
       {
         "name": "Isac Lundestrom",
         "number": 21,
@@ -278,12 +268,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dmitri Voronkov",
-        "number": 10,
+        "name": "Luca Del Bel Belluz",
+        "number": 93,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 31266,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31266/CBJ_10_Voronkov.png",
+        "sourcePlayerId": 30880,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Luca Del Bel Belluz",
-        "number": 93,
+        "name": "Damon Severson",
+        "number": 78,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 30880,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30880/CBJ_93_Del_Bel_Belluz.png",
+        "sourcePlayerId": 2038,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2038/CBJ_78_Severson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
