@@ -5614,6 +5614,20 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   }
 }
 </style>
+<style id="hoist-mobile-lineups-vertical-spacing">
+/* Mobile only: bring lineup rows closer together without changing player spacing. */
+@media (max-width:650px) {
+  html body #lineups .hoist-lineup-content {
+    gap:4px !important;
+  }
+  html body #lineups .hoist-lineup-group {
+    padding-top:6px !important;
+    padding-bottom:8px !important;
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+  }
+}
+</style>
 </head>
 
 <body>
