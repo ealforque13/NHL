@@ -2,9 +2,9 @@
   "team": "NYR",
   "teamName": "New York Rangers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T17:08:25.569Z",
-  "sourceDescription": "Jonny Lazarus",
-  "cachedAtUTC": "2026-11-23T15:42:28.217235+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:44:12.630Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T17:07:02.895265+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Dylan Garand",
-      "number": null,
+      "name": "Joonas Korpisalo",
+      "number": 70,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 32794,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
+      "sourcePlayerId": 2556,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Joonas Korpisalo",
-      "number": 70,
+      "name": "Dylan Garand",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2556,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
+      "sourcePlayerId": 32794,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

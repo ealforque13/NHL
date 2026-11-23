@@ -2,9 +2,9 @@
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T21:36:47.662Z",
-  "sourceDescription": "Benjamin Pierce",
-  "cachedAtUTC": "2026-11-23T15:42:42.823972+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:45:37.269Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T17:07:17.414691+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Dennis Hildeby",
-      "number": null,
+      "name": "Andrei Vasilevskiy",
+      "number": 88,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 36477,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36477/TBL_35__Hildeby.png",
+      "sourcePlayerId": 2413,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2413/TBL_88_Vasilevskiy.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Andrei Vasilevskiy",
-      "number": 88,
+      "name": "Dennis Hildeby",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2413,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2413/TBL_88_Vasilevskiy.png",
+      "sourcePlayerId": 36477,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36477/TBL_35__Hildeby.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

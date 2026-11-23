@@ -2,9 +2,9 @@
   "team": "CAR",
   "teamName": "Carolina Hurricanes",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T17:09:24.695Z",
-  "sourceDescription": "Walt Ruff",
-  "cachedAtUTC": "2026-11-23T15:41:56.841823+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:43:23.013Z",
+  "sourceDescription": "Last Game (2026-11-21)",
+  "cachedAtUTC": "2026-11-23T17:06:31.659201+00:00",
   "forwards": [
     [
       {
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Brandon Bussi",
-      "number": 32,
+      "name": "Pyotr Kochetkov",
+      "number": 52,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 30153,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
+      "sourcePlayerId": 30486,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Pyotr Kochetkov",
-      "number": 52,
+      "name": "Brandon Bussi",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 30486,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
+      "sourcePlayerId": 30153,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

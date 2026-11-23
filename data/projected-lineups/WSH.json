@@ -2,9 +2,9 @@
   "team": "WSH",
   "teamName": "Washington Capitals",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:06:14.910Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T15:42:55.408397+00:00",
+  "sourceUpdatedAt": "2026-11-23T16:22:23.167Z",
+  "sourceDescription": "Sammi Silber",
+  "cachedAtUTC": "2026-11-23T17:07:29.900858+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Tuch",
-        "number": 89,
+        "name": "Tom Wilson",
+        "number": 43,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2739,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2739/WSH_89_Tuch.png",
+        "sourcePlayerId": 1930,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1930/WSH_43_Wilson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -60,24 +60,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Leonard",
-        "number": 9,
+        "name": "Anthony Beauvillier",
+        "number": 72,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 35645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35645/WSH_9_Leonard.png",
+        "sourcePlayerId": 2487,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2487/WSH_72_Beauvillier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Jordan Kyrou",
-        "number": 25,
+        "name": "Ryan Leonard",
+        "number": 9,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3867,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
+        "sourcePlayerId": 35645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35645/WSH_9_Leonard.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Sourdif",
-        "number": 34,
+        "name": "Alex Tuch",
+        "number": 89,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29606/WSH_34_Sourdif.png",
+        "sourcePlayerId": 2739,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2739/WSH_89_Tuch.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Ivan Miroshnichenko",
-        "number": 63,
+        "name": "Justin Sourdif",
+        "number": 34,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33184,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33184/WSH_63__Miroshnichenko.png",
+        "sourcePlayerId": 29606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29606/WSH_34_Sourdif.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tom Wilson",
-        "number": 43,
+        "name": "Ivan Miroshnichenko",
+        "number": 63,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1930,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1930/WSH_43_Wilson.png",
+        "sourcePlayerId": 33184,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33184/WSH_63__Miroshnichenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,14 +170,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Holl",
-        "number": 3,
+        "name": "Vincent Desharnais",
+        "number": 73,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2857,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2857/WSH_Frnt.webp",
+        "sourcePlayerId": 25716,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25716/WSH_73__Desharnais.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -226,12 +226,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jordan Kyrou",
-        "number": 25,
+        "name": "Alex Tuch",
+        "number": 89,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 3867,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
+        "sourcePlayerId": 2739,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2739/WSH_89_Tuch.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Tuch",
-        "number": 89,
+        "name": "Ivan Miroshnichenko",
+        "number": 63,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2739,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2739/WSH_89_Tuch.png",
+        "sourcePlayerId": 33184,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33184/WSH_63__Miroshnichenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -374,14 +374,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Holl",
-        "number": 3,
+        "name": "Vincent Desharnais",
+        "number": 73,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2857,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2857/WSH_Frnt.webp",
+        "sourcePlayerId": 25716,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25716/WSH_73__Desharnais.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Jack St. Ivany",
@@ -436,6 +436,16 @@
       "sourcePlayerId": 25716,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25716/WSH_73__Desharnais.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Jordan Kyrou",
+      "number": 25,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 3867,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

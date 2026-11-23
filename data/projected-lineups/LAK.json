@@ -2,18 +2,18 @@
   "team": "LAK",
   "teamName": "Los Angeles Kings",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:09:44.385Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T15:42:15.728815+00:00",
+  "sourceUpdatedAt": "2026-11-23T16:55:38.585Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-23T17:06:50.411900+00:00",
   "forwards": [
     [
       {
-        "name": "Andre Lee",
-        "number": null,
+        "name": "Artemi Panarin",
+        "number": 10,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30215,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
+        "sourcePlayerId": 2519,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Alex Turcotte",
-        "number": 15,
+        "name": "Andre Lee",
+        "number": null,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30420,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30420/LAK_15_Turcotte.png",
+        "sourcePlayerId": 30215,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30215/LAK_47_Lee.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -138,28 +138,6 @@
   "defense": [
     [
       {
-        "name": "Erik Gustafsson",
-        "number": 64,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 2550,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2550/LAK_64__Gustafsson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": true
-      },
-      {
-        "name": "Brandt Clarke",
-        "number": 92,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 30833,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30833/LAK_92_Clarke.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Joel Edmundson",
         "number": 6,
         "position": "LD",
@@ -170,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Drew Doughty",
-        "number": 8,
+        "name": "Brandt Clarke",
+        "number": 92,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 744,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/744/LAK_8_Doughty.png",
+        "sourcePlayerId": 30833,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30833/LAK_92_Clarke.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +170,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brian Dumoulin",
-        "number": 2,
+        "name": "Drew Doughty",
+        "number": 8,
         "position": "RD",
         "positionName": "Right Defense",
+        "sourcePlayerId": 744,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/744/LAK_8_Doughty.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Brian Dumoulin",
+        "number": 2,
+        "position": "LD",
+        "positionName": "Left Defense",
         "sourcePlayerId": 1928,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1928/LAK_2_Dumoulin.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cody Ceci",
+        "number": 44,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 2052,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2052/LAK_5_Ceci.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -206,12 +206,12 @@
   "powerPlay": [
     [
       {
-        "name": "Mats Zuccarello",
-        "number": 36,
+        "name": "Adrian Kempe",
+        "number": 9,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1065,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1065/LAK_36__Zuccarello.png",
+        "sourcePlayerId": 2747,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2747/LAK_9_Kempe.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -236,34 +236,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adrian Kempe",
-        "number": 9,
+        "name": "Artemi Panarin",
+        "number": 10,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2747,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2747/LAK_9_Kempe.png",
+        "sourcePlayerId": 2519,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Erik Gustafsson",
-        "number": 64,
+        "name": "Brandt Clarke",
+        "number": 92,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2550,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2550/LAK_64__Gustafsson.png",
+        "sourcePlayerId": 30833,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30833/LAK_92_Clarke.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Kevin Fiala",
-        "number": 22,
+        "name": "Mats Zuccarello",
+        "number": 36,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2455,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2455/LAK_22_Fiala.png",
+        "sourcePlayerId": 1065,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1065/LAK_36__Zuccarello.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +288,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brandt Clarke",
-        "number": 92,
+        "name": "Kevin Fiala",
+        "number": 22,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 30833,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30833/LAK_92_Clarke.png",
+        "sourcePlayerId": 2455,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2455/LAK_22_Fiala.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -418,16 +418,6 @@
     }
   ],
   "injuries": [
-    {
-      "name": "Artemi Panarin",
-      "number": 10,
-      "position": "IR1",
-      "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 2519,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2519/LAK_10_Panarin.png",
-      "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
     {
       "name": "Trevor Moore",
       "number": 12,

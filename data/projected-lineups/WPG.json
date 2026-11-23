@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:07:32.226Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-23T15:42:53.323089+00:00",
+  "sourceUpdatedAt": "2026-11-23T16:19:20.531Z",
+  "sourceDescription": "Mike McIntyre",
+  "cachedAtUTC": "2026-11-23T17:07:27.824012+00:00",
   "forwards": [
     [
       {
@@ -122,6 +122,16 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30843/WPG_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      },
+      {
+        "name": "Tyrel Bauer",
+        "number": 77,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 29948,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29948/WPG_77__Bauer.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
       }
     ]
   ],
@@ -138,12 +148,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Neal Pionk",
-        "number": 4,
+        "name": "Elias Salomonsson",
+        "number": 57,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 4545,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4545/WPG_4_Pionk.png",
+        "sourcePlayerId": 36380,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -160,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Elias Salomonsson",
-        "number": 57,
+        "name": "Neal Pionk",
+        "number": 4,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 36380,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36380/WPG_57__Salomonsson.png",
+        "sourcePlayerId": 4545,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4545/WPG_4_Pionk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

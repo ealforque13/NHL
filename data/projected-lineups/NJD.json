@@ -2,18 +2,18 @@
   "team": "NJD",
   "teamName": "New Jersey Devils",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T18:41:15.483Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-23T15:42:21.962412+00:00",
+  "sourceUpdatedAt": "2026-11-23T16:20:53.225Z",
+  "sourceDescription": "Amanda Stein",
+  "cachedAtUTC": "2026-11-23T17:06:56.639614+00:00",
   "forwards": [
     [
       {
-        "name": "Arseny Gritsyuk",
-        "number": 81,
+        "name": "Timo Meier",
+        "number": 28,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30695,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
+        "sourcePlayerId": 2480,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2480/NJD_28_Meier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,24 +28,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jesper Bratt",
-        "number": 63,
+        "name": "Connor Brown",
+        "number": 16,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2845,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2845/NJD_63_Bratt.png",
+        "sourcePlayerId": 2181,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2181/NJD_16_Brown.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Timo Meier",
-        "number": 28,
+        "name": "Arseny Gritsyuk",
+        "number": 81,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2480,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2480/NJD_28_Meier.png",
+        "sourcePlayerId": 30695,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Luke Evangelista",
-        "number": 77,
+        "name": "Jesper Bratt",
+        "number": 63,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29787/NJD_77__Evangelista.png",
+        "sourcePlayerId": 2845,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2845/NJD_63_Bratt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -92,12 +92,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Connor Brown",
-        "number": 16,
+        "name": "Luke Evangelista",
+        "number": 77,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2181,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2181/NJD_16_Brown.png",
+        "sourcePlayerId": 29787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29787/NJD_77__Evangelista.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Lenni Hameenaho",
-        "number": 29,
+        "name": "Stefan Noesen",
+        "number": 11,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38454,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38454/NJD_29__Hameenaho.png",
+        "sourcePlayerId": 1842,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1842/NJD_11_Noesen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

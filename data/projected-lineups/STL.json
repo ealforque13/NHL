@@ -2,9 +2,9 @@
   "team": "STL",
   "teamName": "St Louis Blues",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T23:41:54.302Z",
-  "sourceDescription": "Jeremy Rutherford",
-  "cachedAtUTC": "2026-11-23T15:42:40.721201+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:47:35.711Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-23T17:07:15.328979+00:00",
   "forwards": [
     [
       {
@@ -50,38 +50,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mason McTavish",
-        "number": 83,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 30834,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30834/STL_83__McTavish.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 35010,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Aleksanteri Kaskimaki",
-        "number": null,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 36379,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36379/STL_41__Kaskimaki.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Pavel Buchnevich",
         "number": 89,
         "position": "C",
@@ -98,6 +66,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 29107,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Aleksanteri Kaskimaki",
+        "number": null,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 36379,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36379/STL_41__Kaskimaki.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Mason McTavish",
+        "number": 83,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 30834,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30834/STL_83__McTavish.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dalibor Dvorsky",
+        "number": 15,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 35010,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,10 +278,20 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dalibor Dvorsky",
-        "number": 15,
+        "name": "Jonatan Berggren",
+        "number": 29,
         "position": "SK3",
         "positionName": "Skater 3",
+        "sourcePlayerId": 29107,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29107/STL_29__Berggren.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dalibor Dvorsky",
+        "number": 15,
+        "position": "SK4",
+        "positionName": "Skater 4",
         "sourcePlayerId": 35010,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35010/STL_15__Dvorsky.png",
         "injuryStatus": null,
@@ -290,20 +300,10 @@
       {
         "name": "Logan Mailloux",
         "number": 23,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 30862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30862/STL_23_Mailloux.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Cam Fowler",
-        "number": 17,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 16,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/16/STL_17_Fowler.png",
+        "sourcePlayerId": 30862,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30862/STL_23_Mailloux.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

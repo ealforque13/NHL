@@ -2,9 +2,9 @@
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T00:39:06.297Z",
-  "sourceDescription": "Ben Pope",
-  "cachedAtUTC": "2026-11-23T15:42:03.130228+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:50:04.954Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-23T17:06:37.890425+00:00",
   "forwards": [
     [
       {
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Teuvo Teravainen",
-        "number": 86,
+        "name": "Oliver Moore",
+        "number": 11,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 2128,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2128/CHI_86_Teravainen.png",
+        "sourcePlayerId": 33143,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33143/CHI_11_Moore.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kevin Korchinski",
-        "number": 14,
+        "name": "Teuvo Teravainen",
+        "number": 86,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 31513,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31513/CHI_14_Korchinski.png",
+        "sourcePlayerId": 2128,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2128/CHI_86_Teravainen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -397,22 +397,22 @@
   ],
   "goalies": [
     {
-      "name": "Drew Commesso",
-      "number": null,
+      "name": "Spencer Knight",
+      "number": 30,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 30793,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30793/Commesso-Drew-CHI-33.png",
+      "sourcePlayerId": 30475,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30475/CHI_30_Knight.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Spencer Knight",
-      "number": 30,
+      "name": "Drew Commesso",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 30475,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30475/CHI_30_Knight.png",
+      "sourcePlayerId": 30793,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30793/Commesso-Drew-CHI-33.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

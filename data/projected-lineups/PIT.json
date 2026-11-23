@@ -2,9 +2,9 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T23:39:58.678Z",
-  "sourceDescription": "@penguins",
-  "cachedAtUTC": "2026-11-23T15:42:34.471910+00:00",
+  "sourceUpdatedAt": "2026-11-23T15:48:30.755Z",
+  "sourceDescription": "Last Game (2026-11-22)",
+  "cachedAtUTC": "2026-11-23T17:07:09.107796+00:00",
   "forwards": [
     [
       {
@@ -288,22 +288,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kris Letang",
-        "number": 58,
+        "name": "Justin Brazeau",
+        "number": 15,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 1233,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1233/PIT_58_Letang.png",
+        "sourcePlayerId": 28622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Samuel Girard",
-        "number": 49,
+        "name": "Kris Letang",
+        "number": 58,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2773/PIT_49_Girard.png",
+        "sourcePlayerId": 1233,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1233/PIT_58_Letang.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
