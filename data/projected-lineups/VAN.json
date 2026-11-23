@@ -2,9 +2,9 @@
   "team": "VAN",
   "teamName": "Vancouver Canucks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T02:48:51.701Z",
-  "sourceDescription": "Brendan Batchelor",
-  "cachedAtUTC": "2026-11-22T23:46:46.116873+00:00",
+  "sourceUpdatedAt": "2026-11-23T00:42:10.854Z",
+  "sourceDescription": "Ben Kuzma",
+  "cachedAtUTC": "2026-11-23T01:13:44.556781+00:00",
   "forwards": [
     [
       {
@@ -160,12 +160,12 @@
     ],
     [
       {
-        "name": "Elias Nils Pettersson",
-        "number": 25,
+        "name": "Jamie Oleksiak",
+        "number": 4,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 36406,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36406/VAN_25_Pettersson.png",
+        "sourcePlayerId": 1790,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1790/VAN_4__Oleksiak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -182,12 +182,12 @@
     ],
     [
       {
-        "name": "Jamie Oleksiak",
-        "number": 4,
+        "name": "Elias Nils Pettersson",
+        "number": 25,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1790,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1790/VAN_4__Oleksiak.png",
+        "sourcePlayerId": 36406,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36406/VAN_25_Pettersson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
