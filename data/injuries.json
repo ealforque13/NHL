@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-23T13:13:16.599833+00:00",
+  "updatedAt": "2026-11-23T18:57:32.208925+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "PIT"
     },
     "8473419": {
@@ -16,8 +16,8 @@
     },
     "8474574": {
       "injured": true,
-      "description": "Myers (upper body) will not play in Sunday's home clash against Pittsburgh, per Robert Tiffin of NHL.com.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DAL"
     },
     "8475168": {
@@ -34,8 +34,8 @@
     },
     "8475786": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "EDM"
     },
     "8475810": {
@@ -62,10 +62,16 @@
       "status": "Injured Reserve",
       "team": "WPG"
     },
+    "8476441": {
+      "injured": true,
+      "description": "Edmundson will be a game-time call against Montreal on Monday due to an undisclosed injury, Zach Dooley of the Kings' official site reports.",
+      "status": "Day-To-Day",
+      "team": "LAK"
+    },
     "8476454": {
       "injured": true,
-      "description": "Nugent-Hopkins (undisclosed) is slated to return to the lineup against Vegas on Tuesday, Paige Martin of Oilers TV reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "EDM"
     },
     "8476456": {
@@ -94,8 +100,8 @@
     },
     "8476878": {
       "injured": true,
-      "description": "Girgensons (upper body) won't play against Buffalo on Sunday, per Benjamin Pierce of the Lightning's official site.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8476891": {
@@ -172,8 +178,8 @@
     },
     "8477506": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "NYI"
     },
     "8477511": {
@@ -184,8 +190,8 @@
     },
     "8477940": {
       "injured": true,
-      "description": "Ehlers (undisclosed) won't play Sunday against the Rangers, per Chip Alexander of The Raleigh News &amp; Observer.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CAR"
     },
     "8477951": {
@@ -208,8 +214,8 @@
     },
     "8478173": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Hodgson (groin) has no timeline in place for his return to the lineup, per Bruce Garrioch of Postmedia on Nov. 14.",
+      "status": "Out",
       "team": "OTT"
     },
     "8478421": {
@@ -220,7 +226,7 @@
     },
     "8478458": {
       "injured": true,
-      "description": "Roslovic (upper body) is day-to-day, per David Alter of The Hockey News on Sunday.",
+      "description": "Roslovic (upper body) will be a game-time decision versus the Islanders on Monday after head coach Jim Hiller told reporters, \"You'll just see tonight. I don't want to get too deep into that right now,\" Mark Masters of TSN reports.",
       "status": "Day-To-Day",
       "team": "TOR"
     },
@@ -242,23 +248,17 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
-    "8478550": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "LAK"
-    },
-    "8479343": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "UTA"
-    },
     "8479346": {
       "injured": true,
       "description": "ir",
       "status": "Injured Reserve",
       "team": "STL"
+    },
+    "8479385": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "WSH"
     },
     "8479542": {
       "injured": true,
@@ -272,9 +272,15 @@
       "status": "Injured Reserve",
       "team": "WSH"
     },
+    "8479619": {
+      "injured": true,
+      "description": "Carcone (upper body) will be out of action for 3-4 months, Catherine Bogart of the Mammoth's official site reports Monday.",
+      "status": "Out",
+      "team": "UTA"
+    },
     "8479675": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Moore (undisclosed) will be a game-time decision versus the Canadiens on Monday, Zach Dooley of the Kings' official site reports.",
       "status": "Day-To-Day",
       "team": "LAK"
     },
@@ -310,8 +316,8 @@
     },
     "8480748": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "Sherwood (upper body) was placed on injured reserve Monday.",
+      "status": "Injured Reserve",
       "team": "SJS"
     },
     "8480800": {
@@ -364,8 +370,8 @@
     },
     "8481028": {
       "injured": true,
-      "description": "Pospisil (upper body) left Saturday's game against Chicago and won't return, per Pat Steinberg of QR Calgary 770 AM.",
-      "status": "Day-To-Day",
+      "description": "Pospisil (upper body) didn't travel with his teammates for the start of Calgary's five-game road trip, per Eric Francis of Sportsnet on Monday.",
+      "status": "Out",
       "team": "CGY"
     },
     "8481524": {
@@ -376,8 +382,8 @@
     },
     "8481580": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "STL"
     },
     "8481582": {
@@ -418,7 +424,7 @@
     },
     "8482699": {
       "injured": true,
-      "description": "Guenther (upper body) was upgraded to day-to-day ahead of Saturday's matchup with Anaheim, Cole Bagley of KSL Sports reports.",
+      "description": "Guenther (upper body) has been ruled out for Monday's game against the Jets, Ken Wiebe of The Winnipeg Free Press reports.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
@@ -436,8 +442,8 @@
     },
     "8483398": {
       "injured": true,
-      "description": "Carlile (lower body) won't play against Dallas on Sunday, per King Jemison of the Pittsburgh Post-Gazette.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "PIT"
     },
     "8483425": {
@@ -544,8 +550,8 @@
     },
     "8485391": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CHI"
     },
     "8485395": {
