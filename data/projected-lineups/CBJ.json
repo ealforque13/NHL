@@ -2,18 +2,18 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T19:03:10.928Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-23T19:07:46.876298+00:00",
+  "sourceUpdatedAt": "2026-11-23T19:43:29.247Z",
+  "sourceDescription": "@BlueJacketsNHL",
+  "cachedAtUTC": "2026-11-23T20:27:18.356145+00:00",
   "forwards": [
     [
       {
-        "name": "Charlie Coyle",
-        "number": 3,
+        "name": "Valeri Nichushkin",
+        "number": 43,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1856,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1856/CBJ_3_Coyle.png",
+        "sourcePlayerId": 2142,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2142/CBJ_43_Nichushkin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Valeri Nichushkin",
-        "number": 43,
+        "name": "Charlie Coyle",
+        "number": 3,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2142,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2142/CBJ_43_Nichushkin.png",
+        "sourcePlayerId": 1856,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1856/CBJ_3_Coyle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dante Fabbro",
-        "number": 15,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
