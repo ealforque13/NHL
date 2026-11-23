@@ -5628,6 +5628,30 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
   }
 }
 </style>
+<style id="hoist-custom-lineup-styles">
+#lineups .hoist-lineup-builder-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+#lineups .hoist-lineup-builder-toolbar button{padding:10px 14px;border:1px solid rgba(145,177,220,.35);background:#182840;color:#d7e5fb;font-weight:750;cursor:pointer}
+#lineups .hoist-lineup-builder-toolbar button.hoist-lineup-mode-active{background:#2563eb;color:#fff;border-color:#60a5fa}
+#lineups #hoist-lineup-reset-custom{margin-left:auto}
+#lineups .hoist-lineup-custom-slot{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;cursor:pointer;font:inherit;text-align:inherit}
+#lineups .hoist-lineup-custom-slot:focus-visible{outline:2px solid #60a5fa;outline-offset:4px}
+#lineups .hoist-lineup-custom-slot .hoist-jersey-fallback-name{font-size:10px}
+#lineups .hoist-lineup-custom-slot .hoist-lineup-player-name{min-height:1.4em}
+#lineups .hoist-lineup-custom-slot .hoist-jersey-fallback-number{font-size:22px}
+#lineups .hoist-lineup-picker-overlay:not([hidden]){position:fixed;inset:0;z-index:99999;display:flex;justify-content:center;align-items:center;padding:16px;background:rgba(3,8,18,.82)}
+#lineups .hoist-lineup-picker-dialog{width:min(100%,460px);max-height:min(80vh,700px);display:flex;flex-direction:column;background:#101b2d;border:1px solid #47618b;padding:16px;color:#fff;box-shadow:0 20px 65px #0009}
+#lineups .hoist-lineup-picker-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+#lineups .hoist-lineup-picker-header h3{margin:0;font-size:18px}
+#lineups #hoist-lineup-picker-close{padding:6px 11px;background:#233653;border:1px solid #526a8b;color:#fff;cursor:pointer}
+#lineups #hoist-lineup-picker-search{width:100%;padding:11px;background:#0b1424;border:1px solid #526a8b;color:#fff;font:inherit}
+#lineups .hoist-lineup-picker-list{overflow-y:auto;min-height:0;margin-top:10px}
+#lineups .hoist-lineup-picker-option{display:flex;width:100%;align-items:center;gap:12px;padding:11px 9px;background:transparent;color:#fff;border:0;border-bottom:1px solid #293c56;text-align:left;cursor:pointer}
+#lineups .hoist-lineup-picker-option:hover,#lineups .hoist-lineup-picker-option:focus-visible{background:#223956}
+#lineups .hoist-lineup-picker-option img{width:38px;height:38px;object-fit:cover;border-radius:50%!important;background:#263a58}
+#lineups .hoist-lineup-picker-option small{display:block;color:#a7bedc;margin-top:3px}
+#lineups .hoist-lineup-picker-empty{padding:14px;color:#b4c4da}
+@media(max-width:650px){#lineups .hoist-lineup-builder-toolbar{gap:6px}#lineups .hoist-lineup-builder-toolbar button{padding:9px 10px;font-size:11px}}
+</style>
 </head>
 
 <body>
@@ -6324,6 +6348,21 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
     <button type="button" data-lineup-position="goalies">Goalies</button>
     <button type="button" data-lineup-position="powerPlay">Power Play</button>
     <button type="button" data-lineup-position="penaltyKill">Penalty Kill</button>
+  </div>
+  <div class="hoist-lineup-builder-toolbar" role="group" aria-label="Lineup display mode">
+    <button type="button" id="hoist-lineup-projected-mode" class="hoist-lineup-mode-active" aria-pressed="true">Projected Lineup</button>
+    <button type="button" id="hoist-lineup-custom-mode" aria-pressed="false">Create Your Own</button>
+    <button type="button" id="hoist-lineup-reset-custom" hidden>Clear My Lineup</button>
+  </div>
+  <div id="hoist-lineup-player-picker" class="hoist-lineup-picker-overlay" hidden>
+    <div class="hoist-lineup-picker-dialog" role="dialog" aria-modal="true" aria-labelledby="hoist-lineup-picker-title">
+      <div class="hoist-lineup-picker-header">
+        <h3 id="hoist-lineup-picker-title">Choose a player</h3>
+        <button type="button" id="hoist-lineup-picker-close" aria-label="Close player picker">✕</button>
+      </div>
+      <input id="hoist-lineup-picker-search" type="search" placeholder="Search team roster…" aria-label="Search team roster" autocomplete="off">
+      <div id="hoist-lineup-picker-list" class="hoist-lineup-picker-list"></div>
+    </div>
   </div>
   <article class="panel section-panel hoist-lineups-panel">
     <div class="hoist-lineups-info"><span id="hoist-lineup-badge" class="hoist-lineup-badge">UNAVAILABLE</span></div>
@@ -7054,6 +7093,121 @@ document.addEventListener('DOMContentLoaded', function () {
   const counts = {forwards:4,defense:3,goalies:2,powerPlay:2,penaltyKill:2};
   const titles = {forwards:'LINE',defense:'PAIR',goalies:'GOALIE',powerPlay:'POWER PLAY UNIT',penaltyKill:'PENALTY KILL UNIT'};
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
+  let customMode = false;
+  let customRoster = [];
+  let activeCustomSlot = null;
+  const customStorageKey = team => `hoist-custom-lineup-v1-${team}`;
+  const emptyCustom = () => Object.fromEntries(Object.entries(counts).map(([key,n]) => [key,Array.from({length:n},()=>Array(labels[key].length).fill(null))]));
+  function readCustom() {
+    try {
+      const stored = JSON.parse(localStorage.getItem(customStorageKey(selected)) || 'null');
+      const blank = emptyCustom();
+      if (!stored || typeof stored !== 'object') return blank;
+      for (const key of Object.keys(blank)) {
+        if (!Array.isArray(stored[key])) continue;
+        blank[key] = blank[key].map((row,i) => row.map((_,j) => {
+          const item = stored[key]?.[i]?.[j];
+          return item && typeof item === 'object' && typeof item.name === 'string' ? item : null;
+        }));
+      }
+      return blank;
+    } catch (_) { return emptyCustom(); }
+  }
+  let custom = emptyCustom();
+  function saveCustom() {
+    try { localStorage.setItem(customStorageKey(selected),JSON.stringify(custom)); } catch (_) {}
+  }
+  const playerKey = p => p ? String(p.playerId ?? p.id ?? p.sourcePlayerId ?? normalize(p.name)) : '';
+  function uniqueRoster(players) {
+    const seen = new Set();
+    return players.filter(p => {
+      if (!p || !p.name) return false;
+      const key = normalize(p.name);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }).sort((a,b) => String(a.name).localeCompare(String(b.name)));
+  }
+  function flattenRoster(data) {
+    if (!data) return [];
+    const out = [];
+    for (const key of Object.keys(counts)) {
+      const group = data[key];
+      if (!Array.isArray(group)) continue;
+      for (const entry of group) {
+        for (const p of (Array.isArray(entry) ? entry : [entry])) {
+          if (p && typeof p === 'object' && p.name) out.push(p);
+        }
+      }
+    }
+    if (Array.isArray(data.injuries)) out.push(...data.injuries);
+    return out;
+  }
+  function blankPlayerMarkup(role, i, j) {
+    const slot = custom[position]?.[i]?.[j] || null;
+    const name = slot?.name || '';
+    const number = slot ? (slot.number ?? slot.sweaterNumber ?? slot.jerseyNumber ?? '') : '';
+    const jersey = slot ? jerseyMarkup(name,number,slot) :
+      `<div class="hoist-authentic-jersey"><div class="hoist-jersey-fallback"><span class="hoist-jersey-fallback-name">SELECT</span><strong class="hoist-jersey-fallback-number">+</strong></div></div>`;
+    return `<div class="hoist-lineup-player hoist-dfo-player">
+      <div class="hoist-lineup-player-position">${esc(role)}</div>
+      <button type="button" class="hoist-lineup-custom-slot" data-custom-row="${i}" data-custom-col="${j}" aria-label="${esc(name ? `Change ${name}` : `Choose ${role} player`)}">
+        ${jersey}
+        <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name || 'Choose Player')}</span><span class="hoist-lineup-name-mobile">${esc(name ? mobilePlayerName(name) : 'Choose Player')}</span></div>
+      </button>
+    </div>`;
+  }
+  function renderCustom() {
+    const root = el('hoist-lineup-content');
+    if (!root) return;
+    const groups = custom[position] || [];
+    root.innerHTML = groups.map((_,i) => {
+      const roles = position === 'goalies' ? ['G','G'] : labels[position];
+      const cls = position === 'powerPlay' ? 'hoist-lineup-pp' : position === 'goalies' ? 'hoist-lineup-goalies' : '';
+      return `<div class="hoist-lineup-card hoist-lineup-group ${cls}" style="--lineup-columns:${position === 'powerPlay' ? 3 : roles.length}">
+        <div class="hoist-lineup-players">${roles.map((role,j) => blankPlayerMarkup(role,i,j)).join('')}</div>
+      </div>`;
+    }).join('');
+  }
+  function syncCustomMode() {
+    el('hoist-lineup-projected-mode')?.classList.toggle('hoist-lineup-mode-active',!customMode);
+    el('hoist-lineup-custom-mode')?.classList.toggle('hoist-lineup-mode-active',customMode);
+    el('hoist-lineup-projected-mode')?.setAttribute('aria-pressed',String(!customMode));
+    el('hoist-lineup-custom-mode')?.setAttribute('aria-pressed',String(customMode));
+    if (el('hoist-lineup-reset-custom')) el('hoist-lineup-reset-custom').hidden = !customMode;
+    if (customMode) {
+      el('hoist-lineup-badge').textContent = 'MY LINEUP';
+      el('hoist-lineup-updated').textContent = 'Saved on this device';
+      el('hoist-lineup-status').textContent = 'Tap any jersey to select a player from the team.';
+    }
+  }
+  function renderPicker() {
+    const list = el('hoist-lineup-picker-list');
+    if (!list) return;
+    const term = normalize(el('hoist-lineup-picker-search')?.value || '');
+    const used = new Set();
+    for (const rows of Object.values(custom)) for (const row of rows) for (const p of row) if (p) used.add(normalize(p.name));
+    const active = activeCustomSlot && custom[activeCustomSlot.position]?.[activeCustomSlot.row]?.[activeCustomSlot.col];
+    if (active) used.delete(normalize(active.name));
+    const available = customRoster.filter(p => !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term)));
+    const options = available.map((p,i) => {
+      const pic = photoFor(p.name,p);
+      const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? '';
+      return `<button type="button" class="hoist-lineup-picker-option" data-player-index="${i}">
+        ${pic ? `<img src="${esc(pic)}" alt="" loading="lazy">` : ''}
+        <span><strong>${esc(p.name)}</strong><small>${esc(number === '' ? '' : '#'+number)} ${esc(p.position || p.positionCode || '')}</small></span>
+      </button>`;
+    }).join('');
+    list.innerHTML = `<button type="button" class="hoist-lineup-picker-option" data-clear-slot="1"><strong>Clear this jersey</strong></button>`+
+      (options || `<div class="hoist-lineup-picker-empty">${customRoster.length ? 'No matching available players.' : 'Team roster is loading or unavailable.'}</div>`);
+    list._availablePlayers = available;
+  }
+  function closePicker() {
+    const overlay = el('hoist-lineup-player-picker');
+    if (overlay) overlay.hidden = true;
+    activeCustomSlot = null;
+  }
+
   const savedPosition = window.hoistPrefs.get('lineup-position', 'forwards');
   if (['forwards','defense','goalies','powerPlay','penaltyKill'].includes(savedPosition)) position = savedPosition;
   const normalize = name => String(name || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
@@ -7161,6 +7315,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function render() {
     const root = el('hoist-lineup-content');
     if (!root) return;
+    if (customMode) { syncCustomMode(); renderCustom(); return; }
     if (!lineup) { root.innerHTML = ''; return; }
     if (lineup.type === 'roster') {
       if (position === 'powerPlay' || position === 'penaltyKill') {
@@ -7236,7 +7391,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const token = ++requestId;
     lineup = null;
     headshots = new Map();
+    customRoster = [];
     injuryPositions.clear();
+    custom = readCustom();
+    syncCustomMode();
     el('hoist-lineup-logo').src = `https://assets.nhle.com/logos/nhl/svg/${selected}_light.svg`;
     el('hoist-lineup-status').textContent = 'Checking projected lineups…';
     el('hoist-lineup-updated').textContent = 'Awaiting lineup data';
@@ -7261,6 +7419,12 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     lineup = data;
+    customRoster = uniqueRoster(flattenRoster(data));
+    try {
+      const rosterData = await fetchJson(`./data/lineups/${encodeURIComponent(selected)}.json`);
+      if (token !== requestId) return;
+      customRoster = uniqueRoster([...customRoster,...flattenRoster(rosterData)]);
+    } catch (_) {}
     const isRoster = data.type === 'roster';
     el('hoist-lineup-badge').textContent = isRoster ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
     const updated = data.sourceUpdatedAt || data.updatedAt || data.cachedAtUTC || '';
@@ -7327,6 +7491,60 @@ document.addEventListener('DOMContentLoaded', function () {
         render();
       });
     });
+    el('hoist-lineup-projected-mode')?.addEventListener('click',() => {
+      customMode = false;
+      syncCustomMode();
+      // Restore projected metadata that custom mode replaced.
+      if (lineup) {
+        el('hoist-lineup-badge').textContent = lineup.type === 'roster' ? 'TEAM ROSTER' : (lineup.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
+        el('hoist-lineup-status').textContent = lineup.type === 'roster' ? 'Current NHL roster — projected lines unavailable.' : '';
+        const updated = lineup.sourceUpdatedAt || lineup.updatedAt || lineup.cachedAtUTC || '';
+        const date = updated ? new Date(updated) : null;
+        el('hoist-lineup-updated').textContent = date && !Number.isNaN(date.getTime()) ? `Updated ${date.toLocaleString()}` : 'Update time unavailable';
+      }
+      render();
+    });
+    el('hoist-lineup-custom-mode')?.addEventListener('click',() => {
+      customMode = true;
+      syncCustomMode();
+      render();
+    });
+    el('hoist-lineup-reset-custom')?.addEventListener('click',() => {
+      if (!window.confirm('Clear your custom lineup for this team?')) return;
+      custom = emptyCustom();
+      saveCustom();
+      render();
+    });
+    el('hoist-lineup-content')?.addEventListener('click',event => {
+      const slot = event.target.closest('[data-custom-row][data-custom-col]');
+      if (!customMode || !slot) return;
+      activeCustomSlot = {position,row:Number(slot.dataset.customRow),col:Number(slot.dataset.customCol)};
+      el('hoist-lineup-picker-search').value = '';
+      el('hoist-lineup-picker-title').textContent = `Choose ${labels[position]?.[activeCustomSlot.col] || 'a'} player`;
+      renderPicker();
+      el('hoist-lineup-player-picker').hidden = false;
+      el('hoist-lineup-picker-search').focus();
+    });
+    el('hoist-lineup-picker-search')?.addEventListener('input',renderPicker);
+    el('hoist-lineup-picker-list')?.addEventListener('click',event => {
+      const button = event.target.closest('button');
+      if (!button || !activeCustomSlot) return;
+      const {position:pos,row,col} = activeCustomSlot;
+      const selectedPlayer = button.hasAttribute('data-clear-slot') ? null : el('hoist-lineup-picker-list')._availablePlayers?.[Number(button.dataset.playerIndex)];
+      if (selectedPlayer === undefined) return;
+      custom[pos][row][col] = selectedPlayer;
+      saveCustom();
+      closePicker();
+      render();
+    });
+    el('hoist-lineup-picker-close')?.addEventListener('click',closePicker);
+    el('hoist-lineup-player-picker')?.addEventListener('click',event => {
+      if (event.target === event.currentTarget) closePicker();
+    });
+    document.addEventListener('keydown',event => {
+      if (event.key === 'Escape' && !el('hoist-lineup-player-picker')?.hidden) closePicker();
+    });
+    syncCustomMode();
     load();
   });
 })();
