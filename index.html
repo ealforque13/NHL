@@ -6370,7 +6370,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
       </div>
       <input id="hoist-lineup-picker-search" type="search" placeholder="Search team roster…" aria-label="Search team roster" autocomplete="off">
       <div id="hoist-org-filters" role="group" aria-label="Player source" style="display:flex;gap:5px;margin-top:10px;flex-wrap:wrap">
-      <button type="button" data-org-filter="All">All</button><button type="button" data-org-filter="NHL">NHL</button><button type="button" data-org-filter="AHL">AHL</button><button type="button" data-org-filter="Prospects">Prospects</button>
+      <button type="button" data-org-filter="NHL" aria-pressed="true">NHL</button><button type="button" data-org-filter="AHL" aria-pressed="false">AHL</button><button type="button" data-org-filter="Prospects" aria-pressed="false">Prospects</button><button type="button" data-org-filter="All" aria-pressed="false">All</button>
       </div><div id="hoist-org-status" style="font-size:11px;margin-top:6px;color:#a7bedc"></div>
       <div id="hoist-lineup-picker-list" class="hoist-lineup-picker-list"></div>
     </div>
@@ -7104,9 +7104,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const counts = {forwards:4,defense:3,goalies:2,powerPlay:2,penaltyKill:2};
   const titles = {forwards:'LINE',defense:'PAIR',goalies:'GOALIE',powerPlay:'POWER PLAY UNIT',penaltyKill:'PENALTY KILL UNIT'};
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
-  let customMode = false;
+  let customMode = window.hoistPrefs.get('lineup-mode', 'projected') === 'custom';
   let customRoster = [];
-  let organizationFilter = "All", organizationLoaded = false;
+  let organizationFilter = "NHL", organizationLoaded = false;
   let customRosterPositions = new Map();
   let activeCustomSlot = null;
   const customStorageKey = team => `hoist-custom-lineup-v1-${team}`;
@@ -7596,6 +7596,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     el('hoist-lineup-projected-mode')?.addEventListener('click',() => {
       customMode = false;
+      window.hoistPrefs.set('lineup-mode', 'projected');
       syncCustomMode();
       // Restore projected metadata that custom mode replaced.
       if (lineup) {
@@ -7609,6 +7610,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     el('hoist-lineup-custom-mode')?.addEventListener('click',() => {
       customMode = true;
+      window.hoistPrefs.set('lineup-mode', 'custom');
       syncCustomMode();
       render();
     });
@@ -7622,6 +7624,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const slot = event.target.closest('[data-custom-row][data-custom-col]');
       if (!customMode || !slot) return;
       activeCustomSlot = {position,row:Number(slot.dataset.customRow),col:Number(slot.dataset.customCol)};
+      organizationFilter = 'NHL';
       el('hoist-lineup-picker-search').value = '';
       el('hoist-lineup-picker-title').textContent = `Choose ${labels[position]?.[activeCustomSlot.col] || 'a'} player`;
       renderPicker();
