@@ -5688,6 +5688,7 @@ html.theme-light #lineups .hoist-lineup-picker-option,
 html.theme-light #lineups .hoist-lineup-picker-option small,
 html.theme-light #lineups .hoist-lineup-picker-empty,
 html.theme-light #lineups #hoist-org-status { color:#000 !important; }
+html.theme-light #lineups .hoist-lineup-picker-dialog, html.theme-light #lineups .hoist-lineup-picker-option, html.theme-light #lineups .hoist-lineup-picker-list { background-image:none !important; }
 html.theme-light #lineups .hoist-lineup-picker-option { border-bottom-color:#d5dce5 !important; }
 html.theme-light #lineups .hoist-lineup-picker-option:hover,
 html.theme-light #lineups .hoist-lineup-picker-option:focus-visible { background:#e8eff8 !important; }
@@ -5704,12 +5705,13 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
 <style id="hoist-lineup-mobile-theme-style">
 #hoist-lineup-mobile-theme {display:none!important;}
 @media(max-width:650px){
- .sidebar:has(~ .main #lineups:not(.hidden)) #hoist-lineup-mobile-theme {display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;padding:0;background:transparent;color:#fff!important;border:1px solid rgba(151,181,224,.32);font-size:22px;cursor:pointer;}
+ .sidebar #hoist-lineup-mobile-theme {display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;padding:0;background:transparent;color:#fff!important;border:1px solid rgba(151,181,224,.32);font-size:22px;cursor:pointer;}
  #hoist-lineup-mobile-theme span {color:inherit!important;font-family:Arial,sans-serif;}
- html.theme-light .sidebar #hoist-lineup-mobile-theme {color:#000!important;}
+ html.theme-light .sidebar #hoist-lineup-mobile-theme, html.theme-light .sidebar #hoist-lineup-mobile-theme span {color:#000!important;}
+ #hoist-lineup-mobile-theme svg {width:22px;height:22px;stroke:currentColor;fill:none;}
  #lineups .hoist-lineups-team-picker #hoist-lineup-logo {display:none!important;}
  #lineups .hoist-lineups-team-picker #hoist-lineup-team {appearance:none!important;-webkit-appearance:none!important;width:64px!important;min-width:0!important;padding:7px 20px 7px 7px!important;color:#fff!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 5px center!important;}
- html.theme-light #lineups .hoist-lineups-team-picker #hoist-lineup-team {color:#000!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E")!important;}
+ html.theme-light #lineups .hoist-lineups-team-picker #hoist-lineup-team {color:#000!important;background-color:#fff!important;background-repeat:no-repeat!important;background-position:right 5px center!important;background-size:12px 12px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E")!important;}
 }
 </style>
 </head>
@@ -9097,7 +9099,9 @@ document.addEventListener('DOMContentLoaded', function () {
   function sync() {
     const light = root.classList.contains('theme-light');
     const label = light ? 'Switch to dark mode' : 'Switch to light mode';
-    button.querySelector('span').textContent = light ? '☾︎' : '☀︎';
+    button.querySelector('span').innerHTML = light
+      ? '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.9 13.35A9 9 0 0 1 10.65 3.1 9 9 0 1 0 20.9 13.35Z"/></svg>'
+      : '<svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>';
     button.setAttribute('aria-label', label);
     button.setAttribute('aria-pressed', String(light));
     button.title = label;
