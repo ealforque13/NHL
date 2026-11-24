@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T01:02:34.635369+00:00",
+  "updatedAt": "2026-11-24T07:11:04.738617+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -19,6 +19,12 @@
       "description": "day-to-day",
       "status": "Day-To-Day",
       "team": "DAL"
+    },
+    "8475151": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "NYI"
     },
     "8475168": {
       "injured": true,
@@ -278,6 +284,12 @@
       "status": "Out",
       "team": "UTA"
     },
+    "8479671": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "CBJ"
+    },
     "8479941": {
       "injured": true,
       "description": "Danforth (upper body) was placed on injured reserve Thursday, per the NHL media site.",
@@ -289,6 +301,12 @@
       "description": "Gadjovich (neck) took the ice Thursday in a non-contact sweater, George Richards of Florida Hockey Now reports.",
       "status": "Injured Reserve",
       "team": "FLA"
+    },
+    "8480028": {
+      "injured": true,
+      "description": "Frost sustained an upper-body injury during Monday's 2-1 loss to the Senators, and head coach Ryan Huska did not have an update on the center's status after the game, Flames TV host Brendan Parker reports.",
+      "status": "Day-To-Day",
+      "team": "CGY"
     },
     "8480068": {
       "injured": true,
@@ -484,7 +502,7 @@
     },
     "8484144": {
       "injured": true,
-      "description": "Bedard (shoulder) was placed on injured reserve Sunday.",
+      "description": "Bedard underwent successful shoulder surgery Monday and is expected to make a full recovery in approximately four months, the Blackhawks announced.",
       "status": "Injured Reserve",
       "team": "CHI"
     },
@@ -496,8 +514,8 @@
     },
     "8484153": {
       "injured": true,
-      "description": "Carlsson (upper body) is day-to-day, according to Eric Stephens of The Athletic on Sunday.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "ANA"
     },
     "8484287": {
