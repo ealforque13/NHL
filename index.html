@@ -5695,6 +5695,18 @@ html.theme-light #lineups #hoist-org-filters button,
 html.theme-light #lineups #hoist-lineup-picker-close,
 html.theme-light #lineups #hoist-lineup-picker-search { background:#fff !important; color:#000 !important; }
 html.theme-light #lineups #hoist-org-filters button[aria-pressed="true"] { background:#dbeafe !important; border-color:#2563eb !important; }
+/* Light mode: empty custom lineup slots and picker heading. */
+html.theme-light body #lineups .hoist-lineup-custom-slot .hoist-choose-player-label,
+html.theme-light body #lineups .hoist-lineup-custom-slot .hoist-choose-player-label span,
+html.theme-light body #lineups .hoist-lineup-custom-slot .hoist-jersey-fallback:has(.hoist-choose-player-label) .hoist-jersey-fallback-number,
+html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !important; }
+</style>
+<style id="hoist-lineup-mobile-theme-style">
+#lineups #hoist-lineup-mobile-theme { display:none !important; }
+@media(max-width:650px) {
+  #lineups #hoist-lineup-mobile-theme { display:inline-flex !important; align-items:center; justify-content:center; flex:0 0 36px; width:36px; height:36px; padding:0; background:#101a2d; color:#edf4ff; border:1px solid #41577a; font-size:20px; cursor:pointer; }
+  html.theme-light #lineups #hoist-lineup-mobile-theme { background:#fff !important; color:#000 !important; border-color:#b5c0ce; }
+}
 </style>
 </head>
 
@@ -6383,6 +6395,7 @@ html.theme-light #lineups #hoist-org-filters button[aria-pressed="true"] { backg
     <div class="hoist-lineups-team-picker">
       <img id="hoist-lineup-logo" alt="" />
       <label for="hoist-lineup-team">Team</label>
+      <button type="button" id="hoist-lineup-mobile-theme" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode"><span aria-hidden="true">☀</span></button>
       <select id="hoist-lineup-team" aria-label="Select lineup team"></select>
     </div>
   </div>
@@ -9069,6 +9082,25 @@ document.addEventListener('DOMContentLoaded', function () {
  toggle.addEventListener('click',()=>{const open=body.hidden;body.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open){lastKey='';update();}});
  new MutationObserver(schedule).observe(grid,{childList:true,subtree:true});
  dateInput?.addEventListener('change',()=>{lastKey='';schedule()});
+})();
+</script>
+<script>
+(() => {
+  const button = document.getElementById('hoist-lineup-mobile-theme');
+  const mainToggle = document.getElementById('theme-toggle');
+  if (!button || !mainToggle) return;
+  const root = document.documentElement;
+  function sync() {
+    const light = root.classList.contains('theme-light');
+    const label = light ? 'Switch to dark mode' : 'Switch to light mode';
+    button.querySelector('span').textContent = light ? '☾' : '☀';
+    button.setAttribute('aria-label', label);
+    button.setAttribute('aria-pressed', String(light));
+    button.title = label;
+  }
+  button.addEventListener('click', () => { mainToggle.click(); sync(); });
+  new MutationObserver(sync).observe(root, {attributes:true, attributeFilter:['class']});
+  sync();
 })();
 </script>
 </body>
