@@ -5663,6 +5663,13 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 @media(max-width:650px){#lineups .hoist-lineup-custom-slot .hoist-choose-player-label{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;text-align:center;line-height:1.25;}#lineups .hoist-choose-player-label span{display:block;}}
 </style>
 <style>#hoist-org-filters button{flex:1;padding:8px 6px;border:1px solid #526a8b;background:#182840;color:#fff;cursor:pointer;font-size:12px}#hoist-org-filters button[aria-pressed="true"]{background:#2563eb;border-color:#60a5fa}</style>
+<style>
+@media(min-width:651px){
+ #stats > .hoist-stats-filters > .hoist-stats-picker{margin-left:auto!important;flex:0 0 auto!important;width:max-content!important;min-width:0!important;max-width:100%!important;}
+ #stats > .hoist-stats-filters > .hoist-stats-picker select{width:auto!important;min-width:0!important;max-width:100%!important;padding:10px 26px 10px 10px!important;}
+ #stats > .hoist-stats-filters > .hoist-stats-picker[hidden]{display:none!important;}
+}
+</style>
 </head>
 
 <body>
@@ -7841,6 +7848,12 @@ document.addEventListener('DOMContentLoaded', function () {
  }catch(e){if(seq!==sequence)return;el('hoist-stats-status').textContent='Player statistics unavailable. Run your existing Update NHL data GitHub Action to generate data/club-stats files.';}}
  document.addEventListener('DOMContentLoaded',()=>{if(!el('stats'))return;const picker=el('hoist-stats-team');const sortedTeams=teams.slice().sort((a,b)=>a[1].localeCompare(b[1]));
  const syncTeamLabels=()=>{const mobile=window.matchMedia('(max-width:650px)').matches;const current=picker.value;picker.innerHTML=sortedTeams.map(([code,n])=>`<option value="${code}">${esc(mobile?code:n)}</option>`).join('');if(current)picker.value=current;};
+ const desktopPicker=window.matchMedia('(min-width:651px)');
+ const pickerWrap=picker.closest('.hoist-stats-picker');
+ const mobileToolbar=pickerWrap.parentElement;
+ const statsTabs=document.querySelector('#stats > .hoist-stats-filters');
+ const placeStatsPicker=()=>{(desktopPicker.matches?statsTabs:mobileToolbar).appendChild(pickerWrap);};
+ placeStatsPicker();desktopPicker.addEventListener('change',placeStatsPicker);
  syncTeamLabels();window.matchMedia('(max-width:650px)').addEventListener('change',syncTeamLabels);picker.value=teams.some(([code])=>code===window.hoistPrefs.get('stats-team',''))?window.hoistPrefs.get('stats-team',''):teams.some(([code])=>code===el('team-select')?.value)?el('team-select').value:'MTL';
  document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b.dataset.statsMode===mode;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});
  document.querySelectorAll('#stats [data-stats-mode]').forEach(button=>button.addEventListener('click',()=>{mode=button.dataset.statsMode;window.hoistPrefs.set('stats-mode',mode);leaguePage=1;document.querySelectorAll('#stats [data-stats-mode]').forEach(b=>{const on=b===button;b.classList.toggle('is-active',on);b.setAttribute('aria-pressed',String(on))});render()}));picker.addEventListener('change',()=>{window.hoistPrefs.set('stats-team',picker.value);render()});el('hoist-stats-content').addEventListener('click',event=>{const pageButton=event.target.closest('[data-stats-page]');if(pageButton){if(pageButton.disabled)return;leaguePage=Math.max(1,leaguePage+(pageButton.dataset.statsPage==='next'?1:-1));render();return;}const button=event.target.closest('[data-stat-sort]');if(!button)return;const key=button.dataset.statSort;if(sortKey===key)sortDirection*=-1;else{sortKey=key;sortDirection=key==='name'?1:-1;}leaguePage=1;const viewportY=window.scrollY;render().then(()=>window.scrollTo({top:viewportY,behavior:'instant'}))});render()});
