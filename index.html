@@ -7179,12 +7179,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const name = slot?.name || '';
     const number = slot ? (slot.number ?? slot.sweaterNumber ?? slot.jerseyNumber ?? '') : '';
     const jersey = slot ? jerseyMarkup(name,number,slot) :
-      `<div class="hoist-authentic-jersey"><div class="hoist-jersey-fallback"><span class="hoist-jersey-fallback-name">SELECT</span><strong class="hoist-jersey-fallback-number">+</strong></div></div>`;
+      `<div class="hoist-authentic-jersey"><div class="hoist-jersey-fallback"><span class="hoist-jersey-fallback-name">Choose Player</span><strong class="hoist-jersey-fallback-number">+</strong></div></div>`;
     return `<div class="hoist-lineup-player hoist-dfo-player">
       <div class="hoist-lineup-player-position">${esc(role)}</div>
       <button type="button" class="hoist-lineup-custom-slot" data-custom-row="${i}" data-custom-col="${j}" aria-label="${esc(name ? `Change ${name}` : `Choose ${role} player`)}">
         ${jersey}
-        <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name || 'Choose Player')}</span><span class="hoist-lineup-name-mobile">${esc(name ? mobilePlayerName(name) : 'Choose Player')}</span></div>
+        <div class="hoist-lineup-player-name"><span class="hoist-lineup-name-full">${esc(name)}</span><span class="hoist-lineup-name-mobile">${esc(name ? mobilePlayerName(name) : '')}</span></div>
       </button>
     </div>`;
   }
