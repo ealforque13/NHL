@@ -448,5 +448,6 @@
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }
-  ]
+  ],
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png"
 }
