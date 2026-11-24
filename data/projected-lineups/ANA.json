@@ -2,18 +2,18 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T19:49:18.638Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-24T01:54:22.059041+00:00",
+  "sourceUpdatedAt": "2026-11-24T02:38:27.241Z",
+  "sourceDescription": "Anaheim Ducks",
+  "cachedAtUTC": "2026-11-24T02:56:35.739792+00:00",
   "forwards": [
     [
       {
-        "name": "Cutter Gauthier",
-        "number": 61,
+        "name": "Alex Killorn",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33248,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33248/ANA_61_Gauthier_2_.png",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -28,56 +28,24 @@
         "gameTimeDecision": false
       },
       {
+        "name": "Cutter Gauthier",
+        "number": 61,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 33248,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33248/ANA_61_Gauthier_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Nico Myatovic",
         "number": 48,
-        "position": "RW",
-        "positionName": "Right Wing",
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 31622,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31622/ANA_48_Myatovic.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Alex Killorn",
-        "number": 17,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Tim Washe",
-        "number": null,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 32021,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32021/ANA_42_Washe_2_.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Judd Caulfield",
-        "number": 28,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 30440,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Jeff Malott",
-        "number": 39,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 34555,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -98,6 +66,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 4645,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jeff Malott",
+        "number": 39,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 34555,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34555/ANA_39_Malott.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Tim Washe",
+        "number": null,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 32021,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32021/ANA_42_Washe_2_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Judd Caulfield",
+        "number": 28,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 30440,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30440/ANA__Caulfield_28.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

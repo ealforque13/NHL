@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T19:43:29.247Z",
+  "sourceUpdatedAt": "2026-11-24T02:42:44.718Z",
   "sourceDescription": "@BlueJacketsNHL",
-  "cachedAtUTC": "2026-11-24T01:54:30.302242+00:00",
+  "cachedAtUTC": "2026-11-24T02:56:44.100201+00:00",
   "forwards": [
     [
       {
@@ -99,7 +99,7 @@
         "sourcePlayerId": 23595,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23595/CBJ_24_Olivier.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -371,7 +371,7 @@
         "sourcePlayerId": 23595,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23595/CBJ_24_Olivier.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Denton Mateychuk",
@@ -435,6 +435,16 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 2138,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Mathieu Olivier",
+      "number": 24,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 23595,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23595/CBJ_24_Olivier.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
