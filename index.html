@@ -5702,10 +5702,14 @@ html.theme-light body #lineups .hoist-lineup-custom-slot .hoist-jersey-fallback:
 html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !important; }
 </style>
 <style id="hoist-lineup-mobile-theme-style">
-#lineups #hoist-lineup-mobile-theme { display:none !important; }
-@media(max-width:650px) {
-  #lineups #hoist-lineup-mobile-theme { display:inline-flex !important; align-items:center; justify-content:center; flex:0 0 36px; width:36px; height:36px; padding:0; background:#101a2d; color:#edf4ff; border:1px solid #41577a; font-size:20px; cursor:pointer; }
-  html.theme-light #lineups #hoist-lineup-mobile-theme { background:#fff !important; color:#000 !important; border-color:#b5c0ce; }
+#hoist-lineup-mobile-theme {display:none!important;}
+@media(max-width:650px){
+ .sidebar:has(~ .main #lineups:not(.hidden)) #hoist-lineup-mobile-theme {display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 40px;width:40px;height:40px;padding:0;background:transparent;color:#fff!important;border:1px solid rgba(151,181,224,.32);font-size:22px;cursor:pointer;}
+ #hoist-lineup-mobile-theme span {color:inherit!important;font-family:Arial,sans-serif;}
+ html.theme-light .sidebar #hoist-lineup-mobile-theme {color:#000!important;}
+ #lineups .hoist-lineups-team-picker #hoist-lineup-logo {display:none!important;}
+ #lineups .hoist-lineups-team-picker #hoist-lineup-team {appearance:none!important;-webkit-appearance:none!important;width:64px!important;min-width:0!important;padding:7px 20px 7px 7px!important;color:#fff!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E")!important;background-repeat:no-repeat!important;background-position:right 5px center!important;}
+ html.theme-light #lineups .hoist-lineups-team-picker #hoist-lineup-team {color:#000!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E")!important;}
 }
 </style>
 </head>
@@ -5732,6 +5736,7 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
     <span class="hoist-mobile-page-title" id="hoist-mobile-page-title" aria-live="polite">Games</span>
   </a>
 
+<button type="button" id="hoist-lineup-mobile-theme" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode"><span aria-hidden="true">☀︎</span></button>
 <div class="hoist-mobile-nav" id="hoist-mobile-nav">
   <button type="button" id="hoist-mobile-menu-toggle" class="hoist-mobile-menu-button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="hoist-mobile-menu-options">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -6395,7 +6400,6 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
     <div class="hoist-lineups-team-picker">
       <img id="hoist-lineup-logo" alt="" />
       <label for="hoist-lineup-team">Team</label>
-      <button type="button" id="hoist-lineup-mobile-theme" aria-label="Switch to light mode" aria-pressed="false" title="Switch to light mode"><span aria-hidden="true">☀</span></button>
       <select id="hoist-lineup-team" aria-label="Select lineup team"></select>
     </div>
   </div>
@@ -9093,7 +9097,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function sync() {
     const light = root.classList.contains('theme-light');
     const label = light ? 'Switch to dark mode' : 'Switch to light mode';
-    button.querySelector('span').textContent = light ? '☾' : '☀';
+    button.querySelector('span').textContent = light ? '☾︎' : '☀︎';
     button.setAttribute('aria-label', label);
     button.setAttribute('aria-pressed', String(light));
     button.title = label;
