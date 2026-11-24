@@ -9113,5 +9113,39 @@ document.addEventListener('DOMContentLoaded', function () {
   sync();
 })();
 </script>
+
+<style id="hoist-notepad-style">
+#hoist-notepad {position:fixed;right:24px;bottom:24px;z-index:9000;color:#edf4ff;font:inherit;--note-bg:#152035;--note-border:#41577a;--note-text:#edf4ff;--note-muted:#aebfdb;}
+html.theme-light #hoist-notepad {--note-bg:#fff;--note-border:#aeb9c9;--note-text:#111827;--note-muted:#526174;color:#111827;}
+#hoist-notepad button {font:inherit;color:var(--note-text);background:var(--note-bg);border:1px solid var(--note-border);cursor:pointer;padding:9px 12px;}
+#hoist-notepad-toggle {display:flex;align-items:center;justify-content:center;width:36px;height:36px;box-sizing:border-box;padding:0;margin-left:auto;box-shadow:none;border-radius:0!important;}
+#hoist-notepad-toggle svg {display:block;flex-shrink:0;}
+#hoist-notepad-panel {width:320px;max-width:calc(100vw - 48px);padding:14px;background:var(--note-bg);border:1px solid var(--note-border);box-shadow:0 5px 24px #0004;box-sizing:border-box;}
+#hoist-notepad-panel[hidden],#hoist-notepad-toggle[hidden]{display:none!important;}
+#hoist-notepad-header {display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+#hoist-notepad-text {display:block;width:100%;height:190px;min-height:90px;max-height:45vh;resize:vertical;box-sizing:border-box;padding:10px;background:var(--note-bg);color:var(--note-text);border:1px solid var(--note-border);font:inherit;line-height:1.5;}
+#hoist-notepad-status {display:block;margin-top:8px;color:var(--note-muted);font-size:11px;}
+@media(max-width:650px),(hover:none) and (pointer:coarse){#hoist-notepad{display:none!important;}}
+</style>
+<aside id="hoist-notepad" aria-label="Personal notepad">
+<button type="button" id="hoist-notepad-toggle" aria-label="Open notepad" title="Open notepad" aria-expanded="false" aria-controls="hoist-notepad-panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="3" width="15" height="18" rx="1"/><path d="M9 3v18M12 8h5m-5 4h5m-5 4h5M3 7h4M3 12h4M3 17h4"/></svg></button>
+<section id="hoist-notepad-panel" hidden>
+<div id="hoist-notepad-header"><strong>Notepad</strong><button type="button" id="hoist-notepad-close" aria-label="Minimize notepad">−</button></div>
+<textarea id="hoist-notepad-text" aria-label="Your notes" placeholder="Write your notes here..."></textarea>
+<small id="hoist-notepad-status" role="status">Notes saved locally in this browser.</small>
+</section>
+</aside>
+<script id="hoist-notepad-script">
+(()=>{
+ const key='hoist-personal-notepad-v1';
+ const toggle=document.getElementById('hoist-notepad-toggle'), panel=document.getElementById('hoist-notepad-panel'), close=document.getElementById('hoist-notepad-close'), field=document.getElementById('hoist-notepad-text'), status=document.getElementById('hoist-notepad-status');
+ try {field.value=localStorage.getItem(key)||'';} catch(e){status.textContent='Browser storage unavailable; notes may not persist.';}
+ field.addEventListener('input',()=>{try{localStorage.setItem(key,field.value);status.textContent='Notes saved locally in this browser.';}catch(e){status.textContent='Unable to save notes. Copy them before leaving.';}});
+ function show(open){panel.hidden=!open;toggle.hidden=open;toggle.setAttribute('aria-expanded',String(open));if(open)field.focus();else toggle.focus();}
+ toggle.addEventListener('click',()=>show(true));close.addEventListener('click',()=>show(false));
+ panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();show(false);}});
+})();
+</script>
+
 </body>
 </html>
