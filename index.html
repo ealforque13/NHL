@@ -7291,7 +7291,14 @@ document.addEventListener('DOMContentLoaded', function () {
     UTA:['#6cace4','#111111'], VAN:['#00843d','#00205b'], VGK:['#333f42','#b4975a'],
     WPG:['#041e42','#7b303e'], WSH:['#c8102e','#041e42']
   };
+  let permanentTeamJerseys = {};
+  const permanentJerseysReady = fetch('./data/team-jerseys.json', {cache:'no-cache'})
+    .then(response => response.ok ? response.json() : {})
+    .then(data => { if (data && typeof data === 'object') permanentTeamJerseys = data; })
+    .catch(() => {});
   function teamFrontJersey() {
+    const permanent = permanentTeamJerseys[selected === 'UTH' ? 'UTA' : selected];
+    if (typeof permanent === 'string' && /^https:\/\/api\.dailyfaceoff\.com\//i.test(permanent)) return permanent;
     const explicit = lineup?.frontJerseyUrl || lineup?.teamFrontJerseyUrl;
     if (typeof explicit === 'string' && /^https:\/\/api\.dailyfaceoff\.com\//i.test(explicit)) return explicit;
     const groups = ['forwards','defense','goalies','powerPlay','penaltyKill','injuries'];
@@ -7473,6 +7480,8 @@ document.addEventListener('DOMContentLoaded', function () {
       render();
       return;
     }
+    await permanentJerseysReady;
+    if (token !== requestId) return;
     lineup = data;
     customRoster = uniqueRoster(flattenRoster(data));
     try {
