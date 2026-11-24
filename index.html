@@ -6530,7 +6530,6 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
 
 <!-- PARLAY BUILDER -->
 <section id="parlay" class="tab-section hidden" aria-label="Parlay Builder">
-  <article class="panel section-panel" style="min-height:180px">
     <div class="hoist-games-weekbar" aria-label="Games by date">
       <button class="hoist-games-week-arrow" id="hoist-parlay-week-prev" type="button" aria-label="Previous week">‹</button>
       <div class="hoist-games-week-days" id="hoist-parlay-week-days"></div>
@@ -6557,6 +6556,7 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
       <button type="button" role="tab" aria-selected="false" data-parlay-filter="shots">Shots</button>
       <button type="button" role="tab" aria-selected="false" data-parlay-filter="moneyline">Moneyline</button>
     </div>
+  <article class="panel section-panel" style="min-height:180px">
     <div id="hoist-parlay-content" data-filter="goals" role="tabpanel">
 <div class="parlay-controls"><input type="date" id="parlay-date" hidden aria-hidden="true" tabindex="-1"><label>Team <select id="parlay-team"><option value="all">All</option></select></label><label id="parlay-line-label">Threshold <select id="parlay-line"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
 <p id="parlay-status" class="muted" role="status"></p><div class="parlay-scroll"><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
@@ -9138,6 +9138,14 @@ document.addEventListener('DOMContentLoaded', function () {
      :(hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5/line,3)*4+(h2h.length?Math.min(h2h.length,5)/5*(h2hHits/h2h.length-.5)*12:0));
    return {sourcePlayer:p,name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly,market:selectedMarket,line};
  }
+ const propRules=[{market:'points',hits:5,h2hRate:.50},{market:'goals',hits:3,h2hRate:.40},{market:'assists',hits:4,h2hRate:.70}];
+ function qualifyProp(result,rule){
+   if(!result||result.h2hN<3)return false;
+   const rate=result.h2hHits/result.h2hN;
+   if(!(result.n5===5&&result.hit5>=rule.hits&&rate+1e-10>=rule.h2hRate)&&rate+1e-10<.80&&!(rule.market==='goals'&&rate+1e-10>=.50))return false;
+   result.score=(result.hit5/result.n5)*50+rate*40+Math.min(result.h2hN,10)*.5+Math.min(result.streak,5);
+   return true;
+ }
  async function update(){
    if(body.hidden)return;
    const games=matchups(),date=dateInput?.value||'',suggestions=true,line=1,minHits=0,h2hOnly=false;
@@ -9177,19 +9185,13 @@ document.addEventListener('DOMContentLoaded', function () {
      const match=opponents.get(team);if(!match)continue;
      for(const player of payload.players||[]){
        if(suggestions){
-         for(const rule of [{market:'points',hits:5,h2hRate:.50},{market:'goals',hits:3,h2hRate:.40},{market:'assists',hits:4,h2hRate:.70}]){
+         for(const rule of propRules){
            if(category!=='all'&&rule.market!==category)continue;
            // Include either the existing recent-form + H2H rule, OR any
            // 1+ point/goal/assist line hitting in at least 80% of recorded
            // meetings with tonight's opponent (regardless of recent form).
            const result=analyze(player,team,match.opponent,match.venue,date,1,0,false,rule.market);
-           if(!result||result.h2hN<3)continue;
-           const h2hRate=result.h2hHits/result.h2hN;
-           const qualifiesRecent=result.n5===5&&result.hit5>=rule.hits&&h2hRate+1e-10>=rule.h2hRate;
-           const qualifiesEliteH2H=h2hRate+1e-10>=.80;
-           const qualifiesGoalsH2H=rule.market==='goals'&&h2hRate+1e-10>=.50;
-           if(!qualifiesRecent&&!qualifiesEliteH2H&&!qualifiesGoalsH2H)continue;
-           result.score=(result.hit5/result.n5)*50+h2hRate*40+Math.min(result.h2hN,10)*.5+Math.min(result.streak,5);
+           if(!qualifyProp(result,rule))continue;
            candidates.push(result);
          }
        }else{
@@ -9220,11 +9222,11 @@ document.addEventListener('DOMContentLoaded', function () {
    const line=Number(pl.value), opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
    const [data]=await Promise.all([Promise.all(teams.filter(t=>pt.value==='all'||pt.value===t).map(async t=>[t,await load(t)])),loadPropInjuries()]);
    if(ticket!==parlayTicket)return;
-   const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(r)results.push(r);}}
+   const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70}))results.push(r);}}
    results.sort((a,b)=>a.name.localeCompare(b.name));
    head.innerHTML='<tr><th>Player / Matchup</th><th>L5</th><th>L10</th><th>H2H</th><th>Streak</th><th>L5 Avg</th><th>Season Avg</th></tr>';
    rows.innerHTML=results.map(r=>`<tr><td><strong>${safe(r.name)}${propInjuryMark(r.sourcePlayer)}</strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} (${Math.round(100*r.h2hHits/r.h2hN)}%)`:'—'}</td><td>${r.streak}</td><td>${r.avg5.toFixed(2)}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td></tr>`).join('');
-   status.textContent=results.length?`${results.length} players · ${line}+ ${plural(line,labels[m])} · Historical results, not predicted probabilities.`:'No sufficient recorded game logs for this selection.';
+   status.textContent=results.length?`${results.length} players · ${line}+ ${plural(line,labels[m])} · Historical results, not predicted probabilities.`:'No players meet the prop eligibility criteria for this selection.';
  }
  if(parlay){
    new MutationObserver(renderParlay).observe(parlay,{attributes:true,attributeFilter:['class']});
