@@ -2,9 +2,9 @@
   "team": "ANA",
   "teamName": "Anaheim Ducks",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T02:38:27.241Z",
-  "sourceDescription": "Anaheim Ducks",
-  "cachedAtUTC": "2026-11-24T15:38:41.762370+00:00",
+  "sourceUpdatedAt": "2026-11-24T16:37:21.405Z",
+  "sourceDescription": "Last Game (2026-11-23)",
+  "cachedAtUTC": "2026-11-24T17:08:35.604559+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cutter Gauthier",
-        "number": 61,
+        "name": "Troy Terry",
+        "number": 19,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33248,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33248/ANA_61_Gauthier_2_.png",
+        "sourcePlayerId": 4645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Terry",
-        "number": 19,
+        "name": "Cutter Gauthier",
+        "number": 61,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
+        "sourcePlayerId": 33248,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33248/ANA_61_Gauthier_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -278,12 +278,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikita Nesterenko",
-        "number": 13,
+        "name": "Nico Myatovic",
+        "number": 48,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30726,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30726/ANA_13_Nesterenko.png",
+        "sourcePlayerId": 31622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31622/ANA_48_Myatovic.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Frank Vatrano",
-        "number": 77,
+        "name": "Stian Solberg",
+        "number": null,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2545,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2545/ANA_77_Vatrano_2_.png",
+        "sourcePlayerId": 38136,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38136/ANA_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

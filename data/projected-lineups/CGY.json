@@ -2,9 +2,9 @@
   "team": "CGY",
   "teamName": "Calgary Flames",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T02:53:02.322Z",
-  "sourceDescription": "Derek Wills",
-  "cachedAtUTC": "2026-11-24T15:38:52.648856+00:00",
+  "sourceUpdatedAt": "2026-11-24T16:25:25.045Z",
+  "sourceDescription": "Last Game (2026-11-23)",
+  "cachedAtUTC": "2026-11-24T17:08:46.279225+00:00",
   "forwards": [
     [
       {
@@ -28,12 +28,12 @@
         "gameTimeDecision": true
       },
       {
-        "name": "Matt Coronato",
-        "number": 27,
+        "name": "Sam Morton",
+        "number": 45,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 32801,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32801/CGY_27_Coronato.png",
+        "sourcePlayerId": 38092,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38092/CGY_45__Morton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -72,12 +72,12 @@
     ],
     [
       {
-        "name": "Sam Morton",
-        "number": 45,
+        "name": "Matt Coronato",
+        "number": 27,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 38092,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38092/CGY_45__Morton.png",
+        "sourcePlayerId": 32801,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32801/CGY_27_Coronato.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

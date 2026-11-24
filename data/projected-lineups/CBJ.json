@@ -2,9 +2,9 @@
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T02:42:44.718Z",
-  "sourceDescription": "@BlueJacketsNHL",
-  "cachedAtUTC": "2026-11-24T15:38:50.480446+00:00",
+  "sourceUpdatedAt": "2026-11-24T16:22:14.364Z",
+  "sourceDescription": "Last Game (2026-11-23)",
+  "cachedAtUTC": "2026-11-24T17:08:44.124354+00:00",
   "forwards": [
     [
       {
@@ -170,12 +170,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dante Fabbro",
-        "number": 15,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -192,12 +192,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -298,12 +298,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Damon Severson",
+        "number": 78,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2038,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2038/CBJ_78_Severson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

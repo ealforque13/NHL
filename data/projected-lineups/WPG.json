@@ -2,9 +2,9 @@
   "team": "WPG",
   "teamName": "Winnipeg Jets",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T16:19:20.531Z",
-  "sourceDescription": "Mike McIntyre",
-  "cachedAtUTC": "2026-11-24T15:39:47.391957+00:00",
+  "sourceUpdatedAt": "2026-11-24T16:35:11.419Z",
+  "sourceDescription": "Last Game (2026-11-23)",
+  "cachedAtUTC": "2026-11-24T17:09:39.658496+00:00",
   "forwards": [
     [
       {
@@ -110,16 +110,6 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 2888,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2888/WPG_9_Iafallo.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Danny Zhilkin",
-        "number": null,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 30843,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30843/WPG_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

@@ -2,9 +2,9 @@
   "team": "FLA",
   "teamName": "Florida Panthers",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T18:30:08.441Z",
-  "sourceDescription": "Jameson Olive",
-  "cachedAtUTC": "2026-11-24T15:39:05.800893+00:00",
+  "sourceUpdatedAt": "2026-11-24T16:58:00.391Z",
+  "sourceDescription": "George Richards",
+  "cachedAtUTC": "2026-11-24T17:08:59.067031+00:00",
   "forwards": [
     [
       {
@@ -92,24 +92,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sandis Vilmanis",
-        "number": 95,
+        "name": "Brad Marchand",
+        "number": 63,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 36428,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36428/FLA_95__Vilmanis.png",
+        "sourcePlayerId": 124,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/124/FLA_63_Marchand_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
       {
-        "name": "Bokondji Imama",
-        "number": 14,
+        "name": "Sandis Vilmanis",
+        "number": 95,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3925,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3925/FLA_14__Imama.png",
+        "sourcePlayerId": 36428,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36428/FLA_95__Vilmanis.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,14 +258,14 @@
     ],
     [
       {
-        "name": "Eetu Luostarinen",
-        "number": 27,
+        "name": "Brad Marchand",
+        "number": 63,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28129,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28129/FLA_27_Luostarinen_2_.png",
+        "sourcePlayerId": 124,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/124/FLA_63_Marchand_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Sam Bennett",

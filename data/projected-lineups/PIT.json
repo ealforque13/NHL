@@ -2,20 +2,20 @@
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:48:30.755Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-24T15:39:27.813241+00:00",
+  "sourceUpdatedAt": "2026-11-24T16:55:46.006Z",
+  "sourceDescription": "@PensInsideScoop",
+  "cachedAtUTC": "2026-11-24T17:09:20.451082+00:00",
   "forwards": [
     [
       {
-        "name": "Tommy Novak",
-        "number": 18,
+        "name": "Evgeni Malkin",
+        "number": 71,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 26595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26595/PIT_18_Novak.png",
+        "sourcePlayerId": 1236,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Sidney Crosby",
@@ -40,12 +40,12 @@
     ],
     [
       {
-        "name": "Egor Chinakhov",
-        "number": 59,
+        "name": "Tommy Novak",
+        "number": 18,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30655,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30655/PIT_59__Chinakhov.png",
+        "sourcePlayerId": 26595,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26595/PIT_18_Novak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +60,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Avery Hayes",
-        "number": null,
+        "name": "Justin Brazeau",
+        "number": 15,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29767,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29767/PIT_85_Hayes.png",
+        "sourcePlayerId": 28622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -124,12 +124,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Brazeau",
-        "number": 15,
+        "name": "Avery Hayes",
+        "number": null,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 28622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
+        "sourcePlayerId": 29767,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29767/PIT_85_Hayes.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -216,14 +216,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ben Kindel",
-        "number": 81,
+        "name": "Evgeni Malkin",
+        "number": 71,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 37573,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37573/PIT_81__Kindel.png",
+        "sourcePlayerId": 1236,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1236/PIT_71_Malkin.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Tommy Novak",
@@ -258,12 +258,12 @@
     ],
     [
       {
-        "name": "Ville Koivunen",
-        "number": 41,
+        "name": "Justin Brazeau",
+        "number": 15,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 34677,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
+        "sourcePlayerId": 28622,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -278,22 +278,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Egor Chinakhov",
-        "number": 59,
+        "name": "Ben Kindel",
+        "number": 81,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30655,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30655/PIT_59__Chinakhov.png",
+        "sourcePlayerId": 37573,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37573/PIT_81__Kindel.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Brazeau",
-        "number": 15,
+        "name": "Ville Koivunen",
+        "number": 41,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 28622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
+        "sourcePlayerId": 34677,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
