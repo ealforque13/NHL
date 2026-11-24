@@ -7291,14 +7291,29 @@ document.addEventListener('DOMContentLoaded', function () {
     UTA:['#6cace4','#111111'], VAN:['#00843d','#00205b'], VGK:['#333f42','#b4975a'],
     WPG:['#041e42','#7b303e'], WSH:['#c8102e','#041e42']
   };
+  function teamFrontJersey() {
+    const explicit = lineup?.frontJerseyUrl || lineup?.teamFrontJerseyUrl;
+    if (typeof explicit === 'string' && /^https:\/\/api\.dailyfaceoff\.com\//i.test(explicit)) return explicit;
+    const groups = ['forwards','defense','goalies','powerPlay','penaltyKill','injuries'];
+    const players = groups.flatMap(k => (lineup?.[k] || []).flat());
+    for (const p of players) {
+      const url = p?.jerseyUrl || p?.playerJerseyUrl;
+      if (typeof url !== 'string' || !/^https:\/\/api\.dailyfaceoff\.com\//i.test(url)) continue;
+      const file = decodeURIComponent(url.split('?')[0].split('/').pop());
+      const n = p.number ?? p.sweaterNumber ?? p.jerseyNumber;
+      if (p.jerseySide === 'front' || p.isFrontJersey === true || /(?:^|[_-])(?:front|blank|default|generic)(?:[_-]|\.)/i.test(file) || ((n == null || n === '' || Number(n) === 0) && !/[_-][1-9][0-9]*[_-]/.test(file))) return url;
+    }
+    return '';
+  }
   function jerseyMarkup(name, number, p) {
     const id = p.sourcePlayerId ?? p.playerId;
     const rawUrl = p.jerseyUrl || p.playerJerseyUrl || jerseyPreview[selected]?.[id];
-    const url = typeof rawUrl === 'string' && /^https:\/\//i.test(rawUrl) ? rawUrl : '';
+    const front = teamFrontJersey();
+    const url = typeof rawUrl === 'string' && /^https:\/\//i.test(rawUrl) ? rawUrl : front;
     const [primary,accent] = jerseyPalettes[selected] || ['#233653','#607b9e'];
     const logo = `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(selected)}_dark.svg`;
     return `<div class="hoist-authentic-jersey" style="--jersey-primary:${primary};--jersey-accent:${accent}">
-      ${url ? `<img class="hoist-authentic-jersey-img" src="${esc(url)}" alt="${esc(name)} jersey" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">` : ''}
+      ${url ? `<img class="hoist-authentic-jersey-img" src="${esc(url)}" alt="${esc(name)} jersey" loading="lazy" decoding="async" data-front="${esc(front)}" onerror="if(this.dataset.front &amp;&amp; this.src!==this.dataset.front){this.src=this.dataset.front;return;}this.hidden=true;this.nextElementSibling.hidden=false">` : ''}
       <div class="hoist-front-jersey" ${url ? 'hidden' : ''} role="img" aria-label="${esc(selected)} front jersey">
         <svg viewBox="0 0 166 160" aria-hidden="true">
           <path d="M58 16 L73 10 Q83 22 93 10 L108 16 L139 30 L158 113 L132 121 L120 76 L120 146 L46 146 L46 76 L34 121 L8 113 L27 30 Z" fill="${primary}" stroke="${accent}" stroke-width="1.5"/>
