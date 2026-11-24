@@ -7291,35 +7291,30 @@ document.addEventListener('DOMContentLoaded', function () {
     UTA:['#6cace4','#111111'], VAN:['#00843d','#00205b'], VGK:['#333f42','#b4975a'],
     WPG:['#041e42','#7b303e'], WSH:['#c8102e','#041e42']
   };
+  const historicalTeamJerseys = {"WPG": ["https://api.dailyfaceoff.com/uploads/player/jersey/2107/WPG_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/29186/WPG_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/30843/WPG_Frnt.png"], "MTL": ["https://api.dailyfaceoff.com/uploads/player/jersey/2522/MTL_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/30810/MTL_Frnt.png"], "VAN": ["https://api.dailyfaceoff.com/uploads/player/jersey/28075/VAN_Frnt.png"], "UTA": ["https://api.dailyfaceoff.com/uploads/player/jersey/28455/UTH_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png"], "DET": ["https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/4479/DET_Frnt.png"], "NYR": ["https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png"], "COL": ["https://api.dailyfaceoff.com/uploads/player/jersey/30436/COL_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/32036/COL_Frnt.png"], "TOR": ["https://api.dailyfaceoff.com/uploads/player/jersey/30512/TOR_Frnt.png", "https://api.dailyfaceoff.com/uploads/player/jersey/32967/TOR_Frnt.png"], "OTT": ["https://api.dailyfaceoff.com/uploads/player/jersey/30972/OTT_Frnt.png"], "SEA": ["https://api.dailyfaceoff.com/uploads/player/jersey/31585/SEA_Frnt.png"], "SJS": ["https://api.dailyfaceoff.com/uploads/player/jersey/35083/SJS_Frnt.png"], "ANA": ["https://api.dailyfaceoff.com/uploads/player/jersey/38136/ANA_Frnt.png"], "TBL": ["https://api.dailyfaceoff.com/uploads/player/jersey/3913/TBL_Frnt.png"]};
   let permanentTeamJerseys = {};
   const permanentJerseysReady = fetch('./data/team-jerseys.json', {cache:'no-cache'})
     .then(response => response.ok ? response.json() : {})
     .then(data => { if (data && typeof data === 'object') permanentTeamJerseys = data; })
     .catch(() => {});
-  function teamFrontJersey() {
-    const permanent = permanentTeamJerseys[selected === 'UTH' ? 'UTA' : selected];
-    if (typeof permanent === 'string' && /^https:\/\/api\.dailyfaceoff\.com\//i.test(permanent)) return permanent;
-    const explicit = lineup?.frontJerseyUrl || lineup?.teamFrontJerseyUrl;
-    if (typeof explicit === 'string' && /^https:\/\/api\.dailyfaceoff\.com\//i.test(explicit)) return explicit;
+  function teamFrontJerseys() {
+    const key = selected === 'UTH' ? 'UTA' : selected;
     const groups = ['forwards','defense','goalies','powerPlay','penaltyKill','injuries'];
     const players = groups.flatMap(k => (lineup?.[k] || []).flat());
-    for (const p of players) {
-      const url = p?.jerseyUrl || p?.playerJerseyUrl;
-      if (typeof url !== 'string' || !/^https:\/\/api\.dailyfaceoff\.com\//i.test(url)) continue;
-      const file = decodeURIComponent(url.split('?')[0].split('/').pop());
-      if (/(?:^|[_-])(?:frnt|front)(?:[_-]|\.)/i.test(file)) return url;
-    }
-    return '';
+    const candidates = [permanentTeamJerseys[key], historicalTeamJerseys[key], lineup?.frontJerseyUrl, lineup?.teamFrontJerseyUrl,
+      ...players.map(p => p?.jerseyUrl || p?.playerJerseyUrl)].flat();
+    return [...new Set(candidates.filter(url => typeof url === 'string' && /^https:\/\/api\.dailyfaceoff\.com\//i.test(url) && /(?:frnt|front)\.png(?:\?|$)/i.test(url)))];
   }
   function jerseyMarkup(name, number, p) {
     const id = p.sourcePlayerId ?? p.playerId;
     const rawUrl = p.jerseyUrl || p.playerJerseyUrl || jerseyPreview[selected]?.[id];
-    const front = teamFrontJersey();
+    const fronts = teamFrontJerseys();
+    const front = fronts[0] || '';
     const url = typeof rawUrl === 'string' && /^https:\/\//i.test(rawUrl) ? rawUrl : front;
     const [primary,accent] = jerseyPalettes[selected] || ['#233653','#607b9e'];
     const logo = `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(selected)}_dark.svg`;
     return `<div class="hoist-authentic-jersey" style="--jersey-primary:${primary};--jersey-accent:${accent}">
-      ${url ? `<img class="hoist-authentic-jersey-img" src="${esc(url)}" alt="${esc(name)} jersey" loading="lazy" decoding="async" data-front="${esc(front)}" onerror="if(this.dataset.front &amp;&amp; this.src!==this.dataset.front){this.src=this.dataset.front;return;}this.hidden=true;this.nextElementSibling.hidden=false">` : ''}
+      ${url ? `<img class="hoist-authentic-jersey-img" src="${esc(url)}" alt="${esc(name)} jersey" loading="lazy" decoding="async" data-fronts="${esc(JSON.stringify(fronts.filter(candidate => candidate !== url)))}" onerror="const remaining=JSON.parse(this.dataset.fronts);if(remaining.length){this.dataset.fronts=JSON.stringify(remaining.slice(1));this.src=remaining[0];return;}this.onerror=null;this.hidden=true;this.nextElementSibling.hidden=false">` : ''}
       <div class="hoist-front-jersey" ${url ? 'hidden' : ''} role="img" aria-label="${esc(selected)} front jersey">
         <svg viewBox="0 0 166 160" aria-hidden="true">
           <path d="M58 16 L73 10 Q83 22 93 10 L108 16 L139 30 L158 113 L132 121 L120 76 L120 146 L46 146 L46 76 L34 121 L8 113 L27 30 Z" fill="${primary}" stroke="${accent}" stroke-width="1.5"/>
