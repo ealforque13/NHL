@@ -3,9 +3,9 @@
   "teamName": "Seattle Kraken",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:37:57.390Z",
-  "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T18:28:23.030766+00:00",
+  "sourceUpdatedAt": "2026-11-24T19:32:54.114Z",
+  "sourceDescription": "@sound_hockey",
+  "cachedAtUTC": "2026-11-24T19:40:08.880188+00:00",
   "forwards": [
     [
       {
@@ -83,44 +83,44 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Chandler Stephenson",
-        "number": 9,
+        "name": "Frederick Gaudreau",
+        "number": 89,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2538,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2538/SEA_9_Stephenson.png",
+        "sourcePlayerId": 2701,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2701/SEA_89_Gaudreau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Frederick Gaudreau",
-        "number": 89,
+        "name": "Chandler Stephenson",
+        "number": 9,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2701,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2701/SEA_89_Gaudreau.png",
+        "sourcePlayerId": 2538,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2538/SEA_9_Stephenson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Matthew Wood",
-        "number": 71,
+        "name": "Ben Meyers",
+        "number": 59,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33571,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33571/SEA_71__Wood.png",
+        "sourcePlayerId": 30084,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30084/SEA_59_Meyers.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Ben Meyers",
-        "number": 59,
+        "name": "Matthew Wood",
+        "number": 71,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 30084,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30084/SEA_59_Meyers.png",
+        "sourcePlayerId": 33571,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33571/SEA_71__Wood.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

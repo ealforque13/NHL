@@ -1,11 +1,11 @@
 {
   "team": "VAN",
   "teamName": "Vancouver Canucks",
-  "teamFrontJerseyUrl": null,
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28385/VAN_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:50:51.549Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-24T18:28:35.685282+00:00",
+  "sourceUpdatedAt": "2026-11-24T19:37:57.568Z",
+  "sourceDescription": "Thomas Drance",
+  "cachedAtUTC": "2026-11-24T19:40:21.509891+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Paul Cotter",
-        "number": 47,
+        "name": "Cole Reinhardt",
+        "number": 23,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 27620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
+        "sourcePlayerId": 28385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28385/VAN_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Arshdeep Bains",
-        "number": null,
+        "name": "Paul Cotter",
+        "number": 47,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 28969,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28969/VAN_13__Bains.png",
+        "sourcePlayerId": 27620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -3,9 +3,9 @@
   "teamName": "Colorado Avalanche",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30436/COL_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-20T17:18:11.963Z",
-  "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-24T18:27:51.011041+00:00",
+  "sourceUpdatedAt": "2026-11-24T19:39:28.826Z",
+  "sourceDescription": "@HockeyMtnHighCO",
+  "cachedAtUTC": "2026-11-24T19:39:37.125828+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Adam Beckman",
-        "number": null,
+        "name": "Logan O'Connor",
+        "number": 25,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30436,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30436/COL_Frnt.png",
+        "sourcePlayerId": 24994,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/24994/COL_25_O_Connor.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,14 +125,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Logan O'Connor",
-        "number": 25,
+        "name": "Gavin Brindley",
+        "number": 54,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 24994,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/24994/COL_25_O_Connor.png",
+        "sourcePlayerId": 33176,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33176/COL_54__Brindley.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -149,14 +149,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Malinski",
-        "number": 70,
+        "name": "Cale Makar",
+        "number": 8,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 37993,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37993/COL_70_Malinski.png",
+        "sourcePlayerId": 2788,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -171,24 +171,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Juulsen",
-        "number": 47,
+        "name": "Sam Malinski",
+        "number": 70,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2500,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2500/COL_47__Juulsen.png",
+        "sourcePlayerId": 37993,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37993/COL_70_Malinski.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Mike Reilly",
-        "number": 6,
+        "name": "Noah Juulsen",
+        "number": 47,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2469,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2469/COL_Frnt.webp",
+        "sourcePlayerId": 2500,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2500/COL_47__Juulsen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -247,14 +247,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Devon Toews",
-        "number": 7,
+        "name": "Cale Makar",
+        "number": 8,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 2874,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2874/COL_7_Toews.png",
+        "sourcePlayerId": 2788,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2788/COL_8_Makar.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -269,22 +269,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nicolas Roy",
-        "number": 10,
+        "name": "Brock Nelson",
+        "number": 11,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 3818,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3818/COL_10_Roy.png",
+        "sourcePlayerId": 1921,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1921/COL_11_Nelson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Nelson",
-        "number": 11,
+        "name": "Gabriel Landeskog",
+        "number": 92,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1921,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1921/COL_11_Nelson.png",
+        "sourcePlayerId": 1763,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1763/COL_92_Landeskog.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -299,12 +299,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gabriel Landeskog",
-        "number": 92,
+        "name": "Devon Toews",
+        "number": 7,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 1763,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1763/COL_92_Landeskog.png",
+        "sourcePlayerId": 2874,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2874/COL_7_Toews.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
