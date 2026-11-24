@@ -7300,8 +7300,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const url = p?.jerseyUrl || p?.playerJerseyUrl;
       if (typeof url !== 'string' || !/^https:\/\/api\.dailyfaceoff\.com\//i.test(url)) continue;
       const file = decodeURIComponent(url.split('?')[0].split('/').pop());
-      const n = p.number ?? p.sweaterNumber ?? p.jerseyNumber;
-      if (p.jerseySide === 'front' || p.isFrontJersey === true || /(?:^|[_-])(?:front|blank|default|generic)(?:[_-]|\.)/i.test(file) || ((n == null || n === '' || Number(n) === 0) && !/[_-][1-9][0-9]*[_-]/.test(file))) return url;
+      if (/(?:^|[_-])(?:frnt|front)(?:[_-]|\.)/i.test(file)) return url;
     }
     return '';
   }
