@@ -9,6 +9,7 @@ opt-in and should only be enabled after verifying permission for automated use.
 import argparse
 import json
 import os
+import re
 import time
 from pathlib import Path
 from datetime import datetime, timezone
@@ -82,6 +83,14 @@ def player_info(p):
     }
 
 
+def front_jersey(players):
+    for p in players:
+        url = player_info(p)['jerseyUrl']
+        if url and re.search(r'(?:^|[_-])(?:frnt|front)(?:[_-]|\.)', url.split('?')[0].rsplit('/', 1)[-1], re.I):
+            return url
+    return None
+
+
 def transform(c):
     groups = {}
 
@@ -122,6 +131,7 @@ def transform(c):
     return {
         'team': c['teamAbbreviation'],
         'teamName': c.get('teamName'),
+        'teamFrontJerseyUrl': front_jersey(c['players']),
         'source': 'Daily Faceoff',
         'sourceUpdatedAt': c.get('updatedAt'),
         'sourceDescription': c.get('sourceName'),
@@ -201,6 +211,13 @@ def save_result(result, output):
 
     # Atomic replacement, never replace a valid file
     # with an invalid response.
+    if not result.get('teamFrontJerseyUrl') and output.exists():
+        try:
+            previous = json.loads(output.read_text(encoding='utf-8'))
+            if previous.get('team') == result.get('team'):
+                result['teamFrontJerseyUrl'] = previous.get('teamFrontJerseyUrl')
+        except (OSError, ValueError):
+            pass
     temp = output.with_suffix('.tmp')
 
     temp.write_text(
