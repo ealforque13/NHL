@@ -5802,6 +5802,7 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
 </style>
 <style id="parlay-odds-color">#parlay .parlay-table .parlay-odds{color:#60a5fa!important}html.theme-light #parlay .parlay-table .parlay-odds{color:#1763bd!important}</style>
 <style>#parlay-status:empty{display:none}</style>
+<style id="parlay-sort-style">#parlay .parlay-h2h-rate{color:#60a5fa!important}html.theme-light #parlay .parlay-h2h-rate{color:#1763bd!important}#parlay .parlay-sort-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}#parlay .parlay-sort-arrow{color:#60a5fa}html.theme-light #parlay .parlay-sort-arrow{color:#1763bd}</style>
 </head>
 
 <body>
@@ -9211,6 +9212,19 @@ document.addEventListener('DOMContentLoaded', function () {
  }
  const parlay=byId('parlay'),pd=byId('parlay-date'),pl=byId('parlay-line'),pc=byId('hoist-parlay-content');
  let parlayTicket=0;
+ const parlaySort={};
+ function sortableParlay(head,rows,market){
+   const headers=[...head.querySelectorAll('th')];
+   const state=parlaySort[market]||(parlaySort[market]={index:market==='moneyline'?0:-1,dir:1});
+   const originalOrder=[...rows.rows];
+   function apply(){
+     const value=(row)=>{const cell=row.cells[state.index];if(!cell)return null;const t=cell.textContent.trim();if(state.index===0)return cell.querySelector('strong')?.textContent||t;if(t==='—'||!t)return null;const ratio=t.match(/^(\d+)\/(\d+)/);return ratio?(Number(ratio[2])?Number(ratio[1])/Number(ratio[2]):null):Number(t);};
+     const ordered=state.index===-1?originalOrder:[...rows.rows].sort((a,b)=>{const x=value(a),y=value(b);if(x===null||Number.isNaN(x))return y===null||Number.isNaN(y)?0:1;if(y===null||Number.isNaN(y))return -1;return state.dir*(typeof x==='string'?x.localeCompare(y):x-y);});
+     ordered.forEach(row=>rows.append(row));
+     headers.forEach((h,i)=>{h.setAttribute('aria-sort',i===state.index?(state.dir===1?'ascending':'descending'):'none');const arrow=h.querySelector('.parlay-sort-arrow');if(arrow)arrow.textContent=i===state.index?(state.dir===1?' ▲':' ▼'):'';});
+   }
+   headers.forEach((h,i)=>{if(i===0&&market!=='moneyline')return;const label=h.textContent;const b=document.createElement('button');b.type='button';b.className='parlay-sort-button';b.textContent=label;const arrow=document.createElement('span');arrow.className='parlay-sort-arrow';arrow.setAttribute('aria-hidden','true');b.append(arrow);h.replaceChildren(b);b.addEventListener('click',()=>{if(state.index===i)state.dir*=-1;else{state.index=i;state.dir=i===0?1:-1;}apply();});});apply();
+ }
  async function loadOdds(){try{const r=await fetch('./data/odds.json',{cache:'no-store'});if(!r.ok)return null;return await r.json();}catch{return null;}}
  function oddsLabel(v){return Number.isInteger(v)&&Math.abs(v)>=100?(1+(v>0?v/100:100/Math.abs(v))).toFixed(2):'—';}
  function oddsName(v){return normalizePlayerName(String(v).replace(/\s*\([A-Z]{2,3}\)\s*$/,''));}
@@ -9229,16 +9243,17 @@ document.addEventListener('DOMContentLoaded', function () {
    byId('parlay-line-label').hidden=m==='moneyline';rows.innerHTML='';head.innerHTML='';
    const feed=await loadOdds();if(ticket!==parlayTicket)return;
    const oddsStatus=feed&&!feed.snapshot&&feed.updatedAt&&Date.now()-Date.parse(feed.updatedAt)<=45*60000?'FanDuel Ontario · updated '+new Date(feed.updatedAt).toLocaleString():'FanDuel odds unavailable or outdated';
-   if(m==='moneyline'){head.innerHTML='<tr><th>Team / Matchup</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';rows.innerHTML=games.flatMap(g=>[g.away,g.home].map(t=>`<tr><td><strong>${safe(t)}</strong><small>${safe(g.away)} @ ${safe(g.home)}</small></td><td class="parlay-odds">${oddsLabel(priceFor(feed,date,g.away,g.home,m,1,'',t))}</td></tr>`)).join('');status.textContent=games.length?'':'No scheduled matchups available for this date.';return;}
+   if(m==='moneyline'){head.innerHTML='<tr><th>Team / Matchup</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';rows.innerHTML=games.flatMap(g=>[g.away,g.home].map(t=>`<tr><td><strong>${safe(t)}</strong><small>${safe(g.away)} @ ${safe(g.home)}</small></td><td class="parlay-odds">${oddsLabel(priceFor(feed,date,g.away,g.home,m,1,'',t))}</td></tr>`)).join('');sortableParlay(head,rows,m);status.textContent=games.length?'':'No scheduled matchups available for this date.';return;}
    if(!games.length){status.textContent='No scheduled matchups available for this date.';return;}
    status.textContent='Loading recorded player statistics…';
    const line=Number(pl.value), opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
    const [data]=await Promise.all([Promise.all(teams.map(async t=>[t,await load(t)])),loadPropInjuries()]);
    if(ticket!==parlayTicket)return;
-   const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70}))results.push(r);}}
+   const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){if(propInjuryMark(player))continue;const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70}))results.push(r);}}
    results.sort((a,b)=>a.name.localeCompare(b.name));
    head.innerHTML='<tr><th>Player / Matchup</th><th>L5</th><th>L10</th><th>H2H</th><th>Streak</th><th>Season Avg</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';
-   rows.innerHTML=results.map(r=>`<tr><td><strong>${safe(r.name)}${propInjuryMark(r.sourcePlayer)}</strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} (${Math.round(100*r.h2hHits/r.h2hN)}%)`:'—'}</td><td>${r.streak}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td><td class="parlay-odds">${oddsLabel(priceFor(feed,date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team))}</td></tr>`).join('');
+   rows.innerHTML=results.map(r=>`<tr><td><strong>${safe(r.name)}${propInjuryMark(r.sourcePlayer)}</strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} <span class="parlay-h2h-rate">(${Math.round(100*r.h2hHits/r.h2hN)}%)</span>`:'—'}</td><td>${r.streak}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td><td class="parlay-odds">${oddsLabel(priceFor(feed,date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team))}</td></tr>`).join('');
+   sortableParlay(head,rows,m);
    status.textContent=results.length?'':'No players meet the prop eligibility criteria for this selection.';
  }
  if(parlay){
