@@ -5725,7 +5725,9 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
 html.theme-light #parlay .hoist-parlay-tabs button{color:#000!important}
 @media(max-width:650px){#parlay .hoist-parlay-tabs button{flex:1 1 25%;min-width:0;padding:12px 4px;font-size:12px}}
 </style>
-</head>
+<style>
+#parlay .parlay-controls{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin:12px 0}#parlay .parlay-controls label{display:flex;gap:7px;align-items:center}#parlay .parlay-controls label[hidden]{display:none}#parlay .parlay-scroll{overflow-x:auto}#parlay .parlay-table{width:100%;border-collapse:collapse;font-size:14px}#parlay .parlay-table th,#parlay .parlay-table td{padding:12px 8px;border-bottom:1px solid rgba(125,155,195,.25);text-align:center;white-space:nowrap}#parlay .parlay-table th:first-child,#parlay .parlay-table td:first-child{text-align:left}#parlay .parlay-table small{display:block;opacity:.75;margin-top:4px}html.theme-light #parlay .parlay-table{color:#111} @media(max-width:650px){#parlay .parlay-table{font-size:12px}#parlay .parlay-controls{gap:8px}}
+</style></head>
 
 <body>
 
@@ -6462,7 +6464,9 @@ html.theme-light #parlay .hoist-parlay-tabs button{color:#000!important}
       <button type="button" role="tab" aria-selected="false" data-parlay-filter="shots">Shots</button>
       <button type="button" role="tab" aria-selected="false" data-parlay-filter="moneyline">Moneyline</button>
     </div>
-    <div id="hoist-parlay-content" data-filter="goals" role="tabpanel"></div>
+    <div id="hoist-parlay-content" data-filter="goals" role="tabpanel">
+<div class="parlay-controls"><label>Date <input type="date" id="parlay-date"></label><label>Team <select id="parlay-team"><option value="all">All</option></select></label><label id="parlay-line-label">Threshold <select id="parlay-line"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
+<p id="parlay-status" class="muted" role="status"></p><div class="parlay-scroll"><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
   </article>
 </section>
 
@@ -9104,6 +9108,35 @@ document.addEventListener('DOMContentLoaded', function () {
    describeResults(top.length);
    if(!top.length){list.innerHTML='<p class="hoist-picks-empty">No players meet these criteria with verified recent and opponent game-log data. Try another date, team, or prop category.</p>';return;}
    list.innerHTML=top.map((p,i)=>{const market=p.market,line=p.line;return `<details class="hoist-pick"><summary class="hoist-pick-summary"><span class="hoist-pick-rank">${String(i+1).padStart(2,'0')}</span><span class="hoist-pick-player"><strong>${safe(p.name)}${propInjuryMark(p.sourcePlayer)} · ${line}+ ${safe(plural(line,labels[market]))}</strong><small>${safe(p.team)} ${safe(p.venue)} ${safe(p.opponent)}</small></span><span class="hoist-pick-signal">${p.hit5}/${p.n5} ${p.h2hOnly?'H2H':'L5'}</span><span class="hoist-pick-chevron" aria-hidden="true"></span></summary><div class="hoist-pick-details"><ul><li>Hit ${line}+ ${safe(plural(line,labels[market]))} in ${p.hit5} of the last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}.</li><li>${p.h2hOnly?'Last 10 games vs '+safe(p.opponent):'Last 10 games'}: ${p.hit10}/${p.n10} hits.</li>${p.streak?`<li>${p.h2hOnly?'Consecutive H2H meetings hitting':'Current '+safe(labels[market])+' streak'}: ${p.streak} game${p.streak===1?'':'s'}.</li>`:''}<li>Last ${p.n5} ${p.h2hOnly?'games vs '+safe(p.opponent):'games'}: ${p.avg5.toFixed(2)} ${safe(plural(2,labels[market]))} per game.</li>${p.seasonAvg!==null?`<li>2026–27: ${p.seasonAvg.toFixed(2)} per game over ${p.nSeason} recorded games.</li>`:''}${p.h2hN?`<li class="hoist-pick-h2h">Vs ${safe(p.opponent)}: ${p.h2hHits}/${p.h2hN} hit this line. ${Math.round((p.h2hHits/p.h2hN)*100)}%.</li>`:`<li>Head-to-head: unavailable in the cached game logs (not assumed to be zero).</li>`}</ul></div></details>`;}).join('');
+ }
+ const parlay=byId('parlay'),pd=byId('parlay-date'),pt=byId('parlay-team'),pl=byId('parlay-line'),pc=byId('hoist-parlay-content');
+ let parlayTicket=0;
+ async function renderParlay(){
+   if(!parlay||parlay.classList.contains('hidden'))return;
+   const ticket=++parlayTicket, m=pc.dataset.filter, date=dateInput?.value||'', games=matchups(), status=byId('parlay-status'), rows=byId('parlay-rows'), head=byId('parlay-head');
+   if(date)pd.value=date;
+   const teams=[...new Set(games.flatMap(g=>[g.away,g.home]))].sort(), old=pt.value;
+   pt.innerHTML='<option value="all">All</option>'+teams.map(t=>`<option>${safe(t)}</option>`).join('');pt.value=teams.includes(old)?old:'all';
+   byId('parlay-line-label').hidden=m==='moneyline';rows.innerHTML='';head.innerHTML='';
+   if(m==='moneyline'){status.textContent='Team win history and moneyline odds are not available in the player-prop dataset.';return;}
+   if(!games.length){status.textContent='No scheduled matchups available for this date.';return;}
+   status.textContent='Loading recorded player statistics…';
+   const line=Number(pl.value), opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
+   const [data]=await Promise.all([Promise.all(teams.filter(t=>pt.value==='all'||pt.value===t).map(async t=>[t,await load(t)])),loadPropInjuries()]);
+   if(ticket!==parlayTicket)return;
+   const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(r)results.push(r);}}
+   results.sort((a,b)=>a.name.localeCompare(b.name));
+   head.innerHTML='<tr><th>Player / Matchup</th><th>L5</th><th>L10</th><th>H2H</th><th>Streak</th><th>L5 Avg</th><th>Season Avg</th></tr>';
+   rows.innerHTML=results.map(r=>`<tr><td><strong>${safe(r.name)}${propInjuryMark(r.sourcePlayer)}</strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} (${Math.round(100*r.h2hHits/r.h2hN)}%)`:'—'}</td><td>${r.streak}</td><td>${r.avg5.toFixed(2)}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td></tr>`).join('');
+   status.textContent=results.length?`${results.length} players · ${line}+ ${plural(line,labels[m])} · Historical results, not predicted probabilities.`:'No sufficient recorded game logs for this selection.';
+ }
+ if(parlay){
+   new MutationObserver(renderParlay).observe(parlay,{attributes:true,attributeFilter:['class']});
+   new MutationObserver(renderParlay).observe(pc,{attributes:true,attributeFilter:['data-filter']});
+   pt.addEventListener('change',renderParlay);pl.addEventListener('change',renderParlay);
+   pd.addEventListener('change',()=>{if(dateInput&&pd.value){dateInput.value=pd.value;dateInput.dispatchEvent(new Event('change',{bubbles:true}));}});
+   new MutationObserver(renderParlay).observe(grid,{childList:true,subtree:true});
+   renderParlay();
  }
  function schedule(){if(queued)return;queued=true;requestAnimationFrame(()=>{queued=false;update()})}
  byId('hoist-prop-team')?.addEventListener('change',()=>{lastKey='';schedule()});
