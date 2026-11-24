@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T13:12:31.482678+00:00",
+  "updatedAt": "2026-11-24T18:57:04.080107+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -16,14 +16,14 @@
     },
     "8474574": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Myers (upper body) has a chance to return in Wednesday's home clash against the Predators, per Robert Tiffin of NHL.com.",
       "status": "Day-To-Day",
       "team": "DAL"
     },
     "8475151": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "NYI"
     },
     "8475168": {
@@ -40,8 +40,8 @@
     },
     "8475786": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Hyman (migraine) won't play against Vegas on Tuesday, per Oilers play-by-play announcer Jack Michaels.",
+      "status": "Out",
       "team": "EDM"
     },
     "8475810": {
@@ -68,12 +68,6 @@
       "status": "Injured Reserve",
       "team": "WPG"
     },
-    "8476454": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "EDM"
-    },
     "8476456": {
       "injured": true,
       "description": "Huberdeau (hip) had three assists in AHL Calgary's 4-3 win over Coachella Valley on Wednesday.",
@@ -94,8 +88,8 @@
     },
     "8476875": {
       "injured": true,
-      "description": "Matheson (lower body) will miss approximately 2-3 weeks, the Canadiens announced Sunday.",
-      "status": "Out",
+      "description": "Matheson (lower body) was placed on long-term injured reserve Tuesday, Renaud Lavoie of TVA Sports reports.",
+      "status": "Injured Reserve",
       "team": "MTL"
     },
     "8476878": {
@@ -140,6 +134,12 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
+    "8477402": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "STL"
+    },
     "8477406": {
       "injured": true,
       "description": "Janmark (undisclosed) does not have a timetable for his return from injury.",
@@ -178,13 +178,13 @@
     },
     "8477497": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CBJ"
     },
     "8477506": {
       "injured": true,
-      "description": "out",
+      "description": "Pulock (shoulder) is expected to miss 1-2 weeks, Andrew Gross of Newsday reports Tuesday.",
       "status": "Out",
       "team": "NYI"
     },
@@ -196,8 +196,8 @@
     },
     "8477940": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "CAR"
     },
     "8477951": {
@@ -230,10 +230,16 @@
       "status": "Injured Reserve",
       "team": "ANA"
     },
+    "8478443": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "STL"
+    },
     "8478458": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TOR"
     },
     "8478465": {
@@ -274,7 +280,7 @@
     },
     "8479576": {
       "injured": true,
-      "description": "Desharnais (abdomen) has been cleared for contact, Sammi Silber of The District Standard reports Friday.",
+      "description": "Desharnais (appendectomy) was a full participant in Tuesday's practice and has been upgraded to day-to-day, Tarik El-Bashir of Monumental Sports Network reports.",
       "status": "Injured Reserve",
       "team": "WSH"
     },
@@ -286,8 +292,8 @@
     },
     "8479671": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CBJ"
     },
     "8479941": {
@@ -316,7 +322,7 @@
     },
     "8480069": {
       "injured": true,
-      "description": "ir",
+      "description": "Makar (lower body) was on the ice in a regular sweater ahead of Wednesday's clash with Montreal, Evan Rawal of the Denver Gazette reports.",
       "status": "Injured Reserve",
       "team": "COL"
     },
@@ -358,7 +364,7 @@
     },
     "8480873": {
       "injured": true,
-      "description": "Sandin (knee) will be with the Capitals for their two-game road trip, Tarik El-Bashir of Monumental Sports Network reports Monday.",
+      "description": "Sandin (knee) has been cleared to start taking contact, Sammi Silber of The District Standard reports Tuesday.",
       "status": "Injured Reserve",
       "team": "WSH"
     },
@@ -394,8 +400,8 @@
     },
     "8481580": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "McMichael (lower body) isn't expected to play against the Islanders on Wednesday, according to Lou Korac of NHL.com.",
+      "status": "Out",
       "team": "STL"
     },
     "8481582": {
@@ -406,7 +412,7 @@
     },
     "8481604": {
       "injured": true,
-      "description": "ir",
+      "description": "Dorofeyev (lower body) will join the Rangers for their two-game road trip, Mollie Walker of the New York Post reports Tuesday.",
       "status": "Injured Reserve",
       "team": "NYR"
     },
@@ -446,6 +452,12 @@
       "status": "Injured Reserve",
       "team": "WPG"
     },
+    "8482896": {
+      "injured": true,
+      "description": "Kozak (undisclosed) did not practice Tuesday and is considered day-to-day, per Paul Hamilton of WGR Sports Radio 550.",
+      "status": "Day-To-Day",
+      "team": "BUF"
+    },
     "8483398": {
       "injured": true,
       "description": "day-to-day",
@@ -460,7 +472,7 @@
     },
     "8483447": {
       "injured": true,
-      "description": "Geekie (upper body) is out indefinitely, according to Eduardo A. Encina of the Tampa Bay Times on Saturday.",
+      "description": "Geekie (shoulder) underwent surgery Monday and is expected to miss 4-5 months.",
       "status": "Injured Reserve",
       "team": "TBL"
     },
@@ -475,6 +487,12 @@
       "description": "Savoie (lower body) was shifted to long-term injured reserve Thursday.",
       "status": "Injured Reserve",
       "team": "EDM"
+    },
+    "8483516": {
+      "injured": true,
+      "description": "Snuggerud (undisclosed) is questionable for Wednesday's game against the Islanders, per Lou Korac of NHL.com.",
+      "status": "Day-To-Day",
+      "team": "STL"
     },
     "8483546": {
       "injured": true,
@@ -514,8 +532,8 @@
     },
     "8484153": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "ANA"
     },
     "8484287": {
@@ -562,7 +580,7 @@
     },
     "8485395": {
       "injured": true,
-      "description": "Head coach Marco Sturm announced Saturday that Hagens (back) is expected to miss multiple weeks, per Jack Studley of Boston Hockey Now.",
+      "description": "Hagens (back) is wearing a non-contact sweater ahead of Tuesday's practice, Steve Conroy of the Boston Herald reports.",
       "status": "Injured Reserve",
       "team": "BOS"
     },
