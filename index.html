@@ -5803,7 +5803,7 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
 <style id="parlay-odds-color">#parlay .parlay-table .parlay-odds{color:#60a5fa!important}html.theme-light #parlay .parlay-table .parlay-odds{color:#1763bd!important}</style>
 <style>#parlay-status:empty{display:none}</style>
 <style id="parlay-sort-style">#parlay .parlay-h2h-rate{color:#60a5fa!important}html.theme-light #parlay .parlay-h2h-rate{color:#1763bd!important}#parlay .parlay-sort-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;white-space:nowrap}#parlay .parlay-sort-arrow{color:#60a5fa}html.theme-light #parlay .parlay-sort-arrow{color:#1763bd}</style>
-</head>
+<style>#parlay-slip{border:1px solid #64748b66;padding:12px;margin:10px 0;border-radius:6px}#parlay .parlay-slip-top,#parlay .parlay-slip-leg{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0}#parlay .parlay-slip-leg{border-bottom:1px solid #64748b44}#parlay .parlay-slip-leg span{flex:1}#parlay-slip small{display:block;opacity:.8}#parlay-slip button,#parlay .parlay-price,#parlay .parlay-history-toggle{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:3px}#parlay .parlay-price{color:inherit;border:1px solid transparent;border-radius:4px}#parlay .parlay-price[aria-pressed=true]{border-color:#60a5fa;background:#60a5fa22}#parlay-total,#parlay .parlay-slip-leg>strong{color:#60a5fa}html.theme-light #parlay-total,html.theme-light #parlay .parlay-slip-leg>strong{color:#1763bd}#parlay .parlay-history[hidden]{display:none!important}#parlay .parlay-history-grid{display:grid;grid-template-columns:repeat(10,minmax(0,1fr));gap:4px;margin:8px 0}#parlay .parlay-history-grid>div{text-align:center;padding:5px 0;border-radius:3px;color:white}#parlay .parlay-history-grid small{display:block;color:white;font-size:9px}#parlay .parlay-history-grid .hit{background:#217346}#parlay .parlay-history-grid .miss{background:#a83d3d}#parlay .parlay-history-toggle{text-align:left;font-weight:inherit} </style></head>
 
 <body>
 
@@ -6562,7 +6562,7 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
   <article class="panel section-panel" style="min-height:180px">
     <div id="hoist-parlay-content" data-filter="goals" role="tabpanel">
 <div class="parlay-controls"><input type="date" id="parlay-date" hidden aria-hidden="true" tabindex="-1"><label id="parlay-line-label">Threshold <select id="parlay-line"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
-<p id="parlay-status" class="muted" role="status"></p><div class="parlay-scroll"><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
+<section id="parlay-slip" aria-label="Parlay slip"><div class="parlay-slip-top"><strong>Parlay Slip <span id="parlay-count">(0)</span></strong><button type="button" id="parlay-clear">Clear</button></div><div id="parlay-legs"></div><div class="parlay-slip-top"><span>Estimated combined odds</span><strong id="parlay-total">—</strong></div><small>Illustrative product of selected prices, not a sportsbook quote. Correlated selections may be priced differently.</small></section><p id="parlay-status" class="muted" role="status"></p><div class="parlay-scroll"><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
   </article>
 </section>
 
@@ -9212,15 +9212,34 @@ document.addEventListener('DOMContentLoaded', function () {
  }
  const parlay=byId('parlay'),pd=byId('parlay-date'),pl=byId('parlay-line'),pc=byId('hoist-parlay-content');
  let parlayTicket=0;
+ const slip=new Map();let slipDate='';
+ function drawSlip(){
+   byId('parlay-count').textContent=`(${slip.size})`;
+   byId('parlay-legs').innerHTML=[...slip.values()].map(x=>`<div class="parlay-slip-leg"><span><strong>${safe(x.name)}</strong><small>${safe(x.prop)} · ${safe(x.match)}</small></span><strong>${x.odds.toFixed(2)}</strong><button type="button" data-remove-leg="${safe(x.key)}" aria-label="Remove ${safe(x.name)}">×</button></div>`).join('')||'<small>No selections. Click a blue odds price to add one.</small>';
+   byId('parlay-total').textContent=slip.size?[...slip.values()].reduce((a,x)=>a*x.odds,1).toFixed(2):'—';
+   parlay.querySelectorAll('[data-leg]').forEach(b=>b.setAttribute('aria-pressed',String(slip.has(b.dataset.leg))));
+ }
+ function oddsButton(raw,date,away,home,m,line,name,team){
+   const label=oddsLabel(raw);if(label==='—')return label;
+   const key=JSON.stringify([date,away,home,m,line,name,team]);
+   const leg={key,name:name||team,prop:m==='moneyline'?'Moneyline':line+'+ '+plural(line,labels[m]),match:away+' @ '+home,odds:1+(raw>0?raw/100:100/Math.abs(raw))};
+   if(slip.has(key))slip.set(key,leg);
+   return `<button type="button" class="parlay-price" data-leg="${safe(key)}" data-selection="${safe(JSON.stringify(leg))}" aria-pressed="${slip.has(key)}">${label}</button>`;
+ }
+ function historyMarkup(r,date,m,line){
+   const games=[...(r.sourcePlayer.games||[])].filter(g=>dateOf(g)&&dateOf(g)<date&&metric(g,m)!==null).sort((a,b)=>dateOf(b).localeCompare(dateOf(a))).slice(0,10).reverse();
+   return `<tr class="parlay-history" hidden><td colspan="7"><strong>Last ${games.length} games · ${line}+ ${safe(plural(line,labels[m]))}</strong><div class="parlay-history-grid">${games.map(g=>`<div title="${safe(dateOf(g))} · ${safe(opponentOf(g)||'')}" class="${metric(g,m)>=line?'hit':'miss'}"><b>${metric(g,m)}</b><small>${safe(opponentOf(g)||'—')}</small><small>${safe(dateOf(g).slice(5))}</small></div>`).join('')}</div><small>Oldest → newest · Green = hit · Red = miss</small></td></tr>`;
+ }
+
  const parlaySort={};
  function sortableParlay(head,rows,market){
    const headers=[...head.querySelectorAll('th')];
    const state=parlaySort[market]||(parlaySort[market]={index:market==='moneyline'?0:-1,dir:1});
-   const originalOrder=[...rows.rows];
+   const originalOrder=[...rows.rows].filter(r=>!r.classList.contains("parlay-history"));const details=new Map(originalOrder.map(r=>[r,r.nextElementSibling?.classList.contains("parlay-history")?r.nextElementSibling:null]));
    function apply(){
      const value=(row)=>{const cell=row.cells[state.index];if(!cell)return null;const t=cell.textContent.trim();if(state.index===0)return cell.querySelector('strong')?.textContent||t;if(t==='—'||!t)return null;const ratio=t.match(/^(\d+)\/(\d+)/);return ratio?(Number(ratio[2])?Number(ratio[1])/Number(ratio[2]):null):Number(t);};
-     const ordered=state.index===-1?originalOrder:[...rows.rows].sort((a,b)=>{const x=value(a),y=value(b);if(x===null||Number.isNaN(x))return y===null||Number.isNaN(y)?0:1;if(y===null||Number.isNaN(y))return -1;return state.dir*(typeof x==='string'?x.localeCompare(y):x-y);});
-     ordered.forEach(row=>rows.append(row));
+     const ordered=state.index===-1?originalOrder:[...originalOrder].sort((a,b)=>{const x=value(a),y=value(b);if(x===null||Number.isNaN(x))return y===null||Number.isNaN(y)?0:1;if(y===null||Number.isNaN(y))return -1;return state.dir*(typeof x==='string'?x.localeCompare(y):x-y);});
+     ordered.forEach(row=>{rows.append(row);if(details.get(row))rows.append(details.get(row));});
      headers.forEach((h,i)=>{h.setAttribute('aria-sort',i===state.index?(state.dir===1?'ascending':'descending'):'none');const arrow=h.querySelector('.parlay-sort-arrow');if(arrow)arrow.textContent=i===state.index?(state.dir===1?' ▲':' ▼'):'';});
    }
    headers.forEach((h,i)=>{if(i===0&&market!=='moneyline')return;const label=h.textContent;const b=document.createElement('button');b.type='button';b.className='parlay-sort-button';b.textContent=label;const arrow=document.createElement('span');arrow.className='parlay-sort-arrow';arrow.setAttribute('aria-hidden','true');b.append(arrow);h.replaceChildren(b);b.addEventListener('click',()=>{if(state.index===i)state.dir*=-1;else{state.index=i;state.dir=i===0?1:-1;}apply();});});apply();
@@ -9238,12 +9257,13 @@ document.addEventListener('DOMContentLoaded', function () {
  async function renderParlay(){
    if(!parlay||parlay.classList.contains('hidden'))return;
    const ticket=++parlayTicket, m=pc.dataset.filter, date=dateInput?.value||'', games=matchups(), status=byId('parlay-status'), rows=byId('parlay-rows'), head=byId('parlay-head');
+   if(slipDate!==date){slip.clear();slipDate=date;}drawSlip();
    if(date && pd.value!==date){pd.value=date;pd.dispatchEvent(new Event('change'));}
    const teams=[...new Set(games.flatMap(g=>[g.away,g.home]))].sort();
    byId('parlay-line-label').hidden=m==='moneyline';rows.innerHTML='';head.innerHTML='';
    const feed=await loadOdds();if(ticket!==parlayTicket)return;
    const oddsStatus=feed&&!feed.snapshot&&feed.updatedAt&&Date.now()-Date.parse(feed.updatedAt)<=45*60000?'FanDuel Ontario · updated '+new Date(feed.updatedAt).toLocaleString():'FanDuel odds unavailable or outdated';
-   if(m==='moneyline'){head.innerHTML='<tr><th>Team / Matchup</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';rows.innerHTML=games.flatMap(g=>[g.away,g.home].map(t=>`<tr><td><strong>${safe(t)}</strong><small>${safe(g.away)} @ ${safe(g.home)}</small></td><td class="parlay-odds">${oddsLabel(priceFor(feed,date,g.away,g.home,m,1,'',t))}</td></tr>`)).join('');sortableParlay(head,rows,m);status.textContent=games.length?'':'No scheduled matchups available for this date.';return;}
+   if(m==='moneyline'){head.innerHTML='<tr><th>Team / Matchup</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';rows.innerHTML=games.flatMap(g=>[g.away,g.home].map(t=>`<tr><td><strong>${safe(t)}</strong><small>${safe(g.away)} @ ${safe(g.home)}</small></td><td class="parlay-odds">${oddsButton(priceFor(feed,date,g.away,g.home,m,1,'',t),date,g.away,g.home,m,1,'',t)}</td></tr>`)).join('');sortableParlay(head,rows,m);drawSlip();status.textContent=games.length?'':'No scheduled matchups available for this date.';return;}
    if(!games.length){status.textContent='No scheduled matchups available for this date.';return;}
    status.textContent='Loading recorded player statistics…';
    const line=Number(pl.value), opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
@@ -9252,11 +9272,12 @@ document.addEventListener('DOMContentLoaded', function () {
    const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){if(propInjuryMark(player))continue;const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70}))results.push(r);}}
    results.sort((a,b)=>a.name.localeCompare(b.name));
    head.innerHTML='<tr><th>Player / Matchup</th><th>L5</th><th>L10</th><th>H2H</th><th>Streak</th><th>Season Avg</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';
-   rows.innerHTML=results.map(r=>`<tr><td><strong>${safe(r.name)}${propInjuryMark(r.sourcePlayer)}</strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} <span class="parlay-h2h-rate">(${Math.round(100*r.h2hHits/r.h2hN)}%)</span>`:'—'}</td><td>${r.streak}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td><td class="parlay-odds">${oddsLabel(priceFor(feed,date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team))}</td></tr>`).join('');
-   sortableParlay(head,rows,m);
+   rows.innerHTML=results.map(r=>`<tr><td><strong><button type="button" class="parlay-history-toggle" aria-expanded="false">${safe(r.name)} <span aria-hidden="true">▾</span></button></strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} <span class="parlay-h2h-rate">(${Math.round(100*r.h2hHits/r.h2hN)}%)</span>`:'—'}</td><td>${r.streak}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td><td class="parlay-odds">${oddsButton(priceFor(feed,date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team),date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team)}</td></tr>${historyMarkup(r,date,m,line)}`).join('');
+   sortableParlay(head,rows,m);drawSlip();
    status.textContent=results.length?'':'No players meet the prop eligibility criteria for this selection.';
  }
  if(parlay){
+   parlay.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='parlay-clear'){slip.clear();drawSlip();}else if(b.hasAttribute('data-remove-leg')){slip.delete(b.dataset.removeLeg);drawSlip();}else if(b.dataset.leg){if(slip.has(b.dataset.leg))slip.delete(b.dataset.leg);else slip.set(b.dataset.leg,JSON.parse(b.dataset.selection));drawSlip();}else if(b.classList.contains('parlay-history-toggle')){const detail=b.closest('tr').nextElementSibling;if(detail?.classList.contains('parlay-history')){detail.hidden=!detail.hidden;b.setAttribute('aria-expanded',String(!detail.hidden));}}});
    new MutationObserver(renderParlay).observe(parlay,{attributes:true,attributeFilter:['class']});
    new MutationObserver(renderParlay).observe(pc,{attributes:true,attributeFilter:['data-filter']});
    pl.addEventListener('change',renderParlay);
