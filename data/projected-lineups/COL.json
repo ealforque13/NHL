@@ -1,10 +1,11 @@
 {
   "team": "COL",
   "teamName": "Colorado Avalanche",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30436/COL_Frnt.png",
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-20T17:18:11.963Z",
   "sourceDescription": "Last Game (2026-11-19)",
-  "cachedAtUTC": "2026-11-24T17:08:50.600059+00:00",
+  "cachedAtUTC": "2026-11-24T18:19:56.546681+00:00",
   "forwards": [
     [
       {

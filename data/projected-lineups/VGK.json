@@ -1,10 +1,11 @@
 {
   "team": "VGK",
   "teamName": "Vegas Golden Knights",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-23T15:08:28.783Z",
   "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-24T17:09:37.415296+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:42.595491+00:00",
   "forwards": [
     [
       {

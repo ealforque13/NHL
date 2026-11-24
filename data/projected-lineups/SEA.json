@@ -1,10 +1,11 @@
 {
   "team": "SEA",
   "teamName": "Seattle Kraken",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:37:57.390Z",
   "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:09:22.556697+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:28.035274+00:00",
   "forwards": [
     [
       {

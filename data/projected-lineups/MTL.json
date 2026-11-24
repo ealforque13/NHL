@@ -1,10 +1,11 @@
 {
   "team": "MTL",
   "teamName": "Montreal Canadiens",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:24:18.632Z",
   "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:09:05.418138+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:11.063627+00:00",
   "forwards": [
     [
       {
@@ -278,12 +279,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Alex Newhook",
-        "number": 15,
+        "name": "Zack Bolduc",
+        "number": 76,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 30425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
+        "sourcePlayerId": 31240,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -298,12 +299,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zack Bolduc",
-        "number": 76,
+        "name": "Alex Newhook",
+        "number": 15,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 31240,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31240/MTL_76_Bolduc.png",
+        "sourcePlayerId": 30425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30425/MTL_15_Newhook.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

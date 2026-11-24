@@ -1,10 +1,11 @@
 {
   "team": "SJS",
   "teamName": "San Jose Sharks",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35083/SJS_Frnt.png",
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:39:08.924Z",
   "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:09:24.675146+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:30.094176+00:00",
   "forwards": [
     [
       {

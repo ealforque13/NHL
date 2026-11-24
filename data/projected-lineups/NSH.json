@@ -1,10 +1,11 @@
 {
   "team": "NSH",
   "teamName": "Nashville Predators",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-22T18:37:09.167Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-24T17:09:09.608511+00:00",
+  "sourceUpdatedAt": "2026-11-24T17:34:03.811Z",
+  "sourceDescription": "Max Herz",
+  "cachedAtUTC": "2026-11-24T18:20:15.209362+00:00",
   "forwards": [
     [
       {

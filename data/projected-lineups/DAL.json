@@ -1,29 +1,30 @@
 {
   "team": "DAL",
   "teamName": "Dallas Stars",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:49:06.935Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-24T17:08:52.703780+00:00",
+  "sourceUpdatedAt": "2026-11-24T17:33:30.044Z",
+  "sourceDescription": "Robert Tiffin",
+  "cachedAtUTC": "2026-11-24T18:19:58.608475+00:00",
   "forwards": [
     [
       {
-        "name": "Jamie Benn",
-        "number": 14,
+        "name": "Sam Steel",
+        "number": 18,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
+        "sourcePlayerId": 2663,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2663/DAL_18_Steel.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Wyatt Johnston",
-        "number": 53,
+        "name": "Roope Hintz",
+        "number": 24,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 30835,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30835/DAL_53_Johnston.png",
+        "sourcePlayerId": 2863,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2863/DAL_24_Hintz.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -50,12 +51,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Roope Hintz",
-        "number": 24,
+        "name": "Wyatt Johnston",
+        "number": 53,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2863,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2863/DAL_24_Hintz.png",
+        "sourcePlayerId": 30835,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30835/DAL_53_Johnston.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -72,20 +73,10 @@
     ],
     [
       {
-        "name": "Sam Steel",
-        "number": 18,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 2663,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2663/DAL_18_Steel.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Justin Hryckowian",
         "number": 49,
-        "position": "C",
-        "positionName": "Center",
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 31798,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31798/DAL_49_Hryckowian.png",
         "injuryStatus": null,
@@ -94,10 +85,20 @@
       {
         "name": "Tyler Seguin",
         "number": 91,
-        "position": "RW",
-        "positionName": "Right Wing",
+        "position": "C",
+        "positionName": "Center",
         "sourcePlayerId": 139,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/139/DAL_91_Seguin.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jamie Benn",
+        "number": 14,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/425/DAL_14_Benn.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

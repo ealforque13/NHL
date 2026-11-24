@@ -1,10 +1,11 @@
 {
   "team": "DET",
   "teamName": "Detroit Red Wings",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png",
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:21:01.176Z",
   "sourceDescription": "Ansar Khan",
-  "cachedAtUTC": "2026-11-24T17:08:54.839305+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:00.682769+00:00",
   "forwards": [
     [
       {
@@ -288,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Brandsegg-Nygård",
-        "number": null,
+        "name": "Kirby Dach",
+        "number": 77,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 38141,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38141/DET_28_Brandsegg_Nygard.png",
+        "sourcePlayerId": 29585,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -448,6 +449,5 @@
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }
-  ],
-  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png"
+  ]
 }

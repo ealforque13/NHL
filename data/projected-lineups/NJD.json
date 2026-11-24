@@ -1,10 +1,11 @@
 {
   "team": "NJD",
   "teamName": "New Jersey Devils",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:23:02.333Z",
-  "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:09:07.510900+00:00",
+  "sourceUpdatedAt": "2026-11-24T17:51:19.466Z",
+  "sourceDescription": "Amanda Stein",
+  "cachedAtUTC": "2026-11-24T18:20:13.129132+00:00",
   "forwards": [
     [
       {
@@ -206,12 +207,12 @@
   "powerPlay": [
     [
       {
-        "name": "Arseny Gritsyuk",
-        "number": 81,
+        "name": "Jesper Bratt",
+        "number": 63,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 30695,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
+        "sourcePlayerId": 2845,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2845/NJD_63_Bratt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -288,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jesper Bratt",
-        "number": 63,
+        "name": "Arseny Gritsyuk",
+        "number": 81,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2845,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2845/NJD_63_Bratt.png",
+        "sourcePlayerId": 30695,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30695/NJD_81_Gritsyuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

@@ -1,10 +1,11 @@
 {
   "team": "CBJ",
   "teamName": "Columbus Blue Jackets",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:22:14.364Z",
   "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:08:44.124354+00:00",
+  "cachedAtUTC": "2026-11-24T18:19:50.324321+00:00",
   "forwards": [
     [
       {

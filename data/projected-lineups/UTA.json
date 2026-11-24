@@ -1,10 +1,11 @@
 {
   "team": "UTA",
   "teamName": "Utah Mammoth",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:34:27.107Z",
   "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:09:33.152977+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:38.462317+00:00",
   "forwards": [
     [
       {

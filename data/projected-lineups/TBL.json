@@ -1,11 +1,44 @@
 {
   "team": "TBL",
   "teamName": "Tampa Bay Lightning",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:45:37.269Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-24T17:09:28.938856+00:00",
+  "sourceUpdatedAt": "2026-11-24T17:18:50.518Z",
+  "sourceDescription": "Diandra Loux",
+  "cachedAtUTC": "2026-11-24T18:20:34.319723+00:00",
   "forwards": [
+    [
+      {
+        "name": "Brandon Hagel",
+        "number": 38,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 27046,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
+      },
+      {
+        "name": "Anthony Cirelli",
+        "number": 71,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 3842,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3842/TBL_71_Cirelli.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nikita Kucherov",
+        "number": 86,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2031,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2031/TBL_86_Kucherov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
     [
       {
         "name": "Jake Guentzel",
@@ -28,44 +61,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nikita Kucherov",
-        "number": 86,
+        "name": "Pontus Holmberg",
+        "number": 29,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2031,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2031/TBL_86_Kucherov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Yanni Gourde",
-        "number": 37,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 2566,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Sam O'Reilly",
-        "number": 23,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 36872,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36872/TBL_23_O_Reilly.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Gage Goncalves",
-        "number": 93,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 32521,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32521/TBL_93_Goncalves.png",
+        "sourcePlayerId": 29640,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -82,22 +83,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Anthony Cirelli",
-        "number": 71,
+        "name": "Zemgus Girgensons",
+        "number": 28,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 3842,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3842/TBL_71_Cirelli.png",
+        "sourcePlayerId": 1953,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1953/TBL_28_Girgensons.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
-        "name": "Pontus Holmberg",
-        "number": 29,
+        "name": "Yanni Gourde",
+        "number": 37,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29640,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
+        "sourcePlayerId": 2566,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -114,12 +115,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jansen Harkins",
-        "number": 24,
+        "name": "Sam O'Reilly",
+        "number": 23,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 3913,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3913/TBL_Frnt.png",
+        "sourcePlayerId": 36872,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36872/TBL_23_O_Reilly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -258,14 +259,14 @@
     ],
     [
       {
-        "name": "Ilya Mikheyev",
-        "number": 95,
+        "name": "Brandon Hagel",
+        "number": 38,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 30651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30651/TBL_95__Mikheyev.png",
+        "sourcePlayerId": 27046,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Anthony Cirelli",
@@ -288,22 +289,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Victor Hedman",
-        "number": 77,
+        "name": "Charle-Edouard D'Astous",
+        "number": 51,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 1369,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
+        "sourcePlayerId": 26500,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26500/TBL_51__D_Astous.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Charle-Edouard D'Astous",
-        "number": 51,
+        "name": "Victor Hedman",
+        "number": 77,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 26500,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26500/TBL_51__D_Astous.png",
+        "sourcePlayerId": 1369,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -312,14 +313,14 @@
   "penaltyKill": [
     [
       {
-        "name": "Yanni Gourde",
-        "number": 37,
+        "name": "Zemgus Girgensons",
+        "number": 28,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2566,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2566/TBL_37_Gourde.png",
+        "sourcePlayerId": 1953,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1953/TBL_28_Girgensons.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Ilya Mikheyev",
@@ -364,14 +365,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jake Guentzel",
-        "number": 59,
+        "name": "Brandon Hagel",
+        "number": 38,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2707,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2707/TBL_59_Guentzel.png",
+        "sourcePlayerId": 27046,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27046/TBL_38_Hagel.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Ryan McDonagh",

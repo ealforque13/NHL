@@ -1,10 +1,11 @@
 {
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
+  "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-23T15:50:04.954Z",
   "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-24T17:08:48.386478+00:00",
+  "cachedAtUTC": "2026-11-24T18:19:54.467223+00:00",
   "forwards": [
     [
       {

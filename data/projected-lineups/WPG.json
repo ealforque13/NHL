@@ -1,10 +1,11 @@
 {
   "team": "WPG",
   "teamName": "Winnipeg Jets",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29186/WPG_Frnt.png",
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-24T16:35:11.419Z",
   "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T17:09:39.658496+00:00",
+  "cachedAtUTC": "2026-11-24T18:20:44.696785+00:00",
   "forwards": [
     [
       {

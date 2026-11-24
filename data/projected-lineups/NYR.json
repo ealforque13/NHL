@@ -1,19 +1,20 @@
 {
   "team": "NYR",
   "teamName": "New York Rangers",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:44:12.630Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-24T17:09:13.886124+00:00",
+  "sourceUpdatedAt": "2026-11-24T17:16:52.259Z",
+  "sourceDescription": "Remy Mastey",
+  "cachedAtUTC": "2026-11-24T18:20:19.625184+00:00",
   "forwards": [
     [
       {
-        "name": "Gabriel Perreault",
-        "number": 94,
+        "name": "Will Cuylle",
+        "number": 50,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 35165,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
+        "sourcePlayerId": 29725,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29725/NYR_50_Cuylle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -40,12 +41,12 @@
     ],
     [
       {
-        "name": "Will Cuylle",
-        "number": 50,
+        "name": "Tye Kartye",
+        "number": 24,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29725,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29725/NYR_50_Cuylle.png",
+        "sourcePlayerId": 29846,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -60,12 +61,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tye Kartye",
-        "number": 24,
+        "name": "Gabriel Perreault",
+        "number": 94,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29846,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
+        "sourcePlayerId": 35165,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
