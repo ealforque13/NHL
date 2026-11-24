@@ -5716,6 +5716,7 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
  html.theme-light #lineups .hoist-lineups-team-picker #hoist-lineup-team {color:#000!important;background-color:#fff!important;background-repeat:no-repeat!important;background-position:right 5px center!important;background-size:12px 12px!important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' fill='none' stroke='black' stroke-width='1.5'/%3E%3C/svg%3E")!important;}
 }
 </style>
+<style>body:has(#parlay:not(.hidden)) .hoist-franchise-hero{display:none!important}</style>
 </head>
 
 <body>
@@ -5751,6 +5752,7 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
     <button type="button" data-mobile-tab="standings">Standings</button>
     <button type="button" data-mobile-tab="stats">Stats</button>
     <button type="button" data-mobile-tab="lineups">Lineups</button>
+    <button type="button" data-mobile-tab="parlay">Parlay Builder</button>
   </div>
 </div>
 
@@ -5767,6 +5769,7 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
     <button class="nav-item" data-tab="stats">▥ <span>Stats</span></button>
 
     <button class="nav-item" data-tab="lineups">♟ <span>Lineups</span></button>
+    <button class="nav-item" data-tab="parlay">☷ <span>Parlay Builder</span></button>
 </nav>
 
   <div class="sidebar-bottom">
@@ -6439,6 +6442,13 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
     <p id="hoist-lineup-status" class="muted" role="status">Choose a team to view its lineup.</p>
     <div id="hoist-lineup-content" class="hoist-lineup-content"></div>
     <div class="hoist-lineup-footer"><span id="hoist-lineup-updated" class="muted">Awaiting lineup data</span></div>
+  </article>
+</section>
+
+<!-- PARLAY BUILDER -->
+<section id="parlay" class="tab-section hidden" aria-label="Parlay Builder">
+  <article class="panel section-panel" style="min-height:180px">
+    <div class="section-head"><h3>Parlay Builder</h3></div>
   </article>
 </section>
 
@@ -8030,7 +8040,7 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
 <script>
 (() => {
   const storageKey = 'hoist-active-page';
-  const supported = new Set(['overview','standings','stats','games','lineups','teams']);
+  const supported = new Set(['overview','standings','stats','games','lineups','teams','parlay']);
 
   function savePage(page) {
     if (!supported.has(page)) return;
@@ -8038,17 +8048,17 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     window.hoistPrefs.set('active-page', page);
   }
 
-  function openLineups() {
+  function openLineups(page = 'lineups') {
     document.querySelectorAll('.tab-section').forEach(section => {
-      section.classList.toggle('hidden', section.id !== 'lineups');
+      section.classList.toggle('hidden', section.id !== page);
     });
     document.querySelectorAll('.sidebar .nav-item[data-tab]').forEach(button => {
-      button.classList.toggle('active', button.dataset.tab === 'lineups');
+      button.classList.toggle('active', button.dataset.tab === page);
     });
     const heading = document.getElementById('page-title');
-    if (heading) heading.textContent = 'NHL Lineups';
+    if (heading) heading.textContent = page === 'parlay' ? 'Parlay Builder' : 'NHL Lineups';
     document.body.classList.remove('hoist-standings-active');
-    savePage('lineups');
+    savePage(page);
   }
 
   // Capture every navigation selection, including the legacy app.js pages.
@@ -8056,7 +8066,7 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     const target = event.target.closest('.sidebar .nav-item[data-tab], #hoist-mobile-menu-options [data-mobile-tab]');
     if (!target) return;
     const page = target.dataset.tab || target.dataset.mobileTab;
-    if (['overview','standings','stats','games','lineups','teams'].includes(page)) {
+    if (['overview','standings','stats','games','lineups','teams','parlay'].includes(page)) {
       window.hoistPrefs.set('active-page', page);
     }
   }, true);
@@ -8069,10 +8079,10 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     const page = nav.dataset.tab || nav.dataset.go;
     if (!supported.has(page)) return;
     savePage(page);
-    if (page === 'lineups') {
+    if (page === 'lineups' || page === 'parlay') {
       event.preventDefault();
       event.stopImmediatePropagation();
-      openLineups();
+      openLineups(page);
     }
   }, true);
 
@@ -8082,8 +8092,8 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     if (!page) { try { page = sessionStorage.getItem(storageKey) || ''; } catch (_) {} }
     if (!supported.has(page)) page = 'games';
 
-    if (page === 'lineups') {
-      openLineups();
+    if (page === 'lineups' || page === 'parlay') {
+      openLineups(page);
       return;
     }
     const button = document.querySelector(`.sidebar .nav-item[data-tab="${page}"]`);
@@ -8111,7 +8121,7 @@ body:has(#teams:not(.hidden)) .hoist-franchise-hero { display:none !important; }
     const options=[...menu.querySelectorAll('[data-mobile-tab]')];
     const close=()=>{menu.hidden=true;toggle.setAttribute('aria-expanded','false')};
     const pageTitle=document.getElementById('hoist-mobile-page-title');
-    const titles={games:'Games',overview:'Overview',standings:'Standings',stats:'Stats',lineups:'Lineups'};
+    const titles={games:'Games',overview:'Overview',standings:'Standings',stats:'Stats',lineups:'Lineups',parlay:'Parlay Builder'};
     const sync=()=>{const active=navButtons.find(b=>b.classList.contains('active'));
       if(pageTitle)pageTitle.textContent=titles[active?.dataset.tab]||'Games';
       options.forEach(b=>b.classList.toggle('is-active',!!active&&b.dataset.mobileTab===active.dataset.tab));};
