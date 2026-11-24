@@ -5717,6 +5717,14 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
 }
 </style>
 <style>body:has(#parlay:not(.hidden)) .hoist-franchise-hero{display:none!important}</style>
+<style id="hoist-parlay-filter-style">
+#parlay .hoist-parlay-tabs{display:flex;align-items:stretch;gap:0;margin:0 0 16px;border-bottom:1px solid rgba(125,155,195,.32);width:100%}
+#parlay .hoist-parlay-tabs button{flex:0 0 auto;border:0!important;border-bottom:3px solid transparent!important;border-radius:0!important;background:transparent!important;color:#91afd8!important;box-shadow:none!important;font:inherit;font-size:14px;font-weight:800;padding:12px 22px;cursor:pointer;white-space:nowrap}
+#parlay .hoist-parlay-tabs button.active{color:#fff!important;border-bottom-color:#48a9ff!important;background:rgba(110,145,195,.10)!important}
+#parlay .hoist-parlay-tabs button:focus-visible{outline:2px solid #91b8ec;outline-offset:-3px}
+html.theme-light #parlay .hoist-parlay-tabs button{color:#000!important}
+@media(max-width:650px){#parlay .hoist-parlay-tabs button{flex:1 1 25%;min-width:0;padding:12px 4px;font-size:12px}}
+</style>
 </head>
 
 <body>
@@ -6448,7 +6456,13 @@ html.theme-light body #lineups #hoist-lineup-picker-title { color:#000 !importan
 <!-- PARLAY BUILDER -->
 <section id="parlay" class="tab-section hidden" aria-label="Parlay Builder">
   <article class="panel section-panel" style="min-height:180px">
-    <div class="section-head"><h3>Parlay Builder</h3></div>
+    <div class="hoist-parlay-tabs" role="tablist" aria-label="Parlay filters">
+      <button type="button" role="tab" class="active" aria-selected="true" data-parlay-filter="goals">Goals</button>
+      <button type="button" role="tab" aria-selected="false" data-parlay-filter="points">Points</button>
+      <button type="button" role="tab" aria-selected="false" data-parlay-filter="shots">Shots</button>
+      <button type="button" role="tab" aria-selected="false" data-parlay-filter="moneyline">Moneyline</button>
+    </div>
+    <div id="hoist-parlay-content" data-filter="goals" role="tabpanel"></div>
   </article>
 </section>
 
@@ -9157,5 +9171,8 @@ html.theme-light #hoist-notepad {--note-bg:#fff;--note-border:#aeb9c9;--note-tex
 })();
 </script>
 
+<script>
+(()=>{const tabs=document.querySelectorAll('#parlay [data-parlay-filter]');const panel=document.getElementById('hoist-parlay-content');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>{t.classList.toggle('active',t===tab);t.setAttribute('aria-selected',String(t===tab));});panel.dataset.filter=tab.dataset.parlayFilter;}));})();
+</script>
 </body>
 </html>
