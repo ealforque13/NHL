@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T18:57:32.208925+00:00",
+  "updatedAt": "2026-11-24T01:02:34.635369+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -62,12 +62,6 @@
       "status": "Injured Reserve",
       "team": "WPG"
     },
-    "8476441": {
-      "injured": true,
-      "description": "Edmundson will be a game-time call against Montreal on Monday due to an undisclosed injury, Zach Dooley of the Kings' official site reports.",
-      "status": "Day-To-Day",
-      "team": "LAK"
-    },
     "8476454": {
       "injured": true,
       "description": "day-to-day",
@@ -104,6 +98,12 @@
       "status": "Day-To-Day",
       "team": "TBL"
     },
+    "8476885": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "SJS"
+    },
     "8476891": {
       "injured": true,
       "description": "Grzelcyk (lower body) suffered a \"flare-up\" and could be out for at least \"a few days,\" head coach Lindy Ruff told Rachel Lenzi of The Buffalo News on Tuesday.",
@@ -118,8 +118,8 @@
     },
     "8476979": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Gustafsson (upper body) was placed on injured reserve Monday, per the NHL media site.",
+      "status": "Injured Reserve",
       "team": "LAK"
     },
     "8476981": {
@@ -226,8 +226,8 @@
     },
     "8478458": {
       "injured": true,
-      "description": "Roslovic (upper body) will be a game-time decision versus the Islanders on Monday after head coach Jim Hiller told reporters, \"You'll just see tonight. I don't want to get too deep into that right now,\" Mark Masters of TSN reports.",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "TOR"
     },
     "8478465": {
@@ -244,7 +244,7 @@
     },
     "8478507": {
       "injured": true,
-      "description": "Marino (upper body) is day-to-day and close to returning, per Cole Bagley of KSL Sports on Friday.",
+      "description": "Marino (upper body) likely won't return during Utah's four-game road trip, per Brogan Houston of the Deseret News on Monday.",
       "status": "Injured Reserve",
       "team": "UTA"
     },
@@ -277,12 +277,6 @@
       "description": "Carcone (upper body) will be out of action for 3-4 months, Catherine Bogart of the Mammoth's official site reports Monday.",
       "status": "Out",
       "team": "UTA"
-    },
-    "8479675": {
-      "injured": true,
-      "description": "Moore (undisclosed) will be a game-time decision versus the Canadiens on Monday, Zach Dooley of the Kings' official site reports.",
-      "status": "Day-To-Day",
-      "team": "LAK"
     },
     "8479941": {
       "injured": true,
@@ -322,8 +316,8 @@
     },
     "8480800": {
       "injured": true,
-      "description": "Hughes (upper body) will miss the rest of Minnesota's road trip, per Joe Smith of The Athletic on Saturday.",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "MIN"
     },
     "8480831": {
@@ -421,12 +415,6 @@
       "description": "Eklund had surgery to repair a torn ankle tendon and will be out 10-12 weeks, Bruce Garrioch of Postmedia reports Thursday.",
       "status": "Injured Reserve",
       "team": "OTT"
-    },
-    "8482699": {
-      "injured": true,
-      "description": "Guenther (upper body) has been ruled out for Monday's game against the Jets, Ken Wiebe of The Winnipeg Free Press reports.",
-      "status": "Injured Reserve",
-      "team": "UTA"
     },
     "8482742": {
       "injured": true,
@@ -532,7 +520,7 @@
     },
     "8484984": {
       "injured": true,
-      "description": "Demidov (foot) skated Tuesday and could resume training with the team next week, Patrick Friolet of RDS reports.",
+      "description": "General manager Kent Hughes said Monday that Demidov (ankle) will not travel with the team for Wednesday's game in Colorado, Renaud Lavoie of TVA Sports reports.",
       "status": "Injured Reserve",
       "team": "MTL"
     },
