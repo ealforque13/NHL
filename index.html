@@ -7224,6 +7224,16 @@ document.addEventListener('DOMContentLoaded', function () {
       el('hoist-lineup-status').textContent = 'Tap any jersey to select a player from the team.';
     }
   }
+  function pickerName(p) {
+    const name = String(p.name || '').trim();
+    if (name.includes(',')) return name;
+    const last = typeof p.lastName === 'string' ? p.lastName : p.lastName?.default;
+    const first = typeof p.firstName === 'string' ? p.firstName : p.firstName?.default;
+    if (last && first) return `${last}, ${first}`;
+    const parts = name.split(/\s+/);
+    if (parts.length < 2) return name;
+    return `${parts.pop()}, ${parts.join(' ')}`;
+  }
   function renderPicker() {
     const list = el('hoist-lineup-picker-list');
     if (!list) return;
@@ -7234,13 +7244,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (active) used.delete(normalize(active.name));
     el('hoist-org-filters')?.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.orgFilter===organizationFilter)));
     el('hoist-org-status').textContent = organizationLoaded ? 'NHL roster and listed prospects; AHL based on available season records.' : 'Organizational data not loaded yet. NHL players remain available.';
-    const available = customRoster.filter(p => (organizationFilter === 'All' || (p.organizationGroup || 'NHL') === organizationFilter) && customEligible(p) && !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term)));
+    const available = customRoster.filter(p => (organizationFilter === 'All' || (p.organizationGroup || 'NHL') === organizationFilter) && customEligible(p) && !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term) || normalize(pickerName(p)).includes(term))).sort((a,b) => pickerName(a).localeCompare(pickerName(b), "en", {sensitivity:"base"}));
     const options = available.map((p,i) => {
       const pic = photoFor(p.name,p);
       const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? '';
       return `<button type="button" class="hoist-lineup-picker-option" data-player-index="${i}">
         ${pic ? `<img src="${esc(pic)}" alt="" loading="lazy">` : ''}
-        <span><strong>${esc(p.name)}</strong><small>${esc(number === '' ? '' : '#'+number)} ${esc(p.position || p.positionCode || '')} · ${esc(p.organizationGroup || 'NHL')}${p.currentClub ? ' · '+esc(p.currentClub) : ''}</small></span>
+        <span><strong>${esc(pickerName(p))}</strong><small>${esc(number === '' ? '' : '#'+number)} ${esc(p.position || p.positionCode || '')} · ${esc(p.organizationGroup || 'NHL')}${p.currentClub ? ' · '+esc(p.currentClub) : ''}</small></span>
       </button>`;
     }).join('');
     list.innerHTML = `<button type="button" class="hoist-lineup-picker-option" data-clear-slot="1"><strong>Clear this jersey</strong></button>`+
