@@ -5644,6 +5644,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #lineups .hoist-lineup-picker-header h3{margin:0;font-size:18px}
 #lineups #hoist-lineup-picker-close{padding:6px 11px;background:#233653;border:1px solid #526a8b;color:#fff;cursor:pointer}
 #lineups #hoist-lineup-picker-search{width:100%;padding:11px;background:#0b1424;border:1px solid #526a8b;color:#fff;font:inherit}
+@media (max-width:650px), (hover:none) and (pointer:coarse) { #lineups #hoist-lineup-picker-search { display:none !important; } }
 #lineups .hoist-lineup-picker-list{overflow-y:auto;min-height:0;margin-top:10px}
 #lineups .hoist-lineup-picker-option{display:flex;width:100%;align-items:center;gap:12px;padding:11px 9px;background:transparent;color:#fff;border:0;border-bottom:1px solid #293c56;text-align:left;cursor:pointer}
 #lineups .hoist-lineup-picker-option:hover,#lineups .hoist-lineup-picker-option:focus-visible{background:#223956}
@@ -7237,7 +7238,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function renderPicker() {
     const list = el('hoist-lineup-picker-list');
     if (!list) return;
-    const term = normalize(el('hoist-lineup-picker-search')?.value || '');
+    const term = window.matchMedia('(max-width:650px), (hover:none) and (pointer:coarse)').matches ? '' : normalize(el('hoist-lineup-picker-search')?.value || '');
     const used = new Set();
     for (const row of (custom[position] || [])) for (const p of row) if (p) used.add(normalize(p.name));
     const active = activeCustomSlot && custom[activeCustomSlot.position]?.[activeCustomSlot.row]?.[activeCustomSlot.col];
@@ -7629,7 +7630,9 @@ document.addEventListener('DOMContentLoaded', function () {
       el('hoist-lineup-picker-title').textContent = `Choose ${labels[position]?.[activeCustomSlot.col] || 'a'} player`;
       renderPicker();
       el('hoist-lineup-player-picker').hidden = false;
-      el('hoist-lineup-picker-search').focus();
+      if (!window.matchMedia('(max-width:650px), (hover:none) and (pointer:coarse)').matches) {
+        el('hoist-lineup-picker-search').focus();
+      }
     });
     el('hoist-org-filters')?.addEventListener('click',event=>{
       const button=event.target.closest('[data-org-filter]');
