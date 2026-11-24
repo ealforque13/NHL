@@ -5629,10 +5629,12 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 }
 </style>
 <style id="hoist-custom-lineup-styles">
-#lineups .hoist-lineup-builder-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
-#lineups .hoist-lineup-builder-toolbar button{padding:10px 14px;border:1px solid rgba(145,177,220,.35);background:#182840;color:#d7e5fb;font-weight:750;cursor:pointer}
-#lineups .hoist-lineup-builder-toolbar button.hoist-lineup-mode-active{background:#2563eb;color:#fff;border-color:#60a5fa}
-#lineups #hoist-lineup-reset-custom{margin-left:auto}
+#lineups .hoist-lineup-builder-toolbar button.hoist-lineup-mode-active{color:#fff!important;border-bottom-color:#48a9ff!important;background:rgba(110,145,195,.10)!important;box-shadow:none!important}
+#lineups .hoist-lineup-builder-toolbar{display:grid!important;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:stretch;justify-content:stretch!important;border-bottom:0!important}
+#lineups .hoist-lineup-mode-group{grid-column:2;display:flex;justify-content:center;border-bottom:1px solid rgba(125,155,195,.32)}
+#lineups #hoist-lineup-reset-custom{grid-column:3;grid-row:1;justify-self:end;margin:0!important;border-bottom:0!important;box-shadow:none!important;align-self:stretch}
+@media(max-width:650px){#lineups .hoist-lineup-builder-toolbar{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr)} #lineups .hoist-lineup-mode-group button{padding-inline:5px!important} #lineups #hoist-lineup-reset-custom{padding-inline:5px!important}}
+#lineups #hoist-lineup-reset-custom[hidden]{display:none!important}
 #lineups .hoist-lineup-custom-slot{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;cursor:pointer;font:inherit;text-align:inherit}
 #lineups .hoist-lineup-custom-slot:focus-visible{outline:2px solid #60a5fa;outline-offset:4px}
 #lineups .hoist-lineup-custom-slot .hoist-jersey-fallback-name{font-size:10px}
@@ -5651,7 +5653,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #lineups .hoist-lineup-picker-option img{width:38px;height:38px;object-fit:cover;border-radius:50%!important;background:#263a58}
 #lineups .hoist-lineup-picker-option small{display:block;color:#a7bedc;margin-top:3px}
 #lineups .hoist-lineup-picker-empty{padding:14px;color:#b4c4da}
-@media(max-width:650px){#lineups .hoist-lineup-builder-toolbar{gap:6px}#lineups .hoist-lineup-builder-toolbar button{padding:9px 10px;font-size:11px}}
+
 </style>
 <style>
 #lineups .hoist-front-jersey{position:relative;width:100%;height:100%;filter:drop-shadow(0 8px 8px rgba(0,0,0,.24));}
@@ -6358,10 +6360,12 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
     <button type="button" data-lineup-position="powerPlay">Power Play</button>
     <button type="button" data-lineup-position="penaltyKill">Penalty Kill</button>
   </div>
-  <div class="hoist-lineup-builder-toolbar" role="group" aria-label="Lineup display mode">
+  <div class="hoist-lineup-builder-toolbar hoist-lineup-tabs hoist-view-tabs" role="group" aria-label="Lineup display mode">
+    <div class="hoist-lineup-mode-group">
     <button type="button" id="hoist-lineup-projected-mode" class="hoist-lineup-mode-active" aria-pressed="true">Projected Lineup</button>
     <button type="button" id="hoist-lineup-custom-mode" aria-pressed="false">Create Your Own</button>
-    <button type="button" id="hoist-lineup-reset-custom" hidden>Clear My Lineup</button>
+    </div>
+    <button type="button" id="hoist-lineup-reset-custom" hidden>Clear</button>
   </div>
   <div id="hoist-lineup-player-picker" class="hoist-lineup-picker-overlay" hidden>
     <div class="hoist-lineup-picker-dialog" role="dialog" aria-modal="true" aria-labelledby="hoist-lineup-picker-title">
