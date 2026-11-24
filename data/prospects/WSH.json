@@ -1,6 +1,6 @@
 {
   "team": "WSH",
-  "updatedAt": "2026-11-24T19:12:49.266066+00:00",
+  "updatedAt": "2026-11-24T19:27:21.775532+00:00",
   "players": [
     {
       "id": 8478463,
@@ -192,14 +192,6 @@
       "position": "G",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8479292.png",
       "number": 79,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482465,
-      "name": "Rémi Poirier",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8482465.png",
-      "number": 1,
       "organizationGroup": "NHL"
     },
     {
