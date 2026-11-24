@@ -1,53 +1,21 @@
 {
   "team": "TBL",
-  "updatedAt": "2026-11-24T19:27:13.135888+00:00",
+  "updatedAt": "2026-11-24T19:41:33.863268+00:00",
   "players": [
+    {
+      "id": 8476883,
+      "name": "Andrei Vasilevskiy",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476883.png",
+      "number": 88,
+      "organizationGroup": "NHL"
+    },
     {
       "id": 8478519,
       "name": "Anthony Cirelli",
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8478519.png",
       "number": 71,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8483447,
-      "name": "Conor Geekie",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483447.png",
-      "number": 94,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476878,
-      "name": "Zemgus Girgensons",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476878.png",
-      "number": 28,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482201,
-      "name": "Gage Goncalves",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482201.png",
-      "number": 93,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476826,
-      "name": "Yanni Gourde",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476826.png",
-      "number": 37,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8477404,
-      "name": "Jake Guentzel",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8477404.png",
-      "number": 59,
       "organizationGroup": "NHL"
     },
     {
@@ -59,19 +27,59 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8480995,
-      "name": "Pontus Holmberg",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8480995.png",
-      "number": 29,
+      "id": 8478010,
+      "name": "Brayden Point",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8478010.png",
+      "number": 21,
       "organizationGroup": "NHL"
     },
     {
-      "id": 8476453,
-      "name": "Nikita Kucherov",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476453.png",
-      "number": 86,
+      "id": 8480426,
+      "name": "Charle-Edouard D'Astous",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8480426.png",
+      "number": 51,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483447,
+      "name": "Conor Geekie",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483447.png",
+      "number": 94,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483710,
+      "name": "Dennis Hildeby",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483710.png",
+      "number": 35,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482929,
+      "name": "Emil Lilleberg",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482929.png",
+      "number": 78,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478416,
+      "name": "Erik Cernak",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8478416.png",
+      "number": 81,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482201,
+      "name": "Gage Goncalves",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482201.png",
+      "number": 93,
       "organizationGroup": "NHL"
     },
     {
@@ -83,27 +91,19 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8484770,
-      "name": "Sam O'Reilly",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8484770.png",
-      "number": 23,
+      "id": 8482655,
+      "name": "J.J. Moser",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482655.png",
+      "number": 90,
       "organizationGroup": "NHL"
     },
     {
-      "id": 8478010,
-      "name": "Brayden Point",
+      "id": 8477404,
+      "name": "Jake Guentzel",
       "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8478010.png",
-      "number": 21,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8477149,
-      "name": "Scott Sabourin",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8477149.png",
-      "number": 49,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8477404.png",
+      "number": 59,
       "organizationGroup": "NHL"
     },
     {
@@ -123,14 +123,6 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8478416,
-      "name": "Erik Cernak",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8478416.png",
-      "number": 81,
-      "organizationGroup": "NHL"
-    },
-    {
       "id": 8481719,
       "name": "Max Crozier",
       "position": "D",
@@ -139,27 +131,19 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8480426,
-      "name": "Charle-Edouard D'Astous",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8480426.png",
-      "number": 51,
+      "id": 8476453,
+      "name": "Nikita Kucherov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476453.png",
+      "number": 86,
       "organizationGroup": "NHL"
     },
     {
-      "id": 8475167,
-      "name": "Victor Hedman",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8475167.png",
-      "number": 77,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482929,
-      "name": "Emil Lilleberg",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482929.png",
-      "number": 78,
+      "id": 8480995,
+      "name": "Pontus Holmberg",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8480995.png",
+      "number": 29,
       "organizationGroup": "NHL"
     },
     {
@@ -171,27 +155,43 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8482655,
-      "name": "J.J. Moser",
+      "id": 8484770,
+      "name": "Sam O'Reilly",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8484770.png",
+      "number": 23,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477149,
+      "name": "Scott Sabourin",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8477149.png",
+      "number": 49,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475167,
+      "name": "Victor Hedman",
       "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482655.png",
-      "number": 90,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8475167.png",
+      "number": 77,
       "organizationGroup": "NHL"
     },
     {
-      "id": 8483710,
-      "name": "Dennis Hildeby",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483710.png",
-      "number": 35,
+      "id": 8476826,
+      "name": "Yanni Gourde",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476826.png",
+      "number": 37,
       "organizationGroup": "NHL"
     },
     {
-      "id": 8476883,
-      "name": "Andrei Vasilevskiy",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476883.png",
-      "number": 88,
+      "id": 8476878,
+      "name": "Zemgus Girgensons",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8476878.png",
+      "number": 28,
       "organizationGroup": "NHL"
     },
     {
@@ -213,13 +213,30 @@
       "currentClub": "Syracuse Crunch"
     },
     {
-      "id": 8482774,
-      "name": "Jack Harvey",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482774.png",
-      "number": 94,
+      "id": 8482168,
+      "name": "Maxim Groshev",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482168.png",
+      "number": 52,
+      "organizationGroup": "AHL",
+      "currentClub": "Syracuse Crunch"
+    },
+    {
+      "id": 8482944,
+      "name": "Daniil Pylenkov",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482944.png",
+      "number": "",
       "organizationGroup": "Prospects",
-      "currentClub": "Boston Univ."
+      "currentClub": "Dynamo Moskva"
+    },
+    {
+      "id": 8483692,
+      "name": "Dyllan Gill",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483692.png",
+      "number": 57,
+      "organizationGroup": "Prospects"
     },
     {
       "id": 8484484,
@@ -231,13 +248,22 @@
       "currentClub": "Miami Univ. (Ohio)"
     },
     {
-      "id": 8481684,
-      "name": "Mikhail Shalagin",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8481684.png",
-      "number": "",
+      "id": 8481597,
+      "name": "Hugo Alnefelt",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20212022/TBL/8481597.png",
+      "number": 60,
       "organizationGroup": "Prospects",
-      "currentClub": "HK Norilsk"
+      "currentClub": "HIFK"
+    },
+    {
+      "id": 8482774,
+      "name": "Jack Harvey",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482774.png",
+      "number": 94,
+      "organizationGroup": "Prospects",
+      "currentClub": "Boston Univ."
     },
     {
       "id": 8484226,
@@ -266,6 +292,15 @@
       "organizationGroup": "Prospects"
     },
     {
+      "id": 8481684,
+      "name": "Mikhail Shalagin",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8481684.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "HK Norilsk"
+    },
+    {
       "id": 8484462,
       "name": "Warren Clark",
       "position": "D",
@@ -273,41 +308,6 @@
       "number": 79,
       "organizationGroup": "Prospects",
       "currentClub": "Northern Michigan Univ."
-    },
-    {
-      "id": 8483692,
-      "name": "Dyllan Gill",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8483692.png",
-      "number": 57,
-      "organizationGroup": "Prospects"
-    },
-    {
-      "id": 8482168,
-      "name": "Maxim Groshev",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/TBL/8482168.png",
-      "number": 52,
-      "organizationGroup": "AHL",
-      "currentClub": "Syracuse Crunch"
-    },
-    {
-      "id": 8482944,
-      "name": "Daniil Pylenkov",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482944.png",
-      "number": "",
-      "organizationGroup": "Prospects",
-      "currentClub": "Dynamo Moskva"
-    },
-    {
-      "id": 8481597,
-      "name": "Hugo Alnefelt",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20212022/TBL/8481597.png",
-      "number": 60,
-      "organizationGroup": "Prospects",
-      "currentClub": "HIFK"
     }
   ]
 }

@@ -1,69 +1,13 @@
 {
   "team": "BUF",
-  "updatedAt": "2026-11-24T19:26:13.512114+00:00",
+  "updatedAt": "2026-11-24T19:41:06.790533+00:00",
   "players": [
     {
-      "id": 8484145,
-      "name": "Zach Benson",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8484145.png",
-      "number": 6,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8475842,
-      "name": "Sam Carrick",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8475842.png",
-      "number": 10,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8479941,
-      "name": "Justin Danforth",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8479941.png",
-      "number": 15,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482659,
-      "name": "Josh Doan",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482659.png",
-      "number": 91,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484797,
-      "name": "Konsta Helenius",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8484797.png",
-      "number": 94,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482896,
-      "name": "Tyson Kozak",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482896.png",
-      "number": 48,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8481522,
-      "name": "Peyton Krebs",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8481522.png",
-      "number": 19,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8483468,
-      "name": "Jiri Kulich",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8483468.png",
-      "number": 20,
+      "id": 8479312,
+      "name": "Alex Lyon",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8479312.png",
+      "number": 34,
       "organizationGroup": "NHL"
     },
     {
@@ -75,99 +19,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8480802,
-      "name": "Ryan McLeod",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480802.png",
-      "number": 71,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480064,
-      "name": "Josh Norris",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480064.png",
-      "number": 9,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8483500,
-      "name": "Noah Ostlund",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8483500.png",
-      "number": 86,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482097,
-      "name": "Jack Quinn",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482097.png",
-      "number": 22,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8479420,
-      "name": "Tage Thompson",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8479420.png",
-      "number": 72,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8475722,
-      "name": "Jason Zucker",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8475722.png",
-      "number": 17,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8481806,
-      "name": "Louis Crevier",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8481806.png",
-      "number": 46,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480839,
-      "name": "Rasmus Dahlin",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480839.png",
-      "number": 26,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476891,
-      "name": "Matt Grzelcyk",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8476891.png",
-      "number": 24,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484305,
-      "name": "Zach Metsa",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8484305.png",
-      "number": 73,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482671,
-      "name": "Owen Power",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482671.png",
-      "number": 25,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480807,
-      "name": "Mattias Samuelsson",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480807.png",
-      "number": 23,
+      "id": 8481551,
+      "name": "Colten Ellis",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8481551.png",
+      "number": 92,
       "organizationGroup": "NHL"
     },
     {
@@ -179,6 +35,94 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8482097,
+      "name": "Jack Quinn",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482097.png",
+      "number": 22,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475722,
+      "name": "Jason Zucker",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8475722.png",
+      "number": 17,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483468,
+      "name": "Jiri Kulich",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8483468.png",
+      "number": 20,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482659,
+      "name": "Josh Doan",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482659.png",
+      "number": 91,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480064,
+      "name": "Josh Norris",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480064.png",
+      "number": 9,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479941,
+      "name": "Justin Danforth",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8479941.png",
+      "number": 15,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484797,
+      "name": "Konsta Helenius",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8484797.png",
+      "number": 94,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481806,
+      "name": "Louis Crevier",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8481806.png",
+      "number": 46,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476891,
+      "name": "Matt Grzelcyk",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8476891.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480807,
+      "name": "Mattias Samuelsson",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480807.png",
+      "number": 23,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483500,
+      "name": "Noah Ostlund",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8483500.png",
+      "number": 86,
+      "organizationGroup": "NHL"
+    },
+    {
       "id": 8482803,
       "name": "Olen Zellweger",
       "position": "D",
@@ -187,11 +131,59 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8481551,
-      "name": "Colten Ellis",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8481551.png",
-      "number": 92,
+      "id": 8482671,
+      "name": "Owen Power",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482671.png",
+      "number": 25,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481522,
+      "name": "Peyton Krebs",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8481522.png",
+      "number": 19,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480839,
+      "name": "Rasmus Dahlin",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480839.png",
+      "number": 26,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480802,
+      "name": "Ryan McLeod",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8480802.png",
+      "number": 71,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475842,
+      "name": "Sam Carrick",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8475842.png",
+      "number": 10,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479420,
+      "name": "Tage Thompson",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8479420.png",
+      "number": 72,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482896,
+      "name": "Tyson Kozak",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8482896.png",
+      "number": 48,
       "organizationGroup": "NHL"
     },
     {
@@ -203,11 +195,19 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8479312,
-      "name": "Alex Lyon",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8479312.png",
-      "number": 34,
+      "id": 8484145,
+      "name": "Zach Benson",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8484145.png",
+      "number": 6,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484305,
+      "name": "Zach Metsa",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/BUF/8484305.png",
+      "number": 73,
       "organizationGroup": "NHL"
     },
     {
@@ -220,15 +220,6 @@
       "currentClub": "Rochester Americans"
     },
     {
-      "id": 8482769,
-      "name": "Prokhor Poltapov",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482769.png",
-      "number": "",
-      "organizationGroup": "Prospects",
-      "currentClub": "CSKA Moskva"
-    },
-    {
       "id": 8483732,
       "name": "Vsevolod Komarov",
       "position": "D",
@@ -236,6 +227,15 @@
       "number": 76,
       "organizationGroup": "AHL",
       "currentClub": "Rochester Americans"
+    },
+    {
+      "id": 8482769,
+      "name": "Prokhor Poltapov",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482769.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "CSKA Moskva"
     }
   ]
 }

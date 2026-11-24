@@ -1,45 +1,13 @@
 {
   "team": "PHI",
-  "updatedAt": "2026-11-24T19:26:56.400921+00:00",
+  "updatedAt": "2026-11-24T19:41:26.642839+00:00",
   "players": [
     {
-      "id": 8478569,
-      "name": "Noel Acciari",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8478569.png",
-      "number": 52,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484142,
-      "name": "Denver Barkey",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484142.png",
-      "number": 86,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8478047,
-      "name": "Michael Bunting",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8478047.png",
-      "number": 58,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480220,
-      "name": "Noah Cates",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8480220.png",
-      "number": 27,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476461,
-      "name": "Sean Couturier",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8476461.png",
-      "number": 14,
+      "id": 8481546,
+      "name": "Cam York",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8481546.png",
+      "number": 8,
       "organizationGroup": "NHL"
     },
     {
@@ -51,131 +19,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8482159,
-      "name": "Tyson Foerster",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482159.png",
-      "number": 71,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8483733,
-      "name": "Nikita Grebenkin",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483733.png",
-      "number": 17,
-      "organizationGroup": "NHL"
-    },
-    {
       "id": 8483787,
       "name": "Cole Knuble",
       "position": "R",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483787.png",
       "number": 54,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8478439,
-      "name": "Travis Konecny",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8478439.png",
-      "number": 11,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8485406,
-      "name": "Porter Martone",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8485406.png",
-      "number": 94,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484387,
-      "name": "Matvei Michkov",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484387.png",
-      "number": 39,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480015,
-      "name": "Owen Tippett",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8480015.png",
-      "number": 74,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8481533,
-      "name": "Trevor Zegras",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8481533.png",
-      "number": 46,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8481122,
-      "name": "Simon Benoit",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8481122.png",
-      "number": 44,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484148,
-      "name": "Oliver Bonk",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484148.png",
-      "number": 59,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482142,
-      "name": "Jamie Drysdale",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482142.png",
-      "number": 9,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8483460,
-      "name": "David Jiricek",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483460.png",
-      "number": 5,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8477499,
-      "name": "Rasmus Ristolainen",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8477499.png",
-      "number": 55,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8477948,
-      "name": "Travis Sanheim",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8477948.png",
-      "number": 6,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476372,
-      "name": "Nick Seeler",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8476372.png",
-      "number": 24,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8481546,
-      "name": "Cam York",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8481546.png",
-      "number": 8,
       "organizationGroup": "NHL"
     },
     {
@@ -187,6 +35,30 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8483460,
+      "name": "David Jiricek",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483460.png",
+      "number": 5,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484142,
+      "name": "Denver Barkey",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484142.png",
+      "number": 86,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482142,
+      "name": "Jamie Drysdale",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482142.png",
+      "number": 9,
+      "organizationGroup": "NHL"
+    },
+    {
       "id": 8479361,
       "name": "Joseph Woll",
       "position": "G",
@@ -195,12 +67,141 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8483731,
-      "name": "Alex Bump",
+      "id": 8484387,
+      "name": "Matvei Michkov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484387.png",
+      "number": 39,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478047,
+      "name": "Michael Bunting",
       "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483731.png",
-      "number": 20,
-      "organizationGroup": "Prospects"
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8478047.png",
+      "number": 58,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476372,
+      "name": "Nick Seeler",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8476372.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483733,
+      "name": "Nikita Grebenkin",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483733.png",
+      "number": 17,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480220,
+      "name": "Noah Cates",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8480220.png",
+      "number": 27,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478569,
+      "name": "Noel Acciari",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8478569.png",
+      "number": 52,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484148,
+      "name": "Oliver Bonk",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484148.png",
+      "number": 59,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480015,
+      "name": "Owen Tippett",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8480015.png",
+      "number": 74,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485406,
+      "name": "Porter Martone",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8485406.png",
+      "number": 94,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477499,
+      "name": "Rasmus Ristolainen",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8477499.png",
+      "number": 55,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476461,
+      "name": "Sean Couturier",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8476461.png",
+      "number": 14,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481122,
+      "name": "Simon Benoit",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8481122.png",
+      "number": 44,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478439,
+      "name": "Travis Konecny",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8478439.png",
+      "number": 11,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477948,
+      "name": "Travis Sanheim",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8477948.png",
+      "number": 6,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481533,
+      "name": "Trevor Zegras",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8481533.png",
+      "number": 46,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482159,
+      "name": "Tyson Foerster",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482159.png",
+      "number": 71,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482783,
+      "name": "Aleksei Kolosov",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482783.png",
+      "number": 35,
+      "organizationGroup": "AHL",
+      "currentClub": "Lehigh Valley Phantoms"
     },
     {
       "id": 8484156,
@@ -212,13 +213,39 @@
       "currentClub": "Lehigh Valley Phantoms"
     },
     {
-      "id": 8484447,
-      "name": "Ryan MacPherson",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484447.png",
-      "number": 42,
+      "id": 8484147,
+      "name": "Carson Bjarnason",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484147.png",
+      "number": 64,
+      "organizationGroup": "AHL",
+      "currentClub": "Lehigh Valley Phantoms"
+    },
+    {
+      "id": 8482804,
+      "name": "Ty Murchison",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482804.png",
+      "number": 29,
+      "organizationGroup": "AHL",
+      "currentClub": "Lehigh Valley Phantoms"
+    },
+    {
+      "id": 8483731,
+      "name": "Alex Bump",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8483731.png",
+      "number": 20,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8484398,
+      "name": "Egor Zavragin",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484398.png",
+      "number": 97,
       "organizationGroup": "Prospects",
-      "currentClub": "Robert Morris Univ."
+      "currentClub": "Metallurg Magnitogorsk"
     },
     {
       "id": 8482169,
@@ -237,40 +264,13 @@
       "organizationGroup": "Prospects"
     },
     {
-      "id": 8482804,
-      "name": "Ty Murchison",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482804.png",
-      "number": 29,
-      "organizationGroup": "AHL",
-      "currentClub": "Lehigh Valley Phantoms"
-    },
-    {
-      "id": 8484147,
-      "name": "Carson Bjarnason",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8484147.png",
-      "number": 64,
-      "organizationGroup": "AHL",
-      "currentClub": "Lehigh Valley Phantoms"
-    },
-    {
-      "id": 8482783,
-      "name": "Aleksei Kolosov",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PHI/8482783.png",
-      "number": 35,
-      "organizationGroup": "AHL",
-      "currentClub": "Lehigh Valley Phantoms"
-    },
-    {
-      "id": 8484398,
-      "name": "Egor Zavragin",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484398.png",
-      "number": 97,
+      "id": 8484447,
+      "name": "Ryan MacPherson",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484447.png",
+      "number": 42,
       "organizationGroup": "Prospects",
-      "currentClub": "Metallurg Magnitogorsk"
+      "currentClub": "Robert Morris Univ."
     }
   ]
 }

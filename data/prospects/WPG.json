@@ -1,29 +1,13 @@
 {
   "team": "WPG",
-  "updatedAt": "2026-11-24T19:27:18.117778+00:00",
+  "updatedAt": "2026-11-24T19:41:36.576954+00:00",
   "players": [
     {
-      "id": 8480289,
-      "name": "Morgan Barron",
+      "id": 8476392,
+      "name": "Adam Lowry",
       "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480289.png",
-      "number": 36,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8486025,
-      "name": "Viggo Björck",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8486025.png",
-      "number": 61,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8478398,
-      "name": "Kyle Connor",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8478398.png",
-      "number": 81,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8476392.png",
+      "number": 17,
       "organizationGroup": "NHL"
     },
     {
@@ -35,43 +19,19 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8484242,
+      "name": "Brayden Yager",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484242.png",
+      "number": 29,
+      "organizationGroup": "NHL"
+    },
+    {
       "id": 8481043,
       "name": "Cole Koepke",
       "position": "L",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8481043.png",
       "number": 45,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476392,
-      "name": "Adam Lowry",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8476392.png",
-      "number": 17,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482110,
-      "name": "Dawson Mercer",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482110.png",
-      "number": 19,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476480,
-      "name": "Vladislav Namestnikov",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8476480.png",
-      "number": 7,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8475799,
-      "name": "Nino Niederreiter",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8475799.png",
-      "number": 62,
       "organizationGroup": "NHL"
     },
     {
@@ -83,43 +43,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8482765,
-      "name": "Isak Rosen",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482765.png",
-      "number": 27,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8476460,
-      "name": "Mark Scheifele",
+      "id": 8482110,
+      "name": "Dawson Mercer",
       "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8476460.png",
-      "number": 55,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480014,
-      "name": "Gabriel Vilardi",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480014.png",
-      "number": 13,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484242,
-      "name": "Brayden Yager",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484242.png",
-      "number": 29,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8482459,
-      "name": "Tyrel Bauer",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482459.png",
-      "number": 77,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482110.png",
+      "number": 19,
       "organizationGroup": "NHL"
     },
     {
@@ -131,35 +59,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8479983,
-      "name": "Mario Ferraro",
+      "id": 8480049,
+      "name": "Dylan Samberg",
       "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8479983.png",
-      "number": 38,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8477938,
-      "name": "Haydn Fleury",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8477938.png",
-      "number": 24,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8477504,
-      "name": "Josh Morrissey",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8477504.png",
-      "number": 44,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8480145,
-      "name": "Neal Pionk",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480145.png",
-      "number": 4,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480049.png",
+      "number": 54,
       "organizationGroup": "NHL"
     },
     {
@@ -171,11 +75,19 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8480049,
-      "name": "Dylan Samberg",
+      "id": 8480014,
+      "name": "Gabriel Vilardi",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480014.png",
+      "number": 13,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477938,
+      "name": "Haydn Fleury",
       "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480049.png",
-      "number": 54,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8477938.png",
+      "number": 24,
       "organizationGroup": "NHL"
     },
     {
@@ -187,11 +99,75 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8482765,
+      "name": "Isak Rosen",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482765.png",
+      "number": 27,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477504,
+      "name": "Josh Morrissey",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8477504.png",
+      "number": 44,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478398,
+      "name": "Kyle Connor",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8478398.png",
+      "number": 81,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479983,
+      "name": "Mario Ferraro",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8479983.png",
+      "number": 38,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476460,
+      "name": "Mark Scheifele",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8476460.png",
+      "number": 55,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480289,
+      "name": "Morgan Barron",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480289.png",
+      "number": 36,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480145,
+      "name": "Neal Pionk",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8480145.png",
+      "number": 4,
+      "organizationGroup": "NHL"
+    },
+    {
       "id": 8482076,
       "name": "Nico Daws",
       "position": "G",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482076.png",
       "number": 35,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475799,
+      "name": "Nino Niederreiter",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8475799.png",
+      "number": 62,
       "organizationGroup": "NHL"
     },
     {
@@ -203,11 +179,107 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8482459,
+      "name": "Tyrel Bauer",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482459.png",
+      "number": 77,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8486025,
+      "name": "Viggo Björck",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8486025.png",
+      "number": 61,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476480,
+      "name": "Vladislav Namestnikov",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8476480.png",
+      "number": 7,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484854,
+      "name": "Alfons Freij",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484854.png",
+      "number": 48,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
       "id": 8484143,
       "name": "Colby Barlow",
       "position": "L",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484143.png",
       "number": 39,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8483711,
+      "name": "Domenic DiVincentiis",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483711.png",
+      "number": 50,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8483520,
+      "name": "Fabian Wagner",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483520.png",
+      "number": 58,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8483672,
+      "name": "Garrett Brown",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483672.png",
+      "number": "",
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8482192,
+      "name": "Isaak Phillips",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482192.png",
+      "number": 3,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8484430,
+      "name": "Jacob Julien",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484430.png",
+      "number": 67,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8484864,
+      "name": "Kevin He",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484864.png",
+      "number": 46,
+      "organizationGroup": "AHL",
+      "currentClub": "Manitoba Moose"
+    },
+    {
+      "id": 8486141,
+      "name": "Lucas Wahlin",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8486141.png",
+      "number": "",
       "organizationGroup": "AHL",
       "currentClub": "Manitoba Moose"
     },
@@ -230,20 +302,11 @@
       "currentClub": "Manitoba Moose"
     },
     {
-      "id": 8484864,
-      "name": "Kevin He",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484864.png",
-      "number": 46,
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
-    },
-    {
-      "id": 8484430,
-      "name": "Jacob Julien",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484430.png",
-      "number": 67,
+      "id": 8483114,
+      "name": "Thomas Milic",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483114.png",
+      "number": 32,
       "organizationGroup": "AHL",
       "currentClub": "Manitoba Moose"
     },
@@ -265,31 +328,21 @@
       "currentClub": "Bowling Green State Univ."
     },
     {
-      "id": 8484204,
-      "name": "Zach Nehring",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484204.png",
-      "number": "",
-      "organizationGroup": "Prospects",
-      "currentClub": "Western Michigan Univ."
-    },
-    {
-      "id": 8483520,
-      "name": "Fabian Wagner",
+      "id": 8483526,
+      "name": "Danil Zhilkin",
       "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483520.png",
-      "number": 58,
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483526.png",
+      "number": 53,
+      "organizationGroup": "Prospects"
     },
     {
-      "id": 8486141,
-      "name": "Lucas Wahlin",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8486141.png",
-      "number": "",
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
+      "id": 8483659,
+      "name": "Isaac Poulter",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483659.png",
+      "number": 30,
+      "organizationGroup": "Prospects",
+      "currentClub": "Bloomington Bison"
     },
     {
       "id": 8485070,
@@ -300,66 +353,13 @@
       "organizationGroup": "Prospects"
     },
     {
-      "id": 8483526,
-      "name": "Danil Zhilkin",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483526.png",
-      "number": 53,
-      "organizationGroup": "Prospects"
-    },
-    {
-      "id": 8483672,
-      "name": "Garrett Brown",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483672.png",
+      "id": 8484204,
+      "name": "Zach Nehring",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484204.png",
       "number": "",
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
-    },
-    {
-      "id": 8484854,
-      "name": "Alfons Freij",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8484854.png",
-      "number": 48,
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
-    },
-    {
-      "id": 8482192,
-      "name": "Isaak Phillips",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8482192.png",
-      "number": 3,
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
-    },
-    {
-      "id": 8483711,
-      "name": "Domenic DiVincentiis",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483711.png",
-      "number": 50,
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
-    },
-    {
-      "id": 8483114,
-      "name": "Thomas Milic",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483114.png",
-      "number": 32,
-      "organizationGroup": "AHL",
-      "currentClub": "Manitoba Moose"
-    },
-    {
-      "id": 8483659,
-      "name": "Isaac Poulter",
-      "position": "G",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WPG/8483659.png",
-      "number": 30,
       "organizationGroup": "Prospects",
-      "currentClub": "Bloomington Bison"
+      "currentClub": "Western Michigan Univ."
     }
   ]
 }
