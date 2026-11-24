@@ -5659,6 +5659,7 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #lineups .hoist-front-jersey img{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);width:38%;height:38%;object-fit:contain;}
 @media(max-width:650px){#lineups .hoist-lineup-custom-slot .hoist-choose-player-label{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;text-align:center;line-height:1.25;}#lineups .hoist-choose-player-label span{display:block;}}
 </style>
+<style>#hoist-org-filters button{flex:1;padding:8px 6px;border:1px solid #526a8b;background:#182840;color:#fff;cursor:pointer;font-size:12px}#hoist-org-filters button[aria-pressed="true"]{background:#2563eb;border-color:#60a5fa}</style>
 </head>
 
 <body>
@@ -6368,6 +6369,9 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
         <button type="button" id="hoist-lineup-picker-close" aria-label="Close player picker">✕</button>
       </div>
       <input id="hoist-lineup-picker-search" type="search" placeholder="Search team roster…" aria-label="Search team roster" autocomplete="off">
+      <div id="hoist-org-filters" role="group" aria-label="Player source" style="display:flex;gap:5px;margin-top:10px;flex-wrap:wrap">
+      <button type="button" data-org-filter="All">All</button><button type="button" data-org-filter="NHL">NHL</button><button type="button" data-org-filter="AHL">AHL</button><button type="button" data-org-filter="Prospects">Prospects</button>
+      </div><div id="hoist-org-status" style="font-size:11px;margin-top:6px;color:#a7bedc"></div>
       <div id="hoist-lineup-picker-list" class="hoist-lineup-picker-list"></div>
     </div>
   </div>
@@ -7102,6 +7106,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let selected = 'MTL', position = 'forwards', lineup = null, requestId = 0;
   let customMode = false;
   let customRoster = [];
+  let organizationFilter = "All", organizationLoaded = false;
   let customRosterPositions = new Map();
   let activeCustomSlot = null;
   const customStorageKey = team => `hoist-custom-lineup-v1-${team}`;
@@ -7224,16 +7229,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!list) return;
     const term = normalize(el('hoist-lineup-picker-search')?.value || '');
     const used = new Set();
-    for (const rows of Object.values(custom)) for (const row of rows) for (const p of row) if (p) used.add(normalize(p.name));
+    for (const row of (custom[position] || [])) for (const p of row) if (p) used.add(normalize(p.name));
     const active = activeCustomSlot && custom[activeCustomSlot.position]?.[activeCustomSlot.row]?.[activeCustomSlot.col];
     if (active) used.delete(normalize(active.name));
-    const available = customRoster.filter(p => customEligible(p) && !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term)));
+    el('hoist-org-filters')?.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.orgFilter===organizationFilter)));
+    el('hoist-org-status').textContent = organizationLoaded ? 'NHL roster and listed prospects; AHL based on available season records.' : 'Organizational data not loaded yet. NHL players remain available.';
+    const available = customRoster.filter(p => (organizationFilter === 'All' || (p.organizationGroup || 'NHL') === organizationFilter) && customEligible(p) && !used.has(normalize(p.name)) && (!term || normalize(p.name).includes(term)));
     const options = available.map((p,i) => {
       const pic = photoFor(p.name,p);
       const number = p.number ?? p.sweaterNumber ?? p.jerseyNumber ?? '';
       return `<button type="button" class="hoist-lineup-picker-option" data-player-index="${i}">
         ${pic ? `<img src="${esc(pic)}" alt="" loading="lazy">` : ''}
-        <span><strong>${esc(p.name)}</strong><small>${esc(number === '' ? '' : '#'+number)} ${esc(p.position || p.positionCode || '')}</small></span>
+        <span><strong>${esc(p.name)}</strong><small>${esc(number === '' ? '' : '#'+number)} ${esc(p.position || p.positionCode || '')} · ${esc(p.organizationGroup || 'NHL')}${p.currentClub ? ' · '+esc(p.currentClub) : ''}</small></span>
       </button>`;
     }).join('');
     list.innerHTML = `<button type="button" class="hoist-lineup-picker-option" data-clear-slot="1"><strong>Clear this jersey</strong></button>`+
@@ -7448,6 +7455,8 @@ document.addEventListener('DOMContentLoaded', function () {
     lineup = null;
     headshots = new Map();
     customRoster = [];
+    organizationLoaded = false;
+    closePicker();
     customRosterPositions.clear();
     injuryPositions.clear();
     custom = readCustom();
@@ -7501,6 +7510,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // Prefer the richer lineup entry where available, but include everyone on the official roster.
       customRoster = uniqueRoster([...customRoster,...officialPlayers]);
     } catch (_) { /* Fall back to cached lineups and their position information. */ }
+    try {
+      const org = await fetchJson(`./data/prospects/${encodeURIComponent(selected)}.json`);
+      if (token !== requestId) return;
+      if (!Array.isArray(org.players)) throw Error('Invalid organizational data');
+      customRoster = uniqueRoster([...customRoster,...org.players]);
+      organizationLoaded = true;
+      if (activeCustomSlot) renderPicker();
+    } catch (_) { if (token !== requestId) return; }
     const isRoster = data.type === 'roster';
     el('hoist-lineup-badge').textContent = isRoster ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
     const updated = data.sourceUpdatedAt || data.updatedAt || data.cachedAtUTC || '';
@@ -7600,6 +7617,12 @@ document.addEventListener('DOMContentLoaded', function () {
       renderPicker();
       el('hoist-lineup-player-picker').hidden = false;
       el('hoist-lineup-picker-search').focus();
+    });
+    el('hoist-org-filters')?.addEventListener('click',event=>{
+      const button=event.target.closest('[data-org-filter]');
+      if (!button) return;
+      organizationFilter=button.dataset.orgFilter;
+      renderPicker();
     });
     el('hoist-lineup-picker-search')?.addEventListener('input',renderPicker);
     el('hoist-lineup-picker-list')?.addEventListener('click',event => {
