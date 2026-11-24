@@ -4,12 +4,27 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlencode
 from urllib.request import urlopen
+from urllib.error import HTTPError
 from zoneinfo import ZoneInfo
 BASE='https://sbapi.on.sportsbook.fanduel.ca/api/'
 TEAMS=dict(zip('Anaheim Ducks|Boston Bruins|Buffalo Sabres|Calgary Flames|Carolina Hurricanes|Chicago Blackhawks|Colorado Avalanche|Columbus Blue Jackets|Dallas Stars|Detroit Red Wings|Edmonton Oilers|Florida Panthers|Los Angeles Kings|Minnesota Wild|Montreal Canadiens|Nashville Predators|New Jersey Devils|New York Islanders|New York Rangers|Ottawa Senators|Philadelphia Flyers|Pittsburgh Penguins|San Jose Sharks|Seattle Kraken|St. Louis Blues|Tampa Bay Lightning|Toronto Maple Leafs|Utah Mammoth|Vancouver Canucks|Vegas Golden Knights|Washington Capitals|Winnipeg Jets'.split('|'),'ANA BOS BUF CGY CAR CHI COL CBJ DAL DET EDM FLA LAK MIN MTL NSH NJD NYI NYR OTT PHI PIT SJS SEA STL TBL TOR UTA VAN VGK WSH WPG'.split()))
 def fetch(endpoint, **params):
-    params['_ak']=os.environ['FANDUEL_APP_KEY']
-    with urlopen(BASE+endpoint+'?'+urlencode(params),timeout=30) as r: return json.load(r)
+    key=os.environ.get('FANDUEL_APP_KEY','')
+    if not key or key != key.strip() or not re.fullmatch(r'[A-Za-z0-9_-]+',key):
+        raise SystemExit('FANDUEL_APP_KEY missing or malformed; check repository secret.')
+    params['_ak']=key
+    print(f'Requesting {endpoint}; application key present; parameters: '+', '.join(k for k in params if k!='_ak'),flush=True)
+    try:
+        with urlopen(BASE+endpoint+'?'+urlencode(params),timeout=30) as r: return json.load(r)
+    except HTTPError as exc:
+        body=exc.read(8192).decode('utf-8',errors='replace').lower()
+        # Report only fixed diagnostic labels, never raw server content or credentials.
+        hints=[]
+        for label,pattern in [('application key',r'api.?key|application.?key|invalid.?key|_ak'),('geographic restriction',r'geolocation|geo.?block|jurisdiction|region|country'),('access restriction',r'forbidden|access denied|unauthorized|not authorized'),('missing or invalid parameter',r'parameter|required field|missing field|invalid request'),('rate limit',r'rate limit|too many requests')]:
+            if re.search(pattern,body): hints.append(label)
+        print(f'HTTP {exc.code}; response type: '+str(exc.headers.get_content_type()),flush=True)
+        print('Response indicators: '+(', '.join(hints) if hints else 'none recognized'),flush=True)
+        raise SystemExit('FanDuel request failed; existing odds file left unchanged. No automatic retry.') from None
 def events(doc):
     out={}
     for e in doc['attachments']['events'].values():
