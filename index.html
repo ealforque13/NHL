@@ -5652,6 +5652,13 @@ body.light-mode #hoist-games-calendar-overlay .hoist-games-calendar-modal,body[d
 #lineups .hoist-lineup-picker-empty{padding:14px;color:#b4c4da}
 @media(max-width:650px){#lineups .hoist-lineup-builder-toolbar{gap:6px}#lineups .hoist-lineup-builder-toolbar button{padding:9px 10px;font-size:11px}}
 </style>
+<style>
+#lineups .hoist-front-jersey{position:relative;width:100%;height:100%;filter:drop-shadow(0 8px 8px rgba(0,0,0,.24));}
+#lineups .hoist-front-jersey[hidden]{display:none!important;}
+#lineups .hoist-front-jersey svg{display:block;width:100%;height:100%;}
+#lineups .hoist-front-jersey img{position:absolute;left:50%;top:43%;transform:translate(-50%,-50%);width:38%;height:38%;object-fit:contain;}
+@media(max-width:650px){#lineups .hoist-lineup-custom-slot .hoist-choose-player-label{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;text-align:center;line-height:1.25;}#lineups .hoist-choose-player-label span{display:block;}}
+</style>
 </head>
 
 <body>
@@ -7179,7 +7186,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const name = slot?.name || '';
     const number = slot ? (slot.number ?? slot.sweaterNumber ?? slot.jerseyNumber ?? '') : '';
     const jersey = slot ? jerseyMarkup(name,number,slot) :
-      `<div class="hoist-authentic-jersey"><div class="hoist-jersey-fallback"><span class="hoist-jersey-fallback-name">Choose Player</span><strong class="hoist-jersey-fallback-number">+</strong></div></div>`;
+      `<div class="hoist-authentic-jersey"><div class="hoist-jersey-fallback"><span class="hoist-jersey-fallback-name hoist-choose-player-label"><span>Choose</span> <span>Player</span></span><strong class="hoist-jersey-fallback-number">+</strong></div></div>`;
     return `<div class="hoist-lineup-player hoist-dfo-player">
       <div class="hoist-lineup-player-position">${esc(role)}</div>
       <button type="button" class="hoist-lineup-custom-slot" data-custom-row="${i}" data-custom-col="${j}" aria-label="${esc(name ? `Change ${name}` : `Choose ${role} player`)}">
@@ -7289,14 +7296,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const rawUrl = p.jerseyUrl || p.playerJerseyUrl || jerseyPreview[selected]?.[id];
     const url = typeof rawUrl === 'string' && /^https:\/\//i.test(rawUrl) ? rawUrl : '';
     const [primary,accent] = jerseyPalettes[selected] || ['#233653','#607b9e'];
-    const surname = String(name || '').trim().split(/\s+/).slice(-1)[0].toUpperCase();
-    const digits = number == null || number === '' ? '—' : String(number);
-    // Placeholder is intentionally a flat typographic tile, not an inaccurate jersey.
+    const logo = `https://assets.nhle.com/logos/nhl/svg/${encodeURIComponent(selected)}_dark.svg`;
     return `<div class="hoist-authentic-jersey" style="--jersey-primary:${primary};--jersey-accent:${accent}">
-      ${url ? `<img class="hoist-authentic-jersey-img" src="${esc(url)}" alt="${esc(name)} jersey back" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">` : ''}
-      <div class="hoist-jersey-fallback" ${url ? 'hidden' : ''} aria-label="Jersey artwork not available for ${esc(name)}">
-        <span class="hoist-jersey-fallback-name">${esc(surname)}</span>
-        <strong class="hoist-jersey-fallback-number">${esc(digits)}</strong>
+      ${url ? `<img class="hoist-authentic-jersey-img" src="${esc(url)}" alt="${esc(name)} jersey" loading="lazy" decoding="async" onerror="this.hidden=true;this.nextElementSibling.hidden=false">` : ''}
+      <div class="hoist-front-jersey" ${url ? 'hidden' : ''} role="img" aria-label="${esc(selected)} front jersey">
+        <svg viewBox="0 0 166 160" aria-hidden="true">
+          <path d="M58 16 L73 10 Q83 22 93 10 L108 16 L139 30 L158 113 L132 121 L120 76 L120 146 L46 146 L46 76 L34 121 L8 113 L27 30 Z" fill="${primary}" stroke="${accent}" stroke-width="1.5"/>
+          <g fill="${accent}"><path d="M14 88 L41 88 L38 99 L11 99 Z M125 88 L152 88 L155 99 L128 99 Z M46 134 H120 V146 H46 Z"/><path d="M58 16 L73 10 Q83 22 93 10 L108 16 L98 23 Q83 34 68 23 Z"/></g>
+          <path d="M46 43 V146 M120 43 V146" stroke="#000" stroke-opacity=".13" fill="none"/>
+        </svg>
+        <img src="${esc(logo)}" alt="" loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('_dark.svg','_light.svg')">
       </div>
     </div>`;
   }
