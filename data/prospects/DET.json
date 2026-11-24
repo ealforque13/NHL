@@ -1,0 +1,198 @@
+{
+  "team": "DET",
+  "updatedAt": "2026-11-24T19:08:35.849806+00:00",
+  "players": [
+    {
+      "id": 8478891,
+      "name": "Mason Appleton",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478891.png",
+      "number": 22,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478042,
+      "name": "Viktor Arvidsson",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478042.png",
+      "number": 33,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484794,
+      "name": "Michael Brandsegg-Nygård",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8484794.png",
+      "number": 28,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477456,
+      "name": "J.T. Compher",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8477456.png",
+      "number": 37,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477429,
+      "name": "Andrew Copp",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8477429.png",
+      "number": 18,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481523,
+      "name": "Kirby Dach",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8481523.png",
+      "number": 17,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479337,
+      "name": "Alex DeBrincat",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8479337.png",
+      "number": 93,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484471,
+      "name": "Emmitt Finnie",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8484471.png",
+      "number": 58,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483464,
+      "name": "Marco Kasper",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8483464.png",
+      "number": 92,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478434,
+      "name": "Keegan Kolesar",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478434.png",
+      "number": 55,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482802,
+      "name": "Carter Mazur",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8482802.png",
+      "number": 34,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479992,
+      "name": "Michael Rasmussen",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8479992.png",
+      "number": 27,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482078,
+      "name": "Lucas Raymond",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8482078.png",
+      "number": 23,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480879,
+      "name": "Jacob Bernard-Docker",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8480879.png",
+      "number": 25,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475279,
+      "name": "Ben Chiarot",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8475279.png",
+      "number": 8,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477971,
+      "name": "Andreas Englund",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8477971.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475753,
+      "name": "Justin Faulk",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8475753.png",
+      "number": 72,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481607,
+      "name": "Albert Johansson",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8481607.png",
+      "number": 20,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483679,
+      "name": "Anton Johansson",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8483679.png",
+      "number": 42,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481542,
+      "name": "Moritz Seider",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8481542.png",
+      "number": 53,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482171,
+      "name": "William Wallinder",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8482171.png",
+      "number": 54,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476434,
+      "name": "John Gibson",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8476434.png",
+      "number": 36,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478470,
+      "name": "Samuel Montembeault",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8478470.png",
+      "number": 32,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480193,
+      "name": "Daniil Tarasov",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DET/8480193.png",
+      "number": 80,
+      "organizationGroup": "NHL"
+    }
+  ]
+}

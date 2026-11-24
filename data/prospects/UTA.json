@@ -1,0 +1,230 @@
+{
+  "team": "UTA",
+  "updatedAt": "2026-11-24T19:08:54.368836+00:00",
+  "players": [
+    {
+      "id": 8484388,
+      "name": "Daniil But",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8484388.png",
+      "number": 50,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479619,
+      "name": "Michael Carcone",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479619.png",
+      "number": 53,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483431,
+      "name": "Logan Cooley",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8483431.png",
+      "number": 92,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478474,
+      "name": "Lawson Crouse",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478474.png",
+      "number": 67,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482699,
+      "name": "Dylan Guenther",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8482699.png",
+      "number": 11,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480849,
+      "name": "Barrett Hayton",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480849.png",
+      "number": 27,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479343,
+      "name": "Clayton Keller",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479343.png",
+      "number": 9,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475314,
+      "name": "Anders Lee",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8475314.png",
+      "number": 72,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480855,
+      "name": "Jack McBain",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480855.png",
+      "number": 22,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481827,
+      "name": "Ben McCartney",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8481827.png",
+      "number": 62,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477070,
+      "name": "Liam O'Brien",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477070.png",
+      "number": 38,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477951,
+      "name": "Nick Schmaltz",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477951.png",
+      "number": 8,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478831,
+      "name": "Kevin Stenlund",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478831.png",
+      "number": 82,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476389,
+      "name": "Vincent Trocheck",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8476389.png",
+      "number": 16,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479977,
+      "name": "Kailer Yamamoto",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479977.png",
+      "number": 56,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485010,
+      "name": "Gregor Biber",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8485010.png",
+      "number": 94,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480084,
+      "name": "Nick DeSimone",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480084.png",
+      "number": 57,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483436,
+      "name": "Artem Duda",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8483436.png",
+      "number": 84,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481708,
+      "name": "Zac Jones",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8481708.png",
+      "number": 15,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483472,
+      "name": "Maveric Lamoureux",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8483472.png",
+      "number": 10,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478507,
+      "name": "John Marino",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478507.png",
+      "number": 6,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479369,
+      "name": "Andrew Peeke",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479369.png",
+      "number": 20,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477220,
+      "name": "Nate Schmidt",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477220.png",
+      "number": 88,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479410,
+      "name": "Mikhail Sergachev",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8479410.png",
+      "number": 98,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484386,
+      "name": "Dmitri Simashev",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8484386.png",
+      "number": 26,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477346,
+      "name": "MacKenzie Weegar",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8477346.png",
+      "number": 52,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482657,
+      "name": "Sebastian Cossa",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8482657.png",
+      "number": 33,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478872,
+      "name": "Karel Vejmelka",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8478872.png",
+      "number": 70,
+      "organizationGroup": "NHL"
+    }
+  ]
+}

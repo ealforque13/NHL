@@ -1,0 +1,214 @@
+{
+  "team": "VAN",
+  "updatedAt": "2026-11-24T19:08:54.491424+00:00",
+  "players": [
+    {
+      "id": 8483395,
+      "name": "Arshdeep Bains",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8483395.png",
+      "number": 13,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478444,
+      "name": "Brock Boeser",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8478444.png",
+      "number": 6,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480078,
+      "name": "Filip Chytil",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8480078.png",
+      "number": 77,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481032,
+      "name": "Paul Cotter",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8481032.png",
+      "number": 47,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478498,
+      "name": "Jake DeBrusk",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8478498.png",
+      "number": 74,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475848,
+      "name": "Brendan Gallagher",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8475848.png",
+      "number": 7,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481024,
+      "name": "Linus Karlsson",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8481024.png",
+      "number": 94,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483476,
+      "name": "Jonathan Lekkerimäki",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8483476.png",
+      "number": 88,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484406,
+      "name": "Ty Mueller",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8484406.png",
+      "number": 39,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482055,
+      "name": "Drew O'Connor",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8482055.png",
+      "number": 18,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483499,
+      "name": "Liam Ohgren",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8483499.png",
+      "number": 92,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480012,
+      "name": "Elias Pettersson",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8480012.png",
+      "number": 40,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484901,
+      "name": "Jacob Quillan",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8484901.png",
+      "number": 62,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481133,
+      "name": "Cole Reinhardt",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8481133.png",
+      "number": 29,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482079,
+      "name": "Marco Rossi",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8482079.png",
+      "number": 23,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478465,
+      "name": "Guillaume Brisebois",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8478465.png",
+      "number": 55,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484798,
+      "name": "Zeev Buium",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8484798.png",
+      "number": 8,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480075,
+      "name": "Cameron Crotty",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8480075.png",
+      "number": 51,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479425,
+      "name": "Filip Hronek",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8479425.png",
+      "number": 17,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476467,
+      "name": "Jamie Oleksiak",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8476467.png",
+      "number": 4,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483678,
+      "name": "Elias Pettersson",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8483678.png",
+      "number": 25,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8474568,
+      "name": "Luke Schenn",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8474568.png",
+      "number": 2,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484240,
+      "name": "Tom Willander",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8484240.png",
+      "number": 5,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477967,
+      "name": "Thatcher Demko",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8477967.png",
+      "number": 35,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480947,
+      "name": "Kevin Lankinen",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8480947.png",
+      "number": 32,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482447,
+      "name": "Leevi Meriläinen",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/VAN/8482447.png",
+      "number": 31,
+      "organizationGroup": "NHL"
+    }
+  ]
+}

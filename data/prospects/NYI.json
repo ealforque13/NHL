@@ -1,0 +1,206 @@
+{
+  "team": "NYI",
+  "updatedAt": "2026-11-24T19:08:41.598802+00:00",
+  "players": [
+    {
+      "id": 8478445,
+      "name": "Mathew Barzal",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8478445.png",
+      "number": 13,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482070,
+      "name": "Mitchell Chaffee",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8482070.png",
+      "number": 26,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475231,
+      "name": "Casey Cizikas",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8475231.png",
+      "number": 53,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477407,
+      "name": "Anthony Duclair",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8477407.png",
+      "number": 11,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485388,
+      "name": "Victor Eklund",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8485388.png",
+      "number": 38,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482476,
+      "name": "Emil Heineman",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8482476.png",
+      "number": 51,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481601,
+      "name": "Simon Holmstrom",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8481601.png",
+      "number": 92,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477500,
+      "name": "Bo Horvat",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8477500.png",
+      "number": 14,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481711,
+      "name": "Matias Maccelli",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8481711.png",
+      "number": 63,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476419,
+      "name": "Jean-Gabriel Pageau",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8476419.png",
+      "number": 44,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476292,
+      "name": "Ondrej Palat",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8476292.png",
+      "number": 81,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475151,
+      "name": "Kyle Palmieri",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8475151.png",
+      "number": 21,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475170,
+      "name": "Brayden Schenn",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8475170.png",
+      "number": 10,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477950,
+      "name": "Tony DeAngelo",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8477950.png",
+      "number": 77,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477018,
+      "name": "Ben Hutton",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8477018.png",
+      "number": 71,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482516,
+      "name": "Matthew Kessel",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8482516.png",
+      "number": 4,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476429,
+      "name": "Scott Mayfield",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8476429.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476917,
+      "name": "Adam Pelech",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8476917.png",
+      "number": 3,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477506,
+      "name": "Ryan Pulock",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8477506.png",
+      "number": 6,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481014,
+      "name": "Alexander Romanov",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8481014.png",
+      "number": 28,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485366,
+      "name": "Matthew Schaefer",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8485366.png",
+      "number": 48,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479378,
+      "name": "Logan Stanley",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8479378.png",
+      "number": 8,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478009,
+      "name": "Ilya Sorokin",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8478009.png",
+      "number": 30,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8473575,
+      "name": "Semyon Varlamov",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8473575.png",
+      "number": 40,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481016,
+      "name": "Ruslan Iskhakov",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20242025/NYI/8481016.png",
+      "number": 37,
+      "organizationGroup": "Prospects"
+    }
+  ]
+}

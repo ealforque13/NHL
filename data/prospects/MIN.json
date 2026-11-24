@@ -1,0 +1,394 @@
+{
+  "team": "MIN",
+  "updatedAt": "2026-11-24T19:08:38.671976+00:00",
+  "players": [
+    {
+      "id": 8481557,
+      "name": "Matt Boldy",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8481557.png",
+      "number": 12,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481553,
+      "name": "Bobby Brink",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8481553.png",
+      "number": 10,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476399,
+      "name": "Blake Coleman",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8476399.png",
+      "number": 20,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478493,
+      "name": "Joel Eriksson Ek",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8478493.png",
+      "number": 14,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475220,
+      "name": "Marcus Foligno",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8475220.png",
+      "number": 17,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8473422,
+      "name": "Nick Foligno",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8473422.png",
+      "number": 71,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477451,
+      "name": "Ryan Hartman",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8477451.png",
+      "number": 38,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478864,
+      "name": "Kirill Kaprizov",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8478864.png",
+      "number": 97,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477446,
+      "name": "Michael McCarron",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8477446.png",
+      "number": 47,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485702,
+      "name": "Maxim Shabanov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8485702.png",
+      "number": 49,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481477,
+      "name": "Nico Sturm",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8481477.png",
+      "number": 78,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478508,
+      "name": "Yakov Trenin",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8478508.png",
+      "number": 13,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483525,
+      "name": "Danila Yurov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8483525.png",
+      "number": 22,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8474567,
+      "name": "Zach Bogosian",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8474567.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476463,
+      "name": "Jonas Brodin",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8476463.png",
+      "number": 25,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482122,
+      "name": "Brock Faber",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8482122.png",
+      "number": 7,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480800,
+      "name": "Quinn Hughes",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8480800.png",
+      "number": 43,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482641,
+      "name": "Matt Kiersted",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8482641.png",
+      "number": 26,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476874,
+      "name": "Olli Maatta",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8476874.png",
+      "number": 3,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483766,
+      "name": "David Spacek",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8483766.png",
+      "number": 82,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8474716,
+      "name": "Jared Spurgeon",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8474716.png",
+      "number": 46,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479406,
+      "name": "Filip Gustavsson",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8479406.png",
+      "number": 32,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475717,
+      "name": "Calvin Pickard",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8475717.png",
+      "number": 31,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482661,
+      "name": "Jesper Wallstedt",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8482661.png",
+      "number": 30,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485589,
+      "name": "Lirim Amidovski",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8485589.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Univ. of Connecticut"
+    },
+    {
+      "id": 8486019,
+      "name": "Adam Andersson",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8486019.png",
+      "number": "",
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8482863,
+      "name": "Caedan Bankier",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8482863.png",
+      "number": 76,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8485367,
+      "name": "Adam Benak",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8485367.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Western Michigan Univ."
+    },
+    {
+      "id": 8484487,
+      "name": "James Clark",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484487.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Michigan State Univ."
+    },
+    {
+      "id": 8481586,
+      "name": "Matvey Guskov",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8481586.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "HK Sochi"
+    },
+    {
+      "id": 8483452,
+      "name": "Hunter Haight",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8483452.png",
+      "number": 37,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8484178,
+      "name": "Riley Heidt",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8484178.png",
+      "number": 58,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8485437,
+      "name": "Carter Klippenstein",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8485437.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Providence College"
+    },
+    {
+      "id": 8484184,
+      "name": "Rasmus Kumpulainen",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8484184.png",
+      "number": "",
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8486061,
+      "name": "Kayden Lemire",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8486061.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Prince George Cougars"
+    },
+    {
+      "id": 8484765,
+      "name": "Ryder Ritchie",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484765.png",
+      "number": 54,
+      "organizationGroup": "Prospects",
+      "currentClub": "Boston Univ."
+    },
+    {
+      "id": 8484231,
+      "name": "Charlie Stramel",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8484231.png",
+      "number": "",
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8482728,
+      "name": "Nate Benoit",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482728.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Long Island Univ."
+    },
+    {
+      "id": 8486166,
+      "name": "Viking Gustafsson Nyberg",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8486166.png",
+      "number": 6,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8484787,
+      "name": "Aron Kiviharju",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484787.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "HIFK"
+    },
+    {
+      "id": 8482781,
+      "name": "Carson Lambos",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8482781.png",
+      "number": 55,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8482686,
+      "name": "Jack Peart",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8482686.png",
+      "number": 49,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8484215,
+      "name": "Aaron Pionk",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484215.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Univ. of Minnesota-Duluth"
+    },
+    {
+      "id": 8483918,
+      "name": "Riley Mercer",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8483918.png",
+      "number": 50,
+      "organizationGroup": "AHL",
+      "currentClub": "Iowa Wild"
+    },
+    {
+      "id": 8486275,
+      "name": "Filip Ruzicka",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8486275.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Brandon Wheat Kings"
+    },
+    {
+      "id": 8485037,
+      "name": "Chase Wutzke",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MIN/8485037.png",
+      "number": 95,
+      "organizationGroup": "Prospects",
+      "currentClub": "Jacksonville Icemen"
+    }
+  ]
+}

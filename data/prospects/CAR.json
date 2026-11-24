@@ -1,0 +1,389 @@
+{
+  "team": "CAR",
+  "updatedAt": "2026-11-24T19:08:32.748233+00:00",
+  "players": [
+    {
+      "id": 8478427,
+      "name": "Sebastian Aho",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8478427.png",
+      "number": 20,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482809,
+      "name": "Jackson Blake",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482809.png",
+      "number": 53,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477478,
+      "name": "William Carrier",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8477478.png",
+      "number": 28,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475235,
+      "name": "Nicolas Deslauriers",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8475235.png",
+      "number": 44,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477940,
+      "name": "Nikolaj Ehlers",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8477940.png",
+      "number": 27,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475791,
+      "name": "Taylor Hall",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8475791.png",
+      "number": 71,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476873,
+      "name": "Mark Jankowski",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476873.png",
+      "number": 77,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482093,
+      "name": "Seth Jarvis",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482093.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480829,
+      "name": "Jesperi Kotkaniemi",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480829.png",
+      "number": 82,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476921,
+      "name": "Jordan Martinook",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476921.png",
+      "number": 48,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480762,
+      "name": "Eric Robinson",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480762.png",
+      "number": 50,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8473533,
+      "name": "Jordan Staal",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8473533.png",
+      "number": 11,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482702,
+      "name": "Logan Stankoven",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482702.png",
+      "number": 22,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480830,
+      "name": "Andrei Svechnikov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480830.png",
+      "number": 37,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478970,
+      "name": "Jalen Chatfield",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8478970.png",
+      "number": 5,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476906,
+      "name": "Shayne Gostisbehere",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476906.png",
+      "number": 4,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480817,
+      "name": "K'Andre Miller",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480817.png",
+      "number": 19,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482100,
+      "name": "Alexander Nikishin",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482100.png",
+      "number": 21,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476958,
+      "name": "Jaccob Slavin",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8476958.png",
+      "number": 74,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479976,
+      "name": "Juuso Välimäki",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8479976.png",
+      "number": 8,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480336,
+      "name": "Sean Walker",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8480336.png",
+      "number": 26,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483548,
+      "name": "Brandon Bussi",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8483548.png",
+      "number": 32,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481611,
+      "name": "Pyotr Kochetkov",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8481611.png",
+      "number": 52,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485563,
+      "name": "Charlie Cerrato",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20252026/CAR/8485563.png",
+      "number": "",
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8484469,
+      "name": "Michael Emerson",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484469.png",
+      "number": 78,
+      "organizationGroup": "Prospects",
+      "currentClub": "Merrimack College"
+    },
+    {
+      "id": 8482080,
+      "name": "Noel Gunler",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20252026/CAR/8482080.png",
+      "number": 38,
+      "organizationGroup": "Prospects",
+      "currentClub": "DjurgÃ¥rdens IF"
+    },
+    {
+      "id": 8482917,
+      "name": "Nikita Guslistov",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8482917.png",
+      "number": "",
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8484445,
+      "name": "Timur Mukhanov",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484445.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Dizel Penza"
+    },
+    {
+      "id": 8484203,
+      "name": "Bradly Nadeau",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8484203.png",
+      "number": 29,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8483501,
+      "name": "Alexander Perevalov",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8483501.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Metallurg Novokuznetsk"
+    },
+    {
+      "id": 8484211,
+      "name": "Jayden Perron",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484211.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Univ. of Michigan"
+    },
+    {
+      "id": 8482785,
+      "name": "Justin Robidas",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482785.png",
+      "number": 46,
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8484402,
+      "name": "Alexander Rykov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484402.png",
+      "number": "",
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8483519,
+      "name": "Gleb Trikozov",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8483519.png",
+      "number": 73,
+      "organizationGroup": "Prospects",
+      "currentClub": "Greensboro Gargoyles"
+    },
+    {
+      "id": 8484392,
+      "name": "Felix Unger Sörum",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8484392.png",
+      "number": 36,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8484418,
+      "name": "Stanislav Yarovoi",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484418.png",
+      "number": "",
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8484998,
+      "name": "Noel Fransén",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8484998.png",
+      "number": 75,
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8483773,
+      "name": "Vladimir Grudinin",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8483773.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Severstal Cherepovets"
+    },
+    {
+      "id": 8482860,
+      "name": "Aleksi Heimosalmi",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482860.png",
+      "number": 47,
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8484428,
+      "name": "Charles Alexis Legault",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8484428.png",
+      "number": 62,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8482888,
+      "name": "Bryce Montgomery",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482888.png",
+      "number": 72,
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8482911,
+      "name": "Joel Nystrom",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482911.png",
+      "number": 64,
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8483713,
+      "name": "Alexander Pelevin",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8483713.png",
+      "number": "",
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8482187,
+      "name": "Ronan Seeley",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8482187.png",
+      "number": 91,
+      "organizationGroup": "AHL",
+      "currentClub": "Chicago Wolves"
+    },
+    {
+      "id": 8484440,
+      "name": "Ruslan Khazheyev",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CAR/8484440.png",
+      "number": 80,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8484493,
+      "name": "Egor Velmakin",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/latest/8484493.png",
+      "number": "",
+      "organizationGroup": "Prospects",
+      "currentClub": "Greensboro Gargoyles"
+    }
+  ]
+}

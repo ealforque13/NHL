@@ -1,0 +1,382 @@
+{
+  "team": "DAL",
+  "updatedAt": "2026-11-24T19:08:35.740105+00:00",
+  "players": [
+    {
+      "id": 8473994,
+      "name": "Jamie Benn",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8473994.png",
+      "number": 14,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476278,
+      "name": "Colin Blackwell",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8476278.png",
+      "number": 15,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480840,
+      "name": "Oskar Bäck",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8480840.png",
+      "number": 10,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475168,
+      "name": "Matt Duchene",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8475168.png",
+      "number": 95,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476889,
+      "name": "Radek Faksa",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8476889.png",
+      "number": 12,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478449,
+      "name": "Roope Hintz",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8478449.png",
+      "number": 24,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484829,
+      "name": "Justin Hryckowian",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484829.png",
+      "number": 49,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484938,
+      "name": "Arttu Hyry",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484938.png",
+      "number": 25,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482740,
+      "name": "Wyatt Johnston",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8482740.png",
+      "number": 53,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481641,
+      "name": "Joel Kiviranta",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8481641.png",
+      "number": 22,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8474102,
+      "name": "David Perron",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8474102.png",
+      "number": 16,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478420,
+      "name": "Mikko Rantanen",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8478420.png",
+      "number": 96,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480027,
+      "name": "Jason Robertson",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8480027.png",
+      "number": 21,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8475794,
+      "name": "Tyler Seguin",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8475794.png",
+      "number": 91,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479351,
+      "name": "Sam Steel",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8479351.png",
+      "number": 18,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483425,
+      "name": "Lian Bichsel",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8483425.png",
+      "number": 6,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8477335,
+      "name": "Kyle Burroughs",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8477335.png",
+      "number": 28,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8478476,
+      "name": "Kyle Capobianco",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8478476.png",
+      "number": 20,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481581,
+      "name": "Thomas Harley",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8481581.png",
+      "number": 55,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480036,
+      "name": "Miro Heiskanen",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8480036.png",
+      "number": 4,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8476902,
+      "name": "Esa Lindell",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8476902.png",
+      "number": 23,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8480878,
+      "name": "Nils Lundkvist",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8480878.png",
+      "number": 5,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8474574,
+      "name": "Tyler Myers",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8474574.png",
+      "number": 57,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485468,
+      "name": "Trey Taylor",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8485468.png",
+      "number": 27,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479193,
+      "name": "Casey DeSmith",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8479193.png",
+      "number": 1,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8479979,
+      "name": "Jake Oettinger",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8479979.png",
+      "number": 29,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482919,
+      "name": "Justin Ertel",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8482919.png",
+      "number": 62,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8486174,
+      "name": "Christian Fitzgerald",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8486174.png",
+      "number": 52,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8485691,
+      "name": "Jaxon Fuder",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8485691.png",
+      "number": 48,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8484796,
+      "name": "Emil Hemming",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484796.png",
+      "number": 39,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8486130,
+      "name": "Dylan Hryckowian",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8486130.png",
+      "number": 46,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8478888,
+      "name": "Cameron Hughes",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8478888.png",
+      "number": 34,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8484468,
+      "name": "Angus MacDonell",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484468.png",
+      "number": 47,
+      "organizationGroup": "Prospects",
+      "currentClub": "Idaho Steelheads"
+    },
+    {
+      "id": 8482690,
+      "name": "Ayrton Martino",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8482690.png",
+      "number": 60,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8485485,
+      "name": "Harrison Scott",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20252026/DAL/8485485.png",
+      "number": 37,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8483514,
+      "name": "Matthew Seminoff",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8483514.png",
+      "number": 43,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8482214,
+      "name": "Artem Shlaine",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8482214.png",
+      "number": 67,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8486126,
+      "name": "Jack Anderson",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8486126.png",
+      "number": 40,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8484146,
+      "name": "Tristan Bertucci",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484146.png",
+      "number": 42,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8484822,
+      "name": "Luke Krys",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484822.png",
+      "number": 36,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8484194,
+      "name": "Aram Minnetian",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484194.png",
+      "number": 44,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8485041,
+      "name": "Niilopekka Muhonen",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8485041.png",
+      "number": 41,
+      "organizationGroup": "Prospects",
+      "currentClub": "Idaho Steelheads"
+    },
+    {
+      "id": 8484523,
+      "name": "Connor Punnett",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484523.png",
+      "number": 35,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8477990,
+      "name": "Brandon Halverson",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8477990.png",
+      "number": 33,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    },
+    {
+      "id": 8484442,
+      "name": "Arno Tiefensee",
+      "position": "G",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/DAL/8484442.png",
+      "number": 50,
+      "organizationGroup": "AHL",
+      "currentClub": "Texas Stars"
+    }
+  ]
+}
