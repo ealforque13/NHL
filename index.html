@@ -7147,6 +7147,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (['G','GK','GOALIE','GOALTENDER'].includes(value)) return 'G';
     if (['D','LD','RD','DEFENSE','DEFENCE','DEFENSEMAN','DEFENCEMAN'].includes(value)) return 'D';
     if (['F','C','LW','RW','L','R','CENTER','CENTRE','LEFT WING','RIGHT WING','FORWARD'].includes(value)) return 'F';
+    const parts = value.split(/\s*[/,]\s*/);
+    if (parts.length > 1 && parts.every(v => ['F','C','LW','RW','L','R','W'].includes(v))) return 'F';
+    if (parts.length > 1 && parts.every(v => ['D','LD','RD'].includes(v))) return 'D';
     if (source === 'forwards') return 'F';
     if (source === 'defense' || source === 'defensemen') return 'D';
     if (source === 'goalies') return 'G';
@@ -7528,6 +7531,16 @@ document.addEventListener('DOMContentLoaded', function () {
       customRoster = uniqueRoster([...customRoster,...org.players]);
       organizationLoaded = true;
       if (activeCustomSlot) renderPicker();
+    } catch (_) { if (token !== requestId) return; }
+    // Read the offline supplement independently of the generated organization cache.
+    try {
+      const supplement = await fetchJson(`./data/prospect_supplements/${encodeURIComponent(selected)}.json`);
+      if (token !== requestId) return;
+      if (Array.isArray(supplement.players)) {
+        customRoster = uniqueRoster([...customRoster,...supplement.players]);
+        organizationLoaded = true;
+        if (activeCustomSlot) renderPicker();
+      }
     } catch (_) { if (token !== requestId) return; }
     const isRoster = data.type === 'roster';
     el('hoist-lineup-badge').textContent = isRoster ? 'TEAM ROSTER' : (data.status === 'confirmed' ? 'CONFIRMED' : 'PROJECTED');
