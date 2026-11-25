@@ -6533,6 +6533,12 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
 
 <!-- PARLAY BUILDER -->
 <section id="parlay" class="tab-section hidden" aria-label="Parlay Builder">
+  <div id="parlay-coming-soon">
+    <h2>COMING SOON</h2>
+    <button id="parlay-preview-open" type="button" aria-label="Open Parlay Builder preview" title="Open preview"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></button>
+  </div>
+  <div id="parlay-preview" hidden>
+
     <div class="hoist-games-weekbar" aria-label="Games by date">
       <button class="hoist-games-week-arrow" id="hoist-parlay-week-prev" type="button" aria-label="Previous week">‹</button>
       <div class="hoist-games-week-days" id="hoist-parlay-week-days"></div>
@@ -6564,6 +6570,7 @@ html.theme-light #hoist-parlay-calendar-overlay .hoist-games-calendar-modal{back
 <div class="parlay-controls"><input type="date" id="parlay-date" hidden aria-hidden="true" tabindex="-1"><label id="parlay-line-label">Threshold <select id="parlay-line"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
 <section id="parlay-slip" aria-label="Parlay slip"><div class="parlay-slip-top"><strong>Parlay Slip <span id="parlay-count">(0)</span></strong><button type="button" id="parlay-clear">Clear</button></div><div id="parlay-legs"></div><div class="parlay-slip-top"><span>Estimated combined odds</span><strong id="parlay-total">—</strong></div><small>Illustrative product of selected prices, not a sportsbook quote. Correlated selections may be priced differently.</small></section><p id="parlay-status" class="muted" role="status"></p><div class="parlay-scroll"><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
   </article>
+  </div>
 </section>
 
 <!-- FANTASY PLANNER -->
@@ -9354,6 +9361,20 @@ html.theme-light #hoist-notepad {--note-bg:#fff;--note-border:#aeb9c9;--note-tex
 
 <script>
 (()=>{const tabs=document.querySelectorAll('#parlay [data-parlay-filter]');const panel=document.getElementById('hoist-parlay-content');tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>{t.classList.toggle('active',t===tab);t.setAttribute('aria-selected',String(t===tab));});panel.dataset.filter=tab.dataset.parlayFilter;}));})();
+</script>
+<style>
+#parlay-coming-soon[hidden],#parlay-preview[hidden]{display:none!important}
+#parlay-coming-soon{position:relative;min-height:60vh;display:grid;place-items:center}
+#parlay-coming-soon h2{font-size:clamp(25px,5vw,48px);font-weight:800;letter-spacing:.12em;margin:0;text-align:center;color:inherit}
+#parlay-preview-open{position:absolute;right:8px;bottom:8px;width:34px;height:34px;display:grid;place-items:center;padding:0;background:transparent;border:1px solid rgba(125,155,195,.25);border-radius:5px;color:inherit;opacity:.65;cursor:pointer}
+#parlay-preview-open:hover,#parlay-preview-open:focus-visible{opacity:1}
+</style>
+<script>
+(()=>{const page=document.getElementById('parlay'),landing=document.getElementById('parlay-coming-soon'),preview=document.getElementById('parlay-preview'),open=document.getElementById('parlay-preview-open');
+function reset(){landing.hidden=false;preview.hidden=true;}
+open.addEventListener('click',()=>{landing.hidden=true;preview.hidden=false;});
+new MutationObserver(()=>{if(page.classList.contains('hidden'))reset();}).observe(page,{attributes:true,attributeFilter:['class']});
+})();
 </script>
 </body>
 </html>
