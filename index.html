@@ -5823,6 +5823,15 @@ html.theme-light #games .hoist-picks-options .hoist-prop-category-tabs button.is
 html.theme-light #games #hoist-games-calendar-overlay .hoist-games-calendar-modal {background:#fff!important;color:#000!important;}
 html.theme-light #games .hoist-game-gp-filter select {background:#fff!important;color:#000!important;}
 </style>
+<style id="hoist-light-contrast-final">
+html.theme-light body {--muted:#000;--note-muted:#000;}
+html.theme-light body .hoist-light-black-text {color:#000!important;}
+html.theme-light body img:is([src*="TBL_" i],[src*="/TBL." i],[data-hoist-team="TBL"],.hoist-tampa-white-logo):not(.hoist-team-headshot):not(.hoist-stats-headshot):not(.hoist-authentic-jersey-img) {
+  filter:none!important;
+  content:url("https://assets.nhle.com/logos/nhl/svg/TBL_light.svg")!important;
+}
+html.theme-light body #standings img[data-hoist-team="TBL"],html.theme-light body #teams .hoist-team-link img.hoist-tampa-white-logo,html.theme-light body #team-logo[data-hoist-team="TBL"] {filter:none!important;}
+</style>
 </head>
 
 <body>
@@ -9394,6 +9403,31 @@ html.theme-light #hoist-notepad {--note-bg:#fff;--note-border:#aeb9c9;--note-tex
 function reset(){landing.hidden=false;preview.hidden=true;}
 open.addEventListener('click',()=>{landing.hidden=true;preview.hidden=false;});
 new MutationObserver(()=>{if(page.classList.contains('hidden'))reset();}).observe(page,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<script id="hoist-light-neutral-text">
+(()=>{
+ const root=document.documentElement, mark='hoist-light-black-text';
+ let queued=false;
+ function refresh(){
+  queued=false;
+  const light=root.classList.contains('theme-light');
+  document.querySelectorAll('.'+mark).forEach(e=>e.classList.remove(mark));
+  if(!light)return;
+  const targets=[];
+  for(const e of document.body.querySelectorAll('*')){
+   if(e instanceof SVGElement || /^(SCRIPT|STYLE|IMG|CANVAS|VIDEO|IFRAME)$/.test(e.tagName))continue;
+   const c=getComputedStyle(e).color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+   if(!c)continue;
+   const [r,g,b]=c.slice(1).map(Number), hi=Math.max(r,g,b),lo=Math.min(r,g,b);
+   if(hi>0 && hi-lo<=Math.max(12,hi*.24) && !(hi===255&&lo===255))targets.push(e);
+  }
+  targets.forEach(e=>e.classList.add(mark));
+ }
+ function schedule(){if(!queued){queued=true;requestAnimationFrame(refresh);}}
+ new MutationObserver(schedule).observe(root,{attributes:true,attributeFilter:['class']});
+ new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true,characterData:true});
+ schedule();window.addEventListener('load',schedule,{once:true});
 })();
 </script>
 </body>
