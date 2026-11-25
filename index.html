@@ -5905,6 +5905,27 @@ html.theme-light body #standings#standings :is(.hoist-conference-table,#hoist-st
 html.theme-light body #standings#standings :is(.hoist-conference-table,#hoist-standings-table) :is(thead tr,.hoist-division-divider)>th.hoist-active-stat {background:#fff linear-gradient(rgba(73,181,255,.26),rgba(73,181,255,.26))!important;color:#000!important;}
 html.theme-light body #standings#standings .hoist-mobile-unified .hoist-mobile-identity-item.hoist-identity-division {background:#fff!important;color:#000!important;box-shadow:-15px 0 0 #fff!important;}
 </style>
+<style id="hoist-mobile-stats-compact-v2">
+@media(max-width:650px){
+ html body #stats#stats .hoist-stats-player-rail,
+ html body #stats#stats .hoist-stats-table tr > :first-child {width:128px!important;min-width:128px!important;max-width:128px!important;box-sizing:border-box!important;}
+ html body #stats#stats .hoist-stats-table tr > :not(:first-child){min-width:28px!important;}
+ html body #stats#stats .hoist-stats-table td{font-size:10px!important;padding:4px 3px!important;line-height:1.2!important;}
+ html body #stats#stats .hoist-stats-table thead th{font-size:9px!important;padding:0!important;}
+ html body #stats#stats .hoist-stats-table thead th button,
+ html body #stats#stats .hoist-stats-rail-head button{font-size:9px!important;padding:6px 3px!important;gap:2px!important;line-height:1.2!important;}
+ html body #stats#stats .hoist-stats-rail-row:not(.hoist-stats-rail-head){font-size:10px!important;padding:4px 3px!important;}
+ html body #stats#stats .hoist-stats-team-cell{gap:3px!important;}
+ html body #stats#stats .hoist-stats-name{font-size:10px!important;line-height:1.15!important;}
+ html body #stats#stats .hoist-stats-player-meta{font-size:8px!important;margin-top:1px!important;}
+ html body #stats#stats .hoist-stats-rank{width:17px!important;min-width:17px!important;flex:0 0 17px!important;font-size:10px!important;}
+ html body #stats#stats .hoist-stats-league-rank-label{width:17px!important;min-width:17px!important;margin-right:3px!important;}
+ html body #stats#stats :is(.hoist-stats-headshot,.hoist-stats-headshot-fallback){width:27px!important;height:27px!important;}
+ html body #stats#stats .hoist-stats-jersey{width:27px!important;min-width:27px!important;max-width:27px!important;flex:0 0 27px!important;}
+ html.theme-light body #stats#stats .hoist-stats-league-rank-label,
+ html.theme-light body #stats#stats .hoist-stats-league-rank-label::after{color:#000!important;-webkit-text-fill-color:#000!important;}
+}
+</style>
 </head>
 
 <body>
