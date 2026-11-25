@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T07:14:59.208324+00:00",
+  "updatedAt": "2026-11-25T13:16:55.458493+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -160,7 +160,7 @@
     },
     "8477444": {
       "injured": true,
-      "description": "Burakovsky (lower body) was on the ice Friday doing some individual drills, Bruce Garrioch of Postmedia reports.",
+      "description": "Burakovsky (lower body) will be with the Senators for their four-game road trip and is expected to play at some point, Bruce Garrioch of Postmedia reports Wednesday.",
       "status": "Injured Reserve",
       "team": "OTT"
     },
