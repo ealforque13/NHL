@@ -3,9 +3,9 @@
   "teamName": "Vegas Golden Knights",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:08:28.783Z",
-  "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-25T14:47:04.470246+00:00",
+  "sourceUpdatedAt": "2026-11-25T15:36:53.945Z",
+  "sourceDescription": "Last Game (2026-11-24)",
+  "cachedAtUTC": "2026-11-25T16:13:54.989257+00:00",
   "forwards": [
     [
       {
@@ -279,12 +279,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Trevor Connelly",
-        "number": 24,
+        "name": "Ivan Barbashev",
+        "number": 49,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 36773,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36773/VGK_24_Connelly.png",
+        "sourcePlayerId": 2737,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2737/VGK_49_Barbashev.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

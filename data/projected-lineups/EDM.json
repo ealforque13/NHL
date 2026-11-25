@@ -3,9 +3,9 @@
   "teamName": "Edmonton Oilers",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T17:06:42.333Z",
-  "sourceDescription": "Bob Stauffer",
-  "cachedAtUTC": "2026-11-25T14:46:24.199070+00:00",
+  "sourceUpdatedAt": "2026-11-25T15:38:05.236Z",
+  "sourceDescription": "Last Game (2026-11-24)",
+  "cachedAtUTC": "2026-11-25T16:13:14.689430+00:00",
   "forwards": [
     [
       {
@@ -73,12 +73,12 @@
     ],
     [
       {
-        "name": "Filip Hallander",
-        "number": 19,
+        "name": "Alex Formenton",
+        "number": 26,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29096,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
+        "sourcePlayerId": 2897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2897/EDM_26_Formenton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Alex Formenton",
-        "number": 26,
+        "name": "Filip Hallander",
+        "number": 19,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2897/EDM_26_Formenton.png",
+        "sourcePlayerId": 29096,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -313,12 +313,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Jason Dickinson",
-        "number": 16,
+        "name": "Kasperi Kapanen",
+        "number": 42,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 2160,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2160/EDM_16_Dickinson.png",
+        "sourcePlayerId": 2385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -365,12 +365,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kasperi Kapanen",
-        "number": 42,
+        "name": "Alex Formenton",
+        "number": 26,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2385/EDM_42_Kapanen.png",
+        "sourcePlayerId": 2897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2897/EDM_26_Formenton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
