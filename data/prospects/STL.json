@@ -1,7 +1,15 @@
 {
   "team": "STL",
-  "updatedAt": "2026-11-24T20:05:04.502106+00:00",
+  "updatedAt": "2026-11-25T11:10:46.879417+00:00",
   "players": [
+    {
+      "id": 8484790,
+      "name": "Adam Jiricek",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484790.png",
+      "number": 36,
+      "organizationGroup": "NHL"
+    },
     {
       "id": 8483463,
       "name": "Aleksanteri Kaskimaki",
@@ -152,6 +160,14 @@
       "position": "L",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8477573.png",
       "number": 26,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484230,
+      "name": "Otto Stenberg",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484230.png",
+      "number": 28,
       "organizationGroup": "NHL"
     },
     {
@@ -347,14 +363,6 @@
       "currentClub": "Worcester Railers"
     },
     {
-      "id": 8484790,
-      "name": "Adam Jiricek",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484790.png",
-      "number": 36,
-      "organizationGroup": "Prospects"
-    },
-    {
       "id": 8485086,
       "name": "Antoine Dorion",
       "position": "C",
@@ -528,14 +536,6 @@
       "number": "",
       "organizationGroup": "Prospects",
       "currentClub": "Ilves"
-    },
-    {
-      "id": 8484230,
-      "name": "Otto Stenberg",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/STL/8484230.png",
-      "number": 28,
-      "organizationGroup": "Prospects"
     },
     {
       "id": 8484188,
