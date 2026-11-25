@@ -5832,6 +5832,13 @@ html.theme-light body img:is([src*="TBL_" i],[src*="/TBL." i],[data-hoist-team="
 }
 html.theme-light body #standings img[data-hoist-team="TBL"],html.theme-light body #teams .hoist-team-link img.hoist-tampa-white-logo,html.theme-light body #team-logo[data-hoist-team="TBL"] {filter:none!important;}
 </style>
+<style id="hoist-standings-light-fix">
+/* Override desktop and mobile standings-specific white text and logo rules. */
+html.theme-light body #standings#standings :is(th,td,strong,span,small,button,h1,h2,h3,h4,p,div) {color:#000!important;}
+html.theme-light body #standings#standings :is(th,td).hoist-active-stat,
+html.theme-light body #standings#standings :is(th,td).hoist-active-stat strong {color:#1763bd!important;}
+html.theme-light body #standings#standings img:is([data-hoist-team="TBL"],[src*="TBL_" i],[src*="/TBL." i]) {filter:none!important;content:url("https://assets.nhle.com/logos/nhl/svg/TBL_light.svg")!important;}
+</style>
 </head>
 
 <body>
