@@ -5876,6 +5876,25 @@ html.theme-light body #standings#standings :is(.hoist-conference-table,#hoist-st
  color:#000!important;font-weight:700!important;
 }
 </style>
+<style id="hoist-stats-light-standings-sort-fix">
+/* Override the earlier zebra-row background shorthand and selected-cell reset. */
+html.theme-light body #stats#stats .hoist-stats-table thead tr>th {background-color:var(--hoist-table-grey)!important;}
+html.theme-light body #stats#stats .hoist-stats-table tbody tr:nth-child(odd)>td.hoist-stat-selected,
+html.theme-light body #stats#stats .hoist-stats-table tbody tr:nth-child(even)>td.hoist-stat-selected,
+html.theme-light body #stats#stats .hoist-stats-table thead tr>th.hoist-stat-selected,
+html.theme-light body #stats#stats .hoist-stats-player-rail .hoist-stats-rail-row.hoist-stat-selected:nth-child(n) {
+ background-image:linear-gradient(var(--hoist-table-sort),var(--hoist-table-sort))!important;
+ box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26)!important;
+ color:#000!important;font-weight:700!important;
+}
+html.theme-light body #stats#stats .hoist-stats-table thead tr>th.hoist-stat-selected {background-image:linear-gradient(rgba(73,181,255,.26),rgba(73,181,255,.26))!important;}
+</style>
+<style id="hoist-inline-sort-arrows">
+/* Match the original Stats inline arrow in both tables. */
+html.theme-light body #stats#stats .hoist-stats-table th.hoist-stat-selected .hoist-stat-arrow {position:static!important;transform:none!important;font-size:11px!important;line-height:1!important;color:#000!important;-webkit-text-fill-color:#000!important;}
+html body #standings#standings th[data-standings-sort].hoist-active-stat::after {content:"▾";position:static!important;display:inline!important;transform:none!important;margin-left:4px!important;font-size:11px!important;line-height:1!important;vertical-align:middle!important;}
+html body #standings#standings th[data-standings-sort].hoist-active-stat[aria-sort="ascending"]::after {content:"▴";}
+</style>
 </head>
 
 <body>
