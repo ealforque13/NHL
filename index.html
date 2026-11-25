@@ -5844,7 +5844,7 @@ html.theme-light body #standings#standings img:is([data-hoist-team="TBL"],[src*=
 </style>
 <style id="hoist-stats-light-fix">
 /* Match the light standings palette, including the separate mobile player rail. */
-html.theme-light body #stats#stats {--stats-light-row:#fff;--stats-light-alt:#f3f4f6;--stats-light-head:#e5e7eb;color:#000!important;}
+html.theme-light body #stats#stats {--stats-light-row:#fff;--stats-light-alt:#eef2f8;--stats-light-head:#e5e7eb;color:#000!important;}
 html.theme-light body #stats#stats :is(th,td,strong,span,small,button,h1,h2,h3,h4,p,div,select,option,label) {color:#000!important;-webkit-text-fill-color:#000!important;}
 html.theme-light body #stats#stats :is(.hoist-stats-panel,.hoist-stats-fixed-shell,.hoist-stats-table-wrap,.hoist-stats-table,.hoist-stats-player-rail) {background:#fff!important;border-color:#d1d5db!important;box-shadow:none!important;}
 html.theme-light body #stats#stats .hoist-stats-table thead th,
@@ -5859,6 +5859,22 @@ html.theme-light body #stats#stats :is(.hoist-stats-table th,.hoist-stats-table 
 html.theme-light body #stats#stats :is(.hoist-stats-picker select,.hoist-stats-picker select option,.hoist-stats-pagination button) {background-color:#fff!important;border-color:#d1d5db!important;}
 html.theme-light body #stats#stats .hoist-stats-pagination button:hover:not(:disabled) {background:#e5e7eb!important;}
 html.theme-light body #stats#stats img:is([data-hoist-team="TBL"],[src*="TBL_" i],[src*="/TBL." i]):not(.hoist-stats-headshot) {filter:none!important;content:url("https://assets.nhle.com/logos/nhl/svg/TBL_light.svg")!important;}
+</style>
+<style id="hoist-shared-light-table-palette">
+/* Shared light-mode zebra palette: same colors on both pages and fixed rails. */
+html.theme-light body {--hoist-table-white:#fff;--hoist-table-grey:#eef2f8;--hoist-table-sort:rgba(73,181,255,.14);}
+html.theme-light body #stats#stats {--stats-light-row:var(--hoist-table-white);--stats-light-alt:var(--hoist-table-grey);}
+html.theme-light body #standings#standings :is(.hoist-conference-table,#hoist-standings-table) tbody tr.hoist-team-row:not(.hoist-alt-row)>td,
+html.theme-light body #standings#standings .hoist-mobile-identity-item:not(.hoist-alt-row):not(.hoist-identity-division) {background-color:var(--hoist-table-white)!important;}
+html.theme-light body #standings#standings :is(.hoist-conference-table,#hoist-standings-table) tbody tr.hoist-team-row.hoist-alt-row>td,
+html.theme-light body #standings#standings .hoist-mobile-identity-item.hoist-alt-row:not(.hoist-identity-division) {background-color:var(--hoist-table-grey)!important;}
+html.theme-light body #stats#stats .hoist-stats-table :is(th,td).hoist-stat-selected,
+html.theme-light body #stats#stats .hoist-stats-player-rail .hoist-stats-rail-row.hoist-stat-selected,
+html.theme-light body #standings#standings :is(.hoist-conference-table,#hoist-standings-table) :is(th,td).hoist-active-stat {
+ background-image:linear-gradient(var(--hoist-table-sort),var(--hoist-table-sort))!important;
+ box-shadow:inset 1px 0 0 rgba(73,181,255,.26),inset -1px 0 0 rgba(73,181,255,.26)!important;
+ color:#000!important;font-weight:700!important;
+}
 </style>
 </head>
 
