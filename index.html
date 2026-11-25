@@ -5842,6 +5842,24 @@ html.theme-light body #standings#standings th[data-standings-sort]:is([aria-sort
 html.theme-light body #standings#standings th[data-standings-sort]:is(.hoist-active-stat,[aria-sort="ascending"],[aria-sort="descending"])::after {color:#000!important;-webkit-text-fill-color:#000!important;font-weight:700!important;}
 html.theme-light body #standings#standings img:is([data-hoist-team="TBL"],[src*="TBL_" i],[src*="/TBL." i]) {filter:none!important;content:url("https://assets.nhle.com/logos/nhl/svg/TBL_light.svg")!important;}
 </style>
+<style id="hoist-stats-light-fix">
+/* Match the light standings palette, including the separate mobile player rail. */
+html.theme-light body #stats#stats {--stats-light-row:#fff;--stats-light-alt:#f3f4f6;--stats-light-head:#e5e7eb;color:#000!important;}
+html.theme-light body #stats#stats :is(th,td,strong,span,small,button,h1,h2,h3,h4,p,div,select,option,label) {color:#000!important;-webkit-text-fill-color:#000!important;}
+html.theme-light body #stats#stats :is(.hoist-stats-panel,.hoist-stats-fixed-shell,.hoist-stats-table-wrap,.hoist-stats-table,.hoist-stats-player-rail) {background:#fff!important;border-color:#d1d5db!important;box-shadow:none!important;}
+html.theme-light body #stats#stats .hoist-stats-table thead th,
+html.theme-light body #stats#stats .hoist-stats-player-rail .hoist-stats-rail-head {background:var(--stats-light-head)!important;}
+html.theme-light body #stats#stats .hoist-stats-table tbody tr:nth-child(odd)>td,
+html.theme-light body #stats#stats .hoist-stats-player-rail .hoist-stats-rail-row:nth-child(even):not(.hoist-stats-rail-head) {background:var(--stats-light-row)!important;}
+html.theme-light body #stats#stats .hoist-stats-table tbody tr:nth-child(even)>td,
+html.theme-light body #stats#stats .hoist-stats-player-rail .hoist-stats-rail-row:nth-child(odd):not(.hoist-stats-rail-head) {background:var(--stats-light-alt)!important;}
+html.theme-light body #stats#stats :is(th,td,.hoist-stats-rail-row).hoist-stat-selected,
+html.theme-light body #stats#stats :is(th,td,.hoist-stats-rail-row).hoist-stat-selected * {color:#000!important;-webkit-text-fill-color:#000!important;font-weight:700!important;background-image:none!important;box-shadow:none!important;}
+html.theme-light body #stats#stats :is(.hoist-stats-table th,.hoist-stats-table td,.hoist-stats-rail-row) {border-color:#d1d5db!important;}
+html.theme-light body #stats#stats :is(.hoist-stats-picker select,.hoist-stats-picker select option,.hoist-stats-pagination button) {background-color:#fff!important;border-color:#d1d5db!important;}
+html.theme-light body #stats#stats .hoist-stats-pagination button:hover:not(:disabled) {background:#e5e7eb!important;}
+html.theme-light body #stats#stats img:is([data-hoist-team="TBL"],[src*="TBL_" i],[src*="/TBL." i]):not(.hoist-stats-headshot) {filter:none!important;content:url("https://assets.nhle.com/logos/nhl/svg/TBL_light.svg")!important;}
+</style>
 </head>
 
 <body>
