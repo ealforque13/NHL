@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T01:08:19.637313+00:00",
+  "updatedAt": "2026-11-25T07:14:59.208324+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8471215": {
@@ -356,6 +356,12 @@
       "status": "Injured Reserve",
       "team": "DAL"
     },
+    "8480842": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "EDM"
+    },
     "8480860": {
       "injured": true,
       "description": "Bahl will undergo surgery for a ruptured Achilles tendon and won't play again in the 2026-27 season, the Flames announced Sunday.",
@@ -499,6 +505,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "TOR"
+    },
+    "8483553": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "VGK"
     },
     "8483565": {
       "injured": true,
