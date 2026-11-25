@@ -7124,6 +7124,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Render team identities in a sibling layer outside the horizontal scroller.
   // This cannot be dragged sideways, even at the extreme right of the table.
+  let standingsRailFrame = 0;
+  let standingsRowObserver;
+  function scheduleStandingsRailSync() {
+    if (standingsRailFrame) return;
+    standingsRailFrame = requestAnimationFrame(() => {
+      standingsRailFrame = 0;
+      anchorMobileTeamRails();
+    });
+  }
+  function watchStandingsRows() {
+    standingsRowObserver?.disconnect();
+    const tables = document.querySelectorAll('#standings .hoist-mobile-unified table');
+    if (typeof ResizeObserver === 'function') {
+      standingsRowObserver = new ResizeObserver(scheduleStandingsRailSync);
+      tables.forEach(table => {
+        standingsRowObserver.observe(table);
+        table.querySelectorAll('tr').forEach(row => standingsRowObserver.observe(row));
+      });
+    }
+    tables.forEach(table => table.querySelectorAll('img').forEach(img => {
+      if (!img.complete) {
+        img.addEventListener('load', scheduleStandingsRailSync, {once:true});
+        img.addEventListener('error', scheduleStandingsRailSync, {once:true});
+      }
+    }));
+    document.fonts?.ready.then(scheduleStandingsRailSync);
+    scheduleStandingsRailSync();
+  }
+  window.addEventListener('pageshow', scheduleStandingsRailSync);
+  window.addEventListener('orientationchange', scheduleStandingsRailSync);
   function anchorMobileTeamRails() {
     document.querySelectorAll('#standings .hoist-mobile-unified').forEach(wrapper => {
       const table = wrapper.querySelector('table');
@@ -7141,7 +7171,8 @@ document.addEventListener('DOMContentLoaded', function () {
       rail.classList.remove('hoist-rail-ready');
       const tableRect = table.getBoundingClientRect();
       const wrapperRect = wrapper.getBoundingClientRect();
-      const offset = tableRect.top - wrapperRect.top;
+      const railTop = rail.getBoundingClientRect().top;
+      const offset = tableRect.top - railTop;
       rail.style.height = Math.ceil(offset + tableRect.height) + 'px';
       // Keep existing logo nodes when the table has not changed, preventing
       // image flashes during Safari viewport changes and vertical scrolling.
@@ -7162,7 +7193,10 @@ document.addEventListener('DOMContentLoaded', function () {
           (isFirstBelowCutoff ? ' hoist-after-cutoff' : '');
         const r = tr.getBoundingClientRect();
         item.style.top = (r.top - tableRect.top + offset) + 'px';
-        item.style.height = r.height + 'px';
+        item.style.setProperty('height', r.height + 'px', 'important');
+        item.style.setProperty('min-height', r.height + 'px', 'important');
+        item.style.setProperty('max-height', r.height + 'px', 'important');
+        item.style.setProperty('box-sizing', 'border-box', 'important');
         if (tr.classList.contains('hoist-team-row')) {
           divisionRank += 1;
           if (!reuse) item.innerHTML = `<span class="hoist-rail-rank">${divisionRank}</span>` + identity.innerHTML;
@@ -7262,7 +7296,7 @@ document.addEventListener('DOMContentLoaded', function () {
       el.scrollLeft = mobileScrollPositions[i] ?? 0;
     });
     // Build the overlay on the next paint, after the table has a stable layout.
-    requestAnimationFrame(anchorMobileTeamRails);
+    watchStandingsRows();
     // Keep all division tables horizontally aligned while swiping any one of them.
     const scrolls = Array.from(display.querySelectorAll('.hoist-desktop-groups .hoist-standings-scroll'));
     scrolls.forEach(scroller => {
