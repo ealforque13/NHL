@@ -3,9 +3,9 @@
   "teamName": "Columbus Blue Jackets",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:22:14.364Z",
-  "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-25T16:13:01.972413+00:00",
+  "sourceUpdatedAt": "2026-11-25T18:23:02.448Z",
+  "sourceDescription": "@BlueJacketsNHL",
+  "cachedAtUTC": "2026-11-25T20:30:36.325626+00:00",
   "forwards": [
     [
       {
@@ -93,24 +93,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mathieu Olivier",
-        "number": 24,
+        "name": "Sean Monahan",
+        "number": 23,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 23595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23595/CBJ_24_Olivier.png",
+        "sourcePlayerId": 2138,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Ryan Lomberg",
-        "number": 94,
+        "name": "Mikael Pyyhtia",
+        "number": 82,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3905,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
+        "sourcePlayerId": 36330,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36330/CBJ_82_Pyyhtia.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mikael Pyyhtia",
-        "number": 82,
+        "name": "Ryan Lomberg",
+        "number": 94,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 36330,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36330/CBJ_82_Pyyhtia.png",
+        "sourcePlayerId": 3905,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -171,12 +171,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Dante Fabbro",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2651,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dante Fabbro",
-        "number": 15,
+        "name": "Denton Mateychuk",
+        "number": 5,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2651,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2651/CBJ_15_Fabbro.png",
+        "sourcePlayerId": 31514,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -269,12 +269,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Sean Monahan",
+        "number": 23,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 34454,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
+        "sourcePlayerId": 2138,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -365,14 +365,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Mathieu Olivier",
-        "number": 24,
+        "name": "Mikael Pyyhtia",
+        "number": 82,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 23595,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23595/CBJ_24_Olivier.png",
+        "sourcePlayerId": 36330,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36330/CBJ_82_Pyyhtia.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Denton Mateychuk",
@@ -427,16 +427,6 @@
       "sourcePlayerId": 3791,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3791/CBJ_83_Garland.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Sean Monahan",
-      "number": 23,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 2138,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {

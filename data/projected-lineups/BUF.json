@@ -3,9 +3,9 @@
   "teamName": "Buffalo Sabres",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2723/BUF_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:44:55.052Z",
+  "sourceUpdatedAt": "2026-11-25T16:16:23.958Z",
   "sourceDescription": "Last Game (2026-11-21)",
-  "cachedAtUTC": "2026-11-25T16:12:57.753502+00:00",
+  "cachedAtUTC": "2026-11-25T20:30:32.159485+00:00",
   "forwards": [
     [
       {
@@ -146,7 +146,7 @@
         "sourcePlayerId": 28792,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Rasmus Dahlin",
@@ -382,7 +382,7 @@
         "sourcePlayerId": 28792,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Conor Timmins",
@@ -447,6 +447,16 @@
       "sourcePlayerId": 38139,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38139/BUF_94__Helenius.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Mattias Samuelsson",
+      "number": 23,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 28792,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

@@ -3,9 +3,9 @@
   "teamName": "Florida Panthers",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:58:00.391Z",
-  "sourceDescription": "George Richards",
-  "cachedAtUTC": "2026-11-25T16:13:16.787099+00:00",
+  "sourceUpdatedAt": "2026-11-25T16:40:24.947Z",
+  "sourceDescription": "Jameson Olive",
+  "cachedAtUTC": "2026-11-25T20:30:50.863164+00:00",
   "forwards": [
     [
       {
@@ -26,7 +26,7 @@
         "sourcePlayerId": 2132,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Sam Reinhart",
@@ -100,17 +100,17 @@
         "sourcePlayerId": 124,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/124/FLA_63_Marchand_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Sandis Vilmanis",
-        "number": 95,
+        "name": "Garnet Hathaway",
+        "number": 21,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 36428,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36428/FLA_95__Vilmanis.png",
+        "sourcePlayerId": 2561,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2561/FLA_21_Hathaway.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Garnet Hathaway",
-        "number": 21,
+        "name": "Sandis Vilmanis",
+        "number": 95,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2561,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2561/FLA_21_Hathaway.png",
+        "sourcePlayerId": 36428,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36428/FLA_95__Vilmanis.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -224,7 +224,7 @@
         "sourcePlayerId": 2132,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Sam Reinhart",
@@ -266,7 +266,7 @@
         "sourcePlayerId": 124,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/124/FLA_63_Marchand_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Sam Bennett",
@@ -362,7 +362,7 @@
         "sourcePlayerId": 2132,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Sam Reinhart",
@@ -420,32 +420,12 @@
   ],
   "injuries": [
     {
-      "name": "Aleksander Barkov",
-      "number": 16,
-      "position": "IR1",
-      "positionName": "Injured Reserve 1",
-      "sourcePlayerId": 2132,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2132/FLA_16_Barkov_2_.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Jonah Gadjovich",
       "number": 12,
       "position": "IR2",
       "positionName": "Injured Reserve 2",
       "sourcePlayerId": 4612,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4612/FLA_12_Gadjovich_2_.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Brad Marchand",
-      "number": 63,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 124,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/124/FLA_63_Marchand_2_.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     }

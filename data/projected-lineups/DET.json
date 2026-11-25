@@ -3,9 +3,9 @@
   "teamName": "Detroit Red Wings",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29585/DET_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:21:01.176Z",
+  "sourceUpdatedAt": "2026-11-25T16:50:09.999Z",
   "sourceDescription": "Ansar Khan",
-  "cachedAtUTC": "2026-11-25T16:13:12.583719+00:00",
+  "cachedAtUTC": "2026-11-25T20:30:46.699904+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Carter Mazur",
-        "number": 43,
+        "name": "Mason Appleton",
+        "number": 22,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 34532,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34532/DET_34__Mazur.png",
+        "sourcePlayerId": 4582,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4582/DET_22_Appleton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

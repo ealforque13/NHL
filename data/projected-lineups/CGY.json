@@ -3,9 +3,9 @@
   "teamName": "Calgary Flames",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4774/CGY_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T15:15:59.631Z",
+  "sourceUpdatedAt": "2026-11-25T16:47:37.171Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-25T16:13:04.080840+00:00",
+  "cachedAtUTC": "2026-11-25T20:30:38.407432+00:00",
   "forwards": [
     [
       {
@@ -19,14 +19,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Morgan Frost",
-        "number": 48,
+        "name": "Mikael Backlund",
+        "number": 11,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2814,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
+        "sourcePlayerId": 193,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/193/CGY_11_Backlund.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Matt Coronato",
@@ -47,6 +47,38 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 36778,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36778/CGY_92__Gridin.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jonathan Castagna",
+        "number": 38,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 35221,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35221/CGY_38__Castagna.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Aydar Suniev",
+        "number": 61,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 34016,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Yegor Sharangovich",
+        "number": 17,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 29637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -73,64 +105,32 @@
     ],
     [
       {
-        "name": "Ben Jones",
-        "number": 39,
+        "name": "Brennan Othmann",
+        "number": 78,
         "position": "LW",
         "positionName": "Left Wing",
+        "sourcePlayerId": 30831,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30831/CGY_78_Othmann.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Jones",
+        "number": 39,
+        "position": "C",
+        "positionName": "Center",
         "sourcePlayerId": 4774,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4774/CGY_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Mikael Backlund",
-        "number": 11,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 193,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/193/CGY_11_Backlund.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Yegor Sharangovich",
-        "number": 17,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 29637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Maxim Tsyplakov",
         "number": 72,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 38122,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38122/CGY_72_Tsyplakov.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jonathan Castagna",
-        "number": 38,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 35221,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35221/CGY_38__Castagna.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Aydar Suniev",
-        "number": 61,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 34016,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
+        "sourcePlayerId": 38122,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38122/CGY_72_Tsyplakov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -217,14 +217,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Morgan Frost",
-        "number": 48,
+        "name": "Ryan Strome",
+        "number": 16,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2814,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
+        "sourcePlayerId": 1825,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1825/CGY_22_Strome.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Matt Coronato",
@@ -269,12 +269,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Strome",
-        "number": 16,
+        "name": "Mikael Backlund",
+        "number": 11,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 1825,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1825/CGY_22_Strome.png",
+        "sourcePlayerId": 193,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/193/CGY_11_Backlund.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

@@ -3,9 +3,9 @@
   "teamName": "Dallas Stars",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T17:33:30.044Z",
+  "sourceUpdatedAt": "2026-11-25T16:42:46.632Z",
   "sourceDescription": "Robert Tiffin",
-  "cachedAtUTC": "2026-11-25T16:13:10.489402+00:00",
+  "cachedAtUTC": "2026-11-25T20:30:44.613098+00:00",
   "forwards": [
     [
       {
@@ -183,24 +183,24 @@
     ],
     [
       {
-        "name": "Trey Taylor",
-        "number": 27,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 31852,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31852/DAL_27__Taylor.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Kyle Burroughs",
         "number": 28,
-        "position": "RD",
-        "positionName": "Right Defense",
+        "position": "LD",
+        "positionName": "Left Defense",
         "sourcePlayerId": 3758,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3758/DAL_28__Burroughs.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      },
+      {
+        "name": "Tyler Myers",
+        "number": 57,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 176,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -385,14 +385,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nils Lundkvist",
-        "number": 5,
+        "name": "Tyler Myers",
+        "number": 57,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 4821,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4821/DAL_5_Lundkvist.png",
+        "sourcePlayerId": 176,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/176/DAL_57_Myers.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ]
   ],
