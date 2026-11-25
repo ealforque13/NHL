@@ -1,11 +1,11 @@
 {
   "team": "CHI",
   "teamName": "Chicago Blackhawks",
-  "teamFrontJerseyUrl": null,
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2174/CHI_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-23T15:50:04.954Z",
-  "sourceDescription": "Last Game (2026-11-22)",
-  "cachedAtUTC": "2026-11-24T23:52:25.381690+00:00",
+  "sourceUpdatedAt": "2026-11-25T00:42:28.256Z",
+  "sourceDescription": "Mark Lazerus",
+  "cachedAtUTC": "2026-11-25T01:15:59.696645+00:00",
   "forwards": [
     [
       {
@@ -73,24 +73,24 @@
     ],
     [
       {
-        "name": "Andrew Mangiapane",
-        "number": 88,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 4622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4622/CHI_26_Mangiapane.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Ryan Greene",
         "number": 20,
-        "position": "C",
-        "positionName": "Center",
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 31310,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31310/CHI_20_Greene.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      },
+      {
+        "name": "Anton Frondell",
+        "number": 16,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 38471,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38471/CHI_16__Frondell.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
       },
       {
         "name": "Teuvo Teravainen",
@@ -115,12 +115,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dominic Toninato",
-        "number": 25,
+        "name": "Luke Glendening",
+        "number": 41,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2918,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2918/CHI_25__Toninato.png",
+        "sourcePlayerId": 2174,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2174/CHI_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -269,14 +269,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Greene",
-        "number": 20,
+        "name": "Anton Frondell",
+        "number": 16,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 31310,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31310/CHI_20_Greene.png",
+        "sourcePlayerId": 38471,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38471/CHI_16__Frondell.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Oliver Moore",
@@ -440,20 +440,10 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Anton Frondell",
-      "number": 16,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 38471,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38471/CHI_16__Frondell.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
       "name": "Wyatt Kaiser",
       "number": null,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
       "sourcePlayerId": 37913,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37913/CHI_44_Kaiser.png",
       "injuryStatus": "out",

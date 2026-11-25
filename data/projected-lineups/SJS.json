@@ -3,9 +3,9 @@
   "teamName": "San Jose Sharks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35083/SJS_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:39:08.924Z",
-  "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-24T23:53:02.009250+00:00",
+  "sourceUpdatedAt": "2026-11-25T00:40:33.643Z",
+  "sourceDescription": "Max Miller",
+  "cachedAtUTC": "2026-11-25T01:16:35.288145+00:00",
   "forwards": [
     [
       {
@@ -93,12 +93,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Gaudette",
-        "number": 81,
+        "name": "Collin Graf",
+        "number": 51,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4646,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4646/SJS_81_Gaudette.png",
+        "sourcePlayerId": 38105,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brett Leason",
-        "number": 17,
+        "name": "Adam Gaudette",
+        "number": 81,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 25340,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25340/SJS_17__Leason.png",
+        "sourcePlayerId": 4646,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4646/SJS_81_Gaudette.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -149,12 +149,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Kesselring",
-        "number": 7,
+        "name": "Eric Pohlkamp",
+        "number": null,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29644,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29644/SJS_7__Kesselring.png",
+        "sourcePlayerId": 33798,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Eric Pohlkamp",
-        "number": null,
+        "name": "Michael Kesselring",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 33798,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
+        "sourcePlayerId": 29644,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29644/SJS_7__Kesselring.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Yaroslav Askarov",
-      "number": 30,
+      "name": "Alex Nedeljkovic",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 33018,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33018/SJS_30__Askarov.png",
+      "sourcePlayerId": 2727,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2727/SJS_33_Nedeljkovic.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Alex Nedeljkovic",
-      "number": 33,
+      "name": "Yaroslav Askarov",
+      "number": 30,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 2727,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2727/SJS_33_Nedeljkovic.png",
+      "sourcePlayerId": 33018,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33018/SJS_30__Askarov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
