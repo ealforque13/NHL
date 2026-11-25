@@ -5835,8 +5835,11 @@ html.theme-light body #standings img[data-hoist-team="TBL"],html.theme-light bod
 <style id="hoist-standings-light-fix">
 /* Override desktop and mobile standings-specific white text and logo rules. */
 html.theme-light body #standings#standings :is(th,td,strong,span,small,button,h1,h2,h3,h4,p,div) {color:#000!important;}
+html.theme-light body #standings#standings th[data-standings-sort] {color:#000!important;-webkit-text-fill-color:#000!important;}
 html.theme-light body #standings#standings :is(th,td).hoist-active-stat,
-html.theme-light body #standings#standings :is(th,td).hoist-active-stat strong {color:#1763bd!important;}
+html.theme-light body #standings#standings :is(th,td).hoist-active-stat *,
+html.theme-light body #standings#standings th[data-standings-sort]:is([aria-sort="ascending"],[aria-sort="descending"]),
+html.theme-light body #standings#standings th[data-standings-sort]:is(.hoist-active-stat,[aria-sort="ascending"],[aria-sort="descending"])::after {color:#000!important;-webkit-text-fill-color:#000!important;font-weight:700!important;}
 html.theme-light body #standings#standings img:is([data-hoist-team="TBL"],[src*="TBL_" i],[src*="/TBL." i]) {filter:none!important;content:url("https://assets.nhle.com/logos/nhl/svg/TBL_light.svg")!important;}
 </style>
 </head>
