@@ -1,25 +1,7 @@
 {
-  "updatedAt": "2026-11-25T13:16:55.458493+00:00",
+  "updatedAt": "2026-11-25T18:50:57.128093+00:00",
   "source": "Realtime Sports API",
   "players": {
-    "8471215": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "PIT"
-    },
-    "8473419": {
-      "injured": true,
-      "description": "Marchand (knee) is close to returning to the lineup, but he won't play against Buffalo on Saturday, per Jameson Olive of the Panthers' official site.",
-      "status": "Injured Reserve",
-      "team": "FLA"
-    },
-    "8474574": {
-      "injured": true,
-      "description": "Myers (upper body) has a chance to return in Wednesday's home clash against the Predators, per Robert Tiffin of NHL.com.",
-      "status": "Day-To-Day",
-      "team": "DAL"
-    },
     "8475151": {
       "injured": true,
       "description": "ir",
@@ -40,8 +22,8 @@
     },
     "8475786": {
       "injured": true,
-      "description": "Hyman (migraine) won't play against Vegas on Tuesday, per Oilers play-by-play announcer Jack Michaels.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "EDM"
     },
     "8475810": {
@@ -91,12 +73,6 @@
       "description": "Matheson (lower body) was placed on long-term injured reserve Tuesday, Renaud Lavoie of TVA Sports reports.",
       "status": "Injured Reserve",
       "team": "MTL"
-    },
-    "8476878": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "TBL"
     },
     "8476885": {
       "injured": true,
@@ -169,18 +145,6 @@
       "description": "MacKinnon (lower body) has been evaluated by a specialist and is expected to miss the next 12 weeks, Aarif Deen of Colorado Hockey Now reports Saturday.",
       "status": "Out",
       "team": "COL"
-    },
-    "8477493": {
-      "injured": true,
-      "description": "Barkov (knee) won't play against Buffalo on Saturday, but he could return within Florida's next three games, Jameson Olive of the Panthers' official site reports.",
-      "status": "Injured Reserve",
-      "team": "FLA"
-    },
-    "8477497": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "CBJ"
     },
     "8477506": {
       "injured": true,
@@ -272,15 +236,9 @@
       "status": "Out",
       "team": "WSH"
     },
-    "8479542": {
-      "injured": true,
-      "description": "Hagel (lower body) was placed on injured reserve by the Lightning on Thursday, retroactive to Nov. 15, Eduardo A. Encina of the Tampa Bay Times reports.",
-      "status": "Injured Reserve",
-      "team": "TBL"
-    },
     "8479576": {
       "injured": true,
-      "description": "Desharnais (appendectomy) was a full participant in Tuesday's practice and has been upgraded to day-to-day, Tarik El-Bashir of Monumental Sports Network reports.",
+      "description": "Desharnais (appendectomy) is slated to miss Wednesday's game against the Flyers, Tarik El-Bashir of Monumental Sports Network reports.",
       "status": "Injured Reserve",
       "team": "WSH"
     },
@@ -310,8 +268,8 @@
     },
     "8480028": {
       "injured": true,
-      "description": "Frost sustained an upper-body injury during Monday's 2-1 loss to the Senators, and head coach Ryan Huska did not have an update on the center's status after the game, Flames TV host Brendan Parker reports.",
-      "status": "Day-To-Day",
+      "description": "Frost (upper body) has been ruled out for Wednesday's game against the Penguins, Eric Francis of Sportsnet reports.",
+      "status": "Out",
       "team": "CGY"
     },
     "8480068": {
@@ -319,12 +277,6 @@
       "description": "Poehling (knee) is on the Ducks' current road trip and has resumed skating, Derek Lee of The Hockey News reports Thursday.",
       "status": "Injured Reserve",
       "team": "ANA"
-    },
-    "8480069": {
-      "injured": true,
-      "description": "Makar (lower body) was on the ice in a regular sweater ahead of Wednesday's clash with Montreal, Evan Rawal of the Denver Gazette reports.",
-      "status": "Injured Reserve",
-      "team": "COL"
     },
     "8480192": {
       "injured": true,
@@ -343,6 +295,18 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "MIN"
+    },
+    "8480807": {
+      "injured": true,
+      "description": "Samuelsson (undisclosed) is considered a game-time decision for Wednesday's matchup against the Rangers, Paul Hamilton of WGR Sports Radio 550 reports.",
+      "status": "Day-To-Day",
+      "team": "BUF"
+    },
+    "8480817": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CAR"
     },
     "8480831": {
       "injured": true,
@@ -440,6 +404,12 @@
       "status": "Suspension",
       "team": "CHI"
     },
+    "8482475": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "PIT"
+    },
     "8482667": {
       "injured": true,
       "description": "Eklund had surgery to repair a torn ankle tendon and will be out 10-12 weeks, Bruce Garrioch of Postmedia reports Thursday.",
@@ -463,12 +433,6 @@
       "description": "Kozak (undisclosed) did not practice Tuesday and is considered day-to-day, per Paul Hamilton of WGR Sports Radio 550.",
       "status": "Day-To-Day",
       "team": "BUF"
-    },
-    "8483398": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "PIT"
     },
     "8483425": {
       "injured": true,
