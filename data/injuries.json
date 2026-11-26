@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T13:15:01.619626+00:00",
+  "updatedAt": "2026-11-26T18:56:37.770838+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8475151": {
@@ -10,8 +10,8 @@
     },
     "8475167": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8475168": {
@@ -118,8 +118,8 @@
     },
     "8477402": {
       "injured": true,
-      "description": "Buchnevich (upper body) will miss Wednesday's game against the Islanders, per Brandon Kiley St. Louis.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "STL"
     },
     "8477406": {
@@ -148,8 +148,8 @@
     },
     "8477479": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CHI"
     },
     "8477492": {
@@ -172,8 +172,8 @@
     },
     "8477940": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CAR"
     },
     "8477951": {
@@ -202,8 +202,8 @@
     },
     "8478416": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "TBL"
     },
     "8478421": {
@@ -220,8 +220,8 @@
     },
     "8478458": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Roslovic (upper body) is expected to miss Friday's road clash against the Bruins, per Mark Masters of TSN.",
+      "status": "Out",
       "team": "TOR"
     },
     "8478465": {
@@ -266,12 +266,6 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
-    "8479671": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "CBJ"
-    },
     "8479941": {
       "injured": true,
       "description": "Danforth (upper body) was placed on injured reserve Thursday, per the NHL media site.",
@@ -286,8 +280,8 @@
     },
     "8480028": {
       "injured": true,
-      "description": "Frost (upper body) has been ruled out for Wednesday's game against the Penguins, Eric Francis of Sportsnet reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CGY"
     },
     "8480068": {
@@ -316,8 +310,8 @@
     },
     "8480817": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "CAR"
     },
     "8480831": {
@@ -412,8 +406,8 @@
     },
     "8482171": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "DET"
     },
     "8482176": {
@@ -448,8 +442,8 @@
     },
     "8482896": {
       "injured": true,
-      "description": "Kozak (undisclosed) won't play Wednesday versus the Rangers, Matthew Fairburn of The Athletic reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "BUF"
     },
     "8483425": {
@@ -484,8 +478,8 @@
     },
     "8483516": {
       "injured": true,
-      "description": "Snuggerud (upper body) didn't travel to Long Island for Wednesday's clash with the Islanders, Brandon Kiley St. Louis reports.",
-      "status": "Out",
+      "description": "day-to-day",
+      "status": "Day-To-Day",
       "team": "STL"
     },
     "8483546": {
@@ -532,9 +526,15 @@
     },
     "8484153": {
       "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "ANA"
+    },
+    "8484210": {
+      "injured": true,
       "description": "out",
       "status": "Out",
-      "team": "ANA"
+      "team": "NYR"
     },
     "8484287": {
       "injured": true,
