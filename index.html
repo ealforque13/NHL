@@ -5937,7 +5937,9 @@ html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hois
 html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hoist-sortable-table:has(th:nth-child(5).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(5),
 html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hoist-sortable-table:has(th:nth-child(6).hoist-sort-active) tbody tr.hoist-h2h-row-clickable > td:nth-child(6) {color:#2563eb!important;-webkit-text-fill-color:#2563eb!important;}
 </style>
-</head>
+<style id="parlay-matchup-board-style">
+#parlay-board{margin:12px 0;overflow-x:auto}#parlay-board h2{font-size:22px;margin:8px 0 14px;color:inherit}#parlay-board .pb-grid{display:grid;grid-template-columns:110px repeat(4,minmax(180px,1fr));gap:6px;min-width:854px}#parlay-board .pb-money{grid-template-columns:110px repeat(2,minmax(180px,1fr));min-width:490px}#parlay-board .pb-heading{font-size:13px;font-weight:800;padding:7px 4px;border-bottom:2px solid #348bff}#parlay-board .pb-match,#parlay-board .pb-card{display:flex;align-items:center;gap:7px;padding:10px 7px;border:1px solid #64748b44;border-radius:4px;background:#172438;min-height:52px;color:#fff}#parlay-board .pb-match{border-left:3px solid #348bff;font-size:12px}#parlay-board .pb-team{font-size:10px;font-weight:800;background:#365579;color:white;padding:3px;border-radius:3px}#parlay-board .pb-player{flex:1;min-width:0;font-size:12px}#parlay-board .pb-player small{display:block;font-size:10px;margin-top:4px}#parlay-board .pb-price{color:#60a5fa;font-weight:800;font-size:14px}#parlay-board .pb-empty{justify-content:center;opacity:.6}html.theme-light #parlay-board .pb-card,html.theme-light #parlay-board .pb-match{background:#eef2f8;color:#000}html.theme-light #parlay-board .pb-price{color:#1763bd}
+</style></head>
 
 <body>
 
@@ -6702,7 +6704,7 @@ html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hois
   <article class="panel section-panel" style="min-height:180px">
     <div id="hoist-parlay-content" data-filter="goals" role="tabpanel">
 <div class="parlay-controls"><input type="date" id="parlay-date" hidden aria-hidden="true" tabindex="-1"><label id="parlay-line-label">Threshold <select id="parlay-line"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
-<section id="parlay-slip" aria-label="Parlay slip"><div class="parlay-slip-top"><strong>Parlay Slip <span id="parlay-count">(0)</span></strong><button type="button" id="parlay-clear">Clear</button></div><div id="parlay-legs"></div><div class="parlay-slip-top"><span>Estimated combined odds</span><strong id="parlay-total">—</strong></div><small>Illustrative product of selected prices, not a sportsbook quote. Correlated selections may be priced differently.</small></section><p id="parlay-status" class="muted" role="status"></p><div class="parlay-scroll"><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
+<section id="parlay-slip" aria-label="Parlay slip"><div class="parlay-slip-top"><strong>Parlay Slip <span id="parlay-count">(0)</span></strong><button type="button" id="parlay-clear">Clear</button></div><div id="parlay-legs"></div><div class="parlay-slip-top"><span>Estimated combined odds</span><strong id="parlay-total">—</strong></div><small>Illustrative product of selected prices, not a sportsbook quote. Correlated selections may be priced differently.</small></section><p id="parlay-status" class="muted" role="status"></p><div id="parlay-board" class="parlay-scroll" aria-label="Matchup board"></div><div class="parlay-scroll" hidden><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
   </article>
   </div>
 </section>
@@ -9441,22 +9443,32 @@ document.addEventListener('DOMContentLoaded', function () {
    return hits.length===1?hits[0].odds:null;
  }
 
+ function drawMatchupBoard(games,results,m,line,date,feed){
+   const money=m==='moneyline', count=money?2:4;
+   const board=byId('parlay-board');
+   const title=money?'MONEYLINE':line+'+ '+plural(line,labels[m]).toUpperCase();
+   board.innerHTML=`<h2>${safe(title)}</h2><div class="pb-grid ${money?'pb-money':''}"><div class="pb-heading">MATCHUP</div>${Array.from({length:count},(_,i)=>`<div class="pb-heading">${money?['AWAY','HOME'][i]:'TOP '+(i+1)}</div>`).join('')}${games.map(g=>{
+     const picks=money?[{team:g.away,name:g.away},{team:g.home,name:g.home}]:results.filter(r=>(r.team===g.away&&r.opponent===g.home)||(r.team===g.home&&r.opponent===g.away)).sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name)).slice(0,4);
+     return `<div class="pb-match"><strong>${safe(g.away)} @ ${safe(g.home)}</strong></div>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong>${money?'':`<small>L5 ${r.hit5}/${r.n5} · H2H ${r.h2hN?Math.round(100*r.h2hHits/r.h2hN)+'%':'—'}</small>`}</div><div class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</div></div>`;}).join('')}`;
+   }).join('')}</div>`;
+ }
  async function renderParlay(){
    if(!parlay||parlay.classList.contains('hidden'))return;
    const ticket=++parlayTicket, m=pc.dataset.filter, date=dateInput?.value||'', games=matchups(), status=byId('parlay-status'), rows=byId('parlay-rows'), head=byId('parlay-head');
    if(slipDate!==date){slip.clear();slipDate=date;}drawSlip();
    if(date && pd.value!==date){pd.value=date;pd.dispatchEvent(new Event('change'));}
    const teams=[...new Set(games.flatMap(g=>[g.away,g.home]))].sort();
-   byId('parlay-line-label').hidden=m==='moneyline';rows.innerHTML='';head.innerHTML='';
+   byId('parlay-line-label').hidden=m==='moneyline';rows.innerHTML='';head.innerHTML='';byId("parlay-board").innerHTML="";
    const feed=await loadOdds();if(ticket!==parlayTicket)return;
    const oddsStatus=feed&&!feed.snapshot&&feed.updatedAt&&Date.now()-Date.parse(feed.updatedAt)<=45*60000?'FanDuel Ontario · updated '+new Date(feed.updatedAt).toLocaleString():'FanDuel odds unavailable or outdated';
-   if(m==='moneyline'){head.innerHTML='<tr><th>Team / Matchup</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';rows.innerHTML=games.flatMap(g=>[g.away,g.home].map(t=>`<tr><td><strong>${safe(t)}</strong><small>${safe(g.away)} @ ${safe(g.home)}</small></td><td class="parlay-odds">${oddsButton(priceFor(feed,date,g.away,g.home,m,1,'',t),date,g.away,g.home,m,1,'',t)}</td></tr>`)).join('');sortableParlay(head,rows,m);drawSlip();status.textContent=games.length?'':'No scheduled matchups available for this date.';return;}
+   if(m==='moneyline'){drawMatchupBoard(games,[],m,1,date,feed);head.innerHTML='<tr><th>Team / Matchup</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';rows.innerHTML=games.flatMap(g=>[g.away,g.home].map(t=>`<tr><td><strong>${safe(t)}</strong><small>${safe(g.away)} @ ${safe(g.home)}</small></td><td class="parlay-odds">${oddsButton(priceFor(feed,date,g.away,g.home,m,1,'',t),date,g.away,g.home,m,1,'',t)}</td></tr>`)).join('');sortableParlay(head,rows,m);drawSlip();status.textContent=games.length?'':'No scheduled matchups available for this date.';return;}
    if(!games.length){status.textContent='No scheduled matchups available for this date.';return;}
    status.textContent='Loading recorded player statistics…';
    const line=Number(pl.value), opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
    const [data]=await Promise.all([Promise.all(teams.map(async t=>[t,await load(t)])),loadPropInjuries()]);
    if(ticket!==parlayTicket)return;
    const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){if(propInjuryMark(player))continue;const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70}))results.push(r);}}
+   drawMatchupBoard(games,results,m,line,date,feed);
    results.sort((a,b)=>a.name.localeCompare(b.name));
    head.innerHTML='<tr><th>Player / Matchup</th><th>L5</th><th>L10</th><th>H2H</th><th>Streak</th><th>Season Avg</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';
    rows.innerHTML=results.map(r=>`<tr><td><strong><button type="button" class="parlay-history-toggle" aria-expanded="false">${safe(r.name)} <span aria-hidden="true">▾</span></button></strong><small>${safe(r.team)} ${safe(r.venue)} ${safe(r.opponent)}</small></td><td>${r.hit5}/${r.n5}</td><td>${r.hit10}/${r.n10}</td><td>${r.h2hN?`${r.h2hHits}/${r.h2hN} <span class="parlay-h2h-rate">(${Math.round(100*r.h2hHits/r.h2hN)}%)</span>`:'—'}</td><td>${r.streak}</td><td>${r.seasonAvg===null?'—':r.seasonAvg.toFixed(2)}</td><td class="parlay-odds">${oddsButton(priceFor(feed,date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team),date,r.venue==='at'?r.team:r.opponent,r.venue==='at'?r.opponent:r.team,m,line,r.name,r.team)}</td></tr>${historyMarkup(r,date,m,line)}`).join('');
