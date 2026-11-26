@@ -8171,10 +8171,22 @@ document.addEventListener('DOMContentLoaded', function () {
    document.addEventListener('visibilitychange',()=>{if(!document.hidden)scheduleRailSync()},{once:true});
  }
  window.addEventListener('resize',scheduleRailSync);
+ let strengthSplitsPromise;
+ function loadStrengthSplits(){
+   if(!strengthSplitsPromise)strengthSplitsPromise=fetch('./data/skater-splits.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Missing strength splits');return r.json()}).then(d=>Number(d.season)===20262027?d.players||{}:{}).catch(()=>({}));
+   return strengthSplitsPromise;
+ }
  async function getTeam(code){if(cache.has(code))return cache.get(code);const response=await fetch(`./data/club-stats/${code}.json`,{cache:'no-cache'});if(!response.ok)throw Error('Missing cached club stats');const data=await response.json();if(!Array.isArray(data.skaters))throw Error('Invalid skater statistics');const players=data.skaters.map(p=>({...p,team:code}));
- const numbers=await rosterNumbers(code);
+ const [numbers,splits]=await Promise.all([rosterNumbers(code),loadStrengthSplits()]);
  for(const p of players){
    const id=p.playerId??p.id??p.playerID;
+   const split=id!=null?splits[String(id)]:null;
+   // Do not mix season totals with a different team stint or refresh snapshot.
+   if(split && split.gamesPlayed!=null && split.points!=null && Number(p.gamesPlayed)===split.gamesPlayed && Number(p.points)===split.points){
+     for(const [key,source] of [['evenStrengthPoints','evPoints'],['powerPlayPoints','ppPoints'],['evenStrengthGoals','evGoals'],['shortHandedPoints','shPoints']]){
+       if(statValue(p,key)==null && Number.isFinite(split[source]))p[key]=split[source];
+     }
+   }
    const roster=(id!=null?numbers.byId.get(String(id)):null)??numbers.byName.get(normalize(name(p)))??null;
    p._hoistJersey=roster?.number||p.sweaterNumber||p.jerseyNumber||null;
    p._hoistPosition=roster?.position||null;
