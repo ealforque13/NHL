@@ -6704,7 +6704,7 @@ html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hois
   <article class="panel section-panel" style="min-height:180px">
     <div id="hoist-parlay-content" data-filter="goals" role="tabpanel">
 <div class="parlay-controls"><input type="date" id="parlay-date" hidden aria-hidden="true" tabindex="-1"><label id="parlay-line-label">Threshold <select id="parlay-line"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label></div>
-<section id="parlay-slip" aria-label="Parlay slip"><div class="parlay-slip-top"><strong>Parlay Slip <span id="parlay-count">(0)</span></strong><button type="button" id="parlay-clear">Clear</button></div><div id="parlay-legs"></div><div class="parlay-slip-top"><span>Estimated combined odds</span><strong id="parlay-total">—</strong></div><small>Illustrative product of selected prices, not a sportsbook quote. Correlated selections may be priced differently.</small></section><p id="parlay-status" class="muted" role="status"></p><div id="parlay-board" class="parlay-scroll" aria-label="Matchup board"></div><div class="parlay-scroll" hidden><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
+<p id="parlay-status" class="muted" role="status"></p><div id="parlay-board" class="parlay-scroll" aria-label="Matchup board"></div><div class="parlay-scroll" hidden><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
   </article>
   </div>
 </section>
@@ -9403,7 +9403,7 @@ document.addEventListener('DOMContentLoaded', function () {
  let parlayTicket=0;
  const slip=new Map();let slipDate='';
  function drawSlip(){
-   byId('parlay-count').textContent=`(${slip.size})`;
+   byId('parlay-count').textContent=`(${slip.size})`; const badge=byId('parlay-badge');if(badge){badge.textContent=slip.size;badge.hidden=!slip.size;}
    byId('parlay-legs').innerHTML=[...slip.values()].map(x=>`<div class="parlay-slip-leg"><span><strong>${safe(x.name)}</strong><small>${safe(x.prop)} · ${safe(x.match)}</small></span><strong>${x.odds.toFixed(2)}</strong><button type="button" data-remove-leg="${safe(x.key)}" aria-label="Remove ${safe(x.name)}">×</button></div>`).join('')||'<small>No selections. Click a blue odds price to add one.</small>';
    byId('parlay-total').textContent=slip.size?[...slip.values()].reduce((a,x)=>a*x.odds,1).toFixed(2):'—';
    parlay.querySelectorAll('[data-leg]').forEach(b=>b.setAttribute('aria-pressed',String(slip.has(b.dataset.leg))));
@@ -9443,13 +9443,22 @@ document.addEventListener('DOMContentLoaded', function () {
    return hits.length===1?hits[0].odds:null;
  }
 
+ const boardTeamColors = {
+      ANA:'#f47a38',BOS:'#ffb81c',BUF:'#003087',CGY:'#c8102e',CAR:'#cc0000',
+      CHI:'#cf0a2c',COL:'#6f263d',CBJ:'#002654',DAL:'#006847',DET:'#ce1126',
+      EDM:'#ff4c00',FLA:'#c8102e',LAK:'#a2aaad',MIN:'#154734',MTL:'#af1e2d',
+      NSH:'#ffb81c',NJD:'#ce1126',NYI:'#00539b',NYR:'#0038a8',OTT:'#c52032',
+      PHI:'#f74902',PIT:'#ffb81c',SJS:'#006d75',SEA:'#99d9d9',STL:'#002f87',
+      TBL:'#002868',TOR:'#00205b',UTA:'#69b3e7',VAN:'#00843d',VGK:'#b4975a',
+      WSH:'#c8102e',WPG:'#041e42'
+    };
  function drawMatchupBoard(games,results,m,line,date,feed){
    const money=m==='moneyline', count=money?2:4;
    const board=byId('parlay-board');
    const title=money?'MONEYLINE':line+'+ '+plural(line,labels[m]).toUpperCase();
    board.innerHTML=`<h2>${safe(title)}</h2><div class="pb-grid ${money?'pb-money':''}"><div class="pb-heading">MATCHUP</div>${Array.from({length:count},(_,i)=>`<div class="pb-heading">${money?['AWAY','HOME'][i]:'TOP '+(i+1)}</div>`).join('')}${games.map(g=>{
      const picks=money?[{team:g.away,name:g.away},{team:g.home,name:g.home}]:results.filter(r=>(r.team===g.away&&r.opponent===g.home)||(r.team===g.home&&r.opponent===g.away)).sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name)).slice(0,4);
-     return `<div class="pb-match"><strong>${safe(g.away)} @ ${safe(g.home)}</strong></div>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong>${money?'':`<small>L5 ${r.hit5}/${r.n5} · H2H ${r.h2hN?Math.round(100*r.h2hHits/r.h2hN)+'%':'—'}</small>`}</div><div class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</div></div>`;}).join('')}`;
+     return `<div class="pb-match"><strong>${safe(g.away)} @ ${safe(g.home)}</strong></div>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong>${money?'':`<small>L5 ${r.hit5}/${r.n5} · H2H ${r.h2hN?Math.round(100*r.h2hHits/r.h2hN)+'%':'—'}</small>`}</div><div class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</div></div>`;}).join('')}`;
    }).join('')}</div>`;
  }
  async function renderParlay(){
@@ -9476,6 +9485,7 @@ document.addEventListener('DOMContentLoaded', function () {
    status.textContent=results.length?'':'No players meet the prop eligibility criteria for this selection.';
  }
  if(parlay){
+   document.addEventListener('click',e=>{const b=e.target.closest('#parlay-slip button');if(!b)return;if(b.id==='parlay-clear')slip.clear();else if(b.hasAttribute('data-remove-leg'))slip.delete(b.dataset.removeLeg);else return;drawSlip();});
    parlay.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='parlay-clear'){slip.clear();drawSlip();}else if(b.hasAttribute('data-remove-leg')){slip.delete(b.dataset.removeLeg);drawSlip();}else if(b.dataset.leg){if(slip.has(b.dataset.leg))slip.delete(b.dataset.leg);else slip.set(b.dataset.leg,JSON.parse(b.dataset.selection));drawSlip();}else if(b.classList.contains('parlay-history-toggle')){const detail=b.closest('tr').nextElementSibling;if(detail?.classList.contains('parlay-history')){detail.hidden=!detail.hidden;b.setAttribute('aria-expanded',String(!detail.hidden));}}});
    new MutationObserver(renderParlay).observe(parlay,{attributes:true,attributeFilter:['class']});
    new MutationObserver(renderParlay).observe(pc,{attributes:true,attributeFilter:['data-filter']});
@@ -9529,26 +9539,20 @@ html.theme-light #hoist-notepad {--note-bg:#fff;--note-border:#aeb9c9;--note-tex
 #hoist-notepad-header {display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
 #hoist-notepad-text {display:block;width:100%;height:190px;min-height:90px;max-height:45vh;resize:vertical;box-sizing:border-box;padding:10px;background:var(--note-bg);color:var(--note-text);border:1px solid var(--note-border);font:inherit;line-height:1.5;}
 #hoist-notepad-status {display:block;margin-top:8px;color:var(--note-muted);font-size:11px;}
-@media(max-width:650px),(hover:none) and (pointer:coarse){#hoist-notepad{display:none!important;}}
+#hoist-notepad[hidden],#parlay-badge[hidden]{display:none!important}#hoist-notepad-toggle{position:relative}#parlay-badge{position:absolute;right:-7px;top:-7px;background:#2563eb;color:white;border-radius:50%;min-width:18px;height:18px;display:grid;place-items:center;font-size:11px;font-weight:bold}#hoist-notepad-panel{max-height:70vh;overflow:auto}#hoist-notepad #parlay-slip{border:0;padding:0;margin:0}#hoist-notepad .parlay-slip-top,#hoist-notepad .parlay-slip-leg{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 0}#hoist-notepad .parlay-slip-leg{border-bottom:1px solid var(--note-border)}#hoist-notepad .parlay-slip-leg span{flex:1}#hoist-notepad .parlay-slip-leg>strong{color:#60a5fa}html.theme-light #hoist-notepad .parlay-slip-leg>strong{color:#1763bd}@media(max-width:650px){#hoist-notepad{right:14px;bottom:14px}#hoist-notepad-panel{max-width:calc(100vw - 28px)}}
 </style>
-<aside id="hoist-notepad" aria-label="Personal notepad">
-<button type="button" id="hoist-notepad-toggle" aria-label="Open notepad" title="Open notepad" aria-expanded="false" aria-controls="hoist-notepad-panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="3" width="15" height="18" rx="1"/><path d="M9 3v18M12 8h5m-5 4h5m-5 4h5M3 7h4M3 12h4M3 17h4"/></svg></button>
+<aside id="hoist-notepad" aria-label="Parlay slip">
+<button type="button" id="hoist-notepad-toggle" aria-label="Open parlay slip" title="Open parlay slip" aria-expanded="false" aria-controls="hoist-notepad-panel"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="5" y="3" width="15" height="18" rx="1"/><path d="M9 3v18M12 8h5m-5 4h5m-5 4h5M3 7h4M3 12h4M3 17h4"/></svg><span id="parlay-badge" hidden>0</span></button>
 <section id="hoist-notepad-panel" hidden>
-<div id="hoist-notepad-header"><strong>Notepad</strong><button type="button" id="hoist-notepad-close" aria-label="Minimize notepad">−</button></div>
-<textarea id="hoist-notepad-text" aria-label="Your notes" placeholder="Write your notes here..."></textarea>
-<small id="hoist-notepad-status" role="status">Notes saved locally in this browser.</small>
+<div id="hoist-notepad-header"><strong>Parlay Slip</strong><button type="button" id="hoist-notepad-close" aria-label="Minimize parlay slip">−</button></div>
+<section id="parlay-slip" aria-label="Parlay slip"><div class="parlay-slip-top"><strong>Parlay Slip <span id="parlay-count">(0)</span></strong><button type="button" id="parlay-clear">Clear</button></div><div id="parlay-legs"></div><div class="parlay-slip-top"><span>Estimated combined odds</span><strong id="parlay-total">—</strong></div><small>Illustrative product of selected prices, not a sportsbook quote. Correlated selections may be priced differently.</small></section>
 </section>
 </aside>
 <script id="hoist-notepad-script">
-(()=>{
- const key='hoist-personal-notepad-v1';
- const toggle=document.getElementById('hoist-notepad-toggle'), panel=document.getElementById('hoist-notepad-panel'), close=document.getElementById('hoist-notepad-close'), field=document.getElementById('hoist-notepad-text'), status=document.getElementById('hoist-notepad-status');
- try {field.value=localStorage.getItem(key)||'';} catch(e){status.textContent='Browser storage unavailable; notes may not persist.';}
- field.addEventListener('input',()=>{try{localStorage.setItem(key,field.value);status.textContent='Notes saved locally in this browser.';}catch(e){status.textContent='Unable to save notes. Copy them before leaving.';}});
- function show(open){panel.hidden=!open;toggle.hidden=open;toggle.setAttribute('aria-expanded',String(open));if(open)field.focus();else toggle.focus();}
- toggle.addEventListener('click',()=>show(true));close.addEventListener('click',()=>show(false));
- panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();show(false);}});
-})();
+(()=>{const toggle=document.getElementById('hoist-notepad-toggle'),panel=document.getElementById('hoist-notepad-panel'),close=document.getElementById('hoist-notepad-close'),page=document.getElementById('parlay'),preview=document.getElementById('parlay-preview'),widget=document.getElementById('hoist-notepad');
+function show(open){panel.hidden=!open;toggle.hidden=open;toggle.setAttribute('aria-expanded',String(open));if(open)close.focus();else toggle.focus();}
+function sync(){widget.hidden=page.classList.contains('hidden')||preview.hidden;if(widget.hidden){panel.hidden=true;toggle.hidden=false;toggle.setAttribute('aria-expanded','false');}}
+toggle.addEventListener('click',()=>show(true));close.addEventListener('click',()=>show(false));panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();show(false);}});new MutationObserver(sync).observe(page,{attributes:true,attributeFilter:['class']});new MutationObserver(sync).observe(preview,{attributes:true,attributeFilter:['hidden']});sync();})();
 </script>
 
 <script>
