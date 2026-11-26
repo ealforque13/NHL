@@ -3,9 +3,9 @@
   "teamName": "Chicago Blackhawks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2174/CHI_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T00:42:28.256Z",
-  "sourceDescription": "Mark Lazerus",
-  "cachedAtUTC": "2026-11-26T15:37:40.624885+00:00",
+  "sourceUpdatedAt": "2026-11-26T15:09:51.613Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T17:13:03.455555+00:00",
   "forwards": [
     [
       {
@@ -161,12 +161,12 @@
     ],
     [
       {
-        "name": "Ian Cole",
-        "number": 28,
+        "name": "Ethan Del Mastro",
+        "number": 38,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 1313,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1313/CHI_28__Cole.png",
+        "sourcePlayerId": 30841,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30841/CHI_38_Del_Mastro.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ethan Del Mastro",
-        "number": 38,
+        "name": "Ian Cole",
+        "number": 28,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30841,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30841/CHI_38_Del_Mastro.png",
+        "sourcePlayerId": 1313,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1313/CHI_28__Cole.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
