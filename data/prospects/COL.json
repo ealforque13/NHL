@@ -1,7 +1,15 @@
 {
   "team": "COL",
-  "updatedAt": "2026-11-25T11:10:36.776358+00:00",
+  "updatedAt": "2026-11-26T11:09:00.060741+00:00",
   "players": [
+    {
+      "id": 8481550,
+      "name": "Adam Beckman",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/COL/8481550.png",
+      "number": 34,
+      "organizationGroup": "NHL"
+    },
     {
       "id": 8477476,
       "name": "Artturi Lehkonen",

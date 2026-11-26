@@ -1,6 +1,6 @@
 {
   "team": "NYI",
-  "updatedAt": "2026-11-25T11:10:40.469487+00:00",
+  "updatedAt": "2026-11-26T11:09:08.303385+00:00",
   "players": [
     {
       "id": 8476917,
@@ -48,6 +48,14 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8475170.png",
       "number": 10,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484221,
+      "name": "Calum Ritchie",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYI/8484221.png",
+      "number": 64,
       "organizationGroup": "NHL"
     },
     {

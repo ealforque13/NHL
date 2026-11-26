@@ -1,6 +1,6 @@
 {
   "team": "CGY",
-  "updatedAt": "2026-11-25T11:10:35.967795+00:00",
+  "updatedAt": "2026-11-26T11:08:58.829635+00:00",
   "players": [
     {
       "id": 8483609,
@@ -152,14 +152,6 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CGY/8476458.png",
       "number": 22,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484821,
-      "name": "Sam Morton",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CGY/8484821.png",
-      "number": 45,
       "organizationGroup": "NHL"
     },
     {
