@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T18:50:57.128093+00:00",
+  "updatedAt": "2026-11-26T01:08:18.199680+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8475151": {
@@ -7,6 +7,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "NYI"
+    },
+    "8475167": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "TBL"
     },
     "8475168": {
       "injured": true,
@@ -112,8 +118,8 @@
     },
     "8477402": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Buchnevich (upper body) will miss Wednesday's game against the Islanders, per Brandon Kiley St. Louis.",
+      "status": "Out",
       "team": "STL"
     },
     "8477406": {
@@ -188,6 +194,12 @@
       "status": "Injured Reserve",
       "team": "OTT"
     },
+    "8478416": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "TBL"
+    },
     "8478421": {
       "injured": true,
       "description": "Greer (upper body) was placed on injured reserve Monday.",
@@ -244,8 +256,8 @@
     },
     "8479619": {
       "injured": true,
-      "description": "Carcone (upper body) will be out of action for 3-4 months, Catherine Bogart of the Mammoth's official site reports Monday.",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "UTA"
     },
     "8479671": {
@@ -274,7 +286,7 @@
     },
     "8480068": {
       "injured": true,
-      "description": "Poehling (knee) is on the Ducks' current road trip and has resumed skating, Derek Lee of The Hockey News reports Thursday.",
+      "description": "Poehling (knee) is expected back in the short term, with head coach Joel Quenneville telling reporters, \"He's close. Would love to see him in by the weekend. We'll see,\" Derek Lee of The Hockey News reports.",
       "status": "Injured Reserve",
       "team": "ANA"
     },
@@ -296,16 +308,10 @@
       "status": "Injured Reserve",
       "team": "MIN"
     },
-    "8480807": {
-      "injured": true,
-      "description": "Samuelsson (undisclosed) is considered a game-time decision for Wednesday's matchup against the Rangers, Paul Hamilton of WGR Sports Radio 550 reports.",
-      "status": "Day-To-Day",
-      "team": "BUF"
-    },
     "8480817": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "CAR"
     },
     "8480831": {
@@ -313,12 +319,6 @@
       "description": "Regula (undisclosed) was designated for long-term injured reserve Thursday.",
       "status": "Injured Reserve",
       "team": "EDM"
-    },
-    "8480840": {
-      "injured": true,
-      "description": "Back (finger) is expected to return within the next week, Robert Tiffin of NHL.com reports Thursday.",
-      "status": "Injured Reserve",
-      "team": "DAL"
     },
     "8480842": {
       "injured": true,
@@ -340,7 +340,7 @@
     },
     "8480893": {
       "injured": true,
-      "description": "Marchenko (lower body) is day-to-day, according to David Alter of The Hockey News on Saturday.",
+      "description": "Marchenko (lower body) is expected back in the lineup against the Bruins on Friday after telling reporters, \"My leg feels perfect and I'm ready to go,\" Mark Masters of TSN reports.",
       "status": "Injured Reserve",
       "team": "TOR"
     },
@@ -394,8 +394,8 @@
     },
     "8482171": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "DET"
     },
     "8482176": {
@@ -430,8 +430,8 @@
     },
     "8482896": {
       "injured": true,
-      "description": "Kozak (undisclosed) did not practice Tuesday and is considered day-to-day, per Paul Hamilton of WGR Sports Radio 550.",
-      "status": "Day-To-Day",
+      "description": "Kozak (undisclosed) won't play Wednesday versus the Rangers, Matthew Fairburn of The Athletic reports.",
+      "status": "Out",
       "team": "BUF"
     },
     "8483425": {
@@ -460,8 +460,8 @@
     },
     "8483516": {
       "injured": true,
-      "description": "Snuggerud (undisclosed) is questionable for Wednesday's game against the Islanders, per Lou Korac of NHL.com.",
-      "status": "Day-To-Day",
+      "description": "Snuggerud (upper body) didn't travel to Long Island for Wednesday's clash with the Islanders, Brandon Kiley St. Louis reports.",
+      "status": "Out",
       "team": "STL"
     },
     "8483546": {
@@ -508,8 +508,8 @@
     },
     "8484153": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "ANA"
     },
     "8484287": {
@@ -520,7 +520,7 @@
     },
     "8484762": {
       "injured": true,
-      "description": "Sennecke (upper body) was placed on injured reserve Saturday.",
+      "description": "Sennecke (upper body) is now considered day-to-day, Zach Cavanagh of The Sporting Tribune reports Wednesday.",
       "status": "Injured Reserve",
       "team": "ANA"
     },
