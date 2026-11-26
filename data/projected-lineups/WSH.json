@@ -5,7 +5,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-25T16:28:34.051Z",
   "sourceDescription": "Tom Gulitti",
-  "cachedAtUTC": "2026-11-25T20:31:32.657723+00:00",
+  "cachedAtUTC": "2026-11-26T06:34:01.017517+00:00",
   "forwards": [
     [
       {
@@ -93,12 +93,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ethen Frank",
-        "number": 53,
+        "name": "Anthony Beauvillier",
+        "number": 72,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 27817,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27817/WSH_53_Frank.png",
+        "sourcePlayerId": 2487,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2487/WSH_72_Beauvillier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

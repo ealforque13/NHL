@@ -3,18 +3,18 @@
   "teamName": "Calgary Flames",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4774/CGY_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T16:47:37.171Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-25T20:30:38.407432+00:00",
+  "sourceUpdatedAt": "2026-11-25T23:45:42.220Z",
+  "sourceDescription": "Calgary Flames",
+  "cachedAtUTC": "2026-11-26T06:33:06.814040+00:00",
   "forwards": [
     [
       {
-        "name": "Joel Farabee",
-        "number": 86,
+        "name": "Yegor Sharangovich",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 4799,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4799/CGY_86_Farabee.png",
+        "sourcePlayerId": 29637,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -35,6 +35,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 32801,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32801/CGY_27_Coronato.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Joel Farabee",
+        "number": 86,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 4799,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4799/CGY_86_Farabee.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ryan Strome",
+        "number": 16,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 1825,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1825/CGY_22_Strome.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Adam Klapka",
+        "number": 43,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 34398,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34398/CGY_43__Klapka.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -67,38 +99,6 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 34016,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34016/CGY_61__Suniev.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Yegor Sharangovich",
-        "number": 17,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 29637,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29637/CGY_17_Sharangovich.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Ryan Strome",
-        "number": 16,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 1825,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1825/CGY_22_Strome.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Adam Klapka",
-        "number": 43,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 34398,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34398/CGY_43__Klapka.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Devin Cooley",
-      "number": null,
+      "name": "Dustin Wolf",
+      "number": 32,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 32944,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
+      "sourcePlayerId": 29507,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Dustin Wolf",
-      "number": 32,
+      "name": "Devin Cooley",
+      "number": null,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29507,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
+      "sourcePlayerId": 32944,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

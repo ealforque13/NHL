@@ -3,9 +3,9 @@
   "teamName": "New York Islanders",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T17:13:31.851Z",
+  "sourceUpdatedAt": "2026-11-25T23:45:02.071Z",
   "sourceDescription": "Stefen Rosner",
-  "cachedAtUTC": "2026-11-25T20:31:03.456329+00:00",
+  "cachedAtUTC": "2026-11-26T06:33:31.815494+00:00",
   "forwards": [
     [
       {
@@ -91,16 +91,6 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2057/NYI_44_Pageau.png",
         "injuryStatus": null,
         "gameTimeDecision": false
-      },
-      {
-        "name": "Mitchell Chaffee",
-        "number": 41,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 32923,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32923/NYI_26__Chaffee.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
       }
     ],
     [
@@ -183,12 +173,12 @@
     ],
     [
       {
-        "name": "Scott Mayfield",
-        "number": 24,
+        "name": "Logan Stanley",
+        "number": 8,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2350,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2350/NYI_24_Mayfield.png",
+        "sourcePlayerId": 2652,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -385,12 +375,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Scott Mayfield",
-        "number": 24,
+        "name": "Logan Stanley",
+        "number": 8,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2350,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2350/NYI_24_Mayfield.png",
+        "sourcePlayerId": 2652,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -446,16 +436,6 @@
       "positionName": "Injured Reserve 3",
       "sourcePlayerId": 34,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34/NYI_21_Palmieri.png",
-      "injuryStatus": "dtd",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Logan Stanley",
-      "number": 8,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2652,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2652/NYI_8__Stanley.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

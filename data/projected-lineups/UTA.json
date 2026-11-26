@@ -3,9 +3,9 @@
   "teamName": "Utah Mammoth",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T16:34:27.107Z",
-  "sourceDescription": "Last Game (2026-11-23)",
-  "cachedAtUTC": "2026-11-25T20:31:24.358252+00:00",
+  "sourceUpdatedAt": "2026-11-26T00:41:04.911Z",
+  "sourceDescription": "Utah Mammoth",
+  "cachedAtUTC": "2026-11-26T06:33:52.673623+00:00",
   "forwards": [
     [
       {
@@ -15,38 +15,6 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 2642,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2642/UTH_9_Keller.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jack McBain",
-        "number": 22,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 28796,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28796/UTH_22_McBain.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Dylan Guenther",
-        "number": 11,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 34613,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34613/UTH_11_Guenther.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Logan Cooley",
-        "number": 92,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 33387,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -79,6 +47,38 @@
         "positionName": "Left Wing",
         "sourcePlayerId": 2071,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2071/UTA_72__Lee.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Logan Cooley",
+        "number": 92,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 33387,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33387/UTH_92_Cooley.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Dylan Guenther",
+        "number": 11,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 34613,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34613/UTH_11_Guenther.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Jack McBain",
+        "number": 22,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 28796,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28796/UTH_22_McBain.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
