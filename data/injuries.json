@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T01:08:18.199680+00:00",
+  "updatedAt": "2026-11-26T07:14:18.124480+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8475151": {
@@ -145,6 +145,12 @@
       "description": "Burakovsky (lower body) will be with the Senators for their four-game road trip and is expected to play at some point, Bruce Garrioch of Postmedia reports Wednesday.",
       "status": "Injured Reserve",
       "team": "OTT"
+    },
+    "8477479": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "CHI"
     },
     "8477492": {
       "injured": true,
@@ -304,7 +310,7 @@
     },
     "8480800": {
       "injured": true,
-      "description": "ir",
+      "description": "Hughes (upper body) is doubtful to play Friday versus the Avalanche but is expected to join the wild on their road trip, which begins Sunday in Chicago, Michael Russo of The Athletic reports.",
       "status": "Injured Reserve",
       "team": "MIN"
     },
@@ -343,6 +349,12 @@
       "description": "Marchenko (lower body) is expected back in the lineup against the Bruins on Friday after telling reporters, \"My leg feels perfect and I'm ready to go,\" Mark Masters of TSN reports.",
       "status": "Injured Reserve",
       "team": "TOR"
+    },
+    "8480995": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "TBL"
     },
     "8481006": {
       "injured": true,
@@ -392,6 +404,12 @@
       "status": "Injured Reserve",
       "team": "PIT"
     },
+    "8482087": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "MTL"
+    },
     "8482171": {
       "injured": true,
       "description": "out",
@@ -406,8 +424,8 @@
     },
     "8482475": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "PIT"
     },
     "8482667": {
@@ -451,6 +469,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "UTA"
+    },
+    "8483485": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "CBJ"
     },
     "8483512": {
       "injured": true,
@@ -532,7 +556,7 @@
     },
     "8484984": {
       "injured": true,
-      "description": "General manager Kent Hughes said Monday that Demidov (ankle) will not travel with the team for Wednesday's game in Colorado, Renaud Lavoie of TVA Sports reports.",
+      "description": "Demidov is expected to travel to Vegas and join the Canadiens for practice Friday, Eric Engels of Sportsnet reports.",
       "status": "Injured Reserve",
       "team": "MTL"
     },
@@ -547,12 +571,6 @@
       "description": "The Kraken indicated Thursday that O'Brien (lower body) remains week-to-week, Mike Benton of the Kraken Audio Network reports.",
       "status": "Injured Reserve",
       "team": "SEA"
-    },
-    "8485391": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "CHI"
     },
     "8485395": {
       "injured": true,
