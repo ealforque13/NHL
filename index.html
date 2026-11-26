@@ -5939,7 +5939,9 @@ html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hois
 </style>
 <style id="parlay-matchup-board-style">
 #parlay-board{margin:12px 0;overflow-x:auto}#parlay-board h2{font-size:22px;margin:8px 0 14px;color:inherit}#parlay-board .pb-grid{display:grid;grid-template-columns:110px repeat(4,minmax(180px,1fr));gap:6px;min-width:854px}#parlay-board .pb-money{grid-template-columns:110px repeat(2,minmax(180px,1fr));min-width:490px}#parlay-board .pb-heading{font-size:13px;font-weight:800;padding:7px 4px;border-bottom:2px solid #348bff}#parlay-board .pb-match,#parlay-board .pb-card{display:flex;align-items:center;gap:7px;padding:10px 7px;border:1px solid #64748b44;border-radius:4px;background:#172438;min-height:52px;color:#fff}#parlay-board .pb-match{border-left:3px solid #348bff;font-size:12px}#parlay-board .pb-team{font-size:10px;font-weight:800;background:#365579;color:white;padding:3px;border-radius:3px}#parlay-board .pb-player{flex:1;min-width:0;font-size:12px}#parlay-board .pb-player small{display:block;font-size:10px;margin-top:4px}#parlay-board .pb-price{color:#60a5fa;font-weight:800;font-size:14px}#parlay-board .pb-empty{justify-content:center;opacity:.6}html.theme-light #parlay-board .pb-card,html.theme-light #parlay-board .pb-match{background:#eef2f8;color:#000}html.theme-light #parlay-board .pb-price{color:#1763bd}
-</style></head>
+</style><style>#parlay-board .pb-match{flex-direction:column;align-items:flex-start;justify-content:center;gap:4px}#parlay-board .pb-match small{font-size:10px}#parlay-board .pb-model{font-weight:800;color:#60a5fa}html.theme-light #parlay-board .pb-model{color:#1763bd}</style>
+<style id="pb-inline-stats">#parlay-board .pb-grid{grid-template-columns:110px repeat(4,minmax(260px,1fr));min-width:1174px}#parlay-board .pb-money{grid-template-columns:110px repeat(2,minmax(180px,1fr));min-width:490px}#parlay-board .pb-card:not(.pb-empty){display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:4px 6px}#parlay-board .pb-player{display:contents}#parlay-board .pb-player>strong{min-width:0}#parlay-board .pb-statline{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:4px;white-space:nowrap;font-size:9px}#parlay-board .pb-statline>span{display:flex;flex-direction:column;align-items:center;gap:2px}#parlay-board .pb-statline b{font-size:12px}#parlay-board .pb-statline .parlay-price{font-size:12px;padding:0 3px;min-height:0} </style>
+</head>
 
 <body>
 
@@ -9304,7 +9306,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const code=String(value||'').toUpperCase().trim();
    return /^[A-Z]{3}$/.test(code)?code:null;
  };
- function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2]});}return found;}
+ function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2],timeText:card.querySelector(".hoist-game-card-head")?.textContent||"",start:card.dataset.startTimeUtc||card.dataset.startTime||null});}return found;}
  const labels={points:'point',goals:'goal',assists:'assist',shots:'shot on goal'};
  const plural=(n,label)=>n===1?label:label==='shot on goal'?'shots on goal':label+'s';
  function analyze(p,team,opponent,venue,date,line,minHits,h2hOnly,selectedMarket=market){
@@ -9328,7 +9330,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const score=h2hOnly
      ?(h2hHits/h2h.length)*65+(hit5/last5.length)*20+Math.min(h2h.length,10)*1.2+Math.min(h2hAvg/line,3)*4
      :(hit5/last5.length*55+hit10/last10.length*25+Math.min(streak,10)*1.5+Math.min(avg5/line,3)*4+(h2h.length?Math.min(h2h.length,5)/5*(h2hHits/h2h.length-.5)*12:0));
-   return {sourcePlayer:p,name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly,market:selectedMarket,line};
+   return {sourcePlayer:p,name:p.name||p.playerName||'Player',team,opponent,venue,score,streak,hit5,n5:last5.length,hit10,n10:last10.length,avg5,seasonAvg,nSeason:season.length,seasonHits:season.filter(g=>metric(g,selectedMarket)>=line).length,h2hN:h2h.length,h2hHits,h2hAvg,h2hOnly,market:selectedMarket,line};
  }
  const propRules=[{market:'points',hits:5,h2hRate:.50},{market:'goals',hits:3,h2hRate:.40},{market:'assists',hits:4,h2hRate:.70}];
  function qualifyProp(result,rule){
@@ -9452,13 +9454,23 @@ document.addEventListener('DOMContentLoaded', function () {
       TBL:'#002868',TOR:'#00205b',UTA:'#69b3e7',VAN:'#00843d',VGK:'#b4975a',
       WSH:'#c8102e',WPG:'#041e42'
     };
+ function boardGameTime(g,feed,date){
+   const start=feed?.games?.find(x=>x.date===date&&x.away===g.away&&x.home===g.home)?.start||g.start;
+   if(start&&Number.isFinite(Date.parse(start)))return new Intl.DateTimeFormat('en-US',{timeZone:'America/Toronto',hour:'numeric',minute:'2-digit'}).format(new Date(start))+' ET';
+   const t=g.timeText.match(/\b\d{1,2}:\d{2}\s*(?:AM|PM)(?:\s*(?:ET|EST|EDT))?/i);return t?t[0]:'Time unavailable';
+ }
+ function boardHistoricalRate(r){
+   const parts=[[r.hit5,r.n5,.20,5],[r.hit10,r.n10,.25,10],[r.h2hHits,r.h2hN,.20,10],[r.seasonHits,r.nSeason,.35,10]];
+   let total=0,weight=0;for(const [hits,n,w,target] of parts){if(n>0&&Number.isFinite(hits)){const adjusted=w*Math.min(1,n/target);total+=adjusted*hits/n;weight+=adjusted;}}
+   return weight?total/weight:null;
+ }
  function drawMatchupBoard(games,results,m,line,date,feed){
    const money=m==='moneyline', count=money?2:4;
    const board=byId('parlay-board');
    const title=money?'MONEYLINE':line+'+ '+plural(line,labels[m]).toUpperCase();
    board.innerHTML=`<h2>${safe(title)}</h2><div class="pb-grid ${money?'pb-money':''}"><div class="pb-heading">MATCHUP</div>${Array.from({length:count},(_,i)=>`<div class="pb-heading">${money?['AWAY','HOME'][i]:'TOP '+(i+1)}</div>`).join('')}${games.map(g=>{
      const picks=money?[{team:g.away,name:g.away},{team:g.home,name:g.home}]:results.filter(r=>(r.team===g.away&&r.opponent===g.home)||(r.team===g.home&&r.opponent===g.away)).sort((a,b)=>b.score-a.score||a.name.localeCompare(b.name)).slice(0,4);
-     return `<div class="pb-match"><strong>${safe(g.away)} @ ${safe(g.home)}</strong></div>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong>${money?'':`<small>L5 ${r.hit5}/${r.n5} · H2H ${r.h2hN?Math.round(100*r.h2hHits/r.h2hN)+'%':'—'}</small>`}</div><div class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</div></div>`;}).join('')}`;
+     return `<div class="pb-match"><strong>${safe(g.away)} @ ${safe(g.home)}</strong><small>${safe(boardGameTime(g,feed,date))}</small></div>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong><div class="pb-statline">${money?'':`<span>L5 <b>${r.hit5}/${r.n5}</b></span><span>L10 <b>${r.hit10}/${r.n10}</b></span><span>H2H <b class="pb-model">${r.h2hN?Math.round(100*r.h2hHits/r.h2hN)+'%':'—'}</b></span><span title="Weighted historical hit rate; not a calibrated forecast">MODEL <b class="pb-model">${boardHistoricalRate(r)===null?'—':Math.round(100*boardHistoricalRate(r))+'%'}</b></span>`}<span>FANDUEL <b class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</b></span></div></div></div>`;}).join('')}`;
    }).join('')}</div>`;
  }
  async function renderParlay(){
