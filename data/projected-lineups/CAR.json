@@ -3,9 +3,9 @@
   "teamName": "Carolina Hurricanes",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T17:28:04.150Z",
-  "sourceDescription": "Walt Ruff",
-  "cachedAtUTC": "2026-11-26T14:24:51.546164+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:27:57.505Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:37:34.271029+00:00",
   "forwards": [
     [
       {
@@ -161,14 +161,14 @@
     ],
     [
       {
-        "name": "K'Andre Miller",
-        "number": 79,
+        "name": "Juuso Valimaki",
+        "number": 8,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 4812,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4812/CAR_19_Miller.png",
+        "sourcePlayerId": 2790,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2790/CAR_8_Valimaki.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Sean Walker",
@@ -375,14 +375,14 @@
         "gameTimeDecision": false
       },
       {
-        "name": "K'Andre Miller",
-        "number": 79,
+        "name": "Juuso Valimaki",
+        "number": 8,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4812,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4812/CAR_19_Miller.png",
+        "sourcePlayerId": 2790,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2790/CAR_8_Valimaki.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Sean Walker",
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Brandon Bussi",
-      "number": 32,
+      "name": "Pyotr Kochetkov",
+      "number": 52,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 30153,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
+      "sourcePlayerId": 30486,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Pyotr Kochetkov",
-      "number": 52,
+      "name": "Brandon Bussi",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 30486,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30486/CAR_52_Kochetkov.png",
+      "sourcePlayerId": 30153,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30153/CAR_32__Bussi.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

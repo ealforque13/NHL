@@ -3,9 +3,9 @@
   "teamName": "San Jose Sharks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35083/SJS_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T00:40:33.643Z",
-  "sourceDescription": "Max Miller",
-  "cachedAtUTC": "2026-11-26T14:25:33.327114+00:00",
+  "sourceUpdatedAt": "2026-11-26T15:04:03.676Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:38:16.529858+00:00",
   "forwards": [
     [
       {
@@ -149,12 +149,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Eric Pohlkamp",
-        "number": null,
+        "name": "Michael Kesselring",
+        "number": 7,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 33798,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
+        "sourcePlayerId": 29644,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29644/SJS_7__Kesselring.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Michael Kesselring",
-        "number": 7,
+        "name": "Eric Pohlkamp",
+        "number": null,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 29644,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29644/SJS_7__Kesselring.png",
+        "sourcePlayerId": 33798,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Alex Nedeljkovic",
-      "number": 33,
+      "name": "Yaroslav Askarov",
+      "number": 30,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2727,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2727/SJS_33_Nedeljkovic.png",
+      "sourcePlayerId": 33018,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33018/SJS_30__Askarov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Yaroslav Askarov",
-      "number": 30,
+      "name": "Alex Nedeljkovic",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 33018,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33018/SJS_30__Askarov.png",
+      "sourcePlayerId": 2727,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2727/SJS_33_Nedeljkovic.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

@@ -3,9 +3,9 @@
   "teamName": "New York Islanders",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T23:45:02.071Z",
-  "sourceDescription": "Stefen Rosner",
-  "cachedAtUTC": "2026-11-26T14:25:20.756536+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:32:41.936Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:38:03.846711+00:00",
   "forwards": [
     [
       {
@@ -89,6 +89,16 @@
         "positionName": "Center",
         "sourcePlayerId": 2057,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2057/NYI_44_Pageau.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Calum Ritchie",
+        "number": 64,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 35084,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35084/NYI_64_Ritchie.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -259,12 +269,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jean-Gabriel Pageau",
-        "number": 44,
+        "name": "Calum Ritchie",
+        "number": 64,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2057,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2057/NYI_44_Pageau.png",
+        "sourcePlayerId": 35084,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35084/NYI_64_Ritchie.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

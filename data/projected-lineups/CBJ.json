@@ -3,9 +3,9 @@
   "teamName": "Columbus Blue Jackets",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T18:23:02.448Z",
-  "sourceDescription": "@BlueJacketsNHL",
-  "cachedAtUTC": "2026-11-26T14:24:53.621009+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:55:15.042Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:37:36.399132+00:00",
   "forwards": [
     [
       {
@@ -269,12 +269,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Sean Monahan",
-        "number": 23,
+        "name": "Cole Sillinger",
+        "number": 4,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 2138,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
+        "sourcePlayerId": 34454,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

@@ -3,9 +3,9 @@
   "teamName": "Vancouver Canucks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28385/VAN_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T19:37:57.568Z",
-  "sourceDescription": "Thomas Drance",
-  "cachedAtUTC": "2026-11-26T14:25:43.749860+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:56:18.700Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:38:27.056505+00:00",
   "forwards": [
     [
       {
@@ -299,12 +299,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Paul Cotter",
-        "number": 47,
+        "name": "Drew O'Connor",
+        "number": 18,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 27620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
+        "sourcePlayerId": 32925,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32925/VAN_18_O_Connor.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

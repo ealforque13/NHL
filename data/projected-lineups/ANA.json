@@ -3,9 +3,9 @@
   "teamName": "Anaheim Ducks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38136/ANA_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T18:17:34.336Z",
-  "sourceDescription": "Patrick Present",
-  "cachedAtUTC": "2026-11-26T14:24:45.316774+00:00",
+  "sourceUpdatedAt": "2026-11-26T15:05:09.587Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:37:27.980185+00:00",
   "forwards": [
     [
       {
@@ -149,12 +149,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Drew Helleson",
-        "number": 14,
+        "name": "Ian Moore",
+        "number": null,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30429,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
+        "sourcePlayerId": 31897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ian Moore",
-        "number": null,
+        "name": "Drew Helleson",
+        "number": 14,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
+        "sourcePlayerId": 30429,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -227,12 +227,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Terry",
-        "number": 19,
+        "name": "Alex Killorn",
+        "number": 17,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 4645,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
+        "sourcePlayerId": 1877,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -259,12 +259,12 @@
     ],
     [
       {
-        "name": "Alex Killorn",
-        "number": 17,
+        "name": "Troy Terry",
+        "number": 19,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1877,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1877/ANA_17_Killorn_2_.png",
+        "sourcePlayerId": 4645,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4645/ANA_19_Terry_2_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

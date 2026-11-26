@@ -1,11 +1,11 @@
 {
   "team": "NYR",
   "teamName": "New York Rangers",
-  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T17:16:52.259Z",
-  "sourceDescription": "Remy Mastey",
-  "cachedAtUTC": "2026-11-26T14:25:22.845794+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:25:50.645Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:38:05.947846+00:00",
   "forwards": [
     [
       {
@@ -83,38 +83,6 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Laba",
-        "number": 42,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 34399,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34399/NYR_42_Laba.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jaroslav Chmelar",
-        "number": 49,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 34742,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34742/NYR_49_Chmelar.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Glenn Gawdin",
-        "number": null,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 3934,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Max Sasson",
         "number": null,
         "position": "C",
@@ -131,6 +99,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 3922,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3922/NYR_14_Raddysh.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Glenn Gawdin",
+        "number": null,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3934,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Laba",
+        "number": 42,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 34399,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34399/NYR_42_Laba.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Jaroslav Chmelar",
+        "number": 49,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 34742,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34742/NYR_49_Chmelar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Joonas Korpisalo",
-      "number": 70,
+      "name": "Dylan Garand",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2556,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
+      "sourcePlayerId": 32794,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Dylan Garand",
-      "number": null,
+      "name": "Joonas Korpisalo",
+      "number": 70,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 32794,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32794/NYR_33__Garand.png",
+      "sourcePlayerId": 2556,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2556/NYR_70__Korpisalo.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

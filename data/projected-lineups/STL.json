@@ -3,9 +3,9 @@
   "teamName": "St Louis Blues",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-25T18:54:08.321Z",
-  "sourceDescription": "Lou Korac",
-  "cachedAtUTC": "2026-11-26T14:25:35.433249+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:31:27.065Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:38:18.639387+00:00",
   "forwards": [
     [
       {
@@ -289,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Cam Fowler",
-        "number": 17,
+        "name": "Justin Barron",
+        "number": 72,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 16,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/16/STL_17_Fowler.png",
+        "sourcePlayerId": 29338,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29338/STL_72__Barron.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

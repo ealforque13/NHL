@@ -3,9 +3,9 @@
   "teamName": "Philadelphia Flyers",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-24T17:21:21.804Z",
-  "sourceDescription": "Jordan Hall",
-  "cachedAtUTC": "2026-11-26T14:25:27.014549+00:00",
+  "sourceUpdatedAt": "2026-11-26T14:52:53.394Z",
+  "sourceDescription": "Last Game (2026-11-25)",
+  "cachedAtUTC": "2026-11-26T15:38:10.183671+00:00",
   "forwards": [
     [
       {
@@ -73,12 +73,12 @@
     ],
     [
       {
-        "name": "Cole Knuble",
-        "number": 54,
+        "name": "Trevor Zegras",
+        "number": 46,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
+        "sourcePlayerId": 30202,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30202/PHI_46_Zegras.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Trevor Zegras",
-        "number": 46,
+        "name": "Cole Knuble",
+        "number": 54,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30202,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30202/PHI_46_Zegras.png",
+        "sourcePlayerId": 33787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
