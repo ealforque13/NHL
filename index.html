@@ -9321,7 +9321,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const code=String(value||'').toUpperCase().trim();
    return /^[A-Z]{3}$/.test(code)?code:null;
  };
- function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2],timeText:card.querySelector(".hoist-game-card-head")?.textContent||"",start:card.dataset.startTimeUtc||card.dataset.startTime||null});}return found;}
+ function matchups(){const found=[];for(const card of grid.querySelectorAll('.hoist-game-card')){const txt=card.querySelector('.hoist-game-card-foot span')?.textContent||'';const m=txt.match(/\b([A-Z]{3})\s*@\s*([A-Z]{3})\b/);if(m)found.push({away:m[1],home:m[2],timeText:card.querySelector(".hoist-game-card-head")?.textContent||"",start:card.dataset.startTimeUtc||card.dataset.startTime||null,live:/^(LIVE|CRIT|IN_PROGRESS)$/i.test(card.dataset.gameState||card.dataset.state||card.dataset.status||'')||/\bLIVE\b/i.test(card.querySelector(".hoist-game-card-head")?.textContent||'')});}return found;}
  const labels={points:'point',goals:'goal',assists:'assist',shots:'shot on goal'};
  const plural=(n,label)=>n===1?label:label==='shot on goal'?'shots on goal':label+'s';
  function analyze(p,team,opponent,venue,date,line,minHits,h2hOnly,selectedMarket=market){
@@ -9479,12 +9479,15 @@ document.addEventListener('DOMContentLoaded', function () {
    let total=0,weight=0;for(const [hits,n,w,target] of parts){if(n>0&&Number.isFinite(hits)){const adjusted=w*Math.min(1,n/target);total+=adjusted*hits/n;weight+=adjusted;}}
    return weight?total/weight:null;
  }
+ const pbRosterCache=new Map();
+ function pbRoster(team){if(!pbRosterCache.has(team))pbRosterCache.set(team,fetch('./data/lineups/'+encodeURIComponent(team)+'.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).then(d=>[...(d?.forwards||[]),...(d?.defense||[]),...(d?.goalies||[])]).catch(()=>[]));return pbRosterCache.get(team);}
+ function pbPlayerMeta(r){const p=r.sourcePlayer||{}, roster=r.roster||[];const id=p.id??p.playerId;const q=roster.find(x=>id!=null&&String(x.id??x.playerId)===String(id))||roster.find(x=>normalizePlayerName(x.name)===normalizePlayerName(r.name))||{};const n=q.number??q.sweaterNumber??q.jerseyNumber??p.number??p.sweaterNumber??p.jerseyNumber;const raw=q.position??q.positionCode??p.positionCode??p.position??p.positionAbbrev;const pos=typeof raw==='object'&&raw?(raw.abbrev??raw.code??raw.name):raw;return [n!=null&&n!==''?'#'+n:'',pos?String(pos).toUpperCase():''].filter(Boolean).join(' · ');}
  function drawMatchupBoard(games,results,m,line,date,feed){
    const money=m==='moneyline', count=2;
    const board=byId('parlay-board');
    board.innerHTML=`<div class="pb-grid">${games.map(g=>{
      const picks=money?[{team:g.away,name:g.away},{team:g.home,name:g.home}]:results.filter(r=>(r.team===g.away&&r.opponent===g.home)||(r.team===g.home&&r.opponent===g.away)).sort((a,b)=>(m==='goals'?(boardHistoricalRate(b)??-1)-(boardHistoricalRate(a)??-1):b.score-a.score)||b.nSeason-a.nSeason||a.name.localeCompare(b.name)).slice(0,count);
-     return `<article class="pb-game"><header class="pb-game-header"><strong>${safe(g.away)} @ ${safe(g.home)}</strong><small>${safe(boardGameTime(g,feed,date))}</small></header>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong><div class="pb-statline">${money?'':`<span title="Weighted historical hit rate; not a calibrated forecast"><b class="pb-model">${boardHistoricalRate(r)===null?'—':Math.round(100*boardHistoricalRate(r))+'%'}</b><small class="pb-subtitle">Model</small></span>`}<span title="FanDuel decimal odds"><b class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</b><small class="pb-subtitle">Odds</small></span></div></div></div>`;}).join('')}</article>`;
+     return `<article class="pb-game"><header class="pb-game-header"><strong>${safe(g.away)} @ ${safe(g.home)}</strong>${g.live?'<span class="pb-live">● LIVE</span>':`<small>${safe(boardGameTime(g,feed,date))}</small>`}</header>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><div class="pb-name"><strong>${safe(r.name)}</strong>${money?'':`<small>${safe(pbPlayerMeta(r))}</small>`}</div><div class="pb-statline">${money?'':`<span title="Weighted historical hit rate; not a calibrated forecast"><b class="pb-model">${boardHistoricalRate(r)===null?'—':Math.round(100*boardHistoricalRate(r))+'%'}</b><small class="pb-subtitle">Model</small></span>`}<span title="FanDuel decimal odds"><b class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</b><small class="pb-subtitle">Odds</small></span></div></div></div>`;}).join('')}</article>`;
    }).join('')}</div>`;
  }
  async function renderParlay(){
@@ -9500,9 +9503,9 @@ document.addEventListener('DOMContentLoaded', function () {
    if(!games.length){status.textContent='No scheduled matchups available for this date.';return;}
    status.textContent='Loading recorded player statistics…';
    const line=m==='shots'?shotLine:1, opponents=new Map();games.forEach(g=>{opponents.set(g.away,{opponent:g.home,venue:'at'});opponents.set(g.home,{opponent:g.away,venue:'vs'});});
-   const [data]=await Promise.all([Promise.all(teams.map(async t=>[t,await load(t)])),loadPropInjuries()]);
+   const [data]=await Promise.all([Promise.all(teams.map(async t=>[t,await load(t),await pbRoster(t)])),loadPropInjuries()]);
    if(ticket!==parlayTicket)return;
-   const results=[];for(const [team,payload] of data){const match=opponents.get(team);for(const player of payload.players||[]){if(propInjuryMark(player))continue;const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(r&&(m==='goals'?boardHistoricalRate(r)!==null:qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70})))results.push(r);}}
+   const results=[];for(const [team,payload,roster] of data){const match=opponents.get(team);for(const player of payload.players||[]){if(propInjuryMark(player))continue;const r=analyze(player,team,match.opponent,match.venue,date,line,0,false,m);if(r&&(m==='goals'?boardHistoricalRate(r)!==null:qualifyProp(r,propRules.find(rule=>rule.market===m)||{market:'shots',hits:4,h2hRate:.70})))results.push({...r,roster});}}
    drawMatchupBoard(games,results,m,line,date,feed);
    results.sort((a,b)=>a.name.localeCompare(b.name));
    head.innerHTML='<tr><th>Player / Matchup</th><th>L5</th><th>L10</th><th>H2H</th><th>Streak</th><th>Season Avg</th><th class="parlay-odds">FanDuel Odds (Decimal)</th></tr>';
@@ -9648,6 +9651,14 @@ html.theme-light #parlay-board .pb-game{background:#eef2f8;color:#000;border-col
 html.theme-light #parlay-board .pb-game .pb-card{background:transparent;color:#000}
 @container (max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}#parlay-board .pb-game{padding:10px}#parlay-board .pb-player>strong{font-size:15px}#parlay-board .pb-statline{gap:5px}#parlay-board .pb-statline>span+span{padding-left:5px}#parlay-board .pb-statline b,#parlay-board .pb-statline .parlay-price{font-size:20px}}
+</style>
+<style id="pb-player-meta-live">
+#parlay-board .pb-name{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+#parlay-board .pb-name strong{font-size:17px;line-height:1.2;overflow-wrap:anywhere}
+#parlay-board .pb-name small{font-size:11px;font-weight:400;color:inherit;margin:0}
+#parlay-board .pb-live{display:inline-block;color:#f87171;font-size:11px;font-weight:700;margin-left:8px;white-space:nowrap}
+html.theme-light #parlay-board .pb-live{color:#dc2626}
+@media(max-width:760px){#parlay-board .pb-name strong{font-size:15px}}
 </style>
 </body>
 </html>
