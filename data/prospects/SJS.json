@@ -1,6 +1,6 @@
 {
   "team": "SJS",
-  "updatedAt": "2026-11-26T11:09:14.522616+00:00",
+  "updatedAt": "2026-11-27T11:05:28.943065+00:00",
   "players": [
     {
       "id": 8478874,
@@ -35,11 +35,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8481517,
-      "name": "Brett Leason",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8481517.png",
-      "number": 17,
+      "id": 8483481,
+      "name": "Cam Lund",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8483481.png",
+      "number": 46,
       "organizationGroup": "NHL"
     },
     {
@@ -107,11 +107,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8479333,
-      "name": "Libor Hajek",
+      "id": 8484152,
+      "name": "Luca Cagnoni",
       "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8479333.png",
-      "number": 24,
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484152.png",
+      "number": 42,
       "organizationGroup": "NHL"
     },
     {
@@ -203,15 +203,6 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8483481,
-      "name": "Cam Lund",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8483481.png",
-      "number": 46,
-      "organizationGroup": "AHL",
-      "currentClub": "San Jose Barracuda"
-    },
-    {
       "id": 8482206,
       "name": "Ethan Cardwell",
       "position": "R",
@@ -271,14 +262,6 @@
       "number": 50,
       "organizationGroup": "Prospects",
       "currentClub": "Univ. of Connecticut"
-    },
-    {
-      "id": 8484152,
-      "name": "Luca Cagnoni",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/SJS/8484152.png",
-      "number": 42,
-      "organizationGroup": "Prospects"
     },
     {
       "id": 8483443,

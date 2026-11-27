@@ -1,6 +1,6 @@
 {
   "team": "COL",
-  "updatedAt": "2026-11-26T11:09:00.060741+00:00",
+  "updatedAt": "2026-11-27T11:05:07.306329+00:00",
   "players": [
     {
       "id": 8481550,
@@ -195,6 +195,14 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8482953,
+      "name": "Taylor Makar",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/COL/8482953.png",
+      "number": 16,
+      "organizationGroup": "NHL"
+    },
+    {
       "id": 8482742,
       "name": "Zachary L'Heureux",
       "position": "L",
@@ -278,14 +286,6 @@
       "position": "G",
       "headshot": "https://assets.nhle.com/mugs/nhl/latest/8481007.png",
       "number": "",
-      "organizationGroup": "Prospects"
-    },
-    {
-      "id": 8482953,
-      "name": "Taylor Makar",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/COL/8482953.png",
-      "number": 16,
       "organizationGroup": "Prospects"
     }
   ]

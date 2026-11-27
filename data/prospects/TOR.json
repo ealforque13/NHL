@@ -1,6 +1,6 @@
 {
   "team": "TOR",
-  "updatedAt": "2026-11-26T11:09:16.894629+00:00",
+  "updatedAt": "2026-11-27T11:05:32.528475+00:00",
   "players": [
     {
       "id": 8482691,
@@ -249,7 +249,8 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20222023/TOR/8480977.png",
       "number": 85,
-      "organizationGroup": "Prospects"
+      "organizationGroup": "Prospects",
+      "currentClub": "Admiral Vladivostok"
     },
     {
       "id": 8481054,

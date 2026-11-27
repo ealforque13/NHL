@@ -1,6 +1,6 @@
 {
   "team": "UTA",
-  "updatedAt": "2026-11-26T11:09:17.080705+00:00",
+  "updatedAt": "2026-11-27T11:05:32.861523+00:00",
   "players": [
     {
       "id": 8475314,
@@ -32,14 +32,6 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8480849.png",
       "number": 27,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8481827,
-      "name": "Ben McCartney",
-      "position": "L",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8481827.png",
-      "number": 62,
       "organizationGroup": "NHL"
     },
     {
@@ -216,6 +208,14 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8476389.png",
       "number": 16,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8485594,
+      "name": "Yegor Borikov",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/UTA/8485594.png",
+      "number": 65,
       "organizationGroup": "NHL"
     },
     {

@@ -1,6 +1,6 @@
 {
   "team": "NYR",
-  "updatedAt": "2026-11-26T11:09:09.751678+00:00",
+  "updatedAt": "2026-11-27T11:05:21.406661+00:00",
   "players": [
     {
       "id": 8479323,
@@ -112,6 +112,14 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8480813.png",
       "number": 90,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8481704,
+      "name": "Juuso Parssinen",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8481704.png",
+      "number": 71,
       "organizationGroup": "NHL"
     },
     {
@@ -313,15 +321,6 @@
       "position": "R",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8484785.png",
       "number": "",
-      "organizationGroup": "AHL",
-      "currentClub": "Hartford Wolf Pack"
-    },
-    {
-      "id": 8481704,
-      "name": "Juuso Parssinen",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NYR/8481704.png",
-      "number": 71,
       "organizationGroup": "AHL",
       "currentClub": "Hartford Wolf Pack"
     },
