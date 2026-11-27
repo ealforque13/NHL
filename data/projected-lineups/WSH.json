@@ -3,9 +3,9 @@
   "teamName": "Washington Capitals",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:53:36.789Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T18:25:36.949097+00:00",
+  "sourceUpdatedAt": "2026-11-27T19:36:59.794Z",
+  "sourceDescription": "Sammi Silber",
+  "cachedAtUTC": "2026-11-27T19:38:35.642374+00:00",
   "forwards": [
     [
       {
@@ -105,10 +105,20 @@
     ],
     [
       {
-        "name": "Boone Jenner",
-        "number": 22,
+        "name": "Ivan Miroshnichenko",
+        "number": 63,
         "position": "LW",
         "positionName": "Left Wing",
+        "sourcePlayerId": 33184,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33184/WSH_63__Miroshnichenko.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Boone Jenner",
+        "number": 22,
+        "position": "C",
+        "positionName": "Center",
         "sourcePlayerId": 1902,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1902/WSH_22_Jenner.png",
         "injuryStatus": null,
@@ -117,20 +127,10 @@
       {
         "name": "Justin Sourdif",
         "number": 34,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 29606,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29606/WSH_34_Sourdif.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Ivan Miroshnichenko",
-        "number": 63,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33184,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33184/WSH_63__Miroshnichenko.png",
+        "sourcePlayerId": 29606,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29606/WSH_34_Sourdif.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jack St. Ivany",
-        "number": 6,
+        "name": "Vincent Desharnais",
+        "number": 73,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 25428,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25428/WSH_29_St._Ivany.png",
+        "sourcePlayerId": 25716,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25716/WSH_73__Desharnais.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -385,12 +385,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jack St. Ivany",
-        "number": 6,
+        "name": "Vincent Desharnais",
+        "number": 73,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 25428,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25428/WSH_29_St._Ivany.png",
+        "sourcePlayerId": 25716,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25716/WSH_73__Desharnais.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -437,16 +437,6 @@
       "sourcePlayerId": 3867,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3867/WSH_25_Kyrou.png",
       "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Vincent Desharnais",
-      "number": 73,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 25716,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25716/WSH_73__Desharnais.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

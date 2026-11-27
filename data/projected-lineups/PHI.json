@@ -3,9 +3,9 @@
   "teamName": "Philadelphia Flyers",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:52:53.394Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T18:25:13.802075+00:00",
+  "sourceUpdatedAt": "2026-11-27T18:35:24.645Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-27T19:38:12.920343+00:00",
   "forwards": [
     [
       {
@@ -93,24 +93,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Matvei Michkov",
-        "number": 39,
+        "name": "Cole Knuble",
+        "number": 54,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 33997,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33997/PHI_39_Michkov.png",
+        "sourcePlayerId": 33787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Cole Knuble",
-        "number": 54,
+        "name": "Michael Bunting",
+        "number": 58,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
+        "sourcePlayerId": 3778,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3778/PHI_58__Bunting.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -227,12 +227,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Matvei Michkov",
-        "number": 39,
+        "name": "Tyson Foerster",
+        "number": 71,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 33997,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33997/PHI_39_Michkov.png",
+        "sourcePlayerId": 29750,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29750/PHI_71_Foerster.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -279,12 +279,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tyson Foerster",
-        "number": 71,
+        "name": "Cole Knuble",
+        "number": 54,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29750,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29750/PHI_71_Foerster.png",
+        "sourcePlayerId": 33787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -427,6 +427,16 @@
       "sourcePlayerId": 34689,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34689/PHI_17__Grebenkin.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Matvei Michkov",
+      "number": 39,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 33997,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33997/PHI_39_Michkov.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

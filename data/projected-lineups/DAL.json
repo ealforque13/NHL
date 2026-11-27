@@ -3,9 +3,9 @@
   "teamName": "Dallas Stars",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:58:32.054Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T18:24:48.376780+00:00",
+  "sourceUpdatedAt": "2026-11-27T18:56:21.820Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-27T19:37:48.022151+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Joel Kiviranta",
-        "number": 94,
+        "name": "Oskar Back",
+        "number": 10,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 31187,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31187/DAL_22_Kiviranta.png",
+        "sourcePlayerId": 29109,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29109/DAL_10_Back.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -426,16 +426,6 @@
       "positionName": "Injured Reserve 1",
       "sourcePlayerId": 341,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/341/DAL_95_Duchene.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Oskar Back",
-      "number": 10,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 29109,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29109/DAL_10_Back.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },

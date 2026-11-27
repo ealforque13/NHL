@@ -3,9 +3,9 @@
   "teamName": "San Jose Sharks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35083/SJS_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T15:04:03.676Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T18:25:20.125484+00:00",
+  "sourceUpdatedAt": "2026-11-27T18:43:06.508Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-27T19:38:19.108490+00:00",
   "forwards": [
     [
       {
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Eric Pohlkamp",
-        "number": null,
+        "name": "Luca Cagnoni",
+        "number": 42,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 33798,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
+        "sourcePlayerId": 38123,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38123/SJS_42_Cagnoni.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -289,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Eric Pohlkamp",
-        "number": null,
+        "name": "Luca Cagnoni",
+        "number": 42,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 33798,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33798/SJS_48__Pohlkamp.png",
+        "sourcePlayerId": 38123,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38123/SJS_42_Cagnoni.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
