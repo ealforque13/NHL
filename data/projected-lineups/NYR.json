@@ -1,11 +1,11 @@
 {
   "team": "NYR",
   "teamName": "New York Rangers",
-  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T02:25:30.722Z",
+  "sourceUpdatedAt": "2026-11-27T16:33:56.588Z",
   "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-27T16:06:40.754375+00:00",
+  "cachedAtUTC": "2026-11-27T18:25:09.394606+00:00",
   "forwards": [
     [
       {
@@ -61,56 +61,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Eeli Tolvanen",
-        "number": 17,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 2787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Juuso Parssinen",
         "number": 16,
-        "position": "LW",
-        "positionName": "Left Wing",
+        "position": "RW",
+        "positionName": "Right Wing",
         "sourcePlayerId": 30659,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30659/NYR_71_Parssinen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
-      },
-      {
-        "name": "Max Sasson",
-        "number": null,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 30007,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Taylor Raddysh",
-        "number": 14,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 3922,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3922/NYR_14_Raddysh.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Glenn Gawdin",
-        "number": null,
+        "name": "Eeli Tolvanen",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3934,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
+        "sourcePlayerId": 2787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -131,6 +99,38 @@
         "positionName": "Right Wing",
         "sourcePlayerId": 34742,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34742/NYR_49_Chmelar.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Glenn Gawdin",
+        "number": null,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3934,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Max Sasson",
+        "number": null,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 30007,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Taylor Raddysh",
+        "number": 14,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 3922,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3922/NYR_14_Raddysh.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

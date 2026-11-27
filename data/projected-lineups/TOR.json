@@ -3,20 +3,20 @@
   "teamName": "Toronto Maple Leafs",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34668/TOR_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T01:55:05.852Z",
+  "sourceUpdatedAt": "2026-11-27T17:41:11.536Z",
   "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-27T16:06:57.731809+00:00",
+  "cachedAtUTC": "2026-11-27T18:25:26.433062+00:00",
   "forwards": [
     [
       {
-        "name": "Kirill Marchenko",
-        "number": 86,
+        "name": "Nick Paul",
+        "number": 20,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29119,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29119/TOR_86__Marchenko.png",
+        "sourcePlayerId": 2357,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2357/TOR_20_Paul.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Auston Matthews",
@@ -29,24 +29,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nick Paul",
-        "number": 20,
+        "name": "Kirill Marchenko",
+        "number": 86,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2357,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2357/TOR_20_Paul.png",
+        "sourcePlayerId": 29119,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29119/TOR_86__Marchenko.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "John Tavares",
-        "number": 91,
+        "name": "Gavin McKenna",
+        "number": 92,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1016,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1016/TOR_91_Tavares.png",
+        "sourcePlayerId": 37717,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37717/TOR_92_McKenna.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -58,15 +58,15 @@
         "sourcePlayerId": 2030,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2030/TOR_15_Sissons.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
-        "name": "Gavin McKenna",
-        "number": 92,
+        "name": "John Tavares",
+        "number": 91,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 37717,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37717/TOR_92_McKenna.png",
+        "sourcePlayerId": 1016,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1016/TOR_91_Tavares.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Dakota Joshua",
-        "number": 81,
+        "name": "Zack MacEwen",
+        "number": 19,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 25020,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25020/TOR_81_Joshua.png",
+        "sourcePlayerId": 4489,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4489/TOR_19__MacEwen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -214,7 +214,7 @@
         "sourcePlayerId": 29119,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29119/TOR_86__Marchenko.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "John Tavares",
@@ -362,7 +362,7 @@
         "sourcePlayerId": 2030,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2030/TOR_15_Sissons.png",
         "injuryStatus": null,
-        "gameTimeDecision": true
+        "gameTimeDecision": false
       },
       {
         "name": "Nick Paul",
@@ -430,22 +430,12 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Kirill Marchenko",
-      "number": 86,
+      "name": "Max Domi",
+      "number": 11,
       "position": "IR2",
       "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 29119,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29119/TOR_86__Marchenko.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Colton Sissons",
-      "number": 10,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 2030,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2030/TOR_15_Sissons.png",
+      "sourcePlayerId": 2131,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2131/TOR_11_Domi.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
@@ -480,22 +470,22 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Max Domi",
-      "number": 11,
+      "name": "Jack Roslovic",
+      "number": 96,
       "position": "IR7",
       "positionName": "Injured Reserve 7",
-      "sourcePlayerId": 2131,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2131/TOR_11_Domi.png",
-      "injuryStatus": "out",
+      "sourcePlayerId": 2499,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     },
     {
-      "name": "Jack Roslovic",
-      "number": 96,
+      "name": "Dakota Joshua",
+      "number": 81,
       "position": "IR8",
       "positionName": "Injured Reserve 8",
-      "sourcePlayerId": 2499,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2499/TOR_96_Roslovic.png",
+      "sourcePlayerId": 25020,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25020/TOR_81_Joshua.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

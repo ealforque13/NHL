@@ -3,18 +3,18 @@
   "teamName": "Seattle Kraken",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T13:39:19.367Z",
-  "sourceDescription": "Geoff Baker",
-  "cachedAtUTC": "2026-11-27T16:06:49.265999+00:00",
+  "sourceUpdatedAt": "2026-11-27T18:20:56.636Z",
+  "sourceDescription": "Mike Benton",
+  "cachedAtUTC": "2026-11-27T18:25:18.005312+00:00",
   "forwards": [
     [
       {
-        "name": "Bobby McMann",
-        "number": 74,
+        "name": "Chandler Stephenson",
+        "number": 9,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 32922,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32922/SEA_74__McMann.png",
+        "sourcePlayerId": 2538,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2538/SEA_9_Stephenson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -73,12 +73,12 @@
     ],
     [
       {
-        "name": "Chandler Stephenson",
-        "number": 9,
+        "name": "Bobby McMann",
+        "number": 74,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2538,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2538/SEA_9_Stephenson.png",
+        "sourcePlayerId": 32922,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32922/SEA_74__McMann.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -93,34 +93,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Winterton",
-        "number": 26,
+        "name": "Matthew Wood",
+        "number": 71,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30837,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30837/SEA_26__Winterton.png",
+        "sourcePlayerId": 33571,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33571/SEA_71__Wood.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Ben Meyers",
-        "number": 59,
+        "name": "Ryan Winterton",
+        "number": 26,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30084,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30084/SEA_59_Meyers.png",
+        "sourcePlayerId": 30837,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30837/SEA_26__Winterton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Matthew Wood",
-        "number": 71,
+        "name": "Ben Meyers",
+        "number": 59,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 33571,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33571/SEA_71__Wood.png",
+        "sourcePlayerId": 30084,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30084/SEA_59_Meyers.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

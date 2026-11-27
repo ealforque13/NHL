@@ -3,9 +3,9 @@
   "teamName": "Calgary Flames",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4774/CGY_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:34:13.835Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:13.180148+00:00",
+  "sourceUpdatedAt": "2026-11-27T17:47:10.548Z",
+  "sourceDescription": "Derek Wills",
+  "cachedAtUTC": "2026-11-27T18:24:42.054989+00:00",
   "forwards": [
     [
       {
@@ -105,32 +105,32 @@
     ],
     [
       {
-        "name": "Brennan Othmann",
-        "number": 78,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 30831,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30831/CGY_78_Othmann.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Ben Jones",
-        "number": 39,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 4774,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4774/CGY_Frnt.webp",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Maxim Tsyplakov",
         "number": 72,
-        "position": "RW",
-        "positionName": "Right Wing",
+        "position": "LW",
+        "positionName": "Left Wing",
         "sourcePlayerId": 38122,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38122/CGY_72_Tsyplakov.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Morgan Frost",
+        "number": 48,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 2814,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brennan Othmann",
+        "number": 78,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 30831,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30831/CGY_78_Othmann.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -217,12 +217,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Matvei Gridin",
-        "number": 92,
+        "name": "Morgan Frost",
+        "number": 48,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 36778,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36778/CGY_92__Gridin.png",
+        "sourcePlayerId": 2814,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -237,12 +237,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Maxim Tsyplakov",
-        "number": 72,
+        "name": "Matvei Gridin",
+        "number": 92,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 38122,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38122/CGY_72_Tsyplakov.png",
+        "sourcePlayerId": 36778,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36778/CGY_92__Gridin.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Dustin Wolf",
-      "number": 32,
+      "name": "Devin Cooley",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 29507,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
+      "sourcePlayerId": 32944,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Devin Cooley",
-      "number": null,
+      "name": "Dustin Wolf",
+      "number": 32,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 32944,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32944/CGY_1__Cooley.png",
+      "sourcePlayerId": 29507,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29507/CGY_32_Wolf.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -447,16 +447,6 @@
       "sourcePlayerId": 28414,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28414/CGY_76_Pospisil.png",
       "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Morgan Frost",
-      "number": 48,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2814,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2814/CGY_16_Frost.png",
-      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

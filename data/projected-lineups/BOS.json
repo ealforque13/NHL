@@ -3,28 +3,28 @@
   "teamName": "Boston Bruins",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:23:00.379Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:04.746359+00:00",
+  "sourceUpdatedAt": "2026-11-27T17:40:00.612Z",
+  "sourceDescription": "Belle Fraser",
+  "cachedAtUTC": "2026-11-27T18:24:33.627967+00:00",
   "forwards": [
     [
       {
-        "name": "Morgan Geekie",
-        "number": 39,
+        "name": "JJ Peterka",
+        "number": 10,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 28001,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28001/BOS_39_Geekie.png",
+        "sourcePlayerId": 31777,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31777/BOS_10_Peterka.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Elias Lindholm",
-        "number": 28,
+        "name": "Pavel Zacha",
+        "number": 18,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2133,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2133/BOS_28_Lindholm.png",
+        "sourcePlayerId": 2481,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2481/BOS_18_Zacha.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -51,34 +51,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pavel Zacha",
-        "number": 18,
+        "name": "Elias Lindholm",
+        "number": 28,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 2481,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2481/BOS_18_Zacha.png",
+        "sourcePlayerId": 2133,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2133/BOS_28_Lindholm.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "JJ Peterka",
-        "number": 10,
+        "name": "Marat Khusnutdinov",
+        "number": 92,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 31777,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31777/BOS_10_Peterka.png",
+        "sourcePlayerId": 31738,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Marat Khusnutdinov",
-        "number": 92,
+        "name": "Morgan Geekie",
+        "number": 39,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 31738,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31738/BOS_92_Khusnutdinov.png",
+        "sourcePlayerId": 28001,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28001/BOS_39_Geekie.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

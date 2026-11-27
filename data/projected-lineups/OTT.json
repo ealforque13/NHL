@@ -3,9 +3,9 @@
   "teamName": "Ottawa Senators",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:29:19.824Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:42.866826+00:00",
+  "sourceUpdatedAt": "2026-11-27T17:15:50.495Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-27T18:25:11.495905+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Sammy Blais",
-        "number": 79,
+        "name": "Andre Burakovsky",
+        "number": 28,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2848,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2848/OTT_79_Blais.png",
+        "sourcePlayerId": 2154,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2154/OTT_95__Burakovsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -299,12 +299,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jordan Spence",
-        "number": 21,
+        "name": "Andre Burakovsky",
+        "number": 28,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 29922,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29922/OTT_10_Spence.png",
+        "sourcePlayerId": 2154,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2154/OTT_95__Burakovsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -437,26 +437,6 @@
       "sourcePlayerId": 3911,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3911/OTT_37__Foegele.png",
       "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Andre Burakovsky",
-      "number": 28,
-      "position": "IR3",
-      "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 2154,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2154/OTT_95__Burakovsky.png",
-      "injuryStatus": "ir",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Hayden Hodgson",
-      "number": 42,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 23173,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23173/OTT_42_Hodgson.png",
-      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

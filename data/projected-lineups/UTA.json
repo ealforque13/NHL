@@ -1,11 +1,11 @@
 {
   "team": "UTA",
   "teamName": "Utah Mammoth",
-  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36382/UTH_Frnt.png",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38911/UTH_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:59:24.897Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:59.834604+00:00",
+  "sourceUpdatedAt": "2026-11-27T17:53:39.136Z",
+  "sourceDescription": "Utah Mammoth",
+  "cachedAtUTC": "2026-11-27T18:25:28.548708+00:00",
   "forwards": [
     [
       {
@@ -149,12 +149,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "MacKenzie Weegar",
-        "number": 52,
+        "name": "Andrew Peeke",
+        "number": 20,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2777,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2777/UTA_52__Weegar.png",
+        "sourcePlayerId": 27242,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27242/UTA_20__Peeke.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -171,34 +171,34 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Andrew Peeke",
-        "number": 20,
+        "name": "MacKenzie Weegar",
+        "number": 52,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 27242,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27242/UTA_20__Peeke.png",
+        "sourcePlayerId": 2777,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2777/UTA_52__Weegar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Zac Jones",
-        "number": 15,
+        "name": "Gregor Biber",
+        "number": null,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 30457,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30457/UTA_15__Jones.png",
+        "sourcePlayerId": 38911,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38911/UTH_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Nick DeSimone",
-        "number": 57,
+        "name": "Zac Jones",
+        "number": 15,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2886,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2886/UTH_57_DeSimone.png",
+        "sourcePlayerId": 30457,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30457/UTA_15__Jones.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -289,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zac Jones",
-        "number": 15,
+        "name": "MacKenzie Weegar",
+        "number": 52,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 30457,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30457/UTA_15__Jones.png",
+        "sourcePlayerId": 2777,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2777/UTA_52__Weegar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

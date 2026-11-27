@@ -1,11 +1,11 @@
 {
   "team": "PIT",
   "teamName": "Pittsburgh Penguins",
-  "teamFrontJerseyUrl": null,
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38076/PIT_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:34:52.118Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:47.122712+00:00",
+  "sourceUpdatedAt": "2026-11-27T16:59:38.099Z",
+  "sourceDescription": "@king_jemison",
+  "cachedAtUTC": "2026-11-27T18:25:15.909469+00:00",
   "forwards": [
     [
       {
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Justin Brazeau",
-        "number": 15,
+        "name": "Atley Calvert",
+        "number": 23,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 28622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
+        "sourcePlayerId": 38076,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38076/PIT_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -139,12 +139,12 @@
   "defense": [
     [
       {
-        "name": "Spencer Stastney",
-        "number": 24,
+        "name": "Kaedan Korczak",
+        "number": 6,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 28862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
+        "sourcePlayerId": 28524,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28524/PIT_6__Korczak.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -171,24 +171,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Kaedan Korczak",
-        "number": 6,
+        "name": "Trevor van Riemsdyk",
+        "number": 57,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 28524,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28524/PIT_6__Korczak.png",
+        "sourcePlayerId": 2383,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Trevor van Riemsdyk",
-        "number": 57,
+        "name": "Declan Carlile",
+        "number": 72,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 2383,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2383/PIT_57_van_Riemsdyk.png",
+        "sourcePlayerId": 30124,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -259,12 +259,12 @@
     ],
     [
       {
-        "name": "Justin Brazeau",
-        "number": 15,
+        "name": "Ville Koivunen",
+        "number": 41,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28622,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28622/PIT_16__Brazeau.png",
+        "sourcePlayerId": 34677,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -279,32 +279,32 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ben Kindel",
-        "number": 81,
+        "name": "Avery Hayes",
+        "number": null,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 37573,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37573/PIT_81__Kindel.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Ville Koivunen",
-        "number": 41,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 34677,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34677/PIT_41__Koivunen.png",
+        "sourcePlayerId": 29767,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29767/PIT_85_Hayes.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
         "name": "Kris Letang",
         "number": 58,
-        "position": "SK5",
-        "positionName": "Skater 5",
+        "position": "SK4",
+        "positionName": "Skater 4",
         "sourcePlayerId": 1233,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1233/PIT_58_Letang.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Ben Kindel",
+        "number": 81,
+        "position": "SK5",
+        "positionName": "Skater 5",
+        "sourcePlayerId": 37573,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37573/PIT_81__Kindel.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -375,12 +375,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Spencer Stastney",
-        "number": 24,
+        "name": "Declan Carlile",
+        "number": 72,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 28862,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28862/PIT_24__Stastney.png",
+        "sourcePlayerId": 30124,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30124/PIT_72__Carlile.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },

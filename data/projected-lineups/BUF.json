@@ -3,18 +3,18 @@
   "teamName": "Buffalo Sabres",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2723/BUF_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:26:38.083Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:06.853472+00:00",
+  "sourceUpdatedAt": "2026-11-27T16:33:02.857Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-27T18:24:35.730391+00:00",
   "forwards": [
     [
       {
-        "name": "Zach Benson",
-        "number": 6,
+        "name": "Josh Doan",
+        "number": 91,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 33544,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33544/BUF_6_Benson.png",
+        "sourcePlayerId": 32990,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32990/BUF_91_Doan.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -41,22 +41,22 @@
     ],
     [
       {
-        "name": "Peyton Krebs",
-        "number": 19,
+        "name": "Jason Zucker",
+        "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 28684,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28684/BUF_19_Krebs.png",
+        "sourcePlayerId": 1898,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1898/BUF_17_Zucker.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Ostlund",
-        "number": 86,
+        "name": "Ryan McLeod",
+        "number": 71,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 36383,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36383/BUF_86__Ostlund.png",
+        "sourcePlayerId": 4810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -73,12 +73,12 @@
     ],
     [
       {
-        "name": "Jason Zucker",
-        "number": 17,
+        "name": "Peyton Krebs",
+        "number": 19,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1898,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1898/BUF_17_Zucker.png",
+        "sourcePlayerId": 28684,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28684/BUF_19_Krebs.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -89,16 +89,6 @@
         "positionName": "Center",
         "sourcePlayerId": 28056,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Josh Doan",
-        "number": 91,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 32990,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32990/BUF_91_Doan.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -115,22 +105,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan McLeod",
-        "number": 71,
+        "name": "Sam Carrick",
+        "number": 39,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 4810,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
+        "sourcePlayerId": 1914,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1914/BUF_10_Carrick.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Sam Carrick",
-        "number": 39,
+        "name": "Justin Danforth",
+        "number": 15,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1914,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1914/BUF_10_Carrick.png",
+        "sourcePlayerId": 28122,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28122/BUF_15_Danforth.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -217,12 +207,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Benson",
-        "number": 6,
+        "name": "Jiri Kulich",
+        "number": 20,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 33544,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33544/BUF_6_Benson.png",
+        "sourcePlayerId": 36381,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36381/BUF_20__Kulich.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -269,22 +259,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Ostlund",
-        "number": 86,
+        "name": "Ryan McLeod",
+        "number": 71,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 36383,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36383/BUF_86__Ostlund.png",
+        "sourcePlayerId": 4810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jiri Kulich",
-        "number": 20,
+        "name": "Josh Norris",
+        "number": 9,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 36381,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36381/BUF_20__Kulich.png",
+        "sourcePlayerId": 28056,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -299,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Josh Norris",
-        "number": 9,
+        "name": "Mattias Samuelsson",
+        "number": 23,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 28056,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
+        "sourcePlayerId": 28792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28792/BUF_23_Samuelsson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -313,12 +303,12 @@
   "penaltyKill": [
     [
       {
-        "name": "Sam Carrick",
-        "number": 39,
+        "name": "Ryan McLeod",
+        "number": 71,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 1914,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1914/BUF_10_Carrick.png",
+        "sourcePlayerId": 4810,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4810/BUF_71_McLeod.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -329,48 +319,6 @@
         "positionName": "Skater 2",
         "sourcePlayerId": 3914,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3914/BUF_29_Malenstyn.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Olen Zellweger",
-        "number": 8,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 34623,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34623/BUF_8_Zellweger.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Owen Power",
-        "number": 25,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 30051,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30051/BUF_25_Power.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Zach Benson",
-        "number": 6,
-        "position": "SK1",
-        "positionName": "Skater 1",
-        "sourcePlayerId": 33544,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33544/BUF_6_Benson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Noah Ostlund",
-        "number": 86,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 36383,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36383/BUF_86__Ostlund.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -391,6 +339,48 @@
         "positionName": "Skater 4",
         "sourcePlayerId": 2797,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2797/BUF_21_Timmins.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Josh Norris",
+        "number": 9,
+        "position": "SK1",
+        "positionName": "Skater 1",
+        "sourcePlayerId": 28056,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Justin Danforth",
+        "number": 15,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 28122,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28122/BUF_15_Danforth.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Owen Power",
+        "number": 25,
+        "position": "SK3",
+        "positionName": "Skater 3",
+        "sourcePlayerId": 30051,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30051/BUF_25_Power.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Zach Metsa",
+        "number": 73,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 28387,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28387/BUF_73__Metsa.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -430,23 +420,43 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Justin Danforth",
-      "number": 15,
+      "name": "Konsta Helenius",
+      "number": 94,
       "position": "IR2",
       "positionName": "Injured Reserve 2",
-      "sourcePlayerId": 28122,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28122/BUF_15_Danforth.png",
+      "sourcePlayerId": 38139,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38139/BUF_94__Helenius.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
-      "name": "Konsta Helenius",
-      "number": 94,
+      "name": "Tyson Kozak",
+      "number": 48,
       "position": "IR3",
       "positionName": "Injured Reserve 3",
-      "sourcePlayerId": 38139,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38139/BUF_94__Helenius.png",
-      "injuryStatus": "ir",
+      "sourcePlayerId": 32822,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32822/BUF_48_Kozak_2_.png",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Zach Benson",
+      "number": 6,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 33544,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33544/BUF_6_Benson.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Noah Ostlund",
+      "number": 86,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 36383,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36383/BUF_86__Ostlund.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

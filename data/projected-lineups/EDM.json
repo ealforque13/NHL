@@ -3,9 +3,9 @@
   "teamName": "Edmonton Oilers",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T02:02:21.422Z",
+  "sourceUpdatedAt": "2026-11-27T16:51:24.813Z",
   "sourceDescription": "Bob Stauffer",
-  "cachedAtUTC": "2026-11-27T16:06:23.719083+00:00",
+  "cachedAtUTC": "2026-11-27T18:24:52.575004+00:00",
   "forwards": [
     [
       {
@@ -183,22 +183,22 @@
     ],
     [
       {
-        "name": "Shakir Mukhamadullin",
-        "number": 85,
+        "name": "Jake Walman",
+        "number": 96,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 33038,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33038/EDM_85__Mukhamadullin.png",
+        "sourcePlayerId": 2859,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2859/EDM_96_Walman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Jake Walman",
-        "number": 96,
+        "name": "Ty Emberson",
+        "number": 49,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 2859,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2859/EDM_96_Walman.png",
+        "sourcePlayerId": 28812,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28812/EDM_49_Emberson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -333,22 +333,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Shakir Mukhamadullin",
-        "number": 85,
+        "name": "Evan Bouchard",
+        "number": 2,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 33038,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33038/EDM_85__Mukhamadullin.png",
+        "sourcePlayerId": 4792,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4792/EDM_2_Bouchard.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Evan Bouchard",
-        "number": 2,
+        "name": "Ty Emberson",
+        "number": 49,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 4792,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4792/EDM_2_Bouchard.png",
+        "sourcePlayerId": 28812,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28812/EDM_49_Emberson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -467,6 +467,16 @@
       "sourcePlayerId": 2468,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2468/EDM_18_Hyman.png",
       "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Filip Hallander",
+      "number": 19,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 29096,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29096/EDM_19__Hallander.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]

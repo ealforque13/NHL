@@ -1,11 +1,11 @@
 {
   "team": "NJD",
   "teamName": "New Jersey Devils",
-  "teamFrontJerseyUrl": null,
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29791/NJD_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:54:24.109Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T16:06:34.335325+00:00",
+  "sourceUpdatedAt": "2026-11-27T17:45:34.284Z",
+  "sourceDescription": "Mike Morreale",
+  "cachedAtUTC": "2026-11-27T18:25:03.091770+00:00",
   "forwards": [
     [
       {
@@ -73,22 +73,22 @@
     ],
     [
       {
-        "name": "Evan Rodrigues",
-        "number": 17,
+        "name": "Stefan Noesen",
+        "number": 11,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2620/NJD_17__Rodrigues.png",
+        "sourcePlayerId": 1842,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1842/NJD_11_Noesen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Amadeus Lombardi",
-        "number": 93,
+        "name": "Evan Rodrigues",
+        "number": 17,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 31074,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31074/NJD_93__Lombardi.png",
+        "sourcePlayerId": 2620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2620/NJD_17__Rodrigues.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Stefan Noesen",
-        "number": 11,
+        "name": "Amadeus Lombardi",
+        "number": 93,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1842,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1842/NJD_11_Noesen.png",
+        "sourcePlayerId": 31074,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31074/NJD_93__Lombardi.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -183,22 +183,22 @@
     ],
     [
       {
-        "name": "Declan Chisholm",
-        "number": 47,
+        "name": "Anton Silayev",
+        "number": null,
         "position": "LD",
         "positionName": "Left Defense",
-        "sourcePlayerId": 28803,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28803/NJD_47__Chisholm.png",
+        "sourcePlayerId": 38914,
+        "jerseyUrl": null,
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Brenden Dillon",
-        "number": 5,
+        "name": "Vladislav Kolyachonok",
+        "number": 74,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 1575,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1575/NJD_5_Dillon.png",
+        "sourcePlayerId": 29791,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29791/NJD_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -375,12 +375,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brenden Dillon",
-        "number": 5,
+        "name": "Vladislav Kolyachonok",
+        "number": 74,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 1575,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1575/NJD_5_Dillon.png",
+        "sourcePlayerId": 29791,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29791/NJD_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -447,6 +447,26 @@
       "sourcePlayerId": 28131,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28131/NJD_8_Kovacevic.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Brenden Dillon",
+      "number": 5,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 1575,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1575/NJD_5_Dillon.png",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Declan Chisholm",
+      "number": 47,
+      "position": "IR5",
+      "positionName": "Injured Reserve 5",
+      "sourcePlayerId": 28803,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28803/NJD_47__Chisholm.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
