@@ -3,9 +3,9 @@
   "teamName": "Ottawa Senators",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T17:15:50.495Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-27T19:38:10.857087+00:00",
+  "sourceUpdatedAt": "2026-11-27T19:46:04.847Z",
+  "sourceDescription": "Ottawa Senators",
+  "cachedAtUTC": "2026-11-27T21:00:15.409627+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Andre Burakovsky",
-        "number": 28,
+        "name": "Nick Cousins",
+        "number": 21,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2154,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2154/OTT_95__Burakovsky.png",
+        "sourcePlayerId": 1893,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1893/OTT_21_Cousins.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Nick Cousins",
-        "number": 21,
+        "name": "Andre Burakovsky",
+        "number": 28,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1893,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1893/OTT_21_Cousins.png",
+        "sourcePlayerId": 2154,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2154/OTT_95__Burakovsky.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

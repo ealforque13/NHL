@@ -3,9 +3,9 @@
   "teamName": "Vancouver Canucks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28385/VAN_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:56:18.700Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T19:38:29.450398+00:00",
+  "sourceUpdatedAt": "2026-11-27T19:49:40.319Z",
+  "sourceDescription": "Brendan Batchelor",
+  "cachedAtUTC": "2026-11-27T21:00:34.223804+00:00",
   "forwards": [
     [
       {
@@ -29,12 +29,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brock Boeser",
-        "number": 6,
+        "name": "Jonathan Lekkerimaki",
+        "number": 88,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2497,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2497/VAN_6_Boeser.png",
+        "sourcePlayerId": 36365,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36365/VAN_88__Lekkerimaki.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -61,12 +61,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Jonathan Lekkerimaki",
-        "number": 88,
+        "name": "Brock Boeser",
+        "number": 6,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 36365,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36365/VAN_88__Lekkerimaki.png",
+        "sourcePlayerId": 2497,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2497/VAN_6_Boeser.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Cole Reinhardt",
-        "number": 23,
+        "name": "Paul Cotter",
+        "number": 47,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 28385,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28385/VAN_Frnt.webp",
+        "sourcePlayerId": 27620,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Paul Cotter",
-        "number": 47,
+        "name": "Cole Reinhardt",
+        "number": 23,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 27620,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27620/VAN_47__Cotter.png",
+        "sourcePlayerId": 28385,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28385/VAN_Frnt.webp",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

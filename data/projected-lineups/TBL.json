@@ -3,9 +3,9 @@
   "teamName": "Tampa Bay Lightning",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:28:44.138Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T19:38:23.264552+00:00",
+  "sourceUpdatedAt": "2026-11-27T19:39:51.298Z",
+  "sourceDescription": "Gabby Shirley",
+  "cachedAtUTC": "2026-11-27T21:00:27.991509+00:00",
   "forwards": [
     [
       {
@@ -61,12 +61,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pontus Holmberg",
-        "number": 29,
+        "name": "Gage Goncalves",
+        "number": 93,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 29640,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
+        "sourcePlayerId": 32521,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32521/TBL_93_Goncalves.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -123,16 +123,6 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36872/TBL_23_O_Reilly.png",
         "injuryStatus": null,
         "gameTimeDecision": false
-      },
-      {
-        "name": "Gage Goncalves",
-        "number": 93,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 32521,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32521/TBL_93_Goncalves.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
       }
     ]
   ],
@@ -161,28 +151,6 @@
     ],
     [
       {
-        "name": "J.J. Moser",
-        "number": 90,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 34680,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34680/TBL_90_Moser.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Maxwell Crozier",
-        "number": 24,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 28863,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28863/TBL_24__Crozier.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Ryan McDonagh",
         "number": 27,
         "position": "LD",
@@ -199,6 +167,28 @@
         "positionName": "Right Defense",
         "sourcePlayerId": 37940,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37940/TBL_78_Lilleberg.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Victor Hedman",
+        "number": 77,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 1369,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Maxwell Crozier",
+        "number": 24,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 28863,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28863/TBL_24__Crozier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -279,12 +269,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Pontus Holmberg",
-        "number": 29,
+        "name": "Gage Goncalves",
+        "number": 93,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 29640,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
+        "sourcePlayerId": 32521,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32521/TBL_93_Goncalves.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -299,12 +289,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "J.J. Moser",
-        "number": 90,
+        "name": "Victor Hedman",
+        "number": 77,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 34680,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34680/TBL_90_Moser.png",
+        "sourcePlayerId": 1369,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -375,12 +365,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Maxwell Crozier",
-        "number": 24,
+        "name": "Victor Hedman",
+        "number": 77,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 28863,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28863/TBL_24__Crozier.png",
+        "sourcePlayerId": 1369,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -430,22 +420,22 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Erik Cernak",
-      "number": 81,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 2749,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
-      "injuryStatus": "dtd",
+      "name": "Pontus Holmberg",
+      "number": 29,
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
+      "sourcePlayerId": 29640,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29640/TBL_29_Holmberg.png",
+      "injuryStatus": "ir",
       "gameTimeDecision": false
     },
     {
-      "name": "Victor Hedman",
-      "number": 77,
-      "position": "IR5",
-      "positionName": "Injured Reserve 5",
-      "sourcePlayerId": 1369,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1369/TBL_77_Hedman.png",
+      "name": "Erik Cernak",
+      "number": 81,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 2749,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2749/TBL_81_Cernak.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

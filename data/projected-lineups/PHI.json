@@ -3,9 +3,9 @@
   "teamName": "Philadelphia Flyers",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T18:35:24.645Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-27T19:38:12.920343+00:00",
+  "sourceUpdatedAt": "2026-11-27T19:44:15.257Z",
+  "sourceDescription": "Jackie Spiegel",
+  "cachedAtUTC": "2026-11-27T21:00:17.497448+00:00",
   "forwards": [
     [
       {
@@ -41,12 +41,12 @@
     ],
     [
       {
-        "name": "Owen Tippett",
-        "number": 74,
+        "name": "Trevor Zegras",
+        "number": 46,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2786,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
+        "sourcePlayerId": 30202,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30202/PHI_46_Zegras.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -57,6 +57,28 @@
         "positionName": "Center",
         "sourcePlayerId": 35098,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35098/PHI_86_Barkey_.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Michael Bunting",
+        "number": 58,
+        "position": "LW",
+        "positionName": "Left Wing",
+        "sourcePlayerId": 3778,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3778/PHI_58__Bunting.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Noah Cates",
+        "number": 27,
+        "position": "C",
+        "positionName": "Center",
+        "sourcePlayerId": 28087,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28087/PHI_27_Cates.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -73,44 +95,12 @@
     ],
     [
       {
-        "name": "Trevor Zegras",
-        "number": 46,
-        "position": "LW",
-        "positionName": "Left Wing",
-        "sourcePlayerId": 30202,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30202/PHI_46_Zegras.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Noah Cates",
-        "number": 27,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 28087,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28087/PHI_27_Cates.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
         "name": "Cole Knuble",
         "number": 54,
-        "position": "RW",
-        "positionName": "Right Wing",
-        "sourcePlayerId": 33787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
-        "name": "Michael Bunting",
-        "number": 58,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 3778,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3778/PHI_58__Bunting.png",
+        "sourcePlayerId": 33787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33787/PHI_54__Knuble.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -193,12 +183,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Bonk",
-        "number": 59,
+        "name": "Simon Benoit",
+        "number": 44,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 35107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35107/PHI_59__Bonk.png",
+        "sourcePlayerId": 26550,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26550/PHI_44__Benoit.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -289,22 +279,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Owen Tippett",
-        "number": 74,
+        "name": "Cam York",
+        "number": 8,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2786,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
+        "sourcePlayerId": 30422,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30422/PHI_8_York.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Oliver Bonk",
-        "number": 59,
+        "name": "Travis Sanheim",
+        "number": 6,
         "position": "SK5",
         "positionName": "Skater 5",
-        "sourcePlayerId": 35107,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35107/PHI_59__Bonk.png",
+        "sourcePlayerId": 2827,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2827/PHI_6_Sanheim.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -437,6 +427,16 @@
       "sourcePlayerId": 33997,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33997/PHI_39_Michkov.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Owen Tippett",
+      "number": 74,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 2786,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2786/PHI_74_Tippett.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

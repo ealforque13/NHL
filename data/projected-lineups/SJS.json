@@ -3,9 +3,9 @@
   "teamName": "San Jose Sharks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35083/SJS_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T18:43:06.508Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-27T19:38:19.108490+00:00",
+  "sourceUpdatedAt": "2026-11-27T20:37:48.326Z",
+  "sourceDescription": "Max Miller",
+  "cachedAtUTC": "2026-11-27T21:00:23.774427+00:00",
   "forwards": [
     [
       {
@@ -29,12 +29,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Will Smith",
-        "number": 2,
+        "name": "Adam Gaudette",
+        "number": 81,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38126,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38126/SJS_2_Smith.png",
+        "sourcePlayerId": 4646,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4646/SJS_81_Gaudette.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -93,12 +93,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Collin Graf",
-        "number": 51,
+        "name": "Will Smith",
+        "number": 2,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38105,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
+        "sourcePlayerId": 38126,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38126/SJS_2_Smith.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Adam Gaudette",
-        "number": 81,
+        "name": "Collin Graf",
+        "number": 51,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 4646,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4646/SJS_81_Gaudette.png",
+        "sourcePlayerId": 38105,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38105/SJS_51__Graf.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

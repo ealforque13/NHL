@@ -3,9 +3,9 @@
   "teamName": "Anaheim Ducks",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38136/ANA_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T02:18:23.870Z",
+  "sourceUpdatedAt": "2026-11-27T20:39:05.111Z",
   "sourceDescription": "Zach Cavanagh",
-  "cachedAtUTC": "2026-11-27T19:37:31.474042+00:00",
+  "cachedAtUTC": "2026-11-27T20:59:35.865465+00:00",
   "forwards": [
     [
       {
@@ -149,12 +149,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Drew Helleson",
-        "number": 14,
+        "name": "Ian Moore",
+        "number": null,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 30429,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
+        "sourcePlayerId": 31897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ian Moore",
-        "number": null,
+        "name": "Drew Helleson",
+        "number": 14,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31897,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31897/ANA_3_Moore.png",
+        "sourcePlayerId": 30429,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30429/ANA_14_Helleson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

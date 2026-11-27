@@ -3,9 +3,9 @@
   "teamName": "Minnesota Wild",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T15:00:12.400Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T19:37:58.388989+00:00",
+  "sourceUpdatedAt": "2026-11-27T20:36:19.980Z",
+  "sourceDescription": "Dylan Loucks",
+  "cachedAtUTC": "2026-11-27T21:00:02.981848+00:00",
   "forwards": [
     [
       {
@@ -105,12 +105,12 @@
     ],
     [
       {
-        "name": "Nick Foligno",
+        "name": "Marcus Foligno",
         "number": 17,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 1081,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1081/MIN_71_Foligno.png",
+        "sourcePlayerId": 1689,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1689/MIN_17_Foligno.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Marcus Foligno",
+        "name": "Nick Foligno",
         "number": 17,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 1689,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1689/MIN_17_Foligno.png",
+        "sourcePlayerId": 1081,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1081/MIN_71_Foligno.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
