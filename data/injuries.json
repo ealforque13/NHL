@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T18:56:37.770838+00:00",
+  "updatedAt": "2026-11-27T01:14:14.112199+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8475151": {
@@ -25,6 +25,12 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "MTL"
+    },
+    "8475455": {
+      "injured": true,
+      "description": "suspension",
+      "status": "Suspension",
+      "team": "NJD"
     },
     "8475786": {
       "injured": true,
@@ -466,8 +472,8 @@
     },
     "8483485": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "CBJ"
     },
     "8483512": {
@@ -532,8 +538,8 @@
     },
     "8484210": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "Perreault (lower body) was put on injured reserve Thursday, per Mollie Walker of the New York Post.",
+      "status": "Injured Reserve",
       "team": "NYR"
     },
     "8484287": {
@@ -541,12 +547,6 @@
       "description": "McWard (lower body) is considered day-to-day, per David Alter of The Hockey News on Saturday.",
       "status": "Injured Reserve",
       "team": "TOR"
-    },
-    "8484762": {
-      "injured": true,
-      "description": "Sennecke (upper body) is now considered day-to-day, Zach Cavanagh of The Sporting Tribune reports Wednesday.",
-      "status": "Injured Reserve",
-      "team": "ANA"
     },
     "8484797": {
       "injured": true,
