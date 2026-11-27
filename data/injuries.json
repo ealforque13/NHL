@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-27T13:11:39.180130+00:00",
+  "updatedAt": "2026-11-27T18:55:41.127528+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8475151": {
       "injured": true,
-      "description": "ir",
+      "description": "Palmieri is expected to miss the next 6-8 months with a torn ACL and meniscus in his right knee, the team announced Friday.",
       "status": "Injured Reserve",
       "team": "NYI"
     },
@@ -34,8 +34,8 @@
     },
     "8475786": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "EDM"
     },
     "8475810": {
@@ -98,12 +98,6 @@
       "status": "Injured Reserve",
       "team": "BUF"
     },
-    "8476925": {
-      "injured": true,
-      "description": "Sissons (lower body) is day-to-day, per David Alter of The Hockey News on Sunday.",
-      "status": "Injured Reserve",
-      "team": "TOR"
-    },
     "8476979": {
       "injured": true,
       "description": "Gustafsson (upper body) was placed on injured reserve Monday, per the NHL media site.",
@@ -122,12 +116,6 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
-    "8477402": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "STL"
-    },
     "8477406": {
       "injured": true,
       "description": "Janmark (undisclosed) does not have a timetable for his return from injury.",
@@ -145,12 +133,6 @@
       "description": "Wood (undisclosed) was transferred to long-term injured reserve Wednesday, David Alter of The Hockey News reports.",
       "status": "Injured Reserve",
       "team": "TOR"
-    },
-    "8477444": {
-      "injured": true,
-      "description": "Burakovsky (lower body) will be with the Senators for their four-game road trip and is expected to play at some point, Bruce Garrioch of Postmedia reports Wednesday.",
-      "status": "Injured Reserve",
-      "team": "OTT"
     },
     "8477479": {
       "injured": true,
@@ -200,11 +182,11 @@
       "status": "Injured Reserve",
       "team": "OTT"
     },
-    "8478173": {
+    "8478057": {
       "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "OTT"
+      "description": "out",
+      "status": "Out",
+      "team": "TOR"
     },
     "8478416": {
       "injured": true,
@@ -256,13 +238,7 @@
     },
     "8479385": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
-      "team": "WSH"
-    },
-    "8479576": {
-      "injured": true,
-      "description": "Desharnais (appendectomy) is slated to miss Wednesday's game against the Flyers, Tarik El-Bashir of Monumental Sports Network reports.",
+      "description": "Kyrou (upper body) was put on injured reserve Friday.",
       "status": "Injured Reserve",
       "team": "WSH"
     },
@@ -272,23 +248,11 @@
       "status": "Injured Reserve",
       "team": "UTA"
     },
-    "8479941": {
-      "injured": true,
-      "description": "Danforth (upper body) was placed on injured reserve Thursday, per the NHL media site.",
-      "status": "Injured Reserve",
-      "team": "BUF"
-    },
     "8479981": {
       "injured": true,
       "description": "Gadjovich (neck) took the ice Thursday in a non-contact sweater, George Richards of Florida Hockey Now reports.",
       "status": "Injured Reserve",
       "team": "FLA"
-    },
-    "8480028": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "CGY"
     },
     "8480068": {
       "injured": true,
@@ -314,12 +278,6 @@
       "status": "Injured Reserve",
       "team": "MIN"
     },
-    "8480817": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "CAR"
-    },
     "8480831": {
       "injured": true,
       "description": "Regula (undisclosed) was designated for long-term injured reserve Thursday.",
@@ -328,8 +286,8 @@
     },
     "8480842": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "EDM"
     },
     "8480860": {
@@ -344,11 +302,11 @@
       "status": "Injured Reserve",
       "team": "WSH"
     },
-    "8480893": {
+    "8480990": {
       "injured": true,
-      "description": "Marchenko (lower body) is expected back in the lineup against the Bruins on Friday after telling reporters, \"My leg feels perfect and I'm ready to go,\" Mark Masters of TSN reports.",
-      "status": "Injured Reserve",
-      "team": "TOR"
+      "description": "Chisholm (illness) is expected to miss Friday's game against Calgary, per Amanda Stein of the Devils' official site.",
+      "status": "Out",
+      "team": "NJD"
     },
     "8480995": {
       "injured": true,
@@ -379,12 +337,6 @@
       "description": "Byram (upper body) didn't accompany his teammates on Chicago's three-game road trip, per Mark Lazerus of The Athletic on Saturday.",
       "status": "Injured Reserve",
       "team": "CHI"
-    },
-    "8481580": {
-      "injured": true,
-      "description": "ir",
-      "status": "Injured Reserve",
-      "team": "STL"
     },
     "8481582": {
       "injured": true,
@@ -476,6 +428,12 @@
       "status": "Out",
       "team": "CBJ"
     },
+    "8483500": {
+      "injured": true,
+      "description": "Ostlund (undisclosed) is expected to miss Friday's game against Pittsburgh, per Rachel Lenzi of The Buffalo News.",
+      "status": "Out",
+      "team": "BUF"
+    },
     "8483512": {
       "injured": true,
       "description": "Savoie (lower body) was shifted to long-term injured reserve Thursday.",
@@ -484,8 +442,8 @@
     },
     "8483516": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "STL"
     },
     "8483546": {
@@ -524,6 +482,12 @@
       "status": "Injured Reserve",
       "team": "CHI"
     },
+    "8484145": {
+      "injured": true,
+      "description": "Benson (upper body) will not play in Friday's home clash against the Penguins, per Rachel Lenzi of The Buffalo News.",
+      "status": "Out",
+      "team": "BUF"
+    },
     "8484149": {
       "injured": true,
       "description": "ir",
@@ -532,8 +496,8 @@
     },
     "8484153": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "ANA"
     },
     "8484210": {
@@ -547,6 +511,12 @@
       "description": "McWard (lower body) is considered day-to-day, per David Alter of The Hockey News on Saturday.",
       "status": "Injured Reserve",
       "team": "TOR"
+    },
+    "8484387": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "PHI"
     },
     "8484797": {
       "injured": true,
