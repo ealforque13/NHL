@@ -5,7 +5,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-26T14:54:24.109Z",
   "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T12:37:18.179491+00:00",
+  "cachedAtUTC": "2026-11-27T13:59:06.478428+00:00",
   "forwards": [
     [
       {
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Connor Hellebuyck",
-      "number": 37,
+      "name": "Jake Allen",
+      "number": 34,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2465,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2465/NJD_37__Hellebuyck.png",
+      "sourcePlayerId": 1305,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1305/NJD_34_Allen.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jake Allen",
-      "number": 34,
+      "name": "Connor Hellebuyck",
+      "number": 37,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1305,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1305/NJD_34_Allen.png",
+      "sourcePlayerId": 2465,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2465/NJD_37__Hellebuyck.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

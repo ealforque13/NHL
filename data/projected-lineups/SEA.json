@@ -3,9 +3,9 @@
   "teamName": "Seattle Kraken",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T15:10:31.025Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T12:37:32.748528+00:00",
+  "sourceUpdatedAt": "2026-11-27T13:39:19.367Z",
+  "sourceDescription": "Geoff Baker",
+  "cachedAtUTC": "2026-11-27T13:59:21.147519+00:00",
   "forwards": [
     [
       {
@@ -73,12 +73,12 @@
     ],
     [
       {
-        "name": "Ryan Winterton",
-        "number": 26,
+        "name": "Chandler Stephenson",
+        "number": 9,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 30837,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30837/SEA_26__Winterton.png",
+        "sourcePlayerId": 2538,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2538/SEA_9_Stephenson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -93,12 +93,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Chandler Stephenson",
-        "number": 9,
+        "name": "Ryan Winterton",
+        "number": 26,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2538,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2538/SEA_9_Stephenson.png",
+        "sourcePlayerId": 30837,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30837/SEA_26__Winterton.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

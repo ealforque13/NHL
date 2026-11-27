@@ -5,7 +5,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-27T02:19:11.246Z",
   "sourceDescription": "Wes Minke",
-  "cachedAtUTC": "2026-11-27T12:36:55.229190+00:00",
+  "cachedAtUTC": "2026-11-27T13:58:43.432203+00:00",
   "forwards": [
     [
       {
@@ -193,12 +193,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Erik Gudbranson",
+        "number": 44,
         "position": "RD",
         "positionName": "Right Defense",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 1710,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1710/CBJ_44_Gudbranson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -375,22 +375,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Denton Mateychuk",
-        "number": 5,
+        "name": "Zach Werenski",
+        "number": 8,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 31514,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+        "sourcePlayerId": 2479,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2479/CBJ_8_Werenski.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Werenski",
-        "number": 8,
+        "name": "Erik Gudbranson",
+        "number": 44,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2479,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2479/CBJ_8_Werenski.png",
+        "sourcePlayerId": 1710,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1710/CBJ_44_Gudbranson.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Cam Talbot",
-      "number": 33,
+      "name": "Jet Greaves",
+      "number": null,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 1059,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1059/CBJ_33__Talbot.png",
+      "sourcePlayerId": 29751,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29751/CBJ_73__Greaves.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Jet Greaves",
-      "number": null,
+      "name": "Cam Talbot",
+      "number": 33,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29751,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29751/CBJ_73__Greaves.png",
+      "sourcePlayerId": 1059,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1059/CBJ_33__Talbot.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -422,8 +422,8 @@
     {
       "name": "Conor Garland",
       "number": 8,
-      "position": "IR2",
-      "positionName": "Injured Reserve 2",
+      "position": "IR1",
+      "positionName": "Injured Reserve 1",
       "sourcePlayerId": 3791,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3791/CBJ_83_Garland.png",
       "injuryStatus": "ir",
@@ -432,11 +432,21 @@
     {
       "name": "Mathieu Olivier",
       "number": 24,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
+      "position": "IR2",
+      "positionName": "Injured Reserve 2",
       "sourcePlayerId": 23595,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/23595/CBJ_24_Olivier.png",
-      "injuryStatus": "dtd",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Denton Mateychuk",
+      "number": 5,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 31514,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/31514/CBJ_5__Mateychuk.png",
+      "injuryStatus": "out",
       "gameTimeDecision": false
     }
   ]
