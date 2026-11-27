@@ -3,9 +3,9 @@
   "teamName": "New York Islanders",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:32:41.936Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T14:59:51.774252+00:00",
+  "sourceUpdatedAt": "2026-11-27T15:33:46.219Z",
+  "sourceDescription": "Stefen Rosner",
+  "cachedAtUTC": "2026-11-27T16:06:38.602157+00:00",
   "forwards": [
     [
       {
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Ilya Sorokin",
-      "number": 30,
+      "name": "Semyon Varlamov",
+      "number": 40,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 25264,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25264/NYI_30_Sorokin.png",
+      "sourcePlayerId": 1545,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1545/NYI_40_Varlamov.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Semyon Varlamov",
-      "number": 40,
+      "name": "Ilya Sorokin",
+      "number": 30,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1545,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1545/NYI_40_Varlamov.png",
+      "sourcePlayerId": 25264,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/25264/NYI_30_Sorokin.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
