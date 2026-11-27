@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T01:14:14.112199+00:00",
+  "updatedAt": "2026-11-27T07:14:54.700338+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8475151": {
@@ -526,8 +526,8 @@
     },
     "8484149": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "COL"
     },
     "8484153": {
