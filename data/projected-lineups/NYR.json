@@ -3,9 +3,9 @@
   "teamName": "New York Rangers",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:25:50.645Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T01:22:12.206521+00:00",
+  "sourceUpdatedAt": "2026-11-27T02:25:30.722Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-27T02:41:22.393294+00:00",
   "forwards": [
     [
       {
@@ -61,24 +61,24 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gabriel Perreault",
-        "number": 94,
+        "name": "Eeli Tolvanen",
+        "number": 17,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 35165,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
+        "sourcePlayerId": 2787,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Eeli Tolvanen",
-        "number": 17,
+        "name": "Juuso Parssinen",
+        "number": 16,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 2787,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2787/NYR_17__Tolvanen.png",
+        "sourcePlayerId": 30659,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30659/NYR_71_Parssinen.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -207,12 +207,12 @@
   "powerPlay": [
     [
       {
-        "name": "Alexis Lafrenière",
-        "number": 13,
+        "name": "Tye Kartye",
+        "number": 24,
         "position": "SK1",
         "positionName": "Skater 1",
-        "sourcePlayerId": 28771,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28771/NYR_13_Lafreniere.png",
+        "sourcePlayerId": 29846,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -227,12 +227,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Gabriel Perreault",
-        "number": 94,
+        "name": "Alexis Lafrenière",
+        "number": 13,
         "position": "SK3",
         "positionName": "Skater 3",
-        "sourcePlayerId": 35165,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
+        "sourcePlayerId": 28771,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28771/NYR_13_Lafreniere.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -269,12 +269,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Tye Kartye",
-        "number": 24,
+        "name": "Max Sasson",
+        "number": null,
         "position": "SK2",
         "positionName": "Skater 2",
-        "sourcePlayerId": 29846,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
+        "sourcePlayerId": 30007,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -476,6 +476,16 @@
       "positionName": "Injured Reserve 7",
       "sourcePlayerId": 2603,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2603/NYR_28__Bjorkstrand.png",
+      "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Gabriel Perreault",
+      "number": 94,
+      "position": "IR8",
+      "positionName": "Injured Reserve 8",
+      "sourcePlayerId": 35165,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
       "injuryStatus": "out",
       "gameTimeDecision": false
     }

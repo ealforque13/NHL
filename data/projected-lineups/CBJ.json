@@ -3,9 +3,9 @@
   "teamName": "Columbus Blue Jackets",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T14:55:15.042Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T01:21:43.166232+00:00",
+  "sourceUpdatedAt": "2026-11-27T02:19:11.246Z",
+  "sourceDescription": "Wes Minke",
+  "cachedAtUTC": "2026-11-27T02:40:53.311770+00:00",
   "forwards": [
     [
       {
@@ -73,10 +73,20 @@
     ],
     [
       {
-        "name": "Cole Sillinger",
-        "number": 4,
+        "name": "Sean Monahan",
+        "number": 23,
         "position": "LW",
         "positionName": "Left Wing",
+        "sourcePlayerId": 2138,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Cole Sillinger",
+        "number": 4,
+        "position": "C",
+        "positionName": "Center",
         "sourcePlayerId": 34454,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34454/CBJ_4_Sillinger.png",
         "injuryStatus": null,
@@ -85,32 +95,22 @@
       {
         "name": "Jack Williams",
         "number": null,
-        "position": "C",
-        "positionName": "Center",
-        "sourcePlayerId": 38425,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38425/CBJ_92__Williams.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Sean Monahan",
-        "number": 23,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2138,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2138/CBJ_23_Monahan.png",
+        "sourcePlayerId": 38425,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38425/CBJ_92__Williams.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
     ],
     [
       {
-        "name": "Mikael Pyyhtia",
-        "number": 82,
+        "name": "Ryan Lomberg",
+        "number": 94,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 36330,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36330/CBJ_82_Pyyhtia.png",
+        "sourcePlayerId": 3905,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -125,12 +125,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Ryan Lomberg",
-        "number": 94,
+        "name": "Mikael Pyyhtia",
+        "number": 82,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3905,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3905/CBJ_94_Lomberg.png",
+        "sourcePlayerId": 36330,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36330/CBJ_82_Pyyhtia.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
