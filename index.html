@@ -9484,7 +9484,7 @@ document.addEventListener('DOMContentLoaded', function () {
    const board=byId('parlay-board');
    board.innerHTML=`<div class="pb-grid">${games.map(g=>{
      const picks=money?[{team:g.away,name:g.away},{team:g.home,name:g.home}]:results.filter(r=>(r.team===g.away&&r.opponent===g.home)||(r.team===g.home&&r.opponent===g.away)).sort((a,b)=>(m==='goals'?(boardHistoricalRate(b)??-1)-(boardHistoricalRate(a)??-1):b.score-a.score)||b.nSeason-a.nSeason||a.name.localeCompare(b.name)).slice(0,count);
-     return `<article class="pb-game"><header class="pb-game-header"><strong>${safe(g.away)} @ ${safe(g.home)}</strong><small>${safe(boardGameTime(g,feed,date))}</small></header>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong><div class="pb-statline">${money?'':`<span title="Weighted historical hit rate; not a calibrated forecast"><small class="pb-subtitle">Model</small><b class="pb-model">${boardHistoricalRate(r)===null?'—':Math.round(100*boardHistoricalRate(r))+'%'}</b></span>`}<span title="FanDuel decimal odds"><small class="pb-subtitle">Odds</small><b class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</b></span></div></div></div>`;}).join('')}</article>`;
+     return `<article class="pb-game"><header class="pb-game-header"><strong>${safe(g.away)} @ ${safe(g.home)}</strong><small>${safe(boardGameTime(g,feed,date))}</small></header>${Array.from({length:count},(_,i)=>{const r=picks[i];if(!r)return '<div class="pb-card pb-empty">—</div>';return `<div class="pb-card"><span class="pb-team" style="background:${boardTeamColors[r.team]||'#365579'};color:${['ANA','BOS','LAK','NSH','PIT','SEA','UTA','VGK','EDM','PHI'].includes(r.team)?'#111':'#fff'}">${safe(r.team)}</span><div class="pb-player"><strong>${safe(r.name)}</strong><div class="pb-statline">${money?'':`<span title="Weighted historical hit rate; not a calibrated forecast"><b class="pb-model">${boardHistoricalRate(r)===null?'—':Math.round(100*boardHistoricalRate(r))+'%'}</b><small class="pb-subtitle">Model</small></span>`}<span title="FanDuel decimal odds"><b class="pb-price">${oddsButton(priceFor(feed,date,g.away,g.home,m,line,money?'':r.name,r.team),date,g.away,g.home,m,line,money?'':r.name,r.team)}</b><small class="pb-subtitle">Odds</small></span></div></div></div>`;}).join('')}</article>`;
    }).join('')}</div>`;
  }
  async function renderParlay(){
@@ -9625,7 +9625,9 @@ new MutationObserver(()=>{if(page.classList.contains('hidden'))reset();}).observ
 </script>
 <style id="pb-stat-subtitles">
 #parlay-board .pb-statline>span{flex-direction:column;gap:2px;align-items:center}
-#parlay-board .pb-statline .pb-subtitle{display:block;font-size:10px;line-height:1.1;font-weight:600;margin:0;color:#fff}
+#parlay-board .pb-statline .pb-subtitle{display:block;font-size:10px;line-height:1.1;font-weight:400;margin:0;color:#fff}
+#parlay-board .pb-statline b,#parlay-board .pb-statline .parlay-price{font-weight:400}
+#parlay-board .pb-statline b{display:flex;align-items:center;justify-content:center;min-height:calc(1.15em + 6px)}
 #parlay-board .pb-statline .pb-model{color:#fff!important}
 html.theme-light #parlay-board .pb-statline .pb-model,html.theme-light #parlay-board .pb-statline .pb-subtitle{color:#000!important}
 </style>
@@ -9638,12 +9640,14 @@ html.theme-light #parlay-board .pb-statline .pb-model,html.theme-light #parlay-b
 #parlay-board .pb-game .pb-card{display:flex;align-items:center;gap:8px;background:transparent;border:0;border-radius:0;padding:12px 0;min-height:58px;color:inherit}
 #parlay-board .pb-game .pb-card+.pb-card{border-top:1px solid #64748b44}
 #parlay-board .pb-player>strong{white-space:normal;overflow-wrap:anywhere;font-size:17px;line-height:1.2}
-#parlay-board .pb-statline{gap:12px}
+#parlay-board .pb-statline{gap:8px}
 #parlay-board .pb-statline>span{min-width:48px}
+#parlay-board .pb-statline>span+span{border-left:1px solid #64748b55;padding-left:8px}
+html.theme-light #parlay-board .pb-statline>span+span{border-left-color:#cbd5e1}
 html.theme-light #parlay-board .pb-game{background:#eef2f8;color:#000;border-color:#d7dfe9}
 html.theme-light #parlay-board .pb-game .pb-card{background:transparent;color:#000}
 @container (max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}#parlay-board .pb-game{padding:10px}#parlay-board .pb-player>strong{font-size:15px}#parlay-board .pb-statline{gap:6px}#parlay-board .pb-statline b,#parlay-board .pb-statline .parlay-price{font-size:20px}}
+@media(max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}#parlay-board .pb-game{padding:10px}#parlay-board .pb-player>strong{font-size:15px}#parlay-board .pb-statline{gap:5px}#parlay-board .pb-statline>span+span{padding-left:5px}#parlay-board .pb-statline b,#parlay-board .pb-statline .parlay-price{font-size:20px}}
 </style>
 </body>
 </html>
