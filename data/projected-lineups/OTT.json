@@ -5,7 +5,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-27T19:46:04.847Z",
   "sourceDescription": "Ottawa Senators",
-  "cachedAtUTC": "2026-11-28T08:32:33.573228+00:00",
+  "cachedAtUTC": "2026-11-28T14:53:59.705279+00:00",
   "forwards": [
     [
       {
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Linus Ullmark",
-      "number": 35,
+      "name": "Samuel Ersson",
+      "number": 33,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2534,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2534/OTT_35_Ullmark.png",
+      "sourcePlayerId": 29149,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29149/OTT_30__Ersson.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Samuel Ersson",
-      "number": 33,
+      "name": "Linus Ullmark",
+      "number": 35,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29149,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29149/OTT_30__Ersson.png",
+      "sourcePlayerId": 2534,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2534/OTT_35_Ullmark.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }

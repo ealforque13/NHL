@@ -5,7 +5,7 @@
   "source": "Daily Faceoff",
   "sourceUpdatedAt": "2026-11-27T16:40:11.987Z",
   "sourceDescription": "Mitchell Clinton",
-  "cachedAtUTC": "2026-11-28T08:32:56.364929+00:00",
+  "cachedAtUTC": "2026-11-28T14:54:22.797334+00:00",
   "forwards": [
     [
       {
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Stuart Skinner",
-      "number": 74,
+      "name": "Nico Daws",
+      "number": 50,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 4741,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4741/WPG_74__Skinner.png",
+      "sourcePlayerId": 29186,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29186/WPG_Frnt.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Nico Daws",
-      "number": 50,
+      "name": "Stuart Skinner",
+      "number": 74,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 29186,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29186/WPG_Frnt.png",
+      "sourcePlayerId": 4741,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/4741/WPG_74__Skinner.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
