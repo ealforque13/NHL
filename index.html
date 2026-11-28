@@ -6718,7 +6718,7 @@ html.theme-light body #overview #matchup-intelligence#matchup-intelligence .hois
       <button type="button" role="tab" aria-selected="false" data-parlay-filter="shots">Shots</button>
       <button type="button" role="tab" aria-selected="false" data-parlay-filter="moneyline">Moneyline</button>
     </div>
-  <article class="panel section-panel" style="min-height:180px">
+  <article class="parlay-open-layout" style="min-height:180px">
     <div id="hoist-parlay-content" data-filter="goals" role="tabpanel">
 <input type="date" id="parlay-date" hidden aria-hidden="true" tabindex="-1"><div class="pb-titlebar"><h2 id="pb-market-title">ANYTIME GOAL</h2><div id="pb-shot-lines" role="group" aria-label="Shots on goal threshold" hidden><button type="button" data-shot-line="1" aria-pressed="true">1+</button><button type="button" data-shot-line="2" aria-pressed="false">2+</button><button type="button" data-shot-line="3" aria-pressed="false">3+</button><button type="button" data-shot-line="4" aria-pressed="false">4+</button><button type="button" data-shot-line="5" aria-pressed="false">5+</button></div></div>
 <p id="parlay-status" class="muted" role="status"></p><div id="parlay-board" class="parlay-scroll" aria-label="Matchup board"></div><div class="parlay-scroll" hidden><table class="parlay-table"><thead id="parlay-head"></thead><tbody id="parlay-rows"></tbody></table></div></div>
@@ -9659,6 +9659,10 @@ html.theme-light #parlay-board .pb-game .pb-card{background:transparent;color:#0
 #parlay-board .pb-live{display:inline-block;color:#f87171;font-size:11px;font-weight:700;margin-left:8px;white-space:nowrap}
 html.theme-light #parlay-board .pb-live{color:#dc2626}
 @media(max-width:760px){#parlay-board .pb-name strong{font-size:15px}}
+</style>
+<style id="pb-open-layout">
+#parlay .parlay-open-layout{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;margin:16px 0 0;min-width:0}
+#parlay .parlay-open-layout .pb-titlebar{padding:0;margin:0 0 12px}
 </style>
 </body>
 </html>
