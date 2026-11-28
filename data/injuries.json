@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T01:08:10.552799+00:00",
+  "updatedAt": "2026-11-28T07:07:34.914923+00:00",
   "source": "Realtime Sports API",
   "players": {
     "8474141": {
@@ -211,6 +211,12 @@
       "description": "out",
       "status": "Out",
       "team": "TOR"
+    },
+    "8478413": {
+      "injured": true,
+      "description": "Greenway missed Friday's game versus the Rangers due to an upper-body injury, Ben Pope of the Chicago Sun-Times reports.",
+      "status": "Day-To-Day",
+      "team": "CHI"
     },
     "8478416": {
       "injured": true,
@@ -472,7 +478,7 @@
     },
     "8483500": {
       "injured": true,
-      "description": "Ostlund (undisclosed) was placed on injured reserve Friday, per the NHL Media Site.",
+      "description": "Ostlund (undisclosed) will miss at least one more and likely more time than that, Mike Harrington of The Buffalo News reports.",
       "status": "Injured Reserve",
       "team": "BUF"
     },
