@@ -3,9 +3,9 @@
   "teamName": "Toronto Maple Leafs",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34668/TOR_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T17:41:11.536Z",
-  "sourceDescription": "David Alter",
-  "cachedAtUTC": "2026-11-28T14:54:14.388801+00:00",
+  "sourceUpdatedAt": "2026-11-28T15:48:08.405Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-28T15:52:21.930628+00:00",
   "forwards": [
     [
       {
@@ -161,28 +161,6 @@
     ],
     [
       {
-        "name": "Oliver Ekman-Larsson",
-        "number": 95,
-        "position": "LD",
-        "positionName": "Left Defense",
-        "sourcePlayerId": 1172,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Chris Tanev",
-        "number": 8,
-        "position": "RD",
-        "positionName": "Right Defense",
-        "sourcePlayerId": 1494,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1494/TOR_8_Tanev.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Morgan Rielly",
         "number": 44,
         "position": "LD",
@@ -201,6 +179,28 @@
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
         "injuryStatus": null,
         "gameTimeDecision": false
+      }
+    ],
+    [
+      {
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
+        "position": "LD",
+        "positionName": "Left Defense",
+        "sourcePlayerId": 1172,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Nick Blankenburg",
+        "number": 3,
+        "position": "RD",
+        "positionName": "Right Defense",
+        "sourcePlayerId": 36299,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36299/TOR_3__Blankenburg.png",
+        "injuryStatus": null,
+        "gameTimeDecision": true
       }
     ]
   ],
@@ -323,54 +323,54 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Brandon Duhaime",
-        "number": 24,
-        "position": "SK2",
-        "positionName": "Skater 2",
-        "sourcePlayerId": 26984,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26984/TOR_24_Duhaime.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Jake McCabe",
-        "number": 22,
-        "position": "SK3",
-        "positionName": "Skater 3",
-        "sourcePlayerId": 2349,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2349/TOR_22_McCabe.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      },
-      {
-        "name": "Chris Tanev",
-        "number": 8,
-        "position": "SK4",
-        "positionName": "Skater 4",
-        "sourcePlayerId": 1494,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1494/TOR_8_Tanev.png",
-        "injuryStatus": null,
-        "gameTimeDecision": false
-      }
-    ],
-    [
-      {
         "name": "Colton Sissons",
         "number": 10,
-        "position": "SK1",
-        "positionName": "Skater 1",
+        "position": "SK2",
+        "positionName": "Skater 2",
         "sourcePlayerId": 2030,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2030/TOR_15_Sissons.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
+        "name": "Oliver Ekman-Larsson",
+        "number": 95,
+        "position": "SK3",
+        "positionName": "Skater 3",
+        "sourcePlayerId": 1172,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1172/TOR_95_Ekman-Larsson.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Troy Stecher",
+        "number": 28,
+        "position": "SK4",
+        "positionName": "Skater 4",
+        "sourcePlayerId": 2702,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      }
+    ],
+    [
+      {
         "name": "Nick Paul",
         "number": 20,
-        "position": "SK2",
-        "positionName": "Skater 2",
+        "position": "SK1",
+        "positionName": "Skater 1",
         "sourcePlayerId": 2357,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2357/TOR_20_Paul.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Brandon Duhaime",
+        "number": 24,
+        "position": "SK2",
+        "positionName": "Skater 2",
+        "sourcePlayerId": 26984,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/26984/TOR_24_Duhaime.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -385,12 +385,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Troy Stecher",
-        "number": 28,
+        "name": "Jake McCabe",
+        "number": 22,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2702,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2702/TOR_28__Stecher.png",
+        "sourcePlayerId": 2349,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2349/TOR_22_McCabe.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -398,22 +398,22 @@
   ],
   "goalies": [
     {
-      "name": "Anthony Stolarz",
-      "number": 41,
+      "name": "Sergei Bobrovsky",
+      "number": 72,
       "position": "G1",
       "positionName": "Starting Goalie",
-      "sourcePlayerId": 2432,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
+      "sourcePlayerId": 1117,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     },
     {
-      "name": "Sergei Bobrovsky",
-      "number": 72,
+      "name": "Anthony Stolarz",
+      "number": 41,
       "position": "G2",
       "positionName": "Backup Goalie",
-      "sourcePlayerId": 1117,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1117/TOR_72_Bobrovsky.png",
+      "sourcePlayerId": 2432,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2432/TOR_41_Stolarz.png",
       "injuryStatus": null,
       "gameTimeDecision": false
     }
@@ -440,12 +440,12 @@
       "gameTimeDecision": false
     },
     {
-      "name": "Nick Blankenburg",
-      "number": 3,
-      "position": "IR4",
-      "positionName": "Injured Reserve 4",
-      "sourcePlayerId": 36299,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/36299/TOR_3__Blankenburg.png",
+      "name": "Chris Tanev",
+      "number": 8,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 1494,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1494/TOR_8_Tanev.png",
       "injuryStatus": "ir",
       "gameTimeDecision": false
     },
