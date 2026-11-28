@@ -3,9 +3,9 @@
   "teamName": "Buffalo Sabres",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2723/BUF_Frnt.webp",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T16:33:02.857Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-27T20:59:40.034081+00:00",
+  "sourceUpdatedAt": "2026-11-28T00:48:43.994Z",
+  "sourceDescription": "Matthew Fairburn",
+  "cachedAtUTC": "2026-11-28T03:33:42.338270+00:00",
   "forwards": [
     [
       {
@@ -89,6 +89,16 @@
         "positionName": "Center",
         "sourcePlayerId": 28056,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28056/BUF_9_Norris.png",
+        "injuryStatus": null,
+        "gameTimeDecision": false
+      },
+      {
+        "name": "Conor Sheary",
+        "number": 43,
+        "position": "RW",
+        "positionName": "Right Wing",
+        "sourcePlayerId": 2568,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2568/BUF_43_Sheary.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -375,12 +385,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Zach Metsa",
-        "number": 73,
+        "name": "Louis Crevier",
+        "number": 46,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 28387,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/28387/BUF_73__Metsa.png",
+        "sourcePlayerId": 29897,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29897/BUF_46_Crevier.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }

@@ -3,9 +3,9 @@
   "teamName": "Colorado Avalanche",
   "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30436/COL_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-26T15:02:44.248Z",
-  "sourceDescription": "Last Game (2026-11-25)",
-  "cachedAtUTC": "2026-11-27T20:59:50.455623+00:00",
+  "sourceUpdatedAt": "2026-11-27T21:01:33.555Z",
+  "sourceDescription": "Projected",
+  "cachedAtUTC": "2026-11-28T03:33:52.693099+00:00",
   "forwards": [
     [
       {
@@ -29,12 +29,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Martin Necas",
-        "number": 88,
+        "name": "T.J. Hughes",
+        "number": 13,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 2804,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2804/COL_88_Necas.png",
+        "sourcePlayerId": 38896,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38896/COL_13_Hughes_.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -93,12 +93,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "T.J. Hughes",
-        "number": 13,
+        "name": "Taylor Makar",
+        "number": 16,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 38896,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38896/COL_13_Hughes_.png",
+        "sourcePlayerId": 38433,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/38433/COL_16__Makar.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -237,12 +237,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Martin Necas",
-        "number": 88,
+        "name": "Sam Malinski",
+        "number": 70,
         "position": "SK4",
         "positionName": "Skater 4",
-        "sourcePlayerId": 2804,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2804/COL_88_Necas.png",
+        "sourcePlayerId": 37993,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/37993/COL_70_Malinski.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -456,6 +456,16 @@
       "positionName": "Injured Reserve 5",
       "sourcePlayerId": 33176,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/33176/COL_54__Brindley.png",
+      "injuryStatus": "dtd",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Martin Necas",
+      "number": 88,
+      "position": "IR6",
+      "positionName": "Injured Reserve 6",
+      "sourcePlayerId": 2804,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2804/COL_88_Necas.png",
       "injuryStatus": "dtd",
       "gameTimeDecision": false
     }

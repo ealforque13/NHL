@@ -3,9 +3,9 @@
   "teamName": "Vegas Golden Knights",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T20:50:48.602Z",
+  "sourceUpdatedAt": "2026-11-28T00:07:29.353Z",
   "sourceDescription": "@SinBinVegas",
-  "cachedAtUTC": "2026-11-27T21:00:36.293321+00:00",
+  "cachedAtUTC": "2026-11-28T03:34:38.230874+00:00",
   "forwards": [
     [
       {
@@ -36,7 +36,7 @@
         "sourcePlayerId": 1779,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1779/VGK_61_Stone.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       }
     ],
     [
@@ -214,7 +214,7 @@
         "sourcePlayerId": 1779,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1779/VGK_61_Stone.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Tomas Hertl",
@@ -330,7 +330,7 @@
         "sourcePlayerId": 1779,
         "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1779/VGK_61_Stone.png",
         "injuryStatus": null,
-        "gameTimeDecision": false
+        "gameTimeDecision": true
       },
       {
         "name": "Jeremy Lauzon",
@@ -427,6 +427,16 @@
       "sourcePlayerId": 2473,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2473/VGK_15_Hanifin.png",
       "injuryStatus": "out",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Mark Stone",
+      "number": 61,
+      "position": "IR3",
+      "positionName": "Injured Reserve 3",
+      "sourcePlayerId": 1779,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/1779/VGK_61_Stone.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]

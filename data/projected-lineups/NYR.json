@@ -1,20 +1,20 @@
 {
   "team": "NYR",
   "teamName": "New York Rangers",
-  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3934/NYR-Front_2024_.webp",
+  "teamFrontJerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T16:33:56.588Z",
-  "sourceDescription": "Projected",
-  "cachedAtUTC": "2026-11-27T21:00:13.342204+00:00",
+  "sourceUpdatedAt": "2026-11-27T22:10:46.871Z",
+  "sourceDescription": "Mollie Walker",
+  "cachedAtUTC": "2026-11-28T03:34:15.452135+00:00",
   "forwards": [
     [
       {
-        "name": "Will Cuylle",
-        "number": 50,
+        "name": "Taylor Raddysh",
+        "number": 14,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29725,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29725/NYR_50_Cuylle.png",
+        "sourcePlayerId": 3922,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3922/NYR_14_Raddysh.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -41,12 +41,12 @@
     ],
     [
       {
-        "name": "Tye Kartye",
-        "number": 24,
+        "name": "Will Cuylle",
+        "number": 50,
         "position": "LW",
         "positionName": "Left Wing",
-        "sourcePlayerId": 29846,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
+        "sourcePlayerId": 29725,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29725/NYR_50_Cuylle.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -61,12 +61,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Juuso Parssinen",
-        "number": 16,
+        "name": "Tye Kartye",
+        "number": 24,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 30659,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30659/NYR_71_Parssinen.png",
+        "sourcePlayerId": 29846,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/29846/NYR_24__Kartye.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -83,12 +83,12 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Noah Laba",
-        "number": 42,
+        "name": "Max Sasson",
+        "number": null,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 34399,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34399/NYR_42_Laba.png",
+        "sourcePlayerId": 30007,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
@@ -115,22 +115,22 @@
         "gameTimeDecision": false
       },
       {
-        "name": "Max Sasson",
-        "number": null,
+        "name": "Noah Laba",
+        "number": 42,
         "position": "C",
         "positionName": "Center",
-        "sourcePlayerId": 30007,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/30007/NYR_Frnt.png",
+        "sourcePlayerId": 34399,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/34399/NYR_42_Laba.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       },
       {
-        "name": "Taylor Raddysh",
-        "number": 14,
+        "name": "Matt Rempe",
+        "number": 73,
         "position": "RW",
         "positionName": "Right Wing",
-        "sourcePlayerId": 3922,
-        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/3922/NYR_14_Raddysh.png",
+        "sourcePlayerId": 32523,
+        "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/32523/NYR_73_Rempe.png",
         "injuryStatus": null,
         "gameTimeDecision": false
       }
@@ -450,6 +450,16 @@
       "gameTimeDecision": false
     },
     {
+      "name": "Gabriel Perreault",
+      "number": 94,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 35165,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
+      "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
       "name": "Alberts Smits",
       "number": 12,
       "position": "IR5",
@@ -476,16 +486,6 @@
       "positionName": "Injured Reserve 7",
       "sourcePlayerId": 2603,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2603/NYR_28__Bjorkstrand.png",
-      "injuryStatus": "out",
-      "gameTimeDecision": false
-    },
-    {
-      "name": "Gabriel Perreault",
-      "number": 94,
-      "position": "IR8",
-      "positionName": "Injured Reserve 8",
-      "sourcePlayerId": 35165,
-      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/35165/NYR_94_Perreault.png",
       "injuryStatus": "out",
       "gameTimeDecision": false
     }

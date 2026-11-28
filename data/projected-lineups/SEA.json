@@ -3,9 +3,9 @@
   "teamName": "Seattle Kraken",
   "teamFrontJerseyUrl": null,
   "source": "Daily Faceoff",
-  "sourceUpdatedAt": "2026-11-27T18:20:56.636Z",
-  "sourceDescription": "Mike Benton",
-  "cachedAtUTC": "2026-11-27T21:00:21.659087+00:00",
+  "sourceUpdatedAt": "2026-11-28T03:13:39.733Z",
+  "sourceDescription": "Seattle Kraken",
+  "cachedAtUTC": "2026-11-28T03:34:23.776882+00:00",
   "forwards": [
     [
       {
@@ -415,7 +415,7 @@
       "sourcePlayerId": 2065,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2065/SEA_31_Grubauer.png",
       "injuryStatus": null,
-      "gameTimeDecision": false
+      "gameTimeDecision": true
     }
   ],
   "injuries": [
@@ -437,6 +437,16 @@
       "sourcePlayerId": 27811,
       "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/27811/SEA_42_Douglas.png",
       "injuryStatus": "ir",
+      "gameTimeDecision": false
+    },
+    {
+      "name": "Philipp Grubauer",
+      "number": 31,
+      "position": "IR4",
+      "positionName": "Injured Reserve 4",
+      "sourcePlayerId": 2065,
+      "jerseyUrl": "https://api.dailyfaceoff.com/uploads/player/jersey/2065/SEA_31_Grubauer.png",
+      "injuryStatus": "dtd",
       "gameTimeDecision": false
     }
   ]
