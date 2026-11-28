@@ -1,7 +1,13 @@
 {
-  "updatedAt": "2026-11-27T18:55:41.127528+00:00",
+  "updatedAt": "2026-11-28T01:08:10.552799+00:00",
   "source": "Realtime Sports API",
   "players": {
+    "8474141": {
+      "injured": true,
+      "description": "Kane (foot) was placed on injured reserve Friday, per the NHL media site.",
+      "status": "Injured Reserve",
+      "team": "CHI"
+    },
     "8475151": {
       "injured": true,
       "description": "Palmieri is expected to miss the next 6-8 months with a torn ACL and meniscus in his right knee, the team announced Friday.",
@@ -10,7 +16,7 @@
     },
     "8475167": {
       "injured": true,
-      "description": "day-to-day",
+      "description": "Hedman (undisclosed) didn't finish Friday's game versus the Senators, Benjamin Pierce of the Lightning's official site reports.",
       "status": "Day-To-Day",
       "team": "TBL"
     },
@@ -31,6 +37,12 @@
       "description": "suspension",
       "status": "Suspension",
       "team": "NJD"
+    },
+    "8475690": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "TOR"
     },
     "8475786": {
       "injured": true,
@@ -136,8 +148,8 @@
     },
     "8477479": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "CHI"
     },
     "8477492": {
@@ -158,6 +170,12 @@
       "status": "Injured Reserve",
       "team": "NJD"
     },
+    "8477903": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "FLA"
+    },
     "8477940": {
       "injured": true,
       "description": "day-to-day",
@@ -176,6 +194,12 @@
       "status": "Injured Reserve",
       "team": "SEA"
     },
+    "8477956": {
+      "injured": true,
+      "description": "Pastrnak sustained a lower-body injury and is unlikely to return to Friday's game against Toronto.",
+      "status": "Day-To-Day",
+      "team": "BOS"
+    },
     "8477998": {
       "injured": true,
       "description": "Head coach Travis Green said Monday that Foegele (knee) hasn't yet resumed skating, Bruce Garrioch of Postmedia reports.",
@@ -190,8 +214,8 @@
     },
     "8478416": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Cernak (illness) is expected to miss Friday's game against Ottawa, per Gabby Shirley of the Lightning's official site.",
+      "status": "Out",
       "team": "TBL"
     },
     "8478421": {
@@ -254,11 +278,29 @@
       "status": "Injured Reserve",
       "team": "FLA"
     },
+    "8480015": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "PHI"
+    },
+    "8480039": {
+      "injured": true,
+      "description": "out",
+      "status": "Out",
+      "team": "COL"
+    },
     "8480068": {
       "injured": true,
       "description": "Poehling (knee) is expected back in the short term, with head coach Joel Quenneville telling reporters, \"He's close. Would love to see him in by the weekend. We'll see,\" Derek Lee of The Hockey News reports.",
       "status": "Injured Reserve",
       "team": "ANA"
+    },
+    "8480078": {
+      "injured": true,
+      "description": "day-to-day",
+      "status": "Day-To-Day",
+      "team": "VAN"
     },
     "8480192": {
       "injured": true,
@@ -310,8 +352,8 @@
     },
     "8480995": {
       "injured": true,
-      "description": "out",
-      "status": "Out",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "TBL"
     },
     "8481006": {
@@ -358,14 +400,14 @@
     },
     "8482087": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "Guhle (upper body) is considered day-to-day, the team announced Friday.",
+      "status": "Out",
       "team": "MTL"
     },
     "8482171": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "out",
+      "status": "Out",
       "team": "DET"
     },
     "8482176": {
@@ -400,8 +442,8 @@
     },
     "8482896": {
       "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
+      "description": "ir",
+      "status": "Injured Reserve",
       "team": "BUF"
     },
     "8483425": {
@@ -430,8 +472,8 @@
     },
     "8483500": {
       "injured": true,
-      "description": "Ostlund (undisclosed) is expected to miss Friday's game against Pittsburgh, per Rachel Lenzi of The Buffalo News.",
-      "status": "Out",
+      "description": "Ostlund (undisclosed) was placed on injured reserve Friday, per the NHL Media Site.",
+      "status": "Injured Reserve",
       "team": "BUF"
     },
     "8483512": {
@@ -451,12 +493,6 @@
       "description": "ir",
       "status": "Injured Reserve",
       "team": "TOR"
-    },
-    "8483553": {
-      "injured": true,
-      "description": "day-to-day",
-      "status": "Day-To-Day",
-      "team": "VGK"
     },
     "8483565": {
       "injured": true,
@@ -511,12 +547,6 @@
       "description": "McWard (lower body) is considered day-to-day, per David Alter of The Hockey News on Saturday.",
       "status": "Injured Reserve",
       "team": "TOR"
-    },
-    "8484387": {
-      "injured": true,
-      "description": "out",
-      "status": "Out",
-      "team": "PHI"
     },
     "8484797": {
       "injured": true,
