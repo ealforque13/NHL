@@ -9644,13 +9644,13 @@ html.theme-light #parlay-board .pb-statline .pb-model,html.theme-light #parlay-b
 #parlay-board .pb-game .pb-card+.pb-card{border-top:1px solid #64748b44}
 #parlay-board .pb-player>strong{white-space:normal;overflow-wrap:anywhere;font-size:17px;line-height:1.2}
 #parlay-board .pb-statline{gap:8px}
-#parlay-board .pb-statline>span{min-width:48px}
+#parlay-board .pb-statline>span{box-sizing:content-box;flex:0 0 54px;width:54px;min-width:54px;max-width:54px;font-variant-numeric:tabular-nums}
 #parlay-board .pb-statline>span+span{border-left:1px solid #64748b55;padding-left:8px}
 html.theme-light #parlay-board .pb-statline>span+span{border-left-color:#cbd5e1}
 html.theme-light #parlay-board .pb-game{background:#eef2f8;color:#000;border-color:#d7dfe9}
 html.theme-light #parlay-board .pb-game .pb-card{background:transparent;color:#000}
 @container (max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}}
-@media(max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}#parlay-board .pb-game{padding:10px}#parlay-board .pb-player>strong{font-size:15px}#parlay-board .pb-statline{gap:5px}#parlay-board .pb-statline>span+span{padding-left:5px}#parlay-board .pb-statline b,#parlay-board .pb-statline .parlay-price{font-size:20px}}
+@media(max-width:760px){#parlay-board .pb-grid{grid-template-columns:minmax(0,1fr)}#parlay-board .pb-game{padding:10px}#parlay-board .pb-player>strong{font-size:15px}#parlay-board .pb-statline{gap:5px}#parlay-board .pb-statline>span{flex-basis:48px;width:48px;min-width:48px;max-width:48px}#parlay-board .pb-statline>span+span{padding-left:5px}#parlay-board .pb-statline b,#parlay-board .pb-statline .parlay-price{font-size:20px}}
 </style>
 <style id="pb-player-meta-live">
 #parlay-board .pb-name{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
