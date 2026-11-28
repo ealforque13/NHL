@@ -1,6 +1,6 @@
 {
   "team": "WSH",
-  "updatedAt": "2026-11-27T11:05:36.735245+00:00",
+  "updatedAt": "2026-11-28T11:00:22.507463+00:00",
   "players": [
     {
       "id": 8471214,
@@ -112,14 +112,6 @@
       "position": "R",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8479385.png",
       "number": 25,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8475718,
-      "name": "Justin Holl",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8475718.png",
-      "number": 4,
       "organizationGroup": "NHL"
     },
     {
@@ -413,6 +405,14 @@
       "position": "C",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8477380.png",
       "number": 76,
+      "organizationGroup": "Prospects"
+    },
+    {
+      "id": 8475718,
+      "name": "Justin Holl",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/WSH/8475718.png",
+      "number": 4,
       "organizationGroup": "Prospects"
     },
     {

@@ -1,6 +1,6 @@
 {
   "team": "MTL",
-  "updatedAt": "2026-11-27T11:05:15.085578+00:00",
+  "updatedAt": "2026-11-28T11:00:13.319776+00:00",
   "players": [
     {
       "id": 8483686,
@@ -211,6 +211,15 @@
       "organizationGroup": "NHL"
     },
     {
+      "id": 8485218,
+      "name": "Bryce Pickford",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8485218.png",
+      "number": 94,
+      "organizationGroup": "AHL",
+      "currentClub": "Laval Rocket"
+    },
+    {
       "id": 8483488,
       "name": "Filip Mesar",
       "position": "R",
@@ -326,14 +335,6 @@
       "number": "",
       "organizationGroup": "Prospects",
       "currentClub": "Torpedo Nizhny Novgorod"
-    },
-    {
-      "id": 8485218,
-      "name": "Bryce Pickford",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/MTL/8485218.png",
-      "number": 94,
-      "organizationGroup": "Prospects"
     },
     {
       "id": 8485434,

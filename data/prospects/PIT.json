@@ -1,6 +1,6 @@
 {
   "team": "PIT",
-  "updatedAt": "2026-11-27T11:05:25.818328+00:00",
+  "updatedAt": "2026-11-28T11:00:18.310865+00:00",
   "players": [
     {
       "id": 8483808,
@@ -16,6 +16,14 @@
       "position": "G",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8481668.png",
       "number": 37,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8483833,
+      "name": "Atley Calvert",
+      "position": "C",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8483833.png",
+      "number": 84,
       "organizationGroup": "NHL"
     },
     {
@@ -209,15 +217,6 @@
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8482758.png",
       "number": 41,
       "organizationGroup": "NHL"
-    },
-    {
-      "id": 8483833,
-      "name": "Atley Calvert",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/PIT/8483833.png",
-      "number": 84,
-      "organizationGroup": "AHL",
-      "currentClub": "Wilkes-Barre/Scranton Penguins"
     },
     {
       "id": 8485351,

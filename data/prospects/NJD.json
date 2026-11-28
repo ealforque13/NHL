@@ -1,6 +1,6 @@
 {
   "team": "NJD",
-  "updatedAt": "2026-11-27T11:05:17.320700+00:00",
+  "updatedAt": "2026-11-28T11:00:14.265844+00:00",
   "players": [
     {
       "id": 8483695,
@@ -16,6 +16,14 @@
       "position": "R",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8477511.png",
       "number": 39,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8484987,
+      "name": "Anton Silaev",
+      "position": "D",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8484987.png",
+      "number": 52,
       "organizationGroup": "NHL"
     },
     {
@@ -136,14 +144,6 @@
       "position": "D",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8478399.png",
       "number": 71,
-      "organizationGroup": "NHL"
-    },
-    {
-      "id": 8484177,
-      "name": "Lenni Hameenaho",
-      "position": "R",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8484177.png",
-      "number": 29,
       "organizationGroup": "NHL"
     },
     {
@@ -295,14 +295,6 @@
       "currentClub": "Utica Comets"
     },
     {
-      "id": 8484987,
-      "name": "Anton Silaev",
-      "position": "D",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8484987.png",
-      "number": 52,
-      "organizationGroup": "Prospects"
-    },
-    {
       "id": 8483721,
       "name": "Artem Barabosha",
       "position": "D",
@@ -326,8 +318,7 @@
       "position": "D",
       "headshot": "https://assets.nhle.com/mugs/nhl/latest/8483474.png",
       "number": "",
-      "organizationGroup": "Prospects",
-      "currentClub": "Adirondack Thunder"
+      "organizationGroup": "Prospects"
     },
     {
       "id": 8484439,
@@ -433,6 +424,14 @@
       "number": 76,
       "organizationGroup": "Prospects",
       "currentClub": "Avto Yekaterinburg"
+    },
+    {
+      "id": 8484177,
+      "name": "Lenni Hameenaho",
+      "position": "R",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/NJD/8484177.png",
+      "number": 29,
+      "organizationGroup": "Prospects"
     },
     {
       "id": 8486301,

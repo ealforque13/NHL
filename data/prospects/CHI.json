@@ -1,6 +1,6 @@
 {
   "team": "CHI",
-  "updatedAt": "2026-11-27T11:05:06.432323+00:00",
+  "updatedAt": "2026-11-28T11:00:08.811349+00:00",
   "players": [
     {
       "id": 8481568,
@@ -59,11 +59,11 @@
       "organizationGroup": "NHL"
     },
     {
-      "id": 8476952,
-      "name": "Dominic Toninato",
-      "position": "C",
-      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8476952.png",
-      "number": 25,
+      "id": 8485554,
+      "name": "Dillon Boucher",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8485554.png",
+      "number": 36,
       "organizationGroup": "NHL"
     },
     {
@@ -112,6 +112,14 @@
       "position": "D",
       "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8483466.png",
       "number": 14,
+      "organizationGroup": "NHL"
+    },
+    {
+      "id": 8482172,
+      "name": "Landon Slaggert",
+      "position": "L",
+      "headshot": "https://assets.nhle.com/mugs/nhl/20262027/CHI/8482172.png",
+      "number": 84,
       "organizationGroup": "NHL"
     },
     {
